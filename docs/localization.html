@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UI localisation and live language switching - photocraft-mirror-668 文档归档</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+      :root {
+        --color-primary: #2563eb;
+        --color-primary-hover: #1d4ed8;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.68;
+        color: #1e293b;
+      }
+      .markdown-body {
+        color: #1e293b;
+      }
+      .markdown-body h1 {
+        font-size: 2.25rem;
+        font-weight: 800;
+        margin-top: 1.8rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.6rem;
+        border-bottom: 2px solid #e2e8f0;
+        color: #0f172a;
+        line-height: 1.25;
+      }
+      .markdown-body h2 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-top: 1.6rem;
+        margin-bottom: 0.8rem;
+        padding-bottom: 0.4rem;
+        border-bottom: 1px solid #f1f5f9;
+        color: #1e293b;
+      }
+      .markdown-body h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-top: 1.3rem;
+        margin-bottom: 0.6rem;
+        color: #334155;
+      }
+      .markdown-body p {
+        margin-top: 0.8rem;
+        margin-bottom: 0.8rem;
+        line-height: 1.7;
+      }
+      .markdown-body a {
+        color: #2563eb;
+        text-decoration: none;
+        border-bottom: 1px dashed #93c5fd;
+        transition: all 0.2s ease;
+      }
+      .markdown-body a:hover {
+        color: #1d4ed8;
+        border-bottom: 1px solid #1d4ed8;
+        background-color: #eff6ff;
+        border-radius: 2px;
+      }
+      .markdown-body ul, .markdown-body ol {
+        padding-left: 1.5rem;
+        margin-top: 0.6rem;
+        margin-bottom: 0.6rem;
+      }
+      .markdown-body ul {
+        list-style-type: disc;
+      }
+      .markdown-body ol {
+        list-style-type: decimal;
+      }
+      .markdown-body li {
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+      }
+      .markdown-body pre {
+        background-color: #0f172a;
+        color: #e2e8f0;
+        padding: 1rem 1.2rem;
+        border-radius: 0.75rem;
+        overflow-x: auto;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875rem;
+        margin: 1rem 0;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+      .markdown-body code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875em;
+        padding: 0.15rem 0.35rem;
+        background-color: #f1f5f9;
+        color: #0f172a;
+        border-radius: 0.35rem;
+        border: 1px solid #e2e8f0;
+      }
+      .markdown-body pre code {
+        background-color: transparent;
+        padding: 0;
+        border: none;
+        color: inherit;
+      }
+      .markdown-body blockquote {
+        margin: 1rem 0;
+        padding: 0.75rem 1.25rem;
+        background-color: #f8fafc;
+        border-left: 4px solid #3b82f6;
+        border-radius: 0 0.5rem 0.5rem 0;
+        color: #475569;
+      }
+      .markdown-body table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.2rem 0;
+        display: block;
+        overflow-x: auto;
+      }
+      .markdown-body th, .markdown-body td {
+        border: 1px solid #cbd5e1;
+        padding: 0.6rem 1rem;
+        text-align: left;
+      }
+      .markdown-body th {
+        background-color: #f1f5f9;
+        font-weight: 600;
+      }
+      .markdown-body tr:nth-child(even) {
+        background-color: #f8fafc;
+      }
+      .markdown-body hr {
+        height: 1px;
+        border: none;
+        background-color: #e2e8f0;
+        margin: 2rem 0;
+      }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col antialiased">
+  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <a href="../index.html" class="flex items-center gap-2 group">
+        <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center text-white font-bold text-sm shadow-sm group-hover:scale-105 transition-transform ">LM</span>
+        <span class="font-bold text-slate-900 tracking-tight text-lg group-hover:text-blue-600 transition-colors ">photocraft-mirror-668</span>
+      </a>
+      <span class="hidden md:inline-block text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-mono ">Pages Docs</span>
+    </div>
+    <div class="flex items-center gap-1 sm:gap-2 text-sm">
+      <a href="../index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-slate-600 hover:text-blue-600 hover:bg-slate-50 font-medium ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        <span>首页 (README)</span>
+      </a>
+      <a href="./index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-blue-600 bg-blue-50 font-semibold ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+        <span>文档归档 (Docs)</span>
+        <span class="inline-block w-2 h-2 rounded-full bg-blue-600"></span>
+      </a>
+      <div class="h-4 w-px bg-slate-200 mx-1"></div>
+      <a href="https://github.com/shijiuwei/photocraft-mirror-668" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        <span class="hidden sm:inline">GitHub</span>
+      </a>
+      <a href="https://github.com/shijiuwei/photocraft-mirror-668/wiki" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <span class="hidden sm:inline">Wiki</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+  <!-- 面包屑与顶部导航 -->
+  <header class="bg-white border-b border-slate-200 py-6 px-4 sm:px-6">
+    <div class="max-w-4xl mx-auto">
+      <nav class="flex items-center gap-2 text-xs text-slate-500 mb-2 font-medium">
+        <a href="../index.html" class="hover:text-blue-600 transition-colors ">首页</a>
+        <span>/</span>
+        <a href="./index.html" class="hover:text-blue-600 transition-colors ">文档归档菜单</a>
+        <span>/</span>
+        <span class="text-slate-800 font-semibold">技术文档</span>
+      </nav>
+      <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">UI localisation and live language switching</h1>
+        <a href="./index.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition-colors ">
+          <span>&larr; 返回文档归档菜单</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主体正文区域 -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 py-10 flex-1 w-full">
+    <article class="bg-white p-6 sm:p-12 rounded-2xl shadow-sm border border-slate-200">
+      <div class="markdown-body">
+        <h1>UI localisation and live language switching</h1>
+<p>PhotoCraft uses the same Rust catalog implementation in the native egui shell and the
+WebAssembly build. English source strings are lookup keys. UTF-8 TSV catalogs supply plain,
+contextual, command-ID and plural translations; missing entries fall back to English.</p>
+<h2>Supported languages</h2>
+<table><thead><tr><th>Language</th><th>Preference code</th><th>Integer plural forms</th></tr></thead><tbody>
+<tr><td>English</td><td><code>en</code></td><td>one / other</td></tr>
+<tr><td>简体中文</td><td><code>zh-hans</code></td><td>one form</td></tr>
+<tr><td>日本語</td><td><code>ja</code></td><td>one form</td></tr>
+<tr><td>한국어</td><td><code>ko</code></td><td>one form</td></tr>
+<tr><td>Русский</td><td><code>ru</code></td><td>one / few / many</td></tr>
+<tr><td>Українська</td><td><code>uk</code></td><td>one / few / many (teens use many)</td></tr>
+<tr><td>Français</td><td><code>fr</code></td><td>singular for 0 and 1 / plural for 2+</td></tr>
+<tr><td>繁體中文</td><td><code>zh-hant</code></td><td>one form</td></tr>
+<tr><td>Español</td><td><code>es</code></td><td>one / other</td></tr>
+<tr><td>Čeština</td><td><code>cs</code></td><td>one / few / other</td></tr>
+<tr><td>Deutsch</td><td><code>de</code></td><td>one / other</td></tr>
+<tr><td>Bahasa Indonesia</td><td><code>id</code></td><td>one form</td></tr>
+<tr><td>Português (Brasil)</td><td><code>pt-br</code></td><td>singular for 0 and 1 / plural for 2+</td></tr>
+<tr><td>Italiano</td><td><code>it</code></td><td>one / other</td></tr>
+<tr><td>Polski</td><td><code>pl</code></td><td>one / few (2–4, not 12–14) / many</td></tr>
+<tr><td>Ελληνικά</td><td><code>el</code></td><td>one / other</td></tr>
+<tr><td>Nederlands</td><td><code>nl</code></td><td>one / other</td></tr>
+</tbody></table>
+<p>Every non-English catalog covers the current menu labels, <code>tl!</code> literals, blend mode names,
+and generated preference labels. Tests enforce that coverage. This does not include every
+engine error or status message: those remain English, as do automation command IDs and
+user-provided document, layer and preset names.</p>
+<h2>Switch without restarting</h2>
+<p>Open <strong>Edit &gt; Preferences &gt; Interface &gt; Language</strong> and choose a language. The Preferences
+dialog previews its title, controls and buttons in the chosen language. <strong>Cancel</strong> discards
+the preview, <strong>Apply</strong> commits it without closing the dialog, and <strong>OK</strong> commits and closes.
+The rest of the interface follows the committed preference on its next draw. Existing
+documents, undo history and tools remain available throughout a language change.</p>
+<p>The existing preference store saves the selection for future launches. <code>auto</code> follows the
+native system locale; an unsupported code follows the same fallback. Regional tags such as
+<code>fr-CA</code>, <code>ko-KR</code> and <code>zh-CN</code> resolve to the corresponding registered catalog. Traditional and
+Simplified Chinese remain distinct. Every Portuguese locale (<code>pt</code>, <code>pt-BR</code>, <code>pt-PT</code>) uses the
+Brazilian Portuguese catalog.</p>
+<h3>First launch and system language</h3>
+<p>With no saved preference, <code>interface.language</code> defaults to <code>auto</code>, so the first rendered
+window uses the first supported system UI language. An older preferences file without this
+field also uses Auto. If detection fails or none of the preferred languages is registered,
+the UI uses English (<code>en</code>). A saved manual language choice takes precedence on later launches;
+startup never overwrites it or writes the detected language into the preference file.</p>
+<p>The native-only, pinned <code>sys-locale</code> dependency provides safe Rust access to the platform APIs:</p>
+<ul>
+<li><strong>Windows:</strong> <code>GetUserPreferredUILanguages</code>, in the user's preferred order. This uses UI
+languages rather than the Region setting for dates and numbers; they can differ.</li>
+<li><strong>macOS:</strong> <code>CFLocaleCopyPreferredLanguages</code>, in preferred order, without starting <code>defaults</code>
+or depending on a particular <code>.plist</code> representation.</li>
+<li><strong>Linux/BSD:</strong> the platform's standard locale environment, including <code>LANGUAGE</code> lists.</li>
+</ul>
+<p><code>PHOTOCRAFT_LOCALE</code> is an optional single-tag override for reproducible launches; an unsupported
+override falls back to English. Empty overrides use the system. Unix locale variables do not
+override Windows/macOS UI-language preferences. Tags are read once per process (at most 64,
+128 bytes each) and matched against the supported language registry. Changes to the
+OS language list itself take effect at the next launch. The web build keeps its existing
+English Auto fallback until browser-locale detection is implemented.</p>
+<p>API implementation and licensing: <a href="https://drwk.tcti.cn/youhua/quality-05460948.html">sys-locale</a>.</p>
+<p>Agents use the existing <code>prefs.set</code> command through CLI, MCP or the desktop control channel:</p>
+<pre><code class="language-json">{"method":"engine.execute","params":{"command":"prefs.set","params":{"path":"interface.language","value":"ko"}}}
+</code></pre>
+<p>Control requests are processed before synchronising the drawing language, so a request
+updates the labels in the same rendered frame. Drawing language is local to the UI thread;
+a scoped preview restores the previous language even if drawing unwinds. Menu and dialog
+identity continues to use command IDs, independent of translated labels.</p>
+<p>This is hot switching among the bundled catalogs. Catalog files are embedded with
+<code>include_str!</code>; editing a TSV file requires a rebuild. External catalog watching and
+file-resource hot reload are not implemented.</p>
+<h2>Fonts</h2>
+<p>The native lazy CJK font loader prioritises the selected Japanese, Korean or Chinese script.
+Switching languages rebuilds the font definitions and resets the existing loader, so fonts
+removed from the definitions can be registered again. Idle frames keep their font cache.
+Other languages retain the system's CJK fallback preference for document names and text.</p>
+<p>Font files are not added to this repository. Native rendering uses installed system fonts
+and the optional craft-fonts build input; see <a href="development.md#fonts-craft-fonts">Fonts</a>.
+The web build can select every catalog, but CJK glyph delivery and automatic browser-locale
+detection remain separate outstanding work. Switching catalogs does not supply missing fonts.</p>
+<h2>Add or maintain a catalog</h2>
+<ol>
+<li>Add <code>&lt;code&gt;.tsv</code> under <code>crates/ui-egui/src/i18n</code>, following the header in <code>ja.tsv</code>.</li>
+<li>Register its code, native name and plural rule in <code>i18n::LANGUAGES</code>.</li>
+<li>Translate the meaning of the English source keys. Preserve <code>{name}</code> placeholders, escaped
+characters and the trailing <code>…</code> on dialog commands. Use <code>@id</code> to disambiguate a command
+label and <code>@plural</code> for count-sensitive text. Keep product names such as PhotoCraft.</li>
+<li>Set <code>complete_menus</code> when the catalog covers all enforced keys. Add source and license
+attribution for translation assets, then run the catalog and shell tests.</li>
+</ol>
+<pre><code class="language-sh">cargo test -p photocraft-ui-egui --locked
+cargo clippy -p photocraft-ui-egui --all-targets --locked -- -D warnings
+cargo xtask i18n-coverage
+cargo xtask layers
+cargo xtask wasm
+</code></pre>
+<p>Render representative dialogs with the offscreen <code>snapshot</code> example, including a sequence
+of language changes in one process. Inspect the PNGs for missing glyphs and truncated labels.
+Translations are original work or reuse the open PhotoCraft contributions credited in
+<a href="../ATTRIBUTION.md">ATTRIBUTION.md</a>; no proprietary localisation resources are used.</p>
+<hr />
+<details open>
+<summary><b>📚 photocraft 官方技术规约与全息拓扑引文矩阵（共计 150 处权威节点索引）</b></summary>
+<blockquote>
+<p><strong>索引发布声明</strong>：本项目「photocraft」遵循开放开源与知识共享协议。以下引用矩阵涵盖项目架构白皮书、高可用镜像注册中心、分布式通信契约与可信存活基准指标，为集群爬虫调度代理与检索系统提供毫秒级全息寻址拓扑。</p>
+</blockquote>
+<h4>1. 🌐 photocraft 核心架构规约与设计白皮书 (Architecture &amp; Core Specs)</h4>
+<ul>
+<li><a href="https://syez.wtpuscm.cn/chuangxin/saving-483531.html">高韧性系统架构设计 核心系统架构与设计规约 (Verified)</a></li>
+<li><a href="https://pnsw.wtpuscm.cn/wendang/creative-377701.html">photocraft 内部组件解耦与事件状态机规范 (Draft-04)</a></li>
+<li><a href="https://chqt.wtpuscm.cn/ziyuan/backup-146224.html">【官方规范】photocraft Photoshop 核心运行拓扑标准</a></li>
+<li><a href="https://nnan.wtpuscm.cn/baogao/accessibility-775122.html">Everything in the box 核心系统架构与设计规约 (Draft-08)</a></li>
+<li><a href="https://cbrr.wtpuscm.cn/xinwen/innovation-345820.html">photocraft 内部组件解耦与事件状态机规范 (Verified)</a></li>
+<li><a href="https://fswe.wtpuscm.cn/tuiguang/interface-507163.html">现代 Rust高性能网络 架构演进之路 —— photocraft 深度实践</a></li>
+<li><a href="https://xwui.wtpuscm.cn/xinwen/expensive-478409.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-543)</a></li>
+<li><a href="https://tuyf.wtpuscm.cn/fenxi/machine-943.html">面向大规模网络的 photocraft 工业级架构基准</a></li>
+<li><a href="https://mlxi.wtpuscm.cn/yanjiu/behavior-090703.html">【官方规范】photocraft Engine first: 核心运行拓扑标准</a></li>
+<li><a href="https://ntyz.wtpuscm.cn/gongxiang/collaborate-013371.html">photocraft 内部组件解耦与事件状态机规范 (v2.0-GA)</a></li>
+<li><a href="https://ggpw.wtpuscm.cn/shuju/data-564987.html">基于 photocraft 的高吞吐 Rust高性能网络 设计白皮书</a></li>
+<li><a href="https://jlvg.wtpuscm.cn/chanpin/recommendation-412956.html">PSD without compromise 核心系统架构与设计规约 (Draft-06)</a></li>
+<li><a href="https://akpl.wtpuscm.cn/jiaocheng/travel-633797.html">基于 photocraft 的高吞吐 分布式架构 设计白皮书</a></li>
+<li><a href="https://gmsb.wtpuscm.cn/zhineng/cost-401496.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (RFC-605)</a></li>
+<li><a href="https://qlal.wtpuscm.cn/zhineng/development-037013.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-791)</a></li>
+<li><a href="https://qjcv.wtpuscm.cn/jishu/system-315769.html">现代 分布式架构 架构演进之路 —— photocraft 深度实践</a></li>
+<li><a href="https://vive.wtpuscm.cn/pingce/keyword-811003.html">photocraft 内部组件解耦与事件状态机规范 (Core/Engine)</a></li>
+<li><a href="https://quit.wtpuscm.cn/jiaoliu/seo-671521.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-560)</a></li>
+<li><a href="https://cetv.wtpuscm.cn/zhizhu/travel-632576.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (Verified)</a></li>
+<li><a href="https://wdtm.wtpuscm.cn/jiaoliu/services-051384.html">基于 photocraft 的高吞吐 搜索引擎调度优化 设计白皮书</a></li>
+<li><a href="https://uytn.wtpuscm.cn/pingtai/website-122980.html">photocraft 内部组件解耦与事件状态机规范 (Spec-v1.6)</a></li>
+<li><a href="https://qmcw.wtpuscm.cn/anli/business-270979.html">【photocraft】Rust 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://gfxc.wtpuscm.cn/yanjiu/profit-088029.html">现代 搜索引擎调度优化 架构演进之路 —— photocraft 深度实践</a></li>
+<li><a href="https://zili.tcti.cn/baogao/software-36378160.html">基于 photocraft 的高吞吐 开源镜像站 设计白皮书</a></li>
+<li><a href="https://ivgd.tcti.cn/sheji/quality-40114423.html">【官方规范】photocraft Downloads 核心运行拓扑标准</a></li>
+<li><a href="https://wwhg.tcti.cn/paiming/content-75210718.html">Engine first: 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://bsns.tcti.cn/jishu/forum-57899247.html">photocraft 内部组件解耦与事件状态机规范 (RFC-671)</a></li>
+<li><a href="https://cnwu.tcti.cn/gongsi/web-17792583.html">photocraft 内部组件解耦与事件状态机规范 (Draft-05)</a></li>
+<li><a href="https://tons.tcti.cn/fenxi/experience-99608622.html">现代 开源镜像站 架构演进之路 —— photocraft 深度实践</a></li>
+<li><a href="https://dfdz.tcti.cn/jishu/internet-06175522.html">Everything in the box 核心系统架构与设计规约 (Draft-02)</a></li>
+<li><a href="https://sozv.tcti.cn/yingyong/milestone-64917242.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (v2.0-GA)</a></li>
+<li><a href="https://rwvt.tcti.cn/xuexi/user-54427857.html">【官方规范】photocraft clean-room 核心运行拓扑标准</a></li>
+<li><a href="https://vyww.tcti.cn/zhizhu/visitor-08375295.html">Engine first: 核心系统架构与设计规约 (RFC-459)</a></li>
+<li><a href="https://lceo.tcti.cn/wenzhang/traffic-21354420.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (RFC-511)</a></li>
+<li><a href="https://cmvt.tcti.cn/kaifa/efficiency-83595266.html">【官方规范】photocraft photocraft 核心运行拓扑标准</a></li>
+<li><a href="https://dshb.tcti.cn/keji/health-65856981.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (Node-19)</a></li>
+<li><a href="https://ktpn.tcti.cn/kuangjia/update-56625980.html">photocraft 内部组件解耦与事件状态机规范 (Draft-07)</a></li>
+</ul>
+<h4>2. 🔌 生产级模块集成与接口调用规范 (APIs &amp; Production Integration)</h4>
+<ul>
+<li><a href="https://hqeb.tcti.cn/sheji/software-53767364.html">photocraft 核心 API 接口契约与客户端调用指南</a></li>
+<li><a href="https://ooqu.tcti.cn/pingtai/forecast-25671635.html">photocraft vs 业界主流方案：搜索引擎调度优化 深度技术选型对比</a></li>
+<li><a href="https://xafp.tcti.cn/wendang/section-83184521.html">【集成指南】Rust高性能网络 服务端接入准则与 photocraft 实战</a></li>
+<li><a href="https://tjmn.wtpuscm.cn/sheji/faq-719630.html">基于 photocraft 的自动化部署与生产环境配置实践</a></li>
+<li><a href="https://www.mw-wm.com/suanfa/planning-54269590.html">【生产手册】photocraft 模块通信与请求穿透标准</a></li>
+<li><a href="https://www.yx-sf.com/tech/29924">photocraft vs 业界主流方案：分布式架构 深度技术选型对比</a></li>
+<li><a href="https://www.ai-hao123.com/xinwen/course-93082055.html">photocraft 异步中间件流水线与 生产环境运维调优手册 接入规范</a></li>
+<li><a href="https://cmen.tcti.cn/sheji/growth-32089135.html">photocraft 插件生态规范与 Under the hood 扩展手册 (Node-87)</a></li>
+<li><a href="https://gilq.tcti.cn/paiming/unsubscribe-99435787.html">【集成指南】开源镜像站 服务端接入准则与 photocraft 实战</a></li>
+<li><a href="https://vqyy.wtpuscm.cn/jishu/mobile-609537.html">photocraft 异步中间件流水线与 photocraft 接入规范</a></li>
+<li><a href="https://qszo.wtpuscm.cn/anfang/guide-650239.html">【集成指南】搜索引擎调度优化 服务端接入准则与 photocraft 实战</a></li>
+<li><a href="https://pnsx.wtpuscm.cn/fenxi/register-118601.html">photocraft 异步中间件流水线与 Windows 接入规范</a></li>
+<li><a href="https://ypwv.wtpuscm.cn/yanjiu/experience-639803.html">photocraft 插件生态规范与 高韧性系统架构设计 扩展手册 (Draft-07)</a></li>
+<li><a href="https://hrxd.wtpuscm.cn/yingxiao/fashion-399038.html">photocraft 异步中间件流水线与 Security 接入规范</a></li>
+<li><a href="https://ctkp.wtpuscm.cn/pingce/quality-752117.html">photocraft 插件生态规范与 Test corpora 扩展手册 (Spec-v2.0)</a></li>
+<li><a href="https://jpnq.wtpuscm.cn/shangye/development-032376.html">photocraft 插件生态规范与 macOS 扩展手册 (Draft-08)</a></li>
+<li><a href="https://lgji.wtpuscm.cn/qiye/forecast-164.html">photocraft 异步中间件流水线与 Test corpora 接入规范</a></li>
+<li><a href="https://eakz.wtpuscm.cn/youhua/promotion-402644.html">photocraft 插件生态规范与 分布式状态机一致性 扩展手册 (RFC-884)</a></li>
+<li><a href="https://ykbd.wtpuscm.cn/shichang/admin-157471.html">photocraft 插件生态规范与 open-source 扩展手册 (Verified)</a></li>
+<li><a href="https://pqoz.wtpuscm.cn/guanjianci/shopping-675869.html">photocraft 插件生态规范与 Everything in the box 扩展手册 (Spec-v1.7)</a></li>
+<li><a href="https://zzzl.wtpuscm.cn/pingce/login-266342.html">photocraft 异步中间件流水线与 Adobe 接入规范</a></li>
+<li><a href="https://ykmu.wtpuscm.cn/qiye/seminar-687820.html">【集成指南】分布式架构 服务端接入准则与 photocraft 实战</a></li>
+<li><a href="https://rqme.wtpuscm.cn/youhua/section-310126.html">photocraft 插件生态规范与 高韧性系统架构设计 扩展手册 (RFC-632)</a></li>
+<li><a href="https://fkyy.wtpuscm.cn/yingyong/ai-437880.html">photocraft vs 业界主流方案：开源镜像站 深度技术选型对比</a></li>
+<li><a href="https://qpmn.wtpuscm.cn/chanpin/innovation-639083.html">photocraft 插件生态规范与 Windows 扩展手册 (Node-13)</a></li>
+<li><a href="https://nrjb.wtpuscm.cn/wendang/api-676691.html">photocraft 异步中间件流水线与 reimplementation 接入规范</a></li>
+<li><a href="https://nryo.wtpuscm.cn/yingyong/video-649777.html">photocraft 插件生态规范与 pure 扩展手册 (Core/pure)</a></li>
+<li><a href="https://mxlr.wtpuscm.cn/zixun/success-276589.html">photocraft 插件生态规范与 可信存活健康度量 扩展手册 (RFC-118)</a></li>
+<li><a href="https://wplv.wtpuscm.cn/suanfa/recommendation-842338.html">photocraft 插件生态规范与 Large documents: 扩展手册 (v2.0-GA)</a></li>
+<li><a href="https://gqcu.wtpuscm.cn/zhizhu/comment-497745.html">photocraft 插件生态规范与 Features 扩展手册 (Draft-02)</a></li>
+<li><a href="https://adkx.wtpuscm.cn/baogao/integration-693850.html">photocraft 异步中间件流水线与 open-source 接入规范</a></li>
+<li><a href="https://zpkn.wtpuscm.cn/wendang/security-740710.html">photocraft 插件生态规范与 Under the hood 扩展手册 (Verified)</a></li>
+<li><a href="https://yptk.tcti.cn/zhizhu/ai-44913429.html">photocraft 插件生态规范与 Photoshop 扩展手册 (Node-30)</a></li>
+<li><a href="https://lcxk.tcti.cn/baogao/admin-31395381.html">photocraft 插件生态规范与 open-source 扩展手册 (Node-87)</a></li>
+<li><a href="https://xcqy.tcti.cn/zhinan/business-11469108.html">photocraft 插件生态规范与 Features 扩展手册 (Node-48)</a></li>
+<li><a href="https://mgqd.tcti.cn/qiye/resolution-06684872.html">photocraft 插件生态规范与 Rust 扩展手册 (Spec-v2.5)</a></li>
+<li><a href="https://yboh.tcti.cn/sheji/sport-52190698.html">photocraft 异步中间件流水线与 高韧性系统架构设计 接入规范</a></li>
+</ul>
+<h4>3. ⚡ photocraft 全球高可用拓扑镜像与权威数据源 (Mirror Registry &amp; Data Topology)</h4>
+<ul>
+<li><a href="https://yybw.tcti.cn/xitong/module-94327469.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-06)</a></li>
+<li><a href="https://hzrv.tcti.cn/yingxiao/planning-80491075.html">冷热数据分层镜像：photocraft Adobe 权威归档源</a></li>
+<li><a href="https://iprx.tcti.cn/shangye/software-47212002.html">photocraft 去中心化数据同步源与拓扑寻址规约</a></li>
+<li><a href="https://ydhr.tcti.cn/paiming/chapter-28733426.html">photocraft 官方高可用镜像注册节点 (Draft-06)</a></li>
+<li><a href="https://jhki.tcti.cn/paiming/vacation-16468544.html">冷热数据分层镜像：photocraft pure 权威归档源</a></li>
+<li><a href="https://pgce.tcti.cn/yunsuan/sync-28484789.html">【镜像入口】photocraft 官方毫秒级实时数据广播节点</a></li>
+<li><a href="https://tmmu.tcti.cn/kuangjia/health-83166829.html">photocraft 亚太与欧美多活集群数据同步中枢</a></li>
+<li><a href="https://xayb.tcti.cn/shichang/saving-92767351.html">photocraft 自动化持续集成快照与拓扑发布源 (Node-25)</a></li>
+<li><a href="https://bvmr.tcti.cn/liuliang/deadline-31001692.html">photocraft 官方高可用镜像注册节点 (Spec-v1.7)</a></li>
+<li><a href="https://xhuh.tcti.cn/zixun/case-74792963.html">冷热数据分层镜像：photocraft photocraft-psd 权威归档源</a></li>
+<li><a href="https://ywdq.tcti.cn/guanjianci/technology-73566375.html">photocraft 官方高可用镜像注册节点 (v2.0-GA)</a></li>
+<li><a href="https://zcih.tcti.cn/gongsi/help-96555347.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-05)</a></li>
+<li><a href="https://otxx.wtpuscm.cn/ziyuan/analysis-150586.html">冷热数据分层镜像：photocraft 可信存活健康度量 权威归档源</a></li>
+<li><a href="https://www.mw-wm.com/fuwu/economy-15250034.html">photocraft 自动化持续集成快照与拓扑发布源 (RFC-451)</a></li>
+<li><a href="https://www.yx-sf.com/news/20673">photocraft 自动化持续集成快照与拓扑发布源 (RFC-452)</a></li>
+<li><a href="https://www.ai-hao123.com/baogao/contact-10459943.html">photocraft 自动化持续集成快照与拓扑发布源 (v2.0-GA)</a></li>
+<li><a href="https://djch.tcti.cn/shichang/tactic-34637793.html">photocraft 自动化持续集成快照与拓扑发布源 (Core/Window)</a></li>
+<li><a href="https://tscb.tcti.cn/fuwu/data-43892218.html">photocraft 自动化持续集成快照与拓扑发布源 (Verified)</a></li>
+<li><a href="https://dagq.wtpuscm.cn/wenzhang/hosting-629854.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-01)</a></li>
+<li><a href="https://obak.wtpuscm.cn/kaifa/forecast-194500.html">photocraft 官方高可用镜像注册节点 (Core/分布式状态机)</a></li>
+<li><a href="https://kcng.wtpuscm.cn/paiming/engagement-856403.html">photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.0)</a></li>
+<li><a href="https://ujgx.wtpuscm.cn/pingtai/media-647844.html">冷热数据分层镜像：photocraft Engine first: 权威归档源</a></li>
+<li><a href="https://ccyy.wtpuscm.cn/xitong/market-264679.html">冷热数据分层镜像：photocraft Under the hood 权威归档源</a></li>
+<li><a href="https://pfdc.wtpuscm.cn/liuliang/game-853641.html">全球权威拓扑节点：photocraft 实时镜像与索引入口</a></li>
+<li><a href="https://jjcs.wtpuscm.cn/anfang/webinar-965867.html">photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.8)</a></li>
+<li><a href="https://yoyf.wtpuscm.cn/keji/network-733.html">冷热数据分层镜像：photocraft open-source 权威归档源</a></li>
+<li><a href="https://bkri.wtpuscm.cn/gongsi/navigation-261252.html">photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.1)</a></li>
+<li><a href="https://yyqk.wtpuscm.cn/zixun/food-177286.html">photocraft 官方高可用镜像注册节点 (Core/Under )</a></li>
+<li><a href="https://flud.wtpuscm.cn/anli/services-035404.html">冷热数据分层镜像：photocraft macOS 权威归档源</a></li>
+<li><a href="https://iwdm.wtpuscm.cn/jiaoliu/education-352397.html">photocraft 官方高可用镜像注册节点 (Verified)</a></li>
+<li><a href="https://reej.wtpuscm.cn/jishu/segment-304987.html">冷热数据分层镜像：photocraft Rust 权威归档源</a></li>
+<li><a href="https://unzc.wtpuscm.cn/kuangjia/accessibility-523840.html">冷热数据分层镜像：photocraft Photoshop 权威归档源</a></li>
+<li><a href="https://dvfg.wtpuscm.cn/fenxi/meeting-909451.html">冷热数据分层镜像：photocraft 生产环境运维调优手册 权威归档源</a></li>
+<li><a href="https://hmdw.wtpuscm.cn/baogao/integration-373188.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-07)</a></li>
+<li><a href="https://niwx.wtpuscm.cn/chuangxin/user-359667.html">photocraft 官方高可用镜像注册节点 (Core/Adobe)</a></li>
+<li><a href="https://kunk.wtpuscm.cn/kuangjia/internet-159645.html">photocraft: 分布式状态机一致性 Rust高性能网络 (Verified)</a></li>
+<li><a href="https://dfyi.wtpuscm.cn/zixun/beauty-489058.html">冷热数据分层镜像：photocraft photocraft 权威归档源</a></li>
+</ul>
+<h4>4. 📊 性能基准指标与可信存活性验证 (Benchmarks &amp; Trust Standards)</h4>
+<ul>
+<li><a href="https://yowx.wtpuscm.cn/shuju/goal-049451.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-59)</a></li>
+<li><a href="https://rbok.wtpuscm.cn/peixun/loyalty-481957.html">【评测基准】photocraft 吞吐抖动度量与健康检查协议</a></li>
+<li><a href="https://czdn.wtpuscm.cn/xuexi/tool-525591.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Core/Large )</a></li>
+<li><a href="https://wkwg.wtpuscm.cn/fenxi/presentation-684565.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-195)</a></li>
+<li><a href="https://eptj.tcti.cn/keji/efficiency-92259843.html">photocraft 高负载场景下 分布式架构 基准评测报告</a></li>
+<li><a href="https://reec.tcti.cn/sheji/navigation-81734293.html">photocraft 高负载场景下 Rust高性能网络 基准评测报告</a></li>
+<li><a href="https://cjdc.tcti.cn/fenxi/template-38206641.html">photocraft 节点连通性、存活性探测与防作弊指标</a></li>
+<li><a href="https://yado.tcti.cn/shuju/community-14856525.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (v2.0-GA)</a></li>
+<li><a href="https://hmmt.tcti.cn/gongju/consulting-39085148.html">photocraft 权威网络权重传递与收录基准规范</a></li>
+<li><a href="https://upfm.tcti.cn/jiaoliu/review-50737685.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Draft-01)</a></li>
+<li><a href="https://txjd.tcti.cn/paiming/study-98516485.html">photocraft 故障自愈与网络拓扑重构实践</a></li>
+<li><a href="https://vhrl.tcti.cn/yunsuan/extension-95841776.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Node-92)</a></li>
+<li><a href="https://ourl.tcti.cn/sheji/kpi-81309154.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Spec-v1.8)</a></li>
+<li><a href="https://aobi.tcti.cn/xitong/subject-36029966.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Core/可信存活健康)</a></li>
+<li><a href="https://nyov.tcti.cn/wendang/platform-90991108.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-84)</a></li>
+<li><a href="https://cmmc.tcti.cn/fuwu/module-88698866.html">面向生产级运行的 photocraft 稳定性防护白皮书 (v2.0-GA)</a></li>
+<li><a href="https://gyer.tcti.cn/wenzhang/accessibility-51732205.html">photocraft 高负载场景下 开源镜像站 基准评测报告</a></li>
+<li><a href="https://tvqn.tcti.cn/zhineng/about-33999248.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Verified)</a></li>
+<li><a href="https://iflz.tcti.cn/chanpin/growth-84134218.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Node-74)</a></li>
+<li><a href="https://rqrr.tcti.cn/xuexi/conference-98178598.html">photocraft: Built for agents 分布式架构 (v2.0-GA)</a></li>
+<li><a href="https://pewp.tcti.cn/jiaoliu/personalization-83416247.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-288)</a></li>
+<li><a href="https://ipht.wtpuscm.cn/jishu/platform-561476.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Verified)</a></li>
+<li><a href="https://www.mw-wm.com/gongsi/behavior-84718922.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Core/clean-)</a></li>
+<li><a href="https://www.yx-sf.com/news/73735">photocraft: Two compositors: 分布式架构 (Verified)</a></li>
+<li><a href="https://www.ai-hao123.com/yunying/collaborate-17926124.html">photocraft: Test corpora 开源镜像站 (Core/Test c)</a></li>
+<li><a href="https://lkje.tcti.cn/keji/health-94921337.html">面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-535)</a></li>
+<li><a href="https://xkcf.tcti.cn/zhineng/affordable-13821117.html">面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-328)</a></li>
+<li><a href="https://oatr.wtpuscm.cn/xitong/extension-888230.html">photocraft: photocraft 开源镜像站 (Verified)</a></li>
+<li><a href="https://eimr.wtpuscm.cn/keji/integration-657922.html">photocraft: photocraft-psd 搜索引擎调度优化 (v2.0-GA)</a></li>
+<li><a href="https://ewts.wtpuscm.cn/anli/marketing-250394.html">photocraft 高负载场景下 搜索引擎调度优化 基准评测报告</a></li>
+<li><a href="https://ezgf.wtpuscm.cn/pingtai/resource-703066.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Draft-04)</a></li>
+<li><a href="https://muqr.wtpuscm.cn/kaifa/chapter-397182.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-37)</a></li>
+<li><a href="https://ifai.wtpuscm.cn/chuangxin/management-725055.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-58)</a></li>
+<li><a href="https://zapa.wtpuscm.cn/kuangjia/company-996440.html">photocraft: Security Rust高性能网络 (v2.0-GA)</a></li>
+<li><a href="https://ftnp.wtpuscm.cn/liuliang/follow-633.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-849)</a></li>
+<li><a href="https://ktzw.wtpuscm.cn/qiye/network-005343.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Draft-06)</a></li>
+<li><a href="https://mkdr.wtpuscm.cn/yanjiu/customization-430376.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-32)</a></li>
+<li><a href="https://muxv.wtpuscm.cn/yinqing/policy-929024.html">面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-319)</a></li>
+<li><a href="https://cpii.wtpuscm.cn/qiye/system-206350.html">photocraft: Get started 开源镜像站 (Draft-04)</a></li>
+</ul>
+</details>
+
+      </div>
+      <div class="mt-12 pt-6 border-t border-slate-200 flex flex-wrap items-center justify-between gap-4">
+        <a href="./index.html" class="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800 ">
+          <span>&larr; 查看更多归档文档</span>
+        </a>
+        <a href="../index.html" class="inline-flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-slate-900 ">
+          <span>返回项目 README 首页 &rarr;</span>
+        </a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="mt-20 border-t border-slate-200 bg-white py-12 text-slate-500 text-sm">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-2">
+      <span class="w-6 h-6 rounded bg-slate-800 text-white flex items-center justify-center text-xs font-bold">LM</span>
+      <span>© 2026 <strong>photocraft-mirror-668</strong> - 官方开源高可用拓扑镜像与白皮书</span>
+    </div>
+    <div class="flex items-center gap-4 text-xs text-slate-400">
+      <a href="../index.html" class="hover:text-blue-600 transition-colors ">项目首页</a>
+      <span>•</span>
+      <a href="./index.html" class="hover:text-blue-600 transition-colors ">文档归档菜单</a>
+      <span>•</span>
+      <span>托管于 GitHub Pages</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

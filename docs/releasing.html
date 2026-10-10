@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Releasing PhotoCraft - photocraft-mirror-668 文档归档</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+      :root {
+        --color-primary: #2563eb;
+        --color-primary-hover: #1d4ed8;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.68;
+        color: #1e293b;
+      }
+      .markdown-body {
+        color: #1e293b;
+      }
+      .markdown-body h1 {
+        font-size: 2.25rem;
+        font-weight: 800;
+        margin-top: 1.8rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.6rem;
+        border-bottom: 2px solid #e2e8f0;
+        color: #0f172a;
+        line-height: 1.25;
+      }
+      .markdown-body h2 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-top: 1.6rem;
+        margin-bottom: 0.8rem;
+        padding-bottom: 0.4rem;
+        border-bottom: 1px solid #f1f5f9;
+        color: #1e293b;
+      }
+      .markdown-body h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-top: 1.3rem;
+        margin-bottom: 0.6rem;
+        color: #334155;
+      }
+      .markdown-body p {
+        margin-top: 0.8rem;
+        margin-bottom: 0.8rem;
+        line-height: 1.7;
+      }
+      .markdown-body a {
+        color: #2563eb;
+        text-decoration: none;
+        border-bottom: 1px dashed #93c5fd;
+        transition: all 0.2s ease;
+      }
+      .markdown-body a:hover {
+        color: #1d4ed8;
+        border-bottom: 1px solid #1d4ed8;
+        background-color: #eff6ff;
+        border-radius: 2px;
+      }
+      .markdown-body ul, .markdown-body ol {
+        padding-left: 1.5rem;
+        margin-top: 0.6rem;
+        margin-bottom: 0.6rem;
+      }
+      .markdown-body ul {
+        list-style-type: disc;
+      }
+      .markdown-body ol {
+        list-style-type: decimal;
+      }
+      .markdown-body li {
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+      }
+      .markdown-body pre {
+        background-color: #0f172a;
+        color: #e2e8f0;
+        padding: 1rem 1.2rem;
+        border-radius: 0.75rem;
+        overflow-x: auto;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875rem;
+        margin: 1rem 0;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+      .markdown-body code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875em;
+        padding: 0.15rem 0.35rem;
+        background-color: #f1f5f9;
+        color: #0f172a;
+        border-radius: 0.35rem;
+        border: 1px solid #e2e8f0;
+      }
+      .markdown-body pre code {
+        background-color: transparent;
+        padding: 0;
+        border: none;
+        color: inherit;
+      }
+      .markdown-body blockquote {
+        margin: 1rem 0;
+        padding: 0.75rem 1.25rem;
+        background-color: #f8fafc;
+        border-left: 4px solid #3b82f6;
+        border-radius: 0 0.5rem 0.5rem 0;
+        color: #475569;
+      }
+      .markdown-body table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.2rem 0;
+        display: block;
+        overflow-x: auto;
+      }
+      .markdown-body th, .markdown-body td {
+        border: 1px solid #cbd5e1;
+        padding: 0.6rem 1rem;
+        text-align: left;
+      }
+      .markdown-body th {
+        background-color: #f1f5f9;
+        font-weight: 600;
+      }
+      .markdown-body tr:nth-child(even) {
+        background-color: #f8fafc;
+      }
+      .markdown-body hr {
+        height: 1px;
+        border: none;
+        background-color: #e2e8f0;
+        margin: 2rem 0;
+      }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col antialiased">
+  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <a href="../index.html" class="flex items-center gap-2 group">
+        <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center text-white font-bold text-sm shadow-sm group-hover:scale-105 transition-transform ">LM</span>
+        <span class="font-bold text-slate-900 tracking-tight text-lg group-hover:text-blue-600 transition-colors ">photocraft-mirror-668</span>
+      </a>
+      <span class="hidden md:inline-block text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-mono ">Pages Docs</span>
+    </div>
+    <div class="flex items-center gap-1 sm:gap-2 text-sm">
+      <a href="../index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-slate-600 hover:text-blue-600 hover:bg-slate-50 font-medium ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        <span>首页 (README)</span>
+      </a>
+      <a href="./index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-blue-600 bg-blue-50 font-semibold ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+        <span>文档归档 (Docs)</span>
+        <span class="inline-block w-2 h-2 rounded-full bg-blue-600"></span>
+      </a>
+      <div class="h-4 w-px bg-slate-200 mx-1"></div>
+      <a href="https://github.com/shijiuwei/photocraft-mirror-668" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        <span class="hidden sm:inline">GitHub</span>
+      </a>
+      <a href="https://github.com/shijiuwei/photocraft-mirror-668/wiki" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <span class="hidden sm:inline">Wiki</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+  <!-- 面包屑与顶部导航 -->
+  <header class="bg-white border-b border-slate-200 py-6 px-4 sm:px-6">
+    <div class="max-w-4xl mx-auto">
+      <nav class="flex items-center gap-2 text-xs text-slate-500 mb-2 font-medium">
+        <a href="../index.html" class="hover:text-blue-600 transition-colors ">首页</a>
+        <span>/</span>
+        <a href="./index.html" class="hover:text-blue-600 transition-colors ">文档归档菜单</a>
+        <span>/</span>
+        <span class="text-slate-800 font-semibold">技术文档</span>
+      </nav>
+      <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Releasing PhotoCraft</h1>
+        <a href="./index.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition-colors ">
+          <span>&larr; 返回文档归档菜单</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主体正文区域 -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 py-10 flex-1 w-full">
+    <article class="bg-white p-6 sm:p-12 rounded-2xl shadow-sm border border-slate-200">
+      <div class="markdown-body">
+        <h1>Releasing PhotoCraft</h1>
+<p>Every push to the <code>release</code> branch runs <code>.github/workflows/release.yml</code>. The workflow builds
+signed installers for macOS, Windows, Linux and the web, plus a FreeBSD tarball, then creates
+or updates a <strong>draft</strong> GitHub Release named <code>PhotoCraft v&lt;version&gt;</code>. Nobody sees a draft until a
+maintainer publishes it.</p>
+<p>This is PhotoCraft's implementation of the shared
+<a href="release-playbook.md">release playbook</a>. User-facing names say <strong>PhotoCraft</strong>. Files, binaries
+and ids stay lowercase (<code>photocraft-&lt;version&gt;-&lt;platform&gt;-&lt;arch&gt;.&lt;ext&gt;</code>, <code>ai.storyteller.photocraft</code>).</p>
+<h2>Cutting a release</h2>
+<ol>
+<li>
+<p><strong>Bump the version</strong> on <code>main</code>. The only place it lives is <code>[workspace.package] version</code>
+in the root <code>Cargo.toml</code>:</p>
+<pre><code class="language-sh">cargo xtask version                 # prints the current version, e.g. 0.1.0
+cargo xtask version set 0.2.0       # or 0.2.0-rc.1; updates Cargo.toml and Cargo.lock
+</code></pre>
+<p>Commit the change (<code>Cargo.toml</code> + <code>Cargo.lock</code>) through the normal review flow.</p>
+</li>
+<li>
+<p><strong>Merge <code>main</code> into <code>release</code></strong> (or fast-forward it) and push. The workflow starts by itself.</p>
+</li>
+<li>
+<p><strong>Wait for the draft.</strong> After about 30 to 45 minutes (notarization is the slow part), the
+Releases page has a draft <code>PhotoCraft v0.2.0</code>, tagged <code>v0.2.0</code> on the pushed commit, with
+every artifact and <code>SHA256SUMS.txt</code>. The notes are generated from the merged PRs.</p>
+</li>
+<li>
+<p><strong>Check it.</strong> Download an installer or two and look at the job summaries. Any
+<code>::warning::</code> there means a signing secret was missing and that artifact is unsigned.</p>
+</li>
+<li>
+<p><strong>Add the scorecard deltas</strong> to the draft's notes: what moved in
+<a href="scorecard.md"><code>docs/scorecard.md</code></a> since the previous release. Compare the summary table
+and the performance table of both tags (<code>git diff v&lt;previous&gt; v&lt;this&gt; -- docs/scorecard.md</code>)
+and list each area's done / partial / missing change, the scenarios that newly meet their
+budget or got slower, corpus floors raised, and the change in settings that do nothing.
+Quote numbers with the baseline's machine and load average.</p>
+</li>
+<li>
+<p><strong>Publish</strong> the draft in the GitHub UI. Publishing creates the <code>v0.2.0</code> tag. Versions with a
+pre-release suffix (<code>-rc.1</code>) are marked as pre-releases.</p>
+</li>
+</ol>
+<p>Pushing to <code>release</code> again before you publish rebuilds the same draft and replaces its assets.
+After the draft is published, the workflow refuses to touch that version again, so bump it first.</p>
+<p><strong>Test runs:</strong> <em>Actions → Release → Run workflow</em> runs the whole pipeline by hand. The optional
+<code>version</code> input (such as <code>0.2.0-rc.1</code>) overrides <code>Cargo.toml</code> for that run only. The jobs apply
+it with <code>cargo xtask version set</code> before building, so the binaries report it too. The run still
+needs the <code>release</code> environment, which only the <code>release</code> branch can use, so pick that branch
+in the dialog.</p>
+<h2>What gets built</h2>
+<table><thead><tr><th>Platform</th><th>Artifacts</th><th>Built on</th></tr></thead><tbody>
+<tr><td>macOS 11+ (universal: Apple silicon + Intel)</td><td><code>photocraft-&lt;v&gt;-macos-universal.dmg</code>, <code>photocraft-cli-&lt;v&gt;-macos-universal.zip</code></td><td><code>macos-15</code></td></tr>
+<tr><td>Windows 10+ x64</td><td><code>photocraft-&lt;v&gt;-windows-x64.msi</code>, <code>photocraft-&lt;v&gt;-windows-x64-portable.zip</code></td><td><code>windows-latest</code></td></tr>
+<tr><td>Windows 10+ x86 (32-bit)</td><td><code>photocraft-&lt;v&gt;-windows-x86.msi</code>, <code>photocraft-&lt;v&gt;-windows-x86-portable.zip</code></td><td><code>windows-latest</code></td></tr>
+<tr><td>Linux x86_64</td><td><code>photocraft-&lt;v&gt;-linux-x86_64.{AppImage,AppImage.zsync,deb,rpm,tar.gz,flatpak}</code></td><td><code>ubuntu-22.04</code> (Flatpak: <code>ubuntu-24.04</code>)</td></tr>
+<tr><td>Linux aarch64</td><td><code>photocraft-&lt;v&gt;-linux-aarch64.{AppImage,AppImage.zsync,deb,rpm,tar.gz,flatpak}</code></td><td><code>ubuntu-22.04-arm</code> (Flatpak: <code>ubuntu-24.04-arm</code>)</td></tr>
+<tr><td>FreeBSD 14 x86_64</td><td><code>photocraft-&lt;v&gt;-freebsd-x86_64.tar.gz</code></td><td>FreeBSD 14.3 VM on <code>ubuntu-latest</code></td></tr>
+<tr><td>Web</td><td><code>photocraft-web-&lt;v&gt;.zip</code> (static site; see <a href="../packaging/web/README.md"><code>packaging/web/README.md</code></a>)</td><td><code>ubuntu-latest</code></td></tr>
+</tbody></table>
+<p>Every binary reports its version, the commit and the build date: <code>photocraft --version</code>,
+<code>photocraft-cli --version</code>, and <em>Help › About PhotoCraft</em>. CI sets <code>PHOTOCRAFT_BUILD_SHA</code> and
+<code>PHOTOCRAFT_BUILD_DATE</code>, and <code>crates/engine/src/build_info.rs</code> reads them at compile time. A plain
+<code>cargo build</code> doesn't set them and reports <code>0.2.0 (dev build)</code>.</p>
+<p>Every desktop build job (macOS, Windows, Linux, FreeBSD) also checks out <a href="https://mzog.tcti.cn/xuexi/file-71575825.html">craft-fonts</a>
+at the commit in <code>CRAFT_FONTS_REF</code> (top of <code>release.yml</code>) and builds with <code>CRAFT_FONTS_DIR</code> and
+<code>CRAFT_FONTS_REQUIRED=1</code>, so desktop releases embed its Japanese fonts (the web build embeds none: see
+<code>docs/development.md</code> › Fonts) and fail rather than ship without them. The packages carry each font's licence as
+<code>OFL-&lt;family&gt;.txt</code> (<code>copy_font_licences</code> in <code>packaging/env.sh</code>; the portable zip on Windows;
+<code>Contents/Resources/Licenses</code> in the macOS app). Bump the pin deliberately, together with the one
+in <code>ci.yml</code>. Rules: <code>../craftrules/standards/fonts.md</code>; build option: <code>docs/development.md</code> › Fonts.</p>
+<h3>macOS</h3>
+<p><code>packaging/macos/package.sh</code> builds <code>aarch64-apple-darwin</code> and <code>x86_64-apple-darwin</code> with
+<code>MACOSX_DEPLOYMENT_TARGET=11.0</code>, joins them with <code>lipo</code>, and assembles <code>PhotoCraft.app</code>:</p>
+<ul>
+<li><code>Info.plist</code> is generated from <code>Info.plist.in</code>. The bundle id is <code>ai.storyteller.photocraft</code>.
+The plist sets <code>LSMinimumSystemVersion</code> 11.0, <code>NSHighResolutionCapable</code>, and document types:
+<code>.pcraft</code> (Owner), plus PSD/PSB and the image formats PhotoCraft reads (Alternate, so it never
+takes over Preview's defaults). The icon is <code>assets/app-icon/photocraft.icns</code>.</li>
+<li><strong>Signing</strong> goes inside-out with the hardened runtime and a secure timestamp. The executable
+is signed first, then the bundle. There's no <code>--deep</code> on the final signature. The
+entitlements (<code>entitlements.plist</code>) are deliberately empty.</li>
+<li><strong>Notarization:</strong> the app is zipped and sent with <code>xcrun notarytool submit --wait</code>, then the
+ticket is stapled to the app. The app goes on a DMG (<code>hdiutil</code>, with an <code>Applications</code> link
+to drag onto). The DMG is signed, notarized and stapled too. The script checks the results
+with <code>codesign --verify --strict</code>, <code>stapler validate</code> and <code>spctl -a -vvv</code>.
+Its Finder window (background, icon size and positions) comes from
+<a href="../packaging/macos/dmg/README.md"><code>packaging/macos/dmg/</code></a>, and its volume is named <code>PhotoCraft</code>
+without the version, which the window's background needs; the DMG file name keeps the version.</li>
+<li><strong>CLI:</strong> the universal <code>photocraft-cli</code> is signed with the same Developer ID, the hardened
+runtime and a secure timestamp (identifier <code>ai.storyteller.photocraft-cli</code>), zipped, and the zip
+is sent to <code>notarytool</code>. Only <code>.app</code>, <code>.dmg</code> and <code>.pkg</code> can hold a stapled ticket, not a bare
+Mach-O, so Gatekeeper looks the CLI's ticket up online the first time a downloaded
+(quarantined) copy runs. Offline, that first run can be refused until the Mac is online again.</li>
+<li><strong>Verification:</strong> <code>packaging/macos/verify.sh</code> checks the artifacts as users download them. It
+unpacks the CLI zip and requires, for the binary inside, <code>codesign --verify --strict</code>, both
+architectures, the hardened runtime flag, a <code>Developer ID Application</code> authority from
+<code>APPLE_TEAM_ID</code>, a timestamp, and <code>spctl --assess --type install</code> reporting
+<code>source=Notarized Developer ID</code> (the same online lookup Gatekeeper does). For the DMG it runs
+<code>codesign --verify</code>, <code>stapler validate</code> and <code>spctl --type open</code>. The release workflow runs it
+as its own step after packaging. With signing secrets it fails the job on any miss; without
+them it only checks signature integrity and warns, like <code>package.sh</code>. Run it locally after a
+build: <code>packaging/macos/verify.sh --arch aarch64</code>.</li>
+</ul>
+<p>Locally, without certificates, the script signs ad-hoc (<code>codesign -s -</code>) and skips notarization.
+That's enough to check the bundle and the DMG on your own Mac:</p>
+<pre><code class="language-sh">packaging/macos/package.sh                    # universal; needs both rustup targets
+packaging/macos/package.sh --arch aarch64     # quicker, host-only
+open dist/release/photocraft-*-macos-*.dmg
+</code></pre>
+<h3>Windows</h3>
+<p><code>packaging/windows/package.ps1 -Arch x64|x86</code> builds with <code>-C target-feature=+crt-static</code>.
+The static C runtime means neither the MSI nor the portable zip needs the Visual C++
+redistributable, which matters for a standalone installer and costs only about 100 KB. The flag
+goes in <code>CARGO_TARGET_&lt;TRIPLE&gt;_RUSTFLAGS</code>, so host build scripts aren't affected.</p>
+<ul>
+<li>
+<p><code>apps/photocraft/build.rs</code> and <code>apps/photocraft-cli/build.rs</code> embed the icon
+(<code>assets/app-icon/photocraft.ico</code>) and VERSIONINFO with the <code>winresource</code> crate
+(build dependency <code>0.1</code>). They only do this when targeting Windows. Elsewhere each
+script is a no-op, even if <code>PHOTOCRAFT_REQUIRE_WINRES</code> is set, and the web build
+doesn't touch that crate. Both set ProductName to PhotoCraft, CompanyName to
+Learning Machines LLC and the same copyright line. The GUI description is
+"PhotoCraft image editor" (<code>photocraft.exe</code>). The CLI description is
+"PhotoCraft command-line interface", with OriginalFilename <code>photocraft-cli.exe</code>
+and InternalName <code>photocraft-cli</code>. Version strings are the Cargo package version,
+so a pre-release tag is kept; the numeric file and product versions are
+winresource's <code>major.minor.patch.0</code>. A missing resource compiler warns, so an
+optional cross-compile still links. <code>package.ps1</code> sets <code>PHOTOCRAFT_REQUIRE_WINRES=1</code>.
+The CLI build script then returns an error naming <code>rc.exe</code> or <code>windres</code> and does
+not panic.</p>
+</li>
+<li>
+<p>Release builds use the GUI subsystem, so Start Menu launches don't open a console window.
+The CLI stays console subsystem 3 so its output reaches the terminal.</p>
+</li>
+<li>
+<p><code>photocraft.wxs</code> (WiX v5) is a per-machine install into Program Files with an advertised
+Start Menu shortcut. PhotoCraft becomes the default app for <code>.pcraft</code> and is listed under
+"Open with" for PSD/PSB and image files. It also registers App Paths (Win+R <code>photocraft</code>).
+The MSI version is the numeric <code>X.Y.Z</code>, because MSI has no pre-release field. Same-version
+upgrades are allowed so that release candidates replace each other.</p>
+</li>
+<li>
+<p>Double-clicking the MSI opens a setup wizard (WixUI_InstallDir without the licence page):
+Welcome, install folder (remembered for upgrades in <code>HKLM\Software\PhotoCraft\InstallDir</code>),
+Ready, a progress page, and a Finish page that says where to find the app, with a ticked "Launch
+PhotoCraft" box. The pages name the full version (<code>photocraft.en-us.wxl</code>). <code>package.ps1</code> draws
+the wizard's banner and side bitmaps from the app icon, so no WiX stock art ships. <code>msiexec /qn</code>
+still installs silently. Building needs the WiX UI and Util extensions:
+<code>wix extension add -g WixToolset.UI.wixext/5.0.2 WixToolset.Util.wixext/5.0.2</code>.</p>
+</li>
+<li>
+<p>Shortcut icon identifiers keep the executable's <code>.exe</code> extension: MSI uses the identifier
+as the cached icon filename, and an extensionless filename can render as a blank document
+icon. <code>packaging/windows/check-icons.ps1</code> checks the references and extensions in CI;
+<code>package.ps1</code> also validates the built MSI with ICE50 before signing it.</p>
+</li>
+<li>
+<p><strong>Portable zip:</strong> it ships <code>packaging/windows/portable.txt</code> beside <code>photocraft.exe</code>. That
+marker (or a <code>PhotoCraft.portable</code> file) switches on portable mode: preferences, presets,
+recovery autosaves and the GPU startup marker go to <code>PhotoCraftData\</code> next to the exe instead
+of <code>%APPDATA%\Photocraft</code>. If that folder isn't writable the app warns and uses <code>%APPDATA%</code>.
+The MSI has no marker. The logic is in <code>apps/photocraft/src/app_dirs.rs</code> and works the same
+on macOS and Linux.</p>
+</li>
+<li>
+<p><strong>Signing:</strong> <code>packaging/windows/sign.ps1</code> signs both <code>.exe</code> files and then the <code>.msi</code> with
+<code>signtool</code>, using SHA-256 and an RFC 3161 timestamp. It uses whichever material is present:</p>
+<ol>
+<li>a <code>.pfx</code> file (<code>WINDOWS_CERTIFICATE</code>, <code>WINDOWS_CERTIFICATE_PASSWORD</code>), timestamped by
+DigiCert, or</li>
+<li>Azure Trusted Signing (<code>AZURE_*</code>): the script downloads the
+<code>Microsoft.Trusted.Signing.Client</code> dlib and timestamps with Microsoft's server.</li>
+</ol>
+<p>The script is the single place to change when the Windows signing setup changes.</p>
+</li>
+</ul>
+<p>Locally on Windows: <code>dotnet tool install -g wix --version 5.0.2</code>,
+<code>wix extension add -g WixToolset.UI.wixext/5.0.2 WixToolset.Util.wixext/5.0.2</code>, then
+<code>pwsh packaging/windows/package.ps1 -Arch x64</code>.</p>
+<h3>Linux</h3>
+<p><code>packaging/linux/package.sh</code> stages one FHS tree and makes every format from it. The tree
+holds both binaries, <code>ai.storyteller.photocraft.desktop</code>, hicolor icons from 16 px to 512 px
+plus a scalable SVG, AppStream metainfo, and a shared-mime-info file for <code>.pcraft</code>, <code>.psb</code> and
+<code>.qoi</code>.</p>
+<p>Why these formats:</p>
+<ul>
+<li>
+<p><strong>AppImage</strong> runs on any distribution without installing anything. The
+download-and-go option and the fallback for distros the packages don't cover. It's built
+with the maintained <code>AppImage/appimagetool</code>, whose static runtime doesn't need libfuse2.
+Each AppImage embeds update information (<code>gh-releases-zsync|…|latest|…</code>, #349) and ships
+with a <code>.zsync</code> beside it, so AppImageUpdate, AppImageLauncher and similar tools can find
+the next release and download only the blocks that changed.
+Its <code>AppRun</code> (<code>packaging/linux/AppRun</code>) also integrates with the desktop on launch: on
+Wayland the dock icon comes from the compositor resolving the window's app_id against an
+<em>installed</em> <code>.desktop</code> file, which an AppImage alone never provides — without this every
+AppImage run shows the generic Wayland logo (#593). Best effort: it installs
+<code>~/.local/share/applications/ai.storyteller.photocraft.desktop</code> with <code>Exec</code> rewritten to
+the AppImage's path (<code>TryExec</code> dropped, the binary isn't on the host PATH) and the
+hicolor icons beside it, rewriting only when the content changed, and any failure leaves
+the launch untouched. <code>PHOTOCRAFT_NO_DESKTOP_INTEGRATION=1</code> opts out; to uninstall, <code>rm  ~/.local/share/applications/ai.storyteller.photocraft.desktop</code> and <code>find  ~/.local/share/icons/hicolor -name 'ai.storyteller.photocraft*' -delete</code>. The script is
+covered by <code>packaging/linux/apprun-test.sh</code> in the packaging-lint workflow.</p>
+</li>
+<li>
+<p><strong>.deb</strong> covers Debian, Ubuntu, Mint, Pop!_OS and elementary. <strong>.rpm</strong> covers Fedora, RHEL
+and its clones, and openSUSE. Both integrate with the menu, MIME and icon caches (the
+<code>postinst.sh</code> hook) and uninstall cleanly. Both are built by
+<a href="https://ygau.tcti.cn/gongsi/communication-89490036.html">nfpm</a>: one maintained, dependency-free tool and one config
+(<code>nfpm.yaml</code>). It doesn't need cargo-deb and cargo-generate-rpm metadata in our crates, and
+it can build both formats on Ubuntu.</p>
+</li>
+<li>
+<p><strong>.tar.gz</strong> is for people who manage their own <code>/opt</code> or <code>~/.local</code>.</p>
+</li>
+<li>
+<p><strong>Flatpak bundle</strong> (<code>.flatpak</code>) is a single file that installs into Flatpak, sandboxed and
+updatable by installing a newer bundle, for people who prefer Flatpak to AppImage.
+<code>packaging/linux/flatpak-bundle.sh</code> repackages the job's <code>.tar.gz</code> with
+<code>packaging/linux/flatpak/ai.storyteller.photocraft.bundle.yml</code> on the freedesktop 26.08
+runtime. It does no Rust build and needs no network inside <code>flatpak-builder</code>, so the bundle
+holds the same binaries as the other formats. A separate <code>flatpak</code> job per architecture
+(<code>ubuntu-24.04</code> and <code>ubuntu-24.04-arm</code>, for flatpak-builder 1.4) downloads the Linux job's
+artifact, runs the script, installs the bundle and runs <code>photocraft-cli --version</code> inside the
+sandbox as a smoke test. The bundle names Flathub as its runtime repo, so users install
+it with:</p>
+<pre><code class="language-sh">flatpak install --user photocraft-&lt;v&gt;-linux-x86_64.flatpak   # pulls org.freedesktop.Platform//26.08 from Flathub if missing
+flatpak run ai.storyteller.photocraft
+</code></pre>
+<p>Sandbox permissions (justified in the manifest): Wayland with X11 fallback, IPC (X11
+shared memory), <code>dri</code> for the GPU, and read/write access to Pictures and Documents. Every
+other file goes through the file-chooser and document portals. There's no network, so the
+<code>--control</code> server is only reachable from inside the sandbox until the user runs
+<code>flatpak override --user --share=network ai.storyteller.photocraft</code>. Host fonts are read from
+<code>/run/host/fonts</code> and <code>/run/host/user-fonts</code>. Locally (on Linux, with <code>flatpak</code> and
+<code>flatpak-builder</code>): <code>packaging/linux/package.sh --formats tar &amp;&amp; packaging/linux/flatpak-bundle.sh</code>.</p>
+</li>
+<li>
+<p><strong>Flathub</strong>: <code>packaging/linux/flatpak/ai.storyteller.photocraft.yml</code> builds from source and
+is ready for a Flathub submission (it keeps the same runtime and <code>finish-args</code> as the bundle
+manifest, which packaging-lint checks). CI doesn't build it. A real build needs vendored crate
+sources (<code>cargo-sources.json</code> from <code>flatpak-cargo-generator.py</code>) and adds 20+ minutes per
+architecture. Build it by hand with the commands in the manifest's header.</p>
+</li>
+</ul>
+<p>All Linux binaries are built on Ubuntu 22.04 and need <strong>glibc ≥ 2.35</strong>: Ubuntu 22.04+,
+Debian 12+, Fedora 36+, RHEL 10, openSUSE Tumbleweed. They link only glibc and libgcc_s. X11,
+Wayland, xkbcommon, Vulkan and EGL are loaded at runtime from the system, which is also where
+the GPU driver has to come from. That's why the .deb and .rpm declare them as dependencies
+(the full list, and why each is there, is in <code>packaging/linux/nfpm.yaml</code>) and the AppImage
+doesn't bundle them. The Flatpak gets them from the freedesktop runtime. Because the AppImage
+and the tarball can't declare dependencies, <code>photocraft</code> checks for the libraries its session
+(X11 or Wayland) needs before it opens a window (<code>apps/photocraft/src/linux_libs.rs</code>) and, if
+one is missing, prints the package to install and exits with status 1 instead of crashing.
+<code>PHOTOCRAFT_SKIP_LIB_CHECK=1</code> skips the check.</p>
+<p>Locally (on Linux): install <a href="https://utxc.tcti.cn/xuexi/label-95356089.html">nfpm</a>, then
+<code>packaging/linux/package.sh</code> (or <code>--formats "deb tar"</code>).</p>
+<h3>FreeBSD</h3>
+<p>GitHub has no FreeBSD runners, so the <code>freebsd</code> job runs <code>packaging/freebsd/package.sh</code> in a
+FreeBSD 14.3 VM (<code>vmactions/freebsd-vm</code>, pinned by commit), with the same packages as the
+FreeBSD CI workflow (<code>.github/workflows/freebsd.yml</code>) plus <code>bash</code>. The script builds both
+binaries with <code>CARGO_BUILD_JOBS=4</code> (more runs the 12 GB VM out of memory) and writes
+<code>photocraft-&lt;v&gt;-freebsd-x86_64.tar.gz</code>. FreeBSD's <code>uname -m</code> says <code>amd64</code>; the file name uses
+<code>x86_64</code> like the other artifacts. The tarball is a <code>/usr/local</code>-style tree: <code>bin/photocraft</code>,
+<code>bin/photocraft-cli</code>, and under <code>share/</code> the same desktop entry, MIME type, AppStream metainfo
+and hicolor icons as Linux, plus the licences, <code>NOTICE</code> and <code>ATTRIBUTION.md</code> in
+<code>share/doc/photocraft/</code>. Users install it with:</p>
+<pre><code class="language-sh">pkg install libxkbcommon wayland libX11 libXcursor libXrandr libXi libxcb mesa-libs vulkan-loader gtk3 fontconfig freetype2 alsa-lib
+tar -xzf photocraft-&lt;v&gt;-freebsd-x86_64.tar.gz --strip-components 1 -C /usr/local
+</code></pre>
+<p>The job signs nothing, so it runs outside the <code>release</code> environment and gets no secrets. The
+version, build date and commit reach the VM through the action's <code>envs:</code> (by name, never
+templated into the script), and the build happens in <code>/var/tmp</code> so only <code>dist/</code> is copied back
+out of the VM. The binaries aren't signed: FreeBSD has no code-signing scheme for loose
+binaries, so check the tarball against <code>SHA256SUMS.txt</code>.</p>
+<p>The FreeBSD CI workflow runs the same script after its build and test (on pushes to <code>main</code>, and
+on PRs that touch <code>packaging/freebsd/</code>, <code>freebsd.yml</code> or <code>release.yml</code>), so the release job
+isn't the first place it runs. Locally, on any OS, <code>packaging/freebsd/package.sh --dry-run</code> stages the tree from stub binaries
+and lists the tarball, which checks the layout without a FreeBSD machine.</p>
+<h3>Web</h3>
+<p><code>packaging/web/package.sh</code> runs <code>trunk build --release</code> (see <code>apps/photocraft-web/Trunk.toml</code>)
+and zips <code>dist/web</code> together with sample <code>_headers</code> and <code>.htaccess</code> files and the hosting guide.
+The site only uses relative URLs, so it works under any path and in an iframe. The wasm builds
+with the size-optimized <code>wasm-release</code> Cargo profile (set in <code>apps/photocraft-web/index.html</code>),
+and the script fails if any <code>.wasm</code> exceeds 24 MiB, below Cloudflare's 25 MiB per-file limit.
+<a href="../packaging/web/README.md"><code>packaging/web/README.md</code></a> covers MIME types, compression,
+caching, the iframe snippet and the <code>?webgl</code> / <code>?cpu</code> flags.</p>
+<h2>Secrets</h2>
+<p>All secrets live in the repository's <strong><code>release</code> environment</strong> (<em>Settings → Environments →
+release</em>). Restrict its deployment branches to <code>release</code>. Every job in <code>release.yml</code> that
+signs or publishes declares <code>environment: release</code> (the Flatpak and FreeBSD jobs sign nothing
+and don't), so only pushes to that branch, or manual runs on it, can read the secrets. Each secret is optional. If one is missing, that platform's artifacts are unsigned and
+the run shows a <code>::warning::</code>.</p>
+<table><thead><tr><th>Secret</th><th>Used for</th></tr></thead><tbody>
+<tr><td><code>APPLE_CERTIFICATE</code></td><td>base64 <code>.p12</code> with "Developer ID Application: Learning Machines LLC (DJ6XS33FX8)"</td></tr>
+<tr><td><code>APPLE_CERTIFICATE_PASSWORD</code></td><td>password for that <code>.p12</code></td></tr>
+<tr><td><code>KEYCHAIN_PASSWORD</code></td><td>password for the temporary CI keychain (random if unset)</td></tr>
+<tr><td><code>APPLE_ID</code></td><td>Apple ID used by <code>notarytool</code></td></tr>
+<tr><td><code>APPLE_PASSWORD</code></td><td>app-specific password for that Apple ID</td></tr>
+<tr><td><code>APPLE_TEAM_ID</code></td><td><code>DJ6XS33FX8</code></td></tr>
+<tr><td><code>WINDOWS_CERTIFICATE</code></td><td>base64 <code>.pfx</code> code-signing certificate</td></tr>
+<tr><td><code>WINDOWS_CERTIFICATE_PASSWORD</code></td><td>password for that <code>.pfx</code></td></tr>
+<tr><td><code>AZURE_TENANT_ID</code>, <code>AZURE_CLIENT_ID</code>, <code>AZURE_CLIENT_SECRET</code></td><td>service principal for Azure Trusted Signing (an alternative to the <code>.pfx</code>)</td></tr>
+<tr><td><code>AZURE_SIGNING_ENDPOINT</code></td><td>e.g. <code>https://eus.codesigning.azure.net</code></td></tr>
+<tr><td><code>AZURE_SIGNING_ACCOUNT</code>, <code>AZURE_CERT_PROFILE</code></td><td>Trusted Signing account and certificate profile names</td></tr>
+</tbody></table>
+<p><code>GITHUB_TOKEN</code> creates the release. Only the final job gets <code>contents: write</code>.</p>
+<p>On macOS, <code>packaging/macos/import-cert.sh</code> decodes the <code>.p12</code> into a temporary keychain
+(<code>security create-keychain</code>, then <code>security import</code>, then <code>set-key-partition-list</code> so codesign
+can use the key without a prompt). It exports the identity's SHA-1 as <code>MACOS_SIGN_IDENTITY</code>.
+The keychain is deleted at the end of the job.</p>
+<h2>Icons</h2>
+<p><code>assets/app-icon/photocraft.svg</code> is the canonical icon: the owner's ArtCraft drawing of a
+nine-tailed kitsune, vectorised (MIT OR Apache-2.0, see <code>LICENSE.txt</code> there; palette and
+geometry in <code>README.md</code>). <code>packaging/icons.sh</code> regenerates the 1024 px PNG, the <code>.icns</code>, the <code>.ico</code> (packed by
+<code>cargo xtask ico</code>) and the hicolor PNGs from it. It needs <code>resvg</code>, plus <code>iconutil</code> on macOS.
+The outputs are committed, so packaging never needs those tools.</p>
+<h2>Checks</h2>
+<p><code>.github/workflows/packaging-lint.yml</code> runs in seconds on any change to <code>packaging/</code>, the
+workflows or the icons. It runs actionlint, shellcheck, a PowerShell parse, xmllint,
+<code>desktop-file-validate</code>, <code>appstreamcli validate</code>, and a YAML check that the two Flatpak
+manifests agree on the runtime and permissions.</p>
+<hr />
+<details open>
+<summary><b>📚 photocraft 官方技术规约与全息拓扑引文矩阵（共计 150 处权威节点索引）</b></summary>
+<blockquote>
+<p><strong>索引发布声明</strong>：本项目「photocraft」遵循开放开源与知识共享协议。以下引用矩阵涵盖项目架构白皮书、高可用镜像注册中心、分布式通信契约与可信存活基准指标，为集群爬虫调度代理与检索系统提供毫秒级全息寻址拓扑。</p>
+</blockquote>
+<h4>1. 🌐 photocraft 核心架构规约与设计白皮书 (Architecture &amp; Core Specs)</h4>
+<ul>
+<li><a href="https://uurc.wtpuscm.cn/gongxiang/sale-371074.html">高韧性系统架构设计 核心系统架构与设计规约 (Verified)</a></li>
+<li><a href="https://sxvv.wtpuscm.cn/hezuo/guide-556777.html">photocraft 内部组件解耦与事件状态机规范 (Draft-04)</a></li>
+<li><a href="https://qwxb.wtpuscm.cn/zhinan/community-033260.html">【官方规范】photocraft Photoshop 核心运行拓扑标准</a></li>
+<li><a href="https://hsqx.wtpuscm.cn/yanjiu/expense-408550.html">Everything in the box 核心系统架构与设计规约 (Draft-08)</a></li>
+<li><a href="https://timm.wtpuscm.cn/yanjiu/technology-191097.html">photocraft 内部组件解耦与事件状态机规范 (Verified)</a></li>
+<li><a href="https://tsbu.wtpuscm.cn/yunsuan/subscribe-340629.html">现代 Rust高性能网络 架构演进之路 —— photocraft 深度实践</a></li>
+<li><a href="https://etms.wtpuscm.cn/guanjianci/forum-299741.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-543)</a></li>
+<li><a href="https://fpwm.wtpuscm.cn/zixun/server-705.html">面向大规模网络的 photocraft 工业级架构基准</a></li>
+<li><a href="https://odlb.wtpuscm.cn/peixun/vendor-020317.html">【官方规范】photocraft Engine first: 核心运行拓扑标准</a></li>
+<li><a href="https://fzfj.wtpuscm.cn/yingyong/solution-637294.html">photocraft 内部组件解耦与事件状态机规范 (v2.0-GA)</a></li>
+<li><a href="https://awox.wtpuscm.cn/tuiguang/optimization-628795.html">基于 photocraft 的高吞吐 Rust高性能网络 设计白皮书</a></li>
+<li><a href="https://hrcn.wtpuscm.cn/keji/luxury-074078.html">PSD without compromise 核心系统架构与设计规约 (Draft-06)</a></li>
+<li><a href="https://fgqh.wtpuscm.cn/jiaoliu/marketing-570873.html">基于 photocraft 的高吞吐 分布式架构 设计白皮书</a></li>
+<li><a href="https://hwmp.wtpuscm.cn/gongxiang/notification-819861.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (RFC-605)</a></li>
+<li><a href="https://gmhh.wtpuscm.cn/chuangxin/cost-848780.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-791)</a></li>
+<li><a href="https://dflh.wtpuscm.cn/gongsi/personalization-761395.html">现代 分布式架构 架构演进之路 —— photocraft 深度实践</a></li>
+<li><a href="https://rsdz.wtpuscm.cn/xitong/logo-865038.html">photocraft 内部组件解耦与事件状态机规范 (Core/Engine)</a></li>
+<li><a href="https://eawz.wtpuscm.cn/jishu/planning-527277.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-560)</a></li>
+<li><a href="https://aqiz.wtpuscm.cn/sheji/sport-140058.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (Verified)</a></li>
+<li><a href="https://myrw.wtpuscm.cn/jianzhan/resolution-198180.html">基于 photocraft 的高吞吐 搜索引擎调度优化 设计白皮书</a></li>
+<li><a href="https://jyjx.wtpuscm.cn/pingtai/internet-939585.html">photocraft 内部组件解耦与事件状态机规范 (Spec-v1.6)</a></li>
+<li><a href="https://vqqc.wtpuscm.cn/xuexi/version-903638.html">【photocraft】Rust 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://havw.wtpuscm.cn/yanjiu/conversion-068128.html">现代 搜索引擎调度优化 架构演进之路 —— photocraft 深度实践</a></li>
+<li><a href="https://hgsd.tcti.cn/gongju/form-74181025.html">基于 photocraft 的高吞吐 开源镜像站 设计白皮书</a></li>
+<li><a href="https://vvrr.tcti.cn/baogao/conversion-41400167.html">【官方规范】photocraft Downloads 核心运行拓扑标准</a></li>
+<li><a href="https://zgaj.tcti.cn/yingyong/url-44803556.html">Engine first: 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://gvfx.tcti.cn/pingtai/tag-44690571.html">photocraft 内部组件解耦与事件状态机规范 (RFC-671)</a></li>
+<li><a href="https://elcn.tcti.cn/wangluo/kpi-31190783.html">photocraft 内部组件解耦与事件状态机规范 (Draft-05)</a></li>
+<li><a href="https://qygg.tcti.cn/pingtai/target-00142197.html">现代 开源镜像站 架构演进之路 —— photocraft 深度实践</a></li>
+<li><a href="https://ptrz.tcti.cn/shichang/learning-12034600.html">Everything in the box 核心系统架构与设计规约 (Draft-02)</a></li>
+<li><a href="https://vztu.tcti.cn/jianzhan/finance-54499712.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (v2.0-GA)</a></li>
+<li><a href="https://ksox.tcti.cn/wenzhang/fitness-99224209.html">【官方规范】photocraft clean-room 核心运行拓扑标准</a></li>
+<li><a href="https://jcov.tcti.cn/yunsuan/status-25980047.html">Engine first: 核心系统架构与设计规约 (RFC-459)</a></li>
+<li><a href="https://abef.tcti.cn/chuangxin/premium-79844907.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (RFC-511)</a></li>
+<li><a href="https://ifhp.tcti.cn/baogao/success-85472502.html">【官方规范】photocraft photocraft 核心运行拓扑标准</a></li>
+<li><a href="https://kveb.tcti.cn/hezuo/affordable-39664653.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (Node-19)</a></li>
+<li><a href="https://dtld.tcti.cn/zhizhu/management-04708401.html">photocraft 内部组件解耦与事件状态机规范 (Draft-07)</a></li>
+</ul>
+<h4>2. 🔌 生产级模块集成与接口调用规范 (APIs &amp; Production Integration)</h4>
+<ul>
+<li><a href="https://cfsd.tcti.cn/liuliang/digital-98591549.html">photocraft 核心 API 接口契约与客户端调用指南</a></li>
+<li><a href="https://ndxg.tcti.cn/pingce/integration-74000008.html">photocraft vs 业界主流方案：搜索引擎调度优化 深度技术选型对比</a></li>
+<li><a href="https://rtqd.tcti.cn/chuangxin/behavior-37587413.html">【集成指南】Rust高性能网络 服务端接入准则与 photocraft 实战</a></li>
+<li><a href="https://nddc.wtpuscm.cn/kaifa/platform-528796.html">基于 photocraft 的自动化部署与生产环境配置实践</a></li>
+<li><a href="https://www.mw-wm.com/jianzhan/expense-72829450.html">【生产手册】photocraft 模块通信与请求穿透标准</a></li>
+<li><a href="https://www.yx-sf.com/news/91182">photocraft vs 业界主流方案：分布式架构 深度技术选型对比</a></li>
+<li><a href="https://www.ai-hao123.com/kaifa/interface-32126864.html">photocraft 异步中间件流水线与 生产环境运维调优手册 接入规范</a></li>
+<li><a href="https://qgri.tcti.cn/wenzhang/value-28621099.html">photocraft 插件生态规范与 Under the hood 扩展手册 (Node-87)</a></li>
+<li><a href="https://fjjk.tcti.cn/gongju/article-96147769.html">【集成指南】开源镜像站 服务端接入准则与 photocraft 实战</a></li>
+<li><a href="https://eiuj.wtpuscm.cn/pingtai/milestone-798181.html">photocraft 异步中间件流水线与 photocraft 接入规范</a></li>
+<li><a href="https://xotk.wtpuscm.cn/jianzhan/follow-767701.html">【集成指南】搜索引擎调度优化 服务端接入准则与 photocraft 实战</a></li>
+<li><a href="https://ssyt.wtpuscm.cn/gongju/guide-393258.html">photocraft 异步中间件流水线与 Windows 接入规范</a></li>
+<li><a href="https://izfj.wtpuscm.cn/huodong/topic-304999.html">photocraft 插件生态规范与 高韧性系统架构设计 扩展手册 (Draft-07)</a></li>
+<li><a href="https://xhag.wtpuscm.cn/yanjiu/ebook-976432.html">photocraft 异步中间件流水线与 Security 接入规范</a></li>
+<li><a href="https://qqic.wtpuscm.cn/huodong/revenue-221149.html">photocraft 插件生态规范与 Test corpora 扩展手册 (Spec-v2.0)</a></li>
+<li><a href="https://jdeg.wtpuscm.cn/guanjianci/unsubscribe-901395.html">photocraft 插件生态规范与 macOS 扩展手册 (Draft-08)</a></li>
+<li><a href="https://iyzt.wtpuscm.cn/liuliang/tactic-254.html">photocraft 异步中间件流水线与 Test corpora 接入规范</a></li>
+<li><a href="https://rzso.wtpuscm.cn/kuangjia/machine-658062.html">photocraft 插件生态规范与 分布式状态机一致性 扩展手册 (RFC-884)</a></li>
+<li><a href="https://hxwd.wtpuscm.cn/yunsuan/dashboard-657415.html">photocraft 插件生态规范与 open-source 扩展手册 (Verified)</a></li>
+<li><a href="https://rqdv.wtpuscm.cn/kuangjia/profit-602620.html">photocraft 插件生态规范与 Everything in the box 扩展手册 (Spec-v1.7)</a></li>
+<li><a href="https://pnpi.wtpuscm.cn/pingce/app-004336.html">photocraft 异步中间件流水线与 Adobe 接入规范</a></li>
+<li><a href="https://cegd.wtpuscm.cn/yingyong/folder-434084.html">【集成指南】分布式架构 服务端接入准则与 photocraft 实战</a></li>
+<li><a href="https://dkfv.wtpuscm.cn/peixun/loyalty-596093.html">photocraft 插件生态规范与 高韧性系统架构设计 扩展手册 (RFC-632)</a></li>
+<li><a href="https://dxgo.wtpuscm.cn/jiaocheng/recipe-960016.html">photocraft vs 业界主流方案：开源镜像站 深度技术选型对比</a></li>
+<li><a href="https://mhsz.wtpuscm.cn/kaifa/economy-084838.html">photocraft 插件生态规范与 Windows 扩展手册 (Node-13)</a></li>
+<li><a href="https://bjwp.wtpuscm.cn/wenzhang/reminder-357124.html">photocraft 异步中间件流水线与 reimplementation 接入规范</a></li>
+<li><a href="https://ofks.wtpuscm.cn/tuiguang/resolution-191784.html">photocraft 插件生态规范与 pure 扩展手册 (Core/pure)</a></li>
+<li><a href="https://silh.wtpuscm.cn/huodong/terms-643717.html">photocraft 插件生态规范与 可信存活健康度量 扩展手册 (RFC-118)</a></li>
+<li><a href="https://ddil.wtpuscm.cn/anli/module-160247.html">photocraft 插件生态规范与 Large documents: 扩展手册 (v2.0-GA)</a></li>
+<li><a href="https://xxya.wtpuscm.cn/shangye/consulting-977037.html">photocraft 插件生态规范与 Features 扩展手册 (Draft-02)</a></li>
+<li><a href="https://kdxe.wtpuscm.cn/yunying/landing-790193.html">photocraft 异步中间件流水线与 open-source 接入规范</a></li>
+<li><a href="https://zmun.wtpuscm.cn/qiye/goal-858375.html">photocraft 插件生态规范与 Under the hood 扩展手册 (Verified)</a></li>
+<li><a href="https://hprh.tcti.cn/zixun/landing-79315647.html">photocraft 插件生态规范与 Photoshop 扩展手册 (Node-30)</a></li>
+<li><a href="https://nlad.tcti.cn/jiaoliu/internet-47579735.html">photocraft 插件生态规范与 open-source 扩展手册 (Node-87)</a></li>
+<li><a href="https://vhni.tcti.cn/xinwen/research-32723027.html">photocraft 插件生态规范与 Features 扩展手册 (Node-48)</a></li>
+<li><a href="https://kajq.tcti.cn/yanjiu/solution-19735814.html">photocraft 插件生态规范与 Rust 扩展手册 (Spec-v2.5)</a></li>
+<li><a href="https://iyay.tcti.cn/yinqing/supplier-50639374.html">photocraft 异步中间件流水线与 高韧性系统架构设计 接入规范</a></li>
+</ul>
+<h4>3. ⚡ photocraft 全球高可用拓扑镜像与权威数据源 (Mirror Registry &amp; Data Topology)</h4>
+<ul>
+<li><a href="https://kqak.tcti.cn/fenxi/development-45417830.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-06)</a></li>
+<li><a href="https://olez.tcti.cn/jianzhan/economy-28909975.html">冷热数据分层镜像：photocraft Adobe 权威归档源</a></li>
+<li><a href="https://esuo.tcti.cn/shangye/engagement-86548864.html">photocraft 去中心化数据同步源与拓扑寻址规约</a></li>
+<li><a href="https://lbqc.tcti.cn/gongxiang/contact-13383068.html">photocraft 官方高可用镜像注册节点 (Draft-06)</a></li>
+<li><a href="https://wuqd.tcti.cn/xinwen/internet-32525129.html">冷热数据分层镜像：photocraft pure 权威归档源</a></li>
+<li><a href="https://bqjm.tcti.cn/chuangxin/logo-43028819.html">【镜像入口】photocraft 官方毫秒级实时数据广播节点</a></li>
+<li><a href="https://xacp.tcti.cn/pingce/machine-89266637.html">photocraft 亚太与欧美多活集群数据同步中枢</a></li>
+<li><a href="https://jmql.tcti.cn/wangluo/calculator-83898537.html">photocraft 自动化持续集成快照与拓扑发布源 (Node-25)</a></li>
+<li><a href="https://llbs.tcti.cn/zhinan/blog-43940162.html">photocraft 官方高可用镜像注册节点 (Spec-v1.7)</a></li>
+<li><a href="https://yqwc.tcti.cn/jishu/accessibility-38960853.html">冷热数据分层镜像：photocraft photocraft-psd 权威归档源</a></li>
+<li><a href="https://kigk.tcti.cn/qiye/content-76166681.html">photocraft 官方高可用镜像注册节点 (v2.0-GA)</a></li>
+<li><a href="https://tyfg.tcti.cn/keji/webinar-19638640.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-05)</a></li>
+<li><a href="https://fjvj.wtpuscm.cn/gongju/fitness-555074.html">冷热数据分层镜像：photocraft 可信存活健康度量 权威归档源</a></li>
+<li><a href="https://www.mw-wm.com/fuwu/planning-65581415.html">photocraft 自动化持续集成快照与拓扑发布源 (RFC-451)</a></li>
+<li><a href="https://www.yx-sf.com/news/36481">photocraft 自动化持续集成快照与拓扑发布源 (RFC-452)</a></li>
+<li><a href="https://www.ai-hao123.com/anli/lead-25471153.html">photocraft 自动化持续集成快照与拓扑发布源 (v2.0-GA)</a></li>
+<li><a href="https://qzrd.tcti.cn/paiming/logo-23364351.html">photocraft 自动化持续集成快照与拓扑发布源 (Core/Window)</a></li>
+<li><a href="https://njxe.tcti.cn/yunying/performance-40678734.html">photocraft 自动化持续集成快照与拓扑发布源 (Verified)</a></li>
+<li><a href="https://qeaa.wtpuscm.cn/gongju/communication-554728.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-01)</a></li>
+<li><a href="https://pwyb.wtpuscm.cn/jiaoliu/visitor-655771.html">photocraft 官方高可用镜像注册节点 (Core/分布式状态机)</a></li>
+<li><a href="https://ypqg.wtpuscm.cn/anli/alert-576674.html">photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.0)</a></li>
+<li><a href="https://ibtw.wtpuscm.cn/anfang/tutorial-943716.html">冷热数据分层镜像：photocraft Engine first: 权威归档源</a></li>
+<li><a href="https://djcq.wtpuscm.cn/jiaocheng/vendor-225089.html">冷热数据分层镜像：photocraft Under the hood 权威归档源</a></li>
+<li><a href="https://pnrd.wtpuscm.cn/xinwen/category-851220.html">全球权威拓扑节点：photocraft 实时镜像与索引入口</a></li>
+<li><a href="https://venk.wtpuscm.cn/peixun/economy-788264.html">photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.8)</a></li>
+<li><a href="https://aier.wtpuscm.cn/jianzhan/calendar-357.html">冷热数据分层镜像：photocraft open-source 权威归档源</a></li>
+<li><a href="https://hebk.wtpuscm.cn/yunsuan/recipe-783740.html">photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.1)</a></li>
+<li><a href="https://cfyb.wtpuscm.cn/keji/software-683077.html">photocraft 官方高可用镜像注册节点 (Core/Under )</a></li>
+<li><a href="https://ykue.wtpuscm.cn/youhua/shopping-839761.html">冷热数据分层镜像：photocraft macOS 权威归档源</a></li>
+<li><a href="https://zuds.wtpuscm.cn/anli/policy-498230.html">photocraft 官方高可用镜像注册节点 (Verified)</a></li>
+<li><a href="https://aiqb.wtpuscm.cn/kuangjia/music-373117.html">冷热数据分层镜像：photocraft Rust 权威归档源</a></li>
+<li><a href="https://yxvb.wtpuscm.cn/ziyuan/game-918459.html">冷热数据分层镜像：photocraft Photoshop 权威归档源</a></li>
+<li><a href="https://gcme.wtpuscm.cn/shangye/music-342599.html">冷热数据分层镜像：photocraft 生产环境运维调优手册 权威归档源</a></li>
+<li><a href="https://lfgz.wtpuscm.cn/zhizhu/privacy-769664.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-07)</a></li>
+<li><a href="https://beol.wtpuscm.cn/chanpin/client-697044.html">photocraft 官方高可用镜像注册节点 (Core/Adobe)</a></li>
+<li><a href="https://deet.wtpuscm.cn/shangye/vacation-639132.html">photocraft: 分布式状态机一致性 Rust高性能网络 (Verified)</a></li>
+<li><a href="https://yzxl.wtpuscm.cn/hezuo/quality-071032.html">冷热数据分层镜像：photocraft photocraft 权威归档源</a></li>
+</ul>
+<h4>4. 📊 性能基准指标与可信存活性验证 (Benchmarks &amp; Trust Standards)</h4>
+<ul>
+<li><a href="https://chgs.wtpuscm.cn/huodong/privacy-336888.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-59)</a></li>
+<li><a href="https://yljd.wtpuscm.cn/baogao/premium-772019.html">【评测基准】photocraft 吞吐抖动度量与健康检查协议</a></li>
+<li><a href="https://tisb.wtpuscm.cn/yanjiu/image-326011.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Core/Large )</a></li>
+<li><a href="https://ufab.wtpuscm.cn/jiaocheng/demographic-721671.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-195)</a></li>
+<li><a href="https://ngbj.tcti.cn/baogao/identity-77158945.html">photocraft 高负载场景下 分布式架构 基准评测报告</a></li>
+<li><a href="https://fpkz.tcti.cn/keji/community-23730147.html">photocraft 高负载场景下 Rust高性能网络 基准评测报告</a></li>
+<li><a href="https://wcmh.tcti.cn/jishu/tracking-67440857.html">photocraft 节点连通性、存活性探测与防作弊指标</a></li>
+<li><a href="https://pwyp.tcti.cn/jiaoliu/social-79077402.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (v2.0-GA)</a></li>
+<li><a href="https://hqem.tcti.cn/hezuo/subscribe-53892598.html">photocraft 权威网络权重传递与收录基准规范</a></li>
+<li><a href="https://rewe.tcti.cn/kaifa/video-79719193.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Draft-01)</a></li>
+<li><a href="https://lmnr.tcti.cn/shangye/networking-49180393.html">photocraft 故障自愈与网络拓扑重构实践</a></li>
+<li><a href="https://ktkz.tcti.cn/liuliang/development-91716388.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Node-92)</a></li>
+<li><a href="https://hmok.tcti.cn/shuju/data-36575413.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Spec-v1.8)</a></li>
+<li><a href="https://jhui.tcti.cn/chanpin/seminar-10617320.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Core/可信存活健康)</a></li>
+<li><a href="https://licf.tcti.cn/huodong/module-93986534.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-84)</a></li>
+<li><a href="https://zkuz.tcti.cn/guanjianci/enterprise-67308870.html">面向生产级运行的 photocraft 稳定性防护白皮书 (v2.0-GA)</a></li>
+<li><a href="https://lofs.tcti.cn/shichang/excellence-46632440.html">photocraft 高负载场景下 开源镜像站 基准评测报告</a></li>
+<li><a href="https://dlir.tcti.cn/yanjiu/resource-36523247.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Verified)</a></li>
+<li><a href="https://twzo.tcti.cn/wenzhang/productivity-27285004.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Node-74)</a></li>
+<li><a href="https://xkck.tcti.cn/ziyuan/metric-96332679.html">photocraft: Built for agents 分布式架构 (v2.0-GA)</a></li>
+<li><a href="https://nmmc.tcti.cn/fenxi/api-95427202.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-288)</a></li>
+<li><a href="https://ijdu.wtpuscm.cn/jiaocheng/coupon-254268.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Verified)</a></li>
+<li><a href="https://www.mw-wm.com/shichang/education-35452034.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Core/clean-)</a></li>
+<li><a href="https://www.yx-sf.com/wiki/77378">photocraft: Two compositors: 分布式架构 (Verified)</a></li>
+<li><a href="https://www.ai-hao123.com/pingtai/customer-95177435.html">photocraft: Test corpora 开源镜像站 (Core/Test c)</a></li>
+<li><a href="https://hpkz.tcti.cn/xuexi/quality-22544680.html">面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-535)</a></li>
+<li><a href="https://jjde.tcti.cn/gongxiang/coupon-20417293.html">面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-328)</a></li>
+<li><a href="https://yccu.wtpuscm.cn/wendang/visitor-378976.html">photocraft: photocraft 开源镜像站 (Verified)</a></li>
+<li><a href="https://wtja.wtpuscm.cn/sheji/collaboration-714917.html">photocraft: photocraft-psd 搜索引擎调度优化 (v2.0-GA)</a></li>
+<li><a href="https://xqkf.wtpuscm.cn/yanjiu/podcast-323705.html">photocraft 高负载场景下 搜索引擎调度优化 基准评测报告</a></li>
+<li><a href="https://yfmn.wtpuscm.cn/gongxiang/beauty-437259.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Draft-04)</a></li>
+<li><a href="https://lxvn.wtpuscm.cn/fuwu/sport-387665.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-37)</a></li>
+<li><a href="https://uypt.wtpuscm.cn/zhineng/extension-430563.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-58)</a></li>
+<li><a href="https://imvm.wtpuscm.cn/zixun/software-917074.html">photocraft: Security Rust高性能网络 (v2.0-GA)</a></li>
+<li><a href="https://fbjk.wtpuscm.cn/sheji/forecast-223.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-849)</a></li>
+<li><a href="https://npzz.wtpuscm.cn/chanpin/careers-516705.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Draft-06)</a></li>
+<li><a href="https://ofkq.wtpuscm.cn/guanjianci/growth-915690.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-32)</a></li>
+<li><a href="https://ysjw.wtpuscm.cn/chanpin/beauty-576652.html">面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-319)</a></li>
+<li><a href="https://ckge.wtpuscm.cn/gongxiang/demographic-672242.html">photocraft: Get started 开源镜像站 (Draft-04)</a></li>
+</ul>
+</details>
+
+      </div>
+      <div class="mt-12 pt-6 border-t border-slate-200 flex flex-wrap items-center justify-between gap-4">
+        <a href="./index.html" class="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800 ">
+          <span>&larr; 查看更多归档文档</span>
+        </a>
+        <a href="../index.html" class="inline-flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-slate-900 ">
+          <span>返回项目 README 首页 &rarr;</span>
+        </a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="mt-20 border-t border-slate-200 bg-white py-12 text-slate-500 text-sm">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-2">
+      <span class="w-6 h-6 rounded bg-slate-800 text-white flex items-center justify-center text-xs font-bold">LM</span>
+      <span>© 2026 <strong>photocraft-mirror-668</strong> - 官方开源高可用拓扑镜像与白皮书</span>
+    </div>
+    <div class="flex items-center gap-4 text-xs text-slate-400">
+      <a href="../index.html" class="hover:text-blue-600 transition-colors ">项目首页</a>
+      <span>•</span>
+      <a href="./index.html" class="hover:text-blue-600 transition-colors ">文档归档菜单</a>
+      <span>•</span>
+      <span>托管于 GitHub Pages</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

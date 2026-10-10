@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Development guide - photocraft-mirror-668 文档归档</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+      :root {
+        --color-primary: #2563eb;
+        --color-primary-hover: #1d4ed8;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.68;
+        color: #1e293b;
+      }
+      .markdown-body {
+        color: #1e293b;
+      }
+      .markdown-body h1 {
+        font-size: 2.25rem;
+        font-weight: 800;
+        margin-top: 1.8rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.6rem;
+        border-bottom: 2px solid #e2e8f0;
+        color: #0f172a;
+        line-height: 1.25;
+      }
+      .markdown-body h2 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-top: 1.6rem;
+        margin-bottom: 0.8rem;
+        padding-bottom: 0.4rem;
+        border-bottom: 1px solid #f1f5f9;
+        color: #1e293b;
+      }
+      .markdown-body h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-top: 1.3rem;
+        margin-bottom: 0.6rem;
+        color: #334155;
+      }
+      .markdown-body p {
+        margin-top: 0.8rem;
+        margin-bottom: 0.8rem;
+        line-height: 1.7;
+      }
+      .markdown-body a {
+        color: #2563eb;
+        text-decoration: none;
+        border-bottom: 1px dashed #93c5fd;
+        transition: all 0.2s ease;
+      }
+      .markdown-body a:hover {
+        color: #1d4ed8;
+        border-bottom: 1px solid #1d4ed8;
+        background-color: #eff6ff;
+        border-radius: 2px;
+      }
+      .markdown-body ul, .markdown-body ol {
+        padding-left: 1.5rem;
+        margin-top: 0.6rem;
+        margin-bottom: 0.6rem;
+      }
+      .markdown-body ul {
+        list-style-type: disc;
+      }
+      .markdown-body ol {
+        list-style-type: decimal;
+      }
+      .markdown-body li {
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+      }
+      .markdown-body pre {
+        background-color: #0f172a;
+        color: #e2e8f0;
+        padding: 1rem 1.2rem;
+        border-radius: 0.75rem;
+        overflow-x: auto;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875rem;
+        margin: 1rem 0;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+      .markdown-body code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875em;
+        padding: 0.15rem 0.35rem;
+        background-color: #f1f5f9;
+        color: #0f172a;
+        border-radius: 0.35rem;
+        border: 1px solid #e2e8f0;
+      }
+      .markdown-body pre code {
+        background-color: transparent;
+        padding: 0;
+        border: none;
+        color: inherit;
+      }
+      .markdown-body blockquote {
+        margin: 1rem 0;
+        padding: 0.75rem 1.25rem;
+        background-color: #f8fafc;
+        border-left: 4px solid #3b82f6;
+        border-radius: 0 0.5rem 0.5rem 0;
+        color: #475569;
+      }
+      .markdown-body table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.2rem 0;
+        display: block;
+        overflow-x: auto;
+      }
+      .markdown-body th, .markdown-body td {
+        border: 1px solid #cbd5e1;
+        padding: 0.6rem 1rem;
+        text-align: left;
+      }
+      .markdown-body th {
+        background-color: #f1f5f9;
+        font-weight: 600;
+      }
+      .markdown-body tr:nth-child(even) {
+        background-color: #f8fafc;
+      }
+      .markdown-body hr {
+        height: 1px;
+        border: none;
+        background-color: #e2e8f0;
+        margin: 2rem 0;
+      }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col antialiased">
+  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <a href="../index.html" class="flex items-center gap-2 group">
+        <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center text-white font-bold text-sm shadow-sm group-hover:scale-105 transition-transform ">LM</span>
+        <span class="font-bold text-slate-900 tracking-tight text-lg group-hover:text-blue-600 transition-colors ">photocraft-mirror-668</span>
+      </a>
+      <span class="hidden md:inline-block text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-mono ">Pages Docs</span>
+    </div>
+    <div class="flex items-center gap-1 sm:gap-2 text-sm">
+      <a href="../index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-slate-600 hover:text-blue-600 hover:bg-slate-50 font-medium ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        <span>首页 (README)</span>
+      </a>
+      <a href="./index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-blue-600 bg-blue-50 font-semibold ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+        <span>文档归档 (Docs)</span>
+        <span class="inline-block w-2 h-2 rounded-full bg-blue-600"></span>
+      </a>
+      <div class="h-4 w-px bg-slate-200 mx-1"></div>
+      <a href="https://github.com/shijiuwei/photocraft-mirror-668" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        <span class="hidden sm:inline">GitHub</span>
+      </a>
+      <a href="https://github.com/shijiuwei/photocraft-mirror-668/wiki" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <span class="hidden sm:inline">Wiki</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+  <!-- 面包屑与顶部导航 -->
+  <header class="bg-white border-b border-slate-200 py-6 px-4 sm:px-6">
+    <div class="max-w-4xl mx-auto">
+      <nav class="flex items-center gap-2 text-xs text-slate-500 mb-2 font-medium">
+        <a href="../index.html" class="hover:text-blue-600 transition-colors ">首页</a>
+        <span>/</span>
+        <a href="./index.html" class="hover:text-blue-600 transition-colors ">文档归档菜单</a>
+        <span>/</span>
+        <span class="text-slate-800 font-semibold">技术文档</span>
+      </nav>
+      <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Development guide</h1>
+        <a href="./index.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition-colors ">
+          <span>&larr; 返回文档归档菜单</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主体正文区域 -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 py-10 flex-1 w-full">
+    <article class="bg-white p-6 sm:p-12 rounded-2xl shadow-sm border border-slate-200">
+      <div class="markdown-body">
+        <h1>Development guide</h1>
+<h2>Prerequisites</h2>
+<ul>
+<li>Rust stable (1.95+). Add the web target with <code>rustup target add wasm32-unknown-unknown</code>.</li>
+<li>macOS, Windows or Linux. Linux needs <code>libxkbcommon-dev libwayland-dev libx11-dev libxrandr-dev libxi-dev libgl1-mesa-dev libgtk-3-dev</code>.</li>
+</ul>
+<h3>Windows source builds</h3>
+<p>Use the Rust MSVC toolchain and install Visual Studio or Microsoft C++ Build Tools with the
+<strong>Desktop development with C++</strong> workload. Follow Microsoft's
+<a href="https://gbvj.tcti.cn/yinqing/terms-44604603.html">Rust setup guide</a>,
+then open a new terminal and check <code>cargo --version</code> and <code>rustc --version</code>.</p>
+<p>On Windows 11, Smart App Control can block Cargo, rustc or executables generated during a build.
+If a build reports <code>An Application Control policy has blocked this file. (os error 4551)</code>
+(<a href="https://vary.wtpuscm.cn/xinwen/internet-654513.html">#1585</a>), check:</p>
+<ul>
+<li><strong>Windows Security → App &amp; browser control → Smart App Control settings</strong> for its status.</li>
+<li><strong>Event Viewer → Applications and Services Logs → Microsoft → Windows → CodeIntegrity →
+Operational</strong> for the blocked executable and policy, especially on managed machines.</li>
+</ul>
+<p>This error indicates an application-control restriction; moving <code>CARGO_TARGET_DIR</code> or
+reinstalling Rust does not establish that the blocked executable is trusted. See Microsoft's
+<a href="https://kanx.wtpuscm.cn/anli/report-886754.html">Smart App Control FAQ</a>
+for the available controls; there is no per-app exception. On a managed device, ask your
+administrator about an approved development environment. If you only want to run PhotoCraft,
+use the <a href="https://vvcy.tcti.cn/qiye/calendar-91310607.html">packaged Windows release</a> to avoid
+building locally; the downloaded app is still subject to Windows application-control checks.</p>
+<h2>Build and run</h2>
+<pre><code class="language-sh">cargo run --release -p photocraft -- path/to/image.psd      # desktop app
+cargo run --release -p photocraft -- --control 7878 --control-token-file .private/control.token \
+  --automation-read-root work --automation-write-root work
+cargo test --workspace                                     # everything
+cargo xtask ci                                             # fmt + clippy + tests + layers + wasm
+cargo xtask stats                                          # tests and lines per crate
+cargo xtask parity                                         # Photoshop menu coverage -&gt; docs/parity.md
+</code></pre>
+<p>Image code is slow at <code>opt-level 0</code>, so the workspace profile builds dependencies at <code>opt-level 2</code>. Use <code>--release</code> for anything interactive.</p>
+<h2>Fonts (craft-fonts)</h2>
+<p>Font assets shared by the Crafting Apps live in <a href="https://chji.wtpuscm.cn/kuangjia/review-897482.html">storytold/craft-fonts</a>, never in this repo: don't commit font files here (Inter and JetBrains Mono in <code>assets/fonts/</code> are the only exceptions; new fonts go to craft-fonts). The rules are in <code>craftrules/standards/fonts.md</code> in a sibling <code>craftrules</code> checkout (see below); that repository is not public, so outside contributors can ask a maintainer for the rules that apply to their change.</p>
+<p>craft-fonts is an <strong>optional build input</strong>, never a Cargo dependency:</p>
+<pre><code class="language-sh">git clone https://github.com/storytold/craft-fonts ../craft-fonts
+CRAFT_FONTS_DIR="$PWD/../craft-fonts" cargo run --release -p photocraft
+CRAFT_FONTS_DIR="$PWD/../craft-fonts" cargo test --workspace     # runs the Japanese font tests too
+</code></pre>
+<ul>
+<li>Use an absolute path (<code>$PWD/...</code>): <code>build.rs</code> runs in <code>crates/text</code>, so a relative <code>CRAFT_FONTS_DIR</code> would resolve from there.</li>
+<li><code>crates/text/build.rs</code> reads <code>$CRAFT_FONTS_DIR/fonts/manifest.txt</code> and embeds the fonts as <code>photocraft_text::CRAFT_FONTS</code> (<code>crates/text/src/craft_fonts.rs</code>). Unset, <code>CRAFT_FONTS</code> is empty and the build is unchanged. A bad path is a build warning, or an error with <code>CRAFT_FONTS_REQUIRED=1</code> (release builds set both).</li>
+<li><strong>UI:</strong> the Japanese fonts (BIZ UDPGothic Regular first) are the first Japanese fallback in the lazy CJK loader (<code>crates/ui-egui/src/cjk_fonts.rs</code>), ahead of the system Japanese fonts and in the same locale script order, appended last to every egui family with the usual baseline alignment.</li>
+<li><strong>Type tool:</strong> the text engine registers them in <code>FontDb::new</code> (so also with no system fonts) and puts them first in the Japanese slot of the locale-ordered fallback list: BIZ UDPGothic for sans runs, Shippori Mincho / BIZ UDMincho for serif runs.</li>
+<li><strong>Web:</strong> the wasm32 build never embeds craft-fonts, even with <code>CRAFT_FONTS_DIR</code> set: measured on 2026-10-06, the UI face alone took the release wasm from 24.19 MB to 28.87 MB, over the 24 MiB gate in <code>packaging/web/package.sh</code>. Instead it loads fonts served next to it, on demand: <code>fonts/manifest.txt</code> beside <code>index.html</code>, in craft-fonts' manifest format (<code>crates/text/src/served.rs</code>; hosting: <code>packaging/web/README.md</code> › Fonts). <code>PHOTOCRAFT_WEB_FONTS_DIR="$PWD/../craft-fonts" packaging/web/package.sh</code> puts craft-fonts there. Served families are in the font menus and are fetched when picked or when a document's text needs them; they aren't in the script fallback list yet, so Japanese text set in a Latin font still needs a Japanese font picked (#1615).</li>
+<li>Tests that need the fonts skip with a message when <code>CRAFT_FONTS</code> is empty; CI's Linux job runs the tests a second time with <code>CRAFT_FONTS_DIR</code> set. Desktop releases check out craft-fonts at the commit pinned in <code>.github/workflows/release.yml</code> (<code>CRAFT_FONTS_REF</code>; ci.yml pins the same commit) and ship each font's <code>OFL.txt</code> as <code>OFL-&lt;family&gt;.txt</code>.</li>
+</ul>
+<h2>Graphics startup and device loss</h2>
+<p><code>--safe-gpu</code> starts with the CPU renderer for one launch (no GPU canvas; a software adapter for the window where the platform has one: WARP on Windows, llvmpipe over GL on Linux). Before creating the wgpu device the app writes and locks <code>gpu-starting.json</code> in the config directory; it clears it once the first frames have rendered. A launch that finds an unlocked marker knows the previous start died inside the graphics driver (#4) and uses the next safer backend (Windows: Vulkan → DX12 → CPU; Linux: Vulkan → GL → CPU; macOS: Metal → CPU), remembering it in <code>performance.gpuBackend</code> (Preferences › Performance › GPU Backend, with <strong>Reset GPU Backend</strong>). With <code>auto</code>, Intel adapters on Windows use DX12. Help › System Info shows the adapter, backend, driver and fallback state.</p>
+<p>On DX12 the shader compiler is FXC (<code>d3dcompiler_47.dll</code>, part of Windows), or a <code>dxcompiler.dll</code> placed beside <code>photocraft.exe</code>, loaded by its full path. wgpu's default looks <code>dxcompiler.dll</code> up by name, which reaches the current directory and <code>PATH</code> and loaded other programs' incompatible builds (#712).</p>
+<p>Handled windowing and app initialization errors clear this launch's startup marker, restoring any
+prior crash evidence. For example, a Linux launch without <code>DISPLAY</code> or <code>WAYLAND_DISPLAY</code> does not
+change the next launch's graphics backend. Renderer initialization errors and driver crashes still
+keep the marker for recovery.</p>
+<p>If the device is lost while running (#243), every GPU entry point checks the device's health flag first, the canvas switches to the CPU compositor for the rest of the session and a notice says "GPU device was lost; using the CPU renderer." <code>ui.gpu.simulateLoss</code> triggers this path from the control channel.</p>
+<h2>Logs</h2>
+<p>The desktop app writes its <code>log</code> records to standard error and to <code>logs/photocraft.log</code> in the settings directory (Linux <code>~/.config/photocraft/logs/</code>, macOS <code>~/Library/Application Support/Photocraft/logs/</code>, Windows <code>%APPDATA%\Photocraft\logs\</code>, or under <code>PHOTOCRAFT_CONFIG_DIR</code> / the portable data folder). A start launched from a desktop menu or the Dock has no terminal, so this file is what to attach to a bug report: GPU startup fallbacks, a lost device and the crash guard's panic report all land there. Each launch moves the previous log to <code>photocraft.1.log</code> (and that one to <code>photocraft.2.log</code>), so the log of a run that crashed survives the next start. The file stops growing at 16 MiB. <code>--version</code> and command-line errors write no file.</p>
+<p>By default PhotoCraft's own crates log at <code>info</code> and everything else at <code>warn</code>. <code>RUST_LOG</code> replaces that with env_logger-style directives, for example <code>RUST_LOG=debug</code>, <code>RUST_LOG=warn,photocraft_gpu=trace</code> or <code>RUST_LOG=info,wgpu_core=warn</code>; a directive ending in <code>*</code> covers every target starting with it (<code>photocraft*=debug</code>). The logger is <code>apps/photocraft/src/logging.rs</code>; the web build logs to the browser console instead.</p>
+<h2>Environment variables</h2>
+<table><thead><tr><th>Variable</th><th>Effect</th></tr></thead><tbody>
+<tr><td><code>PHOTOCRAFT_CONTROL_PORT</code></td><td>Same as <code>--control &lt;port&gt;</code></td></tr>
+<tr><td><code>RUST_LOG</code></td><td>Log levels for standard error and the log file (see <a href="#logs">Logs</a>)</td></tr>
+<tr><td><code>PHOTOCRAFT_CONTROL_TOKEN</code></td><td>64-hex bearer token for control TCP (avoid on shared systems where environment inspection is possible)</td></tr>
+<tr><td><code>PHOTOCRAFT_CONTROL_TOKEN_FILE</code></td><td>Read, or create for a server, the control bearer-token file</td></tr>
+<tr><td><code>PHOTOCRAFT_AUTOMATION_READ_ROOT</code></td><td>Desktop app only: automation read root. Headless CLI modes require the <code>--automation-read-root</code> flag</td></tr>
+<tr><td><code>PHOTOCRAFT_AUTOMATION_WRITE_ROOT</code></td><td>Desktop app only: automation write root. Headless CLI modes require the <code>--automation-write-root</code> flag</td></tr>
+<tr><td><code>PHOTOCRAFT_CPU_CANVAS=1</code></td><td>Force the CPU canvas path instead of the wgpu shader canvas</td></tr>
+<tr><td><code>PHOTOCRAFT_NATIVE_WAYLAND=1</code></td><td>Linux: stay on native Wayland when a pen is attached (by default the window then opens through Xwayland, because Wayland gives the app no pen input; #639)</td></tr>
+<tr><td><code>WGPU_BACKEND=dx12</code></td><td>Pick the wgpu backend(s) (<code>vulkan</code>, <code>dx12</code>, <code>metal</code>, <code>gl</code>); overrides <code>performance.gpuBackend</code> and the startup fallback</td></tr>
+<tr><td><code>WGPU_DX12_COMPILER=fxc</code></td><td>DX12 shader compiler (<code>fxc</code>, <code>dxc</code>, <code>auto</code>); <code>dxc</code> and <code>auto</code> look <code>dxcompiler.dll</code> up through the DLL search path</td></tr>
+<tr><td><code>PHOTOCRAFT_GPU_TILE=2048</code></td><td>Force GPU canvas tiling (tests tile seams)</td></tr>
+<tr><td><code>PHOTOCRAFT_FX_NOCACHE=1</code></td><td>Bypass the CPU layer-effect map cache (<code>compose::effect_maps</code>)</td></tr>
+<tr><td><code>PHOTOCRAFT_CPU_COMPOSE=1</code></td><td>Keep the wgpu canvas but composite on the CPU (compare GPU vs CPU renders, e.g. with the snapshot example)</td></tr>
+<tr><td><code>PHOTOCRAFT_LOCALE</code></td><td>Override Auto's native UI language for this launch; unsupported tags use English. See <a href="localization.md#first-launch-and-system-language">system language detection</a>.</td></tr>
+<tr><td><code>PHOTOCRAFT_FX_TRACE=1</code></td><td>Print the CPU time spent on GPU effect shapes and distance fields per rebuild</td></tr>
+<tr><td><code>PHOTOCRAFT_THEME_FILE=tokens.json</code></td><td><strong>Debug builds only:</strong> live design-token overrides, re-read on change</td></tr>
+</tbody></table>
+<h3>Live design tokens</h3>
+<pre><code class="language-json">{ "card": "#323232", "tab_strip": "#262626", "accent": "#378ef0", "radius": 4 }
+</code></pre>
+<p>Keys are the field names of <code>theme::Tokens</code> (<code>crates/ui-egui/src/theme.rs</code>). Edit and save the file while the app runs to see changes immediately, with no recompile. This is compiled out of release builds.</p>
+<h2>Driving the app programmatically</h2>
+<p>Start the app with a private token file. It then accepts authenticated JSON lines on <code>127.0.0.1:7878</code>:</p>
+<pre><code class="language-sh">TOKEN=$(tr -d '\r\n' &lt; .private/control.token)
+printf '%s\n' "{\"id\":\"auth\",\"method\":\"auth\",\"params\":{\"token\":\"$TOKEN\"}}" \
+              '{"id":1,"method":"engine.execute","params":{"command":"layer.newAdjustmentLayer.hueSaturation","params":{"hue":30}}}' \
+              '{"id":2,"method":"ui.screenshot","params":{"path":"evidence/shot.png"}}' | nc 127.0.0.1 7878
+</code></pre>
+<p>See <code>docs/control-protocol.md</code> for every method. Tips:</p>
+<ul>
+<li><strong>macOS does not render occluded windows.</strong> <code>ui.screenshot</code> raises the window first (<code>focus: true</code> by default). Use <code>ui.focus</code> before other visual checks.</li>
+<li><strong>Capture only our own window.</strong> For native captures (to see the real title bar and traffic lights), capture by window id (<code>screencapture -l &lt;CGWindowID&gt;</code>), never a screen region, which can grab other apps.</li>
+<li><strong>Pointer gestures:</strong> <code>ui.pointer</code> takes events in <em>document</em> coordinates and runs them through the same tool state machine as the mouse.</li>
+</ul>
+<h2>Headless CLI</h2>
+<p><code>apps/photocraft-cli</code> builds the binary <code>photocraft-cli</code>:</p>
+<pre><code class="language-sh">cargo run -p photocraft-cli -- convert in.psd out.pcraft               # any supported format -&gt; any
+cargo run -p photocraft-cli -- info out.pcraft                          # JSON: size, mode, depth, layer tree
+cargo run -p photocraft-cli -- run in.png --cmd layer.new.layer --params '{"name":"Ink"}' \
+                                          --cmd filter.blur.gaussianBlur --params '{"radius":3}' --out out.psd
+cargo run -p photocraft-cli -- run --new '{"width":800,"height":600}' --cmd document.inspect
+cargo run -p photocraft-cli -- batch --actions actions.json --in photos/ --out done/ --format jpg
+cargo run -p photocraft-cli -- commands --filter blur                    # the command registry
+</code></pre>
+<p><code>actions.json</code> holds the steps of a recorded action: <code>[["&lt;id&gt;", {…}], …]</code>, <code>[{"command": "&lt;id&gt;", "params": {…}}, …]</code> or bare ids, as a list or wrapped in <code>{"actions": …}</code> or <code>{"steps": …}</code>; a droplet file works too. <code>batch</code> refuses an <code>--out</code> folder that is the <code>--in</code> folder, since the results would replace the originals, unless <code>--in-place</code> is given. <code>run</code> prints one JSON line per command result.</p>
+<h2>Native format (.pcraft)</h2>
+<p><code>crates/format</code> defines the lossless native bundle. It is either a ZIP of STORE entries or a directory with the same layout:</p>
+<ul>
+<li><code>manifest.json</code>: the versioned document tree, with migrations in <code>format/src/migrate.rs</code>.</li>
+<li><code>tiles/&lt;blake3&gt;.zst</code> and <code>blobs/&lt;blake3&gt;.zst</code>: zstd-compressed objects, content-addressed by the BLAKE3 hash of their uncompressed bytes.</li>
+<li><code>thumb.png</code> and <code>composite/preview.png</code>: previews.</li>
+</ul>
+<p>Keep one <code>PcraftWriter</code> per open document: re-saving then only compresses and writes tiles that changed. Directory bundles verify objects on first encounter in a folder; later saves reuse them while their file size and modification time are unchanged, and re-verify changed objects, repair missing or damaged objects, and garbage-collect unreferenced ones. <code>format::Autosaver</code> writes snapshots into a recovery directory on a background thread. <code>list_recovery</code> / <code>recover</code> / <code>discard_recovery</code> implement crash recovery, and <code>format::RecoveryStore</code> is the lifecycle the desktop app uses: new documents autosave under per-launch keys (document ids restart every launch, so they never overwrite an older entry), and a recovered document adopts the entry it came from. That entry is replaced in place by the next autosave and removed only when the document is saved or closed, never just because it was recovered, so a second crash loses nothing. The web build has no crash recovery (no autosave services).</p>
+<p>At startup the desktop lists recovery metadata, then decodes one document at a time through the existing background-job system. The window stays usable, with recovery progress and Cancel in the status bar. Cancel skips the rest of that launch's recovery queue and prevents the current result from opening; the decoder may finish in the background. Failed or cancelled loads leave their recovery files intact for a later launch. Turning off Preferences › File Handling › Recover on launch skips discovery altogether.</p>
+<p><code>photocraft-io</code> routes <code>.pcraft</code> through this crate in <code>import</code>/<code>export</code>, detecting it by magic or by extension.</p>
+<h2>MCP (agents)</h2>
+<p><code>photocraft-cli mcp</code> serves MCP on stdio using <code>crates/automation</code>, which is built on <code>rmcp</code>:</p>
+<ul>
+<li><strong>Headless:</strong> <code>photocraft-cli mcp --automation-read-root &lt;dir&gt; --automation-write-root &lt;dir&gt;</code>. It drives an in-process engine session and has no file authority when a root is omitted.</li>
+<li><strong>Live app:</strong> start <code>photocraft --control 7878 --control-token-file &lt;private-path&gt; --automation-read-root &lt;dir&gt; --automation-write-root &lt;dir&gt;</code>, then run <code>photocraft-cli mcp --bridge 127.0.0.1:7878 --control-token-file &lt;private-path&gt;</code>. The desktop process owns the roots. See <code>docs/control-protocol.md#mcp-bridge</code>.</li>
+</ul>
+<p>For headless MCP clients, pass absolute paths to deliberately chosen trusted workspace directories in the launch arguments. Desktop <code>PHOTOCRAFT_AUTOMATION_READ_ROOT</code> and <code>PHOTOCRAFT_AUTOMATION_WRITE_ROOT</code> environment variables do <strong>not</strong> grant headless CLI access. Omitting a root flag deliberately denies that direction of access.</p>
+<p>Tools:</p>
+<ul>
+<li><code>session_list</code></li>
+<li><code>doc_open</code>, <code>doc_new</code>, <code>doc_save</code>, <code>doc_export</code>, <code>doc_inspect</code>, <code>doc_render_preview</code> (returns a PNG image), <code>doc_select</code>, <code>doc_close</code></li>
+<li><code>command_list</code>, <code>command_run</code>, <code>command_batch</code> (several commands per call)</li>
+<li><code>jobs_list</code> (running background jobs with progress, then recently finished ones with their result or error), <code>jobs_cancel</code> (one job by id, or every running job)</li>
+<li>bridge only: <code>ui_inspect</code>, <code>ui_screenshot</code>, <code>ui_pointer</code>, <code>ui_menu_invoke</code>, <code>ui_set</code>, <code>control_call</code></li>
+</ul>
+<p>Claude Code (<code>.mcp.json</code> in the repo root, or <code>claude mcp add</code>):</p>
+<pre><code class="language-json">{
+  "mcpServers": {
+    "photocraft": {
+      "command": "/path/to/photocraft/target/release/photocraft-cli",
+      "args": ["mcp", "--automation-read-root", "/absolute/path/to/trusted/workspace", "--automation-write-root", "/absolute/path/to/trusted/workspace"]
+    },
+    "photocraft-live": {
+      "command": "/path/to/photocraft/target/release/photocraft-cli",
+      "args": ["mcp", "--bridge", "127.0.0.1:7878", "--control-token-file", "/private/path/photocraft-control.token"]
+    }
+  }
+}
+</code></pre>
+<pre><code class="language-sh">cargo build --release -p photocraft-cli
+mkdir -p "$PWD/photocraft-work"
+claude mcp add photocraft -- "$PWD/target/release/photocraft-cli" mcp \
+  --automation-read-root "$PWD/photocraft-work" \
+  --automation-write-root "$PWD/photocraft-work"
+</code></pre>
+<p><code>doc_inspect</code> (and the engine command <code>document.inspect</code>) reports the layer tree with kinds,
+bounds, masks, selection, effects (<code>effects.items[].kind</code>), smart filters (<code>smartFilters[]</code>), smart
+object sources (<code>smartSource</code>: <code>embedded</code> with its file name, or <code>linked</code> with a file path or, for a
+PSD placed layer, the <code>Idnt</code> uuid its duplicates share), type
+text, adjustment settings, channels and history, so agents can verify what they did without a
+screenshot. <code>crates/automation/tests/agent_tasks.rs</code> is the reference: ten realistic edit tasks
+(title card, colour grade, undo/redo, editable smart blur, masks, saved selections, align,
+capability-scoped export, resize/crop, CMYK + native save) driven purely over MCP.</p>
+<p>Without MCP, <code>photocraft-cli serve [--port N]</code> keeps a headless session open and answers JSON lines
+(see <code>docs/control-protocol.md#headless-server</code>).</p>
+<p>A typical agent loop (place inputs under the configured read root and outputs under the write root):</p>
+<ol>
+<li><code>doc_open {path}</code></li>
+<li><code>command_list {filter:"blur"}</code></li>
+<li><code>command_run {id:"filter.blur.gaussianBlur", params:{radius:4}}</code></li>
+<li><code>doc_render_preview</code> to check the result</li>
+<li><code>doc_save {path:"out.pcraft"}</code></li>
+</ol>
+<h2>Colour management</h2>
+<p><code>crates/cms</code> is our own pure-Rust ICC engine (v2/v4 parsing, matrix/TRC and LUT profiles, all four
+intents, black point compensation). It ships CC0 built-in profiles, including a synthetic
+"Photocraft Coated CMYK", because Adobe's CMYK profiles are proprietary (see <code>crates/cms/README.md</code>).</p>
+<ul>
+<li>Documents carry an optional embedded ICC profile (<code>Document::icc_profile</code>); <code>edit.assignProfile</code>
+and <code>edit.convertToProfile</code> change it. Mode changes (<code>image.mode.*</code>) convert through cms.</li>
+<li><strong>Proof Colors</strong> (⌘Y), <strong>Proof Setup</strong> and <strong>Gamut Warning</strong> (⇧⌘Y) bake a 3D LUT
+(<code>cms::Lut3d</code>) that the canvas shader applies; the document pixels never change.</li>
+<li>Convert colours with <code>photocraft_cms::transform::cached(src, dst, opts)</code>: transforms are cached
+process-wide and integer buffers use precomputed tables or a device link.</li>
+</ul>
+<h2>Menu parity</h2>
+<p><code>cargo xtask parity</code> compares Photoshop's menu tree (<code>crates/ui-egui/src/menu_catalog.rs</code>) with
+the live command registry (<code>menus::is_live</code>) and rewrites <a href="parity.md"><code>docs/parity.md</code></a>. The test
+<code>parity::tests::parity_does_not_regress</code> fails if the live count drops below <code>parity::FLOOR</code>.</p>
+<p><code>cargo xtask i18n-coverage</code> prints the UI translation coverage for each language in the
+<code>crates/ui-egui/src/i18n/mod.rs</code> registry, in stable language-code order. Its English-key set is
+derived from UI <code>tl!</code> literals, the menu catalog and UI command table, and menu command labels in
+the engine source. Catalog rows are validated for malformed and duplicate keys; unused legacy
+translations do not affect the denominator. Unregistered locale TSV files are ignored.</p>
+<h2>Testing strategy</h2>
+<ul>
+<li><strong>Unit and property tests</strong> in every crate. proptest is used for tile COW, regions and codecs.</li>
+<li><strong>Format crates:</strong>
+<ul>
+<li>synthetic generators (<code>psd::testgen</code>)</li>
+<li>byte-exact round trips</li>
+<li>malformed-input sweeps (truncate at every offset)</li>
+<li>fuzz targets (<code>crates/*/fuzz</code>)</li>
+</ul>
+</li>
+<li><strong>Real-file corpora</strong> in <code>corpus/</code> (gitignored, fetched at pinned commits, sha256-verified): opt-in locally through the <code>corpus</code> cargo feature, always run in CI. See <a href="#test-corpora">Test corpora</a>.</li>
+<li><strong>Composite oracle:</strong> a PSD's embedded merged image is compared with our compositor's output. The pass rate is tracked in the roadmap.</li>
+<li><strong>UI:</strong> unit tests for widgets and state, plus screenshot checks through the control channel.</li>
+</ul>
+<h2>Performance notes</h2>
+<ul>
+<li>The canvas is presented by a custom WGSL shader (<code>ui-egui/src/gpu_canvas.rs</code>): mip-mapped/nearest sampling, procedural checkerboard, pixel grid, tiling. Brush strokes upload only their damage rect.</li>
+<li><strong>The canvas composites on the GPU</strong> (<code>photocraft-gpu</code>, driven from <code>gpu_canvas.rs</code>), layer effects included. What the planner can't express returns <code>Unsupported</code> and the canvas falls back to the CPU compositor (<code>photocraft-compose</code>, also the reference for export and tests): Multichannel documents, and documents or effect regions over the texture limit. Pieces the GPU can't derive itself are rasterised once on the CPU and cached (<code>compose::masks</code> for vector masks, <code>compose::shape_split</code> for stroked shapes with clipped layers, effect distance fields). Timings of the interactive paths: <code>cargo run --release -p photocraft-ui-egui --example interactive_bench</code>; effects: <code>--example fx_bench</code> (<code>--compare files…</code> for GPU vs CPU); the cost of changing a chisel bevel's size (a dragged slider, GPU and CPU, ellipse and text): <code>--example bevel_bench</code>; large documents (open, refresh, thumbnails, a filter, a stroke, saves; one operation per run so <code>/usr/bin/time -l</code> gives its peak memory): <code>--example large_image_bench -- --size 14000x14000 --op psd</code>. The app requests the adapter's own texture limit (egui's default is 8192 px; see <code>gpu_canvas::use_adapter_limits</code>); beyond it the CPU fallback composites and uploads in bands (<code>compose::render_bands</code>), and exports, thumbnails and flattening stream bands too, so no full-size float composite is ever held. Rendering fidelity: <code>cargo run --release -p photocraft-io --example oracle_diff -- corpus/psd</code> (the whole PSD oracle table in seconds). <code>ui.inspect</code> → <code>perf.timings.gpuFallback</code> names the reason (<code>null</code> on the GPU path).</li>
+<li><strong>Layer effects on the GPU</strong> (<code>gpu/src/fx.rs</code>, kernels in <code>gpu/src/compose.wgsl</code>). Every enabled effect becomes a <em>map program</em> over the layer's effect region (shift, dilate, Gaussian blur, glow ramp, bevel height and shading, contour, stroke band), mirroring <code>compose::effects</code> step by step; the chunked composite then paints through the maps, clipped to that region, and copies the result back into the backdrop in place, so a small text layer costs only its own pixels. The layer's shape (<code>compose::layer_shape</code>) and its distance fields (<code>compose::effects::distance_field</code>: a transform whose tie-breaking a parallel GPU pass can't reproduce bit for bit) come from compose on the CPU: bands computed in parallel, except the Euclidean fields of precise glows and chiselled bevels (a halo as tall as the bevel size would make most of a band's work redundant), which are one window whose passes run on all threads, the CPU compositor's own way. Everything is cached per layer state: an unrelated edit, or an effect's colour or opacity, rebuilds nothing; a brush dab recomputes the touched 256² tiles grown by the effect reach; changing one effect's geometry rebuilds that effect only. Cache budget <code>gpu::FX_BUDGET</code> (1.5 GB, least recently drawn layers evicted first). <code>PHOTOCRAFT_FX_TRACE=1</code> prints the CPU time of each rebuild.</li>
+<li>The canvas grows a stroke's damage rect by the effect reach of the layers around it (<code>canvas::effect_reach</code>), so effects beyond the dab refresh too (on both paths).</li>
+<li><strong>Numbers</strong> (7360 × 4912, 8 text layers + one painted layer with drop shadow + stroke + bevel, Hue/Saturation on top; M4 Pro; <code>cargo run --release -p photocraft-ui-egui --example fx_bench</code>), CPU fallback → GPU: full refresh with warm effect maps 5.7 s → 47 ms; Hue/Saturation tweak above the effects 4.7 s → 31 ms; brush dab on a plain layer 32 → 1.7 ms; brush dab on the effect layer (its maps rebuilt around the dab) 659 → 3.7 ms; first refresh (all maps built) 6.4 s → 0.39 s. With the CPU ~14× oversubscribed by parallel builds (min of 7 runs): 8.1 s → 0.33 s, 9.9 s → 0.28 s, 28 → 2.2 ms, 1.7 s → 89 ms; moving a text layer 7 px 336 → 13 ms. <code>fx_bench --compare corpus/psd/…/*.psd</code> reports the GPU vs CPU difference on real files (30 of the 31 corpus files with effects render on the GPU, worst 0.12/255).</li>
+<li>On the CPU path <code>compose::effect_maps</code> caches shadow, glow, bevel and satin maps per layer state (LRU, 768 MB budget).</li>
+<li>Live adjustment previews on large documents use a downsampled proxy (<code>ui-egui/src/proxy.rs</code>).</li>
+<li><code>ui.inspect</code> returns <code>perf</code> timings (UI ms per frame, composite ms, upload ms).</li>
+<li>Never scan full surfaces per frame. Cache per document revision (<code>PhotocraftApp::cached_bounds</code>). An uncached <code>content_bounds()</code> on a 36 MP layer once cost 77 ms per frame.</li>
+</ul>
+<h2>Scorecard and performance budgets</h2>
+<p><a href="scorecard.md"><code>docs/scorecard.md</code></a> says, with numbers, where PhotoCraft stands per area. It is
+generated; never edit it by hand.</p>
+<pre><code class="language-sh">cargo xtask scorecard            # regenerate docs/scorecard.md
+cargo xtask scorecard --check    # what CI runs: fails if the committed file is stale
+cargo xtask perf                 # full benchmark run (tens of minutes, release build)
+cargo xtask perf --quick         # small synthetic documents (about a minute once built)
+cargo xtask perf --update-baseline   # also write perf/baseline.json from this run
+</code></pre>
+<p><strong>Sources.</strong> The scorecard reads only committed files, so it is deterministic:</p>
+<ul>
+<li><code>scorecard/*.toml</code>: one checklist per area (tools, file compatibility, UI, type, automation,
+reliability, distribution, open bugs). Each item has an <code>id</code>, a short <code>target</code>, a <code>status</code>
+(<code>done</code>, <code>partial</code> or <code>missing</code>), the <code>issue</code> and a <code>note</code> with the evidence (file:line).
+Statuses must be true on <code>main</code>: verify against the code, and say <code>partial</code> with a note when
+unsure. Flip a row in the PR that changes it.</li>
+<li><code>perf/budgets.toml</code>: the benches <code>xtask perf</code> runs and the scenarios P1…Pn, each mapped to one
+bench row, with a budget (targets from #209, #210, #211). <code>enforce = false</code> marks a target the
+code doesn't meet yet (reported as over budget; only regressions fail); flip it to <code>true</code> in the
+PR that meets it. Scenarios the code can't support yet carry <code>not_measurable</code> and a reason, never
+a number.</li>
+<li><code>perf/baseline.json</code>: the numbers the scorecard shows, written only by
+<code>cargo xtask perf --update-baseline</code>, with the machine (CPU, RAM, GPU adapter, OS), its machine
+class, commit, date and load average.</li>
+<li><code>crates/io/tests/corpus.rs</code>: the corpus floors (every <code>Source { .. }</code> constant).</li>
+<li>The prefs audit: <code>Preferences</code> fields that no code reads (target 0, #204), plus counts taken
+from the tree (never-crash attribute coverage, <code>docs/parity.md</code>).</li>
+</ul>
+<p><strong>Perf runs.</strong> <code>xtask perf</code> builds the benches in release (<code>perf_scenarios</code>, <code>interactive_bench</code>,
+<code>fx_bench</code>, <code>bevel_bench</code>, <code>type_bench</code>, <code>large_image_bench</code>, and <code>layout_bench</code> once it exists), runs each with
+<code>--json</code>, and merges the reports into <code>target/perf/results.json</code> keyed by scenario id, with p50,
+p95 and max (nearest rank over the samples), peak RSS measured in-process (<code>photocraft-testkit</code>'s
+<code>perf::RssSampler</code>), GPU bytes held by the canvas, and the load average before and after each
+bench. <code>target/perf/summary.md</code> is the Markdown table. It exits non-zero when an enforced budget
+breaks, when a scenario's p50 regresses more than 15 % (<code>--threshold</code>, or <code>regression_pct</code>)
+against a baseline from the same machine class and mode, or when a bench fails. Runs from
+different machine classes are never compared, and <code>--quick</code> numbers are only compared with a
+quick baseline. Machines that run other work give noisy numbers: check the load average in the
+summary before trusting a regression, and record it next to any number you quote.</p>
+<p><strong>Adding a scenario.</strong> Add a row to a bench (keep its name stable: it is the key), give the
+bench <code>--json</code> support through <code>photocraft_testkit::perf::{row, report, write_report}</code>, then add a
+<code>[[scenario]]</code> to <code>perf/budgets.toml</code> and run <code>cargo xtask scorecard</code>.</p>
+<p><strong>CI.</strong> <code>ci.yml</code> runs <code>cargo xtask scorecard --check</code>. <code>perf-nightly.yml</code> runs <code>cargo xtask perf</code>
+on a fixed macOS runner every night (and on demand), posts the table as the job summary, uploads
+<code>results.json</code>, and fails on a broken budget or regression. It never runs on pull requests: the
+release build of the benches alone takes longer than PR CI should. To give the nightly runner
+its own baseline, run the workflow by hand with <code>update_baseline</code> and commit the <code>perf-baseline</code>
+artifact as <code>perf/baseline.json</code>.</p>
+<h2>Web build</h2>
+<p><code>apps/photocraft-web</code> runs the same <code>PhotocraftApp</code> in the browser through eframe's web runner. The renderer is wgpu: WebGPU where the browser has it, WebGL2 otherwise. It is Rust only. The only JavaScript is the glue that wasm-bindgen generates.</p>
+<pre><code class="language-sh">brew install trunk                 # or: cargo install trunk --locked
+cd apps/photocraft-web
+trunk build --release              # writes ../../dist/web (index.html, .js glue, .wasm)
+trunk serve --release              # dev server on http://127.0.0.1:8765
+</code></pre>
+<p>Any static file server works for <code>dist/web</code>, for example <code>python3 -m http.server 8765</code> run inside that directory. Trunk downloads the matching <code>wasm-bindgen</code> and <code>wasm-opt</code> itself. <code>trunk build --release</code> uses the <code>wasm-release</code> Cargo profile (<code>data-cargo-profile</code> in <code>index.html</code>: fat LTO, opt-level "s" except the pixel crates). The <code>.wasm</code> is about 18.8 MiB raw, 7.8 MiB gzipped and 5.6 MiB with Brotli; serve it with compression. Keep it under 24 MiB (<code>packaging/web/package.sh</code> enforces this; Cloudflare's per-file cap is 25 MiB). Pull-request CI also builds the actual browser app with the same pinned Trunk version as the release job and runs <code>packaging/web/package.sh</code>, including the relative-URL and 24 MiB checks. The <code>web build and wasm size gate</code> check runs on main and on PRs that change something the web build compiles or packages (<code>apps/photocraft-web</code>, <code>packaging/web</code>, crate sources and manifests, <code>Cargo.toml</code>/<code>Cargo.lock</code>, the CI workflow), and reports the resulting wasm size in the Actions job summary. The web build never embeds craft-fonts (see Fonts above). To see where the bytes go, run <code>twiggy top -n 40</code> on <code>target/wasm32-unknown-unknown/wasm-release/photocraft-web.wasm</code> (before wasm-opt strips the names).</p>
+<p>URL flags: <code>?webgl</code> forces the WebGL2 backend, and <code>?cpu</code> forces the CPU canvas path.</p>
+<p>To build and serve the web app entirely in Docker, run from the repository root:</p>
+<pre><code class="language-sh">docker build --load -t photocraft-web:local .
+docker run --rm -p 8080:8080 photocraft-web:local
+</code></pre>
+<p>Open http://localhost:8080/. See <a href="../packaging/web/README.md#docker">Docker hosting</a> for
+HTTPS/reverse-proxy deployment and browser limitations.</p>
+<p>How the web shell (<code>apps/photocraft-web/src/web.rs</code>) differs from desktop:</p>
+<ul>
+<li><strong>Open</strong> uses <code>rfd::AsyncFileDialog</code>. The bytes arrive asynchronously in <code>Services::inbox</code>, which the app drains every frame.</li>
+<li><strong>Save / Save As / Export</strong> trigger a browser download of the encoded bytes. The shell does this with a Blob, an object URL and a temporary <code>&lt;a download&gt;</code>, all created from Rust. There is no save dialog, so the suggested name becomes the download name.</li>
+<li><strong>Drag-and-drop:</strong> <code>WebShell</code> takes the frame's <code>dropped_files</code> before the app sees them. It reads each file with <code>DroppedFile::bytes_async</code> and pushes the bytes into the inbox.</li>
+<li><strong>Startup failures:</strong> <code>index.html</code> shows "Loading PhotoCraft…" until the app removes it, or replaces it with the error when the web runner fails to start. If the <code>.wasm</code> never downloads or doesn't match the page's <code>.js</code> (a stale cached <code>index.html</code> after a deploy), no Rust runs at all, so the page itself (CSS only, no script) adds a hint with a Reload link after 20 seconds.</li>
+<li><strong>No control server:</strong> browsers can't listen on TCP. To automate the web build, drive headless Chrome with <code>--remote-debugging-port</code>. <code>Page.setInterceptFileChooserDialog</code> plus <code>DOM.setFileInputFiles</code> covers Open, <code>Input.dispatchDragEvent</code> with <code>files</code> covers drops, and <code>Browser.setDownloadBehavior</code> captures downloads.</li>
+<li>Headless Chrome on macOS (<code>--headless=new --enable-unsafe-webgpu</code>) gets a real WebGPU adapter.</li>
+</ul>
+<h2>Indexed Color timings</h2>
+<p><code>cargo run --release -p photocraft-engine --example indexed_color_perf -- image.png</code> measures
+palette construction, Floyd–Steinberg diffusion, and the complete full-resolution CPU preview
+path (proxy copy, engine command, result composition; excludes GPU upload/presentation).
+It prints JSON lines for 8, 16, 32, 64, 128 and 256 colours, with one warmup and three measured
+runs per count, plus palette and pixel hashes for exact before/after comparisons. Input files
+stay local; do not publish personal images, palettes, or metadata with benchmark reports.</p>
+<p>The synthetic 24 MP lookup comparison is reproducible with
+<code>cargo test --release -p photocraft-algo indexed_diffusion_24mp_release_comparison -- --ignored --nocapture</code>.
+It alternates linear/accelerated lookup order and checks identical indices and pixels.
+For the 2026-10-09 local timings both binaries used <code>CARGO_PROFILE_RELEASE_LTO=false</code> and
+<code>CARGO_PROFILE_RELEASE_CODEGEN_UNITS=16</code>; compare binaries built with the same settings.</p>
+<p>On native desktop sessions, Indexed Color live previews calculate and flatten on one worker.
+The last preview remains visible while dragging; intermediate settings are coalesced, and only
+a result matching the current document revision, active layer, dialog and parameters is uploaded.
+GPU upload/display conversion still run on the UI thread. Web and <code>PHOTOCRAFT_INLINE_JOBS=1</code>
+sessions retain synchronous previews. Closing the dialog invalidates its result; an already
+running calculation finishes without editing the session.</p>
+<h2>Offscreen UI snapshots (no window)</h2>
+<p>Render the full UI headlessly with the real wgpu canvas, e.g. for design reviews or when the app
+window would be occluded (macOS doesn't render occluded windows, so live <code>ui.screenshot</code> must raise
+the window and steal focus):</p>
+<pre><code class="language-sh">cargo run --release -p photocraft-ui-egui --example snapshot -- \
+    --out ui.png --size 1440x900 --scale 2 --open photo.jpg \
+    --script '[["ui.set", {"tool": "type"}], ["ui.menu.invoke", {"id": "image.canvasSize"}]]'
+</code></pre>
+<p><code>--script</code> is a list of control-protocol calls (<code>[method, params]</code>), applied in order.
+Input calls (<code>ui.key</code>, <code>ui.type</code>, <code>ui.click</code>) now reply only after the app has processed the events,
+so a following <code>ui.inspect</code> observes their effect.</p>
+<h2>Remove Tool quality</h2>
+<p><code>cargo run --release -p photocraft-engine --example remove_quality -- &lt;dir&gt; [out dir]</code> fills
+holes (discs and thin lines over background) in five photos with <code>photocraft_algo::remove</code> and
+prints, per hole, the PSNR against the original, <code>texture</code> (the fill's mean gradient over the
+original's: below 1 it is smoother than what it replaces) and <code>seam</code> (the same on the band along the
+hole's edge: above 1 the edge shows). With an out dir it writes original | hole | fill crops. The
+photos are public domain, not committed; download them at 1920 px wide into <code>&lt;dir&gt;</code> as:</p>
+<table><thead><tr><th>File</th><th>Photo</th></tr></thead><tbody>
+<tr><td><code>01.jpg</code></td><td><a href="https://gmgf.wtpuscm.cn/fuwu/customer-494416.html">The Tetons and the Snake River</a>, Ansel Adams, 1942 (U.S. National Archives)</td></tr>
+<tr><td><code>02.jpg</code></td><td><a href="https://zovf.wtpuscm.cn/gongsi/calendar-789508.html">Ansel Adams, National Archives 79-AAB-01</a> (U.S. National Archives)</td></tr>
+<tr><td><code>03.jpg</code></td><td><a href="https://zthb.wtpuscm.cn/xitong/analytics-927909.html">Hiking at Crane Meadows National Wildlife Refuge</a>.jpg) (USFWS)</td></tr>
+<tr><td><code>04.jpg</code></td><td><a href="https://fzbr.wtpuscm.cn/wendang/update-395677.html">Meadow Anemone, Lake Andes National Wildlife Refuge</a>.jpg) (USFWS)</td></tr>
+<tr><td><code>06.jpg</code></td><td><a href="https://ujrb.wtpuscm.cn/peixun/cheap-979331.html">Line5070, NOAA Photo Library</a> (NOAA)</td></tr>
+</tbody></table>
+<p><code>https://commons.wikimedia.org/wiki/Special:FilePath/&lt;file name&gt;?width=1600</code> serves each at the
+size the cases were placed for (Commons rounds it to 1920). Timing on a 24 MP document through the
+command: <code>cargo run --release -p photocraft-engine --example remove_bench</code>.</p>
+<h2>Test corpora</h2>
+<p>Real files are our best oracles, but they are large binaries, so they never go into this
+repository. They live in <code>corpus/</code> (gitignored) and are fetched at <strong>pinned commits</strong> and checked
+against committed <strong>sha256 manifests</strong>. All pins are in one place:
+<a href="../xtask/src/corpus_pins.rs"><code>xtask/src/corpus_pins.rs</code></a>.</p>
+<table><thead><tr><th>Directory</th><th>What</th><th>Source</th><th>Manifest</th></tr></thead><tbody>
+<tr><td><code>corpus/photoshop/</code></td><td>256 PSDs we authored with Photoshop: smart filters, layer-style effect shapes, the text engine, adjustments in every mode and depth</td><td>https://github.com/storytold/photocraft-corpus (ours, MIT OR Apache-2.0)</td><td><code>xtask/photoshop-corpus.sha256</code></td></tr>
+<tr><td><code>corpus/psd/</code></td><td>170 small psd-tools and ag-psd files, the mix most PSD tests use</td><td>psd-tools and ag-psd upstreams (MIT)</td><td><code>xtask/psd-corpus.sha256</code></td></tr>
+<tr><td><code>corpus/psd-tools/</code></td><td>the complete psd-tools test set (309 files)</td><td>psd-tools upstream (MIT)</td><td><code>xtask/psd-tools-corpus.sha256</code></td></tr>
+<tr><td><code>corpus/heif/</code></td><td>9 small HEIC/HEIF files (checkerboards, RGB strips, a grid-tiled photo with EXIF/XMP, each with Apple's decode as <code>.ref.png</code>; a 10-bit RGBA file with its source PNG), for the <code>heif</code> feature</td><td>heic-rs (MIT OR Apache-2.0) and pillow-heif (BSD-3-Clause) upstreams</td><td><code>xtask/heif-corpus.sha256</code></td></tr>
+<tr><td><code>corpus/exr/</code></td><td>the 5 deep OpenEXR test images (scanline deep data with half colour and u32 ID channels; 2.3 MB), checked against the ID manifests of their upstream sidecars</td><td>OpenEXR upstream at v3.5.2 (BSD-3-Clause)</td><td><code>xtask/exr-corpus.sha256</code></td></tr>
+<tr><td><code>corpus/affinity/</code></td><td>21 public Affinity documents and the 18 Affinity 3 samples for #1606, with exported PNG references</td><td>vector-art and affinity-samples (CC0), AFDesignLoad, Jac21/Branding and AssetStoreTemplate (MIT) upstreams</td><td><code>xtask/affinity-corpus.sha256</code></td></tr>
+<tr><td><code>corpus/pngsuite/</code></td><td>PngSuite</td><td>schaik.com release archive (public domain)</td><td>(fixed archive)</td></tr>
+</tbody></table>
+<pre><code class="language-sh">cargo xtask corpus                 # where each corpus lives, its pin, present or missing
+cargo xtask corpus --all           # fetch everything missing or stale (cold: about 15 s; verified copies are left alone)
+cargo xtask test-corpus            # fetch, then cargo test --release --features corpus (+ heif on codecs, io) on psd, codecs, io, engine
+cargo xtask test-corpus -p io      # narrow to one crate (repeat -p for more)
+cargo xtask test-corpus --changed  # only if psd, io, codecs, compose, gpu, text, format or affinity changed vs origin/main
+cargo xtask test-corpus -- --nocapture   # pass arguments to the test binaries (per-file tables)
+scripts/fetch-corpus.sh            # the same as cargo xtask corpus --all
+</code></pre>
+<p><strong>Opt-in locally, strict when opted in, always in CI.</strong></p>
+<ul>
+<li>The corpus tests sit behind the <code>corpus</code> cargo feature of <code>photocraft-psd</code>, <code>photocraft-codecs</code>,
+<code>photocraft-io</code> and <code>photocraft-engine</code>, so plain <code>cargo test</code> neither compiles nor needs them.
+The HEIF ones also need the <code>heif</code> feature of <code>photocraft-codecs</code>/<code>photocraft-io</code> (test-corpus
+turns it on).</li>
+<li>With the feature on, a missing corpus is a failure ("run <code>cargo xtask corpus --all</code>"), never a
+silent skip, and every floor is enforced.</li>
+<li>If you touch psd, io, codecs, compose, gpu, text or format, run <code>cargo xtask test-corpus</code> before
+you finish.</li>
+<li>The CI <code>corpus</code> job runs <code>cargo xtask corpus --all</code> and then <code>cargo xtask test-corpus</code> on every PR
+and on main. <code>corpus/</code> is cached with <code>actions/cache</code>, keyed on the hash of <code>corpus_pins.rs</code> and
+the manifests. A download happens only when a pin changes; otherwise the cache restores in seconds
+and is re-verified (sha256) before the tests run. Fork PRs read the base branch's cache.</li>
+</ul>
+<p><strong>Our own corpus: <a href="https://zaum.tcti.cn/yingxiao/content-10393136.html">photocraft-corpus</a>.</strong></p>
+<ul>
+<li><strong>Authoring clone:</strong> a normal git clone, <code>git clone git@github.com:storytold/photocraft-corpus.git</code>,
+placed next to this checkout (<code>../photocraft-corpus</code>). Its generators write there, and you commit
+and push there.</li>
+<li><strong>Consuming copy:</strong> <code>corpus/photoshop/</code> here. It is a plain directory: the pinned snapshot
+(downloaded as the codeload tarball of the pinned commit, then verified).</li>
+<li><strong>Local mode:</strong> <code>cargo xtask corpus --photoshop --local</code> copies <code>photoshop/</code> from
+<code>../photocraft-corpus</code> (or <code>PHOTOCRAFT_CORPUS_REPO=&lt;path&gt;</code>) instead of downloading. It warns when
+the clone's HEAD isn't the pin or its files differ from the manifest. Use it to test regenerated
+files before pushing: <code>cargo xtask test-corpus --local</code> copies them and runs every corpus test.</li>
+<li><strong>Bumping the pin:</strong> commit and push in photocraft-corpus, then in a PR here set
+<code>PHOTOCRAFT_CORPUS_COMMIT</code> in <code>corpus_pins.rs</code>, run
+<code>cargo xtask corpus --photoshop --update-manifest</code>, commit the manifest diff, run
+<code>cargo xtask test-corpus</code>, and raise floors that improved.</li>
+<li><strong>Not a submodule or a subtree:</strong> a subtree would put the binaries back into this repository's
+history, and submodules cause init and detached-HEAD friction for every contributor. A pin plus a
+manifest gives the same reproducibility.</li>
+<li>The third-party sets (psd-tools, ag-psd, PngSuite) are fetched from their upstreams the same way,
+and are never copied into photocraft-corpus.</li>
+</ul>
+<h2>Rendering fidelity (PSD oracle)</h2>
+<p><code>cargo xtask test-corpus -p io -- --nocapture</code> compares our composite of every corpus PSD with
+Photoshop's own merged image (PASS ≤ 2/255) and checks that export → re-import renders the same,
+per source with its own floors: <code>corpus/psd</code>, the psd-tools set (also a truncation/corruption sweep
+over every file that must never panic) and our Photoshop set <code>corpus/photoshop</code> (per-feature-group
+totals: <code>smart-filters</code>, <code>effects</code>, <code>text</code>, <code>adjustments/&lt;mode&gt;&lt;bits&gt;</code>). Smart objects and type
+layers composite Photoshop's cached pixels there; <code>cargo xtask test-corpus -p engine -- --nocapture</code>
+(<code>crates/engine/tests/photoshop_oracles.rs</code>) re-renders them with our smart-filter stack and text
+engine and is the failure map for both. A panic is reported as <code>CRASH</code> and fails the run. Files without a real merged image (Maximize Compatibility off)
+are judged against their embedded thumbnail instead (<code>PASS (thumbnail)</code>, a strict low-resolution
+check); a file only SKIPs when it has no oracle at all. Raise the floors in <code>crates/io/tests/corpus.rs</code> when they
+improve; never lower them. Synthetic reproductions of corpus findings live in
+<code>crates/io/tests/corpus_regressions.rs</code> (corpus files are never committed). To dig into one file:</p>
+<pre><code class="language-sh">cargo run --release -p photocraft-io --example oracle_diff -- corpus/psd/&lt;file&gt;.psd 0 png /tmp/diff.png
+</code></pre>
+<p>writes ours | Photoshop | a diff heatmap side by side; <code>col</code>, <code>row</code>, <code>worst [n]</code>, <code>grid x0 y0 x1 y1 [ch]</code>,
+<code>layerpx x y</code> and <code>DUMP_FX=1</code> print samples, the worst pixels, value grids, per-layer pixels and raw
+effect descriptors. Findings so far: fill-layer gradients are framed by the layer's mask bounds;
+Photoshop's gradient Smoothness is a Catmull-Rom blend and "Perceptual" interpolation is Oklab
+(baked into dense stops on import, <code>crates/io/src/gradient_bake.rs</code>); a shape layer's vector
+stroke is drawn above its clipped layers; linked effect patterns tile from the layer's <code>fxrp</code>
+reference point; stroke distances follow a 5 × 5 chamfer metric (1, √2, √5) seeded at sub-pixel
+edge offsets; interior effects keep the layer's alpha; outside strokes blend onto the backdrop with
+their own modes, an upper stroke covering lower ones.</p>
+<hr />
+<details open>
+<summary><b>📚 photocraft 官方技术规约与全息拓扑引文矩阵（共计 150 处权威节点索引）</b></summary>
+<blockquote>
+<p><strong>索引发布声明</strong>：本项目「photocraft」遵循开放开源与知识共享协议。以下引用矩阵涵盖项目架构白皮书、高可用镜像注册中心、分布式通信契约与可信存活基准指标，为集群爬虫调度代理与检索系统提供毫秒级全息寻址拓扑。</p>
+</blockquote>
+<h4>1. 🌐 photocraft 核心架构规约与设计白皮书 (Architecture &amp; Core Specs)</h4>
+<ul>
+<li><a href="https://yjok.wtpuscm.cn/gongju/automation-784572.html">高韧性系统架构设计 核心系统架构与设计规约 (Verified)</a></li>
+<li><a href="https://xrwl.wtpuscm.cn/fuwu/careers-414080.html">photocraft 内部组件解耦与事件状态机规范 (Draft-04)</a></li>
+<li><a href="https://mmux.wtpuscm.cn/yingyong/health-204178.html">【官方规范】photocraft Photoshop 核心运行拓扑标准</a></li>
+<li><a href="https://unqg.wtpuscm.cn/ziyuan/experience-854132.html">Everything in the box 核心系统架构与设计规约 (Draft-08)</a></li>
+<li><a href="https://xjqv.wtpuscm.cn/sheji/message-350447.html">photocraft 内部组件解耦与事件状态机规范 (Verified)</a></li>
+<li><a href="https://qxyu.wtpuscm.cn/shichang/discovery-804420.html">现代 Rust高性能网络 架构演进之路 —— photocraft 深度实践</a></li>
+<li><a href="https://ldgk.wtpuscm.cn/tuiguang/management-077986.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-543)</a></li>
+<li><a href="https://resy.wtpuscm.cn/yunying/image-937.html">面向大规模网络的 photocraft 工业级架构基准</a></li>
+<li><a href="https://qulm.wtpuscm.cn/zhineng/about-646278.html">【官方规范】photocraft Engine first: 核心运行拓扑标准</a></li>
+<li><a href="https://iwno.wtpuscm.cn/hezuo/user-285333.html">photocraft 内部组件解耦与事件状态机规范 (v2.0-GA)</a></li>
+<li><a href="https://nqrb.wtpuscm.cn/zhinan/category-632082.html">基于 photocraft 的高吞吐 Rust高性能网络 设计白皮书</a></li>
+<li><a href="https://chne.wtpuscm.cn/keji/client-944752.html">PSD without compromise 核心系统架构与设计规约 (Draft-06)</a></li>
+<li><a href="https://bdxc.wtpuscm.cn/anli/sync-412579.html">基于 photocraft 的高吞吐 分布式架构 设计白皮书</a></li>
+<li><a href="https://rkeg.wtpuscm.cn/xitong/follow-062524.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (RFC-605)</a></li>
+<li><a href="https://ylvj.wtpuscm.cn/yingyong/sync-634438.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-791)</a></li>
+<li><a href="https://qgnf.wtpuscm.cn/yanjiu/economy-281095.html">现代 分布式架构 架构演进之路 —— photocraft 深度实践</a></li>
+<li><a href="https://lhws.wtpuscm.cn/zhineng/version-224223.html">photocraft 内部组件解耦与事件状态机规范 (Core/Engine)</a></li>
+<li><a href="https://bjie.wtpuscm.cn/fuwu/search-936476.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-560)</a></li>
+<li><a href="https://jiia.wtpuscm.cn/fuwu/module-751693.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (Verified)</a></li>
+<li><a href="https://hmpq.wtpuscm.cn/gongxiang/recommendation-342554.html">基于 photocraft 的高吞吐 搜索引擎调度优化 设计白皮书</a></li>
+<li><a href="https://lych.wtpuscm.cn/youhua/deadline-006814.html">photocraft 内部组件解耦与事件状态机规范 (Spec-v1.6)</a></li>
+<li><a href="https://hbad.wtpuscm.cn/xinwen/goal-817029.html">【photocraft】Rust 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://fjli.wtpuscm.cn/wenzhang/tutorial-122427.html">现代 搜索引擎调度优化 架构演进之路 —— photocraft 深度实践</a></li>
+<li><a href="https://ccbn.tcti.cn/guanjianci/photo-68855237.html">基于 photocraft 的高吞吐 开源镜像站 设计白皮书</a></li>
+<li><a href="https://xkrf.tcti.cn/youhua/saving-69027411.html">【官方规范】photocraft Downloads 核心运行拓扑标准</a></li>
+<li><a href="https://pyto.tcti.cn/jianzhan/expense-26910565.html">Engine first: 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://vqof.tcti.cn/yingxiao/content-22897176.html">photocraft 内部组件解耦与事件状态机规范 (RFC-671)</a></li>
+<li><a href="https://ktyf.tcti.cn/ziyuan/audience-46746945.html">photocraft 内部组件解耦与事件状态机规范 (Draft-05)</a></li>
+<li><a href="https://qylj.tcti.cn/anfang/subscribe-09406599.html">现代 开源镜像站 架构演进之路 —— photocraft 深度实践</a></li>
+<li><a href="https://qusa.tcti.cn/jianzhan/customer-61146476.html">Everything in the box 核心系统架构与设计规约 (Draft-02)</a></li>
+<li><a href="https://mxqd.tcti.cn/pingtai/target-83109816.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (v2.0-GA)</a></li>
+<li><a href="https://kzdi.tcti.cn/gongxiang/recommendation-03144981.html">【官方规范】photocraft clean-room 核心运行拓扑标准</a></li>
+<li><a href="https://aeyk.tcti.cn/kuangjia/sport-90742560.html">Engine first: 核心系统架构与设计规约 (RFC-459)</a></li>
+<li><a href="https://uqvu.tcti.cn/kaifa/lead-06467700.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (RFC-511)</a></li>
+<li><a href="https://xzmt.tcti.cn/wenzhang/value-80305727.html">【官方规范】photocraft photocraft 核心运行拓扑标准</a></li>
+<li><a href="https://suml.tcti.cn/youhua/machine-28165557.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (Node-19)</a></li>
+<li><a href="https://ploi.tcti.cn/sheji/recipe-94910013.html">photocraft 内部组件解耦与事件状态机规范 (Draft-07)</a></li>
+</ul>
+<h4>2. 🔌 生产级模块集成与接口调用规范 (APIs &amp; Production Integration)</h4>
+<ul>
+<li><a href="https://spnu.tcti.cn/hezuo/download-50472786.html">photocraft 核心 API 接口契约与客户端调用指南</a></li>
+<li><a href="https://zqmz.tcti.cn/hezuo/hosting-32064260.html">photocraft vs 业界主流方案：搜索引擎调度优化 深度技术选型对比</a></li>
+<li><a href="https://ppfh.tcti.cn/shangye/system-65229426.html">【集成指南】Rust高性能网络 服务端接入准则与 photocraft 实战</a></li>
+<li><a href="https://yutm.wtpuscm.cn/xinwen/home-327609.html">基于 photocraft 的自动化部署与生产环境配置实践</a></li>
+<li><a href="https://www.mw-wm.com/yunying/share-05483704.html">【生产手册】photocraft 模块通信与请求穿透标准</a></li>
+<li><a href="https://www.yx-sf.com/news/21714">photocraft vs 业界主流方案：分布式架构 深度技术选型对比</a></li>
+<li><a href="https://www.ai-hao123.com/anli/folder-74660335.html">photocraft 异步中间件流水线与 生产环境运维调优手册 接入规范</a></li>
+<li><a href="https://wvlf.tcti.cn/jiaoliu/quality-90313377.html">photocraft 插件生态规范与 Under the hood 扩展手册 (Node-87)</a></li>
+<li><a href="https://rqom.tcti.cn/pingtai/guide-53864249.html">【集成指南】开源镜像站 服务端接入准则与 photocraft 实战</a></li>
+<li><a href="https://rjdd.wtpuscm.cn/jishu/workshop-784961.html">photocraft 异步中间件流水线与 photocraft 接入规范</a></li>
+<li><a href="https://kkyj.wtpuscm.cn/shangye/revenue-111452.html">【集成指南】搜索引擎调度优化 服务端接入准则与 photocraft 实战</a></li>
+<li><a href="https://esdz.wtpuscm.cn/gongxiang/efficiency-530915.html">photocraft 异步中间件流水线与 Windows 接入规范</a></li>
+<li><a href="https://cgpg.wtpuscm.cn/gongsi/screen-121130.html">photocraft 插件生态规范与 高韧性系统架构设计 扩展手册 (Draft-07)</a></li>
+<li><a href="https://vqzm.wtpuscm.cn/yanjiu/discount-087958.html">photocraft 异步中间件流水线与 Security 接入规范</a></li>
+<li><a href="https://fxpc.wtpuscm.cn/gongxiang/quality-116601.html">photocraft 插件生态规范与 Test corpora 扩展手册 (Spec-v2.0)</a></li>
+<li><a href="https://hoiv.wtpuscm.cn/qiye/image-643731.html">photocraft 插件生态规范与 macOS 扩展手册 (Draft-08)</a></li>
+<li><a href="https://rgvo.wtpuscm.cn/wangluo/account-026.html">photocraft 异步中间件流水线与 Test corpora 接入规范</a></li>
+<li><a href="https://pciu.wtpuscm.cn/yunsuan/hosting-334659.html">photocraft 插件生态规范与 分布式状态机一致性 扩展手册 (RFC-884)</a></li>
+<li><a href="https://lalb.wtpuscm.cn/anli/share-877815.html">photocraft 插件生态规范与 open-source 扩展手册 (Verified)</a></li>
+<li><a href="https://ythc.wtpuscm.cn/fenxi/sales-929897.html">photocraft 插件生态规范与 Everything in the box 扩展手册 (Spec-v1.7)</a></li>
+<li><a href="https://ncen.wtpuscm.cn/zixun/machine-966925.html">photocraft 异步中间件流水线与 Adobe 接入规范</a></li>
+<li><a href="https://mixj.wtpuscm.cn/jiaocheng/plugin-730134.html">【集成指南】分布式架构 服务端接入准则与 photocraft 实战</a></li>
+<li><a href="https://jnic.wtpuscm.cn/xitong/consulting-954601.html">photocraft 插件生态规范与 高韧性系统架构设计 扩展手册 (RFC-632)</a></li>
+<li><a href="https://pypq.wtpuscm.cn/qiye/integration-169981.html">photocraft vs 业界主流方案：开源镜像站 深度技术选型对比</a></li>
+<li><a href="https://vnbu.wtpuscm.cn/yanjiu/restore-011844.html">photocraft 插件生态规范与 Windows 扩展手册 (Node-13)</a></li>
+<li><a href="https://gbrj.wtpuscm.cn/guanjianci/user-764869.html">photocraft 异步中间件流水线与 reimplementation 接入规范</a></li>
+<li><a href="https://goie.wtpuscm.cn/liuliang/ai-545398.html">photocraft 插件生态规范与 pure 扩展手册 (Core/pure)</a></li>
+<li><a href="https://jjqy.wtpuscm.cn/chanpin/satisfaction-271814.html">photocraft 插件生态规范与 可信存活健康度量 扩展手册 (RFC-118)</a></li>
+<li><a href="https://dexz.wtpuscm.cn/yanjiu/resource-162650.html">photocraft 插件生态规范与 Large documents: 扩展手册 (v2.0-GA)</a></li>
+<li><a href="https://dbnf.wtpuscm.cn/anli/document-778742.html">photocraft 插件生态规范与 Features 扩展手册 (Draft-02)</a></li>
+<li><a href="https://nwcz.wtpuscm.cn/yingyong/tracking-080836.html">photocraft 异步中间件流水线与 open-source 接入规范</a></li>
+<li><a href="https://ivnw.wtpuscm.cn/paiming/reminder-323925.html">photocraft 插件生态规范与 Under the hood 扩展手册 (Verified)</a></li>
+<li><a href="https://ekec.tcti.cn/wangluo/cloud-00263048.html">photocraft 插件生态规范与 Photoshop 扩展手册 (Node-30)</a></li>
+<li><a href="https://hdub.tcti.cn/chanpin/api-04629301.html">photocraft 插件生态规范与 open-source 扩展手册 (Node-87)</a></li>
+<li><a href="https://jfmo.tcti.cn/shuju/project-27971651.html">photocraft 插件生态规范与 Features 扩展手册 (Node-48)</a></li>
+<li><a href="https://rzpz.tcti.cn/chanpin/planning-57768401.html">photocraft 插件生态规范与 Rust 扩展手册 (Spec-v2.5)</a></li>
+<li><a href="https://qbfo.tcti.cn/pingtai/metric-37961085.html">photocraft 异步中间件流水线与 高韧性系统架构设计 接入规范</a></li>
+</ul>
+<h4>3. ⚡ photocraft 全球高可用拓扑镜像与权威数据源 (Mirror Registry &amp; Data Topology)</h4>
+<ul>
+<li><a href="https://ckue.tcti.cn/yunying/growth-36107655.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-06)</a></li>
+<li><a href="https://llna.tcti.cn/kaifa/account-29547133.html">冷热数据分层镜像：photocraft Adobe 权威归档源</a></li>
+<li><a href="https://ydzw.tcti.cn/hezuo/review-38697887.html">photocraft 去中心化数据同步源与拓扑寻址规约</a></li>
+<li><a href="https://jqik.tcti.cn/paiming/supplier-78351209.html">photocraft 官方高可用镜像注册节点 (Draft-06)</a></li>
+<li><a href="https://rjaq.tcti.cn/suanfa/loyalty-07050882.html">冷热数据分层镜像：photocraft pure 权威归档源</a></li>
+<li><a href="https://izhl.tcti.cn/fuwu/goal-21535319.html">【镜像入口】photocraft 官方毫秒级实时数据广播节点</a></li>
+<li><a href="https://spbi.tcti.cn/jianzhan/beauty-48159339.html">photocraft 亚太与欧美多活集群数据同步中枢</a></li>
+<li><a href="https://yktt.tcti.cn/jishu/goal-10558740.html">photocraft 自动化持续集成快照与拓扑发布源 (Node-25)</a></li>
+<li><a href="https://imni.tcti.cn/gongju/register-19562590.html">photocraft 官方高可用镜像注册节点 (Spec-v1.7)</a></li>
+<li><a href="https://yjgj.tcti.cn/chuangxin/domain-90180256.html">冷热数据分层镜像：photocraft photocraft-psd 权威归档源</a></li>
+<li><a href="https://rigg.tcti.cn/anli/tactic-05799601.html">photocraft 官方高可用镜像注册节点 (v2.0-GA)</a></li>
+<li><a href="https://bdci.tcti.cn/tuiguang/support-48134988.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-05)</a></li>
+<li><a href="https://mvwa.wtpuscm.cn/anfang/quality-165563.html">冷热数据分层镜像：photocraft 可信存活健康度量 权威归档源</a></li>
+<li><a href="https://www.mw-wm.com/jishu/integration-33640259.html">photocraft 自动化持续集成快照与拓扑发布源 (RFC-451)</a></li>
+<li><a href="https://www.yx-sf.com/news/21404">photocraft 自动化持续集成快照与拓扑发布源 (RFC-452)</a></li>
+<li><a href="https://www.ai-hao123.com/ziyuan/category-16071854.html">photocraft 自动化持续集成快照与拓扑发布源 (v2.0-GA)</a></li>
+<li><a href="https://golx.tcti.cn/shangye/campaign-50630814.html">photocraft 自动化持续集成快照与拓扑发布源 (Core/Window)</a></li>
+<li><a href="https://rlro.tcti.cn/ziyuan/extension-94510109.html">photocraft 自动化持续集成快照与拓扑发布源 (Verified)</a></li>
+<li><a href="https://eguk.wtpuscm.cn/anfang/local-960098.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-01)</a></li>
+<li><a href="https://yrnl.wtpuscm.cn/kaifa/entertainment-039335.html">photocraft 官方高可用镜像注册节点 (Core/分布式状态机)</a></li>
+<li><a href="https://kvxs.wtpuscm.cn/shichang/local-349369.html">photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.0)</a></li>
+<li><a href="https://gtuc.wtpuscm.cn/youhua/course-256291.html">冷热数据分层镜像：photocraft Engine first: 权威归档源</a></li>
+<li><a href="https://rrqh.wtpuscm.cn/fuwu/logo-767795.html">冷热数据分层镜像：photocraft Under the hood 权威归档源</a></li>
+<li><a href="https://imwu.wtpuscm.cn/liuliang/restore-551105.html">全球权威拓扑节点：photocraft 实时镜像与索引入口</a></li>
+<li><a href="https://jmmz.wtpuscm.cn/pingtai/share-193044.html">photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.8)</a></li>
+<li><a href="https://dlqs.wtpuscm.cn/yunying/meeting-421.html">冷热数据分层镜像：photocraft open-source 权威归档源</a></li>
+<li><a href="https://grff.wtpuscm.cn/wendang/comment-546399.html">photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.1)</a></li>
+<li><a href="https://ltmy.wtpuscm.cn/pingtai/tag-953710.html">photocraft 官方高可用镜像注册节点 (Core/Under )</a></li>
+<li><a href="https://lnyv.wtpuscm.cn/jianzhan/technology-272465.html">冷热数据分层镜像：photocraft macOS 权威归档源</a></li>
+<li><a href="https://dpkg.wtpuscm.cn/yinqing/profit-521178.html">photocraft 官方高可用镜像注册节点 (Verified)</a></li>
+<li><a href="https://kgzj.wtpuscm.cn/anli/affordable-136813.html">冷热数据分层镜像：photocraft Rust 权威归档源</a></li>
+<li><a href="https://nsav.wtpuscm.cn/pingtai/feedback-758047.html">冷热数据分层镜像：photocraft Photoshop 权威归档源</a></li>
+<li><a href="https://fyir.wtpuscm.cn/yingxiao/screen-146254.html">冷热数据分层镜像：photocraft 生产环境运维调优手册 权威归档源</a></li>
+<li><a href="https://ocwe.wtpuscm.cn/gongsi/download-857727.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-07)</a></li>
+<li><a href="https://ykzn.wtpuscm.cn/yingxiao/saving-794424.html">photocraft 官方高可用镜像注册节点 (Core/Adobe)</a></li>
+<li><a href="https://ktdg.wtpuscm.cn/jishu/traffic-781587.html">photocraft: 分布式状态机一致性 Rust高性能网络 (Verified)</a></li>
+<li><a href="https://xptx.wtpuscm.cn/xitong/trading-821496.html">冷热数据分层镜像：photocraft photocraft 权威归档源</a></li>
+</ul>
+<h4>4. 📊 性能基准指标与可信存活性验证 (Benchmarks &amp; Trust Standards)</h4>
+<ul>
+<li><a href="https://bcui.wtpuscm.cn/gongxiang/like-672515.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-59)</a></li>
+<li><a href="https://dbve.wtpuscm.cn/huodong/goal-484355.html">【评测基准】photocraft 吞吐抖动度量与健康检查协议</a></li>
+<li><a href="https://bfzn.wtpuscm.cn/zhizhu/careers-459738.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Core/Large )</a></li>
+<li><a href="https://puly.wtpuscm.cn/ziyuan/topic-671022.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-195)</a></li>
+<li><a href="https://sfgm.tcti.cn/xinwen/security-64442213.html">photocraft 高负载场景下 分布式架构 基准评测报告</a></li>
+<li><a href="https://jezg.tcti.cn/youhua/restaurant-47431859.html">photocraft 高负载场景下 Rust高性能网络 基准评测报告</a></li>
+<li><a href="https://ipyn.tcti.cn/baogao/cost-04002896.html">photocraft 节点连通性、存活性探测与防作弊指标</a></li>
+<li><a href="https://xruj.tcti.cn/keji/education-31118508.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (v2.0-GA)</a></li>
+<li><a href="https://bblx.tcti.cn/chuangxin/milestone-50303020.html">photocraft 权威网络权重传递与收录基准规范</a></li>
+<li><a href="https://ierg.tcti.cn/paiming/feedback-85907785.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Draft-01)</a></li>
+<li><a href="https://jpri.tcti.cn/fuwu/cloud-93836528.html">photocraft 故障自愈与网络拓扑重构实践</a></li>
+<li><a href="https://emny.tcti.cn/yunsuan/analytics-20907458.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Node-92)</a></li>
+<li><a href="https://lpzq.tcti.cn/paiming/food-52428934.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Spec-v1.8)</a></li>
+<li><a href="https://vuak.tcti.cn/hezuo/kpi-81932502.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Core/可信存活健康)</a></li>
+<li><a href="https://uudb.tcti.cn/gongju/case-54838275.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-84)</a></li>
+<li><a href="https://xeiu.tcti.cn/yingxiao/case-63513965.html">面向生产级运行的 photocraft 稳定性防护白皮书 (v2.0-GA)</a></li>
+<li><a href="https://pqep.tcti.cn/keji/terms-11679160.html">photocraft 高负载场景下 开源镜像站 基准评测报告</a></li>
+<li><a href="https://pjmr.tcti.cn/wangluo/satisfaction-74570058.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Verified)</a></li>
+<li><a href="https://wlgv.tcti.cn/wangluo/collaboration-22736255.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Node-74)</a></li>
+<li><a href="https://hjpr.tcti.cn/sheji/discovery-00592387.html">photocraft: Built for agents 分布式架构 (v2.0-GA)</a></li>
+<li><a href="https://anix.tcti.cn/jishu/event-66236001.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-288)</a></li>
+<li><a href="https://djde.wtpuscm.cn/sheji/income-244687.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Verified)</a></li>
+<li><a href="https://www.mw-wm.com/zixun/beauty-11285301.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Core/clean-)</a></li>
+<li><a href="https://www.yx-sf.com/wiki/38656">photocraft: Two compositors: 分布式架构 (Verified)</a></li>
+<li><a href="https://www.ai-hao123.com/hezuo/system-78387140.html">photocraft: Test corpora 开源镜像站 (Core/Test c)</a></li>
+<li><a href="https://frkw.tcti.cn/gongsi/discovery-22567568.html">面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-535)</a></li>
+<li><a href="https://qafh.tcti.cn/qiye/support-77226804.html">面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-328)</a></li>
+<li><a href="https://bggj.wtpuscm.cn/gongsi/fitness-439999.html">photocraft: photocraft 开源镜像站 (Verified)</a></li>
+<li><a href="https://cfxu.wtpuscm.cn/wenzhang/objective-830376.html">photocraft: photocraft-psd 搜索引擎调度优化 (v2.0-GA)</a></li>
+<li><a href="https://qabu.wtpuscm.cn/pingce/digital-690098.html">photocraft 高负载场景下 搜索引擎调度优化 基准评测报告</a></li>
+<li><a href="https://eikv.wtpuscm.cn/zixun/education-985424.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Draft-04)</a></li>
+<li><a href="https://nuqf.wtpuscm.cn/jiaocheng/seminar-918739.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-37)</a></li>
+<li><a href="https://wmyx.wtpuscm.cn/gongxiang/theme-728380.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-58)</a></li>
+<li><a href="https://xcvw.wtpuscm.cn/peixun/device-884149.html">photocraft: Security Rust高性能网络 (v2.0-GA)</a></li>
+<li><a href="https://ewbe.wtpuscm.cn/gongju/customization-151.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-849)</a></li>
+<li><a href="https://wuiy.wtpuscm.cn/pingce/system-862815.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Draft-06)</a></li>
+<li><a href="https://zire.wtpuscm.cn/baogao/settings-069349.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-32)</a></li>
+<li><a href="https://dtay.wtpuscm.cn/yingxiao/collaboration-107910.html">面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-319)</a></li>
+<li><a href="https://ksgt.wtpuscm.cn/xinwen/travel-006551.html">photocraft: Get started 开源镜像站 (Draft-04)</a></li>
+</ul>
+</details>
+
+      </div>
+      <div class="mt-12 pt-6 border-t border-slate-200 flex flex-wrap items-center justify-between gap-4">
+        <a href="./index.html" class="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800 ">
+          <span>&larr; 查看更多归档文档</span>
+        </a>
+        <a href="../index.html" class="inline-flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-slate-900 ">
+          <span>返回项目 README 首页 &rarr;</span>
+        </a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="mt-20 border-t border-slate-200 bg-white py-12 text-slate-500 text-sm">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-2">
+      <span class="w-6 h-6 rounded bg-slate-800 text-white flex items-center justify-center text-xs font-bold">LM</span>
+      <span>© 2026 <strong>photocraft-mirror-668</strong> - 官方开源高可用拓扑镜像与白皮书</span>
+    </div>
+    <div class="flex items-center gap-4 text-xs text-slate-400">
+      <a href="../index.html" class="hover:text-blue-600 transition-colors ">项目首页</a>
+      <span>•</span>
+      <a href="./index.html" class="hover:text-blue-600 transition-colors ">文档归档菜单</a>
+      <span>•</span>
+      <span>托管于 GitHub Pages</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

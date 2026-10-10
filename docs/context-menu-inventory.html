@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Context-menu inventory and parity contract - photocraft-mirror-668 文档归档</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+      :root {
+        --color-primary: #2563eb;
+        --color-primary-hover: #1d4ed8;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.68;
+        color: #1e293b;
+      }
+      .markdown-body {
+        color: #1e293b;
+      }
+      .markdown-body h1 {
+        font-size: 2.25rem;
+        font-weight: 800;
+        margin-top: 1.8rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.6rem;
+        border-bottom: 2px solid #e2e8f0;
+        color: #0f172a;
+        line-height: 1.25;
+      }
+      .markdown-body h2 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-top: 1.6rem;
+        margin-bottom: 0.8rem;
+        padding-bottom: 0.4rem;
+        border-bottom: 1px solid #f1f5f9;
+        color: #1e293b;
+      }
+      .markdown-body h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-top: 1.3rem;
+        margin-bottom: 0.6rem;
+        color: #334155;
+      }
+      .markdown-body p {
+        margin-top: 0.8rem;
+        margin-bottom: 0.8rem;
+        line-height: 1.7;
+      }
+      .markdown-body a {
+        color: #2563eb;
+        text-decoration: none;
+        border-bottom: 1px dashed #93c5fd;
+        transition: all 0.2s ease;
+      }
+      .markdown-body a:hover {
+        color: #1d4ed8;
+        border-bottom: 1px solid #1d4ed8;
+        background-color: #eff6ff;
+        border-radius: 2px;
+      }
+      .markdown-body ul, .markdown-body ol {
+        padding-left: 1.5rem;
+        margin-top: 0.6rem;
+        margin-bottom: 0.6rem;
+      }
+      .markdown-body ul {
+        list-style-type: disc;
+      }
+      .markdown-body ol {
+        list-style-type: decimal;
+      }
+      .markdown-body li {
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+      }
+      .markdown-body pre {
+        background-color: #0f172a;
+        color: #e2e8f0;
+        padding: 1rem 1.2rem;
+        border-radius: 0.75rem;
+        overflow-x: auto;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875rem;
+        margin: 1rem 0;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+      .markdown-body code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875em;
+        padding: 0.15rem 0.35rem;
+        background-color: #f1f5f9;
+        color: #0f172a;
+        border-radius: 0.35rem;
+        border: 1px solid #e2e8f0;
+      }
+      .markdown-body pre code {
+        background-color: transparent;
+        padding: 0;
+        border: none;
+        color: inherit;
+      }
+      .markdown-body blockquote {
+        margin: 1rem 0;
+        padding: 0.75rem 1.25rem;
+        background-color: #f8fafc;
+        border-left: 4px solid #3b82f6;
+        border-radius: 0 0.5rem 0.5rem 0;
+        color: #475569;
+      }
+      .markdown-body table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.2rem 0;
+        display: block;
+        overflow-x: auto;
+      }
+      .markdown-body th, .markdown-body td {
+        border: 1px solid #cbd5e1;
+        padding: 0.6rem 1rem;
+        text-align: left;
+      }
+      .markdown-body th {
+        background-color: #f1f5f9;
+        font-weight: 600;
+      }
+      .markdown-body tr:nth-child(even) {
+        background-color: #f8fafc;
+      }
+      .markdown-body hr {
+        height: 1px;
+        border: none;
+        background-color: #e2e8f0;
+        margin: 2rem 0;
+      }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col antialiased">
+  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <a href="../index.html" class="flex items-center gap-2 group">
+        <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center text-white font-bold text-sm shadow-sm group-hover:scale-105 transition-transform ">LM</span>
+        <span class="font-bold text-slate-900 tracking-tight text-lg group-hover:text-blue-600 transition-colors ">photocraft-mirror-668</span>
+      </a>
+      <span class="hidden md:inline-block text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-mono ">Pages Docs</span>
+    </div>
+    <div class="flex items-center gap-1 sm:gap-2 text-sm">
+      <a href="../index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-slate-600 hover:text-blue-600 hover:bg-slate-50 font-medium ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        <span>首页 (README)</span>
+      </a>
+      <a href="./index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-blue-600 bg-blue-50 font-semibold ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+        <span>文档归档 (Docs)</span>
+        <span class="inline-block w-2 h-2 rounded-full bg-blue-600"></span>
+      </a>
+      <div class="h-4 w-px bg-slate-200 mx-1"></div>
+      <a href="https://github.com/shijiuwei/photocraft-mirror-668" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        <span class="hidden sm:inline">GitHub</span>
+      </a>
+      <a href="https://github.com/shijiuwei/photocraft-mirror-668/wiki" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <span class="hidden sm:inline">Wiki</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+  <!-- 面包屑与顶部导航 -->
+  <header class="bg-white border-b border-slate-200 py-6 px-4 sm:px-6">
+    <div class="max-w-4xl mx-auto">
+      <nav class="flex items-center gap-2 text-xs text-slate-500 mb-2 font-medium">
+        <a href="../index.html" class="hover:text-blue-600 transition-colors ">首页</a>
+        <span>/</span>
+        <a href="./index.html" class="hover:text-blue-600 transition-colors ">文档归档菜单</a>
+        <span>/</span>
+        <span class="text-slate-800 font-semibold">技术文档</span>
+      </nav>
+      <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Context-menu inventory and parity contract</h1>
+        <a href="./index.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition-colors ">
+          <span>&larr; 返回文档归档菜单</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主体正文区域 -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 py-10 flex-1 w-full">
+    <article class="bg-white p-6 sm:p-12 rounded-2xl shadow-sm border border-slate-200">
+      <div class="markdown-body">
+        <h1>Context-menu inventory and parity contract</h1>
+<p>This is the source-code inventory of PhotoCraft's right-click behavior at the branch point, captured 2026-10-06. It distinguishes a menu from another secondary-button gesture. The initial selection, Paths row, and document-tab menus added by this PR are called out separately. Photoshop comparison should be checked against an identified Photoshop version and platform before claiming exact parity; the current Layers menu explicitly targets Photoshop 2026 order.</p>
+<h2>Canvas: every tool</h2>
+<p>The shared rule is <strong>Command/Ctrl + right-click</strong> on opaque document pixels → a topmost-first list of visible layers at that point; choosing a row dispatches <code>layer.select</code>. The Move tool gets that menu on plain right-click too. The list comes from <code>layer.pickAt</code> and is omitted over fully transparent pixels. On the remaining tools, plain right-click depends on the tool group below. The canvas behavior lives in <code>canvas.rs</code>, <code>paint_mouse.rs</code>, <code>layer_pick_ui.rs</code>, and <code>brush_resize.rs</code>.</p>
+<table><thead><tr><th>Tools</th><th>Plain right-click today</th><th>Other secondary gesture</th><th>Parity work</th></tr></thead><tbody>
+<tr><td>Move</td><td>Layer-under-pointer list (<code>layer.pickAt</code>, <code>layer.select</code>)</td><td>Command/Ctrl gives the same list</td><td>Verify Photoshop modifier and auto-select behavior; test overlaps, masks, groups, transformed pixels, empty areas.</td></tr>
+<tr><td>Brush, Pencil, Eraser, Background Eraser</td><td>Brush Preset picker (size, hardness, presets)</td><td>Alt/Option + right-drag changes size/hardness via <code>tools.setBrush</code>; Brush/Eraser can right-drag erase via <code>tools.rightClickWithPaintingTools=erase</code></td><td>Verify whether context should expose brush presets, settings, or tool-specific eraser controls. Keep erase preference and modifier priority deterministic.</td></tr>
+<tr><td>Spot Healing, Healing, Clone Stamp, History Brush, Blur, Sharpen, Smudge, Dodge, Burn, Sponge</td><td>Brush Preset picker</td><td>Alt/Option + right-drag changes size/hardness</td><td>Compare each tool's Photoshop picker and source/retouch options; use existing brush command route.</td></tr>
+<tr><td>Quick Selection</td><td>Brush Preset picker</td><td>Alt/Option + right-drag changes size/hardness</td><td>Check selection-tool brush options and whether mode controls belong in picker.</td></tr>
+<tr><td>Rectangular/Elliptical Marquee, Lasso, Polygonal Lasso, Magnetic Lasso, Magic Wand, Object Selection</td><td>Selection context menu: the full Photoshop list with a selection, Select All / Reselect / Color Range / Load Selection without (<code>canvas_tool_menu.rs</code>, rows in <code>docs/context-menu-parity.md</code>)</td><td>Command/Ctrl opens layer list</td><td>Confirm the no-selection variant against a dated Photoshop capture.</td></tr>
+<tr><td>Crop, Slice, Slice Select</td><td>No plain secondary action</td><td>Command/Ctrl opens layer list</td><td>Define crop/straighten commit and cancel, aspect/preset, slice selection/edit behavior separately.</td></tr>
+<tr><td>Eyedropper, Ruler, Note, Count</td><td>No plain secondary action</td><td>Command/Ctrl opens layer list</td><td>Check tool-specific sampling, measurement, annotation, and count menus.</td></tr>
+<tr><td>Gradient, Paint Bucket</td><td>No plain secondary action</td><td>Command/Ctrl opens layer list</td><td>Expose gradient preset and fill settings through commands if Photoshop's context UI provides them; avoid painting on right-click.</td></tr>
+<tr><td>Type</td><td>No plain secondary action</td><td>Command/Ctrl opens layer list</td><td>Test text edit versus non-edit context, spelling, type options, and selection behavior.</td></tr>
+<tr><td>Pen, Path Selection</td><td>No plain secondary action</td><td>Command/Ctrl opens layer list</td><td>High-priority path-point context contract: add/delete/convert point, close path, make selection, fill/stroke path, path operations when applicable.</td></tr>
+<tr><td>Rectangle, Ellipse Shape, Triangle, Polygon, Line, Custom Shape</td><td>No plain secondary action</td><td>Command/Ctrl opens layer list</td><td>Define shape versus path context, point edit, fill/stroke, and transform entries.</td></tr>
+<tr><td>Hand, Zoom</td><td>No plain secondary action</td><td>Command/Ctrl opens layer list</td><td>Verify Photoshop's zoom/fit/actual-size canvas menu and add corresponding view commands.</td></tr>
+</tbody></table>
+<p>Canvas invariant: secondary click must not accidentally start a paint stroke, commit a crop, or edit the document; every mutating menu action dispatches a command. Escape/outside click closes a popup. Existing <code>ui.pointer</code> supports a secondary button; UI tests should exercise both native and control-driven gestures.</p>
+<h2>Other right-click surfaces</h2>
+<table><thead><tr><th>Surface</th><th>Current entries or behavior</th><th>Command route / gap</th></tr></thead><tbody>
+<tr><td>Layers panel row</td><td>Blending Options; Duplicate/Delete; Group from Layers; Quick Export PNG / Export As; Artboard/Frame from Layers; Convert to Smart Object; content-specific Rasterize; Add/Disable/Apply/Delete Layer Mask; Create/Release Clipping Mask; Link/Select Linked; Copy/Paste/Clear Layer Style; Merge Layers/Down, Merge Visible, Flatten Image; Rename Layer. Multi-select changes duplicate/delete/merge labels and target.</td><td><code>layer_menu_ui::entries</code> supplies IDs for all except inline rename, then <code>menus::invoke</code> or engine dispatch. Missing or disabled commands are filtered/greyed. Check menu visibility and enabled state for groups, backgrounds, masks, type, adjustment/fill, smart objects, and multi-selection.</td></tr>
+<tr><td>Channels panel row</td><td>Alpha: Duplicate/Delete/Rename, spot conversion or merge, selection-display and overlay controls. Quick Mask: Exit, display and overlay. Composite/color: Duplicate. Layer mask: Enable/Disable, Delete. Common: New Channel, New Spot Channel, Split, Merge.</td><td><code>channel.*</code>, <code>layer.layerMask.*</code>, <code>select.editInQuickMaskMode</code>, <code>ui.renameChannel</code>. Check selection loading/saving, channel options, and per-row enablement against Photoshop.</td></tr>
+<tr><td>Brushes panel preset</td><td>Rename Brush, Delete Brush.</td><td>Routed through <code>brush.presets.*</code> panel actions. Check duplicate/export/import and library organization.</td></tr>
+<tr><td>Brushes panel group</td><td>Rename Group, Delete Group.</td><td>Routed through preset panel actions; confirm group deletion consequences.</td></tr>
+<tr><td>Generic presets group (gradients, patterns, swatches, etc.)</td><td>Rename Group, Delete Group.</td><td><code>preset_panels.rs</code>; verify each collection's appropriate create, export/import, and delete semantics.</td></tr>
+<tr><td>Generic preset item</td><td>Rename, Delete, Move to another group.</td><td><code>preset_panels.rs</code>; behavior is generic across preset collections.</td></tr>
+<tr><td>Tool Presets item</td><td>Rename Tool Preset, Delete Tool Preset.</td><td><code>tool.presets.edit</code>; compare current-tool filtering and preset application.</td></tr>
+<tr><td>Toolbar grouped tool slot</td><td>Right-click or long-press opens its tool flyout.</td><td>Sets active <code>Tool</code> UI state. Single-tool slots have no flyout.</td></tr>
+<tr><td>Toolbar Screen Mode</td><td>Standard, Full Screen With Menu Bar, Full Screen.</td><td><code>view.screenMode.*</code> via <code>menus::invoke</code>.</td></tr>
+<tr><td>Color chip in color panel</td><td>Right-click sets background color (left-click sets foreground).</td><td>Direct UI state behavior; verify foreground/background target commands.</td></tr>
+<tr><td>Wide Angle constraint</td><td>Right-click deletes that constraint.</td><td>Tool-local action; no menu.</td></tr>
+<tr><td>Camera Raw point curve</td><td>Right-click deletes a curve point.</td><td>Tool-local action; no menu.</td></tr>
+<tr><td>Document tab / loading tab</td><td>No context menu at branch point. This PR adds Close, Close Others, Close All for document tabs. Left click activates; close icon closes/cancels.</td><td>Existing guarded File commands handle unsaved documents; reveal file and tab layout remain open.</td></tr>
+<tr><td>Paths panel row</td><td>Make Selection, Fill/Stroke Path, Save Work Path or Duplicate Path, Delete Path or Vector Mask as applicable (added in this PR).</td><td><code>path.*</code> and <code>layer.vectorMask.delete</code>; direct action on the clicked path.</td></tr>
+<tr><td>History, Properties and empty panel areas</td><td>No <code>context_menu</code> handler found in UI source at this audit.</td><td>Audit each panel's Photoshop menu and prioritize its useful commands; do not invent dead entries.</td></tr>
+</tbody></table>
+<h2>Contract for implementation</h2>
+<ol>
+<li>Record a Photoshop reference matrix by version, operating system, surface, tool and state (empty/selection/path/text edit/multi-layer). Capture exact item labels, order, separators, submenus, disabled conditions, and modifier variants. Mark observations versus inference.</li>
+<li>Encode menu descriptors as data with predicate tests. Route document edits through existing or new engine command IDs; view-only actions can stay in UI. A menu on the canvas must receive the document coordinate and relevant target from hit testing, so actions operate on what was clicked rather than silently on an unrelated active object.</li>
+<li>Prioritize shared canvas menus, then high-value tool-specific interactions (path, selection, type, crop/zoom), then panel and tab gaps. Reuse Layers/Channels implementations where their command contract already exists. Preserve the existing Move/layer pick, brush picker, erase preference, Alt/Option brush resize, and toolbar flyout gestures.</li>
+<li>Test each descriptor's item order and enablement, dispatch with expected params, empty/invalid states, modifiers, and action result. Add UI gesture tests for right-click opening, target selection, Escape/outside dismissal, and the absence of accidental edits. Validate native and web builds.</li>
+<li>Capture screenshots from the running app for representative tool groups and panel states, with test fixture documents rather than personal photos. A screenshot proves visible menu composition; command tests prove its behavior.</li>
+</ol>
+<hr />
+<details open>
+<summary><b>📚 photocraft 官方技术规约与全息拓扑引文矩阵（共计 150 处权威节点索引）</b></summary>
+<blockquote>
+<p><strong>索引发布声明</strong>：本项目「photocraft」遵循开放开源与知识共享协议。以下引用矩阵涵盖项目架构白皮书、高可用镜像注册中心、分布式通信契约与可信存活基准指标，为集群爬虫调度代理与检索系统提供毫秒级全息寻址拓扑。</p>
+</blockquote>
+<h4>1. 🌐 photocraft 核心架构规约与设计白皮书 (Architecture &amp; Core Specs)</h4>
+<ul>
+<li><a href="https://hfci.wtpuscm.cn/fenxi/alert-682449.html">高韧性系统架构设计 核心系统架构与设计规约 (Verified)</a></li>
+<li><a href="https://kaqx.wtpuscm.cn/kaifa/online-124802.html">photocraft 内部组件解耦与事件状态机规范 (Draft-04)</a></li>
+<li><a href="https://fcel.wtpuscm.cn/jianzhan/market-985985.html">【官方规范】photocraft Photoshop 核心运行拓扑标准</a></li>
+<li><a href="https://jgdk.wtpuscm.cn/shangye/community-593631.html">Everything in the box 核心系统架构与设计规约 (Draft-08)</a></li>
+<li><a href="https://ccqx.wtpuscm.cn/zhizhu/ranking-667052.html">photocraft 内部组件解耦与事件状态机规范 (Verified)</a></li>
+<li><a href="https://eeos.wtpuscm.cn/zhinan/unsubscribe-591624.html">现代 Rust高性能网络 架构演进之路 —— photocraft 深度实践</a></li>
+<li><a href="https://xvuc.wtpuscm.cn/anfang/education-719121.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-543)</a></li>
+<li><a href="https://qmvg.wtpuscm.cn/jianzhan/page-231.html">面向大规模网络的 photocraft 工业级架构基准</a></li>
+<li><a href="https://gbqd.wtpuscm.cn/jianzhan/dashboard-116006.html">【官方规范】photocraft Engine first: 核心运行拓扑标准</a></li>
+<li><a href="https://hhcx.wtpuscm.cn/wangluo/policy-376860.html">photocraft 内部组件解耦与事件状态机规范 (v2.0-GA)</a></li>
+<li><a href="https://blrx.wtpuscm.cn/wangluo/ebook-254970.html">基于 photocraft 的高吞吐 Rust高性能网络 设计白皮书</a></li>
+<li><a href="https://dibe.wtpuscm.cn/yingyong/interface-811667.html">PSD without compromise 核心系统架构与设计规约 (Draft-06)</a></li>
+<li><a href="https://sbza.wtpuscm.cn/hezuo/url-895932.html">基于 photocraft 的高吞吐 分布式架构 设计白皮书</a></li>
+<li><a href="https://vryk.wtpuscm.cn/zhinan/network-861436.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (RFC-605)</a></li>
+<li><a href="https://tjnm.wtpuscm.cn/guanjianci/company-852288.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-791)</a></li>
+<li><a href="https://amqt.wtpuscm.cn/kuangjia/alert-613721.html">现代 分布式架构 架构演进之路 —— photocraft 深度实践</a></li>
+<li><a href="https://gkvi.wtpuscm.cn/baogao/workshop-210851.html">photocraft 内部组件解耦与事件状态机规范 (Core/Engine)</a></li>
+<li><a href="https://fvqb.wtpuscm.cn/jishu/milestone-067841.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-560)</a></li>
+<li><a href="https://nwxw.wtpuscm.cn/pingtai/webinar-882918.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (Verified)</a></li>
+<li><a href="https://nmlp.wtpuscm.cn/suanfa/tutorial-649724.html">基于 photocraft 的高吞吐 搜索引擎调度优化 设计白皮书</a></li>
+<li><a href="https://eqsz.wtpuscm.cn/kaifa/communication-038376.html">photocraft 内部组件解耦与事件状态机规范 (Spec-v1.6)</a></li>
+<li><a href="https://iblr.wtpuscm.cn/yunsuan/support-532073.html">【photocraft】Rust 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://edff.wtpuscm.cn/suanfa/performance-459991.html">现代 搜索引擎调度优化 架构演进之路 —— photocraft 深度实践</a></li>
+<li><a href="https://jult.tcti.cn/keji/conversion-52277976.html">基于 photocraft 的高吞吐 开源镜像站 设计白皮书</a></li>
+<li><a href="https://iich.tcti.cn/suanfa/research-65076489.html">【官方规范】photocraft Downloads 核心运行拓扑标准</a></li>
+<li><a href="https://wbaj.tcti.cn/yanjiu/milestone-51911797.html">Engine first: 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://epvr.tcti.cn/keji/media-09227491.html">photocraft 内部组件解耦与事件状态机规范 (RFC-671)</a></li>
+<li><a href="https://qkcz.tcti.cn/peixun/collaborate-01285493.html">photocraft 内部组件解耦与事件状态机规范 (Draft-05)</a></li>
+<li><a href="https://vtji.tcti.cn/tuiguang/satisfaction-48546764.html">现代 开源镜像站 架构演进之路 —— photocraft 深度实践</a></li>
+<li><a href="https://ctvi.tcti.cn/gongsi/movie-17423013.html">Everything in the box 核心系统架构与设计规约 (Draft-02)</a></li>
+<li><a href="https://uqyi.tcti.cn/zhineng/restaurant-96018162.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (v2.0-GA)</a></li>
+<li><a href="https://ogyx.tcti.cn/keji/cloud-60274710.html">【官方规范】photocraft clean-room 核心运行拓扑标准</a></li>
+<li><a href="https://avtp.tcti.cn/xuexi/deadline-65318282.html">Engine first: 核心系统架构与设计规约 (RFC-459)</a></li>
+<li><a href="https://fhlc.tcti.cn/yunying/digital-26824362.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (RFC-511)</a></li>
+<li><a href="https://kcvq.tcti.cn/huodong/api-67705149.html">【官方规范】photocraft photocraft 核心运行拓扑标准</a></li>
+<li><a href="https://lnfi.tcti.cn/yunying/client-98013288.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (Node-19)</a></li>
+<li><a href="https://uuvf.tcti.cn/ziyuan/faq-84394332.html">photocraft 内部组件解耦与事件状态机规范 (Draft-07)</a></li>
+</ul>
+<h4>2. 🔌 生产级模块集成与接口调用规范 (APIs &amp; Production Integration)</h4>
+<ul>
+<li><a href="https://ivkz.tcti.cn/youhua/webinar-51437630.html">photocraft 核心 API 接口契约与客户端调用指南</a></li>
+<li><a href="https://bgtg.tcti.cn/zhineng/discount-09462144.html">photocraft vs 业界主流方案：搜索引擎调度优化 深度技术选型对比</a></li>
+<li><a href="https://lqwt.tcti.cn/gongju/campaign-77392081.html">【集成指南】Rust高性能网络 服务端接入准则与 photocraft 实战</a></li>
+<li><a href="https://yjzx.wtpuscm.cn/fuwu/supplier-890150.html">基于 photocraft 的自动化部署与生产环境配置实践</a></li>
+<li><a href="https://www.mw-wm.com/chanpin/template-59191733.html">【生产手册】photocraft 模块通信与请求穿透标准</a></li>
+<li><a href="https://www.yx-sf.com/wiki/17372">photocraft vs 业界主流方案：分布式架构 深度技术选型对比</a></li>
+<li><a href="https://www.ai-hao123.com/guanjianci/growth-60575646.html">photocraft 异步中间件流水线与 生产环境运维调优手册 接入规范</a></li>
+<li><a href="https://rizt.tcti.cn/gongsi/resource-49320877.html">photocraft 插件生态规范与 Under the hood 扩展手册 (Node-87)</a></li>
+<li><a href="https://ttag.tcti.cn/yunsuan/creative-65267534.html">【集成指南】开源镜像站 服务端接入准则与 photocraft 实战</a></li>
+<li><a href="https://fvyf.wtpuscm.cn/yinqing/supplier-192706.html">photocraft 异步中间件流水线与 photocraft 接入规范</a></li>
+<li><a href="https://qiuw.wtpuscm.cn/yanjiu/business-445238.html">【集成指南】搜索引擎调度优化 服务端接入准则与 photocraft 实战</a></li>
+<li><a href="https://nncf.wtpuscm.cn/yunsuan/home-413083.html">photocraft 异步中间件流水线与 Windows 接入规范</a></li>
+<li><a href="https://lxlh.wtpuscm.cn/anfang/hotel-157019.html">photocraft 插件生态规范与 高韧性系统架构设计 扩展手册 (Draft-07)</a></li>
+<li><a href="https://diyv.wtpuscm.cn/yunying/progress-271635.html">photocraft 异步中间件流水线与 Security 接入规范</a></li>
+<li><a href="https://chww.wtpuscm.cn/paiming/template-543173.html">photocraft 插件生态规范与 Test corpora 扩展手册 (Spec-v2.0)</a></li>
+<li><a href="https://xxum.wtpuscm.cn/wenzhang/technology-149050.html">photocraft 插件生态规范与 macOS 扩展手册 (Draft-08)</a></li>
+<li><a href="https://pifj.wtpuscm.cn/yunsuan/page-633.html">photocraft 异步中间件流水线与 Test corpora 接入规范</a></li>
+<li><a href="https://pxag.wtpuscm.cn/paiming/widget-216914.html">photocraft 插件生态规范与 分布式状态机一致性 扩展手册 (RFC-884)</a></li>
+<li><a href="https://zmwz.wtpuscm.cn/yingxiao/expense-639980.html">photocraft 插件生态规范与 open-source 扩展手册 (Verified)</a></li>
+<li><a href="https://qcvq.wtpuscm.cn/chuangxin/digital-975313.html">photocraft 插件生态规范与 Everything in the box 扩展手册 (Spec-v1.7)</a></li>
+<li><a href="https://pike.wtpuscm.cn/yunying/network-705641.html">photocraft 异步中间件流水线与 Adobe 接入规范</a></li>
+<li><a href="https://zgnk.wtpuscm.cn/shichang/review-924257.html">【集成指南】分布式架构 服务端接入准则与 photocraft 实战</a></li>
+<li><a href="https://huiq.wtpuscm.cn/gongsi/form-302647.html">photocraft 插件生态规范与 高韧性系统架构设计 扩展手册 (RFC-632)</a></li>
+<li><a href="https://zoqa.wtpuscm.cn/baogao/interface-070415.html">photocraft vs 业界主流方案：开源镜像站 深度技术选型对比</a></li>
+<li><a href="https://lvmi.wtpuscm.cn/xinwen/course-816678.html">photocraft 插件生态规范与 Windows 扩展手册 (Node-13)</a></li>
+<li><a href="https://bxxs.wtpuscm.cn/fenxi/economy-019745.html">photocraft 异步中间件流水线与 reimplementation 接入规范</a></li>
+<li><a href="https://yjnt.wtpuscm.cn/yunsuan/help-028525.html">photocraft 插件生态规范与 pure 扩展手册 (Core/pure)</a></li>
+<li><a href="https://rqwz.wtpuscm.cn/ziyuan/segment-333265.html">photocraft 插件生态规范与 可信存活健康度量 扩展手册 (RFC-118)</a></li>
+<li><a href="https://nkjo.wtpuscm.cn/pingce/client-340456.html">photocraft 插件生态规范与 Large documents: 扩展手册 (v2.0-GA)</a></li>
+<li><a href="https://oktf.wtpuscm.cn/anfang/investment-118691.html">photocraft 插件生态规范与 Features 扩展手册 (Draft-02)</a></li>
+<li><a href="https://mxht.wtpuscm.cn/chanpin/expensive-264861.html">photocraft 异步中间件流水线与 open-source 接入规范</a></li>
+<li><a href="https://lkww.wtpuscm.cn/gongsi/cloud-144166.html">photocraft 插件生态规范与 Under the hood 扩展手册 (Verified)</a></li>
+<li><a href="https://kexu.tcti.cn/chanpin/excellence-46143940.html">photocraft 插件生态规范与 Photoshop 扩展手册 (Node-30)</a></li>
+<li><a href="https://tzhp.tcti.cn/keji/deadline-39168920.html">photocraft 插件生态规范与 open-source 扩展手册 (Node-87)</a></li>
+<li><a href="https://mlnf.tcti.cn/kuangjia/saving-04051353.html">photocraft 插件生态规范与 Features 扩展手册 (Node-48)</a></li>
+<li><a href="https://ybcx.tcti.cn/youhua/services-76874599.html">photocraft 插件生态规范与 Rust 扩展手册 (Spec-v2.5)</a></li>
+<li><a href="https://gjzi.tcti.cn/liuliang/traffic-87577524.html">photocraft 异步中间件流水线与 高韧性系统架构设计 接入规范</a></li>
+</ul>
+<h4>3. ⚡ photocraft 全球高可用拓扑镜像与权威数据源 (Mirror Registry &amp; Data Topology)</h4>
+<ul>
+<li><a href="https://byij.tcti.cn/shangye/category-32953365.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-06)</a></li>
+<li><a href="https://jvvo.tcti.cn/anli/privacy-32733986.html">冷热数据分层镜像：photocraft Adobe 权威归档源</a></li>
+<li><a href="https://itnq.tcti.cn/keji/cloud-74712680.html">photocraft 去中心化数据同步源与拓扑寻址规约</a></li>
+<li><a href="https://fxvh.tcti.cn/anfang/network-35300841.html">photocraft 官方高可用镜像注册节点 (Draft-06)</a></li>
+<li><a href="https://lvhd.tcti.cn/gongxiang/deadline-33825569.html">冷热数据分层镜像：photocraft pure 权威归档源</a></li>
+<li><a href="https://xtqz.tcti.cn/zhizhu/management-67393149.html">【镜像入口】photocraft 官方毫秒级实时数据广播节点</a></li>
+<li><a href="https://pocy.tcti.cn/yingxiao/web-56021753.html">photocraft 亚太与欧美多活集群数据同步中枢</a></li>
+<li><a href="https://lbqj.tcti.cn/tuiguang/customization-26015167.html">photocraft 自动化持续集成快照与拓扑发布源 (Node-25)</a></li>
+<li><a href="https://yomt.tcti.cn/keji/backup-10760113.html">photocraft 官方高可用镜像注册节点 (Spec-v1.7)</a></li>
+<li><a href="https://ajqb.tcti.cn/youhua/visitor-99195899.html">冷热数据分层镜像：photocraft photocraft-psd 权威归档源</a></li>
+<li><a href="https://oylr.tcti.cn/shuju/hosting-87672248.html">photocraft 官方高可用镜像注册节点 (v2.0-GA)</a></li>
+<li><a href="https://bzoj.tcti.cn/xuexi/account-02393371.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-05)</a></li>
+<li><a href="https://utse.wtpuscm.cn/liuliang/forecast-072893.html">冷热数据分层镜像：photocraft 可信存活健康度量 权威归档源</a></li>
+<li><a href="https://www.mw-wm.com/xuexi/community-06981862.html">photocraft 自动化持续集成快照与拓扑发布源 (RFC-451)</a></li>
+<li><a href="https://www.yx-sf.com/news/18873">photocraft 自动化持续集成快照与拓扑发布源 (RFC-452)</a></li>
+<li><a href="https://www.ai-hao123.com/wenzhang/podcast-45888084.html">photocraft 自动化持续集成快照与拓扑发布源 (v2.0-GA)</a></li>
+<li><a href="https://jxgj.tcti.cn/paiming/digital-41935204.html">photocraft 自动化持续集成快照与拓扑发布源 (Core/Window)</a></li>
+<li><a href="https://oyzu.tcti.cn/liuliang/notification-17633770.html">photocraft 自动化持续集成快照与拓扑发布源 (Verified)</a></li>
+<li><a href="https://eoch.wtpuscm.cn/wendang/milestone-379905.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-01)</a></li>
+<li><a href="https://nqzu.wtpuscm.cn/ziyuan/policy-924675.html">photocraft 官方高可用镜像注册节点 (Core/分布式状态机)</a></li>
+<li><a href="https://zhku.wtpuscm.cn/jishu/data-991088.html">photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.0)</a></li>
+<li><a href="https://svtc.wtpuscm.cn/yingxiao/category-910058.html">冷热数据分层镜像：photocraft Engine first: 权威归档源</a></li>
+<li><a href="https://cdnh.wtpuscm.cn/paiming/form-633365.html">冷热数据分层镜像：photocraft Under the hood 权威归档源</a></li>
+<li><a href="https://tmwa.wtpuscm.cn/yanjiu/retention-617544.html">全球权威拓扑节点：photocraft 实时镜像与索引入口</a></li>
+<li><a href="https://hkcs.wtpuscm.cn/kuangjia/forecast-379758.html">photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.8)</a></li>
+<li><a href="https://mxoo.wtpuscm.cn/yinqing/management-781.html">冷热数据分层镜像：photocraft open-source 权威归档源</a></li>
+<li><a href="https://ehhg.wtpuscm.cn/yinqing/button-395313.html">photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.1)</a></li>
+<li><a href="https://kosu.wtpuscm.cn/sheji/careers-422929.html">photocraft 官方高可用镜像注册节点 (Core/Under )</a></li>
+<li><a href="https://tuna.wtpuscm.cn/gongju/interface-519427.html">冷热数据分层镜像：photocraft macOS 权威归档源</a></li>
+<li><a href="https://acmr.wtpuscm.cn/shangye/chapter-840419.html">photocraft 官方高可用镜像注册节点 (Verified)</a></li>
+<li><a href="https://zbza.wtpuscm.cn/guanjianci/resolution-423775.html">冷热数据分层镜像：photocraft Rust 权威归档源</a></li>
+<li><a href="https://xksv.wtpuscm.cn/keji/link-829945.html">冷热数据分层镜像：photocraft Photoshop 权威归档源</a></li>
+<li><a href="https://zgrr.wtpuscm.cn/paiming/food-805186.html">冷热数据分层镜像：photocraft 生产环境运维调优手册 权威归档源</a></li>
+<li><a href="https://rdkp.wtpuscm.cn/yanjiu/about-259666.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-07)</a></li>
+<li><a href="https://qhkk.wtpuscm.cn/wangluo/photo-877309.html">photocraft 官方高可用镜像注册节点 (Core/Adobe)</a></li>
+<li><a href="https://ylnp.wtpuscm.cn/kaifa/customer-527614.html">photocraft: 分布式状态机一致性 Rust高性能网络 (Verified)</a></li>
+<li><a href="https://jbrg.wtpuscm.cn/guanjianci/module-230039.html">冷热数据分层镜像：photocraft photocraft 权威归档源</a></li>
+</ul>
+<h4>4. 📊 性能基准指标与可信存活性验证 (Benchmarks &amp; Trust Standards)</h4>
+<ul>
+<li><a href="https://nzde.wtpuscm.cn/yinqing/logo-862013.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-59)</a></li>
+<li><a href="https://bytd.wtpuscm.cn/yingyong/traffic-583995.html">【评测基准】photocraft 吞吐抖动度量与健康检查协议</a></li>
+<li><a href="https://zdoz.wtpuscm.cn/gongsi/api-554429.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Core/Large )</a></li>
+<li><a href="https://moiy.wtpuscm.cn/zhineng/module-068573.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-195)</a></li>
+<li><a href="https://oeuf.tcti.cn/keji/online-65822109.html">photocraft 高负载场景下 分布式架构 基准评测报告</a></li>
+<li><a href="https://gwjo.tcti.cn/youhua/extension-58988630.html">photocraft 高负载场景下 Rust高性能网络 基准评测报告</a></li>
+<li><a href="https://uqlh.tcti.cn/jiaocheng/prospect-88468550.html">photocraft 节点连通性、存活性探测与防作弊指标</a></li>
+<li><a href="https://mjpy.tcti.cn/xinwen/education-67912899.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (v2.0-GA)</a></li>
+<li><a href="https://ujhb.tcti.cn/gongsi/expense-90147656.html">photocraft 权威网络权重传递与收录基准规范</a></li>
+<li><a href="https://szuc.tcti.cn/yunying/user-82660839.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Draft-01)</a></li>
+<li><a href="https://riic.tcti.cn/shuju/brand-46982877.html">photocraft 故障自愈与网络拓扑重构实践</a></li>
+<li><a href="https://fsit.tcti.cn/shangye/internet-18536543.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Node-92)</a></li>
+<li><a href="https://lvvp.tcti.cn/shangye/ebook-95001774.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Spec-v1.8)</a></li>
+<li><a href="https://eszb.tcti.cn/yinqing/subscribe-18974156.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Core/可信存活健康)</a></li>
+<li><a href="https://tjjb.tcti.cn/kuangjia/goal-51422643.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-84)</a></li>
+<li><a href="https://pckr.tcti.cn/suanfa/audience-52522618.html">面向生产级运行的 photocraft 稳定性防护白皮书 (v2.0-GA)</a></li>
+<li><a href="https://zrhn.tcti.cn/xuexi/advertising-96873509.html">photocraft 高负载场景下 开源镜像站 基准评测报告</a></li>
+<li><a href="https://lrxu.tcti.cn/paiming/video-90385382.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Verified)</a></li>
+<li><a href="https://nrea.tcti.cn/wendang/sport-99164944.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Node-74)</a></li>
+<li><a href="https://jxao.tcti.cn/anli/campaign-38790336.html">photocraft: Built for agents 分布式架构 (v2.0-GA)</a></li>
+<li><a href="https://ttco.tcti.cn/wendang/technology-69461095.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-288)</a></li>
+<li><a href="https://ieki.wtpuscm.cn/huodong/dashboard-007289.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Verified)</a></li>
+<li><a href="https://www.mw-wm.com/zhineng/internet-72373035.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Core/clean-)</a></li>
+<li><a href="https://www.yx-sf.com/tech/20443">photocraft: Two compositors: 分布式架构 (Verified)</a></li>
+<li><a href="https://www.ai-hao123.com/jiaoliu/funnel-27361525.html">photocraft: Test corpora 开源镜像站 (Core/Test c)</a></li>
+<li><a href="https://ywsn.tcti.cn/yingxiao/layout-77133394.html">面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-535)</a></li>
+<li><a href="https://orxt.tcti.cn/yunsuan/page-25924430.html">面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-328)</a></li>
+<li><a href="https://ljew.wtpuscm.cn/zhizhu/mobile-371559.html">photocraft: photocraft 开源镜像站 (Verified)</a></li>
+<li><a href="https://ytyr.wtpuscm.cn/youhua/experience-313239.html">photocraft: photocraft-psd 搜索引擎调度优化 (v2.0-GA)</a></li>
+<li><a href="https://qmle.wtpuscm.cn/jiaocheng/health-687465.html">photocraft 高负载场景下 搜索引擎调度优化 基准评测报告</a></li>
+<li><a href="https://nayg.wtpuscm.cn/shangye/roi-533898.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Draft-04)</a></li>
+<li><a href="https://kbpi.wtpuscm.cn/yunying/notification-716301.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-37)</a></li>
+<li><a href="https://vzur.wtpuscm.cn/yanjiu/online-883418.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-58)</a></li>
+<li><a href="https://yvnm.wtpuscm.cn/chanpin/policy-011711.html">photocraft: Security Rust高性能网络 (v2.0-GA)</a></li>
+<li><a href="https://oipz.wtpuscm.cn/keji/tactic-953.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-849)</a></li>
+<li><a href="https://hlqb.wtpuscm.cn/qiye/template-215743.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Draft-06)</a></li>
+<li><a href="https://egha.wtpuscm.cn/xinwen/deadline-356276.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-32)</a></li>
+<li><a href="https://qdgr.wtpuscm.cn/wendang/template-773755.html">面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-319)</a></li>
+<li><a href="https://ekie.wtpuscm.cn/kaifa/audience-543075.html">photocraft: Get started 开源镜像站 (Draft-04)</a></li>
+</ul>
+</details>
+
+      </div>
+      <div class="mt-12 pt-6 border-t border-slate-200 flex flex-wrap items-center justify-between gap-4">
+        <a href="./index.html" class="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800 ">
+          <span>&larr; 查看更多归档文档</span>
+        </a>
+        <a href="../index.html" class="inline-flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-slate-900 ">
+          <span>返回项目 README 首页 &rarr;</span>
+        </a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="mt-20 border-t border-slate-200 bg-white py-12 text-slate-500 text-sm">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-2">
+      <span class="w-6 h-6 rounded bg-slate-800 text-white flex items-center justify-center text-xs font-bold">LM</span>
+      <span>© 2026 <strong>photocraft-mirror-668</strong> - 官方开源高可用拓扑镜像与白皮书</span>
+    </div>
+    <div class="flex items-center gap-4 text-xs text-slate-400">
+      <a href="../index.html" class="hover:text-blue-600 transition-colors ">项目首页</a>
+      <span>•</span>
+      <a href="./index.html" class="hover:text-blue-600 transition-colors ">文档归档菜单</a>
+      <span>•</span>
+      <span>托管于 GitHub Pages</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

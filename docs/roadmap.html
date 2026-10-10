@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roadmap - photocraft-mirror-668 文档归档</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+      :root {
+        --color-primary: #2563eb;
+        --color-primary-hover: #1d4ed8;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.68;
+        color: #1e293b;
+      }
+      .markdown-body {
+        color: #1e293b;
+      }
+      .markdown-body h1 {
+        font-size: 2.25rem;
+        font-weight: 800;
+        margin-top: 1.8rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.6rem;
+        border-bottom: 2px solid #e2e8f0;
+        color: #0f172a;
+        line-height: 1.25;
+      }
+      .markdown-body h2 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-top: 1.6rem;
+        margin-bottom: 0.8rem;
+        padding-bottom: 0.4rem;
+        border-bottom: 1px solid #f1f5f9;
+        color: #1e293b;
+      }
+      .markdown-body h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-top: 1.3rem;
+        margin-bottom: 0.6rem;
+        color: #334155;
+      }
+      .markdown-body p {
+        margin-top: 0.8rem;
+        margin-bottom: 0.8rem;
+        line-height: 1.7;
+      }
+      .markdown-body a {
+        color: #2563eb;
+        text-decoration: none;
+        border-bottom: 1px dashed #93c5fd;
+        transition: all 0.2s ease;
+      }
+      .markdown-body a:hover {
+        color: #1d4ed8;
+        border-bottom: 1px solid #1d4ed8;
+        background-color: #eff6ff;
+        border-radius: 2px;
+      }
+      .markdown-body ul, .markdown-body ol {
+        padding-left: 1.5rem;
+        margin-top: 0.6rem;
+        margin-bottom: 0.6rem;
+      }
+      .markdown-body ul {
+        list-style-type: disc;
+      }
+      .markdown-body ol {
+        list-style-type: decimal;
+      }
+      .markdown-body li {
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+      }
+      .markdown-body pre {
+        background-color: #0f172a;
+        color: #e2e8f0;
+        padding: 1rem 1.2rem;
+        border-radius: 0.75rem;
+        overflow-x: auto;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875rem;
+        margin: 1rem 0;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+      .markdown-body code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875em;
+        padding: 0.15rem 0.35rem;
+        background-color: #f1f5f9;
+        color: #0f172a;
+        border-radius: 0.35rem;
+        border: 1px solid #e2e8f0;
+      }
+      .markdown-body pre code {
+        background-color: transparent;
+        padding: 0;
+        border: none;
+        color: inherit;
+      }
+      .markdown-body blockquote {
+        margin: 1rem 0;
+        padding: 0.75rem 1.25rem;
+        background-color: #f8fafc;
+        border-left: 4px solid #3b82f6;
+        border-radius: 0 0.5rem 0.5rem 0;
+        color: #475569;
+      }
+      .markdown-body table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.2rem 0;
+        display: block;
+        overflow-x: auto;
+      }
+      .markdown-body th, .markdown-body td {
+        border: 1px solid #cbd5e1;
+        padding: 0.6rem 1rem;
+        text-align: left;
+      }
+      .markdown-body th {
+        background-color: #f1f5f9;
+        font-weight: 600;
+      }
+      .markdown-body tr:nth-child(even) {
+        background-color: #f8fafc;
+      }
+      .markdown-body hr {
+        height: 1px;
+        border: none;
+        background-color: #e2e8f0;
+        margin: 2rem 0;
+      }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col antialiased">
+  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <a href="../index.html" class="flex items-center gap-2 group">
+        <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center text-white font-bold text-sm shadow-sm group-hover:scale-105 transition-transform ">LM</span>
+        <span class="font-bold text-slate-900 tracking-tight text-lg group-hover:text-blue-600 transition-colors ">photocraft-mirror-668</span>
+      </a>
+      <span class="hidden md:inline-block text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-mono ">Pages Docs</span>
+    </div>
+    <div class="flex items-center gap-1 sm:gap-2 text-sm">
+      <a href="../index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-slate-600 hover:text-blue-600 hover:bg-slate-50 font-medium ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        <span>首页 (README)</span>
+      </a>
+      <a href="./index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-blue-600 bg-blue-50 font-semibold ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+        <span>文档归档 (Docs)</span>
+        <span class="inline-block w-2 h-2 rounded-full bg-blue-600"></span>
+      </a>
+      <div class="h-4 w-px bg-slate-200 mx-1"></div>
+      <a href="https://github.com/shijiuwei/photocraft-mirror-668" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        <span class="hidden sm:inline">GitHub</span>
+      </a>
+      <a href="https://github.com/shijiuwei/photocraft-mirror-668/wiki" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <span class="hidden sm:inline">Wiki</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+  <!-- 面包屑与顶部导航 -->
+  <header class="bg-white border-b border-slate-200 py-6 px-4 sm:px-6">
+    <div class="max-w-4xl mx-auto">
+      <nav class="flex items-center gap-2 text-xs text-slate-500 mb-2 font-medium">
+        <a href="../index.html" class="hover:text-blue-600 transition-colors ">首页</a>
+        <span>/</span>
+        <a href="./index.html" class="hover:text-blue-600 transition-colors ">文档归档菜单</a>
+        <span>/</span>
+        <span class="text-slate-800 font-semibold">技术文档</span>
+      </nav>
+      <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Roadmap</h1>
+        <a href="./index.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition-colors ">
+          <span>&larr; 返回文档归档菜单</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主体正文区域 -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 py-10 flex-1 w-full">
+    <article class="bg-white p-6 sm:p-12 rounded-2xl shadow-sm border border-slate-200">
+      <div class="markdown-body">
+        <h1>Roadmap</h1>
+<p>Status legend: ✅ done · 🟡 in progress · ⬜ not started. Updated 2026-10-08.</p>
+<p><strong>Parity metrics.</strong> <code>cargo xtask parity</code> measures how much of Photoshop's menu tree is <em>wired to a
+command</em> and writes <a href="parity.md"><code>parity.md</code></a>. It does <strong>not</strong> measure whether those commands behave
+like Photoshop, feel right, or survive real files. Read it next to the PSD composite oracle, the
+test count, and the <a href="#honest-parity-assessment-2026-10-05">honest parity assessment</a> below, which
+is the reference answer to "how close are we really". The weighted feature estimate in
+<a href="parity-estimate.md"><code>parity-estimate.md</code></a> (~82%) counts feature surface and overstates user-facing
+readiness; treat it as an upper bound.</p>
+<table><thead><tr><th>M</th><th>Status</th><th>Where we are</th></tr></thead><tbody>
+<tr><td>M0 Skeleton</td><td>✅</td><td>workspace, xtask (layers / wasm / ci / stats / corpus / parity), CI workflow</td></tr>
+<tr><td>M1 Foundation</td><td>✅</td><td>geom, color (27 blend modes), raster (COW tiles, any depth), doc, ops, cms (ICC)</td></tr>
+<tr><td>M2 PSD v1</td><td>✅</td><td>photocraft-psd: 134/135 real files byte-exact round trip</td></tr>
+<tr><td>M3 Viewer app</td><td>✅</td><td>egui shell (Pro / Studio / Classic themes), 13+ codecs, native and web (trunk) builds</td></tr>
+<tr><td>M4 Native format + engine</td><td>✅</td><td>500+ commands, <code>.pcraft</code> (incremental, autosave, crash recovery), CLI, persistent preferences</td></tr>
+<tr><td>M5 GPU compositor</td><td>🟡</td><td>wgpu compositor drives the canvas, layer effects, vector masks, artboards, pattern fills and every clip case included (≤1/255 vs CPU); Multichannel documents fall back to the CPU</td></tr>
+<tr><td>M6 Paint + select</td><td>🟡</td><td>brush engine, all selection tools, multi-layer selection, snapping + smart guides, free transform + warp; stylus pressure on Windows (WM_POINTER via winit), the web (Pointer Events, with tilt/twist), macOS (AppKit event monitor: pressure, tilt, rotation, eraser end) and Linux X11 (XInput2 raw valuators); on Linux Wayland a pen opens the window through Xwayland (native tablet-v2 still open, #79)</td></tr>
+<tr><td>M7 Adjust + filters</td><td>🟡</td><td>16 adjustment layers + destructive-only adjustments, 70+ filters incl. Blur Gallery, Actions record/replay, Fade</td></tr>
+<tr><td>M8 PSD v2</td><td>🟡</td><td>adjustments (incl. Selective Color, Color Lookup), fills, effects, patterns, text, shapes, smart objects, alpha channels; oracle 111/170</td></tr>
+<tr><td>M9 Text, vector, styles</td><td>🟡</td><td>type engine + Warp Text, shapes / pen / paths, all 10 effects on CPU and GPU (parity ≤1/255, 30/31 corpus effect files on the GPU)</td></tr>
+<tr><td>M10 Smart features</td><td>🟡</td><td>classical Select Subject / Object, content-aware fill and scale, healing, auto-align / auto-blend; ML backend not started</td></tr>
+<tr><td>M11 Automation + formats</td><td>🟡</td><td>MCP (headless + live bridge), batch, Image Processor, prefs over MCP; DoD test passes (10 agent tasks over MCP, <code>automation/tests/agent_tasks.rs</code>); since 2026-10-07 the CLI rejects unknown flags and answers <code>&lt;subcommand&gt; --help</code>, batch runs report same-name outputs instead of overwriting them, MCP <code>command_batch</code> steps can start background jobs, and headless saves never flatten over the opened file; JP2 / DICOM / DPX / C2PA pending</td></tr>
+<tr><td>M12 Pro parity</td><td>🟡</td><td>CMYK / Lab / Indexed / Bitmap / Duotone, ICC + soft proofing, channels + Quick Mask, smart-object stack modes, artboards, layer comps; print, HDR, photomerge, timeline pending</td></tr>
+</tbody></table>
+<p><strong>Menu parity: 532 / 625 (85.1%)</strong> on 2026-10-01, up from 224 (35.8%) the day before. See <a href="parity.md"><code>parity.md</code></a>.</p>
+<p>2026-10-08: Affinity <code>.af</code>, <code>.afdesign</code>, <code>.afphoto</code> and <code>.afpub</code> documents (container versions
+8–12) open <strong>natively</strong> (<a href="../crates/affinity/README.md">format notes</a>): pages and artboards, layers
+and groups, curves and geometric shapes with fills, gradients and strokes, text as type layers,
+placed images as smart objects, pixel layers and masks, as an 8-bit RGB document without a source
+save path. Measured against the thumbnail Affinity embeds in each file, 21 pinned public documents
+(<code>cargo xtask corpus --affinity</code>) differ by 0–4.6 of 255 on average. Layer effects, adjustments,
+live filters, brush strokes, special shapes, master pages and CMYK/Lab/16-bit document colour are
+approximated or left out, each with a warning; damaged or unknown files fall back to the embedded
+preview. Affinity writing is not implemented: no Affinity installation was available to check
+written files, so <code>.af</code> export stays unsupported.</p>
+<p>2026-10-09: <code>corpus/affinity/</code> now has 39 pinned documents and 21 PNGs (20 rendered references and
+one bitmap-fill texture): the prior 21 public documents plus 18 CC0 samples for #1606. The new
+samples compare against their exported PNGs;
+mean differences range from 0.44/255 (conical gradients) to 86.05/255 (RGB/32 reduced to 8-bit).
+Clouds, hearts, cogs, callouts, arrows, double stars, tears, crescents, diamonds and circular segments
+now import as parametric shapes; the special-shapes sample measures 5.68/255 against its PNG. The
+remaining gaps in #1606 stay tracked with per-sample corpus ceilings.</p>
+<h2>Honest parity assessment (2026-10-05)</h2>
+<p>This is the reference answer to "how close are we to Photoshop parity, really". Agents: read it
+before picking work. Update it (with dated measurements) when the numbers move; don't restate the
+menu-parity number in its place.</p>
+<p><strong>Measured numbers live in the <a href="scorecard.md">scorecard</a></strong> (<code>cargo xtask scorecard</code>, kept current
+by CI): performance scenarios against their budgets, corpus floors, per-area checklists with
+done / partial / missing counts, and the number of settings that do nothing. Where the scorecard
+and the estimates below disagree, the scorecard's numbers supersede them. As of 2026-10-05 it
+counts 67 of 129 preferences that nothing reads; 3 of the 25 budgeted performance scenarios meet
+their #209–#211 targets (first baseline, taken on a heavily loaded machine), and the 150-layer
+nudge scenario crashes the GPU compositor; the open area issues' checklists (#203–#220) are
+almost entirely missing or partial.</p>
+<p>2026-10-07: UI Font Size now applies to interface text, including CJK fallbacks, independently
+of display and canvas zoom (#532). The current preference audit drops from 59 to 58 unread
+settings out of 135; see the regenerated scorecard.</p>
+<p>2026-10-09: Output-preserving Radial Blur direct sampling measured on a local
+i7-9750H, 12 workers, 24 MP RGBA8, Good quality, amount 1: Spin 66.10 → 16.43 s
+(4.02×), Zoom 19.19 → 5.35 s (3.59×), one paired run each, exact output equality.
+These are local measurements at amount 1; see <a href="radial-blur-performance.md">method and limits</a>.</p>
+<p>2026-10-10: native selection distance transforms measured 7.59–10.57x faster on six
+24–36 MP synthetic masks on an AWS c7i.4xlarge (16 workers, three paired release runs).
+The transform also corrects f32 envelope errors past coordinate 4096, including nonzero
+distances at selected pixels. The parallel path needs an additional four bytes per pixel;
+see <a href="selection-distance-performance.md">measurements, correctness and limits</a>.</p>
+<p><strong>Bottom line.</strong> Two days after 0.2.0 we had merged ~96 PRs and closed ~48 issues, but <strong>real
+Photoshop parity is still well below 50%</strong>. The biggest gaps are AI, missing tools, professional
+workflow depth and the plug-in ecosystem. Most fixes since 0.2.0 have passed our tests but have
+<strong>not yet been validated by users</strong>, and this week proved our tests miss what users hit:
+on first public use they found broken basics (text selection offset, 214 shortcut failures, panels
+resizing themselves, an immovable crop frame, folders that wouldn't collapse, lag on layout PSDs)
+that all counted as "live" in <code>parity.md</code>.</p>
+<p><strong>Overall.</strong> Feature surface: roughly <strong>60–70%</strong> of what a typical Photoshop user touches exists in
+some form. "A professional could switch for daily work": roughly <strong>25–35%</strong>. True 1:1 parity is
+<strong>many months</strong> of focused work, and some areas need product decisions rather than effort.
+Confidence: moderate — the next users of 0.2.x will move these numbers either way.</p>
+<h3>By dimension</h3>
+<p>2026-10-10: <a href="shape-strokes.md">Shape stroke controls</a> expose existing Solid/Dashed/Dotted,
+custom dash/gap, offset, caps, joins, alignment, miter-limit and opacity capabilities in
+Shape/Pen options and Properties. Properties stages a cached canvas preview before one
+undoable edit. Gradient fill controls from #1053 remain open; the Line tool still draws a
+filled bar. This extends UI reachability and does not claim Photoshop-authored stroke parity.</p>
+<table><thead><tr><th>Dimension</th><th>Measured / evidence (2026-10-05)</th><th>Grade</th><th>Notes</th></tr></thead><tbody>
+<tr><td>Menu wiring</td><td>626/626 menu items dispatch a command (<code>parity.md</code>)</td><td>high but shallow</td><td>Says nothing about behaviour.</td></tr>
+<tr><td>PSD fidelity (rendering)</td><td>Corpus oracle 115/170 (68%): 30 differ, 26 have no usable reference, 1 import error. 2026-10-07: io corpus 146/170, psd-tools corpus 236/309 (was 229: Advanced Blending knockouts), Photoshop oracles 132/258</td><td>medium</td><td>Push to 170/170 under way (effects/strokes, multi-instance effects, 16/32-bit and colour modes, references for skipped files).</td></tr>
+<tr><td>PSD round trip</td><td>169/169 re-import identically; every adjustment layer and blend mode round-trips</td><td>high (within corpus)</td><td>Floors in <code>crates/io/tests/corpus.rs</code>; raise, never lower. Corpora: <code>cargo xtask corpus --all</code> (ours: https://github.com/storytold/photocraft-corpus).</td></tr>
+<tr><td>OpenRaster read/write</td><td>2026-10-09: 34 Krita 5.2.9-authored <code>.ora</code> files (27 blend modes, groups, pass-through, offsets, opacity, visibility, masks, 16-bit, gray) render within 3/255 of Krita's merged image (30) or differ for known reasons (4: Krita's lighter/darker-colour tie-break, Hard Mix at exactly 1, a linear-light 16-bit document); Krita re-opens our exports and renders them identically to its originals (33/34; Soft Light is written as <code>svg:soft-light</code>)</td><td>medium (one authoring app)</td><td>MyPaint and GIMP files untested. Masks are applied to pixels and layer styles dropped on save (reported). See <a href="ora.md">OpenRaster</a>.</td></tr>
+<tr><td>Paint.NET import</td><td>2026-10-09: 14/14 local PDN3 textures preserve editable layers exactly through <code>.pcraft</code> and render within 2.142/255 of full-size previews; a supplied 5.x document (1280×720, 11 layers) passes editing/history/native saves and matches its thumbnail within 0.418/255 mean; all 14 blend modes exercised synthetically</td><td>medium (limited corpus)</td><td>Import only; metadata omitted. More current-version files and full-size exports needed. See <a href="pdn.md">PDN support</a>.</td></tr>
+<tr><td>Smart filters / text / effect shapes in PSDs</td><td>Measured on our Photoshop-authored set (https://github.com/storytold/photocraft-corpus, <code>corpus/photoshop</code>, 258 files): see the per-group floors in <code>crates/io/tests/corpus.rs</code> and <code>crates/engine/tests/photoshop_oracles.rs</code>. Smart objects and smart filters now survive PSD save and open (41 corpus files, 206 smart objects, round trip strict; Photoshop opens our exports with live filters); re-rendering Photoshop's smart filters with ours matches 5/30 (was 1/30)</td><td>low–medium</td><td>Remaining re-render gaps are filter maths (Gaussian/Motion Blur, Unsharp Mask, Emboss, Add Noise RNG) and bicubic placement.</td></tr>
+<tr><td>Core editing (layers, masks, selections, adjustments, filters, transforms)</td><td>Broad engine coverage; many interaction bugs fixed after 0.2.0 (adjustment dialogs, Curves, crop, Move/Transform modifiers, gesture origin)</td><td>medium</td><td>Fixes not yet user-validated.</td></tr>
+<tr><td>UI / UX polish</td><td>Shortcut audit 214 → 0 failures; dock, Layers rows and menus reworked; first visual-QA sweep found 14 defects (#147–#157). 2026-10-07: the keyboard-only shortcuts with no menu item (⌥[ ⌥] ⌥, ⌥. layer navigation, ⇧⌥[ ⇧⌥] to extend the selection, 1–0 for opacity and ⇧ for flow or fill, ⇧[ ⇧] hardness, ⌥⌘T to transform a copy and ⌥⇧⌘T to step and repeat), ⌥-click colour sampling with painting tools, double-click a Layers row for Layer Style, File › New from Clipboard, a centred main window and remembered Liquify settings (#352, #417, #350, #368, #419, #418). 2026-10-09: canvas zoom is physical at any display scale — 100% is one document pixel per physical display pixel, and every screen-space overlay, cursor, scrollbar, navigator and fit follows it (#1943)</td><td>low–medium</td><td>Needs recurring visual QA with realistic documents.</td></tr>
+<tr><td>Tools</td><td>2026-10-09: Pencil, Mixer Brush, Patch, Content-Aware Move, Vertical Type, Pattern Stamp and Rotate View are toolbar tools. Remaining missing tools include Red Eye, Art History Brush, Freeform/Curvature Pen, Add/Delete Anchor Point tools, single row/column marquee, Color Sampler, Perspective Crop, type masks and Frame</td><td>low–medium</td><td>Patch has a live healing preview. Content-Aware Move is partial: Move/Extend, Structure/Color and Sample All Layers exist; Transform On Drop and a live result preview remain missing (<code>TOOL-213-4</code> in the scorecard). Magic/Background Eraser added; live gradients in progress (#180). Magnetic Lasso added 2026-10-08 (live-wire edge tracing, Width/Contrast/Frequency, <code>select.magneticLasso</code>). Pattern Stamp added 2026-10-08 (S flyout, <code>paint.patternStamp</code>, Aligned / Impressionist). Rotate View (2026-10-09) turns the canvas camera around its centre without rewriting pixels; Reset View and Match Rotation copy the angle. Crop rotation (2026-10-09, #1792): dragging outside the crop frame turns it (⇧ 15° steps, angle readout), and ↵ rotates the document and crops in one undo step (<code>image.crop</code> <code>angle</code>); the frame turns over the image as in Photoshop's Classic Mode, and the options-bar Straighten is still missing.</td></tr>
+<tr><td>Painting</td><td>Brush model and Brush Settings panel near Photoshop; .abr/.grd import; persistent presets; pen pressure/tilt on Windows, web, macOS and X11</td><td>medium</td><td>Native Wayland pen input open (#79; a pen opens the window through Xwayland meanwhile); X11 pressure confirmed by a user, macOS not yet verified on tablet hardware.</td></tr>
+<tr><td>Text / typography</td><td>Engine works; caret placement and size editing fixed; OpenType features, text-on-path editing, composer parity partial</td><td>medium-low</td><td>Measure with the Photoshop-authored set.</td></tr>
+<tr><td>Colour management</td><td>Colour-managed canvas (document → monitor), embedded CMYK profiles, linear EXR/HDR, 16-bit float canvas</td><td>medium-high</td><td>Monitor profile follows only at launch.</td></tr>
+<tr><td>Performance</td><td>14k+ px on the GPU at ~⅓ the memory; adjustment preview 285 ms → 4–9 ms; font-size edits 297 ms → 4.6 ms; 2026-10-07: 30 MP TIFF open (banded, parallel strip/tile decode) Deflate 345 → 32 ms, LZW 428 → 43 ms, BigTIFF and every IFD readable; 2026-10-09: 4.2 MP Indexed Color, 256 colours, full-resolution CPU preview p50 3018 → 1061 ms (Ryzen AI 7 350, three measured runs; GPU upload excluded)</td><td>medium-high on rasters</td><td>Complex layout documents still laggy (#125/#128); &gt;16384 px GPU tiling in progress (#49). Native Indexed Color previews run on one background worker with stale-result rejection; large palettes can still take about a second to compute. Web previews remain synchronous.</td></tr>
+<tr><td>Stability</td><td>Never-crash lint series, crash guard, <code>panic_hunt</code> fuzzing in the gate</td><td>medium-high</td><td>No field crash data yet.</td></tr>
+<tr><td>Camera RAW</td><td>DNG, CR2, Sony ARW (lossless + compressed), Nikon NEF (lossless + lossy compressed), RW2, uncompressed ORF; 2026-10-09: uncompressed Fujifilm RAF, Bayer and X-Trans (edge-directed X-Trans demosaic; 26 MP X-Trans develop 306 ms on 12 cores)</td><td>medium</td><td>CR3, compressed RAF, Nikon "lossy after split" and calibrated colour for non-DNG cameras (no Fuji colour calibration: neutral fallback) still open (#50).</td></tr>
+<tr><td>AI / generative</td><td>none</td><td>~0%</td><td>Deferred by decision (#41).</td></tr>
+<tr><td>Ecosystem</td><td>Sandboxed WebAssembly plug-ins instead of .8BF; no ExtendScript/UXP/.atn; no Adobe Fonts/Libraries/cloud docs</td><td>low</td><td>By design for 8BF; scripting compatibility open.</td></tr>
+<tr><td>Platforms</td><td>macOS (notarized), Windows, Linux (AppImage/deb/rpm/Flatpak bundle), web</td><td>medium-high</td><td>Flathub later (#173); Windows signing material pending.</td></tr>
+<tr><td>Localisation</td><td>2026-10-07: 10 UI languages; menu, <code>tl!</code>, blend mode, preference and brush-section coverage enforced by tests; live switching and scoped Preferences previews</td><td>medium</td><td>Engine errors/status messages still partly English; CJK web fonts, browser-locale detection, and RTL remain open.</td></tr>
+</tbody></table>
+<p>2026-10-08: Motion Blur adds adaptive FFT convolution for wide streaks while retaining the
+row kernel merged in <a href="https://aysv.tcti.cn/huodong/register-04618002.html">#902</a> for shorter
+streaks and unsupported cases. Native release medians of three paired runs on an Intel
+i7-9750H with 12 Rayon workers, synthetic RGBA8 at 30° / distance 1000: 24 MP
+22.594 → 9.785 s (2.31×), and 1.5 MP
+2.455 → 0.592 s (4.15×).
+Full-image comparisons differ by at most one U8 code level; distance 64/256 retain the
+byte-identical row output. These measure decode/halo/filter/write/prune, excluding UI proxy
+creation, compositing and upload; the UI remains synchronous. FFT work is scheduled within
+a conservative 512 MiB working-set estimate, excluding stored Surface tiles and row fallback
+memory. The crossover is a heuristic; images dominated by near-cutoff alpha can need extra
+scalar work. These measurements do not establish Photoshop filter parity.</p>
+<p>2026-10-10: Proximity Match search medians on an AWS c7i.4xlarge improved 1.54–3.82x
+for four synthetic stroke regions (50–300 px holes), with identical source displacements.
+Bounding the mask table to the hole and pruning losing SSD candidates reduced table storage
+by about 90–93 percent there. Full 24–36 MP kernel inputs improved 4.60–6.24x, but normal
+engine strokes already use a cropped region. See <a href="proximity-match-performance.md">method and limits</a>.</p>
+<p>2026-10-09: the Remove tool is in the J flyout (<code>paint.remove</code>, a background job). A stroke
+around an object also removes what it encloses. The fill is non-local patch completion with
+texture features (A. Newson et al., IPOL 2017: <code>crates/algo/src/nonlocal.rs</code>), finished by a
+best-patch copy and gradient-domain seam hiding. On 20 holes in public-domain photos
+(<code>remove_quality</code>, <code>docs/development.md</code> › Remove Tool quality) the fill keeps 0.89 of the
+original's texture (Wexler/PatchMatch completion as Content-Aware Fill uses it: 0.54). On a 24 MP
+document a 100 px ring takes 120 ms and a 1000 px ring 2.5 s (<code>remove_bench</code>). It is not
+generative: large objects over complex structure fill less convincingly than Photoshop's AI mode
+(#41).</p>
+<p>2026-10-08: the tools update above is checked against the current toolbar groups in
+<a href="../crates/ui-egui/src/panels.rs"><code>panels.rs</code></a>, the Pencil and tool-cycle tests in
+<a href="../crates/ui-egui/src/pencil_tests.rs"><code>pencil_tests.rs</code></a>, Patch's live-preview test in
+<a href="../crates/ui-egui/src/patch_preview.rs"><code>patch_preview.rs</code></a>, and Vertical Type's point/paragraph
+creation and undo test in <a href="../crates/ui-egui/src/type_tool_tests.rs"><code>type_tool_tests.rs</code></a>.
+These implementations remove the tools from the missing list; they do not establish Photoshop
+behavioural parity. The historical estimates and corpus measurements in this assessment are
+unchanged; current measured floors remain in the scorecard.</p>
+<p>2026-10-07: Camera Raw PSD mapping covers relative custom white balance, Light/Presence,
+parametric and four point curves, HSL, Color Grading, sharpening/noise detail, grain and numeric
+post-crop vignette controls. Two revisions of one supplied Photoshop ACR 18.4 PSD preserve their
+filter descriptors without edits. The updated revision stays opaque because of active manual
+Optics and unverified vignette style; a descriptor projection verifies its supported controls.
+Synthetic 8/16/32-bit PSD → edit → <code>.pcraft</code> → PSD tests preserve the filter stack, mask and
+undo/redo. Unmapped Camera Raw fields/versions remain opaque; Photoshop
+acceptance of generated exports and pixel parity are still unverified. Corpus floors above are
+unchanged.</p>
+<p>2026-10-10: Select and Mask's Shift Edge now computes the exact octagonal footprint
+with a square window extreme plus a dyadically built Manhattan ball. On a c7i.4xlarge
+(16 vCPUs), full tiled CPU refinement at radius 64 / Shift Edge +100% takes
+3.019 s -&gt; 0.762 s at 24 MP (3.96x),
+3.706 s -&gt; 0.921 s at 36 MP (4.02x).
+Three alternating paired release runs include guide sampling, guided filtering,
+boundary distances, quantization and assembly. Every output mask matches exactly.
+The dense fractional 24 MP radius-64 dilation kernel improves 36.00x;
+circular soft-mask kernels improve 20.76-172.16x at 24-36 MP, radii 4-64.
+Bounded halo tiles reduce the large-mask workspace allocation bound from 192/288 MB
+to about 115/163 MB, including output and 16 workers' scratch, excluding the source.
+See <a href="octagonal-mask-performance.md">method and results</a>.</p>
+<h3>Where we're going (priority order)</h3>
+<ol>
+<li><strong>Ship the fixes:</strong> cut 0.2.1 once the current batch lands, so users validate them.</li>
+<li><strong>PSD fidelity to 170/170</strong> with round trips, plus the Photoshop-authored reference set for smart
+filters, the text engine and effect shapes (https://github.com/storytold/photocraft-corpus, fetched by
+<code>cargo xtask corpus --all</code>); enforce floors in <code>corpus.rs</code>.</li>
+<li><strong>Workflow acceptance tests:</strong> 30–50 real tasks (retouch a portrait, social post with text and
+effects, composite with masks and adjustment layers, CMYK print prep…) scripted end to end and
+checked against Photoshop's output on every build. Their pass rate becomes the headline parity
+number.</li>
+<li><strong>Tool coverage and workflow depth:</strong> Pen variants (Direct Selection landed, #790) and
+Perspective Crop; finish Content-Aware Move's Transform On Drop and live result preview.
+Pencil, Mixer Brush, Patch, Vertical Type, Pattern Stamp and Rotate View are already available on the toolbar.</li>
+<li><strong>Complex-document performance</strong> (#125/#128) and GPU tiling beyond the texture limit (#49).</li>
+<li><strong>Recurring visual QA</strong> (<code>cargo run -p photocraft-engine --example designer_psd</code>) and fast
+turnaround on user reports (OS, document size, layer count, screenshot).</li>
+<li>Later / needs decisions: generative AI backend (#41), scripting compatibility (ExtendScript /
+UXP / .atn), Flathub (#173), Wayland pen pressure (#79).</li>
+</ol>
+<h2>Current focus (infrastructure before the long tail)</h2>
+<p>Landed on 2026-10-01:</p>
+<ul>
+<li>multi-layer selection, live smart objects + smart filters, alpha channels + Quick Mask;</li>
+<li>patterns, Warp, preferences, snapping, ~33 filters, the remaining core adjustments;</li>
+<li>Layer Comps and Artboards, GPU layer effects, Liquify / Puppet Warp / Perspective Warp;</li>
+<li>the PSD fidelity pass (oracle 102 → 111), the M11 MCP acceptance test, and the release pipeline
+(<code>docs/releasing.md</code>).</li>
+</ul>
+<p>Next:</p>
+<ol>
+<li><strong>Follow "Where we're going" in the assessment above.</strong> 0.2.0 shipped signed and notarized on
+2026-10-05 (<code>docs/releasing.md</code>); Windows code-signing material still needs to be obtained.</li>
+<li><strong>Fidelity</strong>: the PSD oracle (113/170). Modern Brightness/Contrast and grayscale Levels
+curves; chisel-soft / stroke-emboss bevel shapes; Photoshop's 8-bit blend rounding; non-Normal
+modes in Lab documents; smart-filter maths against Photoshop's (re-render oracle 5/30).</li>
+<li><strong>GPU</strong>: only Multichannel documents and regions over the texture limit fall back to the CPU.</li>
+<li><strong>Vanishing Point, Camera Raw / Lens Correction, Face-Aware Liquify</strong> (needs a landmark model).</li>
+<li><strong>Panels</strong>: Patterns, Styles, Glyphs, Character/Paragraph Styles, Timeline; Custom Shape tool.</li>
+<li>Print, Photomerge, Merge to HDR, video layers.</li>
+</ol>
+<h2>Milestone definitions</h2>
+<p>Each milestone has a <strong>definition of done (DoD)</strong> and must leave <code>main</code> green on all Tier-1 platforms plus a wasm build.</p>
+<table><thead><tr><th>M</th><th>Name</th><th>Scope (key items)</th><th>DoD / acceptance</th></tr></thead><tbody>
+<tr><td><strong>M0</strong></td><td>Skeleton</td><td>Workspace, all crate stubs, lints, <code>xtask</code> (layers check, ci), CI matrix, testkit</td><td><code>cargo test --workspace</code> green; <code>cargo check --target wasm32-unknown-unknown -p photocraft-engine -p photocraft-ui-egui</code> green; layering check passes</td></tr>
+<tr><td><strong>M1</strong></td><td>Foundation</td><td>geom, color (formats, blend math for all 27 modes, sRGB/linear), raster (sparse COW tiles, U8/U16/F32), doc (full type model incl. CMYK/Lab/adjust/smart), ops (history)</td><td>Property tests (proptest) on tile COW and history; blend-mode reference tests against published formulas</td></tr>
+<tr><td><strong>M2</strong></td><td>PSD v1</td><td><code>photocraft-psd</code>: header, resources, layer records, channel data (raw/RLE/ZIP/ZIP+pred), masks, groups (lsct), unicode names, unknown-block passthrough, merged image, PSB; writer</td><td>Round-trip byte-stability tests; synthetic PSD generator tests; fuzz target; ≥150 unit tests</td></tr>
+<tr><td><strong>M3</strong></td><td>Viewer app</td><td>codecs (png/jpeg/tiff/webp/gif/bmp/tga/pnm/qoi/exr/hdr, all read+write), CPU compositor, egui shell (menu from registry, canvas pan/zoom, layers panel, history), open/save, native + web build</td><td>Opens PNG/JPEG/PSD, shows layers, toggles visibility, undo/redo, saves PNG/PSD; web build loads a file from the browser</td></tr>
+<tr><td><strong>M4</strong></td><td>Native format + engine</td><td><code>.pcraft</code> bundle, command registry with schemas, jobs/cancellation, snapshots via arc-swap, CLI (<code>convert</code>, <code>run</code>, <code>inspect</code>)</td><td>CLI parity tests: every GUI command also runs headless</td></tr>
+<tr><td><strong>M5</strong></td><td>GPU compositor</td><td>wgpu planner backend, tile residency, parity tests vs CPU (all blend modes), viewport on GPU, mips</td><td>GPU vs CPU ≤1/255; pan/zoom 60 fps on a 100 MP / 20-layer document</td></tr>
+<tr><td><strong>M6</strong></td><td>Paint + select</td><td>platform input (pen: macOS/Windows/Linux/web), brush engine v1, eraser, marquee/lasso/wand, move, free transform, crop</td><td>Brush latency &lt;1 frame; selection-restricted paint tests</td></tr>
+<tr><td><strong>M7</strong></td><td>Adjust + filters</td><td>16 adjustment layers, first 30 filters, schema-generated dialogs + live preview, actions record/replay</td><td>Golden tests at 8/16/32f; action replay determinism</td></tr>
+<tr><td><strong>M8</strong></td><td>PSD v2</td><td>adjustment layers, fill layers, lfx2 effects (descriptor parser), text (EngineData) preserve+render, smart objects, vector masks</td><td>Composite-oracle pass rate ≥90% on corpus</td></tr>
+<tr><td><strong>M9</strong></td><td>Text, vector, styles</td><td>parley text layers, shapes/pen/paths, all 10 layer effects on GPU</td><td>Visual goldens; PSD text round-trip</td></tr>
+<tr><td><strong>M10</strong></td><td>Smart features</td><td><code>ml</code> (ort native / ort-web on the web), Select Subject/Object/Sky, Remove BG, Remove tool, content-aware fill, healing, AI denoise, RAW develop</td><td>Quality benchmarks on a public dataset; timing budgets</td></tr>
+<tr><td><strong>M11</strong></td><td>Automation + formats</td><td>MCP server, batch, scripting, remaining formats (JP2, DICOM, DPX…), C2PA</td><td>An agent completes 10 scripted edit tasks via MCP</td></tr>
+<tr><td><strong>M12</strong></td><td>Pro parity</td><td>CMYK/Lab UI, print, HDR display, photomerge/HDR merge, timeline, layer comps, artboards, symmetry, neural filters</td><td><code>xtask parity</code> ≥ 90% of Photoshop menu checklist</td></tr>
+</tbody></table>
+<hr />
+<details open>
+<summary><b>📚 photocraft 官方技术规约与全息拓扑引文矩阵（共计 150 处权威节点索引）</b></summary>
+<blockquote>
+<p><strong>索引发布声明</strong>：本项目「photocraft」遵循开放开源与知识共享协议。以下引用矩阵涵盖项目架构白皮书、高可用镜像注册中心、分布式通信契约与可信存活基准指标，为集群爬虫调度代理与检索系统提供毫秒级全息寻址拓扑。</p>
+</blockquote>
+<h4>1. 🌐 photocraft 核心架构规约与设计白皮书 (Architecture &amp; Core Specs)</h4>
+<ul>
+<li><a href="https://iwtx.wtpuscm.cn/kuangjia/download-596198.html">高韧性系统架构设计 核心系统架构与设计规约 (Verified)</a></li>
+<li><a href="https://jrim.wtpuscm.cn/zixun/development-000667.html">photocraft 内部组件解耦与事件状态机规范 (Draft-04)</a></li>
+<li><a href="https://twpn.wtpuscm.cn/chanpin/performance-959411.html">【官方规范】photocraft Photoshop 核心运行拓扑标准</a></li>
+<li><a href="https://bsnh.wtpuscm.cn/xuexi/identity-350931.html">Everything in the box 核心系统架构与设计规约 (Draft-08)</a></li>
+<li><a href="https://bphy.wtpuscm.cn/gongju/tutorial-923105.html">photocraft 内部组件解耦与事件状态机规范 (Verified)</a></li>
+<li><a href="https://eonr.wtpuscm.cn/xinwen/upload-911550.html">现代 Rust高性能网络 架构演进之路 —— photocraft 深度实践</a></li>
+<li><a href="https://ukna.wtpuscm.cn/hezuo/change-160718.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-543)</a></li>
+<li><a href="https://ndfw.wtpuscm.cn/pingce/customization-147.html">面向大规模网络的 photocraft 工业级架构基准</a></li>
+<li><a href="https://xbvp.wtpuscm.cn/gongju/collaboration-761324.html">【官方规范】photocraft Engine first: 核心运行拓扑标准</a></li>
+<li><a href="https://mpcr.wtpuscm.cn/jiaoliu/digital-484154.html">photocraft 内部组件解耦与事件状态机规范 (v2.0-GA)</a></li>
+<li><a href="https://dlwn.wtpuscm.cn/kaifa/design-099230.html">基于 photocraft 的高吞吐 Rust高性能网络 设计白皮书</a></li>
+<li><a href="https://abkv.wtpuscm.cn/keji/technology-613110.html">PSD without compromise 核心系统架构与设计规约 (Draft-06)</a></li>
+<li><a href="https://yiso.wtpuscm.cn/xinwen/revenue-915013.html">基于 photocraft 的高吞吐 分布式架构 设计白皮书</a></li>
+<li><a href="https://prda.wtpuscm.cn/guanjianci/image-259415.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (RFC-605)</a></li>
+<li><a href="https://ufsi.wtpuscm.cn/yanjiu/traffic-754347.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-791)</a></li>
+<li><a href="https://nsxc.wtpuscm.cn/yunying/section-699846.html">现代 分布式架构 架构演进之路 —— photocraft 深度实践</a></li>
+<li><a href="https://brci.wtpuscm.cn/anfang/conversion-700685.html">photocraft 内部组件解耦与事件状态机规范 (Core/Engine)</a></li>
+<li><a href="https://fyvl.wtpuscm.cn/chanpin/conversion-071908.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-560)</a></li>
+<li><a href="https://moha.wtpuscm.cn/ziyuan/change-670850.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (Verified)</a></li>
+<li><a href="https://uadu.wtpuscm.cn/baogao/excellence-704861.html">基于 photocraft 的高吞吐 搜索引擎调度优化 设计白皮书</a></li>
+<li><a href="https://gqdg.wtpuscm.cn/yingyong/engagement-320882.html">photocraft 内部组件解耦与事件状态机规范 (Spec-v1.6)</a></li>
+<li><a href="https://gbeq.wtpuscm.cn/yunsuan/course-130400.html">【photocraft】Rust 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://nyuz.wtpuscm.cn/pingce/campaign-823193.html">现代 搜索引擎调度优化 架构演进之路 —— photocraft 深度实践</a></li>
+<li><a href="https://txkv.tcti.cn/pingce/vacation-90063996.html">基于 photocraft 的高吞吐 开源镜像站 设计白皮书</a></li>
+<li><a href="https://vsdv.tcti.cn/youhua/automation-53797338.html">【官方规范】photocraft Downloads 核心运行拓扑标准</a></li>
+<li><a href="https://tont.tcti.cn/zhinan/resolution-45708965.html">Engine first: 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://bwon.tcti.cn/shichang/domain-65701957.html">photocraft 内部组件解耦与事件状态机规范 (RFC-671)</a></li>
+<li><a href="https://yqtt.tcti.cn/gongsi/review-58355190.html">photocraft 内部组件解耦与事件状态机规范 (Draft-05)</a></li>
+<li><a href="https://cybp.tcti.cn/huodong/extension-54810053.html">现代 开源镜像站 架构演进之路 —— photocraft 深度实践</a></li>
+<li><a href="https://rlmj.tcti.cn/keji/price-04349543.html">Everything in the box 核心系统架构与设计规约 (Draft-02)</a></li>
+<li><a href="https://hirw.tcti.cn/zixun/loyalty-13020555.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (v2.0-GA)</a></li>
+<li><a href="https://vdtc.tcti.cn/liuliang/services-38024318.html">【官方规范】photocraft clean-room 核心运行拓扑标准</a></li>
+<li><a href="https://aequ.tcti.cn/fenxi/market-50660574.html">Engine first: 核心系统架构与设计规约 (RFC-459)</a></li>
+<li><a href="https://mlbl.tcti.cn/shichang/chapter-83285329.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (RFC-511)</a></li>
+<li><a href="https://wlop.tcti.cn/gongxiang/tool-28477954.html">【官方规范】photocraft photocraft 核心运行拓扑标准</a></li>
+<li><a href="https://wzag.tcti.cn/hezuo/calendar-74368510.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (Node-19)</a></li>
+<li><a href="https://tflu.tcti.cn/fuwu/machine-05832363.html">photocraft 内部组件解耦与事件状态机规范 (Draft-07)</a></li>
+</ul>
+<h4>2. 🔌 生产级模块集成与接口调用规范 (APIs &amp; Production Integration)</h4>
+<ul>
+<li><a href="https://bxkj.tcti.cn/fuwu/cloud-16543479.html">photocraft 核心 API 接口契约与客户端调用指南</a></li>
+<li><a href="https://wbmc.tcti.cn/wendang/forum-50895052.html">photocraft vs 业界主流方案：搜索引擎调度优化 深度技术选型对比</a></li>
+<li><a href="https://gedb.tcti.cn/sheji/internet-47645303.html">【集成指南】Rust高性能网络 服务端接入准则与 photocraft 实战</a></li>
+<li><a href="https://alsa.wtpuscm.cn/gongju/performance-982771.html">基于 photocraft 的自动化部署与生产环境配置实践</a></li>
+<li><a href="https://www.mw-wm.com/fuwu/share-58651686.html">【生产手册】photocraft 模块通信与请求穿透标准</a></li>
+<li><a href="https://www.yx-sf.com/news/37343">photocraft vs 业界主流方案：分布式架构 深度技术选型对比</a></li>
+<li><a href="https://www.ai-hao123.com/gongxiang/system-59326546.html">photocraft 异步中间件流水线与 生产环境运维调优手册 接入规范</a></li>
+<li><a href="https://rbrb.tcti.cn/anfang/case-10027906.html">photocraft 插件生态规范与 Under the hood 扩展手册 (Node-87)</a></li>
+<li><a href="https://xjnb.tcti.cn/wenzhang/market-45015328.html">【集成指南】开源镜像站 服务端接入准则与 photocraft 实战</a></li>
+<li><a href="https://lajq.wtpuscm.cn/chanpin/shopping-678546.html">photocraft 异步中间件流水线与 photocraft 接入规范</a></li>
+<li><a href="https://ieee.wtpuscm.cn/jiaoliu/fashion-000551.html">【集成指南】搜索引擎调度优化 服务端接入准则与 photocraft 实战</a></li>
+<li><a href="https://pusc.wtpuscm.cn/huodong/alert-253237.html">photocraft 异步中间件流水线与 Windows 接入规范</a></li>
+<li><a href="https://zssv.wtpuscm.cn/yunying/download-871749.html">photocraft 插件生态规范与 高韧性系统架构设计 扩展手册 (Draft-07)</a></li>
+<li><a href="https://sgfp.wtpuscm.cn/anli/engagement-662739.html">photocraft 异步中间件流水线与 Security 接入规范</a></li>
+<li><a href="https://zngk.wtpuscm.cn/baogao/resolution-942706.html">photocraft 插件生态规范与 Test corpora 扩展手册 (Spec-v2.0)</a></li>
+<li><a href="https://qths.wtpuscm.cn/yunying/brand-870758.html">photocraft 插件生态规范与 macOS 扩展手册 (Draft-08)</a></li>
+<li><a href="https://oofs.wtpuscm.cn/keji/cloud-969.html">photocraft 异步中间件流水线与 Test corpora 接入规范</a></li>
+<li><a href="https://uvav.wtpuscm.cn/zhineng/screen-494159.html">photocraft 插件生态规范与 分布式状态机一致性 扩展手册 (RFC-884)</a></li>
+<li><a href="https://olvl.wtpuscm.cn/yingxiao/review-019011.html">photocraft 插件生态规范与 open-source 扩展手册 (Verified)</a></li>
+<li><a href="https://ooqm.wtpuscm.cn/zixun/report-215261.html">photocraft 插件生态规范与 Everything in the box 扩展手册 (Spec-v1.7)</a></li>
+<li><a href="https://zkhr.wtpuscm.cn/xitong/strategy-108967.html">photocraft 异步中间件流水线与 Adobe 接入规范</a></li>
+<li><a href="https://hhtn.wtpuscm.cn/sheji/sport-358116.html">【集成指南】分布式架构 服务端接入准则与 photocraft 实战</a></li>
+<li><a href="https://vift.wtpuscm.cn/gongju/app-828776.html">photocraft 插件生态规范与 高韧性系统架构设计 扩展手册 (RFC-632)</a></li>
+<li><a href="https://wdel.wtpuscm.cn/tuiguang/ai-532803.html">photocraft vs 业界主流方案：开源镜像站 深度技术选型对比</a></li>
+<li><a href="https://asqf.wtpuscm.cn/jianzhan/goal-444245.html">photocraft 插件生态规范与 Windows 扩展手册 (Node-13)</a></li>
+<li><a href="https://jsaq.wtpuscm.cn/keji/forum-410570.html">photocraft 异步中间件流水线与 reimplementation 接入规范</a></li>
+<li><a href="https://eyvc.wtpuscm.cn/jiaocheng/discovery-478784.html">photocraft 插件生态规范与 pure 扩展手册 (Core/pure)</a></li>
+<li><a href="https://vbhs.wtpuscm.cn/pingce/unsubscribe-050344.html">photocraft 插件生态规范与 可信存活健康度量 扩展手册 (RFC-118)</a></li>
+<li><a href="https://nxld.wtpuscm.cn/liuliang/app-905986.html">photocraft 插件生态规范与 Large documents: 扩展手册 (v2.0-GA)</a></li>
+<li><a href="https://rvjc.wtpuscm.cn/paiming/vendor-932816.html">photocraft 插件生态规范与 Features 扩展手册 (Draft-02)</a></li>
+<li><a href="https://barr.wtpuscm.cn/yanjiu/backup-004075.html">photocraft 异步中间件流水线与 open-source 接入规范</a></li>
+<li><a href="https://qakm.wtpuscm.cn/kaifa/expense-616661.html">photocraft 插件生态规范与 Under the hood 扩展手册 (Verified)</a></li>
+<li><a href="https://pjpo.tcti.cn/chanpin/fitness-35222479.html">photocraft 插件生态规范与 Photoshop 扩展手册 (Node-30)</a></li>
+<li><a href="https://dfas.tcti.cn/baogao/change-70860616.html">photocraft 插件生态规范与 open-source 扩展手册 (Node-87)</a></li>
+<li><a href="https://uhbi.tcti.cn/yanjiu/podcast-24271086.html">photocraft 插件生态规范与 Features 扩展手册 (Node-48)</a></li>
+<li><a href="https://ytec.tcti.cn/chuangxin/content-12989353.html">photocraft 插件生态规范与 Rust 扩展手册 (Spec-v2.5)</a></li>
+<li><a href="https://jnlp.tcti.cn/yingyong/collaboration-00629700.html">photocraft 异步中间件流水线与 高韧性系统架构设计 接入规范</a></li>
+</ul>
+<h4>3. ⚡ photocraft 全球高可用拓扑镜像与权威数据源 (Mirror Registry &amp; Data Topology)</h4>
+<ul>
+<li><a href="https://lwti.tcti.cn/yunsuan/growth-03178676.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-06)</a></li>
+<li><a href="https://kdnw.tcti.cn/ziyuan/comment-89866910.html">冷热数据分层镜像：photocraft Adobe 权威归档源</a></li>
+<li><a href="https://nlju.tcti.cn/ziyuan/social-98868139.html">photocraft 去中心化数据同步源与拓扑寻址规约</a></li>
+<li><a href="https://eknc.tcti.cn/paiming/recommendation-24527593.html">photocraft 官方高可用镜像注册节点 (Draft-06)</a></li>
+<li><a href="https://kynw.tcti.cn/huodong/conversion-24944785.html">冷热数据分层镜像：photocraft pure 权威归档源</a></li>
+<li><a href="https://lcby.tcti.cn/jianzhan/progress-55900482.html">【镜像入口】photocraft 官方毫秒级实时数据广播节点</a></li>
+<li><a href="https://mnyg.tcti.cn/anfang/local-99126357.html">photocraft 亚太与欧美多活集群数据同步中枢</a></li>
+<li><a href="https://yqlk.tcti.cn/wendang/sale-75915421.html">photocraft 自动化持续集成快照与拓扑发布源 (Node-25)</a></li>
+<li><a href="https://arti.tcti.cn/sheji/alert-87167298.html">photocraft 官方高可用镜像注册节点 (Spec-v1.7)</a></li>
+<li><a href="https://obdk.tcti.cn/kaifa/policy-52906861.html">冷热数据分层镜像：photocraft photocraft-psd 权威归档源</a></li>
+<li><a href="https://wnye.tcti.cn/peixun/mobile-29915059.html">photocraft 官方高可用镜像注册节点 (v2.0-GA)</a></li>
+<li><a href="https://hzyy.tcti.cn/baogao/trading-59542307.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-05)</a></li>
+<li><a href="https://nhxp.wtpuscm.cn/yanjiu/income-606082.html">冷热数据分层镜像：photocraft 可信存活健康度量 权威归档源</a></li>
+<li><a href="https://www.mw-wm.com/baogao/topic-96164850.html">photocraft 自动化持续集成快照与拓扑发布源 (RFC-451)</a></li>
+<li><a href="https://www.yx-sf.com/tech/50727">photocraft 自动化持续集成快照与拓扑发布源 (RFC-452)</a></li>
+<li><a href="https://www.ai-hao123.com/youhua/brand-27502201.html">photocraft 自动化持续集成快照与拓扑发布源 (v2.0-GA)</a></li>
+<li><a href="https://tryw.tcti.cn/youhua/resolution-69349155.html">photocraft 自动化持续集成快照与拓扑发布源 (Core/Window)</a></li>
+<li><a href="https://wysg.tcti.cn/jianzhan/news-03989592.html">photocraft 自动化持续集成快照与拓扑发布源 (Verified)</a></li>
+<li><a href="https://jpcf.wtpuscm.cn/xinwen/innovation-807349.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-01)</a></li>
+<li><a href="https://qurz.wtpuscm.cn/liuliang/revenue-433574.html">photocraft 官方高可用镜像注册节点 (Core/分布式状态机)</a></li>
+<li><a href="https://aogd.wtpuscm.cn/youhua/training-555086.html">photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.0)</a></li>
+<li><a href="https://ouvt.wtpuscm.cn/guanjianci/dashboard-836588.html">冷热数据分层镜像：photocraft Engine first: 权威归档源</a></li>
+<li><a href="https://miid.wtpuscm.cn/kaifa/user-930409.html">冷热数据分层镜像：photocraft Under the hood 权威归档源</a></li>
+<li><a href="https://wonv.wtpuscm.cn/hezuo/site-114909.html">全球权威拓扑节点：photocraft 实时镜像与索引入口</a></li>
+<li><a href="https://vxjh.wtpuscm.cn/jiaocheng/objective-918064.html">photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.8)</a></li>
+<li><a href="https://gwqt.wtpuscm.cn/ziyuan/topic-611.html">冷热数据分层镜像：photocraft open-source 权威归档源</a></li>
+<li><a href="https://qoip.wtpuscm.cn/fenxi/label-537419.html">photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.1)</a></li>
+<li><a href="https://tume.wtpuscm.cn/jiaocheng/subscribe-270796.html">photocraft 官方高可用镜像注册节点 (Core/Under )</a></li>
+<li><a href="https://nomx.wtpuscm.cn/suanfa/achievement-298348.html">冷热数据分层镜像：photocraft macOS 权威归档源</a></li>
+<li><a href="https://hdqj.wtpuscm.cn/zhizhu/upload-949304.html">photocraft 官方高可用镜像注册节点 (Verified)</a></li>
+<li><a href="https://xsco.wtpuscm.cn/anli/file-159731.html">冷热数据分层镜像：photocraft Rust 权威归档源</a></li>
+<li><a href="https://kjzl.wtpuscm.cn/tuiguang/products-913179.html">冷热数据分层镜像：photocraft Photoshop 权威归档源</a></li>
+<li><a href="https://khxx.wtpuscm.cn/anfang/prospect-039057.html">冷热数据分层镜像：photocraft 生产环境运维调优手册 权威归档源</a></li>
+<li><a href="https://wsxa.wtpuscm.cn/gongju/project-502931.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-07)</a></li>
+<li><a href="https://nulc.wtpuscm.cn/yinqing/domain-933110.html">photocraft 官方高可用镜像注册节点 (Core/Adobe)</a></li>
+<li><a href="https://evta.wtpuscm.cn/baogao/learning-116158.html">photocraft: 分布式状态机一致性 Rust高性能网络 (Verified)</a></li>
+<li><a href="https://bogq.wtpuscm.cn/chuangxin/experience-487455.html">冷热数据分层镜像：photocraft photocraft 权威归档源</a></li>
+</ul>
+<h4>4. 📊 性能基准指标与可信存活性验证 (Benchmarks &amp; Trust Standards)</h4>
+<ul>
+<li><a href="https://kerk.wtpuscm.cn/fenxi/beauty-870673.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-59)</a></li>
+<li><a href="https://sqqh.wtpuscm.cn/jishu/button-237999.html">【评测基准】photocraft 吞吐抖动度量与健康检查协议</a></li>
+<li><a href="https://liri.wtpuscm.cn/paiming/travel-457677.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Core/Large )</a></li>
+<li><a href="https://sglp.wtpuscm.cn/gongxiang/interface-318368.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-195)</a></li>
+<li><a href="https://vuvm.tcti.cn/baogao/category-96819645.html">photocraft 高负载场景下 分布式架构 基准评测报告</a></li>
+<li><a href="https://snke.tcti.cn/shichang/privacy-03691166.html">photocraft 高负载场景下 Rust高性能网络 基准评测报告</a></li>
+<li><a href="https://qvky.tcti.cn/chanpin/calculator-80188891.html">photocraft 节点连通性、存活性探测与防作弊指标</a></li>
+<li><a href="https://xdud.tcti.cn/xitong/growth-38922625.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (v2.0-GA)</a></li>
+<li><a href="https://mfny.tcti.cn/youhua/entertainment-76154014.html">photocraft 权威网络权重传递与收录基准规范</a></li>
+<li><a href="https://ykbu.tcti.cn/hezuo/profit-62526257.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Draft-01)</a></li>
+<li><a href="https://oqww.tcti.cn/yanjiu/security-58664482.html">photocraft 故障自愈与网络拓扑重构实践</a></li>
+<li><a href="https://qdtm.tcti.cn/tuiguang/efficiency-41330810.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Node-92)</a></li>
+<li><a href="https://szgq.tcti.cn/wangluo/navigation-64270993.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Spec-v1.8)</a></li>
+<li><a href="https://mvaa.tcti.cn/yingxiao/server-30032653.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Core/可信存活健康)</a></li>
+<li><a href="https://vmzu.tcti.cn/zhizhu/mobile-91680111.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-84)</a></li>
+<li><a href="https://fhyo.tcti.cn/anfang/ai-42512408.html">面向生产级运行的 photocraft 稳定性防护白皮书 (v2.0-GA)</a></li>
+<li><a href="https://bgot.tcti.cn/suanfa/communication-61985994.html">photocraft 高负载场景下 开源镜像站 基准评测报告</a></li>
+<li><a href="https://zgjo.tcti.cn/baogao/expensive-05433339.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Verified)</a></li>
+<li><a href="https://vyvz.tcti.cn/wenzhang/experience-12941378.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Node-74)</a></li>
+<li><a href="https://azbr.tcti.cn/ziyuan/income-75772378.html">photocraft: Built for agents 分布式架构 (v2.0-GA)</a></li>
+<li><a href="https://unax.tcti.cn/fenxi/logo-66703844.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-288)</a></li>
+<li><a href="https://wwng.wtpuscm.cn/youhua/recommendation-462387.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Verified)</a></li>
+<li><a href="https://www.mw-wm.com/jiaoliu/community-52034265.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Core/clean-)</a></li>
+<li><a href="https://www.yx-sf.com/tech/81901">photocraft: Two compositors: 分布式架构 (Verified)</a></li>
+<li><a href="https://www.ai-hao123.com/xitong/event-56278929.html">photocraft: Test corpora 开源镜像站 (Core/Test c)</a></li>
+<li><a href="https://ihzo.tcti.cn/guanjianci/content-57016007.html">面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-535)</a></li>
+<li><a href="https://dsez.tcti.cn/jiaoliu/roi-23677215.html">面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-328)</a></li>
+<li><a href="https://bocv.wtpuscm.cn/yunying/wellness-655605.html">photocraft: photocraft 开源镜像站 (Verified)</a></li>
+<li><a href="https://ucfw.wtpuscm.cn/zhineng/alliance-658870.html">photocraft: photocraft-psd 搜索引擎调度优化 (v2.0-GA)</a></li>
+<li><a href="https://qupn.wtpuscm.cn/pingce/conference-605938.html">photocraft 高负载场景下 搜索引擎调度优化 基准评测报告</a></li>
+<li><a href="https://cuyy.wtpuscm.cn/wendang/report-320168.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Draft-04)</a></li>
+<li><a href="https://omah.wtpuscm.cn/jiaocheng/lead-974757.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-37)</a></li>
+<li><a href="https://xeam.wtpuscm.cn/peixun/technology-901324.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-58)</a></li>
+<li><a href="https://nlih.wtpuscm.cn/xinwen/training-476190.html">photocraft: Security Rust高性能网络 (v2.0-GA)</a></li>
+<li><a href="https://wgdj.wtpuscm.cn/peixun/education-590.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-849)</a></li>
+<li><a href="https://ohij.wtpuscm.cn/fuwu/database-331754.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Draft-06)</a></li>
+<li><a href="https://mmvv.wtpuscm.cn/fuwu/subject-299341.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-32)</a></li>
+<li><a href="https://puof.wtpuscm.cn/shichang/demographic-998030.html">面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-319)</a></li>
+<li><a href="https://nohi.wtpuscm.cn/kaifa/visitor-265676.html">photocraft: Get started 开源镜像站 (Draft-04)</a></li>
+</ul>
+</details>
+
+      </div>
+      <div class="mt-12 pt-6 border-t border-slate-200 flex flex-wrap items-center justify-between gap-4">
+        <a href="./index.html" class="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800 ">
+          <span>&larr; 查看更多归档文档</span>
+        </a>
+        <a href="../index.html" class="inline-flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-slate-900 ">
+          <span>返回项目 README 首页 &rarr;</span>
+        </a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="mt-20 border-t border-slate-200 bg-white py-12 text-slate-500 text-sm">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-2">
+      <span class="w-6 h-6 rounded bg-slate-800 text-white flex items-center justify-center text-xs font-bold">LM</span>
+      <span>© 2026 <strong>photocraft-mirror-668</strong> - 官方开源高可用拓扑镜像与白皮书</span>
+    </div>
+    <div class="flex items-center gap-4 text-xs text-slate-400">
+      <a href="../index.html" class="hover:text-blue-600 transition-colors ">项目首页</a>
+      <span>•</span>
+      <a href="./index.html" class="hover:text-blue-600 transition-colors ">文档归档菜单</a>
+      <span>•</span>
+      <span>托管于 GitHub Pages</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photocraft Architecture - photocraft-mirror-668 文档归档</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+      :root {
+        --color-primary: #2563eb;
+        --color-primary-hover: #1d4ed8;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.68;
+        color: #1e293b;
+      }
+      .markdown-body {
+        color: #1e293b;
+      }
+      .markdown-body h1 {
+        font-size: 2.25rem;
+        font-weight: 800;
+        margin-top: 1.8rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.6rem;
+        border-bottom: 2px solid #e2e8f0;
+        color: #0f172a;
+        line-height: 1.25;
+      }
+      .markdown-body h2 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-top: 1.6rem;
+        margin-bottom: 0.8rem;
+        padding-bottom: 0.4rem;
+        border-bottom: 1px solid #f1f5f9;
+        color: #1e293b;
+      }
+      .markdown-body h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-top: 1.3rem;
+        margin-bottom: 0.6rem;
+        color: #334155;
+      }
+      .markdown-body p {
+        margin-top: 0.8rem;
+        margin-bottom: 0.8rem;
+        line-height: 1.7;
+      }
+      .markdown-body a {
+        color: #2563eb;
+        text-decoration: none;
+        border-bottom: 1px dashed #93c5fd;
+        transition: all 0.2s ease;
+      }
+      .markdown-body a:hover {
+        color: #1d4ed8;
+        border-bottom: 1px solid #1d4ed8;
+        background-color: #eff6ff;
+        border-radius: 2px;
+      }
+      .markdown-body ul, .markdown-body ol {
+        padding-left: 1.5rem;
+        margin-top: 0.6rem;
+        margin-bottom: 0.6rem;
+      }
+      .markdown-body ul {
+        list-style-type: disc;
+      }
+      .markdown-body ol {
+        list-style-type: decimal;
+      }
+      .markdown-body li {
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+      }
+      .markdown-body pre {
+        background-color: #0f172a;
+        color: #e2e8f0;
+        padding: 1rem 1.2rem;
+        border-radius: 0.75rem;
+        overflow-x: auto;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875rem;
+        margin: 1rem 0;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+      .markdown-body code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875em;
+        padding: 0.15rem 0.35rem;
+        background-color: #f1f5f9;
+        color: #0f172a;
+        border-radius: 0.35rem;
+        border: 1px solid #e2e8f0;
+      }
+      .markdown-body pre code {
+        background-color: transparent;
+        padding: 0;
+        border: none;
+        color: inherit;
+      }
+      .markdown-body blockquote {
+        margin: 1rem 0;
+        padding: 0.75rem 1.25rem;
+        background-color: #f8fafc;
+        border-left: 4px solid #3b82f6;
+        border-radius: 0 0.5rem 0.5rem 0;
+        color: #475569;
+      }
+      .markdown-body table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.2rem 0;
+        display: block;
+        overflow-x: auto;
+      }
+      .markdown-body th, .markdown-body td {
+        border: 1px solid #cbd5e1;
+        padding: 0.6rem 1rem;
+        text-align: left;
+      }
+      .markdown-body th {
+        background-color: #f1f5f9;
+        font-weight: 600;
+      }
+      .markdown-body tr:nth-child(even) {
+        background-color: #f8fafc;
+      }
+      .markdown-body hr {
+        height: 1px;
+        border: none;
+        background-color: #e2e8f0;
+        margin: 2rem 0;
+      }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col antialiased">
+  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <a href="../index.html" class="flex items-center gap-2 group">
+        <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center text-white font-bold text-sm shadow-sm group-hover:scale-105 transition-transform ">LM</span>
+        <span class="font-bold text-slate-900 tracking-tight text-lg group-hover:text-blue-600 transition-colors ">photocraft-mirror-668</span>
+      </a>
+      <span class="hidden md:inline-block text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-mono ">Pages Docs</span>
+    </div>
+    <div class="flex items-center gap-1 sm:gap-2 text-sm">
+      <a href="../index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-slate-600 hover:text-blue-600 hover:bg-slate-50 font-medium ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        <span>首页 (README)</span>
+      </a>
+      <a href="./index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-blue-600 bg-blue-50 font-semibold ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+        <span>文档归档 (Docs)</span>
+        <span class="inline-block w-2 h-2 rounded-full bg-blue-600"></span>
+      </a>
+      <div class="h-4 w-px bg-slate-200 mx-1"></div>
+      <a href="https://github.com/shijiuwei/photocraft-mirror-668" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        <span class="hidden sm:inline">GitHub</span>
+      </a>
+      <a href="https://github.com/shijiuwei/photocraft-mirror-668/wiki" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <span class="hidden sm:inline">Wiki</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+  <!-- 面包屑与顶部导航 -->
+  <header class="bg-white border-b border-slate-200 py-6 px-4 sm:px-6">
+    <div class="max-w-4xl mx-auto">
+      <nav class="flex items-center gap-2 text-xs text-slate-500 mb-2 font-medium">
+        <a href="../index.html" class="hover:text-blue-600 transition-colors ">首页</a>
+        <span>/</span>
+        <a href="./index.html" class="hover:text-blue-600 transition-colors ">文档归档菜单</a>
+        <span>/</span>
+        <span class="text-slate-800 font-semibold">架构设计</span>
+      </nav>
+      <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Photocraft Architecture</h1>
+        <a href="./index.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition-colors ">
+          <span>&larr; 返回文档归档菜单</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主体正文区域 -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 py-10 flex-1 w-full">
+    <article class="bg-white p-6 sm:p-12 rounded-2xl shadow-sm border border-slate-200">
+      <div class="markdown-body">
+        <h1>Photocraft Architecture</h1>
+<p>Status: draft v1 (2026-09-30). This plan does not assume a final UI toolkit. The candidates are discussed in <a href="rust-framework-options.md"><code>rust-framework-options.md</code></a>.</p>
+<p>This plan sets out:</p>
+<ul>
+<li>the Cargo workspace,</li>
+<li>the rules that keep the engine independent of the UI,</li>
+<li>the interfaces a UI has to implement,</li>
+<li>how the PSD, compositing, history and automation parts fit together.</li>
+</ul>
+<hr />
+<h2>1. Goals and principles</h2>
+<p><strong>Goals</strong></p>
+<ul>
+<li>A native, portable (macOS / Windows / Linux), fully open-source layered image editor, roughly matching Photoshop's feature surface over time.</li>
+<li><strong>The UI can be swapped</strong> without touching the core: egui today, maybe Slint, Qt or something else later.</li>
+<li><strong>The core compiles to <code>wasm32</code>,</strong> which keeps a browser demo possible.</li>
+<li>PSD read and write lives in its <strong>own crate that can be published separately.</strong></li>
+</ul>
+<p><strong>Principles</strong></p>
+<ol>
+<li><strong>Engine-first, headless-first.</strong> Every feature is reachable without a GUI: from tests, the CLI and MCP. The GUI is one client of the engine.</li>
+<li><strong>Everything is a command.</strong> Each user-visible action has a stable <code>CommandId</code> (such as <code>filter.blur.gaussianBlur</code>) with typed, serializable parameters. The menu, command palette, shortcuts, recorded actions/macros, CLI, MCP and plugins all dispatch the same commands.</li>
+<li><strong>Data describes the UI; toolkits draw it.</strong> Tools produce <em>overlay primitives</em> (lines, handles, marching-ants paths) as data. Filter and adjustment dialogs are generated from <em>parameter schemas</em>. A new toolkit implements one renderer for each, not about 150 bespoke dialogs.</li>
+<li><strong>One algorithm, one parameter struct.</strong> Every algorithm has a CPU reference implementation (Rust + rayon, deterministic). Some also get a GPU implementation (WGSL). Both read the same <code>#[repr(C)]</code> <code>bytemuck::Pod</code> parameter struct. We never keep hand-synced copies of an algorithm in several languages.</li>
+<li><strong>Immutable snapshots, copy-on-write tiles.</strong> Pixel data is stored in <code>Arc</code>-shared 256² tiles. Taking a document snapshot is O(layers), which makes undo, background jobs, autosave and UI reads cheap and lock-free.</li>
+<li><strong>Determinism.</strong> The same input gives the same output across CPU and GPU (within tolerance), across thread counts, and between preview and export. Noise is hashed from document coordinates.</li>
+<li><strong>Pure Rust by default.</strong> C/C++ dependencies are allowed only behind Cargo features, in I/O-edge crates (for example an optional LibRaw).</li>
+<li><strong>Clean-room.</strong> We study other editors' <em>behaviour</em> only, and we must <strong>not copy proprietary source</strong> (Rust, WGSL, C++ or JS), even where it ships as readable source. Specs come from public format docs (Adobe PSD spec, ISO/ICC), academic papers (PatchMatch, Poisson blending, ARAP) and observed behaviour. Never paste code from another product.</li>
+</ol>
+<h3>1.1 Avoiding GIMP's hole</h3>
+<p>The criticism of GIMP is historically true, and much of it still applies in 2026.</p>
+<p><strong>Bit depth.</strong></p>
+<ul>
+<li>GIMP's original core hard-coded 8-bit-per-channel tiles.</li>
+<li>High bit depth needed a whole new engine, GEGL. GEGL began around 2000, was introduced as optional in 2.6 (2008), and the port only finished in <strong>GIMP 2.10 (2018)</strong>, "the result of six years of work" on that port alone.</li>
+<li>Only then did GIMP get 16/32-bit integer and float processing.</li>
+</ul>
+<p><strong>Non-destructive editing.</strong></p>
+<ul>
+<li>Photoshop has had adjustment layers since about 1994.</li>
+<li>GIMP got non-destructive <em>filters</em> in <strong>3.0 (March 2025)</strong>, about seven years after 2.10 because of the GTK3 port.</li>
+<li>It got non-destructive <em>layer types</em> (link layers, vector layers) in <strong>3.2 (March 2026)</strong>.</li>
+</ul>
+<p><strong>CMYK.</strong></p>
+<ul>
+<li>GIMP 3.x is still "a 100% RGB editor" internally.</li>
+<li>CMYK exists only as export (JPEG/TIFF/PSD) and soft-proofing.</li>
+</ul>
+<p><strong>PSD.</strong></p>
+<ul>
+<li>Import is still lossy. Photoshop adjustment layers and most layer styles are not carried over faithfully, and text often needs re-typing.</li>
+<li>3.2 converts legacy drop and inner shadows into GIMP filters, and added PSB export.</li>
+</ul>
+<p><strong>Root cause:</strong> fundamental properties were <strong>baked into the core as assumptions instead of being data.</strong> Pixel depth, colour model, and "a layer is a pixel buffer" were all hard-coded. Every later feature that touched them needed a rewrite of everything built on top.</p>
+<p>Sources: <a href="https://pkxk.tcti.cn/shuju/cost-24946788.html">GIMP 2.10 release notes</a>, <a href="https://croh.tcti.cn/yunsuan/backup-55313078.html">GEGL on Wikipedia</a>, <a href="https://cwfh.tcti.cn/anli/upload-99566388.html">GIMP 3.2 release notes</a>, <a href="https://gpvv.tcti.cn/gongju/resolution-49304770.html">LWN on GIMP 3.0 colour</a>.</p>
+<p><strong>Rules we adopt from day one</strong> (cheap now, and each would force a rewrite later):</p>
+<table><thead><tr><th>Property</th><th>Rule</th><th>Where</th></tr></thead><tbody>
+<tr><td><strong>Bit depth</strong></td><td>Every surface carries a runtime <code>PixelFormat { depth: U8|U16|F16|F32, model, alpha }</code>. Algorithms are written generically over a <code>Sample</code> trait and monomorphized per depth, or run on f32 working buffers and convert at tile edges. No <code>u8</code> pixel type appears in any public engine API. CI runs the golden suite at 8, 16 and 32f.</td><td><code>raster</code>, <code>color</code>, <code>algo</code></td></tr>
+<tr><td><strong>Colour model</strong></td><td><code>ColorMode</code> (RGB, Gray, CMYK, Lab, Indexed, Bitmap, plus multichannel/spot) is in <code>doc</code> from the start. Channel count is dynamic (1–N plus alpha plus spot). Only RGB/Gray <em>rendering</em> ships first, but the storage, PSD round-trip and conversion paths never assume 3 or 4 channels.</td><td><code>doc</code>, <code>raster</code>, <code>psd</code></td></tr>
+<tr><td><strong>Colour management</strong></td><td>Every document has an ICC profile. The compositor takes a working-space descriptor. The display transform is a separate final stage. Blending space (gamma vs linear) is a per-document option.</td><td><code>color</code>, <code>compose</code></td></tr>
+<tr><td><strong>Non-destructive by construction</strong></td><td><code>LayerContent</code> is an enum that includes Adjustment, Fill, Text, Shape and Smart from v1, with smart filters as a stack on any layer. The compositor evaluates a <em>graph</em>, not a list of flattened buffers. Destructive ops are just "apply and bake".</td><td><code>doc</code>, <code>compose</code></td></tr>
+<tr><td><strong>File formats</strong></td><td>Formats plug in through <code>trait ImageDecoder/Encoder</code> plus a registry with capability flags (depths, modes, layers, alpha, metadata, ICC). Adding a format is one crate feature. It must never need a change in core types. Lossless PSD round-trip preserves unknown blocks.</td><td><code>codecs</code>, <code>io</code>, <code>psd</code></td></tr>
+<tr><td><strong>Size</strong></td><td>Tiled, sparse storage behind a <code>TileStore</code> trait, with 64-bit coordinates for PSB-scale canvases (300k × 300k). Nothing assumes a document fits in one allocation or one GPU texture.</td><td><code>raster</code></td></tr>
+<tr><td><strong>UI toolkit</strong></td><td>The core never depends on the toolkit (§3–§4). GIMP spent years porting GTK2 to GTK3, and our UI crate can be replaced without touching the engine.</td><td>layering rule 2</td></tr>
+</tbody></table>
+<p>The test is simple: <strong>adding 64-bit float, a new colour model, or a new file format should touch a leaf crate, not the foundation.</strong> We check this in phase 2 by adding a (hidden) CMYK and a 32f code path early, even before they are exposed in the UI.</p>
+<hr />
+<h2>2. Workspace layout</h2>
+<pre><code class="language-text">photocraft/
+├─ Cargo.toml                  # [workspace], shared deps, lints, profiles
+├─ crates/
+│  │  ── foundation (no_std-friendly where practical, wasm-safe) ──
+│  ├─ geom/                    photocraft-geom      points, rects, affine/perspective, tile coords, bezier (kurbo)
+│  ├─ cms/                     photocraft-cms       pure-Rust ICC colour management: profiles, transforms, intents, BPC, soft proof, 3D LUTs
+│  ├─ color/                   photocraft-color     pixel formats, color spaces, blend-mode math (scalar reference); conversions via cms
+│  ├─ raster/                  photocraft-raster    tiled COW surfaces, masks, mip pyramids, damage regions, pixel iterators
+│  │  ── document ──
+│  ├─ doc/                     photocraft-doc       document model: layer tree, masks, effects, channels, paths, guides, metadata (pure data + serde)
+│  ├─ ops/                     photocraft-ops       reversible operations on a doc + transactions + history/undo
+│  │  ── algorithms (CPU reference impls, rayon, wasm-safe) ──
+│  ├─ algo/                    photocraft-algo      adjustments, filters, selection, inpaint/heal, warp/transform, resampling
+│  ├─ paint/                   photocraft-paint     brush engine: dabs, dynamics, stroke smoothing, brush presets (.abr import later)
+│  ├─ text/                    photocraft-text      font DB trait, shaping + layout (parley/skrifa/harfrust), text-layer rasterization
+│  ├─ vector/                  photocraft-vector    shapes, paths, strokes → coverage (vello_cpu / kurbo)
+│  │  ── rendering ──
+│  ├─ compose/                 photocraft-compose   layer tree → DrawOp plan; CPU compositor (reference + export + wasm fallback)
+│  ├─ gpu/                     photocraft-gpu       wgpu backend for the DrawOp plan + GPU kernels (WGSL), residency cache, memory budget
+│  ├─ viewport/                photocraft-viewport  camera (zoom/pan/rotate), visible tiles/mips, renders a doc into a wgpu texture; toolkit-agnostic
+│  │  ── I/O ──
+│  ├─ psd/                     photocraft-psd       PSD/PSB read + write; its OWN format-level model; depends on nothing in this workspace
+│  ├─ adobe-assets/            photocraft-adobe-assets  .abr .asl .aco/.ase .grd .pat .csh .atn .cube/.3dl, ACR .xmp presets (standalone, like psd)
+│  ├─ codecs/                  photocraft-codecs    flat raster decode/encode at format-supported depths; AVIF encode only (feature `avif`), HEIF/HEIC decode only (feature `heif`); no JPEG XL
+│  ├─ heif/                    photocraft-heif      optional HEIF/HEIC decoder (heic-rs, pure Rust); used only by codecs behind its `heif` feature (standalone)
+│  ├─ affinity/                photocraft-affinity  bounded native Affinity reader: archive, object stream, layers, vectors, text, pixels (standalone; read only)
+│  ├─ raw/                     photocraft-raw       clean-room camera RAW decode (DNG, CR2, TIFF/EP) + develop pipeline (standalone, like psd)
+│  ├─ format/                  photocraft-format    native document format (.pcraft bundle): manifest + content-addressed tiles
+│  ├─ io/                      photocraft-io        import/export orchestration; doc ⇄ PSD mapping; PDF/SVG import (features)
+│  │  ── intelligence ──
+│  ├─ ml/                      photocraft-ml        model registry + InferenceBackend trait (ort native / burn|candle web); SAM2, matting, depth, sky
+│  ├─ plugins/                 photocraft-plugins   sandboxed WebAssembly filter plug-ins (wasmi host, limits, ABI v1, registry)
+│  │  ── the façade every frontend talks to ──
+│  ├─ tools/                   photocraft-tools     tool state machines (move, marquee, lasso, brush, clone, gradient, crop, transform, pen, text…)
+│  ├─ engine/                  photocraft-engine    Session: open docs, command registry + dispatch, jobs, events, view-models, preferences
+│  │  ── platform + frontends ──
+│  ├─ platform/                photocraft-platform  traits: file dialogs, clipboard, fonts, tablet input, menus, storage; native + web impls
+│  ├─ ui-egui/                 photocraft-ui-egui   the (first) GUI shell: panels, dialogs, canvas widget, theme
+│  ├─ automation/              photocraft-automation  MCP server (rmcp) + JSON-RPC over the command registry
+│  └─ testkit/                 photocraft-testkit   golden images, perceptual diff, fixtures, PSD corpus helpers
+├─ apps/
+│  ├─ photocraft/              desktop binary (winit + wgpu + ui-egui + platform-native)
+│  ├─ photocraft-cli/          headless batch CLI (open → commands → export), also hosts `mcp` subcommand
+│  └─ photocraft-web/          wasm32 binary (ui-egui + platform-web), demo
+├─ shaders/                    (or inside gpu/) WGSL, with generated struct headers
+├─ assets/                     icons, bundled fonts, default brushes/swatches/presets
+├─ fuzz/                       cargo-fuzz targets (psd, codecs, format)
+├─ xtask/                      build tasks: layer-check, shader-gen, corpus fetch, release
+└─ plan/                       this directory
+</code></pre>
+<p><strong>What exists today.</strong> This layout is the target design. Built so far: <code>geom</code>, <code>cms</code>, <code>color</code>, <code>raster</code>, <code>psd</code>, <code>codecs</code>, <code>doc</code>, <code>ops</code>, <code>algo</code>, <code>paint</code>, <code>text</code>, <code>vector</code>, <code>compose</code>, <code>gpu</code>, <code>format</code>, <code>raw</code>, <code>io</code>, <code>plugins</code>, <code>engine</code>, <code>ui-egui</code>, <code>automation</code>, <code>testkit</code>, and the three apps. Not yet split out: <code>viewport</code> and <code>tools</code> live inside <code>ui-egui</code> and <code>engine</code>; <code>platform</code> services are function hooks injected by each app (<code>ui_egui::Services</code>); <code>adobe-assets</code> and <code>ml</code> are not started.</p>
+<p><strong>Crate granularity:</strong> start with the crates above. Split <code>algo</code> into <code>-adjust</code>, <code>-filters</code>, <code>-select</code>, <code>-inpaint</code> and <code>-warp</code> once any module passes about 10k lines, or once compile times hurt. Its internal module boundaries should already follow those lines.</p>
+<p><strong>Naming:</strong> directories are short and packages are prefixed <code>photocraft-</code>. <code>photocraft-psd</code> gets a neutral, publishable name (such as <code>psd-rw</code>) if we release it to crates.io.</p>
+<hr />
+<h2>3. Dependency layering (enforced)</h2>
+<pre><code class="language-text"> L7  apps/*                         (binaries: wire everything together)
+ L6  ui-egui · automation · platform
+ L5  engine
+ L4  tools · viewport · io · ml · plugins
+ L3  compose · gpu · format
+ L2  ops · algo · paint · text · vector
+ L1  doc
+ L0  geom · cms · color · raster           psd, codecs, raw, adobe-assets (standalone, no workspace deps)
+</code></pre>
+<p><strong>Rules</strong> (checked by <code>cargo xtask layers</code> in CI, which parses <code>cargo metadata</code>):</p>
+<ol>
+<li>A crate may depend only on crates in <strong>lower</strong> layers. No cycles and no sideways dependencies, except where listed.</li>
+<li><strong>Nothing below L6 may depend on any UI toolkit, winit, or a <code>platform</code> implementation.</strong> Platform services reach the engine through traits defined in <code>engine</code> (or in <code>platform</code>'s trait-only core), and are injected at startup.</li>
+<li><strong><code>photocraft-psd</code> depends on no workspace crate.</strong> The doc ⇄ PSD mapping lives in <code>io</code>. This keeps the PSD crate publishable and reusable by other projects. The same holds for every standalone crate, with one documented exception: <code>codecs</code> → <code>heif</code> (both standalone and publishable; <code>STANDALONE_EXCEPTIONS</code> in <code>xtask/src/layers.rs</code>).</li>
+<li><strong>wasm gate:</strong> every crate in L0–L5 (except feature-gated native backends) must build for <code>wasm32-unknown-unknown</code>. CI runs <code>cargo build -p photocraft-engine --target wasm32-unknown-unknown --no-default-features --features web</code>.</li>
+<li><code>gpu</code> is optional for <code>engine</code>. Engine features are <code>gpu</code> (default on) and <code>cpu-only</code>, and <code>cpu-only</code> builds are what the headless CLI and CI tests use.</li>
+<li><strong>C dependencies</strong> (optional LibRaw, pdfium) only behind features, only in <code>codecs</code>, <code>raw</code> or <code>io</code>, and never on by default for the web target.</li>
+</ol>
+<hr />
+<h2>4. The UI-swap seam (the most important interface)</h2>
+<p>A frontend needs exactly five things from the core. Keeping these small and data-oriented is what makes the UI replaceable.</p>
+<h3>4.1 <code>Session</code>: commands in, events out</h3>
+<pre><code class="language-rust">// photocraft-engine
+pub struct Session { /* docs, registry, job pool, prefs, services */ }
+
+impl Session {
+    pub fn new(services: Services) -&gt; Self;                         // platform traits injected
+    pub fn dispatch(&amp;self, doc: Option&lt;DocId&gt;, cmd: CommandInvocation) -&gt; Result&lt;JobHandle, CommandError&gt;;
+    pub fn registry(&amp;self) -&gt; &amp;CommandRegistry;                     // metadata for menus/palette/shortcuts
+    pub fn snapshot(&amp;self, doc: DocId) -&gt; Arc&lt;DocSnapshot&gt;;         // lock-free read (arc-swap)
+    pub fn events(&amp;self) -&gt; EventReceiver;                          // DocChanged{damage}, JobProgress, Toast, …
+    pub fn view_models(&amp;self, doc: DocId) -&gt; ViewModels;            // layers, history, channels, tool options…
+}
+
+pub struct CommandInvocation { pub id: CommandId, pub params: serde_json::Value /* validated vs schema */ }
+</code></pre>
+<h3>4.2 <code>CommandRegistry</code>: the menu, palette and automation catalogue</h3>
+<p>Each command registers the following:</p>
+<ul>
+<li><code>id</code> (<code>"filter.blur.gaussianBlur"</code>), <code>label</code>, <code>menu_path</code> (<code>["Filter","Blur"]</code>), and a <code>default_shortcut</code>.</li>
+<li><code>params: schemars::Schema</code>, plus optional <code>ui_hints</code> (slider ranges, units, log scale, grouping).</li>
+<li><code>enabled(&amp;DocSnapshot, &amp;ToolState) -&gt; bool</code> and <code>checked(...) -&gt; Option&lt;bool&gt;</code>.</li>
+<li><code>preview: PreviewMode</code> (None / Live / Proxy). This lets dialogs show on-canvas preview generically.</li>
+<li><code>kind</code>: Instant / Dialog / Interactive (hands control to a tool, e.g. Free Transform).</li>
+</ul>
+<p><strong>Consumers:</strong></p>
+<ul>
+<li>The GUI builds the menu bar, the ⌘F palette and the shortcut editor from it.</li>
+<li><code>automation</code> exposes the registry as MCP tools.</li>
+<li><code>photocraft-cli</code> exposes <code>photocraft-cli run in.psd --cmd filter.blur.gaussianBlur --params '{"radius":4}' --out out.png</code>.</li>
+<li>Action recording is simply <code>Vec&lt;CommandInvocation&gt;</code>.</li>
+</ul>
+<h3>4.3 Tools: pointer events in, ops and overlays out</h3>
+<pre><code class="language-rust">// photocraft-tools
+pub struct PointerEvent { pub pos_doc: Point, pub pressure: f32, pub tilt: Vector, pub twist: f32,
+                          pub time_us: u64, pub buttons: Buttons, pub mods: Modifiers, pub kind: PointerKind /* mouse|pen|eraser|touch */ }
+
+pub trait Tool {
+    fn id(&amp;self) -&gt; ToolId;
+    fn options_schema(&amp;self) -&gt; Schema;                       // options bar generated from schema
+    fn on_pointer(&amp;mut self, ev: &amp;PointerEvent, cx: &amp;mut ToolCx) -&gt; ToolResponse;   // ToolCx gives snapshot + op sink
+    fn on_key(&amp;mut self, key: Key, cx: &amp;mut ToolCx) -&gt; ToolResponse;
+    fn overlay(&amp;self, view: &amp;ViewTransform) -&gt; Vec&lt;OverlayPrim&gt;;                     // drawn by any UI
+    fn cursor(&amp;self) -&gt; CursorSpec;
+}
+
+pub enum OverlayPrim { Path{path: BezPath, style: StrokeStyle, space: Space}, MarchingAnts{path: BezPath},
+                       Handle{pos: Point, kind: HandleKind}, BrushOutline{center: Point, radius: f32, ..},
+                       Text{pos: Point, text: String}, Guide{..}, Grid{..} }
+</code></pre>
+<p>Coalesced high-rate pen samples come from <code>platform</code> and are handed to tools as a batch, so the brush sees every sample even when the UI renders at 60–120 Hz.</p>
+<h3>4.4 Viewport: document to pixels</h3>
+<pre><code class="language-rust">// photocraft-viewport
+pub struct Viewport { pub camera: Camera /* zoom, pan, rotation, dpr */, /* tile/mip cache */ }
+impl Viewport {
+    pub fn render_gpu(&amp;mut self, snap: &amp;DocSnapshot, gpu: &amp;GpuContext, target: &amp;wgpu::TextureView, damage: &amp;Region);
+    pub fn render_cpu(&amp;mut self, snap: &amp;DocSnapshot, target: &amp;mut RgbaImageMut, damage: &amp;Region); // wasm fallback, tests
+    pub fn doc_to_screen(&amp;self) -&gt; Affine;  pub fn screen_to_doc(&amp;self) -&gt; Affine;
+}
+</code></pre>
+<ul>
+<li>Any toolkit that can host a <code>wgpu::TextureView</code> (egui paint callbacks, Slint's wgpu texture import, Bevy, a raw winit surface) embeds the canvas the same way.</li>
+<li>A toolkit without wgpu can fall back to <code>render_cpu</code>.</li>
+</ul>
+<h3>4.5 View-models and schemas</h3>
+<ul>
+<li>Panels (Layers, History, Channels, Paths, Properties, Navigator, Histogram, Swatches) read plain structs produced from a snapshot, such as <code>LayersModel { rows: Vec&lt;LayerRow{ id, name, kind, depth, visible, locked, thumb: ThumbHandle, blend, opacity, has_mask, effects: Vec&lt;..&gt; }&gt; }</code>. Thumbnails are <code>ThumbHandle</code>s that the UI resolves to textures through an engine thumbnail cache.</li>
+<li>Dialogs are generated from command <code>params</code> schemas. A toolkit may register <em>custom</em> dialog widgets for a few complex commands: Curves, Levels, Camera Raw, Liquify, Layer Style.</li>
+</ul>
+<p><strong>Litmus test for the seam:</strong> <code>apps/photocraft-cli</code> and the automation server must be able to do <em>everything</em> the GUI does, except pointer painting, which they do by replaying <code>PointerEvent</code> streams through tools.</p>
+<hr />
+<h2>5. Document model (<code>photocraft-doc</code>)</h2>
+<pre><code class="language-rust">pub struct Document {
+    pub id: DocId, pub size: Size, pub resolution_dpi: f32,
+    pub mode: ColorMode /* Rgb | Gray | Cmyk | Lab | Bitmap | Indexed */, pub depth: Depth /* U8 | U16 | F32 */,
+    pub profile: IccProfileRef,
+    pub root: LayerGroup,            // tree
+    pub channels: Vec&lt;AlphaChannel&gt;, // saved selections/spot
+    pub paths: Vec&lt;NamedPath&gt;, pub guides: Guides, pub slices: .., pub metadata: Metadata /* XMP, EXIF */,
+    pub selection: Option&lt;Mask&gt;,     // current selection (a raster mask + optional vector outline)
+}
+
+pub struct Layer { pub id: LayerId, pub name: String, pub visible: bool, pub locks: Locks,
+                   pub blend: BlendMode, pub opacity: f32, pub fill_opacity: f32, pub clipped: bool,
+                   pub mask: Option&lt;RasterMask&gt;, pub vector_mask: Option&lt;VectorMask&gt;,
+                   pub effects: Effects, pub blend_if: BlendIf, pub content: LayerContent }
+
+pub enum LayerContent {
+    Raster(TiledSurface),
+    Group(LayerGroup /* children, pass-through or isolated */),
+    Adjustment(Adjustment /* Curves, Levels, HueSat, … as params */),
+    Fill(Fill /* solid | gradient | pattern */),
+    Text(TextLayer /* runs, paragraph styles, warp; cached raster */),
+    Shape(ShapeLayer /* vector paths + fill/stroke */),
+    Smart(SmartObject /* embedded or linked source + transform + smart filters */),
+}
+</code></pre>
+<ul>
+<li><strong>Pixels.</strong> <code>raster::TiledSurface&lt;F&gt;</code> is a sparse map from <code>TileCoord</code> to <code>Arc&lt;Tile&lt;F&gt;&gt;</code>, with 256×256 tiles. Missing tiles are transparent, or take a fill value. Mutation calls <code>Arc::make_mut</code>, so it is copy-on-write.</li>
+<li><strong>Tile generation counters</strong> feed the GPU residency cache and the thumbnail cache.</li>
+<li><strong>Mip pyramids</strong> are derived lazily per layer, for zoomed-out views.</li>
+<li><strong>Big documents.</strong> The tile store is behind a <code>TileStore</code> trait: in-memory now, disk-spilling ("scratch disk") later, with LRU eviction under a global memory budget.</li>
+<li><strong>The first milestone supports RGB and Gray, at 8/16/32f.</strong> CMYK and Lab are modelled in the types from day one (so PSD round-trips don't lose them) but are rendered by converting to RGB until later phases.</li>
+</ul>
+<hr />
+<h2>6. Operations and history (<code>photocraft-ops</code>)</h2>
+<ul>
+<li><strong>Every mutation is an <code>Op</code></strong>, such as <code>SetLayerProps</code>, <code>PaintTiles{layer, tiles_before, tiles_after}</code>, <code>AddLayer</code>, <code>MoveLayer</code> or <code>ApplyFilter</code>.</li>
+<li><strong>A command produces a <code>Transaction</code> of ops</strong> with a label ("Gaussian Blur").</li>
+<li><strong>History stores transactions.</strong> Because tiles are <code>Arc</code>-shared, "before" states cost only the tiles that actually changed. Undo means swapping <code>Arc</code>s, so no pixel copies are made.</li>
+<li><strong>Each state remembers its targeted layers</strong> (the active layer and the layer selection, as they were when the state was created: when the document was opened, or right after the step that made it). Selecting layers is not a step and doesn't change any state's target, but undo and redo target the restored state's layers again, as Photoshop does.</li>
+<li><strong>Brush strokes</strong> accumulate into one transaction per stroke. Tiles are published incrementally with damage regions, so the viewport updates live.</li>
+<li><strong>Snapshots for readers.</strong> After each committed op the engine publishes a new <code>Arc&lt;DocSnapshot&gt;</code> through <code>arc-swap</code>. The UI, background jobs (filters, AI inference, export) and autosave read snapshots without locks.</li>
+<li><strong>Background jobs</strong> compute from snapshot N and commit as a transaction. If the doc changed meanwhile, the job rebases, meaning it re-targets the same layer id if it still exists, or reports a conflict.</li>
+<li><strong>History features:</strong> a history panel, a memory cap with oldest-first eviction, and named snapshots. The history brush comes later, reading tiles from a past state.</li>
+</ul>
+<hr />
+<h2>7. Rendering</h2>
+<h3>7.1 Planner (<code>compose</code>)</h3>
+<p><code>plan(&amp;DocSnapshot, region) -&gt; Vec&lt;DrawOp&gt;</code> flattens the layer tree into a linear instruction stream:</p>
+<ul>
+<li><code>PushGroup{isolated, blend, opacity}</code> / <code>PopGroup</code></li>
+<li><code>BeginClipBase</code> / <code>Clipped</code></li>
+<li><code>DrawTiles{layer, blend, opacity, mask}</code></li>
+<li><code>Adjust{program}</code></li>
+<li><code>Effect{kind, params}</code></li>
+<li><code>Fill{...}</code></li>
+</ul>
+<p>Both backends consume the same plan. This is the only place that encodes Photoshop layer semantics: pass-through groups, clipping groups, fill vs opacity, blend-if and knockout.</p>
+<h3>7.2 Backends</h3>
+<ul>
+<li><strong>CPU (<code>compose</code>).</strong> The reference implementation, done per tile with rayon. It is used for export, tests, the CLI, and the web fallback when WebGPU is unavailable.</li>
+<li><strong>GPU (<code>gpu</code>).</strong> wgpu compute and render pipelines that run the same plan. They use:
+<ul>
+<li><code>rgba16float</code>/<code>rgba32float</code> accumulators,</li>
+<li>specialized pipelines per blend family and adjustment (WGSL <code>override</code> constants, not one giant <code>switch</code>),</li>
+<li>a residency cache keyed by <code>(TileId, generation)</code>,</li>
+<li>cached group and effect results that are invalidated by generation,</li>
+<li>one global <code>Budget</code> for GPU memory.</li>
+</ul>
+</li>
+<li><strong>Parity tests.</strong> For every blend mode, adjustment and effect, the CPU and GPU results must match within a tolerance of ≤1/255 for 8-bit output. This runs in CI on a software adapter (wgpu with lavapipe or WARP).</li>
+</ul>
+<h3>7.3 Color</h3>
+<ul>
+<li>Blending happens in document space by default, which is Photoshop-compatible. A per-document "linear light blending" option is also available.</li>
+<li><strong>Display transform</strong> (<code>engine/src/display_color.rs</code>): the canvas is always colour-managed, document profile → monitor profile (relative colorimetric + BPC), cached per (document profile, mode, monitor). On the GPU canvas the transform, plus Proof Colors / Gamut Warning / 32-bit preview, is baked into a 33³ 3D LUT the canvas shader's final pass applies; the CPU canvas runs an 8-bit <code>photocraft-cms</code> transform on the composite. When the document profile matches the monitor (sRGB on sRGB) there is no LUT and no transform. Linear composites (EXR/HDR, tagged linear sRGB on import) are stored sRGB-encoded in the 8-bit canvas texture. CMYK documents are read through their embedded CMYK profile (<code>photocraft_color::convert::with_cmyk_space</code>, entered by the compositors and composite exports).</li>
+<li><strong>Monitor profile:</strong> Edit › Color Settings › Monitor Profile: <code>auto</code>, a built-in RGB profile or an <code>.icc</code> path. In <code>auto</code> each window uses the profile of the display it is on (#569): the desktop app reads every display's id, name, frame and ICC profile (macOS: AppKit <code>NSScreen</code> through <code>osascript</code>, no FFI) at launch and again when the app comes back to the front, when any window is on an unknown or resized display (at most every 30 s; a trigger inside that window is deferred) and when Edit › Color Settings opens (<code>ui-egui/src/monitor_status.rs</code>; the helper is stopped after 10 s). There is deliberately no periodic re-read (#569 decision: a read costs about 0.2 s of CPU), so a profile reassigned while PhotoCraft stays in front with no window moving is picked up at the next return to the front or Color Settings, and each window picks the display it overlaps most (<code>display_color::display_at</code>, AppKit's <code>NSWindow.screen</code> rule). Elsewhere <code>auto</code> is sRGB. The GPU canvas keeps one texture per document and a display LUT per (document, display); CPU canvas textures are per (document, display). <code>ColorState::monitor_status_for</code> says what is applied per display: <code>auto</code>, <code>manual</code>, or <code>fallback</code> to sRGB with the reason (missing, unreadable, non-RGB or unusable as a destination), and whether the reading is an earlier one kept after a failed re-read; <code>edit.colorSettings</code> (<code>monitorStatus</code>, <code>displays</code>), Help › System Info and the Color Settings dialog show it, and a fallback in <code>auto</code> posts a notice. Letting macOS colour-match the canvas instead is #581 (an architecture decision).</li>
+<li><strong>HDR/EDR output</strong> (an <code>rgba16float</code> surface with an extended-range colorspace) is a later-phase feature. The interfaces already carry <code>f32</code> pixels.</li>
+</ul>
+<h3>7.4 Oracle</h3>
+<p><strong>PSD files contain Photoshop's own merged composite.</strong> Running our compositor on a PSD's layers and diffing against its embedded composite gives a free, large conformance test suite. <code>testkit</code> automates this over a PSD corpus. The corpora are fetched at pinned commits into <code>corpus/</code> (never committed) by <code>cargo xtask corpus --all</code>; our own Photoshop-authored oracles live in https://github.com/storytold/photocraft-corpus (see <code>docs/development.md</code> › Test corpora).</p>
+<hr />
+<h2>8. <code>photocraft-psd</code>: standalone PSD/PSB crate</h2>
+<p><strong>Scope:</strong> faithful, format-level read and write of PSD (v1) and PSB (v2, 64-bit lengths). It has no dependency on our document model.</p>
+<pre><code class="language-text">psd/src/
+  header.rs         color mode, depth, size
+  color_mode_data.rs
+  resources/        image resources (1005 resolution, 1036 thumbnail, 1039 ICC, 1060 XMP, 1058 EXIF, slices, guides, …)
+  layers/           layer records, channel image data (raw | RLE/PackBits | ZIP | ZIP+prediction), masks, blending ranges
+  tagged/           additional layer info blocks, one module per key:
+                    luni lsct lyid lfx2/lrFX (effects) TySh (text) SoLd/PlLd/lnk2 (smart objects) vmsk/vsms/vogk (vector)
+                    adjustment keys (curv levl hue2 blnc selc mixr grdm phfl brit thrs post nvrt expA vibA clrL blwh)
+                    SoCo GdFl PtFl (fills), Patt, Txt2, …
+  descriptor.rs     ActionDescriptor / OSType parser+writer (used by many tagged blocks)
+  engine_data.rs    text "EngineData" (PostScript-like) parser+writer
+  image_data.rs     merged composite
+  write.rs          serializer (+ RLE/ZIP encoders)
+</code></pre>
+<ul>
+<li><strong>Lossless round-trip.</strong> Unknown or unsupported tagged blocks are kept as raw bytes and re-emitted unchanged. That way files keep features we don't model yet, like 3D or video.</li>
+<li><strong>Lazy decode.</strong> The parser indexes channel data and decodes it only on request. This makes opening a 2 GB PSB fast and memory-bounded.</li>
+<li><strong>The merged composite on write is supplied by the caller</strong> as an image buffer. <code>io</code> renders it with <code>compose</code>, so <code>psd</code> never needs a compositor.</li>
+<li><strong>Mapping lives in <code>io::psd</code>.</strong> It converts <code>psd::File</code> into <code>doc::Document</code> and back, with fidelity levels:
+<ol>
+<li>Flattened image.</li>
+<li>Raster layers, masks, blend/opacity/fill, visibility, names.</li>
+<li>Groups (including pass-through), clipping, blend-if, adjustment and fill layers.</li>
+<li>Layer effects (lfx2).</li>
+<li>Text layers: shaped with <code>text</code>; the original descriptors are kept for round-trip.</li>
+<li>Smart objects: embedded and linked, live both ways (<code>io::smart_map</code>). Import reads the
+placed-layer data (<code>SoLd</code>: file id, transform quad, warp), the smart filter stack
+(<code>filterFX</code>: modelled filters become their PhotoCraft command and params; any other filter
+stays verbatim and is listed as not editable) and the filter mask (global <code>FEid</code>). Export
+writes <code>PlLd</code> + <code>SoLd</code>, embeds the source in <code>lnk2</code> (a <code>.pcraft</code> source becomes a PSB of the
+nested document, written by our own PSD writer) and a filter cache with the unfiltered
+pixels and the mask in <code>FEid</code>; unedited imported smart objects stay byte-identical.</li>
+<li>Vector masks and shape layers.</li>
+</ol>
+</li>
+<li><strong>Testing:</strong>
+<ul>
+<li>Round-trip byte-stability for unmodified files.</li>
+<li>Open → save → open equality.</li>
+<li>Composite-oracle diffs (§7.4).</li>
+<li><code>cargo-fuzz</code> on the parser.</li>
+<li>A corpus from MIT/BSD-licensed test sets (ag-psd, psd-tools), fetched by <code>xtask</code>, not committed.</li>
+<li>Our own Photoshop-authored oracle PSDs (smart filters, effect shapes, type, adjustments in every mode and depth) from https://github.com/storytold/photocraft-corpus, fetched at a pinned commit the same way.</li>
+</ul>
+</li>
+<li><strong>Existing crates:</strong> <code>psd</code> (read-only, limited) and the new <code>ag-psd</code> Rust port. We evaluate them in spike week 1, then either depend on one, fork it, or write our own. Given how central PSD is, writing our own behind a stable API is likely.</li>
+</ul>
+<hr />
+<h2>9. Native file format (<code>photocraft-format</code>)</h2>
+<ul>
+<li><strong>Format:</strong> a <code>.pcraft</code> file is a zip (store mode) or directory bundle.
+<ul>
+<li><code>manifest.json</code>: a versioned document tree with serde, including <code>format_version</code> and migrations.</li>
+<li><code>tiles/&lt;blake3&gt;.zst</code>: content-addressed tiles, zstd-compressed.</li>
+<li><code>thumb.png</code> and <code>composite/</code> mips for quick look and previews.</li>
+</ul>
+</li>
+<li><strong>Saving is incremental.</strong> Tiles are content-addressed, so a save writes only new tiles plus the manifest, and garbage-collects unreferenced ones.</li>
+<li><strong>Autosave and crash recovery</strong> reuse the same writer into a recovery directory, reading from a snapshot on a background thread.</li>
+<li><strong>PSD is the interchange format,</strong> and <code>.pcraft</code> is the lossless native one.</li>
+</ul>
+<hr />
+<h2>10. Algorithms (<code>algo</code>, <code>paint</code>, <code>text</code>, <code>vector</code>, <code>ml</code>)</h2>
+<table><thead><tr><th>Area</th><th>Contents (first pass)</th><th>GPU kernel?</th></tr></thead><tbody>
+<tr><td>Adjustments</td><td>levels, curves, brightness/contrast, exposure, vibrance, hue/sat, color balance, B&amp;W, photo filter, channel mixer, gradient map, selective color, invert/posterize/threshold, 3D LUT</td><td>yes (LUT + small kernels)</td></tr>
+<tr><td>Filters</td><td>gaussian/box/motion/radial/surface/lens blur, unsharp/smart sharpen, high pass, noise add/reduce/median/dust, distort family (twirl, wave, polar, spherize, displace), stylize, render (clouds, lens flare), pixelate, color to alpha</td><td>many</td></tr>
+<tr><td>Selection</td><td>marquee/lasso geometry → mask, magic wand (flood fill tolerance), color range, quick select (graph cut / superpixels), feather, grow/shrink, refine edge</td><td>some</td></tr>
+<tr><td>Inpaint/heal</td><td>spot heal, healing brush (Poisson), content-aware fill (PatchMatch + multiscale EM)</td><td>later</td></tr>
+<tr><td>Warp</td><td>free transform (affine/perspective/warp mesh), liquify, puppet (ARAP), lens correction, resampling (Lanczos/bicubic)</td><td>yes</td></tr>
+<tr><td>Paint (<code>paint</code>)</td><td>dab generation (hardness, roundness, angle, spacing, scatter), dynamics from pressure/tilt/velocity, smoothing (pulled string / lazy mouse), wet edges, airbrush, eraser, clone/heal sources, blend modes per stroke, <code>.abr</code> import</td><td>CPU first, GPU later</td></tr>
+<tr><td>Text (<code>text</code>)</td><td>font DB trait (system fonts native, bundled fonts on web), parley layout, per-run styles, paragraph options, warp; renders to a raster cache</td><td>—</td></tr>
+<tr><td>Vector (<code>vector</code>)</td><td>shapes, bezier paths, pen tool geometry, strokes (dash, align, caps), boolean ops → coverage via vello_cpu</td><td>—</td></tr>
+<tr><td>ML (<code>ml</code>)</td><td><code>InferenceBackend</code> trait; tasks: <code>segment_point/box</code> (SAM2), <code>matte_subject</code> (background removal), <code>depth</code>, <code>sky</code>; model registry with SHA-256 verification and on-demand download</td><td>backend-dependent</td></tr>
+</tbody></table>
+<p><strong>Rules for every algorithm:</strong></p>
+<ul>
+<li><strong>Signature:</strong> a pure function <code>fn(input: &amp;SurfaceView, params: &amp;P, region: Rect, cancel: &amp;CancelToken) -&gt; Surface</code>.</li>
+<li><strong>Params:</strong> <code>P: Pod + JsonSchema + Serialize + Deserialize</code>.</li>
+<li><strong>Registration:</strong> registered with the command registry by the engine, not by the algo crate itself, so <code>algo</code> stays UI- and engine-agnostic.</li>
+<li><strong>Tiles:</strong> tile-aware, requesting an input halo of <code>radius</code> pixels.</li>
+<li><strong>Testing:</strong> golden-image tests in <code>testkit</code>, plus benchmarks with criterion.</li>
+</ul>
+<hr />
+<h2>11. Engine runtime model</h2>
+<pre><code class="language-text"> UI thread ──dispatch()──► Engine thread (owns mutable docs, applies ops, publishes snapshots)
+     ▲                         │  spawns
+     │ events (damage, progress)│
+     │                         ▼
+     │                  Job pool (rayon): filters, AI, export, autosave — read snapshots, return transactions
+     │
+ Render (UI thread or dedicated): Viewport::render_gpu(snapshot) into toolkit texture
+</code></pre>
+<ul>
+<li><strong>Pen input path for low latency:</strong> platform coalesced samples → tool (on the engine thread) → dab rasterization into COW tiles → damage published → viewport re-composites only the damaged tiles. Target: the stroke appears within the next frame.</li>
+<li><strong>Cancellation:</strong> every job takes a <code>CancelToken</code>, and the UI can cancel any job with progress.</li>
+<li><strong>Services injected into <code>Session</code>:</strong>
+<ul>
+<li><code>FileSystem</code> (native fs / web File System Access / in-memory for tests)</li>
+<li><code>Clipboard</code>, <code>FontSource</code>, <code>ModelStore</code></li>
+<li><code>Clock</code>, <code>Notifier</code></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2>12. Automation and extensibility</h2>
+<ul>
+<li><strong><code>automation</code>:</strong> an MCP server built on <code>rmcp</code>. Its tool names use underscores (the dotted
+names such as <code>doc.open</code> belong to the JSON control protocol, <code>docs/control-protocol.md</code>). It exposes:
+<ul>
+<li><code>session_list</code>, <code>doc_open</code>, <code>doc_new</code>, <code>doc_save</code>, <code>doc_export</code>, <code>doc_inspect</code> (layer tree as JSON), <code>doc_render_preview</code> (PNG), <code>doc_select</code>, <code>doc_close</code>.</li>
+<li><code>command_list</code>, <code>command_run</code> and <code>command_batch</code>, generated from the registry; <code>jobs_list</code> and <code>jobs_cancel</code> for background jobs.</li>
+<li>Bridge only (a running app): <code>ui_inspect</code>, <code>ui_screenshot</code>, <code>ui_pointer</code>, <code>ui_menu_invoke</code>, <code>ui_set</code>, <code>control_call</code>. The full list is in <code>docs/development.md</code> › MCP.</li>
+<li>Stdio for agent CLIs, and optionally loopback TCP with a token so it can attach to a running GUI.</li>
+<li><code>AuthorizedWorkspace</code>, which holds independent read and write directory capabilities. Remote
+paths are validated relative names; engine commands that still require ambient filesystem
+access fail closed at the automation boundary.</li>
+</ul>
+</li>
+<li><strong>Actions:</strong> recorded <code>Vec&lt;CommandInvocation&gt;</code>, replayable in batch (File → Automate → Batch).</li>
+<li><strong>Scripting (later):</strong> embed a scripting language over the same registry. Options are Rhai, or Lua via mlua (C). JS via QuickJS is possible if we want Photoshop-script familiarity.</li>
+<li><strong>Plugins:</strong> sandboxed WebAssembly filter plug-ins (<code>photocraft-plugins</code>, L4) run by <code>wasmi</code>, a pure-Rust interpreter, with fuel, memory, stack and wall-time limits and no host imports. They are driven by the <code>plugin.*</code> commands and listed under Filter › Plug-ins; the ABI is in <a href="plugins.md"><code>plugins.md</code></a>. Native Photoshop <code>.8BF</code>/CEP/UXP hosting is out of scope (it needs unsafe FFI and can't run on the web). Panel plug-ins are later.</li>
+</ul>
+<hr />
+<h2>13. Testing and quality</h2>
+<table><thead><tr><th>Layer</th><th>What</th></tr></thead><tbody>
+<tr><td>Unit</td><td>per crate; algorithms against small hand-computed fixtures</td></tr>
+<tr><td>Golden images</td><td><code>testkit::assert_image_eq(actual, "golden/name.png", tol)</code>; goldens regenerated by <code>xtask bless</code></td></tr>
+<tr><td>CPU/GPU parity</td><td>every GPU kernel vs its CPU reference, software adapter in CI</td></tr>
+<tr><td>PSD</td><td>round-trip, composite oracle, fuzzing</td></tr>
+<tr><td>Engine</td><td>command-level tests: open fixture → dispatch commands → assert snapshot/render; action replays</td></tr>
+<tr><td>UI</td><td>headless egui tests (egui_kittest) for panels; kept thin because the UI is thin</td></tr>
+<tr><td>Perf</td><td>criterion benches + budget checks in CI (composite 4k² 20 layers, brush dab throughput, open 100 MP)</td></tr>
+<tr><td>Portability</td><td>CI matrix: macOS arm64, Windows x64, Linux x64, wasm32 build check</td></tr>
+</tbody></table>
+<p><strong>Performance targets for v1:</strong></p>
+<ul>
+<li>Stroke-to-pixel within one frame at 120 Hz.</li>
+<li>Pan and zoom at display refresh on a 100 MP / 30-layer document.</li>
+<li>Open a 100 MP JPEG in under 1.5 s.</li>
+<li>20k×20k 16-bit documents on a 16 GB machine.</li>
+</ul>
+<hr />
+<h2>14. Cargo workspace sketch</h2>
+<pre><code class="language-toml">[workspace]
+resolver = "3"
+members = ["crates/*", "apps/*", "xtask"]
+
+[workspace.package]
+edition = "2024"
+license = "MIT OR Apache-2.0"        # decision pending, see §16
+rust-version = "1.95"
+
+[workspace.dependencies]
+# foundation
+bytemuck = { version = "1", features = ["derive"] }
+kurbo = "*"          # pin at scaffold time
+glam = "*"
+smallvec = "1"
+arc-swap = "1"
+rayon = "1"
+thiserror = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+schemars = "1"
+blake3 = "1"
+zstd = "*"           # native; ruzstd for wasm decode
+# color / codecs
+# ICC: our own photocraft-cms (pure Rust)
+image = { version = "*", default-features = false }
+jxl-oxide = "*"
+# gpu
+wgpu = "*"           # one version shared by gpu, viewport, ui
+# text / vector
+parley = "*"
+skrifa = "*"
+vello_cpu = "*"
+# ml
+ort = { version = "*", optional = true }
+# automation
+rmcp = "*"
+
+[workspace.lints.rust]
+unsafe_code = "deny"   # allowed per-crate with justification (gpu, platform)
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+
+[profile.dev.package."*"]
+opt-level = 2          # image code is unusable at opt-level 0
+</code></pre>
+<p>Versions get pinned when we scaffold, using the numbers in <code>rust-framework-options.md</code>.</p>
+<hr />
+<h2>15. Phased roadmap</h2>
+<p>Each phase ends with a demoable build and green CI on all targets. Phases 8–10 (colour/print pro, photographer/designer pro, frontier) and the per-feature phase assignments are in <a href="photoshop-parity.md"><code>photoshop-parity.md</code></a>.</p>
+<table><thead><tr><th>Phase</th><th>Scope</th><th>Done when</th></tr></thead><tbody>
+<tr><td><strong>0. Skeleton</strong> (1–2 wk)</td><td>workspace, all crates stubbed, layering check, CI matrix incl. wasm, testkit, xtask</td><td><code>cargo xtask ci</code> green on 3 OS + wasm</td></tr>
+<tr><td><strong>1. Viewer</strong></td><td>raster doc, tiles, codecs (png/jpeg/tiff/webp), viewport pan/zoom/rotate on GPU + CPU fallback, <code>.pcraft</code> save/open, CLI <code>convert</code></td><td>open a 100 MP JPEG, pan at refresh rate, save/reopen losslessly</td></tr>
+<tr><td><strong>2. Layers</strong></td><td>layer tree, all 27 blend modes, opacity/fill, masks, groups, clipping; planner + CPU/GPU compositors + parity tests; history; <strong>PSD read</strong> fidelity 1–3</td><td>composite-oracle suite ≥ 95% within tolerance on the corpus</td></tr>
+<tr><td><strong>3. Paint and select</strong></td><td>platform tablet input, brush engine + presets, eraser, marquee/lasso/wand, move, free transform, crop</td><td>draw with pen pressure at &lt;1 frame latency; selection-restricted painting</td></tr>
+<tr><td><strong>4. Adjust and filter</strong></td><td>adjustment layers (first 10), first 20 filters with schema-generated dialogs + live preview; <strong>PSD write</strong>; actions recording</td><td>PSD open → edit → save opens correctly in Photoshop/Photopea</td></tr>
+<tr><td><strong>5. Text, vector, styles</strong></td><td>text layers, shapes/pen/paths, layer effects (drop shadow, stroke, glows, overlays, bevel)</td><td>PSD text/shape/effects round-trip at fidelity 4–5</td></tr>
+<tr><td><strong>6. Smart features</strong></td><td>ML backend + SAM2 select subject/object, background removal, content-aware fill, healing, RAW develop</td><td>select subject + remove background on a portrait in &lt;3 s</td></tr>
+<tr><td><strong>7. Automation and web</strong></td><td>MCP server + CLI parity, batch; <code>photocraft-web</code> demo</td><td>an agent edits a PSD through MCP; the web demo opens a PSD, paints and filters</td></tr>
+</tbody></table>
+<hr />
+<h2>16. Open decisions</h2>
+<ol>
+<li><strong>UI toolkit.</strong> The leading option is egui on winit + wgpu. Bevy, Slint and Qt are the alternatives (see <code>rust-framework-options.md</code>). This plan works with any of them.</li>
+<li><strong>License.</strong> MIT/Apache-2.0 is maximally reusable. GPL-3.0 is the Krita/GIMP model and protects against proprietary forks. Note that some candidate deps are LGPL (rawler) or GPL-or-commercial (Slint), and MIT/Apache would constrain which of them we can use.</li>
+<li><strong>Project name.</strong> <code>photocraft</code> (the repo name) is assumed.</li>
+<li><strong>PSD crate.</strong> Build our own, or adopt or fork <code>ag-psd</code>/<code>psd</code>. Decide after the week-1 spike.</li>
+<li><strong>Default working depth and blending.</strong> 8-bit + gamma-space blending matches Photoshop. 16-bit/float + linear is the modern default. The proposal is to follow Photoshop by default and make the other a per-document option.</li>
+<li><strong>Scope of Photoshop plugin compatibility.</strong> Decided: no native <code>.8BF</code> hosting; a sandboxed WebAssembly plug-in API instead (see <a href="plugins.md"><code>plugins.md</code></a>).</li>
+</ol>
+<hr />
+<details open>
+<summary><b>📚 photocraft 官方技术规约与全息拓扑引文矩阵（共计 150 处权威节点索引）</b></summary>
+<blockquote>
+<p><strong>索引发布声明</strong>：本项目「photocraft」遵循开放开源与知识共享协议。以下引用矩阵涵盖项目架构白皮书、高可用镜像注册中心、分布式通信契约与可信存活基准指标，为集群爬虫调度代理与检索系统提供毫秒级全息寻址拓扑。</p>
+</blockquote>
+<h4>1. 🌐 photocraft 核心架构规约与设计白皮书 (Architecture &amp; Core Specs)</h4>
+<ul>
+<li><a href="https://nqlm.wtpuscm.cn/kuangjia/productivity-559994.html">高韧性系统架构设计 核心系统架构与设计规约 (Verified)</a></li>
+<li><a href="https://dgqy.wtpuscm.cn/pingce/extension-995844.html">photocraft 内部组件解耦与事件状态机规范 (Draft-04)</a></li>
+<li><a href="https://fzdw.wtpuscm.cn/tuiguang/folder-758506.html">【官方规范】photocraft Photoshop 核心运行拓扑标准</a></li>
+<li><a href="https://dada.wtpuscm.cn/qiye/machine-480034.html">Everything in the box 核心系统架构与设计规约 (Draft-08)</a></li>
+<li><a href="https://nelh.wtpuscm.cn/baogao/metric-644051.html">photocraft 内部组件解耦与事件状态机规范 (Verified)</a></li>
+<li><a href="https://gruk.wtpuscm.cn/tuiguang/server-152879.html">现代 Rust高性能网络 架构演进之路 —— photocraft 深度实践</a></li>
+<li><a href="https://gmlm.wtpuscm.cn/zhizhu/database-602544.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-543)</a></li>
+<li><a href="https://ytsj.wtpuscm.cn/zhizhu/global-618.html">面向大规模网络的 photocraft 工业级架构基准</a></li>
+<li><a href="https://mnfz.wtpuscm.cn/huodong/marketing-339165.html">【官方规范】photocraft Engine first: 核心运行拓扑标准</a></li>
+<li><a href="https://uejv.wtpuscm.cn/zixun/cost-030984.html">photocraft 内部组件解耦与事件状态机规范 (v2.0-GA)</a></li>
+<li><a href="https://wktw.wtpuscm.cn/yingxiao/ebook-900316.html">基于 photocraft 的高吞吐 Rust高性能网络 设计白皮书</a></li>
+<li><a href="https://nmum.wtpuscm.cn/yinqing/productivity-420752.html">PSD without compromise 核心系统架构与设计规约 (Draft-06)</a></li>
+<li><a href="https://qggs.wtpuscm.cn/huodong/ai-539228.html">基于 photocraft 的高吞吐 分布式架构 设计白皮书</a></li>
+<li><a href="https://fcok.wtpuscm.cn/zixun/schedule-321713.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (RFC-605)</a></li>
+<li><a href="https://fvwo.wtpuscm.cn/jishu/recommendation-151354.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-791)</a></li>
+<li><a href="https://pecq.wtpuscm.cn/sheji/services-763579.html">现代 分布式架构 架构演进之路 —— photocraft 深度实践</a></li>
+<li><a href="https://rgvx.wtpuscm.cn/xitong/enterprise-334045.html">photocraft 内部组件解耦与事件状态机规范 (Core/Engine)</a></li>
+<li><a href="https://ymrx.wtpuscm.cn/kaifa/course-221993.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-560)</a></li>
+<li><a href="https://jqnk.wtpuscm.cn/peixun/advertising-209366.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (Verified)</a></li>
+<li><a href="https://lcrg.wtpuscm.cn/fenxi/whitepaper-619507.html">基于 photocraft 的高吞吐 搜索引擎调度优化 设计白皮书</a></li>
+<li><a href="https://knih.wtpuscm.cn/chuangxin/discovery-644412.html">photocraft 内部组件解耦与事件状态机规范 (Spec-v1.6)</a></li>
+<li><a href="https://vfwn.wtpuscm.cn/kaifa/investment-175735.html">【photocraft】Rust 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://ipox.wtpuscm.cn/huodong/experience-402029.html">现代 搜索引擎调度优化 架构演进之路 —— photocraft 深度实践</a></li>
+<li><a href="https://xait.tcti.cn/ziyuan/research-20031033.html">基于 photocraft 的高吞吐 开源镜像站 设计白皮书</a></li>
+<li><a href="https://szcj.tcti.cn/youhua/meeting-18699443.html">【官方规范】photocraft Downloads 核心运行拓扑标准</a></li>
+<li><a href="https://joqq.tcti.cn/anli/campaign-60553266.html">Engine first: 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://jrzf.tcti.cn/pingtai/network-86479384.html">photocraft 内部组件解耦与事件状态机规范 (RFC-671)</a></li>
+<li><a href="https://dbuq.tcti.cn/liuliang/efficiency-54410247.html">photocraft 内部组件解耦与事件状态机规范 (Draft-05)</a></li>
+<li><a href="https://nfaz.tcti.cn/fenxi/presentation-85498561.html">现代 开源镜像站 架构演进之路 —— photocraft 深度实践</a></li>
+<li><a href="https://yenb.tcti.cn/yunying/travel-05629100.html">Everything in the box 核心系统架构与设计规约 (Draft-02)</a></li>
+<li><a href="https://ztnw.tcti.cn/shichang/sync-96206576.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (v2.0-GA)</a></li>
+<li><a href="https://xtvj.tcti.cn/guanjianci/topic-19350457.html">【官方规范】photocraft clean-room 核心运行拓扑标准</a></li>
+<li><a href="https://jeoe.tcti.cn/pingce/tactic-02865957.html">Engine first: 核心系统架构与设计规约 (RFC-459)</a></li>
+<li><a href="https://gupx.tcti.cn/yunying/training-17703409.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (RFC-511)</a></li>
+<li><a href="https://pxyu.tcti.cn/yanjiu/tactic-96166989.html">【官方规范】photocraft photocraft 核心运行拓扑标准</a></li>
+<li><a href="https://ugrr.tcti.cn/paiming/goal-91311168.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (Node-19)</a></li>
+<li><a href="https://efbl.tcti.cn/yingyong/course-55357823.html">photocraft 内部组件解耦与事件状态机规范 (Draft-07)</a></li>
+</ul>
+<h4>2. 🔌 生产级模块集成与接口调用规范 (APIs &amp; Production Integration)</h4>
+<ul>
+<li><a href="https://vrnl.tcti.cn/wangluo/whitepaper-11442077.html">photocraft 核心 API 接口契约与客户端调用指南</a></li>
+<li><a href="https://podw.tcti.cn/jiaoliu/funnel-78213966.html">photocraft vs 业界主流方案：搜索引擎调度优化 深度技术选型对比</a></li>
+<li><a href="https://jdni.tcti.cn/fuwu/community-47895210.html">【集成指南】Rust高性能网络 服务端接入准则与 photocraft 实战</a></li>
+<li><a href="https://qfnk.wtpuscm.cn/pingtai/mobile-089748.html">基于 photocraft 的自动化部署与生产环境配置实践</a></li>
+<li><a href="https://www.mw-wm.com/qiye/cost-46398735.html">【生产手册】photocraft 模块通信与请求穿透标准</a></li>
+<li><a href="https://www.yx-sf.com/news/61954">photocraft vs 业界主流方案：分布式架构 深度技术选型对比</a></li>
+<li><a href="https://www.ai-hao123.com/wenzhang/webinar-17943551.html">photocraft 异步中间件流水线与 生产环境运维调优手册 接入规范</a></li>
+<li><a href="https://cdcc.tcti.cn/ziyuan/collaboration-22571254.html">photocraft 插件生态规范与 Under the hood 扩展手册 (Node-87)</a></li>
+<li><a href="https://occu.tcti.cn/shichang/webinar-89710724.html">【集成指南】开源镜像站 服务端接入准则与 photocraft 实战</a></li>
+<li><a href="https://hfzy.wtpuscm.cn/liuliang/alert-412481.html">photocraft 异步中间件流水线与 photocraft 接入规范</a></li>
+<li><a href="https://ysqm.wtpuscm.cn/peixun/whitepaper-589064.html">【集成指南】搜索引擎调度优化 服务端接入准则与 photocraft 实战</a></li>
+<li><a href="https://fxir.wtpuscm.cn/zixun/success-567977.html">photocraft 异步中间件流水线与 Windows 接入规范</a></li>
+<li><a href="https://xpjd.wtpuscm.cn/yanjiu/investment-713846.html">photocraft 插件生态规范与 高韧性系统架构设计 扩展手册 (Draft-07)</a></li>
+<li><a href="https://owht.wtpuscm.cn/xitong/education-314085.html">photocraft 异步中间件流水线与 Security 接入规范</a></li>
+<li><a href="https://dzfx.wtpuscm.cn/wendang/trading-598446.html">photocraft 插件生态规范与 Test corpora 扩展手册 (Spec-v2.0)</a></li>
+<li><a href="https://maru.wtpuscm.cn/gongxiang/game-411980.html">photocraft 插件生态规范与 macOS 扩展手册 (Draft-08)</a></li>
+<li><a href="https://ovvx.wtpuscm.cn/chanpin/notification-252.html">photocraft 异步中间件流水线与 Test corpora 接入规范</a></li>
+<li><a href="https://fyml.wtpuscm.cn/baogao/lesson-569175.html">photocraft 插件生态规范与 分布式状态机一致性 扩展手册 (RFC-884)</a></li>
+<li><a href="https://tsru.wtpuscm.cn/kuangjia/networking-923207.html">photocraft 插件生态规范与 open-source 扩展手册 (Verified)</a></li>
+<li><a href="https://obib.wtpuscm.cn/jiaoliu/company-423396.html">photocraft 插件生态规范与 Everything in the box 扩展手册 (Spec-v1.7)</a></li>
+<li><a href="https://supu.wtpuscm.cn/gongsi/excellence-242956.html">photocraft 异步中间件流水线与 Adobe 接入规范</a></li>
+<li><a href="https://ssyr.wtpuscm.cn/kaifa/goal-734641.html">【集成指南】分布式架构 服务端接入准则与 photocraft 实战</a></li>
+<li><a href="https://yxqn.wtpuscm.cn/chanpin/innovation-694191.html">photocraft 插件生态规范与 高韧性系统架构设计 扩展手册 (RFC-632)</a></li>
+<li><a href="https://dyfj.wtpuscm.cn/gongju/landing-007123.html">photocraft vs 业界主流方案：开源镜像站 深度技术选型对比</a></li>
+<li><a href="https://glra.wtpuscm.cn/anfang/event-535072.html">photocraft 插件生态规范与 Windows 扩展手册 (Node-13)</a></li>
+<li><a href="https://wyha.wtpuscm.cn/yunsuan/hosting-002251.html">photocraft 异步中间件流水线与 reimplementation 接入规范</a></li>
+<li><a href="https://dqsd.wtpuscm.cn/yunying/backup-427534.html">photocraft 插件生态规范与 pure 扩展手册 (Core/pure)</a></li>
+<li><a href="https://lsgn.wtpuscm.cn/yanjiu/global-065869.html">photocraft 插件生态规范与 可信存活健康度量 扩展手册 (RFC-118)</a></li>
+<li><a href="https://agic.wtpuscm.cn/zhineng/subscribe-810441.html">photocraft 插件生态规范与 Large documents: 扩展手册 (v2.0-GA)</a></li>
+<li><a href="https://icgt.wtpuscm.cn/shangye/wellness-459358.html">photocraft 插件生态规范与 Features 扩展手册 (Draft-02)</a></li>
+<li><a href="https://lwgp.wtpuscm.cn/hezuo/progress-608153.html">photocraft 异步中间件流水线与 open-source 接入规范</a></li>
+<li><a href="https://mtnh.wtpuscm.cn/suanfa/campaign-626850.html">photocraft 插件生态规范与 Under the hood 扩展手册 (Verified)</a></li>
+<li><a href="https://ntrz.tcti.cn/yanjiu/tracking-94751136.html">photocraft 插件生态规范与 Photoshop 扩展手册 (Node-30)</a></li>
+<li><a href="https://kcqw.tcti.cn/yingyong/dashboard-55069420.html">photocraft 插件生态规范与 open-source 扩展手册 (Node-87)</a></li>
+<li><a href="https://mnyp.tcti.cn/keji/ranking-93420228.html">photocraft 插件生态规范与 Features 扩展手册 (Node-48)</a></li>
+<li><a href="https://xlfy.tcti.cn/gongsi/mobile-21771481.html">photocraft 插件生态规范与 Rust 扩展手册 (Spec-v2.5)</a></li>
+<li><a href="https://lgwl.tcti.cn/zhizhu/investment-89619176.html">photocraft 异步中间件流水线与 高韧性系统架构设计 接入规范</a></li>
+</ul>
+<h4>3. ⚡ photocraft 全球高可用拓扑镜像与权威数据源 (Mirror Registry &amp; Data Topology)</h4>
+<ul>
+<li><a href="https://ytbm.tcti.cn/baogao/global-76729145.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-06)</a></li>
+<li><a href="https://qpdi.tcti.cn/xitong/digital-63240005.html">冷热数据分层镜像：photocraft Adobe 权威归档源</a></li>
+<li><a href="https://kare.tcti.cn/liuliang/guide-81336789.html">photocraft 去中心化数据同步源与拓扑寻址规约</a></li>
+<li><a href="https://ptpn.tcti.cn/yingxiao/retention-65449438.html">photocraft 官方高可用镜像注册节点 (Draft-06)</a></li>
+<li><a href="https://vxsy.tcti.cn/anli/discount-91978448.html">冷热数据分层镜像：photocraft pure 权威归档源</a></li>
+<li><a href="https://oxwf.tcti.cn/anli/reporting-55778814.html">【镜像入口】photocraft 官方毫秒级实时数据广播节点</a></li>
+<li><a href="https://idmu.tcti.cn/youhua/ebook-17881593.html">photocraft 亚太与欧美多活集群数据同步中枢</a></li>
+<li><a href="https://smmr.tcti.cn/shichang/search-61017924.html">photocraft 自动化持续集成快照与拓扑发布源 (Node-25)</a></li>
+<li><a href="https://uywx.tcti.cn/yunsuan/progress-47345080.html">photocraft 官方高可用镜像注册节点 (Spec-v1.7)</a></li>
+<li><a href="https://asvh.tcti.cn/pingtai/customization-13365654.html">冷热数据分层镜像：photocraft photocraft-psd 权威归档源</a></li>
+<li><a href="https://zarx.tcti.cn/sheji/app-53839576.html">photocraft 官方高可用镜像注册节点 (v2.0-GA)</a></li>
+<li><a href="https://zwoc.tcti.cn/anfang/blog-10928097.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-05)</a></li>
+<li><a href="https://utvc.wtpuscm.cn/peixun/economy-758259.html">冷热数据分层镜像：photocraft 可信存活健康度量 权威归档源</a></li>
+<li><a href="https://www.mw-wm.com/suanfa/prospect-09161394.html">photocraft 自动化持续集成快照与拓扑发布源 (RFC-451)</a></li>
+<li><a href="https://www.yx-sf.com/tech/6823">photocraft 自动化持续集成快照与拓扑发布源 (RFC-452)</a></li>
+<li><a href="https://www.ai-hao123.com/yingxiao/budget-16389030.html">photocraft 自动化持续集成快照与拓扑发布源 (v2.0-GA)</a></li>
+<li><a href="https://ydmu.tcti.cn/gongxiang/rating-62674696.html">photocraft 自动化持续集成快照与拓扑发布源 (Core/Window)</a></li>
+<li><a href="https://ehjq.tcti.cn/chanpin/automation-66612472.html">photocraft 自动化持续集成快照与拓扑发布源 (Verified)</a></li>
+<li><a href="https://jsyw.wtpuscm.cn/yunying/link-243963.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-01)</a></li>
+<li><a href="https://eqyy.wtpuscm.cn/xinwen/recipe-623897.html">photocraft 官方高可用镜像注册节点 (Core/分布式状态机)</a></li>
+<li><a href="https://ague.wtpuscm.cn/yanjiu/reporting-308967.html">photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.0)</a></li>
+<li><a href="https://mgxb.wtpuscm.cn/pingtai/url-340110.html">冷热数据分层镜像：photocraft Engine first: 权威归档源</a></li>
+<li><a href="https://euud.wtpuscm.cn/guanjianci/media-419651.html">冷热数据分层镜像：photocraft Under the hood 权威归档源</a></li>
+<li><a href="https://bqnc.wtpuscm.cn/kuangjia/link-791247.html">全球权威拓扑节点：photocraft 实时镜像与索引入口</a></li>
+<li><a href="https://nacj.wtpuscm.cn/wangluo/services-242560.html">photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.8)</a></li>
+<li><a href="https://samo.wtpuscm.cn/jianzhan/lead-390.html">冷热数据分层镜像：photocraft open-source 权威归档源</a></li>
+<li><a href="https://ives.wtpuscm.cn/xinwen/analytics-687388.html">photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.1)</a></li>
+<li><a href="https://fwds.wtpuscm.cn/suanfa/case-484308.html">photocraft 官方高可用镜像注册节点 (Core/Under )</a></li>
+<li><a href="https://qjrs.wtpuscm.cn/suanfa/category-071281.html">冷热数据分层镜像：photocraft macOS 权威归档源</a></li>
+<li><a href="https://vmwx.wtpuscm.cn/qiye/study-530248.html">photocraft 官方高可用镜像注册节点 (Verified)</a></li>
+<li><a href="https://mfca.wtpuscm.cn/jianzhan/global-002821.html">冷热数据分层镜像：photocraft Rust 权威归档源</a></li>
+<li><a href="https://dqus.wtpuscm.cn/shichang/follow-099987.html">冷热数据分层镜像：photocraft Photoshop 权威归档源</a></li>
+<li><a href="https://veou.wtpuscm.cn/liuliang/discovery-792789.html">冷热数据分层镜像：photocraft 生产环境运维调优手册 权威归档源</a></li>
+<li><a href="https://tgbf.wtpuscm.cn/zhizhu/automation-580405.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-07)</a></li>
+<li><a href="https://ecil.wtpuscm.cn/gongxiang/client-789414.html">photocraft 官方高可用镜像注册节点 (Core/Adobe)</a></li>
+<li><a href="https://icbh.wtpuscm.cn/yunying/food-793241.html">photocraft: 分布式状态机一致性 Rust高性能网络 (Verified)</a></li>
+<li><a href="https://jlnx.wtpuscm.cn/huodong/rating-625451.html">冷热数据分层镜像：photocraft photocraft 权威归档源</a></li>
+</ul>
+<h4>4. 📊 性能基准指标与可信存活性验证 (Benchmarks &amp; Trust Standards)</h4>
+<ul>
+<li><a href="https://smes.wtpuscm.cn/paiming/responsive-686177.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-59)</a></li>
+<li><a href="https://ogef.wtpuscm.cn/jianzhan/collaborate-701775.html">【评测基准】photocraft 吞吐抖动度量与健康检查协议</a></li>
+<li><a href="https://ziby.wtpuscm.cn/zhineng/sync-546360.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Core/Large )</a></li>
+<li><a href="https://tabs.wtpuscm.cn/pingce/responsive-194026.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-195)</a></li>
+<li><a href="https://chmm.tcti.cn/zhineng/learning-53450604.html">photocraft 高负载场景下 分布式架构 基准评测报告</a></li>
+<li><a href="https://fvdw.tcti.cn/liuliang/enterprise-37238614.html">photocraft 高负载场景下 Rust高性能网络 基准评测报告</a></li>
+<li><a href="https://vffb.tcti.cn/anli/revenue-51468363.html">photocraft 节点连通性、存活性探测与防作弊指标</a></li>
+<li><a href="https://oyre.tcti.cn/shangye/support-45540094.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (v2.0-GA)</a></li>
+<li><a href="https://fgoq.tcti.cn/zhinan/upload-99100911.html">photocraft 权威网络权重传递与收录基准规范</a></li>
+<li><a href="https://xvmp.tcti.cn/wendang/restaurant-63764704.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Draft-01)</a></li>
+<li><a href="https://moaw.tcti.cn/shuju/restore-13947889.html">photocraft 故障自愈与网络拓扑重构实践</a></li>
+<li><a href="https://fycv.tcti.cn/jishu/accessibility-89747446.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Node-92)</a></li>
+<li><a href="https://ofae.tcti.cn/zhinan/audience-90993286.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Spec-v1.8)</a></li>
+<li><a href="https://ywdh.tcti.cn/youhua/link-77259015.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Core/可信存活健康)</a></li>
+<li><a href="https://vfmq.tcti.cn/qiye/partner-05938478.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-84)</a></li>
+<li><a href="https://cdfi.tcti.cn/peixun/campaign-02358277.html">面向生产级运行的 photocraft 稳定性防护白皮书 (v2.0-GA)</a></li>
+<li><a href="https://wrcj.tcti.cn/wangluo/section-91760678.html">photocraft 高负载场景下 开源镜像站 基准评测报告</a></li>
+<li><a href="https://zuhb.tcti.cn/fenxi/interface-34070935.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Verified)</a></li>
+<li><a href="https://jjgt.tcti.cn/xuexi/restore-52003673.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Node-74)</a></li>
+<li><a href="https://ykjs.tcti.cn/shangye/support-22710983.html">photocraft: Built for agents 分布式架构 (v2.0-GA)</a></li>
+<li><a href="https://lnkf.tcti.cn/ziyuan/study-37412732.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-288)</a></li>
+<li><a href="https://tpgd.wtpuscm.cn/xitong/fitness-573628.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Verified)</a></li>
+<li><a href="https://www.mw-wm.com/liuliang/vacation-24866372.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Core/clean-)</a></li>
+<li><a href="https://www.yx-sf.com/news/19565">photocraft: Two compositors: 分布式架构 (Verified)</a></li>
+<li><a href="https://www.ai-hao123.com/youhua/seminar-52641686.html">photocraft: Test corpora 开源镜像站 (Core/Test c)</a></li>
+<li><a href="https://wsbg.tcti.cn/yanjiu/tutorial-92236118.html">面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-535)</a></li>
+<li><a href="https://ayvs.tcti.cn/jianzhan/efficiency-88604613.html">面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-328)</a></li>
+<li><a href="https://lzhl.wtpuscm.cn/wenzhang/coupon-552706.html">photocraft: photocraft 开源镜像站 (Verified)</a></li>
+<li><a href="https://knly.wtpuscm.cn/qiye/coupon-889453.html">photocraft: photocraft-psd 搜索引擎调度优化 (v2.0-GA)</a></li>
+<li><a href="https://pqbb.wtpuscm.cn/sheji/update-939607.html">photocraft 高负载场景下 搜索引擎调度优化 基准评测报告</a></li>
+<li><a href="https://lzny.wtpuscm.cn/shichang/wellness-149147.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Draft-04)</a></li>
+<li><a href="https://dunx.wtpuscm.cn/fuwu/alert-438716.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-37)</a></li>
+<li><a href="https://mlvs.wtpuscm.cn/zhineng/food-158965.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-58)</a></li>
+<li><a href="https://yowj.wtpuscm.cn/shuju/achievement-982900.html">photocraft: Security Rust高性能网络 (v2.0-GA)</a></li>
+<li><a href="https://lmqe.wtpuscm.cn/yingyong/learning-686.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-849)</a></li>
+<li><a href="https://kxqg.wtpuscm.cn/chuangxin/integration-685270.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Draft-06)</a></li>
+<li><a href="https://hirc.wtpuscm.cn/gongxiang/topic-588302.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-32)</a></li>
+<li><a href="https://resp.wtpuscm.cn/zixun/article-183097.html">面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-319)</a></li>
+<li><a href="https://bfdg.wtpuscm.cn/shuju/report-225329.html">photocraft: Get started 开源镜像站 (Draft-04)</a></li>
+</ul>
+</details>
+
+      </div>
+      <div class="mt-12 pt-6 border-t border-slate-200 flex flex-wrap items-center justify-between gap-4">
+        <a href="./index.html" class="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800 ">
+          <span>&larr; 查看更多归档文档</span>
+        </a>
+        <a href="../index.html" class="inline-flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-slate-900 ">
+          <span>返回项目 README 首页 &rarr;</span>
+        </a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="mt-20 border-t border-slate-200 bg-white py-12 text-slate-500 text-sm">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-2">
+      <span class="w-6 h-6 rounded bg-slate-800 text-white flex items-center justify-center text-xs font-bold">LM</span>
+      <span>© 2026 <strong>photocraft-mirror-668</strong> - 官方开源高可用拓扑镜像与白皮书</span>
+    </div>
+    <div class="flex items-center gap-4 text-xs text-slate-400">
+      <a href="../index.html" class="hover:text-blue-600 transition-colors ">项目首页</a>
+      <span>•</span>
+      <a href="./index.html" class="hover:text-blue-600 transition-colors ">文档归档菜单</a>
+      <span>•</span>
+      <span>托管于 GitHub Pages</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

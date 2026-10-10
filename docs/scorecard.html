@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PhotoCraft scorecard - photocraft-mirror-668 文档归档</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+      :root {
+        --color-primary: #2563eb;
+        --color-primary-hover: #1d4ed8;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.68;
+        color: #1e293b;
+      }
+      .markdown-body {
+        color: #1e293b;
+      }
+      .markdown-body h1 {
+        font-size: 2.25rem;
+        font-weight: 800;
+        margin-top: 1.8rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.6rem;
+        border-bottom: 2px solid #e2e8f0;
+        color: #0f172a;
+        line-height: 1.25;
+      }
+      .markdown-body h2 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-top: 1.6rem;
+        margin-bottom: 0.8rem;
+        padding-bottom: 0.4rem;
+        border-bottom: 1px solid #f1f5f9;
+        color: #1e293b;
+      }
+      .markdown-body h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-top: 1.3rem;
+        margin-bottom: 0.6rem;
+        color: #334155;
+      }
+      .markdown-body p {
+        margin-top: 0.8rem;
+        margin-bottom: 0.8rem;
+        line-height: 1.7;
+      }
+      .markdown-body a {
+        color: #2563eb;
+        text-decoration: none;
+        border-bottom: 1px dashed #93c5fd;
+        transition: all 0.2s ease;
+      }
+      .markdown-body a:hover {
+        color: #1d4ed8;
+        border-bottom: 1px solid #1d4ed8;
+        background-color: #eff6ff;
+        border-radius: 2px;
+      }
+      .markdown-body ul, .markdown-body ol {
+        padding-left: 1.5rem;
+        margin-top: 0.6rem;
+        margin-bottom: 0.6rem;
+      }
+      .markdown-body ul {
+        list-style-type: disc;
+      }
+      .markdown-body ol {
+        list-style-type: decimal;
+      }
+      .markdown-body li {
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+      }
+      .markdown-body pre {
+        background-color: #0f172a;
+        color: #e2e8f0;
+        padding: 1rem 1.2rem;
+        border-radius: 0.75rem;
+        overflow-x: auto;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875rem;
+        margin: 1rem 0;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+      .markdown-body code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875em;
+        padding: 0.15rem 0.35rem;
+        background-color: #f1f5f9;
+        color: #0f172a;
+        border-radius: 0.35rem;
+        border: 1px solid #e2e8f0;
+      }
+      .markdown-body pre code {
+        background-color: transparent;
+        padding: 0;
+        border: none;
+        color: inherit;
+      }
+      .markdown-body blockquote {
+        margin: 1rem 0;
+        padding: 0.75rem 1.25rem;
+        background-color: #f8fafc;
+        border-left: 4px solid #3b82f6;
+        border-radius: 0 0.5rem 0.5rem 0;
+        color: #475569;
+      }
+      .markdown-body table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.2rem 0;
+        display: block;
+        overflow-x: auto;
+      }
+      .markdown-body th, .markdown-body td {
+        border: 1px solid #cbd5e1;
+        padding: 0.6rem 1rem;
+        text-align: left;
+      }
+      .markdown-body th {
+        background-color: #f1f5f9;
+        font-weight: 600;
+      }
+      .markdown-body tr:nth-child(even) {
+        background-color: #f8fafc;
+      }
+      .markdown-body hr {
+        height: 1px;
+        border: none;
+        background-color: #e2e8f0;
+        margin: 2rem 0;
+      }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col antialiased">
+  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <a href="../index.html" class="flex items-center gap-2 group">
+        <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center text-white font-bold text-sm shadow-sm group-hover:scale-105 transition-transform ">LM</span>
+        <span class="font-bold text-slate-900 tracking-tight text-lg group-hover:text-blue-600 transition-colors ">photocraft-mirror-668</span>
+      </a>
+      <span class="hidden md:inline-block text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-mono ">Pages Docs</span>
+    </div>
+    <div class="flex items-center gap-1 sm:gap-2 text-sm">
+      <a href="../index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-slate-600 hover:text-blue-600 hover:bg-slate-50 font-medium ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        <span>首页 (README)</span>
+      </a>
+      <a href="./index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-blue-600 bg-blue-50 font-semibold ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+        <span>文档归档 (Docs)</span>
+        <span class="inline-block w-2 h-2 rounded-full bg-blue-600"></span>
+      </a>
+      <div class="h-4 w-px bg-slate-200 mx-1"></div>
+      <a href="https://github.com/shijiuwei/photocraft-mirror-668" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        <span class="hidden sm:inline">GitHub</span>
+      </a>
+      <a href="https://github.com/shijiuwei/photocraft-mirror-668/wiki" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <span class="hidden sm:inline">Wiki</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+  <!-- 面包屑与顶部导航 -->
+  <header class="bg-white border-b border-slate-200 py-6 px-4 sm:px-6">
+    <div class="max-w-4xl mx-auto">
+      <nav class="flex items-center gap-2 text-xs text-slate-500 mb-2 font-medium">
+        <a href="../index.html" class="hover:text-blue-600 transition-colors ">首页</a>
+        <span>/</span>
+        <a href="./index.html" class="hover:text-blue-600 transition-colors ">文档归档菜单</a>
+        <span>/</span>
+        <span class="text-slate-800 font-semibold">技术文档</span>
+      </nav>
+      <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">PhotoCraft scorecard</h1>
+        <a href="./index.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition-colors ">
+          <span>&larr; 返回文档归档菜单</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主体正文区域 -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 py-10 flex-1 w-full">
+    <article class="bg-white p-6 sm:p-12 rounded-2xl shadow-sm border border-slate-200">
+      <div class="markdown-body">
+        <h1>PhotoCraft scorecard</h1>
+<p>Generated by <code>cargo xtask scorecard</code> from <code>perf/budgets.toml</code>, <code>perf/baseline.json</code>, <code>crates/io/tests/corpus.rs</code>, <code>scorecard/*.toml</code> and the source tree. Do not edit by hand: change the sources and regenerate (CI runs <code>cargo xtask scorecard --check</code>). Checklist statuses are verified against the code; numbers here supersede estimates elsewhere.</p>
+<h2>Summary</h2>
+<table><thead><tr><th>Area</th><th style="text-align: right">Done</th><th style="text-align: right">Partial</th><th style="text-align: right">Missing</th><th>Key numbers</th></tr></thead><tbody>
+<tr><td><a href="#performance">Performance</a></td><td style="text-align: right">3</td><td style="text-align: right">22</td><td style="text-align: right">22</td><td>56 scenarios: 3 within budget, 22 over budget or failing, 9 tracked only, 15 not run, 7 not measurable yet (baseline 2026-10-05)</td></tr>
+<tr><td><a href="#file-compatibility">File compatibility</a></td><td style="text-align: right">5</td><td style="text-align: right">11</td><td style="text-align: right">11</td><td>io corpus: oracle ≥ 146/170, round trip ≥ 169/170; psd-tools corpus: oracle ≥ 236/309, round trip ≥ 307/309; photoshop oracles: oracle ≥ 133/256, round trip ≥ 258/256</td></tr>
+<tr><td><a href="#tools">Tools</a></td><td style="text-align: right">20</td><td style="text-align: right">15</td><td style="text-align: right">6</td><td></td></tr>
+<tr><td><a href="#workspace-and-ui">Workspace and UI</a></td><td style="text-align: right">5</td><td style="text-align: right">7</td><td style="text-align: right">11</td><td>settings that do nothing: 46 of 149 (target 0)</td></tr>
+<tr><td><a href="#type">Type</a></td><td style="text-align: right">0</td><td style="text-align: right">3</td><td style="text-align: right">6</td><td></td></tr>
+<tr><td><a href="#automation">Automation</a></td><td style="text-align: right">3</td><td style="text-align: right">2</td><td style="text-align: right">6</td><td>627 of 627 menu items live (100.0%)</td></tr>
+<tr><td><a href="#reliability">Reliability</a></td><td style="text-align: right">5</td><td style="text-align: right">0</td><td style="text-align: right">2</td><td>never-crash lints on 28 of 28 crates; panic_hunt present</td></tr>
+<tr><td><a href="#distribution">Distribution</a></td><td style="text-align: right">4</td><td style="text-align: right">4</td><td style="text-align: right">3</td><td></td></tr>
+<tr><td><a href="#open-bugs">Open bugs</a></td><td style="text-align: right">22</td><td style="text-align: right">2</td><td style="text-align: right">8</td><td></td></tr>
+</tbody></table>
+<h2>Performance</h2>
+<p>Budgets: <code>perf/budgets.toml</code> (targets from #209, #210, #211). Numbers: the committed baseline (<code>perf/baseline.json</code>, full run), updated only by <code>cargo xtask perf --update-baseline</code>. The nightly <code>perf-nightly</code> workflow runs <code>cargo xtask perf</code> on a fixed macOS runner and fails on a broken enforced budget or a p50 regression over 15 % against a baseline from the same machine class. "Over budget" rows are targets the code doesn't meet yet: they are reported, and only their regressions fail.</p>
+<p>Baseline: 2026-10-05, commit <code>f5d2bcb54a</code>, Apple M4 Pro (48 GB), GPU Apple M4 Pro, macOS 15.6; load average 224.90 / 226.31 / 196.03 (1/5/15 min) at the start of the run.</p>
+<table><thead><tr><th>Id</th><th>Scenario</th><th>Target</th><th style="text-align: right">p50 ms</th><th style="text-align: right">p95 ms</th><th style="text-align: right">max ms</th><th style="text-align: right">Peak RSS</th><th style="text-align: right">GPU</th><th>Status</th><th>Issue</th></tr></thead><tbody>
+<tr><td>P1</td><td>Move a layer with layer styles (per drag update)</td><td>≤ 25 ms p95</td><td style="text-align: right">321</td><td style="text-align: right">535</td><td style="text-align: right">535</td><td style="text-align: right">825 MB</td><td style="text-align: right">409 MB</td><td>over budget (target not met yet)</td><td><a href="https://qsvn.wtpuscm.cn/ziyuan/tracking-385655.html">#209</a></td></tr>
+<tr><td>P2</td><td>Change layer opacity</td><td>≤ 20 ms p95</td><td style="text-align: right">276</td><td style="text-align: right">443</td><td style="text-align: right">443</td><td style="text-align: right">639 MB</td><td style="text-align: right">409 MB</td><td>over budget (target not met yet)</td><td><a href="https://yrcz.tcti.cn/shichang/network-80277612.html">#209</a></td></tr>
+<tr><td>P3</td><td>Change layer fill</td><td>≤ 20 ms p95</td><td style="text-align: right">279</td><td style="text-align: right">467</td><td style="text-align: right">467</td><td style="text-align: right">506 MB</td><td style="text-align: right">409 MB</td><td>over budget (target not met yet)</td><td><a href="https://qoan.tcti.cn/keji/alliance-17896446.html">#209</a></td></tr>
+<tr><td>P4</td><td>Change blend mode</td><td>≤ 20 ms p95</td><td style="text-align: right">206</td><td style="text-align: right">423</td><td style="text-align: right">423</td><td style="text-align: right">579 MB</td><td style="text-align: right">409 MB</td><td>over budget (target not met yet)</td><td><a href="https://fnde.wtpuscm.cn/chanpin/link-281802.html">#209</a></td></tr>
+<tr><td>P5</td><td>Toggle visibility</td><td>≤ 10 ms p95</td><td style="text-align: right">178</td><td style="text-align: right">425</td><td style="text-align: right">425</td><td style="text-align: right">668 MB</td><td style="text-align: right">409 MB</td><td>over budget (target not met yet)</td><td><a href="https://bcsc.tcti.cn/suanfa/button-71251583.html">#209</a></td></tr>
+<tr><td>P6</td><td>Undo a move</td><td>≤ 25 ms p95</td><td style="text-align: right">256</td><td style="text-align: right">530</td><td style="text-align: right">530</td><td style="text-align: right">650 MB</td><td style="text-align: right">409 MB</td><td>over budget (target not met yet)</td><td><a href="https://zsvw.wtpuscm.cn/yunsuan/brand-968982.html">#209</a></td></tr>
+<tr><td>P7</td><td>Redo a property change</td><td>≤ 25 ms p95</td><td style="text-align: right">144</td><td style="text-align: right">212</td><td style="text-align: right">212</td><td style="text-align: right">669 MB</td><td style="text-align: right">409 MB</td><td>over budget (target not met yet)</td><td><a href="https://tmbo.wtpuscm.cn/yingxiao/learning-491715.html">#209</a></td></tr>
+<tr><td>P8</td><td>Duplicate a 12 MP layer (first)</td><td>≤ 100 ms p95</td><td style="text-align: right">508</td><td style="text-align: right">699</td><td style="text-align: right">699</td><td style="text-align: right">907 MB</td><td style="text-align: right">919 MB</td><td>over budget (target not met yet)</td><td><a href="https://aegw.wtpuscm.cn/suanfa/profile-452.html">#209</a></td></tr>
+<tr><td>P9</td><td>Duplicate a 12 MP layer (repeat)</td><td>≤ 20 ms p95</td><td style="text-align: right">406</td><td style="text-align: right">627</td><td style="text-align: right">627</td><td style="text-align: right">749 MB</td><td style="text-align: right">919 MB</td><td>over budget (target not met yet)</td><td><a href="https://womy.tcti.cn/peixun/register-79597408.html">#209</a></td></tr>
+<tr><td>P10</td><td>Paste a 12 MP layer (first)</td><td>≤ 100 ms p95</td><td style="text-align: right">1232</td><td style="text-align: right">3136</td><td style="text-align: right">3136</td><td style="text-align: right">1.3 GB</td><td style="text-align: right">1.4 GB</td><td>over budget (target not met yet)</td><td><a href="https://skpf.wtpuscm.cn/kaifa/tactic-486643.html">#209</a></td></tr>
+<tr><td>P11</td><td>Paste a 12 MP layer (repeat)</td><td>≤ 20 ms p95</td><td style="text-align: right">445</td><td style="text-align: right">1174</td><td style="text-align: right">1174</td><td style="text-align: right">958 MB</td><td style="text-align: right">1.4 GB</td><td>over budget (target not met yet)</td><td><a href="https://ddbd.tcti.cn/anli/button-54803035.html">#209</a></td></tr>
+<tr><td>P12</td><td>Arrow-key nudge in a 150-layer document</td><td>≤ 30 ms p95</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td><strong>missing</strong>: panicked: wgpu error: Validation Error / Caused by: /   In Queue::write_buffer /     Buffer with 'pc_compose_uniforms' label is invalid</td><td><a href="https://wsux.wtpuscm.cn/xinwen/restore-881138.html">#209</a></td></tr>
+<tr><td>P51</td><td>New layer in a 150-layer document</td><td>≤ 16 ms p95</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td>not run</td><td><a href="https://igix.wtpuscm.cn/xuexi/change-187432.html">#1771</a></td></tr>
+<tr><td>P13</td><td>Brush dab on a 15000×10000 16-bit document</td><td>≤ 80 ms p95</td><td style="text-align: right">6.42</td><td style="text-align: right">146</td><td style="text-align: right">146</td><td style="text-align: right">839 MB</td><td style="text-align: right">2.0 GB</td><td>over budget (target not met yet)</td><td><a href="https://ouyw.tcti.cn/chanpin/restaurant-54429797.html">#209</a></td></tr>
+<tr><td>P14</td><td>Move a layer on a 15000×10000 16-bit document</td><td>≤ 80 ms p95</td><td style="text-align: right">2698</td><td style="text-align: right">4318</td><td style="text-align: right">4318</td><td style="text-align: right">1.5 GB</td><td style="text-align: right">2.0 GB</td><td>over budget (target not met yet)</td><td><a href="https://dhfo.wtpuscm.cn/kuangjia/article-686169.html">#209</a></td></tr>
+<tr><td>P16</td><td>Brush dab on a 32-bit document with 20 layers</td><td>≤ 100 ms p95</td><td style="text-align: right">21.5</td><td style="text-align: right">161</td><td style="text-align: right">161</td><td style="text-align: right">793 MB</td><td style="text-align: right">1.6 GB</td><td>over budget (target not met yet)</td><td><a href="https://mrws.tcti.cn/yinqing/article-65421476.html">#209</a></td></tr>
+<tr><td>P17</td><td>Move a layer on a 32-bit document with 20 layers</td><td>≤ 100 ms p95</td><td style="text-align: right">386</td><td style="text-align: right">681</td><td style="text-align: right">681</td><td style="text-align: right">1.2 GB</td><td style="text-align: right">1.6 GB</td><td>over budget (target not met yet)</td><td><a href="https://strb.tcti.cn/zhineng/software-90201705.html">#209</a></td></tr>
+<tr><td>P18</td><td>Open a 20 MP layered PSD: first pixels (today: fully opened)</td><td>≤ 1000 ms p95</td><td style="text-align: right">1753</td><td style="text-align: right">2794</td><td style="text-align: right">2794</td><td style="text-align: right">2.2 GB</td><td style="text-align: right">1.9 GB</td><td>over budget (target not met yet)</td><td><a href="https://rhek.wtpuscm.cn/peixun/message-014985.html">#210</a></td></tr>
+<tr><td>P19</td><td>Open a 20 MP layered PSD: editable</td><td>≤ 3000 ms p95</td><td style="text-align: right">1753</td><td style="text-align: right">2794</td><td style="text-align: right">2794</td><td style="text-align: right">2.2 GB</td><td style="text-align: right">1.9 GB</td><td>pass</td><td><a href="https://gjwn.wtpuscm.cn/qiye/expensive-816584.html">#210</a></td></tr>
+<tr><td>P21</td><td>Content-Aware Fill on 10 MP</td><td>≤ 1500 ms p95</td><td style="text-align: right">218</td><td style="text-align: right">256</td><td style="text-align: right">256</td><td style="text-align: right">1.8 GB</td><td style="text-align: right">1.8 GB</td><td>pass</td><td><a href="https://gxzr.wtpuscm.cn/liuliang/price-595359.html">#210</a></td></tr>
+<tr><td>P22</td><td>Spot Healing stroke on 10 MP</td><td>≤ 500 ms p95</td><td style="text-align: right">157</td><td style="text-align: right">247</td><td style="text-align: right">247</td><td style="text-align: right">1.8 GB</td><td style="text-align: right">1.9 GB</td><td>pass</td><td><a href="https://aybq.wtpuscm.cn/zhinan/app-543409.html">#210</a></td></tr>
+<tr><td>P24</td><td>Import 500 brushes (longest UI-thread step)</td><td>≤ 100 ms max</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td>not run</td><td><a href="https://mfxi.wtpuscm.cn/youhua/network-068702.html">#210</a></td></tr>
+<tr><td>P25</td><td>Cancel a Gaussian Blur job on 24 MP (until the worker exits)</td><td>≤ 200 ms max</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td>not run</td><td><a href="https://eedc.tcti.cn/yinqing/system-11617473.html">#210</a></td></tr>
+<tr><td>P49</td><td>Cancel a Content-Aware Fill job on 24 MP (until the worker exits)</td><td>≤ 200 ms max</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td>not run</td><td><a href="https://zqos.tcti.cn/jianzhan/network-03356375.html">#210</a></td></tr>
+<tr><td>P50</td><td>App frame time while a 24 MP Gaussian Blur job runs</td><td>≤ 16 ms p95</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td>not run</td><td><a href="https://wuvs.tcti.cn/keji/document-51573920.html">#210</a></td></tr>
+<tr><td>P26</td><td>Select › Modify › Smooth on 24 MP (radius 50)</td><td>≤ 100 ms p95</td><td style="text-align: right">99.9</td><td style="text-align: right">216</td><td style="text-align: right">251</td><td style="text-align: right">1.0 GB</td><td style="text-align: right">–</td><td>over budget (target not met yet)</td><td><a href="https://hxku.tcti.cn/xuexi/section-36779253.html">#211</a></td></tr>
+<tr><td>P27</td><td>Select › Modify › Feather on 24 MP (radius 50)</td><td>≤ 100 ms p95</td><td style="text-align: right">122</td><td style="text-align: right">357</td><td style="text-align: right">360</td><td style="text-align: right">1.1 GB</td><td style="text-align: right">–</td><td>over budget (target not met yet)</td><td><a href="https://wzyz.wtpuscm.cn/anli/hotel-845042.html">#211</a></td></tr>
+<tr><td>P28</td><td>Content-Aware Scale 24 MP (to 90 % width)</td><td>≤ 3000 ms p95</td><td style="text-align: right">954192</td><td style="text-align: right">954192</td><td style="text-align: right">954192</td><td style="text-align: right">2.1 GB</td><td style="text-align: right">–</td><td>over budget (target not met yet)</td><td><a href="https://ytus.tcti.cn/pingtai/visitor-94171838.html">#211</a></td></tr>
+<tr><td>P29</td><td>Select Subject on 24 MP, repeated</td><td>≤ 100 ms p95</td><td style="text-align: right">559</td><td style="text-align: right">693</td><td style="text-align: right">693</td><td style="text-align: right">1.4 GB</td><td style="text-align: right">–</td><td>over budget (target not met yet)</td><td><a href="https://pyvc.wtpuscm.cn/yanjiu/network-743159.html">#211</a></td></tr>
+<tr><td>P31</td><td>Camera Raw exposure change (proxy)</td><td>≤ 10 ms</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td>not run</td><td><a href="https://klxb.tcti.cn/huodong/forecast-16449800.html">#211</a></td></tr>
+<tr><td>P33</td><td>Brush dab on A4 300 ppi CMYK (dab to screen)</td><td>≤ 6 ms p95</td><td style="text-align: right">34.7</td><td style="text-align: right">235</td><td style="text-align: right">235</td><td style="text-align: right">775 MB</td><td style="text-align: right">87 MB</td><td>over budget (target not met yet)</td><td><a href="https://wydi.tcti.cn/yanjiu/support-44629144.html">#211</a></td></tr>
+<tr><td>P36</td><td>Camera Raw exposure change with all SDR scopes (CPU)</td><td>≤ 10 ms p95</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td>not run</td><td><a href="https://hnnk.tcti.cn/jiaocheng/luxury-61426760.html">#211</a></td></tr>
+<tr><td>P40</td><td>Brush dab 60 px on 36 MP</td><td>track only</td><td style="text-align: right">1.45</td><td style="text-align: right">3.19</td><td style="text-align: right">3.19</td><td style="text-align: right">1.3 GB</td><td style="text-align: right">–</td><td>tracked</td><td></td></tr>
+<tr><td>P41</td><td>Gaussian Blur r 40 on 36 MP</td><td>track only</td><td style="text-align: right">2963</td><td style="text-align: right">3069</td><td style="text-align: right">3069</td><td style="text-align: right">1.9 GB</td><td style="text-align: right">–</td><td>tracked</td><td></td></tr>
+<tr><td>P42</td><td>Curves dialog change, layer preview, 36 MP</td><td>track only</td><td style="text-align: right">38.7</td><td style="text-align: right">158</td><td style="text-align: right">158</td><td style="text-align: right">1.1 GB</td><td style="text-align: right">–</td><td>tracked</td><td></td></tr>
+<tr><td>P43</td><td>Save .psd, 36 MP, 3 layers</td><td>track only</td><td style="text-align: right">3047</td><td style="text-align: right">3446</td><td style="text-align: right">3446</td><td style="text-align: right">1.2 GB</td><td style="text-align: right">–</td><td>tracked</td><td></td></tr>
+<tr><td>P44</td><td>Open .psd, 36 MP, 3 layers</td><td>track only</td><td style="text-align: right">3535</td><td style="text-align: right">4547</td><td style="text-align: right">4547</td><td style="text-align: right">1.6 GB</td><td style="text-align: right">–</td><td>tracked</td><td></td></tr>
+<tr><td>P45</td><td>Full refresh with layer effects, warm caches, 36 MP (GPU)</td><td>track only</td><td style="text-align: right">105</td><td style="text-align: right">160</td><td style="text-align: right">160</td><td style="text-align: right">714 MB</td><td style="text-align: right">–</td><td>tracked</td><td></td></tr>
+<tr><td>P46</td><td>Brush dab on a layer with effects, 36 MP (GPU)</td><td>track only</td><td style="text-align: right">30.6</td><td style="text-align: right">83.3</td><td style="text-align: right">83.3</td><td style="text-align: right">863 MB</td><td style="text-align: right">–</td><td>tracked</td><td></td></tr>
+<tr><td>P47</td><td>Font-size drag step, 50 type layers</td><td>track only</td><td style="text-align: right">23.3</td><td style="text-align: right">60.5</td><td style="text-align: right">71.2</td><td style="text-align: right">600 MB</td><td style="text-align: right">–</td><td>tracked</td><td></td></tr>
+<tr><td>P48</td><td>Full refresh of a 14000×14000 document</td><td>track only</td><td style="text-align: right">8715</td><td style="text-align: right">9897</td><td style="text-align: right">9897</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td>tracked</td><td></td></tr>
+<tr><td>P52</td><td>Chisel bevel size change, 12 MP ellipse, size 8 (GPU)</td><td>track only</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td>not run</td><td></td></tr>
+<tr><td>P53</td><td>Chisel bevel size change, 12 MP ellipse, size 50 (GPU)</td><td>track only</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td>not run</td><td></td></tr>
+<tr><td>P54</td><td>Chisel bevel size change, 12 MP ellipse, size 250 (GPU)</td><td>track only</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td>not run</td><td></td></tr>
+<tr><td>P55</td><td>Chisel bevel size change, 12 MP text paragraph, size 8 (GPU)</td><td>track only</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td>not run</td><td></td></tr>
+<tr><td>P56</td><td>Chisel bevel size change, 12 MP text paragraph, size 50 (GPU)</td><td>track only</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td>not run</td><td></td></tr>
+<tr><td>P57</td><td>Chisel bevel size change, 12 MP text paragraph, size 250 (GPU)</td><td>track only</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td>not run</td><td></td></tr>
+<tr><td>P58</td><td>Chisel bevel size change, 12 MP ellipse, size 8 (CPU)</td><td>track only</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td>not run</td><td></td></tr>
+<tr><td>P59</td><td>Chisel bevel size change, 12 MP text paragraph, size 8 (CPU)</td><td>track only</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td style="text-align: right">–</td><td>not run</td><td></td></tr>
+</tbody></table>
+<p><strong>Not measurable yet</strong> (the code can't do it yet; no number is recorded):</p>
+<table><thead><tr><th>Id</th><th>Scenario</th><th>Target</th><th>Why</th><th>Issue</th></tr></thead><tbody>
+<tr><td>P15</td><td>Zoom / pan frame time on a 15000×10000 16-bit document</td><td>≤ 16 ms per frame</td><td>no headless canvas frame harness yet (zoom and pan sample the GPU texture in the egui paint callback)</td><td><a href="https://csqe.wtpuscm.cn/shuju/performance-031792.html">#209</a></td></tr>
+<tr><td>P20</td><td>Open a 2 GB PSD / 4–5 GB PSB</td><td>opens with progress, editable, never blank</td><td>opens run in the background with progress (#210), but there are no generated large-file fixtures yet (#216)</td><td><a href="https://dill.wtpuscm.cn/keji/settings-072228.html">#210</a></td></tr>
+<tr><td>P23</td><td>Warp / Puppet / Perspective preview at 4K</td><td>≤ 16 ms per frame, commit in the background</td><td>the previews run inside the UI tools; no headless frame harness, no background commit</td><td><a href="https://bpcr.wtpuscm.cn/keji/objective-450209.html">#210</a></td></tr>
+<tr><td>P30</td><td>Liquify 800 px brush on 3500×2200 at full resolution</td><td>≤ 1 ms per update</td><td>the Liquify proxy is capped at 1600 px and the stroke path lives in the UI tool</td><td><a href="https://qidk.tcti.cn/anfang/privacy-10865649.html">#211</a></td></tr>
+<tr><td>P32</td><td>Brush release on a long stroke</td><td>no hitch at mouse-up</td><td>the live renderer and the release re-render are UI-side; needs a frame harness</td><td><a href="https://ownb.tcti.cn/kuangjia/campaign-34795912.html">#211</a></td></tr>
+<tr><td>P34</td><td>Brush preview memory, small dab on an 8K viewport</td><td>≤ 2 MiB</td><td>the live brush preview buffers are UI-side; no headless counter yet</td><td><a href="https://vfil.tcti.cn/jiaocheng/planning-49277433.html">#211</a></td></tr>
+<tr><td>P35</td><td>Marquee drag on 24 MP with Alt/Shift</td><td>≤ 17 ms p95</td><td>Shift/Alt marquee modifiers don't exist yet (#208) and the drag preview is UI-side</td><td><a href="https://ccgr.tcti.cn/jishu/performance-73128961.html">#211</a></td></tr>
+</tbody></table>
+<h2>File compatibility</h2>
+<p>Corpus floors (<code>crates/io/tests/corpus.rs</code>): the enforced minimums; the corpus tests (cargo feature <code>corpus</code>, <code>cargo xtask test-corpus</code>, always run in CI) fail below them.</p>
+<table><thead><tr><th>Corpus</th><th>Directory</th><th style="text-align: right">Files</th><th style="text-align: right">Oracle pass floor</th><th style="text-align: right">Round-trip floor</th></tr></thead><tbody>
+<tr><td>io corpus</td><td><code>corpus/psd</code></td><td style="text-align: right">170</td><td style="text-align: right">146</td><td style="text-align: right">169</td></tr>
+<tr><td>psd-tools corpus</td><td><code>corpus/psd-tools</code></td><td style="text-align: right">309</td><td style="text-align: right">236</td><td style="text-align: right">307</td></tr>
+<tr><td>photoshop oracles</td><td><code>corpus/photoshop</code></td><td style="text-align: right">256</td><td style="text-align: right">133</td><td style="text-align: right">258</td></tr>
+</tbody></table>
+<table><thead><tr><th>Id</th><th>Target</th><th>Status</th><th>Issue</th><th>Note</th></tr></thead><tbody>
+<tr><td>FILE-215-1</td><td>Smart Objects export as embedded Smart Objects (SoLd + lnk2), not flat pixels</td><td>done</td><td><a href="https://xfvf.tcti.cn/hezuo/media-52206620.html">#215</a></td><td>psd_export.rs smart_blocks: PlLd + SoLd, source in lnk2 (.pcraft -&gt; PSB); engine tests/smart_psd.rs; Photoshop 2026 opens 8/16-bit exports as live smart objects. Linked files are embedded</td></tr>
+<tr><td>FILE-215-2</td><td>Smart Filters survive PSD save and re-open (filterFX descriptor read and written)</td><td>partial</td><td><a href="https://iypm.tcti.cn/gongsi/notification-34546613.html">#215</a></td><td>smart_map.rs: 14 filters plus a verified Camera Raw subset mapped both ways, others kept verbatim, mask in FEid; io tests/smart_corpus.rs. PhotoCraft-only filters (Twirl, Liquify…) and unmapped Camera Raw settings are left out of filterFX with a warning</td></tr>
+<tr><td>FILE-215-3</td><td>Filter mask can be painted directly, with undo</td><td>missing</td><td><a href="https://hcwf.wtpuscm.cn/wenzhang/deal-615787.html">#215</a></td><td>smart_cmds.rs:382 mask only from the selection</td></tr>
+<tr><td>FILE-215-4</td><td>Adjustments (Hue/Sat + Colorize, Curves, Levels, Shadows/Highlights) apply as Smart Filters</td><td>done</td><td><a href="https://ntmv.tcti.cn/yingyong/market-98004266.html">#215</a></td><td>Image › Adjustments on a smart object records image.adjustments.<kind> as a smart filter (adjust_cmds.rs adjust_as_smart_filter; the selection becomes the filter mask), re-rendered from the source by adjust_as_filter and re-editable with layer.smartFilter.setParams; PSD maps Levels/Curves/Shadows-Highlights both ways (smart_map.rs). Opening the editor from the smart-filter row is FILE-215-5's row work</td></tr>
+<tr><td>FILE-215-5</td><td>Smart Filter rows: collapse, mask thumb, blend icon, drag reorder, context menu, live preview</td><td>partial</td><td><a href="https://ccyf.tcti.cn/fuwu/alliance-73064415.html">#215</a></td><td>smart_ui.rs:31 rows + visibility + editor; no collapse, drag or context menu</td></tr>
+<tr><td>FILE-215-6</td><td>Smart Object corner skew and perspective (quad or homography transform)</td><td>missing</td><td><a href="https://biue.wtpuscm.cn/fenxi/advertising-584523.html">#215</a></td><td>doc lib.rs:312 SmartObject.transform is an Affine</td></tr>
+<tr><td>FILE-215-7</td><td>Layered TIFF read and write (tag 37724), honouring the ask-before-saving pref</td><td>partial</td><td><a href="https://pkwy.wtpuscm.cn/wenzhang/budget-094913.html">#215</a></td><td>psd tiff.rs (ImageSourceData, both byte orders), io tiff_layers.rs, ui tiff_options_ui.rs (Discard Layers and Save a Copy); extra alpha channels and a Quick Mask are not written (the TIFF codec holds one transparency sample)</td></tr>
+<tr><td>FILE-215-8</td><td>Large and BigTIFF import with banded decode across all IFDs</td><td>done</td><td><a href="https://myvl.tcti.cn/youhua/help-29081517.html">#215</a></td><td>codecs tiff_ifd.rs (bounds-checked IFD chain + SubIFD walk, classic and BigTIFF, cycle-safe; tiff_info / decode_tiff_page), tiff.rs banded parallel strip/tile decode, planar 1 and 2, BigTIFF write (tiff_bigtiff or &gt; 4 GiB); io import_tiff_page; 30 MP RGB8 Deflate 345 -&gt; 32 ms; no page picker in the UI yet</td></tr>
+<tr><td>FILE-215-9</td><td>SVG opens and places as shape layers or a vector Smart Object</td><td>done</td><td><a href="https://wnyp.tcti.cn/paiming/revenue-62888944.html">#215</a></td><td>io svg.rs: paths, groups, text outlines as shape layers (gradients approximated; clip/mask/filter/pattern/image subtrees rasterised); smart_cmds.rs renders an SVG source at its placement scale</td></tr>
+<tr><td>FILE-215-10</td><td>Multi-page PDF save, PDF presentation, layer comps to PDF, vector/text output, PDF import</td><td>missing</td><td><a href="https://vxqx.tcti.cn/yanjiu/supplier-26909491.html">#215</a></td><td>Only print_cmds.rs:133 print_pdf (raster print page)</td></tr>
+<tr><td>FILE-215-11</td><td>RAW: lossy DNG, highlight modes, .xmp sidecars, RAW prefs wired, per-camera corpus</td><td>missing</td><td><a href="https://shrb.wtpuscm.cn/xitong/saving-831817.html">#215</a></td><td>raw sensor.rs:210 lossy DNG unsupported; raw_defaults unread; no xmp</td></tr>
+<tr><td>FILE-215-12</td><td>Camera Raw dialog shows a histogram; settings persist as a PSD Smart Filter</td><td>partial</td><td><a href="https://kmos.wtpuscm.cn/yinqing/tactic-251734.html">#215</a></td><td>Interactive RGB/Lab scopes. PSD WB/Light/Presence, curves, HSL, grading, sharpening/noise detail, grain and numeric vignette controls mapped with descriptor preservation. Active manual Optics and unverified vignette style keep the updated ACR 18.4 fixture opaque; PSD/.pcraft saves preserve it. HDR, remaining settings and Photoshop acceptance still open</td></tr>
+<tr><td>FILE-215-13</td><td>Video layer frames persist in .pcraft; PSD video layers mapped</td><td>partial</td><td><a href="https://soaw.tcti.cn/suanfa/fitness-04813266.html">#215</a></td><td>format convert.rs:89 + tests/roundtrip.rs:282 persist frames; no PSD video mapping</td></tr>
+<tr><td>FILE-215-14</td><td>User swatch model with ACO/ASE import and export</td><td>done</td><td><a href="https://qnep.wtpuscm.cn/jishu/learning-491695.html">#215</a></td><td>engine presets/swatches.rs (RGB/HSB/CMYK/Lab/Gray + verbatim colour books, persisted in prefs) + swatch_cmds.rs (swatches.*); psd aco.rs (v1/v2) and ase.rs (groups, spot/global) read+write; ui swatches_ui.rs, Color Picker Add to Swatches</td></tr>
+<tr><td>FILE-215-15</td><td>Layer Style contour picker, curve editor, presets, .shc import/export</td><td>missing</td><td><a href="https://zaqm.wtpuscm.cn/shuju/file-066118.html">#215</a></td><td>doc effects.rs:57 Contour model only</td></tr>
+<tr><td>FILE-215-16</td><td>Advanced Blending (knockout, blend as group, mask hides effects) end to end</td><td>partial</td><td><a href="https://ambg.wtpuscm.cn/gongju/client-850140.html">#215</a></td><td>doc advanced.rs + .pcraft + PSD/layered TIFF (knko infx clbl tsly lmgm vmgm), CPU compose advanced.rs (GPU falls back), blendingOptions command + dialog; 7 psd-tools knockout oracles now pass; knockout-isolated-groups (0.45 % AA edges), advanced-blending, blend-and-clipping still differ</td></tr>
+<tr><td>FILE-215-17</td><td>CMYK/RGB documents preview spot inks; spot plates export (TIFF extra samples, PDF)</td><td>missing</td><td><a href="https://njce.wtpuscm.cn/shichang/tracking-082331.html">#215</a></td><td>compose multichannel.rs:1 spot preview for Multichannel only</td></tr>
+<tr><td>FILE-215-18</td><td>Save for Web per-slice settings remembered; Export As remembers and offers nearest scaling</td><td>partial</td><td><a href="https://bdlh.tcti.cn/kuangjia/expensive-11949553.html">#215</a></td><td>file_ui.rs:188 last_web in-session only; export_dialog.rs:16 fixed defaults</td></tr>
+<tr><td>FILE-215-19</td><td>Save As JPEG opens a JPEG Options dialog (quality 0-12, format options)</td><td>missing</td><td><a href="https://nnqo.tcti.cn/shuju/upload-71793913.html">#215</a></td><td>ExportSettings has jpeg_quality 1-100 only (lib.rs:118)</td></tr>
+<tr><td>FILE-215-20</td><td>Artboard tool with handles and + buttons, Duplicate Artboard beside, vector PDF pages</td><td>partial</td><td><a href="https://yzyf.tcti.cn/suanfa/module-42751600.html">#215</a></td><td>artboard_ui.rs:1 names/properties only; no tool, + buttons or duplicate</td></tr>
+<tr><td>FILE-215-21</td><td>Local libraries of colours, patterns, images and layers, as linked items or copies</td><td>missing</td><td><a href="https://dyxz.wtpuscm.cn/huodong/forecast-993440.html">#215</a></td><td>Only preset libraries (preset_store.rs)</td></tr>
+<tr><td>FILE-216-1</td><td>Every corpus fetched and enforced in CI, cached by pin</td><td>missing</td><td><a href="https://qxch.wtpuscm.cn/tuiguang/keyword-858644.html">#216</a></td><td>No corpus step in ci.yml; in progress in #190</td></tr>
+<tr><td>FILE-216-2</td><td>Large-file fixtures: 20 MP, 150-layer, generated 2 GB PSD and 4-5 GB PSB stress tests</td><td>partial</td><td><a href="https://mcrw.wtpuscm.cn/yanjiu/experience-519048.html">#216</a></td><td>4-5 GB PSB fixtures: psd example big_psb writes them (raw and RLE, planes past 2 GiB), io example big_psb_check opens and checks them; opt-in io tests/large_psb.rs (2.5 GB merged image). No 2 GB PSD, 150-layer or 20 MP fixture, nothing in CI</td></tr>
+<tr><td>FILE-216-3</td><td>TIFF, RAW and EXR corpora read by tests; per-camera RAW coverage reported</td><td>partial</td><td><a href="https://nemv.wtpuscm.cn/gongju/responsive-699606.html">#216</a></td><td>EXR: corpus/exr (the OpenEXR deep test images, pinned) is read by codecs tests/deep_exr.rs in the CI corpus job, against the ID manifests of the upstream sidecars. corpus/tiff and corpus/raw are still copied in by hand and no test reads them; no per-camera RAW report</td></tr>
+<tr><td>FILE-216-4</td><td>Exports re-open in a third-party oracle editor</td><td>missing</td><td><a href="https://ubox.tcti.cn/keji/metric-52808731.html">#216</a></td><td>The round trip is our export -&gt; our import</td></tr>
+<tr><td>FILE-216-5</td><td>Save-path tests: layered TIFF, PDF, SVG, ACO/ASE, .shc, Smart Filters, atomic-save failure</td><td>missing</td><td><a href="https://qqym.wtpuscm.cn/keji/client-063499.html">#216</a></td><td>Features absent; no atomic-save failure-injection test</td></tr>
+<tr><td>FILE-216-6</td><td>30-50 end-to-end workflow acceptance tasks driven through MCP or commands</td><td>partial</td><td><a href="https://kvfk.wtpuscm.cn/pingtai/update-656969.html">#216</a></td><td>automation/tests/agent_tasks.rs: 10 MCP tasks</td></tr>
+</tbody></table>
+<h2>Tools</h2>
+<table><thead><tr><th>Id</th><th>Target</th><th>Status</th><th>Issue</th><th>Note</th></tr></thead><tbody>
+<tr><td>TOOL-213-1</td><td>Pencil tool: aliased 1 px painting, square pixel-aligned cursor</td><td>done</td><td><a href="https://vtgc.wtpuscm.cn/jiaocheng/domain-173197.html">#213</a></td><td>Tool::Pencil (B group): live aliased strokes on the pixel grid, square cursor, Auto Erase; pencil_tests.rs</td></tr>
+<tr><td>TOOL-213-2</td><td>Mixer Brush tool on the toolbar</td><td>done</td><td><a href="https://itpb.wtpuscm.cn/yinqing/content-712702.html">#213</a></td><td>Tool::MixerBrush in the Brush (B) flyout; Wet/Load/Mix/Flow/Sample All Layers options, command/control dispatch and selection-clipping tests</td></tr>
+<tr><td>TOOL-213-3</td><td>Patch tool with a live preview of the patched area</td><td>done</td><td><a href="https://guzx.tcti.cn/zixun/meeting-70808595.html">#213</a></td><td>paint.patch (retouch_cmds/patch.rs, source/destination) + Tool::Patch (J group: lasso, then drag the selection); the drag shows the heal live (patch_preview.rs, coarse colour fit: 1000x1000 in 52 ms)</td></tr>
+<tr><td>TOOL-213-4</td><td>Content-Aware Move tool reusing inpaint completion</td><td>partial</td><td><a href="https://immx.tcti.cn/anfang/training-53002921.html">#213</a></td><td>paint.contentAwareMove (retouch_cmds/content_aware_move.rs: move/extend, Structure 1-7, Color 0-10, Sample All Layers; background job) + Tool::ContentAwareMove (J group: lasso, then drag). Missing: Transform On Drop, a live preview of the result (the drag shows the outline only)</td></tr>
+<tr><td>TOOL-213-5</td><td>Painting a type/shape/smart/fill layer offers to rasterize, then continues the stroke</td><td>done</td><td><a href="https://njwb.tcti.cn/anli/document-68299558.html">#213</a></td><td>rasterize_prompt.rs: OK rasterizes then paints (two history states), Cancel does nothing; drivable via ui.dialog.confirm</td></tr>
+<tr><td>TOOL-213-6</td><td>Fill dialog: contents, blend, opacity, preserve transparency; remembered; Shift+Backspace</td><td>done</td><td><a href="https://izwv.tcti.cn/shuju/satisfaction-60418490.html">#213</a></td><td>fill_ui.rs dialog over edit.fill (fill_cmds.rs): all contents, mode, opacity, preserve; remembered in prefs; Shift+F5 / Shift+Backspace</td></tr>
+<tr><td>TOOL-213-7</td><td>Live stroke preview for every brush-based retouch tool</td><td>missing</td><td><a href="https://noge.tcti.cn/pingtai/accessibility-83283630.html">#213</a></td><td>Live stroke only for Brush and Eraser (canvas.rs:1684)</td></tr>
+<tr><td>TOOL-213-8</td><td>Clone Source: W/H link, drawn overlay (opacity/blend/clip/auto-hide), Alt target cursor</td><td>partial</td><td><a href="https://ajht.wtpuscm.cn/kuangjia/entertainment-301471.html">#213</a></td><td>Clone Source overlay drawn with opacity, inversion, circular clipping and auto-hide; W/H link, custom-tip clipping and overlay blend modes remain missing</td></tr>
+<tr><td>TOOL-213-9</td><td>Eyedropper comparison ring (new colour above, current below) while sampling</td><td>done</td><td><a href="https://qkxy.wtpuscm.cn/zhizhu/education-059872.html">#213</a></td><td>eyedropper_ring (canvas.rs): the sampled colour on the upper arc, the foreground below, drawn for the Eyedropper and Alt-sampling while the button is held; the Precise-cursor preference keeps the crosshair</td></tr>
+<tr><td>TOOL-213-10</td><td>Ctrl+Alt drag resizes brush size/hardness with an on-canvas readout</td><td>done</td><td><a href="https://slwj.tcti.cn/yinqing/optimization-24386831.html">#213</a></td><td>brush_resize.rs (#297, #370): Alt+right-drag, or Control+Option-drag on macOS (Control+Alt everywhere), sets diameter horizontally and hardness vertically, circle plus Diameter/Hardness readout, one coalesced tools.setBrush, no paint or history; 9 tests there</td></tr>
+<tr><td>TOOL-213-11</td><td>Editable pressure curve, global and per control</td><td>partial</td><td><a href="https://kxjc.tcti.cn/zhizhu/goal-93121041.html">#213</a></td><td>Global: Preferences › Tools › Pressure Curve (prefs tools.pressureCurve; monotone cubic, engine prefs::PressureCurve; applied to every pen sample in ui-egui stylus.rs before any brush; editor pressure_curve_ui.rs with Linear/Soft/Hard presets). Missing: per-control curves (each brush dynamic's own response to pressure, tilt, rotation)</td></tr>
+<tr><td>TOOL-213-12</td><td>Import an image file as a brush tip</td><td>missing</td><td><a href="https://mact.wtpuscm.cn/wenzhang/strategy-002992.html">#213</a></td><td>Only brush.defineFromSelection and brush.presets.importAbr</td></tr>
+<tr><td>TOOL-213-13</td><td>Brush regression tests: no seams, hard edge, zero-scatter defaults, ABR never black</td><td>done</td><td><a href="https://xedx.wtpuscm.cn/huodong/domain-648179.html">#213</a></td><td>Seam, hard-edge and zero-scatter tests in brush_tests.rs; ABR tip colour test in abr_map/tests.rs</td></tr>
+<tr><td>TOOL-213-14</td><td>Tablet: no OS arrow cursor over the canvas on macOS, Windows and Linux</td><td>partial</td><td><a href="https://www.yx-sf.com/news/31090">#213</a></td><td>Brush tools set CursorIcon::None (canvas.rs:1259-1275); not verified per OS</td></tr>
+<tr><td>TOOL-213-18</td><td>Pattern Stamp tool: sibling of Clone Stamp in the S flyout</td><td>done</td><td><a href="https://elrm.wtpuscm.cn/keji/products-146367.html">#213</a></td><td>Tool::PatternStamp in the S group; paint.patternStamp stamps the Patterns-panel tile with Aligned and Impressionist (an approximation: it jitters each dab's tile phase, not Photoshop's smeared impressionist look); engine tests cover depths, seams, hostile input</td></tr>
+<tr><td>TOOL-214-1</td><td>Select and Mask workspace: view modes, Refine Edge brush, 6 outputs</td><td>partial</td><td><a href="https://astz.tcti.cn/gongju/calculator-56488069.html">#214</a></td><td>Opens the generic select.refineEdge dialog (menus.rs:308)</td></tr>
+<tr><td>TOOL-214-2</td><td>Marquee: Shift square, Alt from centre, live W x H readout</td><td>done</td><td><a href="https://www.mw-wm.com/huodong/article-47484753.html">#214</a></td><td>canvas.rs marquee_corners: Shift square or circle, Alt from the centre, live W x H readout beside the cursor (marquee_readout); marquee_tests.rs</td></tr>
+<tr><td>TOOL-214-3</td><td>Color Range test: Sampled Colors at Fuzziness 0 selects the exact match only</td><td>partial</td><td><a href="https://xdft.wtpuscm.cn/yanjiu/contact-999035.html">#214</a></td><td>Fuzziness-0 tests cover midtones/shadows only (selection_cmds.rs:444-447)</td></tr>
+<tr><td>TOOL-214-4</td><td>Move tool: box-select layers, Auto-Select hover outline, double-click fit, drag to a tab</td><td>missing</td><td><a href="https://www.yx-sf.com/tech/74379">#214</a></td><td>move_mods.rs covers Shift/Alt/arrows only</td></tr>
+<tr><td>TOOL-214-5</td><td>Right-click menu during Free Transform (scale, rotate, skew, warp, flip, rotate 90/180)</td><td>missing</td><td><a href="https://lndp.wtpuscm.cn/zixun/contact-995236.html">#214</a></td><td>No context menu in canvas.rs or transform_tool.rs</td></tr>
+<tr><td>TOOL-214-6</td><td>Puppet Warp mesh follows the object outline (constrained triangulation)</td><td>missing</td><td><a href="https://mlgs.tcti.cn/yingxiao/home-73714322.html">#214</a></td><td>algo/puppet.rs:136 builds a block-grid mesh</td></tr>
+<tr><td>TOOL-214-7</td><td>Content-Aware Scale through the Free Transform box with a live proxy preview</td><td>partial</td><td><a href="https://rxlw.wtpuscm.cn/yanjiu/policy-111009.html">#214</a></td><td>edit.contentAwareScale (edit_menu_cmds.rs:899) behind a parameter dialog</td></tr>
+<tr><td>TOOL-214-8</td><td>A measured ruler angle prefills Image Rotation &gt; Arbitrary (0.01 deg)</td><td>missing</td><td><a href="https://dwig.tcti.cn/wangluo/productivity-51692176.html">#214</a></td><td>Arbitrary rotation is a generic dialog; ruler only feeds straighten</td></tr>
+<tr><td>TOOL-214-9</td><td>Crop: W x H x Resolution with units, saved crop presets, Straighten in the options bar</td><td>partial</td><td><a href="https://with.tcti.cn/fenxi/shopping-44535566.html">#214</a></td><td>Ratio dropdown and fields, Straighten (TOOL-214-21); no W x H x Resolution with units or saved presets</td></tr>
+<tr><td>TOOL-214-10</td><td>Pen: Alt breaks a handle, Shift 45 deg, Ctrl direct-selects, Backspace, close-drag handle</td><td>partial</td><td><a href="https://www.yx-sf.com/tech/5555">#214</a></td><td>Ctrl/Cmd = Direct Selection and Alt = Convert Point on existing paths (direct_select.rs, #790); no Shift 45 deg, Backspace or Alt while drawing</td></tr>
+<tr><td>TOOL-214-11</td><td>Stroke Path dialog: pick any brush-based tool, Simulate Pressure</td><td>partial</td><td><a href="https://vuet.wtpuscm.cn/chanpin/register-780336.html">#214</a></td><td>path.stroke brush, pencil, eraser (vector_cmds.rs:1170); brush-only button, no dialog</td></tr>
+<tr><td>TOOL-214-12</td><td>Shapes: on-canvas corner radius handles, shape feather, selection to shape with tolerance</td><td>partial</td><td><a href="https://www.mw-wm.com/liuliang/fitness-01989592.html">#214</a></td><td>select.convertToShape with tolerance (vector_cmds.rs:1256); radius as a field only</td></tr>
+<tr><td>TOOL-214-13</td><td>Mask Properties: Density and Feather controls</td><td>partial</td><td><a href="https://ljru.wtpuscm.cn/qiye/communication-552166.html">#214</a></td><td>Vector-mask density/feather in the engine (vector_cmds.rs:948); no UI controls</td></tr>
+<tr><td>TOOL-214-14</td><td>Vanishing Point window: draw and edit planes, paste, clone in perspective</td><td>partial</td><td><a href="https://iekz.wtpuscm.cn/kuangjia/media-255575.html">#214</a></td><td>filter.vanishingPoint (vp_cmds.rs:15) behind a parameter dialog</td></tr>
+<tr><td>TOOL-214-15</td><td>Content-Aware Fill workspace: paint the sampling area, preview, rotate/scale/mirror, new layer</td><td>partial</td><td><a href="https://benk.wtpuscm.cn/jianzhan/profit-839651.html">#214</a></td><td>Engine sampling auto, rect, custom (edit_menu_cmds.rs:324); generic dialog</td></tr>
+<tr><td>TOOL-214-16</td><td>Liquify: redo (Cmd+Shift+Z)</td><td>done</td><td><a href="https://xbjo.wtpuscm.cn/wenzhang/terms-683613.html">#214</a></td><td>liquify_ui.rs supports bounded redo through Cmd+Shift+Z and the control channel; new strokes clear redo</td></tr>
+<tr><td>TOOL-213-17</td><td>Red Eye tool: click a pupil to neutralize the red reflection</td><td>done</td><td><a href="https://eivb.wtpuscm.cn/shichang/url-190833.html">#213</a></td><td>paint.redEye (redeye_cmds.rs) + Tool::RedEye in the J flyout; Pupil Size and Darken Amount; catchlights kept; a miss is an error</td></tr>
+<tr><td>TOOL-214-17</td><td>Rotate View tool: drag to turn the view, Reset View, Match Rotation copies the angle</td><td>done</td><td><a href="https://hulv.wtpuscm.cn/anfang/segment-163434.html">#214</a></td><td>Tool::RotateView in the Hand flyout; view.rotateView / view.resetView; Match Rotation copies views[].rotation; enhanced_controls.rotate_view_with_trackpad is read</td></tr>
+<tr><td>TOOL-1649-1</td><td>Eyedropper Sample Size (Point, 3×3 … 101×101 Average), Sample layers, Show Sampling Ring</td><td>done</td><td><a href="https://rcog.tcti.cn/jishu/education-97536902.html">#1649</a></td><td>document.sampleColor (sample_cmds.rs): average of the square clipped to the canvas, in the document's model and depth; eyedropper_ui.rs options bar; shared with Alt-click, dialog eyedroppers and the Info panel; ui.set eyedropperSampleSize/eyedropperSample/eyedropperRing. Color Sampler tool still missing</td></tr>
+<tr><td>TOOL-214-20</td><td>Crop overlay options: Rule of Thirds, Grid, Diagonal, Triangle, Golden Ratio, Golden Spiral; Auto / Always / Never Show Overlay; O cycles the overlay, Shift+O its orientation</td><td>done</td><td><a href="https://cyji.tcti.cn/shangye/upload-73694878.html">#1919</a></td><td>crop_overlay.rs: unit-square guides shared by upright and turned frames (canvas.rs), options-bar menu, O / Shift+O ahead of the tool keys in shortcuts.rs; ToolOptions crop_overlay / crop_overlay_show / crop_overlay_orientation, ui.set cropOverlay / cropOverlayShow / cropOverlayOrientation</td></tr>
+<tr><td>TOOL-214-18</td><td>Crop: drag outside the frame to rotate it (Shift 15 deg steps, angle readout); Enter rotates and crops in one step</td><td>done</td><td><a href="https://lwsk.tcti.cn/yingxiao/calculator-42942329.html">#1792</a></td><td>image.crop angle param (image_cmds.rs: Image Rotation &gt; Arbitrary + crop, one undo step); crop_ui.rs turns, moves and resizes the frame along its axes (Classic Mode visuals); UiState.crop_angle</td></tr>
+<tr><td>TOOL-214-19</td><td>Crop: arrow keys nudge the crop box (Shift 10 px), X swaps portrait/landscape, W x H readout while drawing or resizing</td><td>done</td><td><a href="https://hhzs.tcti.cn/pingtai/about-50437309.html">#1919</a></td><td>crop_ui.rs keys/nudge/swap_orientation (ahead of the selection nudge and tools.swapColors in shortcuts.rs; X also swaps the options-bar ratio) and sizing (canvas.rs draws it with the marquee readout); turned frames included</td></tr>
+<tr><td>TOOL-214-21</td><td>Crop: Straighten button in the options bar and Cmd/Ctrl-drag draw a line; the frame turns so the line ends up level (or plumb when nearer vertical), with an angle readout</td><td>done</td><td><a href="https://www.mw-wm.com/huodong/blog-91780564.html">#1919</a></td><td>crop_straighten.rs: one-shot options-bar button, Cmd/Ctrl held is a temporary Straighten (ui.pointer command flag); the Ruler's straighten_angle convention; the frame is fitted to the largest of its proportions inside the image (Classic Mode); a pending edit committed by Enter</td></tr>
+<tr><td>TOOL-214-22</td><td>Crop gear menu: Show Cropped Area (H), Enable Crop Shield with Match Canvas / custom colour, opacity and Auto Adjust Opacity</td><td>done</td><td><a href="https://vsga.tcti.cn/tuiguang/topic-67398095.html">#1919</a></td><td>crop_shield.rs: fill() resolves the shield (canvas.rs paints it around upright and turned frames), gear popup in the options bar, H ahead of the Hand key in shortcuts.rs, Custom… opens the Color Picker; ToolOptions crop_shield, ui.set cropShield. No Classic Mode / Auto Center Preview (PhotoCraft is always Classic Mode)</td></tr>
+<tr><td>TOOL-1053-1</td><td>Shape stroke controls: solid/dashed/dotted, custom dash/gap/offset, caps, joins, alignment, miter limit and opacity</td><td>done</td><td><a href="https://bkpx.tcti.cn/yinqing/quality-82031477.html">#1053</a></td><td>shape_stroke_ui.rs: shared staged editor, renderer samples, cached Properties canvas preview; existing shape.create/edit/info; serde tool defaults, ui.set shapeStroke; pcraft and vstk style round trips. Gradient fill UI and saved stroke libraries remain open; Line retains filled-bar geometry</td></tr>
+<tr><td>TOOL-213-19</td><td>Remove tool: paint over an object (or circle it) and it is filled from its surroundings</td><td>partial</td><td><a href="https://www.ai-hao123.com/fuwu/tool-41275896.html">#213</a></td><td>paint.remove (retouch_cmds/remove.rs, background job) + Tool::Remove in the J flyout; loops close over what they enclose; fill by non-local patch completion with texture features, onion-peel start, best-patch copy and gradient-domain seam hiding (algo/nonlocal.rs, Newson et al. IPOL 2017); sparse holes in tiles (algo/remove.rs). remove_quality on 20 holes in public-domain photos: the fill keeps 0.89 of the texture it replaces (0.54 with Content-Aware Fill's completion), edge gradient 1.03 of the original's; remove_bench 24 MP: 100 px ring 120 ms, 1000 px ring 2.5 s, 3000 px line 1.7 s. Missing: generative AI mode, Remove after each stroke off, live preview of the result</td></tr>
+</tbody></table>
+<h2>Workspace and UI</h2>
+<p><strong>Settings that do nothing: 46 of 149</strong> (target 0, #204). Counted by the prefs audit (<code>xtask/src/scorecard.rs</code>): a <code>Preferences</code> field counts as read when code outside the prefs model (<code>prefs.rs</code> except its <code>impl Session</code> blocks; tests excluded; the schema-driven dialog never names a field) accesses <code>section.field</code>, or <code>.section</code> and <code>.field</code> in the same file, or calls a section method that reads <code>self.field</code>. It is a heuristic lower bound: a generic name can look read when it isn't.</p>
+<p>Unread: <code>general.color_picker</code>, <code>general.beep_when_done</code>, <code>general.resize_image_during_place</code>, <code>general.always_create_smart_objects_when_placing</code>, <code>general.animated_zoom</code>, <code>general.zoom_resizes_windows</code>, <code>interface.dynamic_color_sliders</code>, <code>workspace.auto_collapse_icon_panels</code>, <code>workspace.auto_show_hidden_panels</code>, <code>workspace.enable_floating_document_window_docking</code>, <code>workspace.enable_narrow_options_bar</code>, <code>tools.enable_flick_panning</code>, <code>tools.vary_round_brush_hardness_on_hud</code>, <code>tools.show_transformation_values</code>, <code>file_handling.image_previews</code>, <code>file_handling.save_in_background</code>, <code>file_handling.ignore_exif_profile_tag</code>, <code>file_handling.maximize_psd_compatibility</code>, <code>performance.cache_levels</code>, <code>performance.legacy_compositing</code>, <code>scratch_disks.disks</code>, <code>cursors.brush_preview_color</code>, <code>units_and_rulers.type_units</code>, <code>units_and_rulers.column_width</code>, <code>units_and_rulers.gutter</code>, <code>units_and_rulers.print_resolution</code>, <code>plug_ins.show_extension_panels</code>, <code>plug_ins.allow_scripts_to_connect</code>, <code>plug_ins.generator_enabled</code>, <code>type_.smart_quotes</code>, <code>type_.missing_glyph_protection</code>, <code>type_.show_font_names_in_english</code>, <code>type_.text_engine</code>, <code>type_.font_preview</code>, <code>type_.recent_fonts</code>, <code>enhanced_controls.scrubby_slider_acceleration</code>, <code>enhanced_controls.touch_gestures</code>, <code>enhanced_controls.zoom_with_trackpad_pinch</code>, <code>raw_defaults.color_space</code>, <code>raw_defaults.bit_depth</code>, <code>raw_defaults.resolution</code>, <code>raw_defaults.sharpen_for</code>, <code>raw_defaults.open_as_smart_object</code>, <code>raw_defaults.apply_auto_tone</code>, <code>integrations.allow_agent_control</code>, <code>integrations.control_port</code>.</p>
+<table><thead><tr><th>Id</th><th>Target</th><th>Status</th><th>Issue</th><th>Note</th></tr></thead><tbody>
+<tr><td>UI-217-1</td><td>Tool options, last Export As / Save for Web / Fill settings and font recents persist</td><td>partial</td><td><a href="https://wbqg.tcti.cn/keji/sale-73904597.html">#217</a></td><td>Fill (fill_ui.rs:72) and Liquify (liquify_ui.rs:64, #418) keep their settings in Preferences (prefs.dialogs); no tool_options/export fields in Preferences; export_dialog.rs:21 png/85. Each painting tool keeps its own brush (paint_mouse.rs sync_tool_brush, #218), but those live in UiState, so they are lost at quit like the other tool options</td></tr>
+<tr><td>UI-217-2</td><td>Window size and dock width remembered across restarts</td><td>done</td><td><a href="https://tjgt.tcti.cn/chuangxin/podcast-96549287.html">#217</a></td><td>eframe persistence (ui.ron): persist_window for the window, egui memory for the dock panel width; window_and_panel_geometry_survive_a_restart asserts the round trip (apps/photocraft/src/main.rs; b07a2e5b, #587)</td></tr>
+<tr><td>UI-217-3</td><td>File &gt; Open starts in the last-used folder</td><td>done</td><td><a href="https://ddfu.tcti.cn/jiaoliu/layout-52302264.html">#217</a></td><td>file_dialog.rs last_used_dir: open dialogs ask with initial_dir (the most recent file's folder) and apps services.rs passes it to rfd set_directory; open_starts_in_the_last_used_folder + last_used_dir_takes_the_most_recent_parent</td></tr>
+<tr><td>UI-217-4</td><td>Preferences all take effect; recent files persist and honour recent_file_count (#204)</td><td>missing</td><td><a href="https://www.mw-wm.com/anli/conference-84010772.html">#217</a></td><td>See the prefs audit and BUG-204-*</td></tr>
+<tr><td>UI-217-5</td><td>Panel groups can float (menu + drag out of the dock) and are restored at launch</td><td>missing</td><td><a href="https://vhio.wtpuscm.cn/qiye/identity-906183.html">#217</a></td><td>No floating groups in dock.rs/panels.rs</td></tr>
+<tr><td>UI-217-6</td><td>Document tabs: overflow list, context menu (Close/Others/All/Reveal), drag to reorder</td><td>done</td><td><a href="https://rxuk.tcti.cn/jiaocheng/supplier-52794820.html">#217</a></td><td>canvas.rs: Close/Others/All menu with unsaved prompt; Reveal reuses file.revealInFinder (engine layer_menu_cmds::reveal); the » chevron (tab_strip) lists overflow; dragging a tab reorders via document.move</td></tr>
+<tr><td>UI-217-7</td><td>Command palette shows recently run commands on an empty query</td><td>done</td><td><a href="https://kurx.wtpuscm.cn/wendang/shopping-682840.html">#217</a></td><td>palette.rs: note_recent from menus::invoke keeps the last 8 commands (dedup, newest first); an empty query lists them via recent_hits; the_palette_records_and_replays_recent_commands_on_an_empty_query covers record -&gt; empty query -&gt; replay</td></tr>
+<tr><td>UI-217-8</td><td>Tool-specific canvas right-click menu; right-click spelling suggestions in text fields</td><td>partial</td><td><a href="https://lujf.wtpuscm.cn/xuexi/platform-077943.html">#217</a></td><td>paint_mouse.rs brush picker and canvas_tool_menu.rs selection actions; other tools and text spelling menus missing</td></tr>
+<tr><td>UI-217-9</td><td>UI scale presets 100/115/125/150/200 % through zoom_factor, remembered</td><td>missing</td><td><a href="https://jnin.wtpuscm.cn/shangye/blog-961483.html">#217</a></td><td>prefs.rs:61 UiScale unused; input_tests.rs:71 asserts zoom_factor stays 1.0</td></tr>
+<tr><td>UI-217-10</td><td>Appearance: animation toggle, canvas pattern toggle per theme, start-screen recents</td><td>missing</td><td><a href="https://pldw.wtpuscm.cn/tuiguang/presentation-869806.html">#217</a></td><td>No such prefs; start screen (canvas.rs:825) has no recents</td></tr>
+<tr><td>UI-217-11</td><td>Soft dark and soft light themes with picker previews; outlined knobs in light themes</td><td>missing</td><td><a href="https://wlud.tcti.cn/kuangjia/coupon-10270993.html">#217</a></td><td>theme.rs:28 five themes</td></tr>
+<tr><td>UI-217-12</td><td>Save custom New Document presets; a real Recent category</td><td>partial</td><td><a href="https://rzyd.wtpuscm.cn/jiaocheng/podcast-214951.html">#217</a></td><td>document_preset_cmds.rs and new_doc_ui.rs: named presets save/select/delete through preferences; Recent remains a static list plus Clipboard</td></tr>
+<tr><td>UI-217-13</td><td>Numeric fields accept arithmetic and units; scrubby labels; double-click resets a slider</td><td>partial</td><td><a href="https://oxyg.tcti.cn/xitong/discovery-42200305.html">#217</a></td><td>widgets.rs:132 DragValue scrubs and takes + - * / arithmetic; no units in expressions, label scrub or reset</td></tr>
+<tr><td>UI-217-14</td><td>Layers panel: wheel steps blend modes, drop on New/Trash duplicates/deletes, checker behind art</td><td>partial</td><td><a href="https://axne.wtpuscm.cn/zixun/vendor-770029.html">#217</a></td><td>panels.rs: the wheel steps the blend-mode dropdown (widgets::dropdown_wheel_hovered, #1747); trash is click-only, no drop on New/Trash, no checker behind art</td></tr>
+<tr><td>UI-217-15</td><td>Curves: smoothing / pencil mode, black/grey/white eyedroppers, tooltips</td><td>partial</td><td><a href="https://zxgd.tcti.cn/zhizhu/follow-22416530.html">#217</a></td><td>adjust_dialog.rs adds black/gray/white eyedroppers; smoothing and pencil modes remain missing</td></tr>
+<tr><td>UI-217-16</td><td>Hue/Saturation: Saturation and Lightness sliders get hue-following colour tracks</td><td>done</td><td><a href="https://sspd.wtpuscm.cn/liuliang/economy-470.html">#217</a></td><td>saturation_track/lightness_track (adjust_editors.rs): grey -&gt; the hue and black -&gt; the hue -&gt; white, recolouring as the Hue slider moves; saturation_and_lightness_tracks_follow_the_hue</td></tr>
+<tr><td>UI-217-17</td><td>Color panel: wheel plus RGB/HSB/CMYK/Lab/Gray/Web slider modes; resizes with its group</td><td>missing</td><td><a href="https://yczr.tcti.cn/liuliang/solution-04317305.html">#217</a></td><td>panels.rs:1837 single field + hex/RGB readout</td></tr>
+<tr><td>UI-217-18</td><td>Alt+wheel zooms in gentle ~5 % steps; zoom controls uncramped</td><td>missing</td><td><a href="https://yueh.wtpuscm.cn/jishu/meeting-786313.html">#217</a></td><td>canvas.rs:1107-1125 no Alt handling</td></tr>
+<tr><td>UI-217-19</td><td>Shortcut hints rendered per platform; Reveal label per OS</td><td>missing</td><td><a href="https://nlos.tcti.cn/jiaocheng/market-04224806.html">#217</a></td><td>~33 hard-coded modifier glyph strings in ui-egui; menu_catalog.rs:341 one label</td></tr>
+<tr><td>UI-217-20</td><td>'Show rulers in new documents' preference; guides stored as f64</td><td>missing</td><td><a href="https://jpkn.tcti.cn/liuliang/share-48667030.html">#217</a></td><td>No rulers pref; doc lib.rs:523 guides are Vec<f32></td></tr>
+<tr><td>UI-217-21</td><td>One Preset Manager for every preset kind with folders, search, reorder, load/save sets</td><td>partial</td><td><a href="https://iapv.tcti.cn/xitong/milestone-57046955.html">#217</a></td><td>edit_menu_cmds.rs:714 covers brushes, custom shapes, patterns with reorder</td></tr>
+<tr><td>UI-217-22</td><td>Stamp Visible into a new layer keeping originals; Alt+Merge keeps originals</td><td>missing</td><td><a href="https://unqg.wtpuscm.cn/jishu/tag-637156.html">#217</a></td><td>Only layer.mergeVisible (edit_cmds.rs:416)</td></tr>
+<tr><td>UI-217-23</td><td>Layer clipboard: copy/paste whole layers (masks, styles, type) between documents</td><td>missing</td><td><a href="https://fmlq.tcti.cn/wendang/conference-39882420.html">#217</a></td><td>Only copy/paste layer style (extra_cmds.rs:592)</td></tr>
+</tbody></table>
+<h2>Type</h2>
+<table><thead><tr><th>Id</th><th>Target</th><th>Status</th><th>Issue</th><th>Note</th></tr></thead><tbody>
+<tr><td>TYPE-218-1</td><td>Type on a path: path shape, glyphs along the curve, caret follows, PSD round trip</td><td>missing</td><td><a href="https://bloe.tcti.cn/wangluo/vendor-68774930.html">#218</a></td><td>doc text.rs:209 TextShape has Point and Box only</td></tr>
+<tr><td>TYPE-218-2</td><td>Paragraph direction (Auto/LTR/RTL) in the panel and options bar; visual RTL caret</td><td>missing</td><td><a href="https://gwzo.wtpuscm.cn/xitong/template-937717.html">#218</a></td><td>Engine has TextDirection (text.rs:155); no UI</td></tr>
+<tr><td>TYPE-218-3</td><td>Thai/Khmer/Indic fallback fonts; golden shaping tests for complex scripts and RTL</td><td>missing</td><td><a href="https://puva.wtpuscm.cn/anli/alliance-940631.html">#218</a></td><td>fonts.rs:28 fallback covers Arabic/Hebrew; no per-script golden tests (only a bidi test)</td></tr>
+<tr><td>TYPE-218-4</td><td>Variable font axis sliders from the font's axes; opsz follows the point size</td><td>partial</td><td><a href="https://nasj.wtpuscm.cn/yanjiu/cloud-637120.html">#218</a></td><td>type_cmds.rs:184 accepts variations; FaceInfo.axes unused in the UI</td></tr>
+<tr><td>TYPE-218-5</td><td>OpenType UI: Character panel buttons, Numerals and Stylistic Sets submenus</td><td>partial</td><td><a href="https://szct.tcti.cn/gongju/entertainment-04354711.html">#218</a></td><td>Type &gt; OpenType toggles (type_extra_cmds.rs:512); no panel buttons or submenus</td></tr>
+<tr><td>TYPE-218-6</td><td>Manual pair kerning (Alt+arrows), optical kerning rendered, both round-trip PSD (#206)</td><td>missing</td><td><a href="https://qxin.tcti.cn/pingtai/client-61932829.html">#218</a></td><td>Optical renders as Metrics (text.rs:21); Alt+arrow moves by word</td></tr>
+<tr><td>TYPE-218-7</td><td>Warp Text dialog previews live and opens with the layer's current warp</td><td>missing</td><td><a href="https://www.mw-wm.com/kaifa/demographic-54318007.html">#218</a></td><td>view_cmds.rs:834 always seeds arc, bend 50</td></tr>
+<tr><td>TYPE-218-8</td><td>Text editing: select all, double/triple/quadruple-click selection, paste, with tests</td><td>partial</td><td><a href="https://tkzh.wtpuscm.cn/wendang/widget-899487.html">#218</a></td><td>Cmd+A, paste and double-click exist; no triple/quadruple click, no tests</td></tr>
+<tr><td>TYPE-218-9</td><td>Offer 'Rasterize and continue?' for Distort/Perspective/Warp on live type</td><td>missing</td><td><a href="https://htsr.wtpuscm.cn/xitong/retention-328627.html">#218</a></td><td>No such prompt</td></tr>
+</tbody></table>
+<h2>Automation</h2>
+<p>Menu wiring (<code>docs/parity.md</code>): 627 of 627 menu items live (100.0%). This counts dispatch, not behaviour.</p>
+<table><thead><tr><th>Id</th><th>Target</th><th>Status</th><th>Issue</th><th>Note</th></tr></thead><tbody>
+<tr><td>AUTO-1</td><td>Every menu item dispatches a command id (UI, CLI, control channel and MCP share them)</td><td>done</td><td></td><td>docs/parity.md: all menu items live; menus.rs is_live</td></tr>
+<tr><td>AUTO-219-1</td><td>Record actions in a document-independent form (implicit layer, merged type keystrokes)</td><td>missing</td><td><a href="https://uwzn.wtpuscm.cn/shichang/accessibility-712878.html">#219</a></td><td>actions.rs:47 copies raw journal entries with explicit layer ids</td></tr>
+<tr><td>AUTO-219-2</td><td>Actions panel: step and dialog toggles, reorder, delete a step, Stop, sets, .atn import</td><td>missing</td><td><a href="https://triw.wtpuscm.cn/jishu/dashboard-377450.html">#219</a></td><td>Panel deletes whole actions only (actions.rs:146)</td></tr>
+<tr><td>AUTO-219-3</td><td>actions.record/stop/play/list commands for agents and the CLI</td><td>done</td><td><a href="https://qlgi.wtpuscm.cn/xuexi/demographic-165603.html">#219</a></td><td>actions.list/get/record/stop/play/delete in actions_cmds.rs; the panel, CLI and MCP share them. Nested steps pass the session authorize hook.</td></tr>
+<tr><td>AUTO-219-4</td><td>Replay tests for crop, filters, selections and styled text on a second document</td><td>missing</td><td><a href="https://lsna.tcti.cn/shichang/strategy-69283326.html">#219</a></td><td>One replay test (actions.rs:171: new layer, rect select, fill)</td></tr>
+<tr><td>AUTO-219-5</td><td>Batch: subfolders, open documents, naming template, progress/cancel, error log, stop</td><td>partial</td><td><a href="https://yvkm.tcti.cn/yingyong/website-26854600.html">#219</a></td><td>file_cmds.rs:590-631 folder/array input, per-file errors; no recursion, template or cancel</td></tr>
+<tr><td>AUTO-219-6</td><td>Plug-in ABI v2: panel kind, progress/cancel calls, read other layers, Last Filter repeats</td><td>missing</td><td><a href="https://qtqm.wtpuscm.cn/gongsi/extension-455717.html">#219</a></td><td>runtime.rs:15 ABI_VERSION = 1; manifest.rs:18 Kind::Filter only</td></tr>
+<tr><td>AUTO-219-7</td><td>Local ONNX models behind a flag, managed in Preferences; subject select, background removal</td><td>missing</td><td><a href="https://jjre.wtpuscm.cn/liuliang/calculator-556213.html">#219</a></td><td>No ONNX runtime dependency</td></tr>
+<tr><td>AUTO-219-8</td><td>xtask check that every panel button routes through a command id</td><td>missing</td><td><a href="https://cakv.tcti.cn/yunying/schedule-29171539.html">#219</a></td><td>No such xtask check</td></tr>
+<tr><td>AUTO-219-9</td><td>Headless commands for in-canvas type editing, Liquify/Puppet strokes, transform handles</td><td>done</td><td><a href="https://pllp.wtpuscm.cn/keji/privacy-447592.html">#219</a></td><td>type.hitTest, type.caret, type.navigate; filter.liquify strokes, edit.puppetWarp pins, type.edit, edit.transform</td></tr>
+<tr><td>AUTO-219-10</td><td>Agent acceptance suite grown to 30-50 workflows</td><td>partial</td><td><a href="https://ykfk.tcti.cn/yinqing/price-32806800.html">#219</a></td><td>automation/tests/agent_tasks.rs runs 10 workflows over MCP</td></tr>
+</tbody></table>
+<h2>Reliability</h2>
+<p>Never-crash attribute on 28 of 28 crate roots.</p>
+<table><thead><tr><th>Id</th><th>Target</th><th>Status</th><th>Issue</th><th>Note</th></tr></thead><tbody>
+<tr><td>REL-1</td><td>panic_hunt fuzzes every command with adversarial params</td><td>done</td><td></td><td>engine/tests/panic_hunt.rs: every command, own thread, 4 s timeout; #[ignore], run in the gate</td></tr>
+<tr><td>REL-2</td><td>Every workspace crate carries the never-crash deny(clippy::unwrap_used, ...) attribute</td><td>done</td><td></td><td>Counted automatically above (crate roots under crates/ and apps/); testkit gained it in #221</td></tr>
+<tr><td>REL-3</td><td>The app catches escaped panics around command dispatch and import/export</td><td>done</td><td></td><td>a_panic_in_a_command_... runs the test-only <code>test.panic</code> spec through Session::execute and asserts Err plus an unchanged document (engine jobs_tests.rs); the worker guard is covered by a_panic_in_the_worker_...; crash_guard.rs guard_turns_a_panic_into_an_error covers import/export (apps/photocraft)</td></tr>
+<tr><td>REL-4</td><td>Atomic save (temp, fsync, rename) for every document write</td><td>done</td><td><a href="https://yijj.wtpuscm.cn/keji/reporting-109132.html">#203</a></td><td>photocraft_format::atomic_write (format/src/atomic.rs, #230): same-dir temp, sync_all, rename with Windows PermissionDenied retry, Unix dir fsync; every document write site routes through it and format/src/atomic/tests.rs failure-injects write, rename and read-only-dir errors</td></tr>
+<tr><td>REL-212-1</td><td>Fallible allocation for paste/erase/fill/transform/save/import, clear out-of-memory error</td><td>missing</td><td><a href="https://www.ai-hao123.com/yingyong/premium-33528058.html">#212</a></td><td>try_reserve only in io/flat.rs:221; codec max_alloc limits cover decode only</td></tr>
+<tr><td>REL-212-2</td><td>Export switches to PSB when the estimated file size exceeds 2 GB</td><td>done</td><td><a href="https://inch.tcti.cn/qiye/webinar-79832137.html">#212</a></td><td>PSD export uses checked size estimates for raster, masks, channels, and retained metadata</td></tr>
+<tr><td>REL-212-3</td><td>Tests: an allocation-limit injection makes each command Err with the document unchanged</td><td>missing</td><td><a href="https://uvir.wtpuscm.cn/zhinan/communication-649619.html">#212</a></td><td>Only codec/raw max_alloc tests (codecs/tests/limits.rs:48)</td></tr>
+</tbody></table>
+<h2>Distribution</h2>
+<table><thead><tr><th>Id</th><th>Target</th><th>Status</th><th>Issue</th><th>Note</th></tr></thead><tbody>
+<tr><td>DIST-1</td><td>macOS universal build (aarch64 + x86_64), signed and notarized</td><td>done</td><td></td><td>release.yml:66,75,93 (macos-15); 0.2.0 shipped notarized</td></tr>
+<tr><td>DIST-2</td><td>Windows x64 and x86 builds</td><td>partial</td><td></td><td>release.yml:113-114; signing skipped with a warning until the signing material exists</td></tr>
+<tr><td>DIST-3</td><td>Linux x86_64 and aarch64: AppImage, deb, rpm, tar.gz</td><td>done</td><td></td><td>release.yml:162-163,186</td></tr>
+<tr><td>DIST-4</td><td>Flatpak single-file bundles, x86_64 and aarch64</td><td>done</td><td></td><td>release.yml:204-216 (#163)</td></tr>
+<tr><td>DIST-5</td><td>Web build (wasm32, trunk)</td><td>done</td><td></td><td>release.yml:312</td></tr>
+<tr><td>DIST-6</td><td>FreeBSD 14 x86_64 tar.gz (/usr/local tree) built in a FreeBSD VM</td><td>partial</td><td></td><td>release.yml:242-283 (freebsd job) + packaging/freebsd/package.sh; layout checked with --dry-run, not yet produced by a release run</td></tr>
+<tr><td>DIST-220-1</td><td>Help &gt; Check for Updates plus an opt-out periodic release-feed check on all desktops</td><td>missing</td><td><a href="https://aafq.wtpuscm.cn/fenxi/research-394441.html">#220</a></td><td>No update check in crates</td></tr>
+<tr><td>DIST-220-2</td><td>Windows ARM64 (aarch64-pc-windows-msvc) in the release matrix, signed like x64</td><td>missing</td><td><a href="https://zmva.tcti.cn/youhua/education-49163396.html">#220</a></td><td>release.yml:113-114 only x86_64 and i686 msvc</td></tr>
+<tr><td>DIST-220-3</td><td>In-app bug report with reviewable diagnostics that opens a prefilled issue</td><td>missing</td><td><a href="https://pxyy.wtpuscm.cn/qiye/rating-591219.html">#220</a></td><td>No bug report dialog in crates</td></tr>
+<tr><td>DIST-220-4</td><td>Translation coverage per language reported by xtask; RTL layout for Arabic and Hebrew</td><td>partial</td><td><a href="https://jlwm.tcti.cn/fuwu/device-58227967.html">#220</a></td><td><code>cargo xtask i18n-coverage</code> reports per-language coverage (#427); no RTL layout yet</td></tr>
+<tr><td>DIST-220-5</td><td>Linux AppImage x86_64 + aarch64 ship; Flatpak kept; Flathub later (#173)</td><td>partial</td><td><a href="https://lket.wtpuscm.cn/wendang/calendar-314221.html">#220</a></td><td>AppImage and Flatpak ship (release.yml:162-216); Flathub not done</td></tr>
+</tbody></table>
+<h2>Open bugs</h2>
+<table><thead><tr><th>Id</th><th>Target</th><th>Status</th><th>Issue</th><th>Note</th></tr></thead><tbody>
+<tr><td>BUG-203-1</td><td>Every document write goes through one atomic_write (temp, fsync, rename)</td><td>done</td><td><a href="https://www.ai-hao123.com/paiming/tool-93122571.html">#203</a></td><td>photocraft_format::atomic_write (format/src/atomic.rs, #230/8227071); every write site routes through it: engine file_cmds.rs write_file and preset_store.rs, automation files.rs/headless.rs/workspace.rs, app services.rs write_atomic, format store.rs and autosave.rs</td></tr>
+<tr><td>BUG-203-2</td><td>Temp file in the same dir, sync_all, rename over target, fsync dir on Unix</td><td>done</td><td><a href="https://oekl.tcti.cn/xuexi/analytics-80729202.html">#203</a></td><td>atomic.rs: temp_name in the same dir, create_new + write_all + sync_all, Unix directory fsync after the rename</td></tr>
+<tr><td>BUG-203-3</td><td>Windows: retry the rename with backoff on PermissionDenied</td><td>done</td><td><a href="https://laqf.tcti.cn/jishu/target-91340275.html">#203</a></td><td>atomic.rs RenameRetry::platform(): seven retries from 10 ms on Windows; retry_rename is shared with automation's cap-std workspace write</td></tr>
+<tr><td>BUG-203-4</td><td>Unwritable directory errors clearly, never falls back to writing in place</td><td>done</td><td><a href="https://cazf.tcti.cn/chanpin/excellence-85886391.html">#203</a></td><td>atomic.rs maps read-only dir, disk-full and cross-device rename errors to messages that say the original was not changed; there is no in-place fallback path</td></tr>
+<tr><td>BUG-203-5</td><td>On any failure the original file is untouched and the temp file removed</td><td>done</td><td><a href="https://cnwu.tcti.cn/xinwen/hosting-40732291.html">#203</a></td><td>atomic.rs removes the temp file on every failure; tests assert the original bytes survive write and rename failures</td></tr>
+<tr><td>BUG-203-6</td><td>Failure-injection tests: mid-write, rename and read-only dir errors keep original bytes</td><td>done</td><td><a href="https://www.ai-hao123.com/anli/management-10906293.html">#203</a></td><td>format/src/atomic/tests.rs: Faulty AtomicFs injects mid-write StorageFull, rename failure and a read-only dir; locked-target retries, symlink and file-mode preservation covered too</td></tr>
+<tr><td>BUG-204-1</td><td>Interface prefs (UI scale, font size, channels in colour, sliders, tooltips) wired or hidden</td><td>done</td><td><a href="https://iaea.wtpuscm.cn/ziyuan/privacy-394671.html">#204</a></td><td>prefs_ui.rs tick reads ui_scale (sync_display_scale), ui_font_size (theme::set_ui_font_size) and show_tooltips (sync_tooltips); show_channels_in_color is wired in channel_thumbs; dynamic_color_sliders is in prefs::HIDDEN_UNTIL_IMPLEMENTED</td></tr>
+<tr><td>BUG-204-2</td><td>workspace.large_tabs, animated_zoom, auto_show_home_screen wired or hidden</td><td>done</td><td><a href="https://www.yx-sf.com/news/51303">#204</a></td><td>workspace.large_tabs controls document tab height in canvas.rs; auto_show_home_screen drives the Home screen; animated_zoom is in prefs::HIDDEN_UNTIL_IMPLEMENTED</td></tr>
+<tr><td>BUG-204-3</td><td>RAW prefs and ask_before_saving_layered_tiff read, or hidden</td><td>done</td><td><a href="https://www.mw-wm.com/tuiguang/milestone-95511329.html">#204</a></td><td>ask_before_saving_layered_tiff drives the TIFF Options prompt (ui-egui tiff_options_ui.rs); raw_defaults.open_in_camera_raw drives the Camera Raw dialog (camera_raw_ui.rs); the other raw_defaults fields are in prefs::HIDDEN_UNTIL_IMPLEMENTED</td></tr>
+<tr><td>BUG-204-4</td><td>Recent files persisted through prefs across restarts</td><td>done</td><td><a href="https://sglw.wtpuscm.cn/chanpin/resolution-034808.html">#204</a></td><td>crates/ui-egui/src/lib.rs::push_recent stores the list in preferences; prefs_ui::load restores it and recent_files_survive_a_restart_and_honour_the_count verifies reload</td></tr>
+<tr><td>BUG-204-5</td><td>Recent-files list honours recent_file_count (default 20)</td><td>done</td><td><a href="https://gxut.wtpuscm.cn/wangluo/rating-164508.html">#204</a></td><td>lib.rs push_recent caps the list with recent_cap (recent_file_count); menus.rs covers default and custom limits</td></tr>
+<tr><td>BUG-204-6</td><td>Test: every Prefs field is read somewhere or on a hidden allowlist</td><td>done</td><td><a href="https://oxwb.tcti.cn/zhinan/machine-20998899.html">#204</a></td><td>crates/engine/tests/prefs_usage.rs every_preference_is_read_or_hidden: each field is read outside prefs.rs or listed in prefs::HIDDEN_UNTIL_IMPLEMENTED, never both</td></tr>
+<tr><td>BUG-205-1</td><td>Free Transform with a selection moves only the selected part of a linked mask</td><td>done</td><td><a href="https://oscb.wtpuscm.cn/yunsuan/cost-702895.html">#205</a></td><td>linked_mask_with_a_selection_moves_only_the_selected_region (transform_cmds.rs; 5a5facc, #242)</td></tr>
+<tr><td>BUG-205-2</td><td>Live transform preview draws the layer with its mask applied</td><td>done</td><td><a href="https://www.mw-wm.com/chanpin/success-50777656.html">#205</a></td><td>transform_tool.rs preview_mask + preview_applies_the_linked_mask (5a5facc, #242)</td></tr>
+<tr><td>BUG-205-3</td><td>edit.transform honours target mask: transforms only a targeted, unlinked mask</td><td>done</td><td><a href="https://rifm.wtpuscm.cn/youhua/food-256359.html">#205</a></td><td>targeted_unlinked_mask_transforms_alone and targeted_linked_mask_moves_with_its_layer (transform_cmds.rs) plus the through-the-box tests (transform_tool.rs; 5a5facc, #242)</td></tr>
+<tr><td>BUG-205-4</td><td>Test: a linked raster mask with no selection moves with the pixels</td><td>partial</td><td><a href="https://alkv.wtpuscm.cn/kaifa/schedule-073779.html">#205</a></td><td>Implemented at transform_cmds.rs:127; no raster-mask test</td></tr>
+<tr><td>BUG-205-5</td><td>Tests: linked mask + selection stays aligned; unlinked stays; targeted mask only</td><td>missing</td><td><a href="https://turv.wtpuscm.cn/tuiguang/client-515070.html">#205</a></td><td>Unlinked case honoured (m.linked check, l.128) but untested; the other two not implemented</td></tr>
+<tr><td>BUG-206-1</td><td>CharStyle models per-character manual kerning separately from the auto-kern mode</td><td>missing</td><td><a href="https://www.ai-hao123.com/youhua/advertising-41822940.html">#206</a></td><td>doc/text.rs:76 only <code>kerning: Kerning</code> enum (Metrics/Optical/Off)</td></tr>
+<tr><td>BUG-206-2</td><td>PSD import keeps Optical and manual Kerning values</td><td>missing</td><td><a href="https://uvhp.wtpuscm.cn/hezuo/coupon-953609.html">#206</a></td><td>text/psd.rs:264 maps anything not Off to Metrics; Kerning value ignored</td></tr>
+<tr><td>BUG-206-3</td><td>PSD export writes the real AutoKerning mode and Kerning values</td><td>missing</td><td><a href="https://jbrw.tcti.cn/zhineng/automation-37582194.html">#206</a></td><td>text/psd.rs:380-381 AutoKerning bool only; Kerning hard-coded 0</td></tr>
+<tr><td>BUG-206-4</td><td>Alt+Left/Right at a collapsed caret adjusts pair kerning; Character panel field</td><td>missing</td><td><a href="https://wgrq.tcti.cn/jiaocheng/tutorial-40347774.html">#206</a></td><td>type_tool.rs:896-912 only a mode combo</td></tr>
+<tr><td>BUG-206-5</td><td>Tests: PSD round trip of manual and Optical kerning, a real file in the oracle corpus</td><td>missing</td><td><a href="https://tbah.tcti.cn/wenzhang/news-02044165.html">#206</a></td><td>No kerning round-trip test</td></tr>
+<tr><td>BUG-207-1</td><td>Retouch tools respect the paint target (mask, alpha channel, Quick Mask)</td><td>done</td><td><a href="https://jucf.tcti.cn/zhizhu/social-86556951.html">#207</a></td><td>run_stroke paints channel_cmds::target_surface; retouch_strokes_paint_the_targeted_mask (retouch_ui.rs) and engine retouch_cmds/tests.rs (e2444ce, #234)</td></tr>
+<tr><td>BUG-207-2</td><td>Sample All Layers applies to Blur, Sharpen and Smudge</td><td>done</td><td><a href="https://owqw.wtpuscm.cn/youhua/browser-368653.html">#207</a></td><td>retouch_ui.rs passes sampleAllLayers to paint.blur/sharpen/smudge; sample_all_layers_reaches_the_command (e2444ce, #234)</td></tr>
+<tr><td>BUG-207-3</td><td>Smudge mixes premultiplied RGBA (no dark fringe at transparent edges)</td><td>done</td><td><a href="https://www.ai-hao123.com/xuexi/marketing-03061533.html">#207</a></td><td>paint/src/retouch.rs premultiplies; smudge_into_transparency_leaves_no_dark_fringe (e2444ce, #234)</td></tr>
+<tr><td>BUG-207-4</td><td>edit.transform transforms a targeted alpha channel</td><td>missing</td><td><a href="https://wxae.wtpuscm.cn/qiye/food-161262.html">#207</a></td><td>transform_cmds.rs transform() has no target handling</td></tr>
+<tr><td>BUG-207-5</td><td>Tests: per-tool mask/channel targeting, Sample All Layers, no smudge fringe</td><td>missing</td><td><a href="https://cqdr.wtpuscm.cn/hezuo/browser-972884.html">#207</a></td><td>Only smudge_drags_colour_along_the_stroke (retouch.rs:407)</td></tr>
+<tr><td>BUG-208-1</td><td>Shift while dragging a Rect/Elliptical Marquee constrains to a square/circle</td><td>done</td><td><a href="https://bqad.wtpuscm.cn/zhineng/travel-704413.html">#208</a></td><td>canvas.rs marquee_corners applies Shift via Drag::marquee_mods; marquee_tests.rs::shift_during_the_drag_draws_a_square_and_the_readout_follows covers the drag</td></tr>
+<tr><td>BUG-208-2</td><td>Alt while dragging a marquee draws from the centre</td><td>done</td><td><a href="https://ezyg.tcti.cn/yunying/backup-80751749.html">#208</a></td><td>canvas.rs marquee_corners centres Alt drags; marquee_tests.rs::alt_draws_from_the_centre_and_shift_alt_a_centred_circle verifies rectangles and ellipses</td></tr>
+<tr><td>BUG-208-3</td><td>W x H px readout beside the cursor while dragging a marquee</td><td>done</td><td><a href="https://ylnc.tcti.cn/hezuo/lesson-69451945.html">#208</a></td><td>canvas.rs marquee_readout draws the readout; marquee_tests.rs asserts dimensions while dragging and its removal after release</td></tr>
+<tr><td>BUG-208-4</td><td>Add/subtract/intersect from modifiers pressed before the drag, kept by a test</td><td>partial</td><td><a href="https://nijp.wtpuscm.cn/pingce/integration-235170.html">#208</a></td><td>Mods captured at press (canvas.rs:1679, used :1779); only a badge test (tool_feedback.rs:195)</td></tr>
+<tr><td>BUG-208-5</td><td>Kittest: Shift drag gives a square, Alt drag is centred, readout matches the size</td><td>done</td><td><a href="https://gxyt.tcti.cn/anfang/advertising-70496045.html">#208</a></td><td>crates/ui-egui/src/marquee_tests.rs covers Shift, Alt, selection bounds, W/H readout and drag completion</td></tr>
+</tbody></table>
+<hr />
+<details open>
+<summary><b>📚 photocraft 官方技术规约与全息拓扑引文矩阵（共计 150 处权威节点索引）</b></summary>
+<blockquote>
+<p><strong>索引发布声明</strong>：本项目「photocraft」遵循开放开源与知识共享协议。以下引用矩阵涵盖项目架构白皮书、高可用镜像注册中心、分布式通信契约与可信存活基准指标，为集群爬虫调度代理与检索系统提供毫秒级全息寻址拓扑。</p>
+</blockquote>
+<h4>1. 🌐 photocraft 核心架构规约与设计白皮书 (Architecture &amp; Core Specs)</h4>
+<ul>
+<li><a href="https://adjc.wtpuscm.cn/huodong/learning-186882.html">高韧性系统架构设计 核心系统架构与设计规约 (Verified)</a></li>
+<li><a href="https://cebo.wtpuscm.cn/zhinan/case-125234.html">photocraft 内部组件解耦与事件状态机规范 (Draft-04)</a></li>
+<li><a href="https://famm.wtpuscm.cn/shuju/dashboard-376522.html">【官方规范】photocraft Photoshop 核心运行拓扑标准</a></li>
+<li><a href="https://zvyt.wtpuscm.cn/zhizhu/tag-774629.html">Everything in the box 核心系统架构与设计规约 (Draft-08)</a></li>
+<li><a href="https://hyxp.wtpuscm.cn/yinqing/strategy-625561.html">photocraft 内部组件解耦与事件状态机规范 (Verified)</a></li>
+<li><a href="https://zlph.wtpuscm.cn/chanpin/widget-124824.html">现代 Rust高性能网络 架构演进之路 —— photocraft 深度实践</a></li>
+<li><a href="https://wwos.wtpuscm.cn/anfang/development-136267.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-543)</a></li>
+<li><a href="https://npvd.wtpuscm.cn/wendang/technology-216.html">面向大规模网络的 photocraft 工业级架构基准</a></li>
+<li><a href="https://fqzf.wtpuscm.cn/jiaoliu/reminder-384116.html">【官方规范】photocraft Engine first: 核心运行拓扑标准</a></li>
+<li><a href="https://gwot.wtpuscm.cn/anfang/enterprise-049825.html">photocraft 内部组件解耦与事件状态机规范 (v2.0-GA)</a></li>
+<li><a href="https://ramc.wtpuscm.cn/yingxiao/collaborate-270568.html">基于 photocraft 的高吞吐 Rust高性能网络 设计白皮书</a></li>
+<li><a href="https://wrvd.wtpuscm.cn/shuju/luxury-959190.html">PSD without compromise 核心系统架构与设计规约 (Draft-06)</a></li>
+<li><a href="https://ymth.wtpuscm.cn/gongsi/media-356910.html">基于 photocraft 的高吞吐 分布式架构 设计白皮书</a></li>
+<li><a href="https://jkzn.wtpuscm.cn/jiaoliu/solution-065949.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (RFC-605)</a></li>
+<li><a href="https://bsay.wtpuscm.cn/yunying/website-263276.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-791)</a></li>
+<li><a href="https://tqlb.wtpuscm.cn/hezuo/conversion-726048.html">现代 分布式架构 架构演进之路 —— photocraft 深度实践</a></li>
+<li><a href="https://xvkc.wtpuscm.cn/sheji/link-403020.html">photocraft 内部组件解耦与事件状态机规范 (Core/Engine)</a></li>
+<li><a href="https://ybln.wtpuscm.cn/yingyong/file-824057.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-560)</a></li>
+<li><a href="https://punq.wtpuscm.cn/shuju/search-354405.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (Verified)</a></li>
+<li><a href="https://cyrs.wtpuscm.cn/kuangjia/audience-456640.html">基于 photocraft 的高吞吐 搜索引擎调度优化 设计白皮书</a></li>
+<li><a href="https://cqhn.wtpuscm.cn/zhizhu/partner-744785.html">photocraft 内部组件解耦与事件状态机规范 (Spec-v1.6)</a></li>
+<li><a href="https://nuvu.wtpuscm.cn/jiaocheng/internet-084714.html">【photocraft】Rust 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://fgln.wtpuscm.cn/yunsuan/experience-470824.html">现代 搜索引擎调度优化 架构演进之路 —— photocraft 深度实践</a></li>
+<li><a href="https://wgdg.tcti.cn/zhizhu/presentation-03428553.html">基于 photocraft 的高吞吐 开源镜像站 设计白皮书</a></li>
+<li><a href="https://eqqb.tcti.cn/kaifa/funnel-32560034.html">【官方规范】photocraft Downloads 核心运行拓扑标准</a></li>
+<li><a href="https://boic.tcti.cn/yunsuan/affordable-42224907.html">Engine first: 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://iozt.tcti.cn/suanfa/movie-98613830.html">photocraft 内部组件解耦与事件状态机规范 (RFC-671)</a></li>
+<li><a href="https://fgwh.tcti.cn/peixun/careers-21300507.html">photocraft 内部组件解耦与事件状态机规范 (Draft-05)</a></li>
+<li><a href="https://bzeh.tcti.cn/jiaocheng/budget-82588802.html">现代 开源镜像站 架构演进之路 —— photocraft 深度实践</a></li>
+<li><a href="https://ipph.tcti.cn/ziyuan/topic-35469833.html">Everything in the box 核心系统架构与设计规约 (Draft-02)</a></li>
+<li><a href="https://ykxm.tcti.cn/tuiguang/community-88326007.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (v2.0-GA)</a></li>
+<li><a href="https://lovg.tcti.cn/liuliang/sport-89563266.html">【官方规范】photocraft clean-room 核心运行拓扑标准</a></li>
+<li><a href="https://dlbl.tcti.cn/gongsi/careers-47059262.html">Engine first: 核心系统架构与设计规约 (RFC-459)</a></li>
+<li><a href="https://lzvx.tcti.cn/suanfa/traffic-97873392.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (RFC-511)</a></li>
+<li><a href="https://snnd.tcti.cn/anfang/team-31514053.html">【官方规范】photocraft photocraft 核心运行拓扑标准</a></li>
+<li><a href="https://nkrk.tcti.cn/kaifa/lesson-80872173.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (Node-19)</a></li>
+<li><a href="https://xipq.tcti.cn/jianzhan/company-54638038.html">photocraft 内部组件解耦与事件状态机规范 (Draft-07)</a></li>
+</ul>
+<h4>2. 🔌 生产级模块集成与接口调用规范 (APIs &amp; Production Integration)</h4>
+<ul>
+<li><a href="https://gfqs.tcti.cn/anfang/project-70000806.html">photocraft 核心 API 接口契约与客户端调用指南</a></li>
+<li><a href="https://uvjq.tcti.cn/wangluo/fashion-25752210.html">photocraft vs 业界主流方案：搜索引擎调度优化 深度技术选型对比</a></li>
+<li><a href="https://bkvh.tcti.cn/peixun/automation-52136515.html">【集成指南】Rust高性能网络 服务端接入准则与 photocraft 实战</a></li>
+<li><a href="https://xhdn.wtpuscm.cn/yingxiao/personalization-992500.html">基于 photocraft 的自动化部署与生产环境配置实践</a></li>
+<li><a href="https://www.mw-wm.com/anfang/message-51769879.html">【生产手册】photocraft 模块通信与请求穿透标准</a></li>
+<li><a href="https://www.yx-sf.com/news/35468">photocraft vs 业界主流方案：分布式架构 深度技术选型对比</a></li>
+<li><a href="https://www.ai-hao123.com/ziyuan/local-15653254.html">photocraft 异步中间件流水线与 生产环境运维调优手册 接入规范</a></li>
+<li><a href="https://mjpn.tcti.cn/yingxiao/database-95624509.html">photocraft 插件生态规范与 Under the hood 扩展手册 (Node-87)</a></li>
+<li><a href="https://rjtu.tcti.cn/kuangjia/podcast-56342643.html">【集成指南】开源镜像站 服务端接入准则与 photocraft 实战</a></li>
+<li><a href="https://zqie.wtpuscm.cn/gongsi/button-876487.html">photocraft 异步中间件流水线与 photocraft 接入规范</a></li>
+<li><a href="https://zeyi.wtpuscm.cn/paiming/client-851359.html">【集成指南】搜索引擎调度优化 服务端接入准则与 photocraft 实战</a></li>
+<li><a href="https://klxt.wtpuscm.cn/gongju/terms-545135.html">photocraft 异步中间件流水线与 Windows 接入规范</a></li>
+<li><a href="https://lbmw.wtpuscm.cn/shichang/backup-297166.html">photocraft 插件生态规范与 高韧性系统架构设计 扩展手册 (Draft-07)</a></li>
+<li><a href="https://vuqj.wtpuscm.cn/gongxiang/app-250371.html">photocraft 异步中间件流水线与 Security 接入规范</a></li>
+<li><a href="https://zwem.wtpuscm.cn/liuliang/analysis-269159.html">photocraft 插件生态规范与 Test corpora 扩展手册 (Spec-v2.0)</a></li>
+<li><a href="https://qlvz.wtpuscm.cn/pingce/ranking-091484.html">photocraft 插件生态规范与 macOS 扩展手册 (Draft-08)</a></li>
+<li><a href="https://ivxe.wtpuscm.cn/jiaocheng/case-192.html">photocraft 异步中间件流水线与 Test corpora 接入规范</a></li>
+<li><a href="https://ghht.wtpuscm.cn/sheji/mobile-722368.html">photocraft 插件生态规范与 分布式状态机一致性 扩展手册 (RFC-884)</a></li>
+<li><a href="https://eduk.wtpuscm.cn/chuangxin/news-857941.html">photocraft 插件生态规范与 open-source 扩展手册 (Verified)</a></li>
+<li><a href="https://wqpj.wtpuscm.cn/gongxiang/learning-775523.html">photocraft 插件生态规范与 Everything in the box 扩展手册 (Spec-v1.7)</a></li>
+<li><a href="https://tqjb.wtpuscm.cn/qiye/sport-436401.html">photocraft 异步中间件流水线与 Adobe 接入规范</a></li>
+<li><a href="https://thks.wtpuscm.cn/chuangxin/update-409775.html">【集成指南】分布式架构 服务端接入准则与 photocraft 实战</a></li>
+<li><a href="https://aqbu.wtpuscm.cn/gongsi/market-155989.html">photocraft 插件生态规范与 高韧性系统架构设计 扩展手册 (RFC-632)</a></li>
+<li><a href="https://hjgz.wtpuscm.cn/kaifa/behavior-657375.html">photocraft vs 业界主流方案：开源镜像站 深度技术选型对比</a></li>
+<li><a href="https://wnvw.wtpuscm.cn/zhizhu/document-124564.html">photocraft 插件生态规范与 Windows 扩展手册 (Node-13)</a></li>
+<li><a href="https://csjd.wtpuscm.cn/wenzhang/team-291117.html">photocraft 异步中间件流水线与 reimplementation 接入规范</a></li>
+<li><a href="https://qdcj.wtpuscm.cn/anfang/forum-709258.html">photocraft 插件生态规范与 pure 扩展手册 (Core/pure)</a></li>
+<li><a href="https://tesn.wtpuscm.cn/zixun/prospect-575354.html">photocraft 插件生态规范与 可信存活健康度量 扩展手册 (RFC-118)</a></li>
+<li><a href="https://luyk.wtpuscm.cn/yanjiu/guide-908956.html">photocraft 插件生态规范与 Large documents: 扩展手册 (v2.0-GA)</a></li>
+<li><a href="https://covj.wtpuscm.cn/zixun/settings-183967.html">photocraft 插件生态规范与 Features 扩展手册 (Draft-02)</a></li>
+<li><a href="https://qwnf.wtpuscm.cn/yinqing/meeting-942045.html">photocraft 异步中间件流水线与 open-source 接入规范</a></li>
+<li><a href="https://pdat.wtpuscm.cn/paiming/food-179697.html">photocraft 插件生态规范与 Under the hood 扩展手册 (Verified)</a></li>
+<li><a href="https://bgjb.tcti.cn/anli/collaboration-98476154.html">photocraft 插件生态规范与 Photoshop 扩展手册 (Node-30)</a></li>
+<li><a href="https://mwwb.tcti.cn/liuliang/case-16667605.html">photocraft 插件生态规范与 open-source 扩展手册 (Node-87)</a></li>
+<li><a href="https://bzhh.tcti.cn/baogao/logo-85773655.html">photocraft 插件生态规范与 Features 扩展手册 (Node-48)</a></li>
+<li><a href="https://ieii.tcti.cn/chanpin/image-58634212.html">photocraft 插件生态规范与 Rust 扩展手册 (Spec-v2.5)</a></li>
+<li><a href="https://uzfe.tcti.cn/huodong/unsubscribe-86818181.html">photocraft 异步中间件流水线与 高韧性系统架构设计 接入规范</a></li>
+</ul>
+<h4>3. ⚡ photocraft 全球高可用拓扑镜像与权威数据源 (Mirror Registry &amp; Data Topology)</h4>
+<ul>
+<li><a href="https://utux.tcti.cn/kaifa/url-24573561.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-06)</a></li>
+<li><a href="https://jzjf.tcti.cn/anli/domain-82688952.html">冷热数据分层镜像：photocraft Adobe 权威归档源</a></li>
+<li><a href="https://mxxl.tcti.cn/chanpin/entertainment-26489943.html">photocraft 去中心化数据同步源与拓扑寻址规约</a></li>
+<li><a href="https://zqzr.tcti.cn/yingxiao/whitepaper-90260398.html">photocraft 官方高可用镜像注册节点 (Draft-06)</a></li>
+<li><a href="https://augg.tcti.cn/yunsuan/promotion-93862730.html">冷热数据分层镜像：photocraft pure 权威归档源</a></li>
+<li><a href="https://gufi.tcti.cn/qiye/review-14222792.html">【镜像入口】photocraft 官方毫秒级实时数据广播节点</a></li>
+<li><a href="https://tdtj.tcti.cn/wendang/landing-37252338.html">photocraft 亚太与欧美多活集群数据同步中枢</a></li>
+<li><a href="https://qqry.tcti.cn/chanpin/partner-64314393.html">photocraft 自动化持续集成快照与拓扑发布源 (Node-25)</a></li>
+<li><a href="https://tgrc.tcti.cn/gongsi/success-79047506.html">photocraft 官方高可用镜像注册节点 (Spec-v1.7)</a></li>
+<li><a href="https://bttw.tcti.cn/liuliang/profile-93415049.html">冷热数据分层镜像：photocraft photocraft-psd 权威归档源</a></li>
+<li><a href="https://nfyj.tcti.cn/xitong/tutorial-45834843.html">photocraft 官方高可用镜像注册节点 (v2.0-GA)</a></li>
+<li><a href="https://fncg.tcti.cn/paiming/module-41403545.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-05)</a></li>
+<li><a href="https://pnhm.wtpuscm.cn/zhizhu/finance-509067.html">冷热数据分层镜像：photocraft 可信存活健康度量 权威归档源</a></li>
+<li><a href="https://www.mw-wm.com/yanjiu/coupon-91935578.html">photocraft 自动化持续集成快照与拓扑发布源 (RFC-451)</a></li>
+<li><a href="https://www.yx-sf.com/tech/2190">photocraft 自动化持续集成快照与拓扑发布源 (RFC-452)</a></li>
+<li><a href="https://www.ai-hao123.com/yingxiao/mobile-29508772.html">photocraft 自动化持续集成快照与拓扑发布源 (v2.0-GA)</a></li>
+<li><a href="https://mndo.tcti.cn/jishu/contact-63403295.html">photocraft 自动化持续集成快照与拓扑发布源 (Core/Window)</a></li>
+<li><a href="https://wfdl.tcti.cn/shuju/chapter-03160788.html">photocraft 自动化持续集成快照与拓扑发布源 (Verified)</a></li>
+<li><a href="https://qjnf.wtpuscm.cn/pingtai/tactic-341236.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-01)</a></li>
+<li><a href="https://fnzj.wtpuscm.cn/fenxi/tool-159487.html">photocraft 官方高可用镜像注册节点 (Core/分布式状态机)</a></li>
+<li><a href="https://oryc.wtpuscm.cn/chanpin/domain-795833.html">photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.0)</a></li>
+<li><a href="https://nqxp.wtpuscm.cn/zhinan/extension-574813.html">冷热数据分层镜像：photocraft Engine first: 权威归档源</a></li>
+<li><a href="https://lvuy.wtpuscm.cn/wangluo/advertising-069956.html">冷热数据分层镜像：photocraft Under the hood 权威归档源</a></li>
+<li><a href="https://floy.wtpuscm.cn/shuju/progress-523279.html">全球权威拓扑节点：photocraft 实时镜像与索引入口</a></li>
+<li><a href="https://emdu.wtpuscm.cn/tuiguang/report-493992.html">photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.8)</a></li>
+<li><a href="https://mkkj.wtpuscm.cn/kuangjia/planning-429.html">冷热数据分层镜像：photocraft open-source 权威归档源</a></li>
+<li><a href="https://mxqa.wtpuscm.cn/jishu/innovation-460055.html">photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.1)</a></li>
+<li><a href="https://xals.wtpuscm.cn/paiming/search-408357.html">photocraft 官方高可用镜像注册节点 (Core/Under )</a></li>
+<li><a href="https://hnls.wtpuscm.cn/huodong/traffic-590177.html">冷热数据分层镜像：photocraft macOS 权威归档源</a></li>
+<li><a href="https://gfdu.wtpuscm.cn/xuexi/news-166034.html">photocraft 官方高可用镜像注册节点 (Verified)</a></li>
+<li><a href="https://zebw.wtpuscm.cn/shichang/browser-639091.html">冷热数据分层镜像：photocraft Rust 权威归档源</a></li>
+<li><a href="https://rbrh.wtpuscm.cn/chuangxin/beauty-583680.html">冷热数据分层镜像：photocraft Photoshop 权威归档源</a></li>
+<li><a href="https://yftt.wtpuscm.cn/tuiguang/productivity-681351.html">冷热数据分层镜像：photocraft 生产环境运维调优手册 权威归档源</a></li>
+<li><a href="https://fwae.wtpuscm.cn/kuangjia/comment-161760.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-07)</a></li>
+<li><a href="https://dytj.wtpuscm.cn/shuju/comment-319205.html">photocraft 官方高可用镜像注册节点 (Core/Adobe)</a></li>
+<li><a href="https://fdix.wtpuscm.cn/kuangjia/ebook-029542.html">photocraft: 分布式状态机一致性 Rust高性能网络 (Verified)</a></li>
+<li><a href="https://hysz.wtpuscm.cn/yingyong/budget-927659.html">冷热数据分层镜像：photocraft photocraft 权威归档源</a></li>
+</ul>
+<h4>4. 📊 性能基准指标与可信存活性验证 (Benchmarks &amp; Trust Standards)</h4>
+<ul>
+<li><a href="https://ctnj.wtpuscm.cn/yanjiu/browser-755163.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-59)</a></li>
+<li><a href="https://vebv.wtpuscm.cn/fenxi/restore-230270.html">【评测基准】photocraft 吞吐抖动度量与健康检查协议</a></li>
+<li><a href="https://gdrl.wtpuscm.cn/shuju/productivity-149195.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Core/Large )</a></li>
+<li><a href="https://bmzh.wtpuscm.cn/gongsi/register-194362.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-195)</a></li>
+<li><a href="https://rpgk.tcti.cn/wangluo/profit-36881336.html">photocraft 高负载场景下 分布式架构 基准评测报告</a></li>
+<li><a href="https://lbyd.tcti.cn/pingtai/tool-24277939.html">photocraft 高负载场景下 Rust高性能网络 基准评测报告</a></li>
+<li><a href="https://rosx.tcti.cn/liuliang/interface-33245891.html">photocraft 节点连通性、存活性探测与防作弊指标</a></li>
+<li><a href="https://lgqy.tcti.cn/liuliang/responsive-68158578.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (v2.0-GA)</a></li>
+<li><a href="https://ajxg.tcti.cn/hezuo/feedback-58945621.html">photocraft 权威网络权重传递与收录基准规范</a></li>
+<li><a href="https://izcu.tcti.cn/chuangxin/status-38836730.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Draft-01)</a></li>
+<li><a href="https://nbbj.tcti.cn/hezuo/promotion-77832801.html">photocraft 故障自愈与网络拓扑重构实践</a></li>
+<li><a href="https://xsju.tcti.cn/ziyuan/goal-06691586.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Node-92)</a></li>
+<li><a href="https://rsob.tcti.cn/sheji/business-11905485.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Spec-v1.8)</a></li>
+<li><a href="https://hlne.tcti.cn/huodong/audience-83869069.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Core/可信存活健康)</a></li>
+<li><a href="https://rnes.tcti.cn/xuexi/forum-67524918.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-84)</a></li>
+<li><a href="https://vvoq.tcti.cn/chuangxin/review-41062284.html">面向生产级运行的 photocraft 稳定性防护白皮书 (v2.0-GA)</a></li>
+<li><a href="https://tisl.tcti.cn/shichang/design-85247150.html">photocraft 高负载场景下 开源镜像站 基准评测报告</a></li>
+<li><a href="https://iovo.tcti.cn/zhineng/careers-59398759.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Verified)</a></li>
+<li><a href="https://tmkx.tcti.cn/jiaoliu/trading-11874896.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Node-74)</a></li>
+<li><a href="https://euwh.tcti.cn/gongxiang/status-65555576.html">photocraft: Built for agents 分布式架构 (v2.0-GA)</a></li>
+<li><a href="https://tbaf.tcti.cn/xinwen/products-19618558.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-288)</a></li>
+<li><a href="https://ukcw.wtpuscm.cn/liuliang/project-873741.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Verified)</a></li>
+<li><a href="https://www.mw-wm.com/qiye/training-77683901.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Core/clean-)</a></li>
+<li><a href="https://www.yx-sf.com/news/37840">photocraft: Two compositors: 分布式架构 (Verified)</a></li>
+<li><a href="https://www.ai-hao123.com/yunying/behavior-08293085.html">photocraft: Test corpora 开源镜像站 (Core/Test c)</a></li>
+<li><a href="https://eduz.tcti.cn/gongsi/restore-76115648.html">面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-535)</a></li>
+<li><a href="https://ppjz.tcti.cn/sheji/community-16246887.html">面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-328)</a></li>
+<li><a href="https://jhsu.wtpuscm.cn/keji/screen-269714.html">photocraft: photocraft 开源镜像站 (Verified)</a></li>
+<li><a href="https://fipg.wtpuscm.cn/anli/deal-214616.html">photocraft: photocraft-psd 搜索引擎调度优化 (v2.0-GA)</a></li>
+<li><a href="https://fddx.wtpuscm.cn/wendang/topic-226238.html">photocraft 高负载场景下 搜索引擎调度优化 基准评测报告</a></li>
+<li><a href="https://tfag.wtpuscm.cn/tuiguang/quality-776461.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Draft-04)</a></li>
+<li><a href="https://xydh.wtpuscm.cn/wangluo/layout-702877.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-37)</a></li>
+<li><a href="https://jejj.wtpuscm.cn/gongju/about-971320.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-58)</a></li>
+<li><a href="https://ofwj.wtpuscm.cn/chanpin/seminar-489242.html">photocraft: Security Rust高性能网络 (v2.0-GA)</a></li>
+<li><a href="https://juuc.wtpuscm.cn/pingtai/strategy-731.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-849)</a></li>
+<li><a href="https://kjct.wtpuscm.cn/pingtai/social-641670.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Draft-06)</a></li>
+<li><a href="https://hrqf.wtpuscm.cn/zhinan/tool-954183.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-32)</a></li>
+<li><a href="https://magt.wtpuscm.cn/baogao/technology-936911.html">面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-319)</a></li>
+<li><a href="https://dgiw.wtpuscm.cn/zhineng/beauty-819998.html">photocraft: Get started 开源镜像站 (Draft-04)</a></li>
+</ul>
+</details>
+
+      </div>
+      <div class="mt-12 pt-6 border-t border-slate-200 flex flex-wrap items-center justify-between gap-4">
+        <a href="./index.html" class="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800 ">
+          <span>&larr; 查看更多归档文档</span>
+        </a>
+        <a href="../index.html" class="inline-flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-slate-900 ">
+          <span>返回项目 README 首页 &rarr;</span>
+        </a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="mt-20 border-t border-slate-200 bg-white py-12 text-slate-500 text-sm">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-2">
+      <span class="w-6 h-6 rounded bg-slate-800 text-white flex items-center justify-center text-xs font-bold">LM</span>
+      <span>© 2026 <strong>photocraft-mirror-668</strong> - 官方开源高可用拓扑镜像与白皮书</span>
+    </div>
+    <div class="flex items-center gap-4 text-xs text-slate-400">
+      <a href="../index.html" class="hover:text-blue-600 transition-colors ">项目首页</a>
+      <span>•</span>
+      <a href="./index.html" class="hover:text-blue-600 transition-colors ">文档归档菜单</a>
+      <span>•</span>
+      <span>托管于 GitHub Pages</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

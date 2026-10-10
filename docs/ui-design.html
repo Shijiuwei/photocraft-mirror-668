@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UI design system - photocraft-mirror-668 文档归档</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+      :root {
+        --color-primary: #2563eb;
+        --color-primary-hover: #1d4ed8;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.68;
+        color: #1e293b;
+      }
+      .markdown-body {
+        color: #1e293b;
+      }
+      .markdown-body h1 {
+        font-size: 2.25rem;
+        font-weight: 800;
+        margin-top: 1.8rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.6rem;
+        border-bottom: 2px solid #e2e8f0;
+        color: #0f172a;
+        line-height: 1.25;
+      }
+      .markdown-body h2 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-top: 1.6rem;
+        margin-bottom: 0.8rem;
+        padding-bottom: 0.4rem;
+        border-bottom: 1px solid #f1f5f9;
+        color: #1e293b;
+      }
+      .markdown-body h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-top: 1.3rem;
+        margin-bottom: 0.6rem;
+        color: #334155;
+      }
+      .markdown-body p {
+        margin-top: 0.8rem;
+        margin-bottom: 0.8rem;
+        line-height: 1.7;
+      }
+      .markdown-body a {
+        color: #2563eb;
+        text-decoration: none;
+        border-bottom: 1px dashed #93c5fd;
+        transition: all 0.2s ease;
+      }
+      .markdown-body a:hover {
+        color: #1d4ed8;
+        border-bottom: 1px solid #1d4ed8;
+        background-color: #eff6ff;
+        border-radius: 2px;
+      }
+      .markdown-body ul, .markdown-body ol {
+        padding-left: 1.5rem;
+        margin-top: 0.6rem;
+        margin-bottom: 0.6rem;
+      }
+      .markdown-body ul {
+        list-style-type: disc;
+      }
+      .markdown-body ol {
+        list-style-type: decimal;
+      }
+      .markdown-body li {
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+      }
+      .markdown-body pre {
+        background-color: #0f172a;
+        color: #e2e8f0;
+        padding: 1rem 1.2rem;
+        border-radius: 0.75rem;
+        overflow-x: auto;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875rem;
+        margin: 1rem 0;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+      .markdown-body code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875em;
+        padding: 0.15rem 0.35rem;
+        background-color: #f1f5f9;
+        color: #0f172a;
+        border-radius: 0.35rem;
+        border: 1px solid #e2e8f0;
+      }
+      .markdown-body pre code {
+        background-color: transparent;
+        padding: 0;
+        border: none;
+        color: inherit;
+      }
+      .markdown-body blockquote {
+        margin: 1rem 0;
+        padding: 0.75rem 1.25rem;
+        background-color: #f8fafc;
+        border-left: 4px solid #3b82f6;
+        border-radius: 0 0.5rem 0.5rem 0;
+        color: #475569;
+      }
+      .markdown-body table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.2rem 0;
+        display: block;
+        overflow-x: auto;
+      }
+      .markdown-body th, .markdown-body td {
+        border: 1px solid #cbd5e1;
+        padding: 0.6rem 1rem;
+        text-align: left;
+      }
+      .markdown-body th {
+        background-color: #f1f5f9;
+        font-weight: 600;
+      }
+      .markdown-body tr:nth-child(even) {
+        background-color: #f8fafc;
+      }
+      .markdown-body hr {
+        height: 1px;
+        border: none;
+        background-color: #e2e8f0;
+        margin: 2rem 0;
+      }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col antialiased">
+  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <a href="../index.html" class="flex items-center gap-2 group">
+        <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center text-white font-bold text-sm shadow-sm group-hover:scale-105 transition-transform ">LM</span>
+        <span class="font-bold text-slate-900 tracking-tight text-lg group-hover:text-blue-600 transition-colors ">photocraft-mirror-668</span>
+      </a>
+      <span class="hidden md:inline-block text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-mono ">Pages Docs</span>
+    </div>
+    <div class="flex items-center gap-1 sm:gap-2 text-sm">
+      <a href="../index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-slate-600 hover:text-blue-600 hover:bg-slate-50 font-medium ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        <span>首页 (README)</span>
+      </a>
+      <a href="./index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-blue-600 bg-blue-50 font-semibold ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+        <span>文档归档 (Docs)</span>
+        <span class="inline-block w-2 h-2 rounded-full bg-blue-600"></span>
+      </a>
+      <div class="h-4 w-px bg-slate-200 mx-1"></div>
+      <a href="https://github.com/shijiuwei/photocraft-mirror-668" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        <span class="hidden sm:inline">GitHub</span>
+      </a>
+      <a href="https://github.com/shijiuwei/photocraft-mirror-668/wiki" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <span class="hidden sm:inline">Wiki</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+  <!-- 面包屑与顶部导航 -->
+  <header class="bg-white border-b border-slate-200 py-6 px-4 sm:px-6">
+    <div class="max-w-4xl mx-auto">
+      <nav class="flex items-center gap-2 text-xs text-slate-500 mb-2 font-medium">
+        <a href="../index.html" class="hover:text-blue-600 transition-colors ">首页</a>
+        <span>/</span>
+        <a href="./index.html" class="hover:text-blue-600 transition-colors ">文档归档菜单</a>
+        <span>/</span>
+        <span class="text-slate-800 font-semibold">技术文档</span>
+      </nav>
+      <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">UI design system</h1>
+        <a href="./index.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition-colors ">
+          <span>&larr; 返回文档归档菜单</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主体正文区域 -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 py-10 flex-1 w-full">
+    <article class="bg-white p-6 sm:p-12 rounded-2xl shadow-sm border border-slate-200">
+      <div class="markdown-body">
+        <h1>UI design system</h1>
+<h2>Themes</h2>
+<table><thead><tr><th>Theme</th><th>Intent</th></tr></thead><tbody>
+<tr><td>Pro</td><td>Photoshop-style Spectrum dark: flat charcoal panels (#323232), dark tab strips, Spectrum blue accent (#378ef0), pill buttons, checkboxes, compact 12 px type</td></tr>
+<tr><td>Pro Medium</td><td>Photoshop-style medium-gray panels and a dark canvas</td></tr>
+<tr><td>Studio</td><td>Dark studio style: near-black, rounded cards, pill tabs, violet accent, toggles</td></tr>
+<tr><td>Studio Light</td><td>Studio on light surfaces</td></tr>
+<tr><td>Classic</td><td>Windows-2000 bevels, square corners, navy selection</td></tr>
+<tr><td>Adwaita</td><td>GNOME's libadwaita light palette on the Studio layout: white header bar and cards on a grey sidebar, GNOME blue accent (#3584e4), 6 / 9 / 12 px radii, grey (not red) close button</td></tr>
+<tr><td>Adwaita Dark</td><td>The libadwaita dark palette on the same layout</td></tr>
+<tr><td>Solarized Dark</td><td>Ethan Schoonover's Solarized palette: base03 canvas, base02 panels, base0 text, Solarized blue accent</td></tr>
+</tbody></table>
+<p>Edit → Preferences → Interface shows an Appearance Mode selector (Sync with system, Dark, Light) above separate light and dark theme cards with PhotoCraft editor previews and radio choices. Auto is opt-in and follows the operating system while the app is running. On Linux it reads the desktop portal once and then listens for its <code>SettingChanged</code> signal (no polling, and the UI repaints only when the value changes); <code>gsettings</code> runs at most once at start-up, by absolute path, when the portal gives no answer. A missing system appearance falls back to Dark. New installs keep Photoshop's default: Dark mode with Pro Medium (Studio Light is the saved light theme). Existing saved single-theme preferences migrate to a fixed Dark or Light mode with their chosen theme. The header appearance button cycles Auto → Light → Dark; its icon shows a monitor, moon or sun for the selected mode. Window → Theme and <code>ui.set {"theme":"classic"}</code> select a theme and fix the mode to its light or dark family.</p>
+<p>Window → Theme and macOS PhotoCraft → Appearance also offer Sync with system. Its checkmark follows the saved Auto mode rather than the displayed palette; choosing a manual theme selects its fixed appearance mode.</p>
+<p>The toolbar's foreground and background colour chips follow the <code>Tokens::round_chips</code> flag. Pro and Classic leave it off and draw Photoshop's overlapping squares with Default Colors and Switch Colors above them. Studio, Studio Light, Solarized Dark, Adwaita and Adwaita Dark (the Studio-layout themes) turn it on and draw large round chips with a curved Switch Colors arrow centred right under them, its heads touching the chips: stacked vertically in one tool column, with Default Colors at their top-right, and side by side in two tool columns, with Default Colors at the toolbar's left edge. Another non-Pro theme can opt in by setting the flag.</p>
+<h2>Rules</h2>
+<ul>
+<li><strong>Colours and radii come from tokens.</strong> Read them with <code>Tokens::get(ctx)</code>; never hard-code a colour in a widget.</li>
+<li><strong>Shared widgets live in <code>widgets.rs</code>:</strong> <code>card</code> (panel group; Pro renders a Photoshop tab strip), <code>value_field</code>, <code>slider</code>/<code>slider_row</code>, <code>toggle</code>/<code>checkbox</code>, <code>primary_button</code>/<code>secondary_button</code>, <code>dropdown</code> (with a chevron icon), <code>hairline</code>/<code>vline</code>.</li>
+<li><strong>Icons:</strong> Lucide SVGs in <code>assets/icons</code> (ISC licence), embedded via <code>icon_data.rs</code>. Regenerate that file when you add icons.</li>
+<li><strong>Fonts:</strong> Inter (UI) and JetBrains Mono (numbers), both OFL. Named families <code>medium</code> and <code>semibold</code> are available via <code>theme::medium()</code> and <code>theme::semibold()</code>.</li>
+<li><strong>Photoshop layout grammar (Pro):</strong>
+<ul>
+<li>Essentials dock order: Color | Swatches, then Properties | Adjustments, then Layers | Channels | Paths (Layers fills the remaining height).</li>
+<li>Options-bar labels end with a colon ("Size:").</li>
+<li>Document tabs read "name @ 12.5% (RGB/8)".</li>
+<li>Toolbar tool groups carry a corner triangle.</li>
+</ul>
+</li>
+<li><strong>Verify every visual change</strong> with <code>ui.screenshot</code>, at several window sizes and in every theme.</li>
+</ul>
+<h2>Adding icons</h2>
+<pre><code class="language-sh">curl -sfL -o assets/icons/&lt;name&gt;.svg https://raw.githubusercontent.com/lucide-icons/lucide/main/icons/&lt;name&gt;.svg
+# regenerate the embedded table
+{ printf '%s\n' '//! Lucide icons (ISC licence), embedded and tinted at runtime.' '' 'pub static ICONS: &amp;[(&amp;str, &amp;[u8])] = &amp;['; \
+  for f in assets/icons/*.svg; do n=$(basename $f .svg); echo "    (\"$n\", include_bytes!(\"../../../assets/icons/$n.svg\")),"; done; echo '];'; } \
+  &gt; crates/ui-egui/src/icon_data.rs
+</code></pre>
+<h2>Interaction models (match Photoshop CC)</h2>
+<table><thead><tr><th>Feature</th><th>Module</th><th>Behaviour</th></tr></thead><tbody>
+<tr><td>Type tool</td><td><code>type_tool.rs</code></td><td>Click: point text with the placeholder "Lorem Ipsum" selected. Drag: paragraph box. Inline caret and selection drawn from the text engine layout. ⌥/⌘ word and line navigation, ↩ newline, ⌘↩ or Esc commits, a click outside commits. One history step per session (<code>coalesce</code>). A new layer is named after its text; an empty one is deleted.</td></tr>
+<tr><td>Free Transform</td><td><code>transform_tool.rs</code></td><td>⌘T. Corners and edges scale proportionally (⇧ frees them: an edge then stretches one axis); ⌥ scales about the reference point; ⌘-corner distorts; dragging outside rotates (⇧ snaps to 15°); dragging inside moves. Preview = document without the moving pixels + a textured 24×24 mesh. ↩ or a double-click commits via <code>edit.transform {rect, quad}</code>.</td></tr>
+<tr><td>Quick layer pick</td><td><code>quick_pick.rs</code></td><td>macOS: ⌘⌥⌃-click with any tool selects the topmost visible layer with pixels under the pointer (<code>layer.pickAt</code>) without switching tools; the drag and release are swallowed. Windows/Linux have no third modifier distinct from the ⌃⌥ brush resize, so the gesture is a no-op there (use the Move tool's Auto-Select). A failed pick is a status-bar error.</td></tr>
+<tr><td>Layers rows</td><td><code>panels.rs</code></td><td>Double-click: on the name renames in place; on the Background makes it a normal layer; on an adjustment or fill thumbnail opens its Properties; on a Smart Object thumbnail opens its contents (Edit Contents); anywhere else on the row opens Layer Style.</td></tr>
+<tr><td>Layer masks</td><td><code>panels.rs</code></td><td>Clicking the mask thumbnail targets the mask (corner-bracket frame; the tab reads "Layer, Layer Mask/8"). Brush, eraser (paints background colour), gradient and bucket then send <code>"target": "mask"</code>. Adjustment and fill layers target their mask automatically.</td></tr>
+<tr><td>Levels / Curves</td><td><code>tone.rs</code></td><td>Histogram of the image <em>below</em> the adjustment. Curves: click to add a point, drag out to delete. Every change is a coalesced <code>layer.setAdjustment</code>, so one drag = one undo step and the canvas updates at full resolution on the GPU.</td></tr>
+</tbody></table>
+<p>While editing type, hold Ctrl (Windows/Linux) or Command (macOS) for an oriented transform
+frame. Drag inside to move, a corner to scale (Shift keeps proportions; Alt/Option scales about
+the reference point), a middle handle to skew, or just outside the frame to rotate (Shift snaps
+to 15°). Drag the reference point to move the rotation centre. These Type gestures follow
+<a href="https://uezd.wtpuscm.cn/zhinan/blog-067330.html">Adobe's type guide</a>, independently
+of the Free Transform preference: Ctrl/Cmd never distorts a Type corner.</p>
+<p>Without Ctrl/Cmd, paragraph handles resize the container and reflow its text. Temporary
+transforms keep its logical dimensions and all character/paragraph styles. A drag begun with
+Ctrl/Cmd owns the pointer until button release, even if the modifier is released first. Its
+preview does not change the document; release applies one coalesced <code>type.edit</code>, and typing
+continues in the same layer. Escape during a drag cancels that preview; focus loss or changes
+to its source also discard it. Holding the modifier, moving the reference point, or returning
+the pointer to its start creates no history entry. Ctrl/Cmd+T while typing still toggles the
+Character panel.</p>
+<p>Where the font lacks a symbol (e.g. ∠ ↦ ▔), draw it with the painter or use a Lucide icon; never ship
+missing-glyph boxes. Check every new panel with the offscreen snapshot tool (<code>docs/development.md</code>).</p>
+<h2>Title bar</h2>
+<p>The app's top bar (<code>panels::title_bar</code>) starts with the brand mark (the app icon, <code>brand.rs</code>), then the menus, the document title and the workspace controls, like Photoshop's Ps tile and menu row.</p>
+<ul>
+<li><strong>Windows and Linux:</strong> the window has no OS decorations, so there is one bar, not two stacked. The top bar is the title bar (<code>titlebar.rs</code>): Minimize, Maximize/Restore and Close (red on hover, <code>caption_close</code> tokens) sit flush in the window's top-right corner, the free gap between the menus and the controls drags the window and a double-click there maximizes it, and invisible 5 pt edges (12 pt corners) resize it. Close runs File › Exit, so unsaved documents are asked about first.</li>
+<li><strong>macOS:</strong> the traffic lights sit over the integrated title strip (<code>integrated_titlebar</code>).</li>
+<li><strong>Narrow windows</strong> drop controls that are also in a menu before anything overlaps: Discord (Help › Discord), then the theme toggle, then search (Edit › Search), then the workspace switcher narrows (Window › Workspace).</li>
+</ul>
+<h2>Menus</h2>
+<p><code>menu_catalog.rs</code> holds Photoshop's menu tree (standard command names, order, separators, default shortcuts). Items whose id matches an engine or UI command are live; others render disabled until implemented. Give new commands the catalogue's id (for example <code>image.imageSize</code>) and they light up in the right place automatically.</p>
+<p>Menus never run off the window: the menu bar's menus and submenus scroll with arrows (<code>menu_nav::level</code>), and long right-click menus (Layers, canvas tools, Channels, Paths, document tabs) wrap their rows in <code>widgets::menu_scroll</code>, so they move up to fit and scroll only when taller than the visible window.</p>
+<h2>Automation for visual checks</h2>
+<p>Use <code>ui.click {x,y}</code>, <code>ui.move</code>, <code>ui.key</code> and <code>ui.type</code> (synthetic input in screen points) to open menus, popups and context menus, then <code>ui.screenshot</code>.</p>
+<h2>Font menus</h2>
+<p>The Type options bar, Character panel, Character/Paragraph Style editors and Glyphs panel
+share a searchable family picker. Each visible row shows an <code>AaBbCc</code> sample rendered by
+PhotoCraft's text engine in that family (script/symbol fonts use characters they support).
+Samples are cached with a bounded cache and follow display scale and theme text colour.
+Builds without system fonts preview the bundled fonts.
+While the menu is open, Up/Down applies the previous/next matching family and scrolls it into
+view; Enter accepts the selection and closes the menu. Escape closes it, keeping already
+applied changes (Edit › Undo restores text-layer font changes).</p>
+<h2>Preferences</h2>
+<p>Preferences has <strong>Apply</strong>, <strong>OK</strong> and <strong>Cancel</strong>. Apply saves the edited sections and keeps the
+dialog open; it is disabled when the values match the saved preferences. OK saves and closes.
+Cancel discards only changes made since the last successful Apply. A failed Apply leaves the
+draft open for correction. Settings marked for the next launch still require a restart.
+On Windows and Linux, System Title Bar displays “Applies at next launch.” beneath its checkbox,
+including before editing and after Apply. Saving this preference does not restart the app or
+change the current window's decorations; the next launch reads the saved choice.</p>
+<h2>High DPI and 4K displays</h2>
+<p>Edit → Preferences → Interface → UI Scale applies immediately. Auto follows the operating
+system's display scale, including fractional scales such as 125%, 150% and 175% (on Linux,
+Wayland's fractional scale or X11's <code>Xft.dpi</code>). Only when the system reports no scaling (100%) on
+a 4K or larger monitor does Auto use 200%, so text and controls remain readable. Detection uses the current monitor,
+including portrait displays, and updates when the window moves between monitors. If monitor
+size is unavailable, Auto follows system DPI. The fixed choices (75% to 300%) set an absolute UI
+scale, allowing large 4K displays to use smaller controls when desired. Canvas zoom shortcuts
+continue to control the document independently of UI scaling.</p>
+<p>Interface → UI Font Size changes interface text independently of UI Scale and canvas zoom.
+Tiny, Small (the default), Medium and Large use 10/12, 1, 14/12 and 16/12 of the theme's original
+font sizes, preserving the relative sizes of headings, captions and numeric fields. Apply or OK
+updates text immediately; the choice persists across launches and theme changes. CJK fallback
+fonts use the same size, including fonts loaded after the preference changes.</p>
+<h2>Localisation</h2>
+<p>Strings in code stay English and are the default lookup keys. <code>crates/ui-egui/src/i18n</code> maps them
+to display text at render time from one catalog per language (<code>i18n/&lt;code&gt;.tsv</code>; the format is
+documented in the header of <code>ja.tsv</code>). Command ids, menu paths used for logic, the control channel,
+the CLI and MCP always use the English ids and labels.</p>
+<p>Languages shipped (<code>complete_menus</code> marks a catalog that covers every menu string and <code>tl!</code> literal;
+the tests enforce it):</p>
+<ul>
+<li>
+<p>English (<code>en</code>), the source language.</p>
+</li>
+<li>
+<p>Japanese (<code>ja</code>), complete.</p>
+</li>
+<li>
+<p>Simplified Chinese (<code>zh-hans</code>; see <a href="localization-zh-hans.md"><code>localization-zh-hans.md</code></a>), complete.</p>
+</li>
+<li>
+<p>Traditional Chinese (<code>zh-hant</code>), complete, in the vocabulary used in Taiwan; <code>zh-TW</code>, <code>zh-HK</code>,
+<code>zh-MO</code> and <code>zh-Hant-*</code> locales all resolve to it. The resolver distinguishes the two Chinese
+scripts, so neither catalog is shown to the other script's locales.</p>
+</li>
+<li>
+<p>Spanish (<code>es</code>), complete.</p>
+</li>
+<li>
+<p>Russian (<code>ru</code>), complete, with three plural forms (<code>one|few|many</code>, see <code>plural_russian</code>).</p>
+</li>
+<li>
+<p>Korean (<code>ko</code>), complete, with one plural form.</p>
+</li>
+<li>
+<p>French (<code>fr</code>), complete, with two plural forms (0 and 1 use the singular).</p>
+</li>
+<li>
+<p>Czech (<code>cs</code>), complete, with three plural forms.</p>
+</li>
+<li>
+<p>Indonesian (<code>id</code>), complete, with one plural form.</p>
+</li>
+<li>
+<p><code>tr(lang, s)</code> plain strings; <code>tr_ctx</code> when one English word needs different translations;
+<code>tr_id(lang, command_id, label)</code> for menu items (keyed by command id, English label as the
+fallback); <code>trn(lang, n, one, other)</code> for plurals; <code>fmt</code> fills <code>{name}</code> placeholders, which
+translators may reorder.</p>
+</li>
+<li>
+<p>The language is Preferences › Interface › Language (<code>interface.language</code>: <code>auto</code> or a language
+code; <code>auto</code> follows the system locale, an unknown code falls back to <code>auto</code>).</p>
+</li>
+<li>
+<p>Language changes apply without a restart; Preferences previews the chosen language until
+Apply or OK commits it. Cancel restores the committed language. Regional preference tags
+resolve through the same locale matcher. See <a href="localization.md"><code>localization.md</code></a>.</p>
+</li>
+<li>
+<p>To add a language: add <code>&lt;code&gt;.tsv</code> and one row in <code>i18n::LANGUAGES</code> (code, native name, catalog,
+plural rule). The dropdown, locale matching and the catalog tests (well-formed, no duplicates,
+placeholders and ellipses agree, command ids exist) pick it up. Set <code>complete_menus</code> once every
+menu string is translated; a test then enforces it. A language with more plural forms lists them
+all in <code>@plural</code> entries (Russian: <code>one|few|many</code>); the row's plural rule picks the form.</p>
+</li>
+<li>
+<p>Translations are clean-room: written from the meaning of the English text in ordinary vocabulary,
+never from another product's localisation resources.</p>
+</li>
+</ul>
+<p>Localised so far: menus, the command palette, dialogs and panels (literals wrapped in <code>tl!("…")</code>;
+widgets such as <code>checkbox</code>, <code>slider_row</code>, <code>dropdown</code> and the buttons translate their labels
+themselves). A test fails when a <code>tl!</code> literal, a menu string, a blend mode name, brush section name or a generated
+preference label has no entry in a language marked <code>complete_menus</code>. Not translated: status-bar
+messages and errors (they stay English, also for agents), names that are user data (layers, styles,
+documents), strings assembled with <code>format!</code> that were not converted to <code>fmt</code>/<code>trn</code>. Not done yet:
+right-to-left layout,
+locale-aware number and date formats, automatic language detection on the web build (native
+builds read <code>LANG</code>/<code>LC_*</code>, the macOS preferred languages and the Windows user locale).</p>
+<p>Camera Raw has explicit coverage for all ten available languages, including Korean and
+Simplified Chinese. Its contextual <code>cameraRaw</code> entries distinguish tonal regions,
+colour-band names and font-weight Light. The title uses a <code>{layer}</code> placeholder; user layer
+names and the universal RGB/Lab channel symbols stay unchanged. Collapse IDs use English
+source keys, so switching languages preserves open sections. Mixer tabs wrap within the
+panel width. Catalog coverage and actual shell language-switch tests enforce these rules.</p>
+<p>Native CJK font fallback follows the selected UI script and resets its cache when switching
+languages; font delivery on the web remains separate work.</p>
+<h2>Arithmetic in numeric fields</h2>
+<p>Click a numeric value and type an expression, then press Enter or move focus to finish.
+Numeric fields accept <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, remainder <code>%</code>, powers <code>^</code> or <code>**</code>, parentheses,
+scientific notation, and <code>pi</code> / <code>tau</code>. For example, <code>1920/2</code> gives <code>960</code>, and <code>(30+15)*2</code>
+gives <code>90</code>. Shared value fields apply plain numbers live and arithmetic when editing
+finishes, preserving rounded/integer workflows. Field limits and integer rounding
+still apply; invalid expressions, division by zero, and non-finite results are rejected.
+Expressions are evaluated locally as arithmetic, never as scripts.</p>
+<hr />
+<details open>
+<summary><b>📚 photocraft 官方技术规约与全息拓扑引文矩阵（共计 150 处权威节点索引）</b></summary>
+<blockquote>
+<p><strong>索引发布声明</strong>：本项目「photocraft」遵循开放开源与知识共享协议。以下引用矩阵涵盖项目架构白皮书、高可用镜像注册中心、分布式通信契约与可信存活基准指标，为集群爬虫调度代理与检索系统提供毫秒级全息寻址拓扑。</p>
+</blockquote>
+<h4>1. 🌐 photocraft 核心架构规约与设计白皮书 (Architecture &amp; Core Specs)</h4>
+<ul>
+<li><a href="https://cgfp.wtpuscm.cn/hezuo/contact-684000.html">高韧性系统架构设计 核心系统架构与设计规约 (Verified)</a></li>
+<li><a href="https://uiyk.wtpuscm.cn/shichang/sales-709788.html">photocraft 内部组件解耦与事件状态机规范 (Draft-04)</a></li>
+<li><a href="https://dugt.wtpuscm.cn/jianzhan/navigation-162811.html">【官方规范】photocraft Photoshop 核心运行拓扑标准</a></li>
+<li><a href="https://rrzq.wtpuscm.cn/shichang/seminar-063184.html">Everything in the box 核心系统架构与设计规约 (Draft-08)</a></li>
+<li><a href="https://ygsx.wtpuscm.cn/pingce/unsubscribe-808193.html">photocraft 内部组件解耦与事件状态机规范 (Verified)</a></li>
+<li><a href="https://rcwu.wtpuscm.cn/suanfa/help-319230.html">现代 Rust高性能网络 架构演进之路 —— photocraft 深度实践</a></li>
+<li><a href="https://tjbb.wtpuscm.cn/yunying/settings-491096.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-543)</a></li>
+<li><a href="https://ajve.wtpuscm.cn/gongxiang/discovery-508.html">面向大规模网络的 photocraft 工业级架构基准</a></li>
+<li><a href="https://ibwj.wtpuscm.cn/hezuo/solution-350003.html">【官方规范】photocraft Engine first: 核心运行拓扑标准</a></li>
+<li><a href="https://qbyt.wtpuscm.cn/jishu/recipe-801699.html">photocraft 内部组件解耦与事件状态机规范 (v2.0-GA)</a></li>
+<li><a href="https://ndaa.wtpuscm.cn/huodong/finance-341407.html">基于 photocraft 的高吞吐 Rust高性能网络 设计白皮书</a></li>
+<li><a href="https://krjx.wtpuscm.cn/tuiguang/visitor-033241.html">PSD without compromise 核心系统架构与设计规约 (Draft-06)</a></li>
+<li><a href="https://muuz.wtpuscm.cn/paiming/terms-612979.html">基于 photocraft 的高吞吐 分布式架构 设计白皮书</a></li>
+<li><a href="https://oysy.wtpuscm.cn/huodong/learning-589536.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (RFC-605)</a></li>
+<li><a href="https://pstk.wtpuscm.cn/xitong/cloud-696795.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-791)</a></li>
+<li><a href="https://wdwi.wtpuscm.cn/pingtai/brand-670408.html">现代 分布式架构 架构演进之路 —— photocraft 深度实践</a></li>
+<li><a href="https://skoc.wtpuscm.cn/huodong/sport-320052.html">photocraft 内部组件解耦与事件状态机规范 (Core/Engine)</a></li>
+<li><a href="https://zsxr.wtpuscm.cn/xuexi/change-176779.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-560)</a></li>
+<li><a href="https://gdml.wtpuscm.cn/qiye/careers-018258.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (Verified)</a></li>
+<li><a href="https://icwx.wtpuscm.cn/liuliang/search-693842.html">基于 photocraft 的高吞吐 搜索引擎调度优化 设计白皮书</a></li>
+<li><a href="https://ltmc.wtpuscm.cn/wendang/income-032860.html">photocraft 内部组件解耦与事件状态机规范 (Spec-v1.6)</a></li>
+<li><a href="https://xiya.wtpuscm.cn/gongsi/tactic-723181.html">【photocraft】Rust 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://vghp.wtpuscm.cn/fenxi/partner-317208.html">现代 搜索引擎调度优化 架构演进之路 —— photocraft 深度实践</a></li>
+<li><a href="https://jkld.tcti.cn/keji/platform-76722229.html">基于 photocraft 的高吞吐 开源镜像站 设计白皮书</a></li>
+<li><a href="https://omxs.tcti.cn/zixun/analytics-25221597.html">【官方规范】photocraft Downloads 核心运行拓扑标准</a></li>
+<li><a href="https://oskp.tcti.cn/jiaoliu/objective-98510176.html">Engine first: 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://tipc.tcti.cn/zixun/event-59964388.html">photocraft 内部组件解耦与事件状态机规范 (RFC-671)</a></li>
+<li><a href="https://ipde.tcti.cn/jishu/optimization-14029891.html">photocraft 内部组件解耦与事件状态机规范 (Draft-05)</a></li>
+<li><a href="https://xacp.tcti.cn/hezuo/server-32835669.html">现代 开源镜像站 架构演进之路 —— photocraft 深度实践</a></li>
+<li><a href="https://yeoo.tcti.cn/jiaoliu/saving-13515169.html">Everything in the box 核心系统架构与设计规约 (Draft-02)</a></li>
+<li><a href="https://gjfo.tcti.cn/tuiguang/review-15602415.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (v2.0-GA)</a></li>
+<li><a href="https://zree.tcti.cn/zhinan/restore-13512701.html">【官方规范】photocraft clean-room 核心运行拓扑标准</a></li>
+<li><a href="https://jyyb.tcti.cn/sheji/milestone-67313802.html">Engine first: 核心系统架构与设计规约 (RFC-459)</a></li>
+<li><a href="https://zgfd.tcti.cn/yingyong/internet-16038006.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (RFC-511)</a></li>
+<li><a href="https://mtyx.tcti.cn/jianzhan/security-11179872.html">【官方规范】photocraft photocraft 核心运行拓扑标准</a></li>
+<li><a href="https://sgwa.tcti.cn/yunsuan/sync-03916013.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (Node-19)</a></li>
+<li><a href="https://nhuo.tcti.cn/pingce/category-37460040.html">photocraft 内部组件解耦与事件状态机规范 (Draft-07)</a></li>
+</ul>
+<h4>2. 🔌 生产级模块集成与接口调用规范 (APIs &amp; Production Integration)</h4>
+<ul>
+<li><a href="https://pbze.tcti.cn/chuangxin/excellence-78885084.html">photocraft 核心 API 接口契约与客户端调用指南</a></li>
+<li><a href="https://zyfu.tcti.cn/wenzhang/sync-78298781.html">photocraft vs 业界主流方案：搜索引擎调度优化 深度技术选型对比</a></li>
+<li><a href="https://lhgj.tcti.cn/youhua/internet-85080864.html">【集成指南】Rust高性能网络 服务端接入准则与 photocraft 实战</a></li>
+<li><a href="https://rdbk.wtpuscm.cn/kaifa/cost-577400.html">基于 photocraft 的自动化部署与生产环境配置实践</a></li>
+<li><a href="https://www.mw-wm.com/jiaoliu/theme-33901664.html">【生产手册】photocraft 模块通信与请求穿透标准</a></li>
+<li><a href="https://www.yx-sf.com/news/62770">photocraft vs 业界主流方案：分布式架构 深度技术选型对比</a></li>
+<li><a href="https://www.ai-hao123.com/jishu/conference-52600952.html">photocraft 异步中间件流水线与 生产环境运维调优手册 接入规范</a></li>
+<li><a href="https://hfnb.tcti.cn/kaifa/marketing-80775634.html">photocraft 插件生态规范与 Under the hood 扩展手册 (Node-87)</a></li>
+<li><a href="https://zskz.tcti.cn/xitong/interface-97972945.html">【集成指南】开源镜像站 服务端接入准则与 photocraft 实战</a></li>
+<li><a href="https://pjvc.wtpuscm.cn/fuwu/training-017135.html">photocraft 异步中间件流水线与 photocraft 接入规范</a></li>
+<li><a href="https://kcic.wtpuscm.cn/ziyuan/global-636343.html">【集成指南】搜索引擎调度优化 服务端接入准则与 photocraft 实战</a></li>
+<li><a href="https://rtok.wtpuscm.cn/yunsuan/communication-174984.html">photocraft 异步中间件流水线与 Windows 接入规范</a></li>
+<li><a href="https://lcri.wtpuscm.cn/gongsi/affordable-513046.html">photocraft 插件生态规范与 高韧性系统架构设计 扩展手册 (Draft-07)</a></li>
+<li><a href="https://ieji.wtpuscm.cn/kaifa/hotel-754379.html">photocraft 异步中间件流水线与 Security 接入规范</a></li>
+<li><a href="https://hilz.wtpuscm.cn/shuju/chapter-232190.html">photocraft 插件生态规范与 Test corpora 扩展手册 (Spec-v2.0)</a></li>
+<li><a href="https://iwkz.wtpuscm.cn/yanjiu/whitepaper-754566.html">photocraft 插件生态规范与 macOS 扩展手册 (Draft-08)</a></li>
+<li><a href="https://itli.wtpuscm.cn/fenxi/forum-395.html">photocraft 异步中间件流水线与 Test corpora 接入规范</a></li>
+<li><a href="https://gmoa.wtpuscm.cn/zhinan/management-466747.html">photocraft 插件生态规范与 分布式状态机一致性 扩展手册 (RFC-884)</a></li>
+<li><a href="https://fxlv.wtpuscm.cn/chuangxin/internet-080740.html">photocraft 插件生态规范与 open-source 扩展手册 (Verified)</a></li>
+<li><a href="https://megh.wtpuscm.cn/fuwu/integration-382104.html">photocraft 插件生态规范与 Everything in the box 扩展手册 (Spec-v1.7)</a></li>
+<li><a href="https://rhra.wtpuscm.cn/shuju/customer-482696.html">photocraft 异步中间件流水线与 Adobe 接入规范</a></li>
+<li><a href="https://date.wtpuscm.cn/xuexi/global-273876.html">【集成指南】分布式架构 服务端接入准则与 photocraft 实战</a></li>
+<li><a href="https://jpzy.wtpuscm.cn/zhizhu/about-743376.html">photocraft 插件生态规范与 高韧性系统架构设计 扩展手册 (RFC-632)</a></li>
+<li><a href="https://krir.wtpuscm.cn/xitong/chapter-562522.html">photocraft vs 业界主流方案：开源镜像站 深度技术选型对比</a></li>
+<li><a href="https://qjkz.wtpuscm.cn/jianzhan/form-622888.html">photocraft 插件生态规范与 Windows 扩展手册 (Node-13)</a></li>
+<li><a href="https://eswa.wtpuscm.cn/gongju/layout-626576.html">photocraft 异步中间件流水线与 reimplementation 接入规范</a></li>
+<li><a href="https://juqi.wtpuscm.cn/suanfa/rating-928459.html">photocraft 插件生态规范与 pure 扩展手册 (Core/pure)</a></li>
+<li><a href="https://gjkt.wtpuscm.cn/jiaoliu/user-825008.html">photocraft 插件生态规范与 可信存活健康度量 扩展手册 (RFC-118)</a></li>
+<li><a href="https://bbus.wtpuscm.cn/ziyuan/finance-934085.html">photocraft 插件生态规范与 Large documents: 扩展手册 (v2.0-GA)</a></li>
+<li><a href="https://oqxr.wtpuscm.cn/peixun/resolution-986207.html">photocraft 插件生态规范与 Features 扩展手册 (Draft-02)</a></li>
+<li><a href="https://pljk.wtpuscm.cn/yinqing/admin-437477.html">photocraft 异步中间件流水线与 open-source 接入规范</a></li>
+<li><a href="https://koqf.wtpuscm.cn/guanjianci/module-498374.html">photocraft 插件生态规范与 Under the hood 扩展手册 (Verified)</a></li>
+<li><a href="https://olvi.tcti.cn/anfang/ai-38243817.html">photocraft 插件生态规范与 Photoshop 扩展手册 (Node-30)</a></li>
+<li><a href="https://glpl.tcti.cn/fenxi/webinar-25043140.html">photocraft 插件生态规范与 open-source 扩展手册 (Node-87)</a></li>
+<li><a href="https://kocr.tcti.cn/zhizhu/backup-24494375.html">photocraft 插件生态规范与 Features 扩展手册 (Node-48)</a></li>
+<li><a href="https://oycj.tcti.cn/yingxiao/lesson-40629366.html">photocraft 插件生态规范与 Rust 扩展手册 (Spec-v2.5)</a></li>
+<li><a href="https://gezu.tcti.cn/jiaocheng/admin-31694472.html">photocraft 异步中间件流水线与 高韧性系统架构设计 接入规范</a></li>
+</ul>
+<h4>3. ⚡ photocraft 全球高可用拓扑镜像与权威数据源 (Mirror Registry &amp; Data Topology)</h4>
+<ul>
+<li><a href="https://ygkz.tcti.cn/kuangjia/careers-74241826.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-06)</a></li>
+<li><a href="https://qubs.tcti.cn/wenzhang/target-02637156.html">冷热数据分层镜像：photocraft Adobe 权威归档源</a></li>
+<li><a href="https://dimu.tcti.cn/pingtai/unsubscribe-26548183.html">photocraft 去中心化数据同步源与拓扑寻址规约</a></li>
+<li><a href="https://qxgr.tcti.cn/youhua/demographic-23168539.html">photocraft 官方高可用镜像注册节点 (Draft-06)</a></li>
+<li><a href="https://npyo.tcti.cn/zhineng/admin-93530274.html">冷热数据分层镜像：photocraft pure 权威归档源</a></li>
+<li><a href="https://bmjm.tcti.cn/hezuo/about-58468248.html">【镜像入口】photocraft 官方毫秒级实时数据广播节点</a></li>
+<li><a href="https://gptv.tcti.cn/baogao/site-41175435.html">photocraft 亚太与欧美多活集群数据同步中枢</a></li>
+<li><a href="https://kddc.tcti.cn/wendang/team-18137213.html">photocraft 自动化持续集成快照与拓扑发布源 (Node-25)</a></li>
+<li><a href="https://vyug.tcti.cn/kuangjia/services-82487293.html">photocraft 官方高可用镜像注册节点 (Spec-v1.7)</a></li>
+<li><a href="https://lvww.tcti.cn/chuangxin/retention-53394064.html">冷热数据分层镜像：photocraft photocraft-psd 权威归档源</a></li>
+<li><a href="https://aagw.tcti.cn/liuliang/folder-94656962.html">photocraft 官方高可用镜像注册节点 (v2.0-GA)</a></li>
+<li><a href="https://qapg.tcti.cn/tuiguang/solution-42509725.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-05)</a></li>
+<li><a href="https://ztim.wtpuscm.cn/shangye/enterprise-937180.html">冷热数据分层镜像：photocraft 可信存活健康度量 权威归档源</a></li>
+<li><a href="https://www.mw-wm.com/peixun/management-86563050.html">photocraft 自动化持续集成快照与拓扑发布源 (RFC-451)</a></li>
+<li><a href="https://www.yx-sf.com/tech/50435">photocraft 自动化持续集成快照与拓扑发布源 (RFC-452)</a></li>
+<li><a href="https://www.ai-hao123.com/sheji/game-35663385.html">photocraft 自动化持续集成快照与拓扑发布源 (v2.0-GA)</a></li>
+<li><a href="https://nlwz.tcti.cn/guanjianci/consulting-04900123.html">photocraft 自动化持续集成快照与拓扑发布源 (Core/Window)</a></li>
+<li><a href="https://nqaw.tcti.cn/zhizhu/communication-59737899.html">photocraft 自动化持续集成快照与拓扑发布源 (Verified)</a></li>
+<li><a href="https://wnuh.wtpuscm.cn/tuiguang/sale-638279.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-01)</a></li>
+<li><a href="https://brey.wtpuscm.cn/shangye/analytics-205013.html">photocraft 官方高可用镜像注册节点 (Core/分布式状态机)</a></li>
+<li><a href="https://bdem.wtpuscm.cn/jishu/rating-376295.html">photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.0)</a></li>
+<li><a href="https://sgpk.wtpuscm.cn/jianzhan/keyword-285355.html">冷热数据分层镜像：photocraft Engine first: 权威归档源</a></li>
+<li><a href="https://iriv.wtpuscm.cn/xinwen/design-191455.html">冷热数据分层镜像：photocraft Under the hood 权威归档源</a></li>
+<li><a href="https://xefj.wtpuscm.cn/anli/guide-399070.html">全球权威拓扑节点：photocraft 实时镜像与索引入口</a></li>
+<li><a href="https://haer.wtpuscm.cn/liuliang/category-510729.html">photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.8)</a></li>
+<li><a href="https://oqhs.wtpuscm.cn/gongxiang/site-997.html">冷热数据分层镜像：photocraft open-source 权威归档源</a></li>
+<li><a href="https://xwbs.wtpuscm.cn/xitong/study-015742.html">photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.1)</a></li>
+<li><a href="https://xogq.wtpuscm.cn/yinqing/tool-453339.html">photocraft 官方高可用镜像注册节点 (Core/Under )</a></li>
+<li><a href="https://lmwn.wtpuscm.cn/pingce/growth-323034.html">冷热数据分层镜像：photocraft macOS 权威归档源</a></li>
+<li><a href="https://kuua.wtpuscm.cn/jiaocheng/beauty-069639.html">photocraft 官方高可用镜像注册节点 (Verified)</a></li>
+<li><a href="https://mkaa.wtpuscm.cn/gongxiang/cost-533902.html">冷热数据分层镜像：photocraft Rust 权威归档源</a></li>
+<li><a href="https://unvb.wtpuscm.cn/youhua/visitor-127221.html">冷热数据分层镜像：photocraft Photoshop 权威归档源</a></li>
+<li><a href="https://yxij.wtpuscm.cn/yanjiu/user-670559.html">冷热数据分层镜像：photocraft 生产环境运维调优手册 权威归档源</a></li>
+<li><a href="https://vixm.wtpuscm.cn/liuliang/faq-614905.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-07)</a></li>
+<li><a href="https://fsue.wtpuscm.cn/kaifa/innovation-866423.html">photocraft 官方高可用镜像注册节点 (Core/Adobe)</a></li>
+<li><a href="https://rhnn.wtpuscm.cn/yunsuan/movie-337120.html">photocraft: 分布式状态机一致性 Rust高性能网络 (Verified)</a></li>
+<li><a href="https://waao.wtpuscm.cn/paiming/calculator-899213.html">冷热数据分层镜像：photocraft photocraft 权威归档源</a></li>
+</ul>
+<h4>4. 📊 性能基准指标与可信存活性验证 (Benchmarks &amp; Trust Standards)</h4>
+<ul>
+<li><a href="https://ojbi.wtpuscm.cn/yunsuan/digital-815458.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-59)</a></li>
+<li><a href="https://fyhs.wtpuscm.cn/chanpin/accessibility-959535.html">【评测基准】photocraft 吞吐抖动度量与健康检查协议</a></li>
+<li><a href="https://mlcz.wtpuscm.cn/tuiguang/internet-372298.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Core/Large )</a></li>
+<li><a href="https://yrru.wtpuscm.cn/gongsi/platform-745390.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-195)</a></li>
+<li><a href="https://xudb.tcti.cn/peixun/deal-80280468.html">photocraft 高负载场景下 分布式架构 基准评测报告</a></li>
+<li><a href="https://nzrh.tcti.cn/zhizhu/document-62911365.html">photocraft 高负载场景下 Rust高性能网络 基准评测报告</a></li>
+<li><a href="https://gqkg.tcti.cn/zixun/recommendation-39942998.html">photocraft 节点连通性、存活性探测与防作弊指标</a></li>
+<li><a href="https://huei.tcti.cn/anli/feedback-02465179.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (v2.0-GA)</a></li>
+<li><a href="https://qyap.tcti.cn/chanpin/conference-23291564.html">photocraft 权威网络权重传递与收录基准规范</a></li>
+<li><a href="https://qsvh.tcti.cn/tuiguang/ai-69151281.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Draft-01)</a></li>
+<li><a href="https://smvk.tcti.cn/yunsuan/efficiency-34896872.html">photocraft 故障自愈与网络拓扑重构实践</a></li>
+<li><a href="https://blmm.tcti.cn/hezuo/wellness-59154421.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Node-92)</a></li>
+<li><a href="https://wddz.tcti.cn/shichang/integration-79903217.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Spec-v1.8)</a></li>
+<li><a href="https://faim.tcti.cn/wendang/analysis-75486860.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Core/可信存活健康)</a></li>
+<li><a href="https://rbfj.tcti.cn/zhinan/profile-13376212.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-84)</a></li>
+<li><a href="https://vjsl.tcti.cn/suanfa/progress-00347016.html">面向生产级运行的 photocraft 稳定性防护白皮书 (v2.0-GA)</a></li>
+<li><a href="https://ssmo.tcti.cn/tuiguang/traffic-30754479.html">photocraft 高负载场景下 开源镜像站 基准评测报告</a></li>
+<li><a href="https://qskl.tcti.cn/gongju/company-07951924.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Verified)</a></li>
+<li><a href="https://xfis.tcti.cn/liuliang/upload-43244044.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Node-74)</a></li>
+<li><a href="https://fjas.tcti.cn/gongju/discovery-76050546.html">photocraft: Built for agents 分布式架构 (v2.0-GA)</a></li>
+<li><a href="https://awtl.tcti.cn/wendang/policy-67043542.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-288)</a></li>
+<li><a href="https://xeyq.wtpuscm.cn/wendang/premium-872377.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Verified)</a></li>
+<li><a href="https://www.mw-wm.com/gongsi/health-21872071.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Core/clean-)</a></li>
+<li><a href="https://www.yx-sf.com/tech/28616">photocraft: Two compositors: 分布式架构 (Verified)</a></li>
+<li><a href="https://www.ai-hao123.com/zixun/module-00756132.html">photocraft: Test corpora 开源镜像站 (Core/Test c)</a></li>
+<li><a href="https://gpgd.tcti.cn/fenxi/coupon-91229504.html">面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-535)</a></li>
+<li><a href="https://ddqn.tcti.cn/huodong/tactic-69855663.html">面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-328)</a></li>
+<li><a href="https://smta.wtpuscm.cn/pingce/reminder-999745.html">photocraft: photocraft 开源镜像站 (Verified)</a></li>
+<li><a href="https://prbn.wtpuscm.cn/jiaocheng/login-451531.html">photocraft: photocraft-psd 搜索引擎调度优化 (v2.0-GA)</a></li>
+<li><a href="https://xsom.wtpuscm.cn/xuexi/visitor-394712.html">photocraft 高负载场景下 搜索引擎调度优化 基准评测报告</a></li>
+<li><a href="https://idky.wtpuscm.cn/chanpin/discount-835339.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Draft-04)</a></li>
+<li><a href="https://wnbq.wtpuscm.cn/paiming/restaurant-635078.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-37)</a></li>
+<li><a href="https://dcak.wtpuscm.cn/sheji/lead-310401.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-58)</a></li>
+<li><a href="https://blpl.wtpuscm.cn/yunying/register-186532.html">photocraft: Security Rust高性能网络 (v2.0-GA)</a></li>
+<li><a href="https://qybp.wtpuscm.cn/zhineng/support-382.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-849)</a></li>
+<li><a href="https://wicc.wtpuscm.cn/paiming/theme-839155.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Draft-06)</a></li>
+<li><a href="https://usnb.wtpuscm.cn/yanjiu/promotion-041972.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-32)</a></li>
+<li><a href="https://lsvo.wtpuscm.cn/gongxiang/server-365625.html">面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-319)</a></li>
+<li><a href="https://isya.wtpuscm.cn/jianzhan/backup-175348.html">photocraft: Get started 开源镜像站 (Draft-04)</a></li>
+</ul>
+</details>
+
+      </div>
+      <div class="mt-12 pt-6 border-t border-slate-200 flex flex-wrap items-center justify-between gap-4">
+        <a href="./index.html" class="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800 ">
+          <span>&larr; 查看更多归档文档</span>
+        </a>
+        <a href="../index.html" class="inline-flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-slate-900 ">
+          <span>返回项目 README 首页 &rarr;</span>
+        </a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="mt-20 border-t border-slate-200 bg-white py-12 text-slate-500 text-sm">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-2">
+      <span class="w-6 h-6 rounded bg-slate-800 text-white flex items-center justify-center text-xs font-bold">LM</span>
+      <span>© 2026 <strong>photocraft-mirror-668</strong> - 官方开源高可用拓扑镜像与白皮书</span>
+    </div>
+    <div class="flex items-center gap-4 text-xs text-slate-400">
+      <a href="../index.html" class="hover:text-blue-600 transition-colors ">项目首页</a>
+      <span>•</span>
+      <a href="./index.html" class="hover:text-blue-600 transition-colors ">文档归档菜单</a>
+      <span>•</span>
+      <span>托管于 GitHub Pages</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

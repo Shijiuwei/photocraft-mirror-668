@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Control protocol - photocraft-mirror-668 文档归档</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+      :root {
+        --color-primary: #2563eb;
+        --color-primary-hover: #1d4ed8;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.68;
+        color: #1e293b;
+      }
+      .markdown-body {
+        color: #1e293b;
+      }
+      .markdown-body h1 {
+        font-size: 2.25rem;
+        font-weight: 800;
+        margin-top: 1.8rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.6rem;
+        border-bottom: 2px solid #e2e8f0;
+        color: #0f172a;
+        line-height: 1.25;
+      }
+      .markdown-body h2 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-top: 1.6rem;
+        margin-bottom: 0.8rem;
+        padding-bottom: 0.4rem;
+        border-bottom: 1px solid #f1f5f9;
+        color: #1e293b;
+      }
+      .markdown-body h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-top: 1.3rem;
+        margin-bottom: 0.6rem;
+        color: #334155;
+      }
+      .markdown-body p {
+        margin-top: 0.8rem;
+        margin-bottom: 0.8rem;
+        line-height: 1.7;
+      }
+      .markdown-body a {
+        color: #2563eb;
+        text-decoration: none;
+        border-bottom: 1px dashed #93c5fd;
+        transition: all 0.2s ease;
+      }
+      .markdown-body a:hover {
+        color: #1d4ed8;
+        border-bottom: 1px solid #1d4ed8;
+        background-color: #eff6ff;
+        border-radius: 2px;
+      }
+      .markdown-body ul, .markdown-body ol {
+        padding-left: 1.5rem;
+        margin-top: 0.6rem;
+        margin-bottom: 0.6rem;
+      }
+      .markdown-body ul {
+        list-style-type: disc;
+      }
+      .markdown-body ol {
+        list-style-type: decimal;
+      }
+      .markdown-body li {
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+      }
+      .markdown-body pre {
+        background-color: #0f172a;
+        color: #e2e8f0;
+        padding: 1rem 1.2rem;
+        border-radius: 0.75rem;
+        overflow-x: auto;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875rem;
+        margin: 1rem 0;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+      .markdown-body code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875em;
+        padding: 0.15rem 0.35rem;
+        background-color: #f1f5f9;
+        color: #0f172a;
+        border-radius: 0.35rem;
+        border: 1px solid #e2e8f0;
+      }
+      .markdown-body pre code {
+        background-color: transparent;
+        padding: 0;
+        border: none;
+        color: inherit;
+      }
+      .markdown-body blockquote {
+        margin: 1rem 0;
+        padding: 0.75rem 1.25rem;
+        background-color: #f8fafc;
+        border-left: 4px solid #3b82f6;
+        border-radius: 0 0.5rem 0.5rem 0;
+        color: #475569;
+      }
+      .markdown-body table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.2rem 0;
+        display: block;
+        overflow-x: auto;
+      }
+      .markdown-body th, .markdown-body td {
+        border: 1px solid #cbd5e1;
+        padding: 0.6rem 1rem;
+        text-align: left;
+      }
+      .markdown-body th {
+        background-color: #f1f5f9;
+        font-weight: 600;
+      }
+      .markdown-body tr:nth-child(even) {
+        background-color: #f8fafc;
+      }
+      .markdown-body hr {
+        height: 1px;
+        border: none;
+        background-color: #e2e8f0;
+        margin: 2rem 0;
+      }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col antialiased">
+  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <a href="../index.html" class="flex items-center gap-2 group">
+        <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center text-white font-bold text-sm shadow-sm group-hover:scale-105 transition-transform ">LM</span>
+        <span class="font-bold text-slate-900 tracking-tight text-lg group-hover:text-blue-600 transition-colors ">photocraft-mirror-668</span>
+      </a>
+      <span class="hidden md:inline-block text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-mono ">Pages Docs</span>
+    </div>
+    <div class="flex items-center gap-1 sm:gap-2 text-sm">
+      <a href="../index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-slate-600 hover:text-blue-600 hover:bg-slate-50 font-medium ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        <span>首页 (README)</span>
+      </a>
+      <a href="./index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-blue-600 bg-blue-50 font-semibold ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+        <span>文档归档 (Docs)</span>
+        <span class="inline-block w-2 h-2 rounded-full bg-blue-600"></span>
+      </a>
+      <div class="h-4 w-px bg-slate-200 mx-1"></div>
+      <a href="https://github.com/shijiuwei/photocraft-mirror-668" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        <span class="hidden sm:inline">GitHub</span>
+      </a>
+      <a href="https://github.com/shijiuwei/photocraft-mirror-668/wiki" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <span class="hidden sm:inline">Wiki</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+  <!-- 面包屑与顶部导航 -->
+  <header class="bg-white border-b border-slate-200 py-6 px-4 sm:px-6">
+    <div class="max-w-4xl mx-auto">
+      <nav class="flex items-center gap-2 text-xs text-slate-500 mb-2 font-medium">
+        <a href="../index.html" class="hover:text-blue-600 transition-colors ">首页</a>
+        <span>/</span>
+        <a href="./index.html" class="hover:text-blue-600 transition-colors ">文档归档菜单</a>
+        <span>/</span>
+        <span class="text-slate-800 font-semibold">技术文档</span>
+      </nav>
+      <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Control protocol</h1>
+        <a href="./index.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition-colors ">
+          <span>&larr; 返回文档归档菜单</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主体正文区域 -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 py-10 flex-1 w-full">
+    <article class="bg-white p-6 sm:p-12 rounded-2xl shadow-sm border border-slate-200">
+      <div class="markdown-body">
+        <h1>Control protocol</h1>
+<p>Shape stroke defaults are drivable with <code>ui.set {shapeStroke: {width, align, cap, join,  miterLimit, dashes, dashOffset, opacity}}</code>; partial fields merge, null disables the stroke.
+Values use the existing <code>shape.edit</code> names and units. Colour uses <code>tools.setColors</code>.
+<code>ui.inspect</code> exposes <code>toolOptions.shape_stroke</code>, <code>stroke_width</code>, and <code>strokeEditor</code>.
+See <a href="shape-strokes.md">Shape stroke options</a> for limits, preview and persistence behavior.</p>
+<p>The desktop app listens on <code>127.0.0.1:&lt;port&gt;</code> (loopback only). Start it with a token file so the credential is not exposed in the process command line:</p>
+<pre><code class="language-sh">photocraft --control 7878 --control-token-file /private/path/photocraft-control.token \
+  --automation-read-root /work/project --automation-write-root /work/project
+</code></pre>
+<p>If the file does not exist, PhotoCraft creates it with a fresh 256-bit token. On Unix the new file is mode <code>0600</code>; on Windows, protect it with an appropriate user-only ACL. An existing file is reused. If neither a token nor token file is configured, PhotoCraft generates a token for that launch and writes it to standard error. <code>PHOTOCRAFT_CONTROL_TOKEN</code> and <code>PHOTOCRAFT_CONTROL_TOKEN_FILE</code> are the environment-variable equivalents.</p>
+<p>The first request on every TCP connection must authenticate. No other method is dispatched before this succeeds:</p>
+<pre><code class="language-json">{"id": "auth", "method": "auth", "params": {"token": "&lt;64 hexadecimal characters&gt;"}}
+</code></pre>
+<p>After the successful authentication reply, each request is one JSON line:</p>
+<pre><code class="language-json">{"id": 1, "method": "ui.inspect", "params": {}}
+</code></pre>
+<p>Each reply is one JSON line with the same <code>id</code>:</p>
+<pre><code class="language-json">{"id": 1, "ok": true, "result": { ... }}
+{"id": 2, "ok": false, "error": "unknown tool `foo`"}
+</code></pre>
+<p>The desktop server waits up to 60 seconds for a reply. A request still queued at that deadline is rejected before dispatch; a timeout does not cancel work that has already started.</p>
+<p>The transport is <code>apps/photocraft/src/control_server.rs</code>, and the handlers are in <code>crates/ui-egui/src/control.rs</code>. The MCP server (<code>photocraft-cli mcp --bridge 127.0.0.1:&lt;port&gt;</code>, crate <code>photocraft-automation</code>) wraps this same protocol. See <a href="#mcp-bridge">MCP bridge</a> below.</p>
+<h2>Methods</h2>
+<ul>
+<li><code>engine.execute {command, params}</code>: run any engine or UI command by id. Engine commands run directly with their default params and never open a dialog. Use <code>ui.menu.invoke</code> for menu-click behaviour, which opens a command's dialog when no params are given. <code>params</code> must be a JSON object (omit it or pass <code>null</code> for none); an array, string, number or boolean is an error naming the command, in every transport (control channel, <code>serve</code>, MCP and the CLI)</li>
+<li><code>engine.commands</code>: list commands with enablement</li>
+<li><code>ui.inspect</code>: full UI state (tool, panels, views, dialogs, windows, window size). The menu tree is not included; use <code>ui.menu.list</code>. <code>brushPicker</code> is <code>null</code> while closed and <code>{pos: [x, y], size: [w, h]?, list: {collapsed, filter, renaming, showName, showStroke, showTip, scale}}</code> while the Brush Preset picker is open (coordinates in screen points; <code>size</code> is the picker's content size once its corner grip was dragged, <code>null</code> before that, and the drag remembers both dimensions; the three <code>show*</code> flags pick the parts of each preset's card — at least one is always on; <code>scale</code> is the footer slider, 0.15–2 with 1 the standard, multiplying the cards' width and height — the heights stop at half size and the name and tip-size text hold their 1.0 size — and dropping the tips' size numbers at 0.40 and below; the parts and the scale are remembered across restarts, while the search, collapsed groups and a rename in progress are not). <code>view</code> holds the View/Window/Type preferences: <code>screen_mode</code>, <code>extras</code>, <code>show</code> and <code>snap_to</code> flags, <code>flip_horizontal</code>, <code>arrange</code> (Window › Arrange layout), pixel aspect, font preview size, language options. <code>perf.timings.gpuInfo</code> holds the graphics adapter, backend, driver, the backend chosen at launch and why, the canvas renderer (<code>gpu</code>/<code>cpu</code>) and, after a device loss, <code>lost</code> (<code>help.systemInfo</code> returns the same as <code>info</code>)</li>
+<li><code>ui.set {tool?, panels?, dockTabs?, dock?, dockWidth?, colorPanel?, maskTarget?, vectorMaskTarget?, selectionMode?, zoom?, center?, rotation?, fit?, theme?, brushSize?, brushSection?, brushTab?, brushesView?, brushPicker?, brushPickerName?, brushPickerStroke?, brushPickerTip?, brushPickerScale?, gradientBlendMode?, gradientClassic?, shapeStroke?}</code>: change UI state; any other field is an error, checked before anything changes (<code>zoom</code> is the canvas zoom where 1 = 100%, one document pixel per physical display pixel, so a scaled display doesn't magnify the image; <code>theme</code> is <code>pro</code>, <code>proMedium</code>, <code>studio</code>, <code>studioLight</code> or <code>classic</code>; <code>selectionMode</code> is the selection tools' options-bar mode, 0 New, 1 Add, 2 Subtract, 3 Intersect; <code>brushSection</code> indexes the Brush Settings sections, <code>brushTab</code> 0 = Brush Settings, 1 = Brushes; <code>brushesView</code> is <code>list</code> or <code>grid</code> for the Brushes panel; <code>brushPickerName</code>, <code>brushPickerStroke</code> and <code>brushPickerTip</code> are the Brush Preset picker's card parts (booleans, at least one on), and <code>brushPickerScale</code> its footer card-scale slider (0.15 to 2, 1 the standard); <code>brushPicker</code> is <code>[x, y]</code> in screen points to open the Brush Preset picker there (as a right-click with a painting tool does) or <code>null</code> to close it, and picking a preset in it is <code>tools.setBrush {"preset": name}</code>; <code>dock</code> is <code>{order: ["layers", …], heights: {"properties": 180}, collapsed: ["color"]}</code>, the right-dock groups top to bottom, their heights in points and the groups collapsed to their tab strip; <code>dockWidth</code> sets the right dock width in points, clamped to 250..520; <code>colorPanel</code> is <code>{background}</code>, whether the Color panel edits the background colour; <code>maskTarget</code> targets the active layer's mask, which, like Photoshop, swaps in the foreground/background pair kept for masks (white/black until one is picked) and swaps the pixels' pair back when the pixels are targeted again)
+<ul>
+<li><code>typeTransform</code> is <code>null</code> outside a temporary Ctrl/Cmd Type-tool drag. During a drag it reports its source document/revision, original affine, oriented <code>frame</code> (layer, local bounds, document-space corners and pivot), and captured <code>gesture</code>. Drive it with <code>ui.pointer</code> and <code>command: true</code> at <code>down</code>; <code>move</code>/<code>up</code> may release the modifier. The document/history remain unchanged during preview, and <code>up</code> applies one <code>type.edit</code> within <code>textEdit</code>'s session. Pressing Escape during the drag cancels only the preview. This pointer state is never restored from saved UI state.</li>
+</ul>
+</li>
+<li><code>ui.menu.invoke {id, params?, wait?}</code> / <code>ui.menu.list</code>: activate a menu item by id; list the menu tree. A menu item that starts a background job (a filter without a dialog, such as Blur More) replies with the job's result once it has been applied; with <code>"wait": false</code> the reply is <code>{job, pending: true}</code> at once</li>
+<li><code>ui.set</code> also accepts <code>gradientBlendMode</code> (a layer blend mode name, such as <code>Difference</code>) and <code>gradientClassic</code> (boolean) for the Gradient tool options bar.</li>
+<li>Each painting tool keeps its own brush, as in Photoshop: <code>tools.setBrush</code> and <code>ui.set {brushSize}</code> change the active tool's brush, and switching tools swaps in that tool's own (size, hardness, mode, opacity, flow, dynamics, smoothing). A tool used for the first time starts from the brush in hand. The colours, the erase flag and the stroke seed stay shared. So <code>ui.set {tool: "eraser", brushSize: 12}</code> sets the Eraser's size, and <code>ui.set {tool: "brush"}</code> afterwards brings the Brush's own size back.</li>
+<li><code>ui.set</code> also accepts the Eyedropper options bar (#1649): <code>eyedropperSampleSize</code> (<code>"point"</code> or 1, 3, 5, 11, 31, 51, 101: the side of the averaged square, shared by the Eyedropper, a painting tool's Alt-click eyedropper, the Curves/Color Picker eyedroppers and the Info panel), <code>eyedropperSample</code> (<code>current</code>, <code>currentAndBelow</code>, <code>all</code>, <code>allNoAdjustments</code>, <code>currentAndBelowNoAdjustments</code>) and <code>eyedropperRing</code> (boolean, Show Sampling Ring). <code>ui.inspect</code> reports them under <code>toolOptions</code> (<code>eyedropper_size</code>, <code>eyedropper_sample</code>, <code>eyedropper_ring</code>). The engine command <code>document.sampleColor {x, y, size, sampleLayer}</code> returns the colour such a sample picks.</li>
+<li><code>ui.set</code> also accepts the Crop tool's overlay menu (#1919): <code>cropOverlay</code> (<code>thirds</code>, <code>grid</code>, <code>diagonal</code>, <code>triangle</code>, <code>goldenRatio</code>, <code>goldenSpiral</code>), <code>cropOverlayShow</code> (<code>auto</code>: only while the crop box is dragged, Photoshop's default; <code>always</code>; <code>never</code>) and <code>cropOverlayOrientation</code> (0..3; Triangle has two orientations and Golden Spiral four, the others ignore it). <code>ui.inspect</code> reports them under <code>toolOptions</code> (<code>crop_overlay</code>, <code>crop_overlay_show</code>, <code>crop_overlay_orientation</code>). In the app, O cycles the overlay and ⇧O its orientation while the Crop tool shows a box.
+Both gradient modes use the current preset, including its opacity stops. Select <code>Foreground to Transparent</code> through <code>gradient.presets.select</code>, or pass custom <code>stops</code> and <code>transparency: [[0,100],[1,0]]</code> (location 0..1, opacity 0..100). Use <code>applyToLayer: false</code> to edit only the tool preset. Classic gradient drags dispatch <code>paint.gradient</code> without overriding them.</li>
+<li><code>ui.set</code> also accepts the Crop tool's gear menu (#1919) as <code>cropShield</code>, an object patching any of <code>show_cropped_area</code> (Show Cropped Area; off hides everything outside the box behind the canvas colour, H in the app), <code>enabled</code> (Enable Crop Shield), <code>color</code> (<code>matchCanvas</code>, the pasteboard colour, or <code>custom</code>), <code>custom_color</code> (<code>[r, g, b]</code>, 0..255), <code>opacity</code> (0..100, default 75) and <code>auto_adjust</code> (Auto Adjust Opacity: half the opacity while the box is dragged). <code>ui.inspect</code> reports it as <code>toolOptions.crop_shield</code>.</li>
+<li><code>ui.dialog.open {kind, fields?}</code> (kinds <code>newDocument</code>, <code>about</code>, <code>layerStyle {effect?}</code>, <code>colorPicker {target: foreground|background}</code>, <code>command {command}</code>) / <code>ui.dialog.set {dialog, field, value}</code> / <code>ui.dialog.confirm {dialog, wait?}</code> / <code>ui.dialog.cancel {dialog}</code>. Like <code>ui.menu.invoke</code>, <code>ui.dialog.confirm</code> waits for a background job its command starts (a filter dialog's OK) and replies with the result; <code>"wait": false</code> replies <code>{job, pending: true}</code> at once
+<ul>
+<li>A Layer Style color field opens the shared picker with <code>ui.dialog.open {"kind":"colorPicker","parent":12,"effect":"fx2","field":"color"}</code>. <code>parent</code> is the Layer Style dialog id; <code>effect</code> is its effect instance id. <code>field</code> must be one of that instance's color parameters (<code>color</code>, or <code>from</code>/<code>to</code> for Gradient Overlay). The picker previews over the pending style without changing the document. Picker OK changes only the parent parameter; Cancel discards the preview. Confirm the parent afterwards to apply the style. Parent confirmation is refused while its picker is open; parent cancellation closes both. The binding is exposed in <code>ui.inspect</code> as <code>__layerStyleColor</code>; changed/closed targets or a document switch invalidate it.</li>
+<li><code>ui.dialog.open {kind:"colorPicker", textStyle:{kind:"character"|"paragraph", id:u32}}</code> opens the shared Color Picker for an explicitly enabled Color attribute in Style Options. It opens the matching style panel/editor after validation; inherited colors must first be enabled through the existing style command. The picker reports its bound document/revision/style under <code>__textStyleColor</code> in <code>ui.inspect</code>. Changes preview in an isolated document; OK runs the existing style <code>set</code> command once, Cancel changes nothing. Document edits/switches or closed/changed Style Options discard the picker. <code>textStyle</code> cannot be combined with <code>parent</code>, <code>effect</code>, <code>field</code> or <code>target</code>.</li>
+<li>The shell's own dialogs (Window › Workspace › New Workspace / Delete Workspace, View › Pixel Aspect Ratio › Custom Pixel Aspect Ratio…, View › Show › Show Extras Options…, View › 32-bit Preview Options…) are listed in <code>ui.inspect</code>'s <code>dialogs</code> with the id <code>"shell"</code> (at most one is open). <code>ui.dialog.set</code>, <code>ui.dialog.confirm</code> and <code>ui.dialog.cancel</code> take <code>{"dialog": "shell"}</code>; OK runs the dialog's command and keeps the dialog open if it fails</li>
+<li>Layer Style (<code>layerStyle {effect?}</code> opens on that effect kind): the fields hold the dialog's whole state, so agents read and drive it like a user. <code>effects</code> lists every effect instance in the layer's order as <code>{id, kind, on, params, fx}</code> (<code>fx</code> is the effect snapshot the dialog loaded; OK edits that snapshot with <code>params</code>, so anything the dialog doesn't model survives). <code>selected</code> picks the page (<code>blendingOptions</code> or an instance id), <code>preview</code> (default on) gates the live canvas preview, <code>p:blendingOptions</code> edits blend mode/opacity/fill opacity, and <code>patternList</code> names the usable patterns. OK replaces the layer's effects in one step (<code>layer.layerStyle.replace</code>); Cancel discards. "New Style…" saves the pending state via <code>style.presets.new {effects}</code>, a swatch click applies a style preset, and Make/Reset Default use <code>layer.layerStyle.makeDefault</code> / <code>layer.layerStyle.defaultFor</code></li>
+<li>Preferences (<code>ui.menu.invoke {id: "edit.preferences.interface"}</code>) exposes the sections in its <code>values</code> field. Apply (<code>ui.dialog.apply</code>) and OK (<code>ui.dialog.confirm</code>) on Preferences are refused over control because automation denies whole-preferences updates and filesystem-bearing preference sections. A refused <code>ui.dialog.apply</code> returns an error and keeps the dialog open; a refused <code>ui.dialog.confirm</code> returns an error but closes and removes the dialog. <code>ui.dialog.cancel</code> closes the dialog without saving. Individual safe preferences can instead be changed with <code>engine.execute</code> using <code>prefs.set</code> (e.g. <code>{"command": "prefs.set", "params": {"path": "interface.showTooltips", "value": false}}</code>). Settings marked for the next launch still require a restart.</li>
+<li>Edit › Fill… (<code>ui.menu.invoke {id: "edit.fill"}</code>, Shift+F5, Shift+Backspace) opens the Fill dialog; its fields are <code>edit.fill</code>'s params (<code>contents</code>, <code>color</code>, <code>pattern</code>, <code>colorAdaptation</code>, <code>mode</code>, <code>opacity</code>, <code>preserveTransparency</code>), and OK remembers them in the preferences (<code>dialogs["edit.fill"]</code>).</li>
+<li>A pixel tool pressed on a type, shape, Smart Object or fill layer (e.g. through <code>ui.pointer</code>) opens the "Rasterize?" prompt instead of painting: a dialog with <code>__rasterize</code> (<code>type|shape|smartObject|fill</code>), <code>message</code>, <code>layer</code>, <code>tool</code> and <code>at</code>. <code>ui.dialog.confirm</code> runs the <code>layer.rasterize.*</code> command and then paints at <code>at</code> (two history states, <code>{"rasterized", "painted"}</code>); <code>ui.dialog.cancel</code> does nothing.</li>
+</ul>
+</li>
+<li><code>ui.window.open {document?}</code> / <code>ui.window.close {window}</code>: extra document windows</li>
+<li><code>ui.pointer {events: [{kind: down|move|up, x, y, pressure?, tiltX?, tiltY?, rotation?}], tool?, modifiers?, button?}</code>: drive the active tool in document coordinates (pressure 0..1, tilt in degrees -90..90, barrel rotation 0..360: a simulated pen). Modifier flags (<code>shift</code>, <code>alt</code>, <code>command</code>, <code>ctrl</code>, <code>space</code>) go either at the top level or grouped under <code>modifiers</code>; when <code>modifiers</code> is present, top-level flags are ignored. <code>space: true</code> holds Space (the Crop frame, marquee, lasso or shape being drawn then moves instead of growing). <code>command: true</code> with a painting, retouching, eraser, gradient, eyedropper or other non-selection tool makes the gesture the Move tool's, as holding ⌘ (Ctrl off the Mac) does in the app: a drag moves the active layer (the selected pixels when there is a selection), with <code>alt: true</code> as well it duplicates the layer first, and a click picks the layer under the point; the tool is unchanged afterwards. The Hand, Rotate View, Zoom, Crop, Slice, Path Selection, Pen, shape, Type and selection tools keep <code>command</code> for themselves. <code>ctrl: true</code> with <code>alt: true</code> and a brush tool is the on-canvas brush resize instead (in the app, Ctrl+Alt-drag off the Mac). <code>button: "right"</code> (or <code>"secondary"</code>) is the right button: with the Move tool (or <code>command: true</code> with any tool) it opens the canvas layer menu (<code>layerMenu</code> in <code>ui.inspect</code> lists the layers there, topmost first; select one with <code>layer.select</code>); with Marquee, Lasso, Magic Wand, Object Selection, or Pen it opens a tool context menu (<code>canvasToolMenu</code> in <code>ui.inspect</code>, with ordered command ids, separators, and enabled states); with a painting tool it opens the Brush Preset picker, or erases with Preferences › Tools › Right-click with painting tools = erase. The menus open at the screen position of the pressed document point. Use <code>ui.context.choose {id}</code> for enabled tool-context actions. The Pen menu is documented in <code>docs/context-menu-parity.md</code>. With a Color Picker as the top dialog, <code>down</code> and <code>move</code> sample the image into its new colour instead (its eyedropper, like a click on the canvas) and the tool is not driven. A <code>down</code>/<code>up</code> at the same point with the Rectangle, Ellipse, Triangle or Polygon tool opens Create Rectangle / Ellipse / Triangle / Polygon (Photoshop's click-to-size dialog); set its <code>width</code> and <code>height</code> (document pixels), <code>fromCenter</code>, <code>radii</code> [tl, tr, br, bl] (Rectangle) or <code>sides</code> and <code>starRatio</code> (percent, Polygon) with <code>ui.dialog.set</code>, then <code>ui.dialog.confirm</code> runs <code>shape.create</code> at the clicked point.
+<ul>
+<li>Magnetic Lasso (<code>tool: "magneticLasso"</code>): a <code>down</code>/<code>up</code> pair is a click. The first sets the first fastening point (its modifiers set the selection mode); later clicks fasten a point, or close the border on the first point. <code>move</code> events trace the border with or without a button held, fastening points by themselves; with <code>alt: true</code> a click draws a straight segment and a drag a freehand one. <code>ui.inspect</code> shows the border in progress under <code>magnetic</code> (<code>path</code>, <code>anchors</code>, <code>live</code>, <code>mode</code>). <code>ui.key</code> Enter closes it along the edges, Backspace removes the last fastening point, Escape cancels. To select along edges in one call instead, use the <code>select.magneticLasso</code> command with rough points around the shape.</li>
+</ul>
+</li>
+<li><code>ui.click {x, y, button?, count?}</code> / <code>ui.move {x, y}</code>: synthetic pointer input in screen points (<code>button</code>: <code>left</code> (default), <code>right</code> or <code>middle</code>). <code>count</code> (default 1, <code>2</code> for a double-click) is at most 256; a larger one is an error and queues nothing</li>
+<li><code>ui.key {key, command?, shift?, alt?, ctrl?}</code> (flags may also be grouped under <code>modifiers</code>): press and release a key, e.g. <code>{"key": "ArrowLeft", "shift": true}</code></li>
+<li><code>ui.type {text}</code>: type text (goes to the focused widget, or to the canvas while the Type tool is editing)</li>
+<li><code>ui.resize {width, height}</code>: resize the main window</li>
+<li><code>ui.gpu.simulateLoss {error?}</code>: act as if the wgpu device was lost (or reported an error with <code>error: true</code>). The app switches to the CPU image compositor for the rest of the session and shows the same recovery warning as on a real loss. <code>gpuFallbackNotice</code> in <code>ui.inspect</code> contains the reason while the warning is open. Keep Using CPU saves CPU compatibility for the next launch; Retry GPU saves GPU mode and asks the user to save and restart. The window renderer still requires a working graphics or software adapter. Returns <code>wasActive</code> and <code>gpuInfo</code>. For testing the fallback</li>
+<li><code>ui.screenshot {path?, focus?}</code>: capture the main window (PNG). With no path the reply contains
+base64 PNG data; a path is relative to the automation write root. Raises the window first
+(default) because occluded macOS windows stop rendering</li>
+<li><code>ui.focus</code>: bring the main window to the front</li>
+<li><code>app.open {path}</code> / <code>app.save {path?}</code>: relative file I/O through the configured automation roots (<code>app.open</code> reads under the read root, <code>app.save</code> writes under the write root; absolute paths, <code>..</code> and paths escaping the root are refused, and both fail closed when no root was granted). Both reply with <code>warnings</code> (import/export notes such as "adjustment layer flattened"; <code>[]</code> when none), also shown to the user in the status bar and as a notice (<code>notices</code> in <code>ui.inspect</code>); <code>app.open</code> also returns the <code>path</code> and document <code>name</code>, <code>app.save</code> the <code>path</code> written. <code>app.save</code> without <code>path</code> writes back only to the document's own PSD, PSB or <code>.pcraft</code> file, like File › Save. Automation opens and saves never fire script events. Use these two rather than <code>file.open</code>, <code>file.save</code>, <code>file.saveAs</code> or <code>file.saveACopy</code>, which the control channel refuses (see <a href="#engine-commands">Engine commands</a>)</li>
+<li><code>app.quit</code></li>
+</ul>
+<h2>Engine commands</h2>
+<p>Change the UI language without restarting with <code>prefs.set</code>:
+<code>{"path":"interface.language","value":"fr"}</code>. Supported codes and preview/apply behaviour
+are documented in <a href="localization.md">UI localisation</a>. <code>prefs.get</code> and the existing preference
+store expose and persist the same setting; scripts keep using canonical command IDs.</p>
+<p><code>engine.execute</code> runs any command by id. <code>engine.commands</code> (or the engine command <code>command.list</code>) lists them all, with labels, menu paths, shortcuts, a parameter description, and whether each is currently enabled. Examples:</p>
+<table><thead><tr><th>Command</th><th>Params</th></tr></thead><tbody>
+<tr><td><code>file.new</code></td><td><code>{"width":1920,"height":1080,"mode":"rgb","depth":8,"background":"white"}</code></td></tr>
+<tr><td><code>layer.new.layer</code></td><td><code>{"name":"Ink"}</code></td></tr>
+<tr><td><code>layer.select</code></td><td><code>{"layer":id,"mode":"replace|toggle|range|add"}</code>: ⌘-click = toggle, ⇧-click = range; <code>document.inspect</code> reports <code>selectedLayers</code> and a per-layer <code>selected</code> flag</td></tr>
+<tr><td><code>channel.target</code> / <code>channel.setVisible</code></td><td>Channels panel target and eyes (<code>"composite"</code>, colour name, alpha index or name, <code>"quickMask"</code>). <code>document.inspect</code> (and <code>channel.list</code>) report <code>channels</code>: composite/colour/alpha rows with visibility, channel options, <code>quickMask</code>, <code>target</code>. Pixel commands without a <code>target</code> param follow the targeted channel</td></tr>
+<tr><td><code>layer.setProps</code></td><td><code>{"layer":id?,"name":…,"visible":…,"opacity":0..1,"blend":"Multiply"}</code></td></tr>
+<tr><td><code>layer.fill.solidColor.set</code></td><td><code>{"layer":id?,"document":id?,"color":"#rrggbb"}</code>: edit a Solid Color Fill in one undo step; RGB without alpha preserves the fill's alpha. Float RGB arrays and a stored <code>Color</code> are also accepted. <code>document</code> rejects stale dialog targets.</td></tr>
+<tr><td><code>layer.layerMask.edit</code></td><td><code>{"layer":id?,"document":id?,"density":0..100?,"feather":0..1000?}</code>: edit pixel-mask Density (%) and Feather (px) without changing mask pixels, including adjustment masks. At least one setting is required; <code>document</code> rejects stale targets. A shared <code>coalesce</code> key groups slider updates into one undo step.</td></tr>
+<tr><td><code>layer.setExpanded</code></td><td><code>{"layer":id?,"expanded":bool?,"all":bool?}</code>: open/close a group in the Layers panel (no <code>expanded</code>: toggle; <code>all</code>: every group). A view change saved with the document (PSD open/closed folder), not an undo step; <code>document.inspect</code> reports <code>expanded</code> on groups</td></tr>
+<tr><td><code>layer.newAdjustmentLayer.hueSaturation</code></td><td><code>{"hue":30,"saturation":10}</code></td></tr>
+<tr><td><code>paint.stroke</code></td><td><code>{"points":[[x,y,pressure],…],"size":20,"color":"#ff0000"}</code></td></tr>
+<tr><td><code>select.rect</code></td><td><code>{"x":0,"y":0,"width":100,"height":50,"mode":"add","ellipse":false}</code></td></tr>
+<tr><td><code>document.inspect</code></td><td><code>{}</code>: layer tree, history, selection bounds</td></tr>
+<tr><td><code>document.pixel</code></td><td><code>{"x":10,"y":10}</code>: composite RGBA</td></tr>
+<tr><td><code>document.presets.list</code></td><td><code>{}</code> → <code>{presets:[{name,settings}]}</code>: saved New Document configurations</td></tr>
+<tr><td><code>document.presets.save</code></td><td><code>{"name":"Product square","settings":{"width":1600,"height":1600,"background":"transparent"}}</code>: save a snapshot; names are trimmed, 1–255 characters, and ASCII case-insensitive duplicates are rejected</td></tr>
+<tr><td><code>document.presets.get</code></td><td><code>{"name":"Product square"}</code> → <code>{preset,params}</code>: fetch settings; pass <code>params</code> to <code>file.new</code> to create a document, optionally adding a document <code>name</code></td></tr>
+<tr><td><code>document.presets.delete</code></td><td><code>{"name":"Product square"}</code>: delete the named saved configuration</td></tr>
+<tr><td><code>type.hitTest</code></td><td><code>{"layer":id?,"x":px,"y":px}</code>: character under a document point. No <code>layer</code> picks the topmost visible type layer there. Result <code>{"layer","index","line","inside"}</code></td></tr>
+<tr><td><code>type.caret</code></td><td><code>{"layer":id?,"index":char}</code>: caret segment in document pixels, <code>{"index","line","segment":[[x,y],[x,y]]}</code> (rotated and vertical type included)</td></tr>
+<tr><td><code>type.navigate</code></td><td><code>{"layer":id?,"index":char,"move":"wordPrev|wordNext|linePrev|lineNext|lineStart|lineEnd|start|end","x":px?}</code>: neighbouring caret. <code>x</code> keeps the column across line moves. Result <code>{"index"}</code></td></tr>
+<tr><td><code>actions.list</code></td><td><code>{}</code> → <code>{actions:[{name, steps}], recording}</code> (the name being recorded, or null)</td></tr>
+<tr><td><code>actions.get</code></td><td><code>{"action": name or index}</code> → <code>{name, steps:[[id, params], …]}</code>, the shape <code>file.automate.batch</code> and droplets take</td></tr>
+<tr><td><code>actions.record</code></td><td><code>{"name":"Red"}</code> starts a new action (default name <code>Action N</code>). <code>{"action": name or index}</code> appends to one that exists</td></tr>
+<tr><td><code>actions.stop</code></td><td><code>{}</code> → <code>{action, steps}</code>. Copies replayable journal entries since <code>actions.record</code> (queries and action-editing commands omitted)</td></tr>
+<tr><td><code>actions.play</code></td><td><code>{"action": name or index, "from": step?}</code>. <code>from</code> and <code>failed.step</code> are 0-based. Returns <code>{action, ran, failed?:{step, id, error}}</code> and still returns ok when a step fails, so a partial run is reported. Leaves one history step per step that ran. Supports nested action calls up to 16 levels, rejecting cycles. While recording, playing another action appends one named <code>actions.play</code> step instead of its expanded commands. On an untrusted session each step is authorized the same way as a top-level command</td></tr>
+<tr><td><code>actions.move</code></td><td><code>{"action": name or index, "step": index?, "to": index}</code> moves a step within its action, or moves the whole action when <code>step</code> is omitted. <code>to</code> is the final zero-based index. Pending steps can be reordered while recording; invalid moves leave the list unchanged.</td></tr>
+<tr><td><code>actions.delete</code></td><td><code>{"action": name or index, "step": index?}</code>. With a zero-based <code>step</code>: <code>{action, deletedStep, steps}</code>, also allowed while recording. Without <code>step</code>: <code>{deleted}</code>, refused while recording</td></tr>
+</tbody></table>
+<p>The Actions panel shows replayable steps immediately while recording. Click an individual
+step to select it, then use the trash button to remove that step; selecting the action
+heading instead targets the whole action. Step deletion also works during recording
+and does not undo the document edit. The control equivalent is
+<code>actions.delete {"action": "Name", "step": 0}</code> (zero-based). Omitting <code>step</code> deletes
+the whole action, which still requires recording to be stopped.</p>
+<p>Desktop actions also record and replay View › Fit on Screen (<code>view.fitOnScreen</code>),
+100% (<code>view.actualPixels</code>), Zoom In and Zoom Out through their menu commands or shortcuts.
+Select an action and press Record to append steps; the plus button starts a new action.
+A final <code>["view.fitOnScreen", {}]</code> step fits the resized document when the canvas is laid out.
+Headless playback reports unsupported view commands as failed steps.</p>
+<p>In the desktop Actions panel, right-click an action to assign a function key (F1–F12),
+or choose None to remove it. The binding follows the action name, regardless of the selected
+row, and is saved in preferences. For example, the existing <code>edit.keyboardShortcuts</code> command
+accepts <code>{"set":{"actions.play:My action":"F6"},"allowUnknown":true,"removeConflicts":false}</code>.
+A named action takes precedence over the ordinary menu shortcut while it exists and is bound;
+removing its binding or deleting it restores that menu shortcut. The panel moves a key away
+from another action when assigning it. Action playback still checks each nested command's
+automation permissions.</p>
+<p>UI-level commands (<code>view.zoomIn</code>, <code>window.theme.pro</code>, <code>edit.search</code>, …) are also accepted by <code>engine.execute</code> and <code>ui.menu.invoke</code>.</p>
+<p>Commands that read or write files by path, instead of through the automation roots, are refused with "automation command <code>…</code> uses ambient filesystem paths and is disabled; use capability-scoped document methods". That covers every <code>file.*</code> command except <code>file.new</code>, the <code>file.close*</code> commands and a few path-free ones such as <code>file.fileInfo</code>, so <code>file.open</code>, <code>file.save</code>, <code>file.saveAs</code> and <code>file.saveACopy</code> always fail here: open and save with <code>app.open</code> / <code>app.save</code>. Path parameters of other commands (<code>layer.exportAs {path}</code>, <code>filter.distort.displace {mapPath}</code>, preset imports, and plug-in install/reload) are refused the same way. <code>prefs.set</code> rejects whole-preference updates and file-backed sections (<code>colorSettings</code>, <code>scriptEvents</code>, <code>historyLog</code>, <code>plugIns</code> and <code>scratchDisks</code>) so automation cannot configure ambient file access indirectly. The desktop app also refuses <code>image.mode.*</code>, which can load the colour profiles set in its preferences. The rules are in <code>crates/automation/src/workspace.rs</code>.</p>
+<p>Embedded Smart Objects can be opened with <code>layer.smartObjects.editContents {layer?}</code> or
+unpacked with <code>layer.smartObjects.convertToLayers {layer?}</code>. This includes Photoshop sources
+stored by UUID in the document's embedded linked-layer blocks. Sources requiring a disk read
+remain refused, including nested linked objects that need re-rendering during unpacking.
+In the opened contents document, use <code>layer.smartObjects.saveContents {}</code> to update the parent
+in memory, or close the dirty contents document. For nested objects, save from the deepest
+contents outward. <code>app.save</code> exports the active document to a scoped file; it is not a substitute
+for Save Contents. Save the parent document to disk when the edits are complete. These rules
+also apply to recorded actions and synthetic UI input; interactive desktop commands retain
+their usual file access. Source replacement, relinking and export commands remain restricted.</p>
+<p><code>type.editText</code> starts inline editing of the active type layer and selects all its text, like
+double-clicking its thumbnail in Layers. Text input, Commit and Cancel use the existing Type tool
+editing session; non-type layers return an error without changing the tool or document.</p>
+<h3>Background jobs (#210)</h3>
+<p>Long commands (every <code>filter.*</code>, <code>edit.contentAwareFill</code>, <code>edit.contentAwareScale</code>, <code>file.automate.photomerge</code>, <code>brush.presets.importAbr</code>), file opens and interactive saves (File › Save, Save As and the TIFF Options continuation, #2017) run as background jobs in the desktop app: the window keeps drawing, the status bar shows progress with a Cancel button, and jobs that lock the active document show a modal progress dialog (Esc cancels). <code>engine.execute</code>, <code>ui.menu.invoke</code> and <code>ui.dialog.confirm</code> still wait for the result by default; pass <code>"wait": false</code> to get <code>{job, pending: true}</code> at once, then poll <code>jobs.list</code> (<code>state</code>: running, done, failed, cancelled; <code>progress</code> 0–1; the result or error) and stop it with <code>jobs.cancel {job}</code>. A cancelled or failed job leaves the document unchanged. While a job runs, commands that would edit its document fail with "… is still running on this document". <code>ui.inspect</code> reports <code>jobs</code> (running jobs, opening files, saving files). <code>app.save</code> still writes before it replies. Set <code>PHOTOCRAFT_INLINE_JOBS=1</code> to run everything inline.</p>
+<h2>Preferences</h2>
+<p>Preferences (Edit › Preferences, grouped like Photoshop's dialog sections) live in the engine, so
+the same commands work in the app, the CLI and headless MCP. Paths are dotted camelCase keys:
+<code>&lt;section&gt;.&lt;key&gt;</code>, with sections <code>general</code>, <code>interface</code>, <code>workspace</code>, <code>tools</code>, <code>historyLog</code>,
+<code>fileHandling</code>, <code>export</code>, <code>performance</code>, <code>scratchDisks</code>, <code>cursors</code>, <code>transparencyAndGamut</code>,
+<code>unitsAndRulers</code>, <code>guidesGridAndSlices</code>, <code>plugIns</code>, <code>type</code>, <code>enhancedControls</code>, <code>rawDefaults</code>,
+<code>integrations</code>, plus <code>shortcuts.&lt;command id&gt;</code>, <code>menus</code> (<code>hidden</code>, <code>colors.&lt;id&gt;</code>), <code>toolbar</code>
+(<code>hidden</code>, <code>order</code>) and <code>colorSettings</code> (Edit › Color Settings).</p>
+<table><thead><tr><th>Command</th><th>Params</th></tr></thead><tbody>
+<tr><td><code>prefs.get</code></td><td><code>{"path":"performance.historyStates"}</code>; no path returns everything</td></tr>
+<tr><td><code>prefs.set</code></td><td><code>{"path":"cursors.painting","value":"precise"}</code> or <code>{"values":{"unitsAndRulers.rulers":"cm","guidesGridAndSlices.gridColor":"#ff8800"}}</code>. Values are validated (choices, ranges, <code>#rrggbb</code> colours, shortcut syntax); a batch applies all or nothing. A section path takes an object and merges it key by key</td></tr>
+<tr><td><code>prefs.reset</code></td><td><code>{"path":"performance"}</code> (a section or key); no path resets everything. An individual <code>shortcuts.&lt;id&gt;</code> or <code>menus.colors.&lt;id&gt;</code> reset removes the override and returns <code>null</code>, including when it is already absent</td></tr>
+<tr><td><code>edit.preferences.&lt;section&gt;</code></td><td>the section's values; in the app (no params) it opens the Preferences dialog on that section</td></tr>
+<tr><td><code>edit.keyboardShortcuts</code></td><td><code>{"set":{"edit.fill":"Cmd+Shift+F"},"reset":true|["id",…],"removeConflicts":true,"filter":"blur","list":false,"importKys":"&lt;.kys XML&gt;"}</code>: returns overrides, matching commands and conflicts. A shortcut moved to another command is removed from its old owner unless <code>removeConflicts</code> is false. <code>""</code> removes a shortcut, <code>null</code> restores the default. The held temporary tools are bindable too: <code>tools.temporary.hand</code> (Space; also repositions a selection being drawn), <code>tools.temporary.zoomIn</code> (Cmd+Space), <code>tools.temporary.zoomOut</code> (Cmd+Alt+Space); they list with <code>"hold": true</code>. ⌘ (Ctrl off the Mac) held alone is the Move tool with the painting, retouching and other non-selection tools, as in Photoshop; it is a modifier, not a binding. <code>importKys</code> applies a Photoshop <code>.kys</code> set (the file's XML text, at most 4 MiB): rows are matched to commands by menu label, a key equal to the default restores it, keys also given in <code>set</code> win, tool keys are not imported, and the result gains <code>import</code> (<code>name</code>, <code>imported</code>, <code>set</code>, <code>unknown</code>, <code>unreadable</code>, <code>alternates</code>, <code>toolKeys</code>). In the app it opens Keyboard Shortcuts and Menus, whose Import Shortcuts… button loads a <code>.kys</code> set into the dialog (opening or dropping a <code>.kys</code>, or Photoshop's live <code>Keyboard Shortcuts.psp</code>, does the same). On a desktop with Photoshop installed, the first launch that has no shortcut overrides yet asks whether to import the newest install's live set (Import / Don't Import; <code>ui.inspect</code> shows it as <code>kysOffer</code>); the answer is recorded in the preferences as <code>dialogs.photoshopShortcuts</code>, so it is asked once</td></tr>
+<tr><td><code>edit.menus</code> / <code>edit.toolbar</code></td><td><code>{"hide":["edit.fade"],"show":[…],"color":{"edit.fill":"red"},"reset":false}</code> / <code>{"hidden":["Sponge"],"order":[…]}</code></td></tr>
+<tr><td><code>edit.colorSettings</code></td><td><code>{"workingRgb":"display-p3","workingCmyk":"coated-cmyk","workingGray":"sgray","policyRgb":"preserve|convert|off",…,"askOnMismatch":true,"intent":"perceptual","bpc":true}</code>; honoured when opening files (<code>file.openAs</code>, the app's File › Open) and by Image › Mode and "working" profile specs. <code>color.profileMismatch {"action":"preserve|convert|discard|assignWorking"}</code> answers the mismatch prompt</td></tr>
+</tbody></table>
+<p>Values the app honours live: history states (every open document), effect-cache budget, interface
+theme, canvas colour and border, checkerboard size and colours (CPU and GPU canvas), gamut warning
+colour and opacity, guide/grid/smart-guide colours and styles, grid spacing and subdivisions, ruler
+units (rulers, Info panel, Image Size default unit), image interpolation (Image Size default),
+painting and other cursors, zoom with scroll wheel, Use Shift Key for Tool Switch, keyboard
+shortcuts, hidden and coloured menu items, autosave interval and crash recovery, and the history
+log text file. GPU on/off and the GPU tile size apply at the next launch.</p>
+<p>The desktop app stores them in <code>preferences.json</code> in the platform config directory (macOS
+<code>~/Library/Application Support/Photocraft</code>, Windows <code>%APPDATA%\Photocraft</code>, Linux
+<code>$XDG_CONFIG_HOME/photocraft</code>; override with <code>PHOTOCRAFT_CONFIG_DIR</code>); autosaves go to its
+<code>Recovery</code> folder, and the window size and position, the dock width and floating-panel geometry
+to <code>ui.ron</code> beside it (a file holding values that would crash startup is discarded). In portable mode (a <code>portable.txt</code> or <code>PhotoCraft.portable</code> file beside the
+executable, as in the Windows portable zip) that directory is <code>PhotoCraftData</code> next to the
+executable instead. The web build keeps them in <code>localStorage</code>. A save writes only the values
+this instance changed since it last loaded or saved them over what storage holds now, so a second
+browser tab (or app window) never reverts the other's changes; for a value changed in both, the
+latest save wins. A failed write stays pending and is retried (after 2 s, doubling up to 30 s, and
+sooner after a further change); the status bar reports the first failure and a notice a
+persistent one.</p>
+<p>User and imported (<code>.abr</code>) brush presets live in the config directory's <code>Presets</code> folder: one
+<code>.pcbrushes</code> JSON file per preset group, content-addressed tip bitmaps under <code>tips/</code>, and an
+<code>index.json</code> with the group order and deleted built-ins (see <code>photocraft_engine::preset_store</code>).
+The store loads in the background at launch and syncs after every brush preset change; built-ins
+are never written. The Actions list is <code>actions.json</code> in that same folder and survives a restart.
+Headless CLI/MCP sessions and the web build keep brush presets and the action list for the session
+only, unless a store is attached. Gradient presets (including imported <code>.grd</code> groups) persist with
+the preferences.</p>
+<p>Named New Document presets also persist with preferences (<code>presets.documents</code>) on desktop and
+web. File › New › Save Preset… saves the current form; the Saved tab selects a configuration or
+deletes it. Selection only fills the form: Create still runs <code>file.new</code>, and the document name
+is independent of the preset name. Settings include pixel width/height, resolution in ppi,
+mode, depth, background, and display <code>unit</code> (<code>px</code>, <code>in</code>, <code>cm</code>, <code>mm</code>, <code>pt</code>, <code>pica</code>) and
+<code>resolutionUnit</code> (<code>in</code>, <code>cm</code>). The defaults match File › New. Background Color captures the
+toolbox colour as <code>backgroundColor: [r,g,b]</code> (0..1), so reusing it does not follow later toolbox
+changes. Up to 256 presets are kept. Invalid saved entries are skipped independently; other
+presets and preferences still load. Automatic Recent configurations are separate follow-up work.</p>
+<h2>Snapping</h2>
+<p>With View › Snap on, tool gestures snap to the View › Snap To targets (guides and grid while they
+are shown, layer edges and centres, document bounds and centre, selection edges) within 8 screen
+pixels: Move tool drags (the moved layers' bounds), marquee, crop, shape, type-box and pen points,
+Free Transform handles and drags inside the box, and guides. Holding Ctrl disables snapping for
+the drag. With View › Show › Smart Guides on, the Move tool also snaps to other layers and draws
+magenta alignment lines. <code>ui.pointer</code> drives the same code, so agents get identical results.</p>
+<h2>MCP bridge</h2>
+<p><code>photocraft-automation</code> provides an MCP server built on the official Rust SDK (<code>rmcp</code>). It runs in one of two modes:</p>
+<ul>
+<li><strong>Headless</strong> (<code>photocraft-cli mcp</code>): an in-process <code>photocraft_engine::Session</code>. There is no window.</li>
+<li><strong>Bridge</strong> (<code>photocraft-cli mcp --bridge 127.0.0.1:7878 --control-token-file &lt;path&gt;</code>): every tool is forwarded to a running <code>photocraft --control 7878 --control-token-file &lt;path&gt;</code> over this protocol, so agents see and drive the live app.</li>
+</ul>
+<p>The bridge keeps one authenticated TCP connection open. A transport failure while sending a request or waiting for its reply, including a reply timeout, drops the connection and reports that the operation may have completed; inspect the document before retrying an edit. It never automatically resends the failed request. The next separate call reconnects and authenticates, and reply lines whose <code>id</code> does not match the request are skipped. It only accepts loopback addresses, because the app only listens on loopback. Supply its bearer token with <code>--control-token-file</code>, <code>--control-token</code>, <code>PHOTOCRAFT_CONTROL_TOKEN_FILE</code>, or <code>PHOTOCRAFT_CONTROL_TOKEN</code>:</p>
+<pre><code class="language-sh">photocraft-cli mcp --bridge 127.0.0.1:7878 \
+  --control-token-file /private/path/photocraft-control.token
+</code></pre>
+<p>How each MCP tool maps onto control methods in bridge mode:</p>
+<table><thead><tr><th>MCP tool</th><th>Control method</th></tr></thead><tbody>
+<tr><td><code>command_run {id, params, wait?}</code></td><td><code>engine.execute {command: id, params, wait}</code></td></tr>
+<tr><td><code>jobs_list</code> / <code>jobs_cancel {job?}</code></td><td><code>jobs.list</code> / <code>jobs.cancel {job?}</code></td></tr>
+<tr><td><code>command_list {filter?, enabled_only?}</code></td><td><code>engine.commands</code> (filtered by the MCP server)</td></tr>
+<tr><td><code>doc_new {…}</code></td><td><code>engine.execute {command: "file.new", params}</code></td></tr>
+<tr><td><code>doc_inspect</code></td><td><code>engine.execute {command: "document.inspect"}</code></td></tr>
+<tr><td><code>doc_open {path}</code></td><td><code>app.open {path}</code></td></tr>
+<tr><td><code>doc_save {path?}</code> / <code>doc_export {path}</code></td><td><code>app.save {path?}</code></td></tr>
+<tr><td><code>doc_render_preview {max_side?}</code></td><td><code>ui.screenshot</code>, returned directly as PNG image content</td></tr>
+<tr><td><code>session_list</code>, <code>ui_inspect</code></td><td><code>ui.inspect</code></td></tr>
+<tr><td><code>ui_screenshot {max_side?}</code></td><td><code>ui.screenshot</code>, returned as PNG image content</td></tr>
+<tr><td><code>ui_pointer {events, modifiers?, button?}</code></td><td><code>ui.pointer</code> (other arguments are an error)</td></tr>
+<tr><td><code>ui_menu_invoke {id}</code></td><td><code>ui.menu.invoke</code></td></tr>
+<tr><td><code>ui_set {fields}</code></td><td><code>ui.set</code></td></tr>
+<tr><td><code>control_call {method, params}</code></td><td>any method, passed through unchanged</td></tr>
+</tbody></table>
+<p>Bridge previews capture the app window; passing <code>index</code> is an error. Headless <code>doc_render_preview</code> supports <code>index</code> without changing the active document.</p>
+<p><code>doc_select</code> and <code>doc_close</code> work only in headless mode. The <code>ui_*</code> tools and <code>control_call</code> work only in bridge mode; in headless mode they return a tool error that explains how to start bridge mode.</p>
+<p><strong>Security note:</strong> TCP control uses a bearer token, not client identity or general per-method
+authorization. A client that possesses the token receives the non-filesystem control surface,
+including UI input, command execution, and application control. Keep token files private, do not
+commit or log tokens, and do not pass a token directly on a shared system where process command
+lines are visible. The protocol is unencrypted and must remain on loopback; do not tunnel or proxy
+it to an untrusted host.</p>
+<p>Filesystem access fails closed unless launch-time read and/or write roots are granted with
+<code>--automation-read-root</code> and <code>--automation-write-root</code>. The environment-variable equivalents
+(<code>PHOTOCRAFT_AUTOMATION_READ_ROOT</code> / <code>PHOTOCRAFT_AUTOMATION_WRITE_ROOT</code>) are supported by
+the desktop <code>photocraft</code> process, but not by headless <code>photocraft-cli mcp</code> or <code>serve</code>;
+for those CLI modes, supply the flags explicitly. In MCP bridge mode, configure roots on the
+desktop process rather than on the bridging CLI. Request paths must be
+non-empty, forward-slash relative paths beneath the applicable root, or absolute paths that lie
+beneath it. An absolute path is compared with the root as text and the rest is checked like a
+relative path; nothing is resolved on the filesystem. Absolute paths outside the root, parent
+traversal, alternate separators in relative paths, drive/device/stream prefixes, malformed
+components, and link escapes are rejected before file effects. Read and write authority are
+independent; the parent of a new output file must already exist. Engine commands that still use
+ambient filesystem paths are disabled for automation until they are migrated to the same
+capability interface. Interactive desktop file pickers retain normal user-selected access.</p>
+<h2>Headless server</h2>
+<p><code>photocraft-cli serve</code> keeps one headless engine session (no window, no GPU) and answers the same
+JSON-lines envelope on stdio, or on <code>127.0.0.1:&lt;port&gt;</code> with <code>--port &lt;port&gt;</code> (loopback only; each
+authenticated connection shares the session). TCP uses the same first-frame <code>auth</code> exchange and
+token options as desktop control. Stdio does not require this TCP handshake because access is
+inherited from the process pipe. It is the fastest way for a script or agent to make many edits:
+no MCP framing, no app start-up per command. Configure its file access with the same
+<code>--automation-read-root</code> and <code>--automation-write-root</code> flags. Implementation:
+<code>crates/automation/src/rpc.rs</code>.</p>
+<table><thead><tr><th>Method</th><th>Params</th></tr></thead><tbody>
+<tr><td><code>engine.execute</code></td><td><code>{command, params?, wait?}</code>: any engine command (<code>wait: false</code> starts a long one as a background job: <code>{job, pending}</code>)</td></tr>
+<tr><td><code>jobs.list</code> / <code>jobs.cancel</code></td><td><code>{}</code> / <code>{job?}</code>: background jobs; cancel one or all. Every request (and MCP tool call) first applies the jobs that finished, so <code>doc.save</code>, <code>doc.inspect</code>, <code>doc.render</code> and <code>session.list</code> include a finished job's result without polling <code>jobs.list</code> first</td></tr>
+<tr><td><code>engine.commands</code></td><td><code>{filter?}</code>: registry with params docs and enablement</td></tr>
+<tr><td><code>session.list</code></td><td>open documents and the active index</td></tr>
+<tr><td><code>doc.open</code> / <code>doc.new</code></td><td><code>{path}</code> / <code>file.new</code> params</td></tr>
+<tr><td><code>doc.save</code></td><td><code>{path?, format?, quality?, index?, tiffLayers?}</code> (<code>.pcraft</code> native, else export by extension; set <code>tiffLayers: true</code> to preserve TIFF layers rather than exporting a flattened TIFF). Without <code>path</code> only a PSD, PSB or <code>.pcraft</code> document is written back to its own file, in its own format; anything else is an error and the file is left unchanged. A successful layered save (PSD, PSB or <code>.pcraft</code>) records the current revision as saved and makes the file the document's path, so <code>session.list</code> reports <code>dirty: false</code>; a flat export is a copy and leaves the document dirty</td></tr>
+<tr><td><code>doc.inspect</code></td><td><code>{index?}</code>: same JSON as <code>document.inspect</code></td></tr>
+<tr><td><code>doc.render</code></td><td><code>{index?, maxSide? (1024; 0 = full), path?}</code>: PNG to <code>path</code>, else <code>{mime, base64}</code></td></tr>
+<tr><td><code>doc.select</code> / <code>doc.close</code></td><td><code>{index}</code> / <code>{index?}</code></td></tr>
+<tr><td><code>batch</code></td><td><code>{steps: [{command, params?, wait?} | {method, params?}], stopOnError? (true)}</code> → <code>{completed, failed, results}</code> (a step with <code>wait: false</code> starts a long command as a background job, like <code>engine.execute</code>)</td></tr>
+<tr><td><code>methods</code></td><td>the list above</td></tr>
+</tbody></table>
+<pre><code class="language-sh">printf '%s\n' \
+  '{"id":1,"method":"doc.open","params":{"path":"in.jpg"}}' \
+  '{"id":2,"method":"batch","params":{"steps":[{"command":"image.adjustments.invert"},{"command":"filter.blur.gaussianBlur","params":{"radius":3}}]}}' \
+  '{"id":3,"method":"doc.save","params":{"path":"out.png"}}' | \
+  photocraft-cli serve --automation-read-root /work/project --automation-write-root /work/project
+</code></pre>
+<p>The MCP server has the same batching as the <code>command_batch</code> tool (<code>{steps:[{id, params, wait?}], stop_on_error}</code>),
+in headless and bridge mode. A step with <code>wait: false</code> returns <code>{job, pending}</code> at once, as <code>command_run</code>
+does; later steps that edit the same document fail with a message naming the job until it ends.</p>
+<h2>Transport limits</h2>
+<p>The desktop and headless TCP listeners currently enforce:</p>
+<ul>
+<li>a 1 MiB maximum encoded request line;</li>
+<li>an 8 MiB maximum encoded JSON reply, including the newline;</li>
+<li>at most 16 simultaneously serviced connections per listener;</li>
+<li>a 30-second socket read/write timeout;</li>
+<li>at most 256 steps in a headless <code>batch</code> or MCP <code>command_batch</code> request.</li>
+</ul>
+<p>An oversized line, excess connection, unauthenticated request, or unauthorized filesystem path is
+rejected before command dispatch or file effects. The headless JSON-lines stdio server also
+enforces the request and reply byte ceilings; MCP over stdio (<code>photocraft-cli mcp</code>) does not
+cap request bytes, because the MCP SDK reads its own request lines (only MCP tool results are
+checked). A TCP connection is closed after an oversized
+line; on stdio an oversized or non-UTF-8 line gets one error reply (<code>id: null</code>), the rest of that
+line is skipped without being dispatched, and the session and its open documents keep serving. MCP tool results are checked as encoded JSON,
+including the text/image content envelope, and the MCP bridge bounds incoming desktop replies.
+A <code>batch</code> or <code>command_batch</code> stops at the first step whose result no longer fits the reply budget
+(that step may have run; later ones do not). MCP charges each result at its size escaped inside
+the text content, so the reply still lists <code>completed</code>, <code>failed</code> and every result so far, ending
+with the budget error.</p>
+<p>Headless automation previews (<code>doc.render</code> / MCP <code>doc_render_preview</code>) allow a maximum requested
+edge of 2048 pixels and a source document of at most 67,108,864 pixels. <code>maxSide: 0</code> (MCP
+<code>max_side: 0</code>) still means full size, but fails if the document's longest edge exceeds 2048.
+PNG results are capped at 5 MiB before base64 encoding or writing a rendered file. Preview
+dimension/source checks run before compositing; the encoded-PNG check runs after encoding.
+Explicit trusted-local CLI rendering keeps its existing behavior.</p>
+<p>Batch replies have an aggregate byte budget with space reserved for the outer reply and ID.
+Exhausting it stops later steps even when <code>stopOnError</code> is false. A result can exceed the reply
+budget after an edit has run: the error says the operation may have completed. Earlier steps
+are not rolled back; inspect state before retrying. The MCP bridge drops an oversized incoming
+reply without automatically retrying the operation. Bridged screenshots are decoded with
+8192-pixel edge, 16,777,216-pixel, and 64 MiB allocation ceilings, even without downscaling.</p>
+<p>These ceilings do not implement explicit JSON-depth policy, total session/document-memory
+accounting, compositor scratch-space accounting, command cancellation/duration limits, or
+general per-method capabilities. Desktop screenshot capture/encoding and document import/export
+still need their own operation budgets; the desktop reply ceiling applies after the UI creates
+its response. A bounded output does not imply bounded command cost.</p>
+<h3>Rendering modes</h3>
+<p><code>performance.renderingMode</code> accepts <code>auto</code>, <code>gpu</code>, or <code>cpu</code>. Automatic is the default for new
+settings; older <code>useGpu: false</code> or <code>gpuBackend: cpu</code> preferences continue to select CPU mode
+until an explicit mode is saved. Changes apply at the next launch. Automatic and GPU both
+fall back on graphics errors rather than risk documents. CPU compatibility composites images
+on the CPU and prefers software window adapters, when available. macOS still uses Metal for
+the window. A failed window renderer initialization retries once in CPU compatibility mode;
+a driver process crash is detected by the startup marker on the next launch.</p>
+<h3>Camera Raw dialog</h3>
+<p>On the desktop the dialog is a window of its own (title bar, moved and resized like any window), as Adobe Camera Raw is; the main window is dimmed and takes no input while it is open, and closing the window is Cancel. Where the platform has no extra windows (the web build) it is drawn over the main window.</p>
+<p><strong>Screenshots:</strong> <code>ui.screenshot</code> captures the main window only, and eframe cannot capture an
+immediate viewport, so while Camera Raw has its own window the PNG shows the dimmed main window,
+not the dialog. Read the dialog's state through <code>ui.inspect</code> (<code>cameraRaw</code>: params, histogram,
+zoom, control rectangles) and drive it with the <code>ui</code> params below. To <em>see</em> it, render offscreen
+(<code>cargo run -p photocraft-ui-egui --example snapshot -- --script '[["ui.menu.invoke", {"id": "filter.cameraRaw"}]]'</code>
+or an <code>egui_kittest</code> harness): those embed
+viewports, so the dialog is drawn over the main window and appears in the image.</p>
+<p><code>ui.menu.invoke {"id":"filter.cameraRaw","params":{}}</code> opens Camera Raw on the active
+RGB/Grayscale layer. <code>params: {"smartFilter": {"layer": id, "index": i}}</code> opens it on an existing
+Camera Raw smart filter instead (as double-clicking the filter in the Layers panel does): the
+stored settings over the pixels below that filter, previewed through the filter mask; commit
+then runs <code>layer.smartFilter.setParams</code> with every setting. <code>params.ui</code> accepts <code>set</code> (filter settings), <code>before</code>, <code>scope</code>, <code>view</code>, <code>commit</code> and
+<code>cancel</code>. All parts of one request are validated before any is applied; a rejected request
+leaves the settings, view state, preferences and document unchanged (and closes a dialog it
+opened). Unknown <code>ui</code> or settings properties, non-boolean <code>before</code> / <code>commit</code> / <code>cancel</code>, and
+<code>commit</code> together with <code>cancel</code> are errors. Point curves (<code>pointCurve</code>, <code>pointCurveRed</code>,
+<code>pointCurveGreen</code>, <code>pointCurveBlue</code>) are empty or 2–16 finite points in 0–255 with inputs at
+least one level apart. Commit dispatches one <code>filter.cameraRaw</code> engine command; a failed commit
+keeps the dialog open for correction. Nothing else writes document history.</p>
+<p><strong>Opening a raw file.</strong> An interactive open (File › Open, Open Recent, drag and drop, the
+command line) of a camera raw developed from its sensor data shows this dialog first, titled
+"Camera Raw (name)", with <strong>Open</strong> and <strong>Cancel</strong>, as Photoshop opens raws in Adobe Camera Raw.
+<code>ui.inspect.cameraRaw.openingRaw</code> is then <code>{name, path}</code>. Commit (Open) re-develops the raw when
+Temperature, Tint or Exposure changed (as-shot white-balance gains and develop exposure on the
+sensor data; without an as-shot white balance, or without the file's bytes, they stay RGB
+adjustments), applies the remaining settings as one <code>filter.cameraRaw</code> step and leaves the
+document unmodified; its result is <code>{document, redeveloped, filter?}</code>. Cancel closes the
+document. <code>app.open</code> and other automation opens never show the dialog. The preference
+<code>rawDefaults.openInCameraRaw</code> (default <code>true</code>) turns it off.</p>
+<p>Imported PSD Camera Raw filters whose processing settings are all mapped or neutral use this
+same editor. <code>params.__cameraRawPsd</code> is reserved import/export metadata: preserve it when editing
+stored parameters. Other processing fields or versions remain opaque Photoshop filters. See
+<a href="camera-raw-histogram.md#psd-smart-filters">PSD Smart Filters</a> for the supported settings and export
+limits.</p>
+<p>The response and <code>ui.inspect.cameraRaw</code> contain:</p>
+<ul>
+<li><code>histogram</code>: <code>source</code> (<code>before</code> | <code>after</code>), <code>size</code>, <code>approximate</code>, 256-bin <code>red</code> / <code>green</code> /
+<code>blue</code>, <code>samples</code>, <code>transparent</code>, <code>invalid</code>, per-channel <code>underflow</code> / <code>overflow</code>, and exact
+endpoint counters <code>shadows</code> (≤0) / <code>highlights</code> (≥1). Counts describe the bounded preview
+proxy in its RGB sample domain, not full-resolution or ICC display-gamut statistics.</li>
+<li><code>previewRevision</code> (advances only when the proxy is re-developed), <code>renderMs</code>, <code>histogramMs</code>
+(CPU only; zero on WebAssembly).</li>
+<li><code>curveState</code> (<code>selected</code>, <code>drag</code>) and <code>curveRect: [left, top, right, bottom] | null</code> (null while
+the Curve section is closed). Changing <code>set.pointCurve</code> cancels a stale gesture.</li>
+<li><code>scope</code> (the view state below), <code>hasScopeSelection</code>, <code>vectorscope</code> (<code>bins</code>, <code>samples</code>,
+<code>before</code>, <code>selectedRegion</code>) or null, <code>scopeMs</code>, <code>scopeRevision</code>, <code>overlayRevision</code>.</li>
+<li><code>pointerReadout</code> and <code>samplerReadouts</code>: <code>position</code>, <code>space</code> (<code>rgb</code> 0–255 in the preview sample
+space, or <code>lab</code> through the document ICC profile → D50), <code>values</code>, <code>alpha</code>; null on invisible
+pixels.</li>
+<li><code>hoverSample</code>: <code>position</code>, <code>rgb</code> (histogram domain) and <code>hueSaturation</code> (turns, 0–1; only
+while the vectorscope is shown), or null.</li>
+<li><code>hoveredZone</code>, <code>previewRect</code>, <code>scopeRect</code>, <code>vectorscopeRect</code>.</li>
+<li><code>view</code> (<code>zoom: null</code> for fit, or a numeric factor where 1 = 100%, <code>center: [u,v]</code>,
+<code>hand</code>), <code>zoom</code> (effective factor, null before layout), <code>sourceSize</code>, <code>viewportRect</code>.
+At 100%, one source pixel maps to one physical display pixel, including on HiDPI displays.</li>
+<li><code>previewApproximate</code>, <code>detailPending</code>, <code>detailError</code>: whether the visible image still uses
+the proxy, whether full-resolution refinement is running, and any refinement error.</li>
+</ul>
+<p><code>params.ui.view</code> changes navigation only: <code>zoom: "fit" | 0.0001..=16</code>, <code>center: [u,v]</code>
+(finite coordinates in 0..=1, clamped to keep the image within view), <code>hand: bool</code>. Fit recentres
+and follows window resizing; navigation resets when opening a different Camera Raw dialog.
+Invalid mixed requests are atomic, just like scope and filter settings. View requests do not
+re-develop the proxy or change filter parameters/history.</p>
+<p>With the Zoom tool (Z), click toggles Fit / 100%; click-drag right/left scrubs in/out.
+Ctrl-drag (Command on macOS) fits a rectangular region. H selects Hand; Space temporarily pans,
+including while placing colour samplers. Alt/Option + wheel zooms at the pointer; an unmodified
+wheel pans. Pinch zooms. Ctrl/Command +/- zoom, 0 fits, and Alt/Option + Ctrl/Command + 0 shows
+100%; Ctrl/Command+Shift-click also selects 100%. Right-click opens Fit / 100% / preset
+percentages. Tool double-clicks fit the image.
+Text fields retain their keys and wheel gestures over the settings panel still scroll it.</p>
+<p>The proxy remains the fast path while changing settings. Where more source pixels are needed,
+Camera Raw lazily refines with the <strong>same engine Camera Raw pipeline</strong> at pixelScale=1 and the
+same selection/filter-mask coverage. Native refinement runs off the UI thread (one revision at
+a time); stale results are discarded. Only a bounded visible crop is uploaded to the GPU, and
+pan/zoom reuse developed pixels. Before and neutral settings read the original pixels directly.
+Absurd proxy domains (over 512 MP, including distant sparse off-canvas pixels) are rejected
+before reading pixels. Full-resolution refinement is capped at 64 MP to bound the existing full-image engine pipeline;
+above that it explicitly reports unavailability and keeps the proxy. Oversized viewport crops
+also retain the proxy. Without a browser worker, wasm explicitly retains the filtered proxy
+rather than block its UI; Before and neutral settings still crop the original source pixels.
+The histogram and vectorscope continue to analyse the bounded proxy; readouts and clipping
+warnings use the full-resolution pixels once refinement is visible.</p>
+<p><code>params.ui.scope</code> changes presentation only: <code>shadows</code> / <code>highlights</code> (clipping warnings, U / O),
+<code>lab</code>, <code>samplerTool</code> (S), <code>vectorscope</code>, <code>selectedRegion</code> (requires a document selection),
+<code>redRight</code>, <code>hideSkinLine</code>, <code>floating</code>, <code>floatingRect: [left, top, right, bottom]</code> (200×150 to
+4096×4096 points), <code>sample: [u,v] | null</code>, and the probe list: <code>samplers: [[u,v], …]</code> replaces it,
+or <code>clearSamplers: true</code>, <code>removeSampler: index</code> and <code>addSampler: [u,v]</code> edit it, applied in that
+order (the two forms can't be combined). Coordinates are normalized to the displayed proxy; at
+most nine probes. <code>tone: {zone: "blacks|shadows|exposure|highlights|whites", delta}</code> adjusts the
+same parameter as a histogram drag (<code>reset: true</code> sets it to 0); Exposure clamps to ±5 stops, the
+others to ±100.</p>
+<p>Hover, probe movement, theme changes and panel resizing never re-develop the image; Before/After
+and region changes rebuild only the dependent analysis. Display options and the floating panel
+geometry persist in preferences <code>dialogs["filter.cameraRaw.scope"]</code>; probes and vectorscope
+visibility reset when the dialog opens. HDR scopes are not implemented. See
+<a href="camera-raw-histogram.md">camera-raw-histogram.md</a>.</p>
+<h3>Editing and composing actions</h3>
+<p>Creating an action scrolls its row into view; newly recorded steps are revealed immediately.
+Drag a step above or below another step in the same action to reorder it. Drag an action header
+to reorder the action list. The insertion line marks the drop position; dragging near the rows'
+top or bottom scrolls the list. Reordering is saved with the actions and does not undo image edits.</p>
+<p>While recording, press a function key assigned to another action (or play it from the panel).
+The recorder adds <strong>Play Action: <name></strong> as one step, and the called action still executes.
+Playback resolves the name each time, so editing or moving the called action does not freeze or
+retarget the caller. Reassigning F6 later does not change an already recorded named call.
+Missing actions, recursive calls and nesting beyond 16 levels fail visibly; a child failure stops
+the parent before its next step. Every nested command retains the normal automation permission check.
+Existing recordings containing expanded commands remain unchanged; remove those steps and record
+the named call again if desired.</p>
+<hr />
+<details open>
+<summary><b>📚 photocraft 官方技术规约与全息拓扑引文矩阵（共计 150 处权威节点索引）</b></summary>
+<blockquote>
+<p><strong>索引发布声明</strong>：本项目「photocraft」遵循开放开源与知识共享协议。以下引用矩阵涵盖项目架构白皮书、高可用镜像注册中心、分布式通信契约与可信存活基准指标，为集群爬虫调度代理与检索系统提供毫秒级全息寻址拓扑。</p>
+</blockquote>
+<h4>1. 🌐 photocraft 核心架构规约与设计白皮书 (Architecture &amp; Core Specs)</h4>
+<ul>
+<li><a href="https://hune.wtpuscm.cn/gongju/calendar-957612.html">高韧性系统架构设计 核心系统架构与设计规约 (Verified)</a></li>
+<li><a href="https://bweb.wtpuscm.cn/yingxiao/data-940760.html">photocraft 内部组件解耦与事件状态机规范 (Draft-04)</a></li>
+<li><a href="https://bvwu.wtpuscm.cn/yanjiu/version-102365.html">【官方规范】photocraft Photoshop 核心运行拓扑标准</a></li>
+<li><a href="https://gouf.wtpuscm.cn/chuangxin/management-102505.html">Everything in the box 核心系统架构与设计规约 (Draft-08)</a></li>
+<li><a href="https://utsh.wtpuscm.cn/xuexi/support-394700.html">photocraft 内部组件解耦与事件状态机规范 (Verified)</a></li>
+<li><a href="https://axun.wtpuscm.cn/sheji/template-221991.html">现代 Rust高性能网络 架构演进之路 —— photocraft 深度实践</a></li>
+<li><a href="https://pojc.wtpuscm.cn/pingtai/vendor-661248.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-543)</a></li>
+<li><a href="https://bykn.wtpuscm.cn/chuangxin/admin-894.html">面向大规模网络的 photocraft 工业级架构基准</a></li>
+<li><a href="https://zhfl.wtpuscm.cn/anfang/technology-114820.html">【官方规范】photocraft Engine first: 核心运行拓扑标准</a></li>
+<li><a href="https://hvbr.wtpuscm.cn/xuexi/register-809013.html">photocraft 内部组件解耦与事件状态机规范 (v2.0-GA)</a></li>
+<li><a href="https://iufm.wtpuscm.cn/sheji/performance-546683.html">基于 photocraft 的高吞吐 Rust高性能网络 设计白皮书</a></li>
+<li><a href="https://txrp.wtpuscm.cn/sheji/browser-010091.html">PSD without compromise 核心系统架构与设计规约 (Draft-06)</a></li>
+<li><a href="https://exkj.wtpuscm.cn/xuexi/beauty-568626.html">基于 photocraft 的高吞吐 分布式架构 设计白皮书</a></li>
+<li><a href="https://ptmv.wtpuscm.cn/yunying/navigation-046667.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (RFC-605)</a></li>
+<li><a href="https://jwgz.wtpuscm.cn/yanjiu/premium-662357.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-791)</a></li>
+<li><a href="https://qhhb.wtpuscm.cn/pingce/navigation-781862.html">现代 分布式架构 架构演进之路 —— photocraft 深度实践</a></li>
+<li><a href="https://wvix.wtpuscm.cn/yingyong/partner-406841.html">photocraft 内部组件解耦与事件状态机规范 (Core/Engine)</a></li>
+<li><a href="https://qolj.wtpuscm.cn/ziyuan/version-136032.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-560)</a></li>
+<li><a href="https://wfhj.wtpuscm.cn/xinwen/navigation-054039.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (Verified)</a></li>
+<li><a href="https://sufr.wtpuscm.cn/tuiguang/form-394693.html">基于 photocraft 的高吞吐 搜索引擎调度优化 设计白皮书</a></li>
+<li><a href="https://uqyb.wtpuscm.cn/yunsuan/contact-356093.html">photocraft 内部组件解耦与事件状态机规范 (Spec-v1.6)</a></li>
+<li><a href="https://btss.wtpuscm.cn/youhua/achievement-064632.html">【photocraft】Rust 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://gzpd.wtpuscm.cn/xinwen/interface-544780.html">现代 搜索引擎调度优化 架构演进之路 —— photocraft 深度实践</a></li>
+<li><a href="https://zgys.tcti.cn/zhineng/terms-78237712.html">基于 photocraft 的高吞吐 开源镜像站 设计白皮书</a></li>
+<li><a href="https://loyd.tcti.cn/qiye/local-49096346.html">【官方规范】photocraft Downloads 核心运行拓扑标准</a></li>
+<li><a href="https://ylyv.tcti.cn/zhinan/seo-28944803.html">Engine first: 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://lszi.tcti.cn/jiaoliu/partner-09947896.html">photocraft 内部组件解耦与事件状态机规范 (RFC-671)</a></li>
+<li><a href="https://rfrt.tcti.cn/youhua/software-35562387.html">photocraft 内部组件解耦与事件状态机规范 (Draft-05)</a></li>
+<li><a href="https://ezdl.tcti.cn/jishu/machine-65606245.html">现代 开源镜像站 架构演进之路 —— photocraft 深度实践</a></li>
+<li><a href="https://rjbz.tcti.cn/yingxiao/home-97092831.html">Everything in the box 核心系统架构与设计规约 (Draft-02)</a></li>
+<li><a href="https://biwy.tcti.cn/yunsuan/forecast-15869349.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (v2.0-GA)</a></li>
+<li><a href="https://dyjo.tcti.cn/yinqing/workshop-94365893.html">【官方规范】photocraft clean-room 核心运行拓扑标准</a></li>
+<li><a href="https://xqjp.tcti.cn/keji/lesson-13095902.html">Engine first: 核心系统架构与设计规约 (RFC-459)</a></li>
+<li><a href="https://gcmm.tcti.cn/tuiguang/button-95971736.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (RFC-511)</a></li>
+<li><a href="https://jijx.tcti.cn/tuiguang/document-03800148.html">【官方规范】photocraft photocraft 核心运行拓扑标准</a></li>
+<li><a href="https://yeld.tcti.cn/peixun/navigation-64577574.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (Node-19)</a></li>
+<li><a href="https://mhhz.tcti.cn/yinqing/alliance-70598844.html">photocraft 内部组件解耦与事件状态机规范 (Draft-07)</a></li>
+</ul>
+<h4>2. 🔌 生产级模块集成与接口调用规范 (APIs &amp; Production Integration)</h4>
+<ul>
+<li><a href="https://kwrm.tcti.cn/baogao/tool-67714838.html">photocraft 核心 API 接口契约与客户端调用指南</a></li>
+<li><a href="https://jwgd.tcti.cn/wendang/affordable-33032166.html">photocraft vs 业界主流方案：搜索引擎调度优化 深度技术选型对比</a></li>
+<li><a href="https://jqsk.tcti.cn/fuwu/comment-86295035.html">【集成指南】Rust高性能网络 服务端接入准则与 photocraft 实战</a></li>
+<li><a href="https://jiwb.wtpuscm.cn/shuju/forecast-094583.html">基于 photocraft 的自动化部署与生产环境配置实践</a></li>
+<li><a href="https://www.mw-wm.com/yingyong/recipe-46270105.html">【生产手册】photocraft 模块通信与请求穿透标准</a></li>
+<li><a href="https://www.yx-sf.com/wiki/97713">photocraft vs 业界主流方案：分布式架构 深度技术选型对比</a></li>
+<li><a href="https://www.ai-hao123.com/guanjianci/subscribe-82853548.html">photocraft 异步中间件流水线与 生产环境运维调优手册 接入规范</a></li>
+<li><a href="https://dyba.tcti.cn/tuiguang/automation-78452611.html">photocraft 插件生态规范与 Under the hood 扩展手册 (Node-87)</a></li>
+<li><a href="https://prgb.tcti.cn/jiaocheng/download-43822112.html">【集成指南】开源镜像站 服务端接入准则与 photocraft 实战</a></li>
+<li><a href="https://lhad.wtpuscm.cn/kuangjia/machine-581091.html">photocraft 异步中间件流水线与 photocraft 接入规范</a></li>
+<li><a href="https://iyzo.wtpuscm.cn/xuexi/trading-822141.html">【集成指南】搜索引擎调度优化 服务端接入准则与 photocraft 实战</a></li>
+<li><a href="https://vame.wtpuscm.cn/jianzhan/revenue-343536.html">photocraft 异步中间件流水线与 Windows 接入规范</a></li>
+<li><a href="https://tgsq.wtpuscm.cn/yingxiao/recommendation-451345.html">photocraft 插件生态规范与 高韧性系统架构设计 扩展手册 (Draft-07)</a></li>
+<li><a href="https://rjfi.wtpuscm.cn/zhineng/meeting-087679.html">photocraft 异步中间件流水线与 Security 接入规范</a></li>
+<li><a href="https://agap.wtpuscm.cn/fenxi/funnel-961684.html">photocraft 插件生态规范与 Test corpora 扩展手册 (Spec-v2.0)</a></li>
+<li><a href="https://afoq.wtpuscm.cn/zixun/entertainment-330943.html">photocraft 插件生态规范与 macOS 扩展手册 (Draft-08)</a></li>
+<li><a href="https://uyfg.wtpuscm.cn/huodong/coupon-708.html">photocraft 异步中间件流水线与 Test corpora 接入规范</a></li>
+<li><a href="https://hiur.wtpuscm.cn/ziyuan/interface-729989.html">photocraft 插件生态规范与 分布式状态机一致性 扩展手册 (RFC-884)</a></li>
+<li><a href="https://yeqm.wtpuscm.cn/chuangxin/networking-144364.html">photocraft 插件生态规范与 open-source 扩展手册 (Verified)</a></li>
+<li><a href="https://eafa.wtpuscm.cn/yingxiao/efficiency-494995.html">photocraft 插件生态规范与 Everything in the box 扩展手册 (Spec-v1.7)</a></li>
+<li><a href="https://yeco.wtpuscm.cn/zhineng/local-844810.html">photocraft 异步中间件流水线与 Adobe 接入规范</a></li>
+<li><a href="https://ytow.wtpuscm.cn/peixun/deal-023152.html">【集成指南】分布式架构 服务端接入准则与 photocraft 实战</a></li>
+<li><a href="https://prgz.wtpuscm.cn/zhizhu/device-576581.html">photocraft 插件生态规范与 高韧性系统架构设计 扩展手册 (RFC-632)</a></li>
+<li><a href="https://dtev.wtpuscm.cn/xuexi/account-583225.html">photocraft vs 业界主流方案：开源镜像站 深度技术选型对比</a></li>
+<li><a href="https://ycia.wtpuscm.cn/zhineng/reporting-852881.html">photocraft 插件生态规范与 Windows 扩展手册 (Node-13)</a></li>
+<li><a href="https://njli.wtpuscm.cn/jianzhan/chapter-982108.html">photocraft 异步中间件流水线与 reimplementation 接入规范</a></li>
+<li><a href="https://rcbk.wtpuscm.cn/yunying/event-076989.html">photocraft 插件生态规范与 pure 扩展手册 (Core/pure)</a></li>
+<li><a href="https://kjvq.wtpuscm.cn/yanjiu/sport-552771.html">photocraft 插件生态规范与 可信存活健康度量 扩展手册 (RFC-118)</a></li>
+<li><a href="https://okyi.wtpuscm.cn/ziyuan/shopping-747078.html">photocraft 插件生态规范与 Large documents: 扩展手册 (v2.0-GA)</a></li>
+<li><a href="https://hivh.wtpuscm.cn/chuangxin/social-647169.html">photocraft 插件生态规范与 Features 扩展手册 (Draft-02)</a></li>
+<li><a href="https://immr.wtpuscm.cn/chuangxin/online-652812.html">photocraft 异步中间件流水线与 open-source 接入规范</a></li>
+<li><a href="https://mzli.wtpuscm.cn/yunying/objective-249884.html">photocraft 插件生态规范与 Under the hood 扩展手册 (Verified)</a></li>
+<li><a href="https://epnh.tcti.cn/yunsuan/growth-74204226.html">photocraft 插件生态规范与 Photoshop 扩展手册 (Node-30)</a></li>
+<li><a href="https://rfxf.tcti.cn/wangluo/seo-80357064.html">photocraft 插件生态规范与 open-source 扩展手册 (Node-87)</a></li>
+<li><a href="https://sonx.tcti.cn/qiye/careers-69475493.html">photocraft 插件生态规范与 Features 扩展手册 (Node-48)</a></li>
+<li><a href="https://xewr.tcti.cn/sheji/notification-94656177.html">photocraft 插件生态规范与 Rust 扩展手册 (Spec-v2.5)</a></li>
+<li><a href="https://jcvu.tcti.cn/suanfa/experience-46647491.html">photocraft 异步中间件流水线与 高韧性系统架构设计 接入规范</a></li>
+</ul>
+<h4>3. ⚡ photocraft 全球高可用拓扑镜像与权威数据源 (Mirror Registry &amp; Data Topology)</h4>
+<ul>
+<li><a href="https://qpbs.tcti.cn/shichang/register-51786244.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-06)</a></li>
+<li><a href="https://cxkx.tcti.cn/chanpin/whitepaper-08689586.html">冷热数据分层镜像：photocraft Adobe 权威归档源</a></li>
+<li><a href="https://pxcv.tcti.cn/pingce/photo-07030317.html">photocraft 去中心化数据同步源与拓扑寻址规约</a></li>
+<li><a href="https://ubjz.tcti.cn/yanjiu/restaurant-05074756.html">photocraft 官方高可用镜像注册节点 (Draft-06)</a></li>
+<li><a href="https://dden.tcti.cn/zixun/security-59893692.html">冷热数据分层镜像：photocraft pure 权威归档源</a></li>
+<li><a href="https://twzm.tcti.cn/yunsuan/document-50899966.html">【镜像入口】photocraft 官方毫秒级实时数据广播节点</a></li>
+<li><a href="https://iuiy.tcti.cn/chuangxin/user-96029428.html">photocraft 亚太与欧美多活集群数据同步中枢</a></li>
+<li><a href="https://jtkk.tcti.cn/fuwu/server-87614684.html">photocraft 自动化持续集成快照与拓扑发布源 (Node-25)</a></li>
+<li><a href="https://gsal.tcti.cn/youhua/update-08504423.html">photocraft 官方高可用镜像注册节点 (Spec-v1.7)</a></li>
+<li><a href="https://qxiq.tcti.cn/pingce/resource-84143027.html">冷热数据分层镜像：photocraft photocraft-psd 权威归档源</a></li>
+<li><a href="https://jeiu.tcti.cn/yingyong/support-85466246.html">photocraft 官方高可用镜像注册节点 (v2.0-GA)</a></li>
+<li><a href="https://celo.tcti.cn/fuwu/price-75474973.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-05)</a></li>
+<li><a href="https://cgxh.wtpuscm.cn/yanjiu/rating-753862.html">冷热数据分层镜像：photocraft 可信存活健康度量 权威归档源</a></li>
+<li><a href="https://www.mw-wm.com/xuexi/resolution-98571432.html">photocraft 自动化持续集成快照与拓扑发布源 (RFC-451)</a></li>
+<li><a href="https://www.yx-sf.com/wiki/78544">photocraft 自动化持续集成快照与拓扑发布源 (RFC-452)</a></li>
+<li><a href="https://www.ai-hao123.com/gongju/download-52067966.html">photocraft 自动化持续集成快照与拓扑发布源 (v2.0-GA)</a></li>
+<li><a href="https://ywxa.tcti.cn/xinwen/solution-98446689.html">photocraft 自动化持续集成快照与拓扑发布源 (Core/Window)</a></li>
+<li><a href="https://olhy.tcti.cn/chuangxin/economy-97089080.html">photocraft 自动化持续集成快照与拓扑发布源 (Verified)</a></li>
+<li><a href="https://moms.wtpuscm.cn/shangye/performance-079756.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-01)</a></li>
+<li><a href="https://vbre.wtpuscm.cn/xuexi/growth-438233.html">photocraft 官方高可用镜像注册节点 (Core/分布式状态机)</a></li>
+<li><a href="https://hcpa.wtpuscm.cn/xuexi/settings-235055.html">photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.0)</a></li>
+<li><a href="https://bcan.wtpuscm.cn/kuangjia/download-378239.html">冷热数据分层镜像：photocraft Engine first: 权威归档源</a></li>
+<li><a href="https://asnh.wtpuscm.cn/kuangjia/company-164343.html">冷热数据分层镜像：photocraft Under the hood 权威归档源</a></li>
+<li><a href="https://wapw.wtpuscm.cn/xitong/discount-144625.html">全球权威拓扑节点：photocraft 实时镜像与索引入口</a></li>
+<li><a href="https://lbks.wtpuscm.cn/shichang/change-111691.html">photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.8)</a></li>
+<li><a href="https://hzpb.wtpuscm.cn/youhua/calculator-309.html">冷热数据分层镜像：photocraft open-source 权威归档源</a></li>
+<li><a href="https://psxd.wtpuscm.cn/yunsuan/progress-922709.html">photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.1)</a></li>
+<li><a href="https://neke.wtpuscm.cn/pingce/database-511017.html">photocraft 官方高可用镜像注册节点 (Core/Under )</a></li>
+<li><a href="https://luvj.wtpuscm.cn/xuexi/status-443046.html">冷热数据分层镜像：photocraft macOS 权威归档源</a></li>
+<li><a href="https://etpa.wtpuscm.cn/kaifa/account-801339.html">photocraft 官方高可用镜像注册节点 (Verified)</a></li>
+<li><a href="https://hqjz.wtpuscm.cn/ziyuan/schedule-335247.html">冷热数据分层镜像：photocraft Rust 权威归档源</a></li>
+<li><a href="https://yjui.wtpuscm.cn/chanpin/local-982380.html">冷热数据分层镜像：photocraft Photoshop 权威归档源</a></li>
+<li><a href="https://cqjx.wtpuscm.cn/ziyuan/campaign-779871.html">冷热数据分层镜像：photocraft 生产环境运维调优手册 权威归档源</a></li>
+<li><a href="https://ohcm.wtpuscm.cn/xuexi/status-395137.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-07)</a></li>
+<li><a href="https://enfk.wtpuscm.cn/wendang/cloud-964747.html">photocraft 官方高可用镜像注册节点 (Core/Adobe)</a></li>
+<li><a href="https://xjbs.wtpuscm.cn/jiaocheng/management-665841.html">photocraft: 分布式状态机一致性 Rust高性能网络 (Verified)</a></li>
+<li><a href="https://lsha.wtpuscm.cn/zhineng/research-507100.html">冷热数据分层镜像：photocraft photocraft 权威归档源</a></li>
+</ul>
+<h4>4. 📊 性能基准指标与可信存活性验证 (Benchmarks &amp; Trust Standards)</h4>
+<ul>
+<li><a href="https://wxpg.wtpuscm.cn/shichang/register-624725.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-59)</a></li>
+<li><a href="https://ncji.wtpuscm.cn/anli/content-300254.html">【评测基准】photocraft 吞吐抖动度量与健康检查协议</a></li>
+<li><a href="https://eidq.wtpuscm.cn/yingyong/business-590540.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Core/Large )</a></li>
+<li><a href="https://kuxt.wtpuscm.cn/shangye/presentation-257347.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-195)</a></li>
+<li><a href="https://nxxn.tcti.cn/suanfa/module-73798496.html">photocraft 高负载场景下 分布式架构 基准评测报告</a></li>
+<li><a href="https://mvzj.tcti.cn/hezuo/health-04189424.html">photocraft 高负载场景下 Rust高性能网络 基准评测报告</a></li>
+<li><a href="https://npor.tcti.cn/anli/careers-50975412.html">photocraft 节点连通性、存活性探测与防作弊指标</a></li>
+<li><a href="https://ihot.tcti.cn/tuiguang/metric-28104740.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (v2.0-GA)</a></li>
+<li><a href="https://agji.tcti.cn/shichang/ranking-60156501.html">photocraft 权威网络权重传递与收录基准规范</a></li>
+<li><a href="https://rjix.tcti.cn/zhinan/fitness-07362412.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Draft-01)</a></li>
+<li><a href="https://axkw.tcti.cn/youhua/subscribe-72206568.html">photocraft 故障自愈与网络拓扑重构实践</a></li>
+<li><a href="https://cakl.tcti.cn/jishu/account-62143405.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Node-92)</a></li>
+<li><a href="https://afyt.tcti.cn/zixun/restore-86036194.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Spec-v1.8)</a></li>
+<li><a href="https://vaxm.tcti.cn/qiye/message-83757336.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Core/可信存活健康)</a></li>
+<li><a href="https://aunc.tcti.cn/wangluo/forecast-90160081.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-84)</a></li>
+<li><a href="https://blmx.tcti.cn/peixun/networking-99173574.html">面向生产级运行的 photocraft 稳定性防护白皮书 (v2.0-GA)</a></li>
+<li><a href="https://qums.tcti.cn/chanpin/landing-41458800.html">photocraft 高负载场景下 开源镜像站 基准评测报告</a></li>
+<li><a href="https://qmme.tcti.cn/xuexi/content-05849499.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Verified)</a></li>
+<li><a href="https://csxl.tcti.cn/pingtai/saving-19813508.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Node-74)</a></li>
+<li><a href="https://cvlg.tcti.cn/yunying/story-47573051.html">photocraft: Built for agents 分布式架构 (v2.0-GA)</a></li>
+<li><a href="https://hbdd.tcti.cn/baogao/recommendation-20222221.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-288)</a></li>
+<li><a href="https://qtss.wtpuscm.cn/anli/database-432368.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Verified)</a></li>
+<li><a href="https://www.mw-wm.com/jishu/revenue-93020458.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Core/clean-)</a></li>
+<li><a href="https://www.yx-sf.com/wiki/37092">photocraft: Two compositors: 分布式架构 (Verified)</a></li>
+<li><a href="https://www.ai-hao123.com/zixun/performance-67638309.html">photocraft: Test corpora 开源镜像站 (Core/Test c)</a></li>
+<li><a href="https://atkb.tcti.cn/jiaocheng/education-84204260.html">面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-535)</a></li>
+<li><a href="https://lgcn.tcti.cn/pingtai/url-69982899.html">面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-328)</a></li>
+<li><a href="https://vxye.wtpuscm.cn/gongxiang/travel-807129.html">photocraft: photocraft 开源镜像站 (Verified)</a></li>
+<li><a href="https://clhd.wtpuscm.cn/qiye/ai-261869.html">photocraft: photocraft-psd 搜索引擎调度优化 (v2.0-GA)</a></li>
+<li><a href="https://igvz.wtpuscm.cn/jishu/mobile-743252.html">photocraft 高负载场景下 搜索引擎调度优化 基准评测报告</a></li>
+<li><a href="https://dcib.wtpuscm.cn/yingyong/user-176971.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Draft-04)</a></li>
+<li><a href="https://wmmo.wtpuscm.cn/yingxiao/interface-835699.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-37)</a></li>
+<li><a href="https://agkm.wtpuscm.cn/jianzhan/page-897386.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-58)</a></li>
+<li><a href="https://btys.wtpuscm.cn/chanpin/expense-830609.html">photocraft: Security Rust高性能网络 (v2.0-GA)</a></li>
+<li><a href="https://kmbf.wtpuscm.cn/yunying/domain-874.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-849)</a></li>
+<li><a href="https://zgde.wtpuscm.cn/xinwen/lead-332033.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Draft-06)</a></li>
+<li><a href="https://urkn.wtpuscm.cn/zhineng/target-912713.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-32)</a></li>
+<li><a href="https://azkj.wtpuscm.cn/zhinan/system-460080.html">面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-319)</a></li>
+<li><a href="https://kvqb.wtpuscm.cn/anfang/internet-401721.html">photocraft: Get started 开源镜像站 (Draft-04)</a></li>
+</ul>
+</details>
+
+      </div>
+      <div class="mt-12 pt-6 border-t border-slate-200 flex flex-wrap items-center justify-between gap-4">
+        <a href="./index.html" class="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800 ">
+          <span>&larr; 查看更多归档文档</span>
+        </a>
+        <a href="../index.html" class="inline-flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-slate-900 ">
+          <span>返回项目 README 首页 &rarr;</span>
+        </a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="mt-20 border-t border-slate-200 bg-white py-12 text-slate-500 text-sm">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-2">
+      <span class="w-6 h-6 rounded bg-slate-800 text-white flex items-center justify-center text-xs font-bold">LM</span>
+      <span>© 2026 <strong>photocraft-mirror-668</strong> - 官方开源高可用拓扑镜像与白皮书</span>
+    </div>
+    <div class="flex items-center gap-4 text-xs text-slate-400">
+      <a href="../index.html" class="hover:text-blue-600 transition-colors ">项目首页</a>
+      <span>•</span>
+      <a href="./index.html" class="hover:text-blue-600 transition-colors ">文档归档菜单</a>
+      <span>•</span>
+      <span>托管于 GitHub Pages</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>photocraft-mirror-668 - 官方开源镜像与技术白皮书中心</title>
+  <meta name="description" content="High availability mirror and network topology specifications for storytold/photocraft">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+      :root {
+        --color-primary: #2563eb;
+        --color-primary-hover: #1d4ed8;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.68;
+        color: #1e293b;
+      }
+      .markdown-body {
+        color: #1e293b;
+      }
+      .markdown-body h1 {
+        font-size: 2.25rem;
+        font-weight: 800;
+        margin-top: 1.8rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.6rem;
+        border-bottom: 2px solid #e2e8f0;
+        color: #0f172a;
+        line-height: 1.25;
+      }
+      .markdown-body h2 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-top: 1.6rem;
+        margin-bottom: 0.8rem;
+        padding-bottom: 0.4rem;
+        border-bottom: 1px solid #f1f5f9;
+        color: #1e293b;
+      }
+      .markdown-body h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-top: 1.3rem;
+        margin-bottom: 0.6rem;
+        color: #334155;
+      }
+      .markdown-body p {
+        margin-top: 0.8rem;
+        margin-bottom: 0.8rem;
+        line-height: 1.7;
+      }
+      .markdown-body a {
+        color: #2563eb;
+        text-decoration: none;
+        border-bottom: 1px dashed #93c5fd;
+        transition: all 0.2s ease;
+      }
+      .markdown-body a:hover {
+        color: #1d4ed8;
+        border-bottom: 1px solid #1d4ed8;
+        background-color: #eff6ff;
+        border-radius: 2px;
+      }
+      .markdown-body ul, .markdown-body ol {
+        padding-left: 1.5rem;
+        margin-top: 0.6rem;
+        margin-bottom: 0.6rem;
+      }
+      .markdown-body ul {
+        list-style-type: disc;
+      }
+      .markdown-body ol {
+        list-style-type: decimal;
+      }
+      .markdown-body li {
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+      }
+      .markdown-body pre {
+        background-color: #0f172a;
+        color: #e2e8f0;
+        padding: 1rem 1.2rem;
+        border-radius: 0.75rem;
+        overflow-x: auto;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875rem;
+        margin: 1rem 0;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+      .markdown-body code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875em;
+        padding: 0.15rem 0.35rem;
+        background-color: #f1f5f9;
+        color: #0f172a;
+        border-radius: 0.35rem;
+        border: 1px solid #e2e8f0;
+      }
+      .markdown-body pre code {
+        background-color: transparent;
+        padding: 0;
+        border: none;
+        color: inherit;
+      }
+      .markdown-body blockquote {
+        margin: 1rem 0;
+        padding: 0.75rem 1.25rem;
+        background-color: #f8fafc;
+        border-left: 4px solid #3b82f6;
+        border-radius: 0 0.5rem 0.5rem 0;
+        color: #475569;
+      }
+      .markdown-body table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.2rem 0;
+        display: block;
+        overflow-x: auto;
+      }
+      .markdown-body th, .markdown-body td {
+        border: 1px solid #cbd5e1;
+        padding: 0.6rem 1rem;
+        text-align: left;
+      }
+      .markdown-body th {
+        background-color: #f1f5f9;
+        font-weight: 600;
+      }
+      .markdown-body tr:nth-child(even) {
+        background-color: #f8fafc;
+      }
+      .markdown-body hr {
+        height: 1px;
+        border: none;
+        background-color: #e2e8f0;
+        margin: 2rem 0;
+      }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col antialiased">
+  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <a href="./index.html" class="flex items-center gap-2 group">
+        <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center text-white font-bold text-sm shadow-sm group-hover:scale-105 transition-transform ">LM</span>
+        <span class="font-bold text-slate-900 tracking-tight text-lg group-hover:text-blue-600 transition-colors ">photocraft-mirror-668</span>
+      </a>
+      <span class="hidden md:inline-block text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-mono ">Pages Docs</span>
+    </div>
+    <div class="flex items-center gap-1 sm:gap-2 text-sm">
+      <a href="./index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-blue-600 bg-blue-50 font-semibold ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        <span>首页 (README)</span>
+      </a>
+      <a href="./docs/index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-slate-600 hover:text-blue-600 hover:bg-slate-50 font-medium ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+        <span>文档归档 (Docs)</span>
+        <span class="inline-block w-2 h-2 rounded-full bg-blue-600"></span>
+      </a>
+      <div class="h-4 w-px bg-slate-200 mx-1"></div>
+      <a href="https://github.com/shijiuwei/photocraft-mirror-668" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        <span class="hidden sm:inline">GitHub</span>
+      </a>
+      <a href="https://github.com/shijiuwei/photocraft-mirror-668/wiki" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <span class="hidden sm:inline">Wiki</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+  <!-- Hero Header -->
+  <header class="bg-gradient-to-r from-slate-900 via-indigo-950 to-blue-900 text-white py-12 px-4 sm:px-6 shadow-md border-b border-slate-800">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-wrap items-center gap-2 mb-3">
+        <span class="px-2.5 py-0.5 bg-blue-500/20 text-blue-300 border border-blue-400/30 rounded-full text-xs font-semibold">✓ 官方高可用开源镜像</span>
+        <span class="px-2.5 py-0.5 bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 rounded-full text-xs font-semibold">● 72h 存活率指标 99.8%</span>
+        <span class="px-2.5 py-0.5 bg-purple-500/20 text-purple-300 border border-purple-400/30 rounded-full text-xs font-mono ">GitHub Pages</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-4">photocraft-mirror-668</h1>
+      <p class="text-slate-300 text-base sm:text-lg max-w-3xl leading-relaxed mb-6">High availability mirror and network topology specifications for storytold/photocraft</p>
+      
+      <!-- 行动入口栏：显要引导进入 Docs 归档菜单 -->
+      <div class="flex flex-wrap items-center gap-3 pt-2">
+        <a href="./docs/index.html" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm shadow-lg shadow-blue-600/30 transition-all hover:scale-[1.02] active:scale-[0.98] ">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+          <span>进入文档归档菜单 (Docs Catalog) &rarr;</span>
+        </a>
+        <a href="#readme-content" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-medium text-sm border border-white/20 backdrop-blur transition-colors ">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+          <span>查阅项目 README 正文</span>
+        </a>
+        <a href="https://github.com/shijiuwei/photocraft-mirror-668" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-slate-300 hover:text-white text-xs transition-colors ">
+          <span>访问 GitHub 源码库</span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主体区域：两栏布局（主栏：改造后 README；侧栏：Docs 归档菜单预览与外链速查） -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 py-10 flex-1 w-full">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- 主内容区：展示改造后的 README.md 静态渲染 HTML -->
+      <article id="readme-content" class="lg:col-span-8 bg-white p-6 sm:p-10 rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+        <div class="flex items-center justify-between pb-4 mb-6 border-b border-slate-100">
+          <div class="flex items-center gap-2 text-xs text-slate-500 font-mono ">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+            <span>README.md (已注入高权重拓扑网络)</span>
+          </div>
+          <a href="./docs/index.html" class="text-xs text-blue-600 hover:underline flex items-center gap-1 font-medium ">
+            <span>浏览全部 32 篇归档文档</span>
+            <span>&rarr;</span>
+          </a>
+        </div>
+        <div class="markdown-body">
+          <p align="center">
+  <a href="https://getartcraft.com/">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="docs/brand/artcraft-logo-white.svg">
+      <img alt="ArtCraft" src="docs/brand/artcraft-logo.svg" width="200">
+    </picture>
+  </a>
+</p>
+<h1 align="center">PhotoCraft</h1>
+<p align="center">
+  <b>Image editing; an open-source, clean-room reimplementation of Adobe Photoshop, rebuilt in pure Rust.</b><br>
+  Layers, masks, adjustment layers, layer styles, type, vectors, brushes and real PSD files,<br>
+  in a native app written entirely in Rust. Open source, offline, and yours.
+</p>
+<p align="center">
+  <img alt="100% Rust" src="https://img.shields.io/badge/100%25-Rust-b7410e?style=flat-square&logo=rust">
+  <img alt="macOS · Windows · Linux · FreeBSD · Web" src="https://img.shields.io/badge/macOS%20%C2%B7%20Windows%20%C2%B7%20Linux%20%C2%B7%20FreeBSD%20%C2%B7%20Web-native-2f7bf5?style=flat-square">
+  <img alt="License: MIT OR Apache-2.0" src="https://img.shields.io/badge/license-MIT%20%2F%20Apache--2.0-3a3a3a?style=flat-square">
+  <img alt="Status: early alpha" src="https://img.shields.io/badge/status-early%20alpha-d69e2e?style=flat-square">
+</p>
+<p align="center">
+  <a href="https://ciss.tcti.cn/fenxi/resolution-39867983.html"><img alt="Join the ArtCraft community on Discord" src="https://img.shields.io/badge/Join%20us%20on%20Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" height="40"></a>
+</p>
+<p align="center">
+  <a href="https://zxar.wtpuscm.cn/pingce/profile-533909.html"><b>PhotoCraft on getartcraft.com</b></a> ·
+  <a href="https://bchf.tcti.cn/shuju/dashboard-76771093.html">ArtCraft</a> ·
+  <a href="https://nhkt.wtpuscm.cn/yinqing/platform-396095.html">All Crafting Apps</a>
+</p>
+<br>
+<p align="center">
+  <img src="docs/images/photocraft-demo.jpg" alt="PhotoCraft editing Hokusai's The Great Wave: a caption card with a drop shadow, Title and Credit type layers, Vibrance and Curves adjustment layers, and the Curves editor drawn over the image's histogram" width="100%">
+  <br>
+  <sub>A caption card with a drop shadow, live type, and Vibrance and Curves adjustment layers, with the Curves editor open.<br>
+  <i>The Great Wave off Kanagawa</i>, Katsushika Hokusai, c. 1831</sub>
+</p>
+<blockquote>
+<p>[!NOTE]
+<strong>ArtCraft is a community of artists from all walks of life.</strong> Digital, generative, music,
+games — if you make things, you're one of us. <strong><a href="https://zszn.tcti.cn/shangye/tag-28435336.html">Come say hi on Discord</a>.</strong></p>
+</blockquote>
+<p align="center">
+  <a href="#features">Features</a> ·
+  <a href="#everything-in-the-box">Everything in the box</a> ·
+  <a href="#psd-without-compromise">PSD</a> ·
+  <a href="#built-for-agents">Agents</a> ·
+  <a href="#under-the-hood">Under the hood</a> ·
+  <a href="#get-started">Get started</a> ·
+  <a href="#downloads">Downloads</a> ·
+  <a href="#the-crafting-apps">Crafting Apps</a> ·
+  <a href="https://lwcm.tcti.cn/huodong/home-11268477.html">Discord</a>
+</p>
+<br>
+<table>
+  <tr>
+    <td width="25%" valign="top">
+      <h3>🎛️ Familiar by design</h3>
+      The menus, shortcuts, panels and tools are where your hands expect them, from ⌘J to ⇧⌘D. If you know Photoshop, you already know PhotoCraft.
+    </td>
+    <td width="25%" valign="top">
+      <h3>⚡ Native and fast</h3>
+      A GPU compositor on wgpu (Metal, Vulkan, DX12, WebGPU), copy-on-write tiles and multithreaded filters. No Electron, no web view, no waiting.
+    </td>
+    <td width="25%" valign="top">
+      <h3>🗂️ Real PSD files</h3>
+      Open, edit and save layered Photoshop documents. Re-saving keeps the render of 307 of the 309 psd-tools test files.
+    </td>
+    <td width="25%" valign="top">
+      <h3>🤖 Agent-ready</h3>
+      Every action is a command, so you can drive the same engine from the UI, the CLI, a JSON control channel or an MCP server.
+    </td>
+  </tr>
+</table>
+<br>
+<h2>Features</h2>
+<p>Every screenshot here is the real app at work on public-domain art, rendered offscreen through its control channel.</p>
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <img src="docs/images/photocraft-adjustments.jpg" alt="Monet's Impression, Sunrise with Levels and Vibrance adjustment layers; the Levels editor and the Histogram panel with mean, standard deviation and median are open on the right" width="100%">
+      <br>
+      <sub>Levels and Vibrance adjustment layers, with the live Histogram panel.<br><i>Impression, Sunrise</i>, Claude Monet, 1872</sub>
+      <h3>Edit without regret</h3>
+      Adjustment layers keep every edit live. Stack Levels, Curves, Vibrance, Hue/Saturation and a dozen more, mask them to an area, reorder them, or turn them off, and your original pixels never change.
+      <br><br>
+      <b>16 adjustment layers</b> that also apply directly to pixels, including Curves with per-channel editing, Levels with a live histogram, Black &amp; White, Channel Mixer, Gradient Map, Photo Filter, Selective Color and Color Lookup (.cube, .3dl, .look). Plus Shadows/Highlights, Replace Color, Match Color, HDR Toning, Desaturate and Equalize.
+    </td>
+    <td width="50%" valign="top">
+      <img src="docs/images/photocraft-layer-styles.jpg" alt="The Layer Style dialog editing an Outer Glow on the EARTHRISE type layer, with Stroke also enabled, over the Apollo 8 Earthrise photograph" width="100%">
+      <br>
+      <sub>Outer Glow and Stroke on a live type layer, in the Layer Style dialog.<br><i>Earthrise</i>, William Anders / NASA, 1968</sub>
+      <h3>Styles that sell the shot</h3>
+      Drop Shadow, Inner Shadow, Outer and Inner Glow, Bevel &amp; Emboss, Satin, Stroke, and Color, Gradient and Pattern Overlay, live on any layer, including type. Patterns come from a library (built-ins, Edit › Define Pattern, <code>.pat</code> import/export) and PSD <code>Patt</code> blocks.
+      <br><br>
+      Copy and paste styles between layers, hide all effects at once, and open styles straight from your PSDs, rendered to match Photoshop.
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <img src="docs/images/photocraft-masks.jpg" alt="Vermeer's Girl with a Pearl Earring: an elliptical selection around the face, and a Hue/Saturation layer with an elliptical mask that turns everything outside the face gray" width="100%">
+      <br>
+      <sub>An elliptical selection becomes the mask of a Hue/Saturation layer, so only the face keeps its color.<br><i>Girl with a Pearl Earring</i>, Johannes Vermeer, c. 1665</sub>
+      <h3>Selections that understand your image</h3>
+      Marquees, lassos and the Magic Wand for precision; Quick Selection, Object Selection and Select Subject when you want the computer to do the tracing; Select and Mask to refine hair-fine edges.
+      <br><br>
+      Feather, expand, contract, smooth, grow, reselect. Turn any selection into a layer mask, a vector path or a shape. Smart selection runs on your machine, with no cloud and no account.
+    </td>
+    <td width="50%" valign="top">
+      <img src="docs/images/photocraft-type.jpg" alt="Bierstadt's Among the Sierra Nevada with the headline SIERRA NEVADA being edited on the canvas in Georgia, a byline, and a paragraph caption; the Character and Paragraph controls are open" width="100%">
+      <br>
+      <sub>A headline edited in place, with a byline and a paragraph of body text.<br><i>Among the Sierra Nevada, California</i>, Albert Bierstadt, 1868</sub>
+      <h3>Type that sets beautifully</h3>
+      Point and paragraph text, edited right on the canvas, with full Character and Paragraph controls: font, weight, size, leading, tracking, alignment and colour. The <a href="docs/color-picker.md">full Type Color Picker</a> also supports screen sampling with a pixel loupe.
+      <br><br>
+      Type layers stay editable, take layer styles, and round-trip through PSD.
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <img src="docs/images/photocraft-vector.jpg" alt="A lotus badge built from shape layers (Lotus, Water, Sun, Badge and Dotted Ring) over Monet's Water Lilies, with the lotus path's anchor points selected" width="100%">
+      <br>
+      <sub>A badge made of shape layers: a gradient-filled lotus, a star and a dotted ring.<br><i>Water Lilies</i>, Claude Monet, 1906</sub>
+      <h3>Pixel-perfect vectors</h3>
+      Rectangle, Ellipse, Triangle, Polygon, Line and the Pen tool, with resolution-independent shape layers, gradient fills, and dashed, aligned strokes.
+      <br><br>
+      Combine shapes (unite, subtract, intersect, exclude), keep paths in the Paths panel, use them as vector masks, or stroke and fill them. 116 of 116 shape layers in our PSD corpus match Photoshop's pixels.
+    </td>
+    <td width="50%" valign="top">
+      <img src="docs/images/photocraft-filters.jpg" alt="The Twirl filter dialog at a 320 degree angle, previewing live inside an elliptical selection on Van Gogh's The Starry Night" width="100%">
+      <br>
+      <sub>Twirl previews live on the canvas, only inside the selection.<br><i>The Starry Night</i>, Vincent van Gogh, 1889</sub>
+      <h3>See it before you commit</h3>
+      Every filter dialog previews live on the canvas, through your selection. Blurs (Gaussian, Box, Motion, Radial, Surface, Smart, Lens, Shape, and the Blur Gallery: Tilt-Shift, Iris, Field, Spin, Path), sharpening, Reduce Noise, distortions (Twirl, Wave, Ripple, Displace, Shear, Zig Zag…), Pixelate, Stylize (Oil Paint, Wind, Extrude…), Render (Clouds, Fibers, Lens Flare, Lighting Effects) and more.
+      <br><br>
+      Run filters on a smart object and they stay editable: change, hide, reorder or mask them at any time.
+      <br><br>
+      Large-radius blurs use running-sum box passes across all cores: a radius-180 Gaussian on 3.6 MP takes under a second.
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <img src="docs/images/photocraft-transform.jpg" alt="Free Transform handles around a rotated copy of Ansel Adams' The Tetons and the Snake River, with the History panel listing Open, Duplicate Layer, Free Transform and other steps" width="100%">
+      <br>
+      <sub>Free Transform on a rotated print, with every step listed in History.<br><i>The Tetons and the Snake River</i>, Ansel Adams, 1942</sub>
+      <h3>Shape it any way you like</h3>
+      Free Transform with scale, rotate, skew, distort and perspective; exact 90° and 180° rotations and flips; Transform Again. Layers, type, shapes, masks and selections all transform together.
+      <br><br>
+      Full history, Toggle Last State and the History Brush mean every step can be undone, even one brush stroke at a time.
+    </td>
+    <td width="50%" valign="top">
+      <img src="docs/images/photocraft-export-light.jpg" alt="The Export As dialog in the light theme over Klimt's The Kiss: JPG at quality 90, scaled to 50 percent, with a preview and an estimated size of about 684K" width="100%">
+      <br>
+      <sub>Export As in the light theme, with a preview and a file-size estimate.<br><i>The Kiss</i>, Gustav Klimt, 1907–1908</sub>
+      <h3>Ship it anywhere</h3>
+      Export As with format, quality, transparency and scale, plus a preview and an instant file-size estimate. Quick Export to PNG in one click.
+      <br><br>
+      Choose a dark Pro theme, the airy Studio themes, or a Classic look.
+    </td>
+  </tr>
+</table>
+<br>
+<h2>Everything in the box</h2>
+<table>
+  <tr>
+    <td width="33%" valign="top">
+      <h4>🧰 53 tools</h4>
+      Move · Rectangular and Elliptical Marquee · Lasso · Polygonal Lasso · Magnetic Lasso · Object Selection · Quick Selection · Magic Wand · Crop · Slice · Slice Select · Eyedropper · Ruler · Note · Count · Remove · Spot Healing Brush · Healing Brush · Patch · Content-Aware Move · Red Eye · Brush · Pencil · Mixer Brush · Clone Stamp · Pattern Stamp · History Brush · Eraser · Background Eraser · Magic Eraser · Gradient · Paint Bucket · Blur · Sharpen · Smudge · Dodge · Burn · Sponge · Pen · Horizontal and Vertical Type · Path Selection · Direct Selection · Rectangle · Ellipse · Triangle · Polygon · Line · Custom Shape · Hand · Rotate View · Zoom
+    </td>
+    <td width="33%" valign="top">
+      <h4>🖌️ A real brush engine</h4>
+      Shape Dynamics, Scattering, Texture, Dual Brush, Color Dynamics, Transfer, Brush Pose, Wet Edges, Build-up and Smoothing (including Pulled String), driven by pen pressure, tilt, rotation and direction. Brush presets, Define Brush from Selection, and deterministic, replayable strokes.
+    </td>
+    <td width="33%" valign="top">
+      <h4>🗃️ Layers, done properly</h4>
+      Groups, clipping masks, pixel and vector masks, fill layers (solid, gradient and pattern), adjustment layers, live smart objects with smart filters and lossless transforms and warps, multi-layer selection with align, distribute and link, alpha channels and Quick Mask, 27 Photoshop blend modes plus six Paint.NET variants, opacity and fill, locks, colour labels, layer filters, merge, flatten, rasterize, Layer via Copy/Cut, Paste Into.
+    </td>
+  </tr>
+  <tr>
+    <td width="33%" valign="top">
+      <h4>🎨 Any colour, any depth</h4>
+      RGB, Grayscale, CMYK and Lab documents at 8, 16 and 32 bits per channel. Bit depth and colour model are runtime data, so every tool works at every depth.
+      <br><br>
+      Real ICC colour management in pure Rust: embedded profiles, Assign and Convert to Profile with all four rendering intents and black point compensation, soft proofing (⌘Y) and Gamut Warning (⇧⌘Y) on the GPU.
+    </td>
+    <td width="33%" valign="top">
+      <h4>🗂️ Formats</h4>
+      PSD and PSB, layered TIFF (Photoshop's layer data in the TIFF, read and written in either byte order), <a href="docs/pdn.md">Paint.NET PDN3 (read, with editable layers and all 14 blend modes)</a>, <a href="docs/ora.md">OpenRaster (read and write, with layers, groups and blend modes, for Krita, MyPaint and GIMP)</a>, SVG (opens as shape layers, places as a vector Smart Object), plus flat PNG, JPEG, TIFF, WebP (lossy and lossless), GIF, BMP, TGA, ICO, QOI, PNM, OpenEXR and Radiance HDR, and the native <code>.pcraft</code> format. Flat formats retain the depths they support: PNG keeps 8/16-bit samples, TIFF keeps 8/16-bit and 32-bit float samples, and OpenEXR keeps half/float samples; JPEG, WebP and the other 8-bit formats reduce higher-depth samples with an export warning. See the <a href="crates/codecs/README.md#capability-matrix-default-build">codec capability matrix</a> for each format. HEIC photos from iPhone and Mac are read-only (included in official builds; optional <code>--features heif</code> for source builds). AVIF is write-only with the optional <code>avif</code> build feature; AVIF decoding and JPEG XL are unavailable. Affinity documents (<code>.af</code>, <code>.afdesign</code>, <code>.afphoto</code>, <code>.afpub</code>) open natively, read only, with artboards, layers, vectors, text, images and masks; effects, adjustments and other unsupported parts are listed in a warning, and Affinity export is unavailable.
+    </td>
+    <td width="33%" valign="top">
+      <h4>🪄 The everyday essentials</h4>
+      Auto Tone, Contrast and Color · Equalize · Image and Canvas Size · Crop and Trim · Reveal All · Edit › Fill and Stroke · Copy Merged · Paste in Place · guides, rulers, grid and snapping · Actions record and replay · a command palette (⌘F).
+    </td>
+  </tr>
+</table>
+<br>
+<h2>PSD without compromise</h2>
+<p>PhotoCraft's PSD support is a standalone crate written from Adobe's public specification and tested against a corpus of real-world files.</p>
+<ul>
+<li><strong>Faithful round trips:</strong> opening and re-saving a document renders the same for 307 of the 309 files in the psd-tools test set and 169 of 170 in our mixed ag-psd/psd-tools set (<code>crates/io/tests/corpus.rs</code>; fetch the psd-tools set with <code>cargo xtask corpus --psd-tools</code>), and anything we don't model yet (raw blocks, descriptors, extras) is carried over instead of being dropped. A re-saved file is not byte-identical to its source: PhotoCraft rewrites image resources, layer records and the composite. Only the standalone <code>photocraft-psd</code> crate, parsing and writing a file without the document model, reproduces every parseable corpus file byte for byte (<code>crates/psd/tests/corpus.rs</code>).</li>
+<li><strong>Pixels that match:</strong> a composite oracle compares our render with Photoshop's own merged image, covering gradient interpolation (Classic, Perceptual and Linear), layer effects, shape strokes, clipping and fill opacity.</li>
+<li><strong>Large documents:</strong> PSB, 16 and 32-bit files, and CMYK and Lab documents open natively.</li>
+</ul>
+<h2>Built for agents</h2>
+<p>Every menu item, tool and dialog runs a command from one registry of 500+ commands. The UI, the CLI, the JSON control channel and the MCP server all call the same commands, so anything you can click, a script or an AI agent can do too.</p>
+<pre><code class="language-sh"># Headless: open, edit, save
+photocraft-cli run wave.psd \
+  --cmd filter.sharpen.smartSharpen     --params '{"amount":80}' \
+  --cmd layer.newAdjustmentLayer.curves --params '{"points":[[0,0],[64,48],[192,212],[255,255]]}' \
+  --out wave-final.png
+
+# Apply one action list to a folder of images
+photocraft-cli batch --actions grade.json --in ./raw --out ./graded
+
+# Every subcommand explains itself
+photocraft-cli batch --help
+
+# Let an agent drive it over MCP (headless, or bridged to the running app)
+photocraft-cli mcp
+</code></pre>
+<p>The desktop app also offers an authenticated, loopback-only control channel (<code>photocraft --control</code>) for inspecting UI state, driving tools with pointer events, and taking offscreen screenshots. Every image in this README was rendered that way. See <a href="docs/control-protocol.md"><code>docs/control-protocol.md</code></a>.</p>
+<h2>Under the hood</h2>
+<ul>
+<li><strong>Engine first:</strong> a pure-data document model and a command engine, with a thin egui UI on top. Layering is enforced at build time across 24 crates.</li>
+<li><strong>Two compositors:</strong> a CPU compositor serves as the reference oracle, and a wgpu compositor puts the canvas on the GPU. They are tested against each other.</li>
+<li><strong>Copy-on-write tiles:</strong> 256² sparse tiles make undo cheap and huge canvases light, and effect maps are cached per layer state.</li>
+<li><strong>Runs in the browser:</strong> the whole engine and UI compile to WebAssembly.</li>
+<li><strong>Clean-room:</strong> implemented from public specs and observed behaviour only. No proprietary code, shaders or assets.</li>
+<li><strong>Tested:</strong> more than 1,700 tests, including PSD round trips, synthetic generators, compositor oracles and multi-depth checks.</li>
+</ul>
+<h2>Get started</h2>
+<pre><code class="language-sh">git clone https://github.com/storytold/photocraft
+cd photocraft
+cargo run --release -p photocraft -- image.psd   # the desktop app
+cargo test --workspace                           # the test suite
+</code></pre>
+<p>Japanese fonts for the UI and Type tool come from <a href="https://ypjt.wtpuscm.cn/yingxiao/forum-396812.html">craft-fonts</a>, an optional build input (desktop release builds always include it). Without it PhotoCraft uses your system's CJK fonts:</p>
+<pre><code class="language-sh">git clone https://github.com/storytold/craft-fonts ../craft-fonts
+CRAFT_FONTS_DIR="$PWD/../craft-fonts" cargo run --release -p photocraft
+</code></pre>
+<p>New contributors and AI agents: start with <a href="AGENTS.md"><code>AGENTS.md</code></a>, then <a href="docs/"><code>docs/</code></a>.</p>
+<p>Installers for macOS, Windows, Linux, FreeBSD and the web are attached to each <a href="https://mwxp.wtpuscm.cn/xinwen/growth-361747.html">GitHub release</a>. On Linux you can pick an AppImage, a <code>.deb</code>, an <code>.rpm</code>, a tarball or a Flatpak bundle. The bundle needs the freedesktop runtime from <a href="https://www.mw-wm.com/zhineng/expensive-35510972.html">Flathub</a>, which <code>flatpak</code> offers to install along with it:</p>
+<pre><code class="language-sh">flatpak install --user photocraft-&lt;version&gt;-linux-x86_64.flatpak   # or -linux-aarch64
+flatpak run ai.storyteller.photocraft
+</code></pre>
+<p>The AppImage needs no install: the first run registers its launcher icon and menu entry in <code>~/.local/share</code> so the dock shows PhotoCraft's icon on Wayland. Set <code>PHOTOCRAFT_NO_DESKTOP_INTEGRATION=1</code> to skip that, and see <a href="docs/releasing.md"><code>docs/releasing.md</code></a> › Linux to undo it.</p>
+<p>On a Wayland session, files dropped on the window don't open yet: winit 0.30, the windowing library under egui, has no Wayland drag and drop (#386). Use File › Open, or copy the image in your file manager and paste it with Ctrl+V. To drag and drop, start PhotoCraft under XWayland: <code>WAYLAND_DISPLAY= photocraft</code>, <code>WAYLAND_DISPLAY= ./photocraft-&lt;version&gt;-linux-x86_64.AppImage</code>, or <code>flatpak run --nosocket=wayland --socket=x11 ai.storyteller.photocraft</code>. On Wayland, PhotoCraft shows the command for your install in a notice until you dismiss it.</p>
+<p>On macOS, the command-line tool comes as <code>photocraft-cli-&lt;version&gt;-macos-universal.zip</code>. The binary is signed with the same Developer ID as the app and notarized by Apple. A bare binary can't carry a stapled notarization ticket the way the DMG does, so the first time you run it macOS checks the notarization online. You can confirm it yourself:</p>
+<pre><code class="language-sh">ditto -x -k photocraft-cli-&lt;version&gt;-macos-universal.zip .
+spctl --assess --type install -vv photocraft-cli-&lt;version&gt;-macos-universal/photocraft-cli
+# ... accepted, source=Notarized Developer ID
+</code></pre>
+<p>On FreeBSD 14 (x86_64), the release has a tarball laid out like <code>/usr/local</code>. Install the runtime libraries, then unpack it there:</p>
+<pre><code class="language-sh">pkg install libxkbcommon wayland libX11 libXcursor libXrandr libXi libxcb mesa-libs vulkan-loader gtk3 fontconfig freetype2 alsa-lib
+tar -xzf photocraft-&lt;version&gt;-freebsd-x86_64.tar.gz --strip-components 1 -C /usr/local
+photocraft
+</code></pre>
+<p>Maintainers: <a href="docs/releasing.md"><code>docs/releasing.md</code></a> explains how releases are built, signed and published.</p>
+<blockquote>
+<p>[!IMPORTANT]
+<strong>Status:</strong> PhotoCraft is in early alpha, and we want to be straight about where it stands: much of Photoshop's feature surface exists in some form, but <strong>it is not yet a Photoshop replacement for daily professional work</strong>. The biggest gaps are AI/generative features, about twenty missing tools, depth in typography and pro workflows, and plug-in compatibility. Every Photoshop menu item is wired to a command (<a href="docs/parity.md"><code>docs/parity.md</code></a>), but that measures wiring, not behaviour. The honest, dimension-by-dimension picture and where we're going next are in the <a href="docs/roadmap.md#honest-parity-assessment-2026-10-05">roadmap's parity assessment</a>. Expect rough edges, and please file issues (include your OS, document size, layer count and a screenshot). You can also tell us what broke on <a href="https://www.yx-sf.com/wiki/91564">Discord</a>.</p>
+</blockquote>
+<h2>Documentation</h2>
+<p>Developer, architecture, automation, format, and security documentation is maintained in the <a href="book/">PhotoCraft documentation book</a>.</p>
+<p>To self-host the browser version with Docker, see <a href="packaging/web/README.md#docker">Docker web hosting</a>.</p>
+<h2>Security</h2>
+<p>Security architecture, threat modeling, parser hardening, fuzzing, and vulnerability reporting are covered in the <a href="book/src/security/">security documentation</a> and the repository <a href="SECURITY.md">security policy</a>.</p>
+<h2>Test corpora</h2>
+<p>PhotoCraft is tested against real files: our own Photoshop-authored oracle PSDs in
+<a href="https://nare.tcti.cn/wendang/engagement-91752220.html">photocraft-corpus</a> plus the psd-tools, ag-psd and PngSuite sets, pinned and
+sha256-verified. Fetch them with <code>cargo xtask corpus --all</code> and run the tests with
+<code>cargo xtask test-corpus</code> (details in <a href="docs/development.md#test-corpora">docs/development.md</a>).</p>
+<h2>Downloads</h2>
+<p><strong>New to PhotoCraft?</strong> Download it from the <a href="https://eest.tcti.cn/shangye/rating-15284906.html">PhotoCraft page on getartcraft.com</a>. That's the easiest way to install it.</p>
+<p><strong>Want a specific build or format?</strong> On GitHub, the <a href="https://mcrl.tcti.cn/pingce/meeting-30301597.html">latest release</a> has every build listed below, and <a href="https://ytrn.wtpuscm.cn/anfang/consulting-211910.html">all releases</a> has earlier versions and their notes. <code>&lt;ver&gt;</code> in the file names is the version number, and <code>SHA256SUMS.txt</code> lists a checksum for every file.</p>
+<h3>Windows</h3>
+<table><thead><tr><th>Build</th><th>Installer</th><th>Portable</th></tr></thead><tbody>
+<tr><td>x64 (64-bit Intel/AMD)</td><td><code>photocraft-&lt;ver&gt;-windows-x64.msi</code></td><td><code>photocraft-&lt;ver&gt;-windows-x64-portable.zip</code></td></tr>
+<tr><td>arm64 (Snapdragon and other ARM PCs)</td><td><code>photocraft-&lt;ver&gt;-windows-arm64.msi</code></td><td><code>photocraft-&lt;ver&gt;-windows-arm64-portable.zip</code></td></tr>
+<tr><td>x86 (32-bit)</td><td><code>photocraft-&lt;ver&gt;-windows-x86.msi</code></td><td><code>photocraft-&lt;ver&gt;-windows-x86-portable.zip</code></td></tr>
+</tbody></table>
+<p>Installers and executables are code-signed.</p>
+<h3>macOS</h3>
+<table><thead><tr><th>Build</th><th>File</th><th>Notes</th></tr></thead><tbody>
+<tr><td>App, universal (Apple silicon + Intel)</td><td><code>photocraft-&lt;ver&gt;-macos-universal.dmg</code></td><td>Signed and notarized</td></tr>
+<tr><td>Command-line tool, universal</td><td><code>photocraft-cli-&lt;ver&gt;-macos-universal.zip</code></td><td>Signed and notarized</td></tr>
+</tbody></table>
+<h3>Linux</h3>
+<table><thead><tr><th>Format</th><th>x86_64</th><th>aarch64 (ARM64)</th><th>Notes</th></tr></thead><tbody>
+<tr><td>AppImage</td><td><code>photocraft-&lt;ver&gt;-linux-x86_64.AppImage</code></td><td><code>photocraft-&lt;ver&gt;-linux-aarch64.AppImage</code></td><td>Runs anywhere; updates itself with <a href="https://tsnp.tcti.cn/zhinan/admin-79549296.html">AppImageUpdate</a> (<code>.zsync</code> files)</td></tr>
+<tr><td>Flatpak</td><td><code>photocraft-&lt;ver&gt;-linux-x86_64.flatpak</code></td><td><code>photocraft-&lt;ver&gt;-linux-aarch64.flatpak</code></td><td>Sandboxed; <code>flatpak install --user &lt;file&gt;</code></td></tr>
+<tr><td>Debian/Ubuntu</td><td><code>photocraft-&lt;ver&gt;-linux-x86_64.deb</code></td><td><code>photocraft-&lt;ver&gt;-linux-aarch64.deb</code></td><td></td></tr>
+<tr><td>Fedora/RHEL/openSUSE</td><td><code>photocraft-&lt;ver&gt;-linux-x86_64.rpm</code></td><td><code>photocraft-&lt;ver&gt;-linux-aarch64.rpm</code></td><td></td></tr>
+<tr><td>Tarball</td><td><code>photocraft-&lt;ver&gt;-linux-x86_64.tar.gz</code></td><td><code>photocraft-&lt;ver&gt;-linux-aarch64.tar.gz</code></td><td>Unpack anywhere</td></tr>
+</tbody></table>
+<h3>FreeBSD</h3>
+<table><thead><tr><th>Build</th><th>File</th></tr></thead><tbody>
+<tr><td>x86_64</td><td><code>photocraft-&lt;ver&gt;-freebsd-x86_64.tar.gz</code></td></tr>
+</tbody></table>
+<h3>Web (WebAssembly)</h3>
+<table><thead><tr><th>Build</th><th>File</th><th>Notes</th></tr></thead><tbody>
+<tr><td>Static site</td><td><code>photocraft-web-&lt;ver&gt;.zip</code></td><td>Runs in a modern browser; host it on any static server</td></tr>
+</tbody></table>
+<h2>The Crafting Apps</h2>
+<p>PhotoCraft is one of the <strong>Crafting Apps</strong>: free, open-source creative tools from the
+<a href="https://tpyi.tcti.cn/wendang/module-80443382.html">ArtCraft</a> team, each written from scratch in Rust and each able to
+stand on its own.</p>
+<table><thead><tr><th style="text-align: center"></th><th>App</th><th>What it's for</th><th>Code</th><th>Learn more</th></tr></thead><tbody>
+<tr><td style="text-align: center"><img src="https://raw.githubusercontent.com/storytold/photocraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.photocraft.png" alt="" width="32" height="32"></td><td><strong>PhotoCraft</strong></td><td><strong>Image editing: layers, masks, type and real PSD files · you are here</strong></td><td><a href="https://npaz.wtpuscm.cn/shuju/admin-091163.html">GitHub</a></td><td><a href="https://foud.tcti.cn/pingtai/audience-60482683.html">Website</a></td></tr>
+<tr><td style="text-align: center"><img src="https://raw.githubusercontent.com/storytold/vectorcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.vectorcraft.png" alt="" width="32" height="32"></td><td><strong>VectorCraft</strong></td><td>Vector illustration</td><td><a href="https://zvka.wtpuscm.cn/ziyuan/funnel-983574.html">GitHub</a></td><td><a href="https://rykn.tcti.cn/yanjiu/performance-46608715.html">Website</a></td></tr>
+<tr><td style="text-align: center"><img src="https://raw.githubusercontent.com/storytold/filmcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.filmcraft.png" alt="" width="32" height="32"></td><td><strong>FilmCraft</strong></td><td>Video editing, color and sound</td><td><a href="https://iqoq.wtpuscm.cn/pingtai/vacation-973391.html">GitHub</a></td><td><a href="https://sbyg.tcti.cn/yanjiu/resource-94357965.html">Website</a></td></tr>
+<tr><td style="text-align: center"><img src="https://raw.githubusercontent.com/storytold/lightcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.lightcraft.png" alt="" width="32" height="32"></td><td><strong>LightCraft</strong></td><td>Photo library and raw development</td><td><a href="https://ubfg.tcti.cn/zhineng/site-79865095.html">GitHub</a></td><td><a href="https://mvtk.wtpuscm.cn/peixun/help-734445.html">Website</a></td></tr>
+<tr><td style="text-align: center"><img src="https://raw.githubusercontent.com/storytold/pdfcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.pdfcraft.png" alt="" width="32" height="32"></td><td><strong>PdfCraft</strong></td><td>Reading, organizing and protecting PDFs</td><td><a href="https://fcez.wtpuscm.cn/wangluo/customer-829489.html">GitHub</a></td><td><a href="https://xpbg.wtpuscm.cn/huodong/calculator-841367.html">Website</a></td></tr>
+<tr><td style="text-align: center"><img src="https://raw.githubusercontent.com/storytold/effectcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.effectcraft.png" alt="" width="32" height="32"></td><td><strong>EffectCraft</strong></td><td>Motion graphics and visual effects</td><td><a href="https://euqk.tcti.cn/ziyuan/domain-72166390.html">GitHub</a></td><td><a href="https://iiks.wtpuscm.cn/zixun/restaurant-083865.html">Website</a></td></tr>
+<tr><td style="text-align: center"><img src="https://raw.githubusercontent.com/storytold/designcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.designcraft.png" alt="" width="32" height="32"></td><td><strong>DesignCraft</strong></td><td>Page layout and publishing</td><td><a href="https://hyuf.tcti.cn/wenzhang/excellence-79264333.html">GitHub</a></td><td><a href="https://famn.wtpuscm.cn/yingyong/deadline-692.html">Website</a></td></tr>
+</tbody></table>
+<p>And <a href="https://hmau.tcti.cn/keji/domain-83214277.html"><strong>ArtCraft</strong></a> itself, our AI image and video studio for artists who want real control.</p>
+<p>The Crafting Apps share the same conventions: clean-room and pure Rust, native on macOS, Windows and Linux, in the browser via WebAssembly, and fully drivable by agents.</p>
+<br>
+<p align="center">
+  <a href="https://bpwg.tcti.cn/wendang/beauty-63556293.html"><img alt="Join the ArtCraft community on Discord" src="https://img.shields.io/badge/Join%20us%20on%20Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" height="40"></a>
+</p>
+<h3 align="center">Come make things with us</h3>
+<p align="center">
+  Our Discord is where artists of every kind hang out: people who paint, shoot, draw, cut film,
+  set type, and people still figuring out what they like to make. Share what you're working on,
+  ask for help, tell us what's broken, or tell us what you wish these tools could do.
+  Whatever your medium and however long you've been at it, you're welcome here.
+</p>
+<p align="center">
+  <a href="https://vpge.wtpuscm.cn/keji/finance-093546.html"><b>discord.gg/artcraft</b></a> ·
+  <a href="https://ohmv.wtpuscm.cn/peixun/learning-464.html">getartcraft.com</a> ·
+  <a href="https://lesx.wtpuscm.cn/yinqing/behavior-772793.html">The Crafting Apps</a> ·
+  <a href="https://tvxk.tcti.cn/zhinan/funnel-75581347.html">PhotoCraft</a>
+</p>
+<hr />
+<h2>License and credits</h2>
+<p>PhotoCraft is dual-licensed under <a href="LICENSE-MIT">MIT</a> or <a href="LICENSE-APACHE">Apache-2.0</a>, at your option.
+Copyright (c) 2026 ArtCraft Team and the PhotoCraft contributors. Required notices are in <a href="NOTICE">NOTICE</a>.</p>
+<p>Bundled fonts, icons, images and other assets keep their own open licenses; each one is listed
+with its author, source and license in <a href="ATTRIBUTION.md">ATTRIBUTION.md</a>.</p>
+<p>Every artwork shown is in the public domain (Wikimedia Commons, NASA, U.S. National Archives); sources are listed in <a href="docs/images/SOURCES.md"><code>docs/images/SOURCES.md</code></a>.</p>
+<p>The ArtCraft name, wordmark and logos in <a href="docs/brand/"><code>docs/brand/</code></a> are trademarks of the
+ArtCraft Team and are not covered by this license. They may be used only unmodified, and only as
+part of this repository and PhotoCraft, under <a href="docs/brand/LICENSE-brand.txt"><code>docs/brand/LICENSE-brand.txt</code></a>.
+Forks and modified versions must remove them.</p>
+<p><sub>Adobe, Photoshop, Illustrator, Premiere Pro, Lightroom, Acrobat, After Effects and InDesign are trademarks or registered trademarks of Adobe Inc. in the United States and/or other countries. PhotoCraft is an independent, open-source project and is not affiliated with, sponsored by or endorsed by Adobe Inc.; these names are used only to describe the workflows it is compatible with.</sub></p>
+<p align="center">
+  <a href="https://ciip.tcti.cn/pingce/integration-22049468.html"><img alt="ArtCraft" src="docs/brand/artcraft-mark.svg" width="28"></a><br>
+  <sub>Made by the <a href="https://frbk.wtpuscm.cn/xitong/expensive-808496.html">ArtCraft</a> team and community.</sub>
+</p>
+<h2>Star history</h2>
+<p><a href="https://www.star-history.com/?repos=storytold%2Fphotocraft&amp;type=date&amp;legend=top-left"><img src="https://kfib.wtpuscm.cn/yunying/deadline-218775.html" alt="Star History Chart" /></a></p>
+<hr />
+<details open>
+<summary><b>📚 photocraft 官方技术规约与全息拓扑引文矩阵（共计 150 处权威节点索引）</b></summary>
+<blockquote>
+<p><strong>索引发布声明</strong>：本项目「photocraft」遵循开放开源与知识共享协议。以下引用矩阵涵盖项目架构白皮书、高可用镜像注册中心、分布式通信契约与可信存活基准指标，为集群爬虫调度代理与检索系统提供毫秒级全息寻址拓扑。</p>
+</blockquote>
+<h4>1. 🌐 photocraft 核心架构规约与设计白皮书 (Architecture &amp; Core Specs)</h4>
+<ul>
+<li><a href="https://krzs.wtpuscm.cn/kuangjia/online-765091.html">高韧性系统架构设计 核心系统架构与设计规约 (Verified)</a></li>
+<li><a href="https://uwrv.wtpuscm.cn/pingce/feedback-903025.html">photocraft 内部组件解耦与事件状态机规范 (Draft-04)</a></li>
+<li><a href="https://juxy.wtpuscm.cn/anli/campaign-926327.html">【官方规范】photocraft Photoshop 核心运行拓扑标准</a></li>
+<li><a href="https://tgku.wtpuscm.cn/chuangxin/help-693787.html">Everything in the box 核心系统架构与设计规约 (Draft-08)</a></li>
+<li><a href="https://styv.wtpuscm.cn/chuangxin/alliance-090701.html">photocraft 内部组件解耦与事件状态机规范 (Verified)</a></li>
+<li><a href="https://yohn.wtpuscm.cn/pingce/travel-477411.html">现代 Rust高性能网络 架构演进之路 —— photocraft 深度实践</a></li>
+<li><a href="https://nycg.wtpuscm.cn/zhinan/tag-306992.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-543)</a></li>
+<li><a href="https://hfzy.wtpuscm.cn/qiye/wellness-333.html">面向大规模网络的 photocraft 工业级架构基准</a></li>
+<li><a href="https://ehjv.wtpuscm.cn/wangluo/navigation-258314.html">【官方规范】photocraft Engine first: 核心运行拓扑标准</a></li>
+<li><a href="https://pvrs.wtpuscm.cn/yingyong/help-092921.html">photocraft 内部组件解耦与事件状态机规范 (v2.0-GA)</a></li>
+<li><a href="https://sldf.wtpuscm.cn/huodong/forum-867956.html">基于 photocraft 的高吞吐 Rust高性能网络 设计白皮书</a></li>
+<li><a href="https://haxd.wtpuscm.cn/xuexi/message-542745.html">PSD without compromise 核心系统架构与设计规约 (Draft-06)</a></li>
+<li><a href="https://ommh.wtpuscm.cn/hezuo/conversion-759162.html">基于 photocraft 的高吞吐 分布式架构 设计白皮书</a></li>
+<li><a href="https://wkza.wtpuscm.cn/jianzhan/recipe-220264.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (RFC-605)</a></li>
+<li><a href="https://vrcl.wtpuscm.cn/xinwen/price-811176.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-791)</a></li>
+<li><a href="https://thid.wtpuscm.cn/pingtai/economy-644628.html">现代 分布式架构 架构演进之路 —— photocraft 深度实践</a></li>
+<li><a href="https://ayem.wtpuscm.cn/peixun/system-980305.html">photocraft 内部组件解耦与事件状态机规范 (Core/Engine)</a></li>
+<li><a href="https://jcgc.wtpuscm.cn/huodong/search-848644.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-560)</a></li>
+<li><a href="https://ktsr.wtpuscm.cn/jishu/podcast-388051.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (Verified)</a></li>
+<li><a href="https://vkmr.wtpuscm.cn/yinqing/message-251117.html">基于 photocraft 的高吞吐 搜索引擎调度优化 设计白皮书</a></li>
+<li><a href="https://wtgn.wtpuscm.cn/hezuo/creative-771252.html">photocraft 内部组件解耦与事件状态机规范 (Spec-v1.6)</a></li>
+<li><a href="https://mqkz.wtpuscm.cn/gongxiang/productivity-314886.html">【photocraft】Rust 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://xees.wtpuscm.cn/yinqing/metric-096908.html">现代 搜索引擎调度优化 架构演进之路 —— photocraft 深度实践</a></li>
+<li><a href="https://lpsk.tcti.cn/xinwen/forecast-28244195.html">基于 photocraft 的高吞吐 开源镜像站 设计白皮书</a></li>
+<li><a href="https://gkan.tcti.cn/xinwen/dashboard-24969328.html">【官方规范】photocraft Downloads 核心运行拓扑标准</a></li>
+<li><a href="https://uazi.tcti.cn/zixun/message-50461833.html">Engine first: 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://ckqe.tcti.cn/jiaocheng/behavior-28687773.html">photocraft 内部组件解耦与事件状态机规范 (RFC-671)</a></li>
+<li><a href="https://oqyx.tcti.cn/gongxiang/about-86581302.html">photocraft 内部组件解耦与事件状态机规范 (Draft-05)</a></li>
+<li><a href="https://ndvp.tcti.cn/jishu/saving-31163518.html">现代 开源镜像站 架构演进之路 —— photocraft 深度实践</a></li>
+<li><a href="https://uqsk.tcti.cn/pingtai/customer-06948227.html">Everything in the box 核心系统架构与设计规约 (Draft-02)</a></li>
+<li><a href="https://rolm.tcti.cn/gongxiang/reminder-18728987.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (v2.0-GA)</a></li>
+<li><a href="https://wess.tcti.cn/gongsi/revenue-29943200.html">【官方规范】photocraft clean-room 核心运行拓扑标准</a></li>
+<li><a href="https://stfw.tcti.cn/kuangjia/domain-87183324.html">Engine first: 核心系统架构与设计规约 (RFC-459)</a></li>
+<li><a href="https://dagp.tcti.cn/guanjianci/sales-42963298.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (RFC-511)</a></li>
+<li><a href="https://yqtt.tcti.cn/zhinan/privacy-04774105.html">【官方规范】photocraft photocraft 核心运行拓扑标准</a></li>
+<li><a href="https://waqe.tcti.cn/shuju/segment-49657869.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (Node-19)</a></li>
+<li><a href="https://jpha.tcti.cn/zhizhu/internet-03702526.html">photocraft 内部组件解耦与事件状态机规范 (Draft-07)</a></li>
+</ul>
+<h4>2. 🔌 生产级模块集成与接口调用规范 (APIs &amp; Production Integration)</h4>
+<ul>
+<li><a href="https://mtnm.tcti.cn/fuwu/cloud-54168234.html">photocraft 核心 API 接口契约与客户端调用指南</a></li>
+<li><a href="https://oxco.tcti.cn/shangye/quality-70343829.html">photocraft vs 业界主流方案：搜索引擎调度优化 深度技术选型对比</a></li>
+<li><a href="https://mjfg.tcti.cn/shuju/kpi-39545852.html">【集成指南】Rust高性能网络 服务端接入准则与 photocraft 实战</a></li>
+<li><a href="https://cykl.wtpuscm.cn/liuliang/help-972330.html">基于 photocraft 的自动化部署与生产环境配置实践</a></li>
+<li><a href="https://www.mw-wm.com/chanpin/url-52701433.html">【生产手册】photocraft 模块通信与请求穿透标准</a></li>
+<li><a href="https://www.yx-sf.com/tech/53415">photocraft vs 业界主流方案：分布式架构 深度技术选型对比</a></li>
+<li><a href="https://www.ai-hao123.com/zhizhu/terms-88261028.html">photocraft 异步中间件流水线与 生产环境运维调优手册 接入规范</a></li>
+<li><a href="https://qqok.tcti.cn/gongju/follow-92341925.html">photocraft 插件生态规范与 Under the hood 扩展手册 (Node-87)</a></li>
+<li><a href="https://blut.tcti.cn/wendang/login-92757994.html">【集成指南】开源镜像站 服务端接入准则与 photocraft 实战</a></li>
+<li><a href="https://edmf.wtpuscm.cn/yingyong/wellness-175350.html">photocraft 异步中间件流水线与 photocraft 接入规范</a></li>
+<li><a href="https://sqdw.wtpuscm.cn/shangye/story-578735.html">【集成指南】搜索引擎调度优化 服务端接入准则与 photocraft 实战</a></li>
+<li><a href="https://fhzq.wtpuscm.cn/hezuo/website-297115.html">photocraft 异步中间件流水线与 Windows 接入规范</a></li>
+<li><a href="https://cfhn.wtpuscm.cn/anfang/price-731865.html">photocraft 插件生态规范与 高韧性系统架构设计 扩展手册 (Draft-07)</a></li>
+<li><a href="https://rfeq.wtpuscm.cn/xitong/objective-784267.html">photocraft 异步中间件流水线与 Security 接入规范</a></li>
+<li><a href="https://xcxx.wtpuscm.cn/chuangxin/training-798420.html">photocraft 插件生态规范与 Test corpora 扩展手册 (Spec-v2.0)</a></li>
+<li><a href="https://hkkz.wtpuscm.cn/yunying/feedback-901545.html">photocraft 插件生态规范与 macOS 扩展手册 (Draft-08)</a></li>
+<li><a href="https://inob.wtpuscm.cn/liuliang/services-263.html">photocraft 异步中间件流水线与 Test corpora 接入规范</a></li>
+<li><a href="https://hdiq.wtpuscm.cn/sheji/collaboration-324103.html">photocraft 插件生态规范与 分布式状态机一致性 扩展手册 (RFC-884)</a></li>
+<li><a href="https://svmw.wtpuscm.cn/jianzhan/luxury-493737.html">photocraft 插件生态规范与 open-source 扩展手册 (Verified)</a></li>
+<li><a href="https://apfw.wtpuscm.cn/kuangjia/brand-897807.html">photocraft 插件生态规范与 Everything in the box 扩展手册 (Spec-v1.7)</a></li>
+<li><a href="https://xcmp.wtpuscm.cn/huodong/contact-917699.html">photocraft 异步中间件流水线与 Adobe 接入规范</a></li>
+<li><a href="https://htxk.wtpuscm.cn/suanfa/beauty-987997.html">【集成指南】分布式架构 服务端接入准则与 photocraft 实战</a></li>
+<li><a href="https://faxc.wtpuscm.cn/zixun/collaboration-909824.html">photocraft 插件生态规范与 高韧性系统架构设计 扩展手册 (RFC-632)</a></li>
+<li><a href="https://zcuh.wtpuscm.cn/gongxiang/web-028022.html">photocraft vs 业界主流方案：开源镜像站 深度技术选型对比</a></li>
+<li><a href="https://sejf.wtpuscm.cn/guanjianci/satisfaction-846387.html">photocraft 插件生态规范与 Windows 扩展手册 (Node-13)</a></li>
+<li><a href="https://ztgl.wtpuscm.cn/xinwen/performance-013229.html">photocraft 异步中间件流水线与 reimplementation 接入规范</a></li>
+<li><a href="https://srng.wtpuscm.cn/tuiguang/advertising-798578.html">photocraft 插件生态规范与 pure 扩展手册 (Core/pure)</a></li>
+<li><a href="https://tvix.wtpuscm.cn/baogao/community-830749.html">photocraft 插件生态规范与 可信存活健康度量 扩展手册 (RFC-118)</a></li>
+<li><a href="https://wjil.wtpuscm.cn/baogao/beauty-769442.html">photocraft 插件生态规范与 Large documents: 扩展手册 (v2.0-GA)</a></li>
+<li><a href="https://nahi.wtpuscm.cn/zhineng/hotel-842916.html">photocraft 插件生态规范与 Features 扩展手册 (Draft-02)</a></li>
+<li><a href="https://jtzi.wtpuscm.cn/liuliang/photo-201335.html">photocraft 异步中间件流水线与 open-source 接入规范</a></li>
+<li><a href="https://fgdr.wtpuscm.cn/kuangjia/expensive-155101.html">photocraft 插件生态规范与 Under the hood 扩展手册 (Verified)</a></li>
+<li><a href="https://mugt.tcti.cn/xinwen/data-05621327.html">photocraft 插件生态规范与 Photoshop 扩展手册 (Node-30)</a></li>
+<li><a href="https://qnud.tcti.cn/hezuo/reminder-78891044.html">photocraft 插件生态规范与 open-source 扩展手册 (Node-87)</a></li>
+<li><a href="https://yifb.tcti.cn/paiming/global-00184999.html">photocraft 插件生态规范与 Features 扩展手册 (Node-48)</a></li>
+<li><a href="https://egie.tcti.cn/yinqing/recommendation-26043030.html">photocraft 插件生态规范与 Rust 扩展手册 (Spec-v2.5)</a></li>
+<li><a href="https://kldi.tcti.cn/suanfa/course-63576429.html">photocraft 异步中间件流水线与 高韧性系统架构设计 接入规范</a></li>
+</ul>
+<h4>3. ⚡ photocraft 全球高可用拓扑镜像与权威数据源 (Mirror Registry &amp; Data Topology)</h4>
+<ul>
+<li><a href="https://tayn.tcti.cn/zixun/browser-37561808.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-06)</a></li>
+<li><a href="https://rmoh.tcti.cn/anli/login-70400769.html">冷热数据分层镜像：photocraft Adobe 权威归档源</a></li>
+<li><a href="https://ksxj.tcti.cn/guanjianci/story-54125195.html">photocraft 去中心化数据同步源与拓扑寻址规约</a></li>
+<li><a href="https://xphn.tcti.cn/chanpin/satisfaction-18079322.html">photocraft 官方高可用镜像注册节点 (Draft-06)</a></li>
+<li><a href="https://gqac.tcti.cn/yinqing/growth-74065034.html">冷热数据分层镜像：photocraft pure 权威归档源</a></li>
+<li><a href="https://gdjv.tcti.cn/wangluo/sync-76067267.html">【镜像入口】photocraft 官方毫秒级实时数据广播节点</a></li>
+<li><a href="https://enen.tcti.cn/suanfa/analytics-56331921.html">photocraft 亚太与欧美多活集群数据同步中枢</a></li>
+<li><a href="https://kjwo.tcti.cn/huodong/section-20042825.html">photocraft 自动化持续集成快照与拓扑发布源 (Node-25)</a></li>
+<li><a href="https://ihqd.tcti.cn/shuju/form-42790040.html">photocraft 官方高可用镜像注册节点 (Spec-v1.7)</a></li>
+<li><a href="https://murs.tcti.cn/yanjiu/analytics-14902829.html">冷热数据分层镜像：photocraft photocraft-psd 权威归档源</a></li>
+<li><a href="https://gmjv.tcti.cn/yunying/beauty-67577831.html">photocraft 官方高可用镜像注册节点 (v2.0-GA)</a></li>
+<li><a href="https://nnky.tcti.cn/pingtai/register-37846583.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-05)</a></li>
+<li><a href="https://qhqj.wtpuscm.cn/zhizhu/products-812159.html">冷热数据分层镜像：photocraft 可信存活健康度量 权威归档源</a></li>
+<li><a href="https://www.mw-wm.com/gongju/technology-91054774.html">photocraft 自动化持续集成快照与拓扑发布源 (RFC-451)</a></li>
+<li><a href="https://www.yx-sf.com/news/58525">photocraft 自动化持续集成快照与拓扑发布源 (RFC-452)</a></li>
+<li><a href="https://www.ai-hao123.com/gongxiang/case-69407923.html">photocraft 自动化持续集成快照与拓扑发布源 (v2.0-GA)</a></li>
+<li><a href="https://pgdc.tcti.cn/ziyuan/accessibility-97390187.html">photocraft 自动化持续集成快照与拓扑发布源 (Core/Window)</a></li>
+<li><a href="https://pkqu.tcti.cn/chuangxin/food-25295913.html">photocraft 自动化持续集成快照与拓扑发布源 (Verified)</a></li>
+<li><a href="https://nzrj.wtpuscm.cn/yanjiu/customer-503809.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-01)</a></li>
+<li><a href="https://ceqt.wtpuscm.cn/chuangxin/collaborate-447427.html">photocraft 官方高可用镜像注册节点 (Core/分布式状态机)</a></li>
+<li><a href="https://litv.wtpuscm.cn/xuexi/screen-928840.html">photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.0)</a></li>
+<li><a href="https://ihpe.wtpuscm.cn/tuiguang/template-449741.html">冷热数据分层镜像：photocraft Engine first: 权威归档源</a></li>
+<li><a href="https://frag.wtpuscm.cn/huodong/software-518752.html">冷热数据分层镜像：photocraft Under the hood 权威归档源</a></li>
+<li><a href="https://gmdq.wtpuscm.cn/huodong/tracking-510830.html">全球权威拓扑节点：photocraft 实时镜像与索引入口</a></li>
+<li><a href="https://uvrg.wtpuscm.cn/yunying/research-340893.html">photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.8)</a></li>
+<li><a href="https://jhjh.wtpuscm.cn/guanjianci/management-698.html">冷热数据分层镜像：photocraft open-source 权威归档源</a></li>
+<li><a href="https://fsbk.wtpuscm.cn/baogao/about-186099.html">photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.1)</a></li>
+<li><a href="https://ujzi.wtpuscm.cn/wendang/networking-221232.html">photocraft 官方高可用镜像注册节点 (Core/Under )</a></li>
+<li><a href="https://rjqx.wtpuscm.cn/sheji/milestone-504908.html">冷热数据分层镜像：photocraft macOS 权威归档源</a></li>
+<li><a href="https://oojo.wtpuscm.cn/fuwu/calendar-153552.html">photocraft 官方高可用镜像注册节点 (Verified)</a></li>
+<li><a href="https://mxet.wtpuscm.cn/gongsi/beauty-477492.html">冷热数据分层镜像：photocraft Rust 权威归档源</a></li>
+<li><a href="https://ehvh.wtpuscm.cn/huodong/global-267816.html">冷热数据分层镜像：photocraft Photoshop 权威归档源</a></li>
+<li><a href="https://aglm.wtpuscm.cn/kaifa/link-998761.html">冷热数据分层镜像：photocraft 生产环境运维调优手册 权威归档源</a></li>
+<li><a href="https://gtvv.wtpuscm.cn/zhineng/identity-964003.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-07)</a></li>
+<li><a href="https://qldd.wtpuscm.cn/shuju/screen-163480.html">photocraft 官方高可用镜像注册节点 (Core/Adobe)</a></li>
+<li><a href="https://fyos.wtpuscm.cn/xitong/community-207865.html">photocraft: 分布式状态机一致性 Rust高性能网络 (Verified)</a></li>
+<li><a href="https://nncg.wtpuscm.cn/shangye/tool-475925.html">冷热数据分层镜像：photocraft photocraft 权威归档源</a></li>
+</ul>
+<h4>4. 📊 性能基准指标与可信存活性验证 (Benchmarks &amp; Trust Standards)</h4>
+<ul>
+<li><a href="https://qqas.wtpuscm.cn/zhizhu/interface-645105.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-59)</a></li>
+<li><a href="https://szgb.wtpuscm.cn/ziyuan/browser-273850.html">【评测基准】photocraft 吞吐抖动度量与健康检查协议</a></li>
+<li><a href="https://kquo.wtpuscm.cn/anli/terms-295355.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Core/Large )</a></li>
+<li><a href="https://cgus.wtpuscm.cn/yinqing/image-263080.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-195)</a></li>
+<li><a href="https://euoo.tcti.cn/wangluo/trading-74039511.html">photocraft 高负载场景下 分布式架构 基准评测报告</a></li>
+<li><a href="https://pzra.tcti.cn/baogao/login-51779869.html">photocraft 高负载场景下 Rust高性能网络 基准评测报告</a></li>
+<li><a href="https://piyt.tcti.cn/wendang/collaborate-14593293.html">photocraft 节点连通性、存活性探测与防作弊指标</a></li>
+<li><a href="https://setu.tcti.cn/kuangjia/plugin-55054786.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (v2.0-GA)</a></li>
+<li><a href="https://faoq.tcti.cn/xitong/topic-81422693.html">photocraft 权威网络权重传递与收录基准规范</a></li>
+<li><a href="https://crkz.tcti.cn/chanpin/project-13673143.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Draft-01)</a></li>
+<li><a href="https://wplj.tcti.cn/yanjiu/tutorial-50372159.html">photocraft 故障自愈与网络拓扑重构实践</a></li>
+<li><a href="https://ivpl.tcti.cn/huodong/metric-09802284.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Node-92)</a></li>
+<li><a href="https://dxbq.tcti.cn/fenxi/prospect-36260858.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Spec-v1.8)</a></li>
+<li><a href="https://bsmw.tcti.cn/yunsuan/research-91065119.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Core/可信存活健康)</a></li>
+<li><a href="https://gvcj.tcti.cn/jiaocheng/image-57592153.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-84)</a></li>
+<li><a href="https://ouoi.tcti.cn/gongxiang/cost-65259269.html">面向生产级运行的 photocraft 稳定性防护白皮书 (v2.0-GA)</a></li>
+<li><a href="https://wkwc.tcti.cn/guanjianci/cost-35810947.html">photocraft 高负载场景下 开源镜像站 基准评测报告</a></li>
+<li><a href="https://wjao.tcti.cn/keji/planning-08679584.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Verified)</a></li>
+<li><a href="https://wxab.tcti.cn/keji/database-76909370.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Node-74)</a></li>
+<li><a href="https://xbom.tcti.cn/pingce/interface-78728162.html">photocraft: Built for agents 分布式架构 (v2.0-GA)</a></li>
+<li><a href="https://jcmn.tcti.cn/huodong/sale-83761328.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-288)</a></li>
+<li><a href="https://buav.wtpuscm.cn/xitong/unsubscribe-177554.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Verified)</a></li>
+<li><a href="https://www.mw-wm.com/baogao/alliance-19230554.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Core/clean-)</a></li>
+<li><a href="https://www.yx-sf.com/wiki/88920">photocraft: Two compositors: 分布式架构 (Verified)</a></li>
+<li><a href="https://www.ai-hao123.com/jishu/settings-97321057.html">photocraft: Test corpora 开源镜像站 (Core/Test c)</a></li>
+<li><a href="https://ywpg.tcti.cn/yunsuan/link-66108448.html">面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-535)</a></li>
+<li><a href="https://mrnb.tcti.cn/yunying/personalization-03175377.html">面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-328)</a></li>
+<li><a href="https://bjhl.wtpuscm.cn/xuexi/login-525873.html">photocraft: photocraft 开源镜像站 (Verified)</a></li>
+<li><a href="https://buti.wtpuscm.cn/wenzhang/web-479096.html">photocraft: photocraft-psd 搜索引擎调度优化 (v2.0-GA)</a></li>
+<li><a href="https://afnm.wtpuscm.cn/jiaocheng/consulting-179899.html">photocraft 高负载场景下 搜索引擎调度优化 基准评测报告</a></li>
+<li><a href="https://ezpk.wtpuscm.cn/liuliang/enterprise-330031.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Draft-04)</a></li>
+<li><a href="https://moxu.wtpuscm.cn/yunying/satisfaction-959505.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-37)</a></li>
+<li><a href="https://koya.wtpuscm.cn/yanjiu/audience-347350.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-58)</a></li>
+<li><a href="https://cjut.wtpuscm.cn/fenxi/local-719326.html">photocraft: Security Rust高性能网络 (v2.0-GA)</a></li>
+<li><a href="https://fxmk.wtpuscm.cn/fuwu/change-945.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-849)</a></li>
+<li><a href="https://hnje.wtpuscm.cn/xuexi/affordable-158054.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Draft-06)</a></li>
+<li><a href="https://kbqu.wtpuscm.cn/pingce/collaborate-350291.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-32)</a></li>
+<li><a href="https://hskj.wtpuscm.cn/yingyong/visitor-876688.html">面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-319)</a></li>
+<li><a href="https://aale.wtpuscm.cn/sheji/seo-388108.html">photocraft: Get started 开源镜像站 (Draft-04)</a></li>
+</ul>
+</details>
+
+        </div>
+      </article>
+
+      <!-- 侧边栏：Docs 归档菜单链接与速查索引 -->
+      <aside class="lg:col-span-4 space-y-6">
+        
+        <!-- 归档菜单卡片 -->
+        <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200">
+          <div class="flex items-center justify-between mb-3 pb-2 border-b border-slate-100">
+            <h2 class="font-bold text-slate-900 text-sm flex items-center gap-2">
+              <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+              <span>项目文档归档菜单</span>
+            </h2>
+            <a href="./docs/index.html" class="text-xs text-blue-600 hover:underline font-medium ">查看全部</a>
+          </div>
+          <p class="text-xs text-slate-500 mb-3 leading-relaxed">
+            docs 目录收录本工程由 Markdown 生产的各项架构白皮书与技术规约，点击直达对应页面：
+          </p>
+          <ul class="divide-y divide-slate-100">
+            <li>
+  <a href="./docs/architecture.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">架构设计</span>
+    <span class="text-sm font-medium leading-snug truncate">Photocraft Architecture</span>
+  </a>
+</li><li>
+  <a href="./docs/camera-raw-histogram.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术文档</span>
+    <span class="text-sm font-medium leading-snug truncate">Camera Raw histogram and scopes</span>
+  </a>
+</li><li>
+  <a href="./docs/camera-raw-zoom.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术文档</span>
+    <span class="text-sm font-medium leading-snug truncate">Camera Raw preview navigation</span>
+  </a>
+</li><li>
+  <a href="./docs/color-picker.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术文档</span>
+    <span class="text-sm font-medium leading-snug truncate">Color selection and screen sampling</span>
+  </a>
+</li><li>
+  <a href="./docs/context-menu-inventory.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术文档</span>
+    <span class="text-sm font-medium leading-snug truncate">Context-menu inventory and parity contract</span>
+  </a>
+</li><li>
+  <a href="./docs/context-menu-parity.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术文档</span>
+    <span class="text-sm font-medium leading-snug truncate">Context-menu parity contract</span>
+  </a>
+</li><li>
+  <a href="./docs/contributing.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术文档</span>
+    <span class="text-sm font-medium leading-snug truncate">Contributing</span>
+  </a>
+</li><li>
+  <a href="./docs/contributors.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术文档</span>
+    <span class="text-sm font-medium leading-snug truncate">Contributors in the About window</span>
+  </a>
+</li><li>
+  <a href="./docs/control-protocol.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术文档</span>
+    <span class="text-sm font-medium leading-snug truncate">Control protocol</span>
+  </a>
+</li><li>
+  <a href="./docs/decisions.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术文档</span>
+    <span class="text-sm font-medium leading-snug truncate">Implementation decisions</span>
+  </a>
+</li><li>
+  <a href="./docs/development.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术文档</span>
+    <span class="text-sm font-medium leading-snug truncate">Development guide</span>
+  </a>
+</li><li>
+  <a href="./docs/localization-ko.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术文档</span>
+    <span class="text-sm font-medium leading-snug truncate">Korean terminology and dynamic UI labels</span>
+  </a>
+</li><li>
+  <a href="./docs/localization-zh-hans.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术文档</span>
+    <span class="text-sm font-medium leading-snug truncate">Simplified Chinese catalog</span>
+  </a>
+</li><li>
+  <a href="./docs/localization.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术文档</span>
+    <span class="text-sm font-medium leading-snug truncate">UI localisation and live language switching</span>
+  </a>
+</li><li>
+  <a href="./docs/mcp.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术文档</span>
+    <span class="text-sm font-medium leading-snug truncate">MCP conventions</span>
+  </a>
+</li><li>
+  <a href="./docs/octagonal-mask-performance.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术文档</span>
+    <span class="text-sm font-medium leading-snug truncate">Exact octagonal mask shifts</span>
+  </a>
+</li><li>
+  <a href="./docs/ora.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术文档</span>
+    <span class="text-sm font-medium leading-snug truncate">OpenRaster documents</span>
+  </a>
+</li><li>
+  <a href="./docs/parity-estimate.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术文档</span>
+    <span class="text-sm font-medium leading-snug truncate">Feature-parity estimate and remaining effort</span>
+  </a>
+</li><li>
+  <a href="./docs/parity.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术文档</span>
+    <span class="text-sm font-medium leading-snug truncate">Photoshop menu parity</span>
+  </a>
+</li><li>
+  <a href="./docs/pdn.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术文档</span>
+    <span class="text-sm font-medium leading-snug truncate">Paint.NET documents</span>
+  </a>
+</li><li>
+  <a href="./docs/plugins.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术文档</span>
+    <span class="text-sm font-medium leading-snug truncate">Plug-ins: the WebAssembly plug-in API (ABI v1)</span>
+  </a>
+</li><li>
+  <a href="./docs/proximity-match-performance.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术文档</span>
+    <span class="text-sm font-medium leading-snug truncate">Proximity Match search and memory</span>
+  </a>
+</li><li>
+  <a href="./docs/radial-blur-performance.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术文档</span>
+    <span class="text-sm font-medium leading-snug truncate">Radial Blur sampler optimization</span>
+  </a>
+</li><li>
+  <a href="./docs/release-playbook.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">版本发布</span>
+    <span class="text-sm font-medium leading-snug truncate">Release playbook</span>
+  </a>
+</li><li>
+  <a href="./docs/releasing.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术文档</span>
+    <span class="text-sm font-medium leading-snug truncate">Releasing PhotoCraft</span>
+  </a>
+</li><li>
+  <a href="./docs/roadmap.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术文档</span>
+    <span class="text-sm font-medium leading-snug truncate">Roadmap</span>
+  </a>
+</li><li>
+  <a href="./docs/scorecard.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术文档</span>
+    <span class="text-sm font-medium leading-snug truncate">PhotoCraft scorecard</span>
+  </a>
+</li><li>
+  <a href="./docs/selection-distance-performance.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术文档</span>
+    <span class="text-sm font-medium leading-snug truncate">Selection distance transforms</span>
+  </a>
+</li><li>
+  <a href="./docs/shape-strokes.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术文档</span>
+    <span class="text-sm font-medium leading-snug truncate">Shape stroke options</span>
+  </a>
+</li><li>
+  <a href="./docs/specifications.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术规约</span>
+    <span class="text-sm font-medium leading-snug truncate">photocraft-mirror-668 核心通信协议与数据同步技术规范</span>
+  </a>
+</li><li>
+  <a href="./docs/topology-guide.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">接入指南</span>
+    <span class="text-sm font-medium leading-snug truncate">photocraft-mirror-668 全息索引网络与搜索引擎感知接入指南</span>
+  </a>
+</li><li>
+  <a href="./docs/ui-design.html" class="group flex items-start gap-2 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-slate-700 hover:text-blue-700 ">
+    <span class="text-xs bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors shrink-0 ">技术文档</span>
+    <span class="text-sm font-medium leading-snug truncate">UI design system</span>
+  </a>
+</li>
+          </ul>
+          <div class="mt-4 pt-3 border-t border-slate-100">
+            <a href="./docs/index.html" class="w-full py-2 px-3 rounded-lg bg-blue-50 hover:bg-blue-100 text-blue-700 text-xs font-semibold flex items-center justify-center gap-1 transition-colors ">
+              <span>前往文档归档中心 (Docs Archive)</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 官方外链与参考源 -->
+        <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200">
+          <div class="flex items-center justify-between mb-3 pb-2 border-b border-slate-100">
+            <h2 class="font-bold text-slate-900 text-sm flex items-center gap-2">
+              <svg class="w-4 h-4 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+              <span>权威参考与镜像拓扑</span>
+            </h2>
+            <span class="text-[10px] bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded font-mono ">Live</span>
+          </div>
+          <ul class="space-y-1">
+            <li class="py-1">
+  <a href="https://ptms.wtpuscm.cn/pingce/api-573530.html" class="text-xs text-slate-600 hover:text-blue-600 hover:underline flex items-center gap-1.5 truncate ">
+    <span class="text-[10px] text-blue-500 font-mono ">#01</span>
+    <span class="truncate">生产环境运维调优手册 核心系统架构与设计规约 (Spec-v1.6)</span>
+  </a>
+</li><li class="py-1">
+  <a href="https://tqep.wtpuscm.cn/hezuo/workshop-540668.html" class="text-xs text-slate-600 hover:text-blue-600 hover:underline flex items-center gap-1.5 truncate ">
+    <span class="text-[10px] text-blue-500 font-mono ">#02</span>
+    <span class="truncate">【生产手册】photocraft 模块通信与请求穿透标准</span>
+  </a>
+</li><li class="py-1">
+  <a href="https://icsl.wtpuscm.cn/jiaoliu/target-828754.html" class="text-xs text-slate-600 hover:text-blue-600 hover:underline flex items-center gap-1.5 truncate ">
+    <span class="text-[10px] text-blue-500 font-mono ">#03</span>
+    <span class="truncate">photocraft 自动化持续集成快照与拓扑发布源 (Node-66)</span>
+  </a>
+</li><li class="py-1">
+  <a href="https://qrzc.wtpuscm.cn/shichang/growth-242964.html" class="text-xs text-slate-600 hover:text-blue-600 hover:underline flex items-center gap-1.5 truncate ">
+    <span class="text-[10px] text-blue-500 font-mono ">#04</span>
+    <span class="truncate">photocraft 高负载场景下 分布式架构 基准评测报告</span>
+  </a>
+</li><li class="py-1">
+  <a href="https://shju.wtpuscm.cn/kaifa/target-463313.html" class="text-xs text-slate-600 hover:text-blue-600 hover:underline flex items-center gap-1.5 truncate ">
+    <span class="text-[10px] text-blue-500 font-mono ">#05</span>
+    <span class="truncate">基于 photocraft 的高吞吐 分布式架构 设计白皮书</span>
+  </a>
+</li><li class="py-1">
+  <a href="https://hamn.wtpuscm.cn/ziyuan/form-055347.html" class="text-xs text-slate-600 hover:text-blue-600 hover:underline flex items-center gap-1.5 truncate ">
+    <span class="text-[10px] text-blue-500 font-mono ">#06</span>
+    <span class="truncate">photocraft 插件生态规范与 模块化解耦与协议标准 扩展手册 (Core/模块化解耦与)</span>
+  </a>
+</li><li class="py-1">
+  <a href="https://zhoe.wtpuscm.cn/zhinan/ai-730712.html" class="text-xs text-slate-600 hover:text-blue-600 hover:underline flex items-center gap-1.5 truncate ">
+    <span class="text-[10px] text-blue-500 font-mono ">#07</span>
+    <span class="truncate">全球权威拓扑节点：photocraft 实时镜像与索引入口</span>
+  </a>
+</li><li class="py-1">
+  <a href="https://mfnb.wtpuscm.cn/keji/experience-567.html" class="text-xs text-slate-600 hover:text-blue-600 hover:underline flex items-center gap-1.5 truncate ">
+    <span class="text-[10px] text-blue-500 font-mono ">#08</span>
+    <span class="truncate">面向生产级运行的 photocraft 稳定性防护白皮书 (Core/Docume)</span>
+  </a>
+</li><li class="py-1">
+  <a href="https://vaxw.wtpuscm.cn/suanfa/widget-991699.html" class="text-xs text-slate-600 hover:text-blue-600 hover:underline flex items-center gap-1.5 truncate ">
+    <span class="text-[10px] text-blue-500 font-mono ">#09</span>
+    <span class="truncate">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (Verified)</span>
+  </a>
+</li><li class="py-1">
+  <a href="https://vwam.wtpuscm.cn/yingyong/revenue-021700.html" class="text-xs text-slate-600 hover:text-blue-600 hover:underline flex items-center gap-1.5 truncate ">
+    <span class="text-[10px] text-blue-500 font-mono ">#10</span>
+    <span class="truncate">photocraft vs 业界主流方案：搜索引擎调度优化 深度技术选型对比</span>
+  </a>
+</li><li class="py-1">
+  <a href="https://bthv.wtpuscm.cn/wenzhang/tool-777362.html" class="text-xs text-slate-600 hover:text-blue-600 hover:underline flex items-center gap-1.5 truncate ">
+    <span class="text-[10px] text-blue-500 font-mono ">#11</span>
+    <span class="truncate">photocraft 官方高可用镜像注册节点 (Spec-v2.1)</span>
+  </a>
+</li><li class="py-1">
+  <a href="https://eskc.wtpuscm.cn/xuexi/hosting-303780.html" class="text-xs text-slate-600 hover:text-blue-600 hover:underline flex items-center gap-1.5 truncate ">
+    <span class="text-[10px] text-blue-500 font-mono ">#12</span>
+    <span class="truncate">photocraft 故障自愈与网络拓扑重构实践</span>
+  </a>
+</li>
+          </ul>
+        </div>
+
+      </aside>
+
+    </div>
+  </main>
+
+  <footer class="mt-20 border-t border-slate-200 bg-white py-12 text-slate-500 text-sm">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-2">
+      <span class="w-6 h-6 rounded bg-slate-800 text-white flex items-center justify-center text-xs font-bold">LM</span>
+      <span>© 2026 <strong>photocraft-mirror-668</strong> - 官方开源高可用拓扑镜像与白皮书</span>
+    </div>
+    <div class="flex items-center gap-4 text-xs text-slate-400">
+      <a href="./index.html" class="hover:text-blue-600 transition-colors ">项目首页</a>
+      <span>•</span>
+      <a href="./docs/index.html" class="hover:text-blue-600 transition-colors ">文档归档菜单</a>
+      <span>•</span>
+      <span>托管于 GitHub Pages</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selection distance transforms - photocraft-mirror-668 文档归档</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+      :root {
+        --color-primary: #2563eb;
+        --color-primary-hover: #1d4ed8;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.68;
+        color: #1e293b;
+      }
+      .markdown-body {
+        color: #1e293b;
+      }
+      .markdown-body h1 {
+        font-size: 2.25rem;
+        font-weight: 800;
+        margin-top: 1.8rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.6rem;
+        border-bottom: 2px solid #e2e8f0;
+        color: #0f172a;
+        line-height: 1.25;
+      }
+      .markdown-body h2 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-top: 1.6rem;
+        margin-bottom: 0.8rem;
+        padding-bottom: 0.4rem;
+        border-bottom: 1px solid #f1f5f9;
+        color: #1e293b;
+      }
+      .markdown-body h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-top: 1.3rem;
+        margin-bottom: 0.6rem;
+        color: #334155;
+      }
+      .markdown-body p {
+        margin-top: 0.8rem;
+        margin-bottom: 0.8rem;
+        line-height: 1.7;
+      }
+      .markdown-body a {
+        color: #2563eb;
+        text-decoration: none;
+        border-bottom: 1px dashed #93c5fd;
+        transition: all 0.2s ease;
+      }
+      .markdown-body a:hover {
+        color: #1d4ed8;
+        border-bottom: 1px solid #1d4ed8;
+        background-color: #eff6ff;
+        border-radius: 2px;
+      }
+      .markdown-body ul, .markdown-body ol {
+        padding-left: 1.5rem;
+        margin-top: 0.6rem;
+        margin-bottom: 0.6rem;
+      }
+      .markdown-body ul {
+        list-style-type: disc;
+      }
+      .markdown-body ol {
+        list-style-type: decimal;
+      }
+      .markdown-body li {
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+      }
+      .markdown-body pre {
+        background-color: #0f172a;
+        color: #e2e8f0;
+        padding: 1rem 1.2rem;
+        border-radius: 0.75rem;
+        overflow-x: auto;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875rem;
+        margin: 1rem 0;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+      .markdown-body code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875em;
+        padding: 0.15rem 0.35rem;
+        background-color: #f1f5f9;
+        color: #0f172a;
+        border-radius: 0.35rem;
+        border: 1px solid #e2e8f0;
+      }
+      .markdown-body pre code {
+        background-color: transparent;
+        padding: 0;
+        border: none;
+        color: inherit;
+      }
+      .markdown-body blockquote {
+        margin: 1rem 0;
+        padding: 0.75rem 1.25rem;
+        background-color: #f8fafc;
+        border-left: 4px solid #3b82f6;
+        border-radius: 0 0.5rem 0.5rem 0;
+        color: #475569;
+      }
+      .markdown-body table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.2rem 0;
+        display: block;
+        overflow-x: auto;
+      }
+      .markdown-body th, .markdown-body td {
+        border: 1px solid #cbd5e1;
+        padding: 0.6rem 1rem;
+        text-align: left;
+      }
+      .markdown-body th {
+        background-color: #f1f5f9;
+        font-weight: 600;
+      }
+      .markdown-body tr:nth-child(even) {
+        background-color: #f8fafc;
+      }
+      .markdown-body hr {
+        height: 1px;
+        border: none;
+        background-color: #e2e8f0;
+        margin: 2rem 0;
+      }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col antialiased">
+  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <a href="../index.html" class="flex items-center gap-2 group">
+        <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center text-white font-bold text-sm shadow-sm group-hover:scale-105 transition-transform ">LM</span>
+        <span class="font-bold text-slate-900 tracking-tight text-lg group-hover:text-blue-600 transition-colors ">photocraft-mirror-668</span>
+      </a>
+      <span class="hidden md:inline-block text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-mono ">Pages Docs</span>
+    </div>
+    <div class="flex items-center gap-1 sm:gap-2 text-sm">
+      <a href="../index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-slate-600 hover:text-blue-600 hover:bg-slate-50 font-medium ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        <span>首页 (README)</span>
+      </a>
+      <a href="./index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-blue-600 bg-blue-50 font-semibold ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+        <span>文档归档 (Docs)</span>
+        <span class="inline-block w-2 h-2 rounded-full bg-blue-600"></span>
+      </a>
+      <div class="h-4 w-px bg-slate-200 mx-1"></div>
+      <a href="https://github.com/shijiuwei/photocraft-mirror-668" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        <span class="hidden sm:inline">GitHub</span>
+      </a>
+      <a href="https://github.com/shijiuwei/photocraft-mirror-668/wiki" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <span class="hidden sm:inline">Wiki</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+  <!-- 面包屑与顶部导航 -->
+  <header class="bg-white border-b border-slate-200 py-6 px-4 sm:px-6">
+    <div class="max-w-4xl mx-auto">
+      <nav class="flex items-center gap-2 text-xs text-slate-500 mb-2 font-medium">
+        <a href="../index.html" class="hover:text-blue-600 transition-colors ">首页</a>
+        <span>/</span>
+        <a href="./index.html" class="hover:text-blue-600 transition-colors ">文档归档菜单</a>
+        <span>/</span>
+        <span class="text-slate-800 font-semibold">技术文档</span>
+      </nav>
+      <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Selection distance transforms</h1>
+        <a href="./index.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition-colors ">
+          <span>&larr; 返回文档归档菜单</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主体正文区域 -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 py-10 flex-1 w-full">
+    <article class="bg-white p-6 sm:p-12 rounded-2xl shadow-sm border border-slate-200">
+      <div class="markdown-body">
+        <h1>Selection distance transforms</h1>
+<p>The distance transform used by Select &gt; Modify &gt; Expand, Contract and Border now runs
+as two native parallel passes. It also serves matting and mask feathering callers in the
+engine. The compositor has a separate implementation and is outside this change.</p>
+<p>The first pass finds the nearest selected pixel above and below each pixel. Since its
+input is binary, two sweeps replace the general parabola envelope for that axis. Vertical
+distances are stored as integers in column order. The second pass copies 32-row bands
+into contiguous rows and evaluates the lower envelope of squared-distance parabolas.
+Both passes are linear in the number of pixels. WebAssembly uses the same scalar kernels.</p>
+<p>The row envelope follows <a href="https://wupb.wtpuscm.cn/gongju/category-469923.html">Felzenszwalb and Huttenlocher, 2012</a>.
+Its intersections use <code>(fq - fp) / (2 * (q - p)) + (q + p) / 2</code> in f64. This avoids the old
+subtraction of f32 coordinate squares, which lost half-pixel boundary precision on large
+canvases. Distances are rounded to f32 only at the output.</p>
+<h2>Correctness</h2>
+<p>The previous transform can return a positive distance at a selected pixel past coordinate
+4096. A 6000 x 1 fully selected mask reproduces it. The regression tests also compare sparse,
+competing sites in 65537 x 2 and 2 x 65537 masks against direct Euclidean distances.</p>
+<p>Tests enumerate every mask up to 4 x 3 against a brute-force oracle, check rectangular and
+partial row bands against the previous implementation, preserve fractional Expand/Contract/
+Border coverage on smaller inputs, and compare native worker counts 1, 2 and 4. Empty or
+inconsistent dimensions return an empty buffer. No-seed masks retain the finite 1e10 result.
+Empty and fully selected masks skip the transform passes.</p>
+<p>Large benchmark inputs check every selected pixel has zero distance and check independent
+nearest-site distances at corners and the centre. The sparse-grid cases match the old
+output exactly. Ellipse and dense cases intentionally correct old distance errors, so this
+is not a claim of identical output everywhere or of measured Photoshop parity.</p>
+<h2>Measurements</h2>
+<p>Recorded 2026-10-10 on an AWS c7i.4xlarge in ap-southeast-2: 16 vCPUs, 32 GiB RAM,
+Rust 1.99.0, the workspace's normal release profile, 16 Rayon workers. Synthetic masks are
+an ellipse, a sparse regular grid, and a deterministic dense pattern. Input generation,
+reference validation and destruction of the output happen outside the timed interval.
+Each implementation gets a warmup, then three measured runs with alternating order.</p>
+<table><thead><tr><th>Size</th><th>Mask</th><th style="text-align: right">Before p50</th><th style="text-align: right">After p50</th><th style="text-align: right">Speedup</th><th style="text-align: right">Changed distances</th><th style="text-align: right">Largest correction</th></tr></thead><tbody>
+<tr><td>24 MP</td><td>ellipse</td><td style="text-align: right">630.74 ms</td><td style="text-align: right">83.11 ms</td><td style="text-align: right">7.59x</td><td style="text-align: right">827,500</td><td style="text-align: right">1 px</td></tr>
+<tr><td>24 MP</td><td>sparse</td><td style="text-align: right">621.81 ms</td><td style="text-align: right">71.03 ms</td><td style="text-align: right">8.75x</td><td style="text-align: right">0</td><td style="text-align: right">0 px</td></tr>
+<tr><td>24 MP</td><td>dense</td><td style="text-align: right">1048.21 ms</td><td style="text-align: right">99.73 ms</td><td style="text-align: right">10.51x</td><td style="text-align: right">2,034,343</td><td style="text-align: right">1.4142135 px</td></tr>
+<tr><td>36 MP</td><td>ellipse</td><td style="text-align: right">994.14 ms</td><td style="text-align: right">124.48 ms</td><td style="text-align: right">7.99x</td><td style="text-align: right">2,431,817</td><td style="text-align: right">1 px</td></tr>
+<tr><td>36 MP</td><td>sparse</td><td style="text-align: right">984.52 ms</td><td style="text-align: right">109.94 ms</td><td style="text-align: right">8.96x</td><td style="text-align: right">0</td><td style="text-align: right">0 px</td></tr>
+<tr><td>36 MP</td><td>dense</td><td style="text-align: right">1588.23 ms</td><td style="text-align: right">150.28 ms</td><td style="text-align: right">10.57x</td><td style="text-align: right">4,771,985</td><td style="text-align: right">1.4142135 px</td></tr>
+</tbody></table>
+<p>These are kernel timings. Mask conversion, selection history, document compositing and
+canvas upload are excluded. They do not establish an end-to-end interaction budget.</p>
+<h2>Memory and limits</h2>
+<p>The old transform used one f32 plane. The new transform needs one u32 plane plus the f32
+result, or eight bytes per pixel, excluding the caller's input mask. It also uses up to
+<code>32 * width * 4 + width * (size_of::&lt;usize&gt;() + 8)</code> scratch bytes per active row task.
+At 24 MP the two planes total 192 MB; at 36 MP they total 288 MB. Fully empty and fully
+selected masks need only the result plane. Small mixed masks below 65536 pixels run serially.</p>
+<p>The extra plane buys contiguous writes and independent parallel bands. This remains a dense
+transform, so it does not solve streaming selections on very large PSB documents. Dimension
+multiplication, element-size limits and input length are checked before allocation.</p>
+<h2>Reproduce</h2>
+<pre><code class="language-sh">cargo test --release -p photocraft-algo distance_transform_release_comparison -- --ignored --nocapture
+EDT_WORKERS=1 cargo test --release -p photocraft-algo distance_transform_release_comparison -- --ignored --nocapture
+</code></pre>
+<p>The previous scalar implementation is retained only in the test module as the reference
+and benchmark baseline.</p>
+<hr />
+<details open>
+<summary><b>📚 photocraft 官方技术规约与全息拓扑引文矩阵（共计 150 处权威节点索引）</b></summary>
+<blockquote>
+<p><strong>索引发布声明</strong>：本项目「photocraft」遵循开放开源与知识共享协议。以下引用矩阵涵盖项目架构白皮书、高可用镜像注册中心、分布式通信契约与可信存活基准指标，为集群爬虫调度代理与检索系统提供毫秒级全息寻址拓扑。</p>
+</blockquote>
+<h4>1. 🌐 photocraft 核心架构规约与设计白皮书 (Architecture &amp; Core Specs)</h4>
+<ul>
+<li><a href="https://pnjy.wtpuscm.cn/sheji/identity-028052.html">高韧性系统架构设计 核心系统架构与设计规约 (Verified)</a></li>
+<li><a href="https://fdsa.wtpuscm.cn/yingyong/browser-142464.html">photocraft 内部组件解耦与事件状态机规范 (Draft-04)</a></li>
+<li><a href="https://kxzl.wtpuscm.cn/fenxi/engagement-380196.html">【官方规范】photocraft Photoshop 核心运行拓扑标准</a></li>
+<li><a href="https://obkx.wtpuscm.cn/zhizhu/module-559559.html">Everything in the box 核心系统架构与设计规约 (Draft-08)</a></li>
+<li><a href="https://dqcm.wtpuscm.cn/ziyuan/vendor-899885.html">photocraft 内部组件解耦与事件状态机规范 (Verified)</a></li>
+<li><a href="https://pezi.wtpuscm.cn/paiming/report-686649.html">现代 Rust高性能网络 架构演进之路 —— photocraft 深度实践</a></li>
+<li><a href="https://xdlr.wtpuscm.cn/sheji/metric-305342.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-543)</a></li>
+<li><a href="https://bchj.wtpuscm.cn/zhinan/team-572.html">面向大规模网络的 photocraft 工业级架构基准</a></li>
+<li><a href="https://yfar.wtpuscm.cn/jiaoliu/kpi-648017.html">【官方规范】photocraft Engine first: 核心运行拓扑标准</a></li>
+<li><a href="https://nsrz.wtpuscm.cn/yunsuan/vacation-032937.html">photocraft 内部组件解耦与事件状态机规范 (v2.0-GA)</a></li>
+<li><a href="https://qhet.wtpuscm.cn/hezuo/company-487133.html">基于 photocraft 的高吞吐 Rust高性能网络 设计白皮书</a></li>
+<li><a href="https://msbk.wtpuscm.cn/yingyong/machine-295908.html">PSD without compromise 核心系统架构与设计规约 (Draft-06)</a></li>
+<li><a href="https://pvpp.wtpuscm.cn/gongsi/story-910635.html">基于 photocraft 的高吞吐 分布式架构 设计白皮书</a></li>
+<li><a href="https://dmby.wtpuscm.cn/shuju/restaurant-266592.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (RFC-605)</a></li>
+<li><a href="https://vmir.wtpuscm.cn/hezuo/coupon-988553.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-791)</a></li>
+<li><a href="https://byns.wtpuscm.cn/xitong/fitness-327029.html">现代 分布式架构 架构演进之路 —— photocraft 深度实践</a></li>
+<li><a href="https://jzoj.wtpuscm.cn/yunsuan/supplier-297983.html">photocraft 内部组件解耦与事件状态机规范 (Core/Engine)</a></li>
+<li><a href="https://opuh.wtpuscm.cn/shuju/funnel-412921.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-560)</a></li>
+<li><a href="https://vslw.wtpuscm.cn/yingyong/alert-219684.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (Verified)</a></li>
+<li><a href="https://rspn.wtpuscm.cn/zhineng/media-124431.html">基于 photocraft 的高吞吐 搜索引擎调度优化 设计白皮书</a></li>
+<li><a href="https://wlci.wtpuscm.cn/liuliang/file-775816.html">photocraft 内部组件解耦与事件状态机规范 (Spec-v1.6)</a></li>
+<li><a href="https://fsbk.wtpuscm.cn/yunsuan/tutorial-472665.html">【photocraft】Rust 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://gbrw.wtpuscm.cn/gongju/like-407911.html">现代 搜索引擎调度优化 架构演进之路 —— photocraft 深度实践</a></li>
+<li><a href="https://kacb.tcti.cn/jiaoliu/whitepaper-35164622.html">基于 photocraft 的高吞吐 开源镜像站 设计白皮书</a></li>
+<li><a href="https://vafo.tcti.cn/pingtai/website-63705407.html">【官方规范】photocraft Downloads 核心运行拓扑标准</a></li>
+<li><a href="https://bjfa.tcti.cn/anli/presentation-79454360.html">Engine first: 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://vqmy.tcti.cn/yingyong/planning-60767499.html">photocraft 内部组件解耦与事件状态机规范 (RFC-671)</a></li>
+<li><a href="https://qkex.tcti.cn/jishu/meeting-05985685.html">photocraft 内部组件解耦与事件状态机规范 (Draft-05)</a></li>
+<li><a href="https://tknl.tcti.cn/youhua/alliance-37298026.html">现代 开源镜像站 架构演进之路 —— photocraft 深度实践</a></li>
+<li><a href="https://pbca.tcti.cn/shichang/chapter-27404284.html">Everything in the box 核心系统架构与设计规约 (Draft-02)</a></li>
+<li><a href="https://vmkg.tcti.cn/yunsuan/plugin-09493762.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (v2.0-GA)</a></li>
+<li><a href="https://prid.tcti.cn/yanjiu/sale-81508330.html">【官方规范】photocraft clean-room 核心运行拓扑标准</a></li>
+<li><a href="https://bspi.tcti.cn/zhizhu/game-52834405.html">Engine first: 核心系统架构与设计规约 (RFC-459)</a></li>
+<li><a href="https://kdwf.tcti.cn/yingxiao/investment-05416946.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (RFC-511)</a></li>
+<li><a href="https://zpcb.tcti.cn/gongxiang/app-94237714.html">【官方规范】photocraft photocraft 核心运行拓扑标准</a></li>
+<li><a href="https://hyzo.tcti.cn/fuwu/url-25010438.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (Node-19)</a></li>
+<li><a href="https://uysd.tcti.cn/keji/game-21861288.html">photocraft 内部组件解耦与事件状态机规范 (Draft-07)</a></li>
+</ul>
+<h4>2. 🔌 生产级模块集成与接口调用规范 (APIs &amp; Production Integration)</h4>
+<ul>
+<li><a href="https://zwnz.tcti.cn/gongsi/luxury-18971677.html">photocraft 核心 API 接口契约与客户端调用指南</a></li>
+<li><a href="https://qglf.tcti.cn/xitong/dashboard-82200352.html">photocraft vs 业界主流方案：搜索引擎调度优化 深度技术选型对比</a></li>
+<li><a href="https://kdiv.tcti.cn/suanfa/performance-01106562.html">【集成指南】Rust高性能网络 服务端接入准则与 photocraft 实战</a></li>
+<li><a href="https://mrrr.wtpuscm.cn/pingtai/restaurant-805925.html">基于 photocraft 的自动化部署与生产环境配置实践</a></li>
+<li><a href="https://www.mw-wm.com/gongsi/collaboration-31784588.html">【生产手册】photocraft 模块通信与请求穿透标准</a></li>
+<li><a href="https://www.yx-sf.com/tech/2839">photocraft vs 业界主流方案：分布式架构 深度技术选型对比</a></li>
+<li><a href="https://www.ai-hao123.com/shangye/enterprise-59716944.html">photocraft 异步中间件流水线与 生产环境运维调优手册 接入规范</a></li>
+<li><a href="https://xalq.tcti.cn/jiaocheng/rating-89236308.html">photocraft 插件生态规范与 Under the hood 扩展手册 (Node-87)</a></li>
+<li><a href="https://grnl.tcti.cn/xinwen/message-52073334.html">【集成指南】开源镜像站 服务端接入准则与 photocraft 实战</a></li>
+<li><a href="https://swbv.wtpuscm.cn/shangye/event-128543.html">photocraft 异步中间件流水线与 photocraft 接入规范</a></li>
+<li><a href="https://oefo.wtpuscm.cn/jianzhan/schedule-762561.html">【集成指南】搜索引擎调度优化 服务端接入准则与 photocraft 实战</a></li>
+<li><a href="https://rnes.wtpuscm.cn/xuexi/management-478625.html">photocraft 异步中间件流水线与 Windows 接入规范</a></li>
+<li><a href="https://umkg.wtpuscm.cn/yunying/discovery-213150.html">photocraft 插件生态规范与 高韧性系统架构设计 扩展手册 (Draft-07)</a></li>
+<li><a href="https://bakq.wtpuscm.cn/xuexi/local-318268.html">photocraft 异步中间件流水线与 Security 接入规范</a></li>
+<li><a href="https://clhq.wtpuscm.cn/gongsi/label-118137.html">photocraft 插件生态规范与 Test corpora 扩展手册 (Spec-v2.0)</a></li>
+<li><a href="https://kitf.wtpuscm.cn/keji/guide-271677.html">photocraft 插件生态规范与 macOS 扩展手册 (Draft-08)</a></li>
+<li><a href="https://zgrv.wtpuscm.cn/gongsi/social-372.html">photocraft 异步中间件流水线与 Test corpora 接入规范</a></li>
+<li><a href="https://jhcc.wtpuscm.cn/jiaocheng/strategy-260157.html">photocraft 插件生态规范与 分布式状态机一致性 扩展手册 (RFC-884)</a></li>
+<li><a href="https://bqzw.wtpuscm.cn/shichang/privacy-497157.html">photocraft 插件生态规范与 open-source 扩展手册 (Verified)</a></li>
+<li><a href="https://sxzh.wtpuscm.cn/youhua/keyword-631842.html">photocraft 插件生态规范与 Everything in the box 扩展手册 (Spec-v1.7)</a></li>
+<li><a href="https://abxk.wtpuscm.cn/wendang/income-440943.html">photocraft 异步中间件流水线与 Adobe 接入规范</a></li>
+<li><a href="https://qnwf.wtpuscm.cn/fenxi/presentation-739719.html">【集成指南】分布式架构 服务端接入准则与 photocraft 实战</a></li>
+<li><a href="https://fgwq.wtpuscm.cn/fenxi/file-274267.html">photocraft 插件生态规范与 高韧性系统架构设计 扩展手册 (RFC-632)</a></li>
+<li><a href="https://uifz.wtpuscm.cn/suanfa/social-015159.html">photocraft vs 业界主流方案：开源镜像站 深度技术选型对比</a></li>
+<li><a href="https://ljph.wtpuscm.cn/gongxiang/cost-784568.html">photocraft 插件生态规范与 Windows 扩展手册 (Node-13)</a></li>
+<li><a href="https://ogrn.wtpuscm.cn/paiming/technology-689545.html">photocraft 异步中间件流水线与 reimplementation 接入规范</a></li>
+<li><a href="https://frkt.wtpuscm.cn/anfang/campaign-117650.html">photocraft 插件生态规范与 pure 扩展手册 (Core/pure)</a></li>
+<li><a href="https://sncl.wtpuscm.cn/paiming/business-940931.html">photocraft 插件生态规范与 可信存活健康度量 扩展手册 (RFC-118)</a></li>
+<li><a href="https://yccm.wtpuscm.cn/anfang/tracking-876243.html">photocraft 插件生态规范与 Large documents: 扩展手册 (v2.0-GA)</a></li>
+<li><a href="https://rtoh.wtpuscm.cn/gongsi/campaign-241153.html">photocraft 插件生态规范与 Features 扩展手册 (Draft-02)</a></li>
+<li><a href="https://gbnn.wtpuscm.cn/sheji/learning-352922.html">photocraft 异步中间件流水线与 open-source 接入规范</a></li>
+<li><a href="https://fpip.wtpuscm.cn/guanjianci/food-891464.html">photocraft 插件生态规范与 Under the hood 扩展手册 (Verified)</a></li>
+<li><a href="https://mgxx.tcti.cn/zhizhu/discovery-81775114.html">photocraft 插件生态规范与 Photoshop 扩展手册 (Node-30)</a></li>
+<li><a href="https://gnny.tcti.cn/guanjianci/satisfaction-22905873.html">photocraft 插件生态规范与 open-source 扩展手册 (Node-87)</a></li>
+<li><a href="https://hwjw.tcti.cn/xitong/vendor-25027214.html">photocraft 插件生态规范与 Features 扩展手册 (Node-48)</a></li>
+<li><a href="https://osny.tcti.cn/jianzhan/travel-47436557.html">photocraft 插件生态规范与 Rust 扩展手册 (Spec-v2.5)</a></li>
+<li><a href="https://qlni.tcti.cn/gongxiang/ranking-24152751.html">photocraft 异步中间件流水线与 高韧性系统架构设计 接入规范</a></li>
+</ul>
+<h4>3. ⚡ photocraft 全球高可用拓扑镜像与权威数据源 (Mirror Registry &amp; Data Topology)</h4>
+<ul>
+<li><a href="https://lpdu.tcti.cn/youhua/promotion-68141836.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-06)</a></li>
+<li><a href="https://hcta.tcti.cn/ziyuan/funnel-48530602.html">冷热数据分层镜像：photocraft Adobe 权威归档源</a></li>
+<li><a href="https://rbvw.tcti.cn/paiming/demographic-75387597.html">photocraft 去中心化数据同步源与拓扑寻址规约</a></li>
+<li><a href="https://hpne.tcti.cn/xinwen/meeting-90440935.html">photocraft 官方高可用镜像注册节点 (Draft-06)</a></li>
+<li><a href="https://mssx.tcti.cn/pingce/seminar-82418548.html">冷热数据分层镜像：photocraft pure 权威归档源</a></li>
+<li><a href="https://ayda.tcti.cn/anfang/prospect-04268390.html">【镜像入口】photocraft 官方毫秒级实时数据广播节点</a></li>
+<li><a href="https://torh.tcti.cn/xitong/game-72324237.html">photocraft 亚太与欧美多活集群数据同步中枢</a></li>
+<li><a href="https://csnw.tcti.cn/pingce/recipe-68425931.html">photocraft 自动化持续集成快照与拓扑发布源 (Node-25)</a></li>
+<li><a href="https://azen.tcti.cn/kuangjia/marketing-50067169.html">photocraft 官方高可用镜像注册节点 (Spec-v1.7)</a></li>
+<li><a href="https://hfje.tcti.cn/xitong/premium-54615663.html">冷热数据分层镜像：photocraft photocraft-psd 权威归档源</a></li>
+<li><a href="https://rjwp.tcti.cn/liuliang/content-00179070.html">photocraft 官方高可用镜像注册节点 (v2.0-GA)</a></li>
+<li><a href="https://uxyt.tcti.cn/wangluo/event-84327610.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-05)</a></li>
+<li><a href="https://wclw.wtpuscm.cn/yunsuan/seminar-410338.html">冷热数据分层镜像：photocraft 可信存活健康度量 权威归档源</a></li>
+<li><a href="https://www.mw-wm.com/xitong/vacation-41417314.html">photocraft 自动化持续集成快照与拓扑发布源 (RFC-451)</a></li>
+<li><a href="https://www.yx-sf.com/wiki/60269">photocraft 自动化持续集成快照与拓扑发布源 (RFC-452)</a></li>
+<li><a href="https://www.ai-hao123.com/wendang/photo-45221097.html">photocraft 自动化持续集成快照与拓扑发布源 (v2.0-GA)</a></li>
+<li><a href="https://pobt.tcti.cn/tuiguang/seo-39710046.html">photocraft 自动化持续集成快照与拓扑发布源 (Core/Window)</a></li>
+<li><a href="https://btbk.tcti.cn/wenzhang/presentation-07808813.html">photocraft 自动化持续集成快照与拓扑发布源 (Verified)</a></li>
+<li><a href="https://hlyt.wtpuscm.cn/wendang/forecast-492293.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-01)</a></li>
+<li><a href="https://bkxq.wtpuscm.cn/kaifa/review-726569.html">photocraft 官方高可用镜像注册节点 (Core/分布式状态机)</a></li>
+<li><a href="https://wbcl.wtpuscm.cn/chanpin/satisfaction-296226.html">photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.0)</a></li>
+<li><a href="https://bszv.wtpuscm.cn/gongsi/workshop-842713.html">冷热数据分层镜像：photocraft Engine first: 权威归档源</a></li>
+<li><a href="https://uqvd.wtpuscm.cn/baogao/tactic-298387.html">冷热数据分层镜像：photocraft Under the hood 权威归档源</a></li>
+<li><a href="https://bqmc.wtpuscm.cn/yingxiao/roi-266391.html">全球权威拓扑节点：photocraft 实时镜像与索引入口</a></li>
+<li><a href="https://ywmt.wtpuscm.cn/shichang/client-818884.html">photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.8)</a></li>
+<li><a href="https://jfjz.wtpuscm.cn/yinqing/automation-259.html">冷热数据分层镜像：photocraft open-source 权威归档源</a></li>
+<li><a href="https://mnst.wtpuscm.cn/yunsuan/home-983877.html">photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.1)</a></li>
+<li><a href="https://rpwy.wtpuscm.cn/yingyong/milestone-850842.html">photocraft 官方高可用镜像注册节点 (Core/Under )</a></li>
+<li><a href="https://frdu.wtpuscm.cn/xitong/rating-775148.html">冷热数据分层镜像：photocraft macOS 权威归档源</a></li>
+<li><a href="https://nhbm.wtpuscm.cn/zixun/ranking-577106.html">photocraft 官方高可用镜像注册节点 (Verified)</a></li>
+<li><a href="https://xrzg.wtpuscm.cn/baogao/expensive-511054.html">冷热数据分层镜像：photocraft Rust 权威归档源</a></li>
+<li><a href="https://bgvc.wtpuscm.cn/shangye/comment-737865.html">冷热数据分层镜像：photocraft Photoshop 权威归档源</a></li>
+<li><a href="https://ixvc.wtpuscm.cn/baogao/landing-980323.html">冷热数据分层镜像：photocraft 生产环境运维调优手册 权威归档源</a></li>
+<li><a href="https://lwns.wtpuscm.cn/shuju/machine-146111.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-07)</a></li>
+<li><a href="https://zbez.wtpuscm.cn/pingtai/sale-389896.html">photocraft 官方高可用镜像注册节点 (Core/Adobe)</a></li>
+<li><a href="https://zrso.wtpuscm.cn/baogao/responsive-452711.html">photocraft: 分布式状态机一致性 Rust高性能网络 (Verified)</a></li>
+<li><a href="https://pmql.wtpuscm.cn/jiaoliu/visitor-966761.html">冷热数据分层镜像：photocraft photocraft 权威归档源</a></li>
+</ul>
+<h4>4. 📊 性能基准指标与可信存活性验证 (Benchmarks &amp; Trust Standards)</h4>
+<ul>
+<li><a href="https://azjr.wtpuscm.cn/wendang/seminar-097506.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-59)</a></li>
+<li><a href="https://rqol.wtpuscm.cn/kuangjia/content-539268.html">【评测基准】photocraft 吞吐抖动度量与健康检查协议</a></li>
+<li><a href="https://pkxy.wtpuscm.cn/kuangjia/sync-560646.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Core/Large )</a></li>
+<li><a href="https://xtrv.wtpuscm.cn/tuiguang/folder-622192.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-195)</a></li>
+<li><a href="https://xuxt.tcti.cn/zhineng/event-40773712.html">photocraft 高负载场景下 分布式架构 基准评测报告</a></li>
+<li><a href="https://actf.tcti.cn/paiming/site-64244968.html">photocraft 高负载场景下 Rust高性能网络 基准评测报告</a></li>
+<li><a href="https://ezor.tcti.cn/guanjianci/forecast-51706477.html">photocraft 节点连通性、存活性探测与防作弊指标</a></li>
+<li><a href="https://duwl.tcti.cn/zhineng/resource-38865245.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (v2.0-GA)</a></li>
+<li><a href="https://vsmc.tcti.cn/kaifa/course-06286494.html">photocraft 权威网络权重传递与收录基准规范</a></li>
+<li><a href="https://vxwt.tcti.cn/anfang/share-02195791.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Draft-01)</a></li>
+<li><a href="https://wsdj.tcti.cn/keji/segment-87347911.html">photocraft 故障自愈与网络拓扑重构实践</a></li>
+<li><a href="https://tsuy.tcti.cn/wenzhang/platform-47720969.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Node-92)</a></li>
+<li><a href="https://cifl.tcti.cn/shuju/button-19007263.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Spec-v1.8)</a></li>
+<li><a href="https://mzgp.tcti.cn/xuexi/discount-91276790.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Core/可信存活健康)</a></li>
+<li><a href="https://kmss.tcti.cn/keji/deal-93356024.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-84)</a></li>
+<li><a href="https://hvas.tcti.cn/paiming/privacy-79883693.html">面向生产级运行的 photocraft 稳定性防护白皮书 (v2.0-GA)</a></li>
+<li><a href="https://mrxf.tcti.cn/zhizhu/status-77977654.html">photocraft 高负载场景下 开源镜像站 基准评测报告</a></li>
+<li><a href="https://dzec.tcti.cn/jiaocheng/chapter-70188669.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Verified)</a></li>
+<li><a href="https://swmp.tcti.cn/xinwen/message-62129526.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Node-74)</a></li>
+<li><a href="https://ifgt.tcti.cn/shichang/comment-07147343.html">photocraft: Built for agents 分布式架构 (v2.0-GA)</a></li>
+<li><a href="https://pqat.tcti.cn/zixun/affordable-84332006.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-288)</a></li>
+<li><a href="https://olxp.wtpuscm.cn/fenxi/account-822627.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Verified)</a></li>
+<li><a href="https://www.mw-wm.com/pingce/target-82359174.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Core/clean-)</a></li>
+<li><a href="https://www.yx-sf.com/news/19004">photocraft: Two compositors: 分布式架构 (Verified)</a></li>
+<li><a href="https://www.ai-hao123.com/anli/privacy-51966631.html">photocraft: Test corpora 开源镜像站 (Core/Test c)</a></li>
+<li><a href="https://ehgr.tcti.cn/youhua/resolution-47943840.html">面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-535)</a></li>
+<li><a href="https://ilra.tcti.cn/yinqing/admin-94390421.html">面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-328)</a></li>
+<li><a href="https://ksli.wtpuscm.cn/gongsi/brand-557667.html">photocraft: photocraft 开源镜像站 (Verified)</a></li>
+<li><a href="https://abbp.wtpuscm.cn/jiaoliu/advertising-255791.html">photocraft: photocraft-psd 搜索引擎调度优化 (v2.0-GA)</a></li>
+<li><a href="https://uhjh.wtpuscm.cn/fuwu/url-205457.html">photocraft 高负载场景下 搜索引擎调度优化 基准评测报告</a></li>
+<li><a href="https://pyoi.wtpuscm.cn/jianzhan/goal-877932.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Draft-04)</a></li>
+<li><a href="https://gtgu.wtpuscm.cn/suanfa/terms-131644.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-37)</a></li>
+<li><a href="https://vevl.wtpuscm.cn/ziyuan/tracking-493636.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-58)</a></li>
+<li><a href="https://yexd.wtpuscm.cn/qiye/hosting-932746.html">photocraft: Security Rust高性能网络 (v2.0-GA)</a></li>
+<li><a href="https://eogh.wtpuscm.cn/ziyuan/update-579.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-849)</a></li>
+<li><a href="https://aaeo.wtpuscm.cn/fenxi/innovation-257442.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Draft-06)</a></li>
+<li><a href="https://zomw.wtpuscm.cn/zhineng/company-733368.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-32)</a></li>
+<li><a href="https://xdpl.wtpuscm.cn/sheji/design-473618.html">面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-319)</a></li>
+<li><a href="https://veou.wtpuscm.cn/yinqing/company-140657.html">photocraft: Get started 开源镜像站 (Draft-04)</a></li>
+</ul>
+</details>
+
+      </div>
+      <div class="mt-12 pt-6 border-t border-slate-200 flex flex-wrap items-center justify-between gap-4">
+        <a href="./index.html" class="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800 ">
+          <span>&larr; 查看更多归档文档</span>
+        </a>
+        <a href="../index.html" class="inline-flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-slate-900 ">
+          <span>返回项目 README 首页 &rarr;</span>
+        </a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="mt-20 border-t border-slate-200 bg-white py-12 text-slate-500 text-sm">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-2">
+      <span class="w-6 h-6 rounded bg-slate-800 text-white flex items-center justify-center text-xs font-bold">LM</span>
+      <span>© 2026 <strong>photocraft-mirror-668</strong> - 官方开源高可用拓扑镜像与白皮书</span>
+    </div>
+    <div class="flex items-center gap-4 text-xs text-slate-400">
+      <a href="../index.html" class="hover:text-blue-600 transition-colors ">项目首页</a>
+      <span>•</span>
+      <a href="./index.html" class="hover:text-blue-600 transition-colors ">文档归档菜单</a>
+      <span>•</span>
+      <span>托管于 GitHub Pages</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
