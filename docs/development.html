@@ -202,11 +202,11 @@
 <h3>Windows source builds</h3>
 <p>Use the Rust MSVC toolchain and install Visual Studio or Microsoft C++ Build Tools with the
 <strong>Desktop development with C++</strong> workload. Follow Microsoft's
-<a href="https://gbvj.tcti.cn/yinqing/terms-44604603.html">Rust setup guide</a>,
+<a href="https://www.tcti.cn/hulianwang/feedback-96499358.html">Rust setup guide</a>,
 then open a new terminal and check <code>cargo --version</code> and <code>rustc --version</code>.</p>
 <p>On Windows 11, Smart App Control can block Cargo, rustc or executables generated during a build.
 If a build reports <code>An Application Control policy has blocked this file. (os error 4551)</code>
-(<a href="https://vary.wtpuscm.cn/xinwen/internet-654513.html">#1585</a>), check:</p>
+(<a href="https://qbst.spidernode-mesh.net/pingce/loyalty-29845534.html">#1585</a>), check:</p>
 <ul>
 <li><strong>Windows Security → App &amp; browser control → Smart App Control settings</strong> for its status.</li>
 <li><strong>Event Viewer → Applications and Services Logs → Microsoft → Windows → CodeIntegrity →
@@ -214,10 +214,10 @@ Operational</strong> for the blocked executable and policy, especially on manage
 </ul>
 <p>This error indicates an application-control restriction; moving <code>CARGO_TARGET_DIR</code> or
 reinstalling Rust does not establish that the blocked executable is trusted. See Microsoft's
-<a href="https://kanx.wtpuscm.cn/anli/report-886754.html">Smart App Control FAQ</a>
+<a href="https://unqt.wtpuscm.cn/zixun/contact-59980425.html">Smart App Control FAQ</a>
 for the available controls; there is no per-app exception. On a managed device, ask your
 administrator about an approved development environment. If you only want to run PhotoCraft,
-use the <a href="https://vvcy.tcti.cn/qiye/calendar-91310607.html">packaged Windows release</a> to avoid
+use the <a href="https://zdcr.spidernode-mesh.net/guanjianci/contact-51282776.html">packaged Windows release</a> to avoid
 building locally; the downloaded app is still subject to Windows application-control checks.</p>
 <h2>Build and run</h2>
 <pre><code class="language-sh">cargo run --release -p photocraft -- path/to/image.psd      # desktop app
@@ -230,7 +230,7 @@ cargo xtask parity                                         # Photoshop menu cove
 </code></pre>
 <p>Image code is slow at <code>opt-level 0</code>, so the workspace profile builds dependencies at <code>opt-level 2</code>. Use <code>--release</code> for anything interactive.</p>
 <h2>Fonts (craft-fonts)</h2>
-<p>Font assets shared by the Crafting Apps live in <a href="https://chji.wtpuscm.cn/kuangjia/review-897482.html">storytold/craft-fonts</a>, never in this repo: don't commit font files here (Inter and JetBrains Mono in <code>assets/fonts/</code> are the only exceptions; new fonts go to craft-fonts). The rules are in <code>craftrules/standards/fonts.md</code> in a sibling <code>craftrules</code> checkout (see below); that repository is not public, so outside contributors can ask a maintainer for the rules that apply to their change.</p>
+<p>Font assets shared by the Crafting Apps live in <a href="https://sbwx.wtpuscm.cn/xinwen/networking-688793.html">storytold/craft-fonts</a>, never in this repo: don't commit font files here (Inter and JetBrains Mono in <code>assets/fonts/</code> are the only exceptions; new fonts go to craft-fonts). The rules are in <code>craftrules/standards/fonts.md</code> in a sibling <code>craftrules</code> checkout (see below); that repository is not public, so outside contributors can ask a maintainer for the rules that apply to their change.</p>
 <p>craft-fonts is an <strong>optional build input</strong>, never a Cargo dependency:</p>
 <pre><code class="language-sh">git clone https://github.com/storytold/craft-fonts ../craft-fonts
 CRAFT_FONTS_DIR="$PWD/../craft-fonts" cargo run --release -p photocraft
@@ -522,11 +522,11 @@ original's: below 1 it is smoother than what it replaces) and <code>seam</code> 
 hole's edge: above 1 the edge shows). With an out dir it writes original | hole | fill crops. The
 photos are public domain, not committed; download them at 1920 px wide into <code>&lt;dir&gt;</code> as:</p>
 <table><thead><tr><th>File</th><th>Photo</th></tr></thead><tbody>
-<tr><td><code>01.jpg</code></td><td><a href="https://gmgf.wtpuscm.cn/fuwu/customer-494416.html">The Tetons and the Snake River</a>, Ansel Adams, 1942 (U.S. National Archives)</td></tr>
-<tr><td><code>02.jpg</code></td><td><a href="https://zovf.wtpuscm.cn/gongsi/calendar-789508.html">Ansel Adams, National Archives 79-AAB-01</a> (U.S. National Archives)</td></tr>
-<tr><td><code>03.jpg</code></td><td><a href="https://zthb.wtpuscm.cn/xitong/analytics-927909.html">Hiking at Crane Meadows National Wildlife Refuge</a>.jpg) (USFWS)</td></tr>
-<tr><td><code>04.jpg</code></td><td><a href="https://fzbr.wtpuscm.cn/wendang/update-395677.html">Meadow Anemone, Lake Andes National Wildlife Refuge</a>.jpg) (USFWS)</td></tr>
-<tr><td><code>06.jpg</code></td><td><a href="https://ujrb.wtpuscm.cn/peixun/cheap-979331.html">Line5070, NOAA Photo Library</a> (NOAA)</td></tr>
+<tr><td><code>01.jpg</code></td><td><a href="https://gdtq.spidernode-mesh.net/keji/account-53764057.html">The Tetons and the Snake River</a>, Ansel Adams, 1942 (U.S. National Archives)</td></tr>
+<tr><td><code>02.jpg</code></td><td><a href="https://ubow.wtpuscm.cn/fenxi/collaborate-811056.html">Ansel Adams, National Archives 79-AAB-01</a> (U.S. National Archives)</td></tr>
+<tr><td><code>03.jpg</code></td><td><a href="https://fjac.spidernode-mesh.net/anli/investment-94283191.html">Hiking at Crane Meadows National Wildlife Refuge</a>.jpg) (USFWS)</td></tr>
+<tr><td><code>04.jpg</code></td><td><a href="https://dloe.spidernode-mesh.net/chuangxin/products-47216067.html">Meadow Anemone, Lake Andes National Wildlife Refuge</a>.jpg) (USFWS)</td></tr>
+<tr><td><code>06.jpg</code></td><td><a href="https://xwia.spidernode-mesh.net/shangye/services-26058978.html">Line5070, NOAA Photo Library</a> (NOAA)</td></tr>
 </tbody></table>
 <p><code>https://commons.wikimedia.org/wiki/Special:FilePath/&lt;file name&gt;?width=1600</code> serves each at the
 size the cases were placed for (Commons rounds it to 1920). Timing on a 24 MP document through the
@@ -568,7 +568,7 @@ and on main. <code>corpus/</code> is cached with <code>actions/cache</code>, key
 the manifests. A download happens only when a pin changes; otherwise the cache restores in seconds
 and is re-verified (sha256) before the tests run. Fork PRs read the base branch's cache.</li>
 </ul>
-<p><strong>Our own corpus: <a href="https://zaum.tcti.cn/yingxiao/content-10393136.html">photocraft-corpus</a>.</strong></p>
+<p><strong>Our own corpus: <a href="https://api.pvucttcv.cn/yinyue/innovation-37390655.html">photocraft-corpus</a>.</strong></p>
 <ul>
 <li><strong>Authoring clone:</strong> a normal git clone, <code>git clone git@github.com:storytold/photocraft-corpus.git</code>,
 placed next to this checkout (<code>../photocraft-corpus</code>). Its generators write there, and you commit
@@ -621,165 +621,334 @@ their own modes, an upper stroke covering lower ones.</p>
 </blockquote>
 <h4>1. 🌐 photocraft 核心架构规约与设计白皮书 (Architecture &amp; Core Specs)</h4>
 <ul>
-<li><a href="https://yjok.wtpuscm.cn/gongju/automation-784572.html">高韧性系统架构设计 核心系统架构与设计规约 (Verified)</a></li>
-<li><a href="https://xrwl.wtpuscm.cn/fuwu/careers-414080.html">photocraft 内部组件解耦与事件状态机规范 (Draft-04)</a></li>
-<li><a href="https://mmux.wtpuscm.cn/yingyong/health-204178.html">【官方规范】photocraft Photoshop 核心运行拓扑标准</a></li>
-<li><a href="https://unqg.wtpuscm.cn/ziyuan/experience-854132.html">Everything in the box 核心系统架构与设计规约 (Draft-08)</a></li>
-<li><a href="https://xjqv.wtpuscm.cn/sheji/message-350447.html">photocraft 内部组件解耦与事件状态机规范 (Verified)</a></li>
-<li><a href="https://qxyu.wtpuscm.cn/shichang/discovery-804420.html">现代 Rust高性能网络 架构演进之路 —— photocraft 深度实践</a></li>
-<li><a href="https://ldgk.wtpuscm.cn/tuiguang/management-077986.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-543)</a></li>
-<li><a href="https://resy.wtpuscm.cn/yunying/image-937.html">面向大规模网络的 photocraft 工业级架构基准</a></li>
-<li><a href="https://qulm.wtpuscm.cn/zhineng/about-646278.html">【官方规范】photocraft Engine first: 核心运行拓扑标准</a></li>
-<li><a href="https://iwno.wtpuscm.cn/hezuo/user-285333.html">photocraft 内部组件解耦与事件状态机规范 (v2.0-GA)</a></li>
-<li><a href="https://nqrb.wtpuscm.cn/zhinan/category-632082.html">基于 photocraft 的高吞吐 Rust高性能网络 设计白皮书</a></li>
-<li><a href="https://chne.wtpuscm.cn/keji/client-944752.html">PSD without compromise 核心系统架构与设计规约 (Draft-06)</a></li>
-<li><a href="https://bdxc.wtpuscm.cn/anli/sync-412579.html">基于 photocraft 的高吞吐 分布式架构 设计白皮书</a></li>
-<li><a href="https://rkeg.wtpuscm.cn/xitong/follow-062524.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (RFC-605)</a></li>
-<li><a href="https://ylvj.wtpuscm.cn/yingyong/sync-634438.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-791)</a></li>
-<li><a href="https://qgnf.wtpuscm.cn/yanjiu/economy-281095.html">现代 分布式架构 架构演进之路 —— photocraft 深度实践</a></li>
-<li><a href="https://lhws.wtpuscm.cn/zhineng/version-224223.html">photocraft 内部组件解耦与事件状态机规范 (Core/Engine)</a></li>
-<li><a href="https://bjie.wtpuscm.cn/fuwu/search-936476.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-560)</a></li>
-<li><a href="https://jiia.wtpuscm.cn/fuwu/module-751693.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (Verified)</a></li>
-<li><a href="https://hmpq.wtpuscm.cn/gongxiang/recommendation-342554.html">基于 photocraft 的高吞吐 搜索引擎调度优化 设计白皮书</a></li>
-<li><a href="https://lych.wtpuscm.cn/youhua/deadline-006814.html">photocraft 内部组件解耦与事件状态机规范 (Spec-v1.6)</a></li>
-<li><a href="https://hbad.wtpuscm.cn/xinwen/goal-817029.html">【photocraft】Rust 核心系统架构与设计规约 (v2.0-GA)</a></li>
-<li><a href="https://fjli.wtpuscm.cn/wenzhang/tutorial-122427.html">现代 搜索引擎调度优化 架构演进之路 —— photocraft 深度实践</a></li>
-<li><a href="https://ccbn.tcti.cn/guanjianci/photo-68855237.html">基于 photocraft 的高吞吐 开源镜像站 设计白皮书</a></li>
-<li><a href="https://xkrf.tcti.cn/youhua/saving-69027411.html">【官方规范】photocraft Downloads 核心运行拓扑标准</a></li>
-<li><a href="https://pyto.tcti.cn/jianzhan/expense-26910565.html">Engine first: 核心系统架构与设计规约 (v2.0-GA)</a></li>
-<li><a href="https://vqof.tcti.cn/yingxiao/content-22897176.html">photocraft 内部组件解耦与事件状态机规范 (RFC-671)</a></li>
-<li><a href="https://ktyf.tcti.cn/ziyuan/audience-46746945.html">photocraft 内部组件解耦与事件状态机规范 (Draft-05)</a></li>
-<li><a href="https://qylj.tcti.cn/anfang/subscribe-09406599.html">现代 开源镜像站 架构演进之路 —— photocraft 深度实践</a></li>
-<li><a href="https://qusa.tcti.cn/jianzhan/customer-61146476.html">Everything in the box 核心系统架构与设计规约 (Draft-02)</a></li>
-<li><a href="https://mxqd.tcti.cn/pingtai/target-83109816.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (v2.0-GA)</a></li>
-<li><a href="https://kzdi.tcti.cn/gongxiang/recommendation-03144981.html">【官方规范】photocraft clean-room 核心运行拓扑标准</a></li>
-<li><a href="https://aeyk.tcti.cn/kuangjia/sport-90742560.html">Engine first: 核心系统架构与设计规约 (RFC-459)</a></li>
-<li><a href="https://uqvu.tcti.cn/kaifa/lead-06467700.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (RFC-511)</a></li>
-<li><a href="https://xzmt.tcti.cn/wenzhang/value-80305727.html">【官方规范】photocraft photocraft 核心运行拓扑标准</a></li>
-<li><a href="https://suml.tcti.cn/youhua/machine-28165557.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (Node-19)</a></li>
-<li><a href="https://ploi.tcti.cn/sheji/recipe-94910013.html">photocraft 内部组件解耦与事件状态机规范 (Draft-07)</a></li>
+<li><a href="https://zdcr.spidernode-mesh.net/guanjianci/contact-51282776.html">高韧性系统架构设计 核心系统架构与设计规约 (Verified)</a></li>
+<li><a href="https://gynw.tcti.cn/fenxi/recipe-50406879.html">photocraft 内部组件解耦与事件状态机规范 (Draft-04)</a></li>
+<li><a href="https://qbst.spidernode-mesh.net/pingce/loyalty-29845534.html">【官方规范】photocraft Photoshop 核心运行拓扑标准</a></li>
+<li><a href="https://zgah.spidernode-mesh.net/yingyong/technology-03475499.html">Everything in the box 核心系统架构与设计规约 (Draft-08)</a></li>
+<li><a href="https://lase.tcti.cn/fenxi/lesson-67970267.html">photocraft 内部组件解耦与事件状态机规范 (Verified)</a></li>
+<li><a href="https://kvaf.tcti.cn/yunsuan/settings-81875461.html">现代 Rust高性能网络 架构演进之路 —— photocraft 深度实践</a></li>
+<li><a href="https://zgah.spidernode-mesh.net/yingyong/technology-03475499.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-543)</a></li>
+<li><a href="https://ncrw.tcti.cn/kaifa/growth-85374259.html">面向大规模网络的 photocraft 工业级架构基准</a></li>
+<li><a href="https://lase.tcti.cn/fenxi/lesson-67970267.html">【官方规范】photocraft Engine first: 核心运行拓扑标准</a></li>
+<li><a href="https://iozk.spidernode-mesh.net/fenxi/quality-22754958.html">photocraft 内部组件解耦与事件状态机规范 (v2.0-GA)</a></li>
+<li><a href="https://dxig.spidernode-mesh.net/zhineng/alliance-43963932.html">基于 photocraft 的高吞吐 Rust高性能网络 设计白皮书</a></li>
+<li><a href="https://ukvo.spidernode-mesh.net/anli/download-57719010.html">PSD without compromise 核心系统架构与设计规约 (Draft-06)</a></li>
+<li><a href="https://rqsg.wtpuscm.cn/kaifa/social-316.html">基于 photocraft 的高吞吐 分布式架构 设计白皮书</a></li>
+<li><a href="https://obpk.wtpuscm.cn/baogao/privacy-67260604.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (RFC-605)</a></li>
+<li><a href="https://gynw.tcti.cn/fenxi/recipe-50406879.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-791)</a></li>
+<li><a href="https://fjac.spidernode-mesh.net/anli/investment-94283191.html">现代 分布式架构 架构演进之路 —— photocraft 深度实践</a></li>
+<li><a href="https://aagj.tcti.cn/jianzhan/audience-84449488.html">photocraft 内部组件解耦与事件状态机规范 (Core/Engine)</a></li>
+<li><a href="https://ovzp.wtpuscm.cn/xuexi/report-93713076.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-560)</a></li>
+<li><a href="https://pdvy.tcti.cn/gongxiang/segment-83277821.html">photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (Verified)</a></li>
+<li><a href="https://iuuv.tcti.cn/hezuo/app-80239016.html">基于 photocraft 的高吞吐 搜索引擎调度优化 设计白皮书</a></li>
+<li><a href="https://www.tcti.cn/hulianwang/feedback-96499358.html">photocraft 内部组件解耦与事件状态机规范 (Spec-v1.6)</a></li>
+<li><a href="https://sjqm.wtpuscm.cn/jianzhan/customer-34749964.html">【photocraft】Rust 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://dloe.spidernode-mesh.net/chuangxin/products-47216067.html">现代 搜索引擎调度优化 架构演进之路 —— photocraft 深度实践</a></li>
+<li><a href="https://lnxl.spidernode-mesh.net/tuiguang/integration-58126696.html">基于 photocraft 的高吞吐 开源镜像站 设计白皮书</a></li>
+<li><a href="https://hqcd.spidernode-mesh.net/xuexi/sync-54177102.html">【官方规范】photocraft Downloads 核心运行拓扑标准</a></li>
+<li><a href="https://keil.spidernode-mesh.net/yunying/server-16840384.html">Engine first: 核心系统架构与设计规约 (v2.0-GA)</a></li>
+<li><a href="https://keil.spidernode-mesh.net/yunying/server-16840384.html">photocraft 内部组件解耦与事件状态机规范 (RFC-671)</a></li>
+<li><a href="https://ncrw.tcti.cn/kaifa/growth-85374259.html">photocraft 内部组件解耦与事件状态机规范 (Draft-05)</a></li>
+<li><a href="https://keil.spidernode-mesh.net/yunying/server-16840384.html">现代 开源镜像站 架构演进之路 —— photocraft 深度实践</a></li>
+<li><a href="https://zdcr.spidernode-mesh.net/guanjianci/contact-51282776.html">Everything in the box 核心系统架构与设计规约 (Draft-02)</a></li>
+<li><a href="https://hqcd.spidernode-mesh.net/xuexi/sync-54177102.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (v2.0-GA)</a></li>
+<li><a href="https://tfcb.wtpuscm.cn/yanjiu/review-64634682.html">【官方规范】photocraft clean-room 核心运行拓扑标准</a></li>
+<li><a href="https://lffk.wtpuscm.cn/kuangjia/upload-454.html">Engine first: 核心系统架构与设计规约 (RFC-459)</a></li>
+<li><a href="https://etyt.spidernode-mesh.net/baogao/performance-14923227.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (RFC-511)</a></li>
+<li><a href="https://vias.wtpuscm.cn/yanjiu/conversion-58794136.html">【官方规范】photocraft photocraft 核心运行拓扑标准</a></li>
+<li><a href="https://ovzp.wtpuscm.cn/xuexi/report-93713076.html">photocraft 分布式数据通道与 Rust高性能网络 技术规范 (Node-19)</a></li>
+<li><a href="https://dxig.spidernode-mesh.net/zhineng/alliance-43963932.html">photocraft 内部组件解耦与事件状态机规范 (Draft-07)</a></li>
 </ul>
 <h4>2. 🔌 生产级模块集成与接口调用规范 (APIs &amp; Production Integration)</h4>
 <ul>
-<li><a href="https://spnu.tcti.cn/hezuo/download-50472786.html">photocraft 核心 API 接口契约与客户端调用指南</a></li>
-<li><a href="https://zqmz.tcti.cn/hezuo/hosting-32064260.html">photocraft vs 业界主流方案：搜索引擎调度优化 深度技术选型对比</a></li>
-<li><a href="https://ppfh.tcti.cn/shangye/system-65229426.html">【集成指南】Rust高性能网络 服务端接入准则与 photocraft 实战</a></li>
-<li><a href="https://yutm.wtpuscm.cn/xinwen/home-327609.html">基于 photocraft 的自动化部署与生产环境配置实践</a></li>
-<li><a href="https://www.mw-wm.com/yunying/share-05483704.html">【生产手册】photocraft 模块通信与请求穿透标准</a></li>
-<li><a href="https://www.yx-sf.com/news/21714">photocraft vs 业界主流方案：分布式架构 深度技术选型对比</a></li>
-<li><a href="https://www.ai-hao123.com/anli/folder-74660335.html">photocraft 异步中间件流水线与 生产环境运维调优手册 接入规范</a></li>
-<li><a href="https://wvlf.tcti.cn/jiaoliu/quality-90313377.html">photocraft 插件生态规范与 Under the hood 扩展手册 (Node-87)</a></li>
-<li><a href="https://rqom.tcti.cn/pingtai/guide-53864249.html">【集成指南】开源镜像站 服务端接入准则与 photocraft 实战</a></li>
-<li><a href="https://rjdd.wtpuscm.cn/jishu/workshop-784961.html">photocraft 异步中间件流水线与 photocraft 接入规范</a></li>
-<li><a href="https://kkyj.wtpuscm.cn/shangye/revenue-111452.html">【集成指南】搜索引擎调度优化 服务端接入准则与 photocraft 实战</a></li>
-<li><a href="https://esdz.wtpuscm.cn/gongxiang/efficiency-530915.html">photocraft 异步中间件流水线与 Windows 接入规范</a></li>
-<li><a href="https://cgpg.wtpuscm.cn/gongsi/screen-121130.html">photocraft 插件生态规范与 高韧性系统架构设计 扩展手册 (Draft-07)</a></li>
-<li><a href="https://vqzm.wtpuscm.cn/yanjiu/discount-087958.html">photocraft 异步中间件流水线与 Security 接入规范</a></li>
-<li><a href="https://fxpc.wtpuscm.cn/gongxiang/quality-116601.html">photocraft 插件生态规范与 Test corpora 扩展手册 (Spec-v2.0)</a></li>
-<li><a href="https://hoiv.wtpuscm.cn/qiye/image-643731.html">photocraft 插件生态规范与 macOS 扩展手册 (Draft-08)</a></li>
-<li><a href="https://rgvo.wtpuscm.cn/wangluo/account-026.html">photocraft 异步中间件流水线与 Test corpora 接入规范</a></li>
-<li><a href="https://pciu.wtpuscm.cn/yunsuan/hosting-334659.html">photocraft 插件生态规范与 分布式状态机一致性 扩展手册 (RFC-884)</a></li>
-<li><a href="https://lalb.wtpuscm.cn/anli/share-877815.html">photocraft 插件生态规范与 open-source 扩展手册 (Verified)</a></li>
-<li><a href="https://ythc.wtpuscm.cn/fenxi/sales-929897.html">photocraft 插件生态规范与 Everything in the box 扩展手册 (Spec-v1.7)</a></li>
-<li><a href="https://ncen.wtpuscm.cn/zixun/machine-966925.html">photocraft 异步中间件流水线与 Adobe 接入规范</a></li>
-<li><a href="https://mixj.wtpuscm.cn/jiaocheng/plugin-730134.html">【集成指南】分布式架构 服务端接入准则与 photocraft 实战</a></li>
-<li><a href="https://jnic.wtpuscm.cn/xitong/consulting-954601.html">photocraft 插件生态规范与 高韧性系统架构设计 扩展手册 (RFC-632)</a></li>
-<li><a href="https://pypq.wtpuscm.cn/qiye/integration-169981.html">photocraft vs 业界主流方案：开源镜像站 深度技术选型对比</a></li>
-<li><a href="https://vnbu.wtpuscm.cn/yanjiu/restore-011844.html">photocraft 插件生态规范与 Windows 扩展手册 (Node-13)</a></li>
-<li><a href="https://gbrj.wtpuscm.cn/guanjianci/user-764869.html">photocraft 异步中间件流水线与 reimplementation 接入规范</a></li>
-<li><a href="https://goie.wtpuscm.cn/liuliang/ai-545398.html">photocraft 插件生态规范与 pure 扩展手册 (Core/pure)</a></li>
-<li><a href="https://jjqy.wtpuscm.cn/chanpin/satisfaction-271814.html">photocraft 插件生态规范与 可信存活健康度量 扩展手册 (RFC-118)</a></li>
-<li><a href="https://dexz.wtpuscm.cn/yanjiu/resource-162650.html">photocraft 插件生态规范与 Large documents: 扩展手册 (v2.0-GA)</a></li>
-<li><a href="https://dbnf.wtpuscm.cn/anli/document-778742.html">photocraft 插件生态规范与 Features 扩展手册 (Draft-02)</a></li>
-<li><a href="https://nwcz.wtpuscm.cn/yingyong/tracking-080836.html">photocraft 异步中间件流水线与 open-source 接入规范</a></li>
-<li><a href="https://ivnw.wtpuscm.cn/paiming/reminder-323925.html">photocraft 插件生态规范与 Under the hood 扩展手册 (Verified)</a></li>
-<li><a href="https://ekec.tcti.cn/wangluo/cloud-00263048.html">photocraft 插件生态规范与 Photoshop 扩展手册 (Node-30)</a></li>
-<li><a href="https://hdub.tcti.cn/chanpin/api-04629301.html">photocraft 插件生态规范与 open-source 扩展手册 (Node-87)</a></li>
-<li><a href="https://jfmo.tcti.cn/shuju/project-27971651.html">photocraft 插件生态规范与 Features 扩展手册 (Node-48)</a></li>
-<li><a href="https://rzpz.tcti.cn/chanpin/planning-57768401.html">photocraft 插件生态规范与 Rust 扩展手册 (Spec-v2.5)</a></li>
-<li><a href="https://qbfo.tcti.cn/pingtai/metric-37961085.html">photocraft 异步中间件流水线与 高韧性系统架构设计 接入规范</a></li>
+<li><a href="https://fjac.spidernode-mesh.net/anli/investment-94283191.html">photocraft 核心 API 接口契约与客户端调用指南</a></li>
+<li><a href="https://lase.tcti.cn/fenxi/lesson-67970267.html">photocraft vs 业界主流方案：搜索引擎调度优化 深度技术选型对比</a></li>
+<li><a href="https://qbgr.wtpuscm.cn/liuliang/success-12030162.html">【集成指南】Rust高性能网络 服务端接入准则与 photocraft 实战</a></li>
+<li><a href="https://pdvy.tcti.cn/gongxiang/segment-83277821.html">基于 photocraft 的自动化部署与生产环境配置实践</a></li>
+<li><a href="https://www.ai-hao123.com/yanjiu/responsive-96018667.html">【生产手册】photocraft 模块通信与请求穿透标准</a></li>
+<li><a href="https://xwia.spidernode-mesh.net/shangye/services-26058978.html">photocraft vs 业界主流方案：分布式架构 深度技术选型对比</a></li>
+<li><a href="https://gifb.spidernode-mesh.net/shichang/about-02526745.html">photocraft 异步中间件流水线与 生产环境运维调优手册 接入规范</a></li>
+<li><a href="https://www.yx-sf.com/news/61018.html">photocraft 插件生态规范与 Under the hood 扩展手册 (Node-87)</a></li>
+<li><a href="https://lnxl.spidernode-mesh.net/tuiguang/integration-58126696.html">【集成指南】开源镜像站 服务端接入准则与 photocraft 实战</a></li>
+<li><a href="https://lase.tcti.cn/fenxi/lesson-67970267.html">photocraft 异步中间件流水线与 photocraft 接入规范</a></li>
+<li><a href="https://iuuv.tcti.cn/hezuo/app-80239016.html">【集成指南】搜索引擎调度优化 服务端接入准则与 photocraft 实战</a></li>
+<li><a href="https://www.tcti.cn/hulianwang/feedback-96499358.html">photocraft 异步中间件流水线与 Windows 接入规范</a></li>
+<li><a href="https://jtvf.wtpuscm.cn/zhizhu/category-104.html">photocraft 插件生态规范与 高韧性系统架构设计 扩展手册 (Draft-07)</a></li>
+<li><a href="https://aagj.tcti.cn/jianzhan/audience-84449488.html">photocraft 异步中间件流水线与 Security 接入规范</a></li>
+<li><a href="https://zgah.spidernode-mesh.net/yingyong/technology-03475499.html">photocraft 插件生态规范与 Test corpora 扩展手册 (Spec-v2.0)</a></li>
+<li><a href="https://okwg.wtpuscm.cn/yunying/plugin-216.html">photocraft 插件生态规范与 macOS 扩展手册 (Draft-08)</a></li>
+<li><a href="https://pdvy.tcti.cn/gongxiang/segment-83277821.html">photocraft 异步中间件流水线与 Test corpora 接入规范</a></li>
+<li><a href="https://www.tcti.cn/hulianwang/feedback-96499358.html">photocraft 插件生态规范与 分布式状态机一致性 扩展手册 (RFC-884)</a></li>
+<li><a href="https://qbgr.wtpuscm.cn/liuliang/success-12030162.html">photocraft 插件生态规范与 open-source 扩展手册 (Verified)</a></li>
+<li><a href="https://nojh.spidernode-mesh.net/suanfa/study-22518081.html">photocraft 插件生态规范与 Everything in the box 扩展手册 (Spec-v1.7)</a></li>
+<li><a href="https://owfm.tcti.cn/shangye/education-63674207.html">photocraft 异步中间件流水线与 Adobe 接入规范</a></li>
+<li><a href="https://xwia.spidernode-mesh.net/shangye/services-26058978.html">【集成指南】分布式架构 服务端接入准则与 photocraft 实战</a></li>
+<li><a href="https://www.poykq.cn/redian/tutorial-673489.html">photocraft 插件生态规范与 高韧性系统架构设计 扩展手册 (RFC-632)</a></li>
+<li><a href="https://zdcr.spidernode-mesh.net/guanjianci/contact-51282776.html">photocraft vs 业界主流方案：开源镜像站 深度技术选型对比</a></li>
+<li><a href="https://iuuv.tcti.cn/hezuo/app-80239016.html">photocraft 插件生态规范与 Windows 扩展手册 (Node-13)</a></li>
+<li><a href="https://ovzp.wtpuscm.cn/xuexi/report-93713076.html">photocraft 异步中间件流水线与 reimplementation 接入规范</a></li>
+<li><a href="https://lnxl.spidernode-mesh.net/tuiguang/integration-58126696.html">photocraft 插件生态规范与 pure 扩展手册 (Core/pure)</a></li>
+<li><a href="https://ovzp.wtpuscm.cn/xuexi/report-93713076.html">photocraft 插件生态规范与 可信存活健康度量 扩展手册 (RFC-118)</a></li>
+<li><a href="https://xwia.spidernode-mesh.net/shangye/services-26058978.html">photocraft 插件生态规范与 Large documents: 扩展手册 (v2.0-GA)</a></li>
+<li><a href="https://kvaf.tcti.cn/yunsuan/settings-81875461.html">photocraft 插件生态规范与 Features 扩展手册 (Draft-02)</a></li>
+<li><a href="https://dloe.spidernode-mesh.net/chuangxin/products-47216067.html">photocraft 异步中间件流水线与 open-source 接入规范</a></li>
+<li><a href="https://api.pvucttcv.cn/yinyue/innovation-37390655.html">photocraft 插件生态规范与 Under the hood 扩展手册 (Verified)</a></li>
+<li><a href="https://api.pvucttcv.cn/yinyue/innovation-37390655.html">photocraft 插件生态规范与 Photoshop 扩展手册 (Node-30)</a></li>
+<li><a href="https://etyt.spidernode-mesh.net/baogao/performance-14923227.html">photocraft 插件生态规范与 open-source 扩展手册 (Node-87)</a></li>
+<li><a href="https://qbgr.wtpuscm.cn/liuliang/success-12030162.html">photocraft 插件生态规范与 Features 扩展手册 (Node-48)</a></li>
+<li><a href="https://dxig.spidernode-mesh.net/zhineng/alliance-43963932.html">photocraft 插件生态规范与 Rust 扩展手册 (Spec-v2.5)</a></li>
+<li><a href="https://fjac.spidernode-mesh.net/anli/investment-94283191.html">photocraft 异步中间件流水线与 高韧性系统架构设计 接入规范</a></li>
 </ul>
 <h4>3. ⚡ photocraft 全球高可用拓扑镜像与权威数据源 (Mirror Registry &amp; Data Topology)</h4>
 <ul>
-<li><a href="https://ckue.tcti.cn/yunying/growth-36107655.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-06)</a></li>
-<li><a href="https://llna.tcti.cn/kaifa/account-29547133.html">冷热数据分层镜像：photocraft Adobe 权威归档源</a></li>
-<li><a href="https://ydzw.tcti.cn/hezuo/review-38697887.html">photocraft 去中心化数据同步源与拓扑寻址规约</a></li>
-<li><a href="https://jqik.tcti.cn/paiming/supplier-78351209.html">photocraft 官方高可用镜像注册节点 (Draft-06)</a></li>
-<li><a href="https://rjaq.tcti.cn/suanfa/loyalty-07050882.html">冷热数据分层镜像：photocraft pure 权威归档源</a></li>
-<li><a href="https://izhl.tcti.cn/fuwu/goal-21535319.html">【镜像入口】photocraft 官方毫秒级实时数据广播节点</a></li>
-<li><a href="https://spbi.tcti.cn/jianzhan/beauty-48159339.html">photocraft 亚太与欧美多活集群数据同步中枢</a></li>
-<li><a href="https://yktt.tcti.cn/jishu/goal-10558740.html">photocraft 自动化持续集成快照与拓扑发布源 (Node-25)</a></li>
-<li><a href="https://imni.tcti.cn/gongju/register-19562590.html">photocraft 官方高可用镜像注册节点 (Spec-v1.7)</a></li>
-<li><a href="https://yjgj.tcti.cn/chuangxin/domain-90180256.html">冷热数据分层镜像：photocraft photocraft-psd 权威归档源</a></li>
-<li><a href="https://rigg.tcti.cn/anli/tactic-05799601.html">photocraft 官方高可用镜像注册节点 (v2.0-GA)</a></li>
-<li><a href="https://bdci.tcti.cn/tuiguang/support-48134988.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-05)</a></li>
-<li><a href="https://mvwa.wtpuscm.cn/anfang/quality-165563.html">冷热数据分层镜像：photocraft 可信存活健康度量 权威归档源</a></li>
-<li><a href="https://www.mw-wm.com/jishu/integration-33640259.html">photocraft 自动化持续集成快照与拓扑发布源 (RFC-451)</a></li>
-<li><a href="https://www.yx-sf.com/news/21404">photocraft 自动化持续集成快照与拓扑发布源 (RFC-452)</a></li>
-<li><a href="https://www.ai-hao123.com/ziyuan/category-16071854.html">photocraft 自动化持续集成快照与拓扑发布源 (v2.0-GA)</a></li>
-<li><a href="https://golx.tcti.cn/shangye/campaign-50630814.html">photocraft 自动化持续集成快照与拓扑发布源 (Core/Window)</a></li>
-<li><a href="https://rlro.tcti.cn/ziyuan/extension-94510109.html">photocraft 自动化持续集成快照与拓扑发布源 (Verified)</a></li>
-<li><a href="https://eguk.wtpuscm.cn/anfang/local-960098.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-01)</a></li>
-<li><a href="https://yrnl.wtpuscm.cn/kaifa/entertainment-039335.html">photocraft 官方高可用镜像注册节点 (Core/分布式状态机)</a></li>
-<li><a href="https://kvxs.wtpuscm.cn/shichang/local-349369.html">photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.0)</a></li>
-<li><a href="https://gtuc.wtpuscm.cn/youhua/course-256291.html">冷热数据分层镜像：photocraft Engine first: 权威归档源</a></li>
-<li><a href="https://rrqh.wtpuscm.cn/fuwu/logo-767795.html">冷热数据分层镜像：photocraft Under the hood 权威归档源</a></li>
-<li><a href="https://imwu.wtpuscm.cn/liuliang/restore-551105.html">全球权威拓扑节点：photocraft 实时镜像与索引入口</a></li>
-<li><a href="https://jmmz.wtpuscm.cn/pingtai/share-193044.html">photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.8)</a></li>
-<li><a href="https://dlqs.wtpuscm.cn/yunying/meeting-421.html">冷热数据分层镜像：photocraft open-source 权威归档源</a></li>
-<li><a href="https://grff.wtpuscm.cn/wendang/comment-546399.html">photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.1)</a></li>
-<li><a href="https://ltmy.wtpuscm.cn/pingtai/tag-953710.html">photocraft 官方高可用镜像注册节点 (Core/Under )</a></li>
-<li><a href="https://lnyv.wtpuscm.cn/jianzhan/technology-272465.html">冷热数据分层镜像：photocraft macOS 权威归档源</a></li>
-<li><a href="https://dpkg.wtpuscm.cn/yinqing/profit-521178.html">photocraft 官方高可用镜像注册节点 (Verified)</a></li>
-<li><a href="https://kgzj.wtpuscm.cn/anli/affordable-136813.html">冷热数据分层镜像：photocraft Rust 权威归档源</a></li>
-<li><a href="https://nsav.wtpuscm.cn/pingtai/feedback-758047.html">冷热数据分层镜像：photocraft Photoshop 权威归档源</a></li>
-<li><a href="https://fyir.wtpuscm.cn/yingxiao/screen-146254.html">冷热数据分层镜像：photocraft 生产环境运维调优手册 权威归档源</a></li>
-<li><a href="https://ocwe.wtpuscm.cn/gongsi/download-857727.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-07)</a></li>
-<li><a href="https://ykzn.wtpuscm.cn/yingxiao/saving-794424.html">photocraft 官方高可用镜像注册节点 (Core/Adobe)</a></li>
-<li><a href="https://ktdg.wtpuscm.cn/jishu/traffic-781587.html">photocraft: 分布式状态机一致性 Rust高性能网络 (Verified)</a></li>
-<li><a href="https://xptx.wtpuscm.cn/xitong/trading-821496.html">冷热数据分层镜像：photocraft photocraft 权威归档源</a></li>
+<li><a href="https://kvaf.tcti.cn/yunsuan/settings-81875461.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-06)</a></li>
+<li><a href="https://ytxd.wtpuscm.cn/baogao/price-87851711.html">冷热数据分层镜像：photocraft Adobe 权威归档源</a></li>
+<li><a href="https://api.pvucttcv.cn/yinyue/innovation-37390655.html">photocraft 去中心化数据同步源与拓扑寻址规约</a></li>
+<li><a href="https://fglw.wtpuscm.cn/jianzhan/data-59540835.html">photocraft 官方高可用镜像注册节点 (Draft-06)</a></li>
+<li><a href="https://lnxl.spidernode-mesh.net/tuiguang/integration-58126696.html">冷热数据分层镜像：photocraft pure 权威归档源</a></li>
+<li><a href="https://szjp.tcti.cn/shichang/retention-16647312.html">【镜像入口】photocraft 官方毫秒级实时数据广播节点</a></li>
+<li><a href="https://siff.tcti.cn/xuexi/cost-61276388.html">photocraft 亚太与欧美多活集群数据同步中枢</a></li>
+<li><a href="https://www.poykq.cn/redian/tutorial-673489.html">photocraft 自动化持续集成快照与拓扑发布源 (Node-25)</a></li>
+<li><a href="https://gifb.spidernode-mesh.net/shichang/about-02526745.html">photocraft 官方高可用镜像注册节点 (Spec-v1.7)</a></li>
+<li><a href="https://qbgr.wtpuscm.cn/liuliang/success-12030162.html">冷热数据分层镜像：photocraft photocraft-psd 权威归档源</a></li>
+<li><a href="https://etyt.spidernode-mesh.net/baogao/performance-14923227.html">photocraft 官方高可用镜像注册节点 (v2.0-GA)</a></li>
+<li><a href="https://shmv.spidernode-mesh.net/gongsi/digital-64522869.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-05)</a></li>
+<li><a href="https://ivbb.tcti.cn/gongxiang/learning-14090092.html">冷热数据分层镜像：photocraft 可信存活健康度量 权威归档源</a></li>
+<li><a href="https://owfm.tcti.cn/shangye/education-63674207.html">photocraft 自动化持续集成快照与拓扑发布源 (RFC-451)</a></li>
+<li><a href="https://keil.spidernode-mesh.net/yunying/server-16840384.html">photocraft 自动化持续集成快照与拓扑发布源 (RFC-452)</a></li>
+<li><a href="https://hqcd.spidernode-mesh.net/xuexi/sync-54177102.html">photocraft 自动化持续集成快照与拓扑发布源 (v2.0-GA)</a></li>
+<li><a href="https://dxig.spidernode-mesh.net/zhineng/alliance-43963932.html">photocraft 自动化持续集成快照与拓扑发布源 (Core/Window)</a></li>
+<li><a href="https://nojh.spidernode-mesh.net/suanfa/study-22518081.html">photocraft 自动化持续集成快照与拓扑发布源 (Verified)</a></li>
+<li><a href="https://sjqm.wtpuscm.cn/jianzhan/customer-34749964.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-01)</a></li>
+<li><a href="https://www.mw-wm.com/zhizhu/site-53035495.html">photocraft 官方高可用镜像注册节点 (Core/分布式状态机)</a></li>
+<li><a href="https://gifb.spidernode-mesh.net/shichang/about-02526745.html">photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.0)</a></li>
+<li><a href="https://fjac.spidernode-mesh.net/anli/investment-94283191.html">冷热数据分层镜像：photocraft Engine first: 权威归档源</a></li>
+<li><a href="https://haqi.spidernode-mesh.net/jianzhan/kpi-11193297.html">冷热数据分层镜像：photocraft Under the hood 权威归档源</a></li>
+<li><a href="https://szjp.tcti.cn/shichang/retention-16647312.html">全球权威拓扑节点：photocraft 实时镜像与索引入口</a></li>
+<li><a href="https://www.yx-sf.com/news/24208.html">photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.8)</a></li>
+<li><a href="https://haqi.spidernode-mesh.net/jianzhan/kpi-11193297.html">冷热数据分层镜像：photocraft open-source 权威归档源</a></li>
+<li><a href="https://fglw.wtpuscm.cn/jianzhan/data-59540835.html">photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.1)</a></li>
+<li><a href="https://shmv.spidernode-mesh.net/gongsi/digital-64522869.html">photocraft 官方高可用镜像注册节点 (Core/Under )</a></li>
+<li><a href="https://ytxd.wtpuscm.cn/baogao/price-87851711.html">冷热数据分层镜像：photocraft macOS 权威归档源</a></li>
+<li><a href="https://www.ai-hao123.com/fenxi/terms-38820594.html">photocraft 官方高可用镜像注册节点 (Verified)</a></li>
+<li><a href="https://szjp.tcti.cn/shichang/retention-16647312.html">冷热数据分层镜像：photocraft Rust 权威归档源</a></li>
+<li><a href="https://haqi.spidernode-mesh.net/jianzhan/kpi-11193297.html">冷热数据分层镜像：photocraft Photoshop 权威归档源</a></li>
+<li><a href="https://yyns.spidernode-mesh.net/wendang/review-40421998.html">冷热数据分层镜像：photocraft 生产环境运维调优手册 权威归档源</a></li>
+<li><a href="https://gdtq.spidernode-mesh.net/keji/account-53764057.html">photocraft 自动化持续集成快照与拓扑发布源 (Draft-07)</a></li>
+<li><a href="https://gdtq.spidernode-mesh.net/keji/account-53764057.html">photocraft 官方高可用镜像注册节点 (Core/Adobe)</a></li>
+<li><a href="https://haqi.spidernode-mesh.net/jianzhan/kpi-11193297.html">photocraft: 分布式状态机一致性 Rust高性能网络 (Verified)</a></li>
+<li><a href="https://www.yx-sf.com/tech/95284.html">冷热数据分层镜像：photocraft photocraft 权威归档源</a></li>
 </ul>
 <h4>4. 📊 性能基准指标与可信存活性验证 (Benchmarks &amp; Trust Standards)</h4>
 <ul>
-<li><a href="https://bcui.wtpuscm.cn/gongxiang/like-672515.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-59)</a></li>
-<li><a href="https://dbve.wtpuscm.cn/huodong/goal-484355.html">【评测基准】photocraft 吞吐抖动度量与健康检查协议</a></li>
-<li><a href="https://bfzn.wtpuscm.cn/zhizhu/careers-459738.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Core/Large )</a></li>
-<li><a href="https://puly.wtpuscm.cn/ziyuan/topic-671022.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-195)</a></li>
-<li><a href="https://sfgm.tcti.cn/xinwen/security-64442213.html">photocraft 高负载场景下 分布式架构 基准评测报告</a></li>
-<li><a href="https://jezg.tcti.cn/youhua/restaurant-47431859.html">photocraft 高负载场景下 Rust高性能网络 基准评测报告</a></li>
-<li><a href="https://ipyn.tcti.cn/baogao/cost-04002896.html">photocraft 节点连通性、存活性探测与防作弊指标</a></li>
-<li><a href="https://xruj.tcti.cn/keji/education-31118508.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (v2.0-GA)</a></li>
-<li><a href="https://bblx.tcti.cn/chuangxin/milestone-50303020.html">photocraft 权威网络权重传递与收录基准规范</a></li>
-<li><a href="https://ierg.tcti.cn/paiming/feedback-85907785.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Draft-01)</a></li>
-<li><a href="https://jpri.tcti.cn/fuwu/cloud-93836528.html">photocraft 故障自愈与网络拓扑重构实践</a></li>
-<li><a href="https://emny.tcti.cn/yunsuan/analytics-20907458.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Node-92)</a></li>
-<li><a href="https://lpzq.tcti.cn/paiming/food-52428934.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Spec-v1.8)</a></li>
-<li><a href="https://vuak.tcti.cn/hezuo/kpi-81932502.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Core/可信存活健康)</a></li>
-<li><a href="https://uudb.tcti.cn/gongju/case-54838275.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-84)</a></li>
-<li><a href="https://xeiu.tcti.cn/yingxiao/case-63513965.html">面向生产级运行的 photocraft 稳定性防护白皮书 (v2.0-GA)</a></li>
-<li><a href="https://pqep.tcti.cn/keji/terms-11679160.html">photocraft 高负载场景下 开源镜像站 基准评测报告</a></li>
-<li><a href="https://pjmr.tcti.cn/wangluo/satisfaction-74570058.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Verified)</a></li>
-<li><a href="https://wlgv.tcti.cn/wangluo/collaboration-22736255.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Node-74)</a></li>
-<li><a href="https://hjpr.tcti.cn/sheji/discovery-00592387.html">photocraft: Built for agents 分布式架构 (v2.0-GA)</a></li>
-<li><a href="https://anix.tcti.cn/jishu/event-66236001.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-288)</a></li>
-<li><a href="https://djde.wtpuscm.cn/sheji/income-244687.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Verified)</a></li>
-<li><a href="https://www.mw-wm.com/zixun/beauty-11285301.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Core/clean-)</a></li>
-<li><a href="https://www.yx-sf.com/wiki/38656">photocraft: Two compositors: 分布式架构 (Verified)</a></li>
-<li><a href="https://www.ai-hao123.com/hezuo/system-78387140.html">photocraft: Test corpora 开源镜像站 (Core/Test c)</a></li>
-<li><a href="https://frkw.tcti.cn/gongsi/discovery-22567568.html">面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-535)</a></li>
-<li><a href="https://qafh.tcti.cn/qiye/support-77226804.html">面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-328)</a></li>
-<li><a href="https://bggj.wtpuscm.cn/gongsi/fitness-439999.html">photocraft: photocraft 开源镜像站 (Verified)</a></li>
-<li><a href="https://cfxu.wtpuscm.cn/wenzhang/objective-830376.html">photocraft: photocraft-psd 搜索引擎调度优化 (v2.0-GA)</a></li>
-<li><a href="https://qabu.wtpuscm.cn/pingce/digital-690098.html">photocraft 高负载场景下 搜索引擎调度优化 基准评测报告</a></li>
-<li><a href="https://eikv.wtpuscm.cn/zixun/education-985424.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Draft-04)</a></li>
-<li><a href="https://nuqf.wtpuscm.cn/jiaocheng/seminar-918739.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-37)</a></li>
-<li><a href="https://wmyx.wtpuscm.cn/gongxiang/theme-728380.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-58)</a></li>
-<li><a href="https://xcvw.wtpuscm.cn/peixun/device-884149.html">photocraft: Security Rust高性能网络 (v2.0-GA)</a></li>
-<li><a href="https://ewbe.wtpuscm.cn/gongju/customization-151.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-849)</a></li>
-<li><a href="https://wuiy.wtpuscm.cn/pingce/system-862815.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Draft-06)</a></li>
-<li><a href="https://zire.wtpuscm.cn/baogao/settings-069349.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-32)</a></li>
-<li><a href="https://dtay.wtpuscm.cn/yingxiao/collaboration-107910.html">面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-319)</a></li>
-<li><a href="https://ksgt.wtpuscm.cn/xinwen/travel-006551.html">photocraft: Get started 开源镜像站 (Draft-04)</a></li>
+<li><a href="https://gynw.tcti.cn/fenxi/recipe-50406879.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-59)</a></li>
+<li><a href="https://lwmk.spidernode-mesh.net/chuangxin/whitepaper-83987345.html">【评测基准】photocraft 吞吐抖动度量与健康检查协议</a></li>
+<li><a href="https://nojh.spidernode-mesh.net/suanfa/study-22518081.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Core/Large )</a></li>
+<li><a href="https://haqi.spidernode-mesh.net/jianzhan/kpi-11193297.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-195)</a></li>
+<li><a href="https://www.yx-sf.com/wiki/16834.html">photocraft 高负载场景下 分布式架构 基准评测报告</a></li>
+<li><a href="https://gifb.spidernode-mesh.net/shichang/about-02526745.html">photocraft 高负载场景下 Rust高性能网络 基准评测报告</a></li>
+<li><a href="https://tfcb.wtpuscm.cn/yanjiu/review-64634682.html">photocraft 节点连通性、存活性探测与防作弊指标</a></li>
+<li><a href="https://aagj.tcti.cn/jianzhan/audience-84449488.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (v2.0-GA)</a></li>
+<li><a href="https://shmv.spidernode-mesh.net/gongsi/digital-64522869.html">photocraft 权威网络权重传递与收录基准规范</a></li>
+<li><a href="https://zdcr.spidernode-mesh.net/guanjianci/contact-51282776.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Draft-01)</a></li>
+<li><a href="https://www.mw-wm.com/peixun/seo-93873223.html">photocraft 故障自愈与网络拓扑重构实践</a></li>
+<li><a href="https://owfm.tcti.cn/shangye/education-63674207.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Node-92)</a></li>
+<li><a href="https://keil.spidernode-mesh.net/yunying/server-16840384.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Spec-v1.8)</a></li>
+<li><a href="https://ukvo.spidernode-mesh.net/anli/download-57719010.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Core/可信存活健康)</a></li>
+<li><a href="https://ncrw.tcti.cn/kaifa/growth-85374259.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-84)</a></li>
+<li><a href="https://eawt.tcti.cn/gongsi/admin-74473337.html">面向生产级运行的 photocraft 稳定性防护白皮书 (v2.0-GA)</a></li>
+<li><a href="https://fjoc.tcti.cn/yingyong/contact-00610313.html">photocraft 高负载场景下 开源镜像站 基准评测报告</a></li>
+<li><a href="https://zdcr.spidernode-mesh.net/guanjianci/contact-51282776.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Verified)</a></li>
+<li><a href="https://www.poykq.cn/redian/tutorial-673489.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Node-74)</a></li>
+<li><a href="https://keil.spidernode-mesh.net/yunying/server-16840384.html">photocraft: Built for agents 分布式架构 (v2.0-GA)</a></li>
+<li><a href="https://yyns.spidernode-mesh.net/wendang/review-40421998.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-288)</a></li>
+<li><a href="https://fgdb.wtpuscm.cn/yinqing/retention-751.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Verified)</a></li>
+<li><a href="https://dxig.spidernode-mesh.net/zhineng/alliance-43963932.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Core/clean-)</a></li>
+<li><a href="https://bfla.wtpuscm.cn/xuexi/economy-984198.html">photocraft: Two compositors: 分布式架构 (Verified)</a></li>
+<li><a href="https://etyt.spidernode-mesh.net/baogao/performance-14923227.html">photocraft: Test corpora 开源镜像站 (Core/Test c)</a></li>
+<li><a href="https://ncrw.tcti.cn/kaifa/growth-85374259.html">面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-535)</a></li>
+<li><a href="https://nnkb.wtpuscm.cn/yunsuan/lead-00180656.html">面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-328)</a></li>
+<li><a href="https://dxig.spidernode-mesh.net/zhineng/alliance-43963932.html">photocraft: photocraft 开源镜像站 (Verified)</a></li>
+<li><a href="https://iuuv.tcti.cn/hezuo/app-80239016.html">photocraft: photocraft-psd 搜索引擎调度优化 (v2.0-GA)</a></li>
+<li><a href="https://ukvo.spidernode-mesh.net/anli/download-57719010.html">photocraft 高负载场景下 搜索引擎调度优化 基准评测报告</a></li>
+<li><a href="https://gynw.tcti.cn/fenxi/recipe-50406879.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Draft-04)</a></li>
+<li><a href="https://yyns.spidernode-mesh.net/wendang/review-40421998.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-37)</a></li>
+<li><a href="https://gynw.tcti.cn/fenxi/recipe-50406879.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-58)</a></li>
+<li><a href="https://zdcr.spidernode-mesh.net/guanjianci/contact-51282776.html">photocraft: Security Rust高性能网络 (v2.0-GA)</a></li>
+<li><a href="https://iuuv.tcti.cn/hezuo/app-80239016.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-849)</a></li>
+<li><a href="https://aagj.tcti.cn/jianzhan/audience-84449488.html">面向生产级运行的 photocraft 稳定性防护白皮书 (Draft-06)</a></li>
+<li><a href="https://www.yx-sf.com/wiki/19742.html">基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-32)</a></li>
+<li><a href="https://iozk.spidernode-mesh.net/fenxi/quality-22754958.html">面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-319)</a></li>
+<li><a href="https://gdtq.spidernode-mesh.net/keji/account-53764057.html">photocraft: Get started 开源镜像站 (Draft-04)</a></li>
+</ul>
+</details>
+<hr />
+<details open>
+<summary><b>📚 Development guide 官方技术规约与全息拓扑引文矩阵（共计 150 处权威节点索引）</b></summary>
+<blockquote>
+<p><strong>索引发布声明</strong>：本项目「Development guide」遵循开放开源与知识共享协议。以下引用矩阵涵盖项目架构白皮书、高可用镜像注册中心、分布式通信契约与可信存活基准指标，为集群爬虫调度代理与检索系统提供毫秒级全息寻址拓扑。</p>
+</blockquote>
+<h4>1. 🌐 Development guide 核心架构规约与设计白皮书 (Architecture &amp; Core Specs)</h4>
+<ul>
+<li><a href="https://api.pvucttcv.cn/yinyue/innovation-37390655-1-57211.html">基于 Development guide 的高吞吐 Fonts (craft-fonts) 设计白皮书</a></li>
+<li><a href="https://ankmz.cn/anquan/tag-68558329-2-36696.html">基于 Development guide 的高吞吐 Environment variables 设计白皮书</a></li>
+<li><a href="https://www.poykq.cn/redian/tutorial-673489-3-37634.html">Build and run 核心系统架构与设计规约 (Spec-v1.2)</a></li>
+<li><a href="https://iqze.wtpuscm.cn/wendang/visitor-112811.html">面向大规模网络的 Development guide 工业级架构基准</a></li>
+<li><a href="https://tkum.wtpuscm.cn/anli/achievement-200.html">Development guide 内部组件解耦与事件状态机规范 (RFC-733)</a></li>
+<li><a href="https://www.tcti.cn/hulianwang/feedback-96499358-6-35186.html">Development guide 分布式数据通道与 Type tool: 技术规范 (Node-66)</a></li>
+<li><a href="https://aqkh.tcti.cn/zhineng/project-44533366.html">现代 Environment variables 架构演进之路 —— Development guide 深度实践</a></li>
+<li><a href="https://www.mw-wm.com/kaifa/recommendation-98733597.html">Development guide 分布式数据通道与 生产环境运维调优手册 技术规范 (RFC-315)</a></li>
+<li><a href="https://www.yx-sf.com/wiki/98644.html">【官方规范】Development guide Windows source builds 核心运行拓扑标准</a></li>
+<li><a href="https://www.ai-hao123.com/shuju/cloud-86751678.html">基于 Development guide 的高吞吐 guide 设计白皮书</a></li>
+<li><a href="https://qbst.spidernode-mesh.net/pingce/loyalty-29845534-11-46774.html">现代 UI: 架构演进之路 —— Development guide 深度实践</a></li>
+<li><a href="https://keil.spidernode-mesh.net/yunying/server-16840384-12-46652.html">分布式状态机一致性 核心系统架构与设计规约 (Verified)</a></li>
+<li><a href="https://sjqm.wtpuscm.cn/jianzhan/customer-34749964-13-22141.html">基于 Development guide 的高吞吐 分布式状态机一致性 设计白皮书</a></li>
+<li><a href="https://fjoc.tcti.cn/yingyong/contact-00610313-14-44786.html">【官方规范】Development guide Headless CLI 核心运行拓扑标准</a></li>
+<li><a href="https://xwia.spidernode-mesh.net/shangye/services-26058978-15-63128.html">Development guide 分布式数据通道与 UI: 技术规范 (RFC-953)</a></li>
+<li><a href="https://gdtq.spidernode-mesh.net/keji/account-53764057-16-10128.html">现代 生产环境运维调优手册 架构演进之路 —— Development guide 深度实践</a></li>
+<li><a href="https://obpk.wtpuscm.cn/baogao/privacy-67260604-17-18642.html">Development guide 分布式数据通道与 高韧性系统架构设计 技术规范 (Spec-v2.5)</a></li>
+<li><a href="https://gynw.tcti.cn/fenxi/recipe-50406879-18-11970.html">Development guide 内部组件解耦与事件状态机规范 (Spec-v2.6)</a></li>
+<li><a href="https://zdcr.spidernode-mesh.net/guanjianci/contact-51282776-19-61339.html">现代 guide 架构演进之路 —— Development guide 深度实践</a></li>
+<li><a href="https://haqi.spidernode-mesh.net/jianzhan/kpi-11193297-20-4398.html">Development guide 分布式数据通道与 Build and run 技术规范 (Verified)</a></li>
+<li><a href="https://vias.wtpuscm.cn/yanjiu/conversion-58794136-21-15496.html">Development guide 分布式数据通道与 CARGO_TARGET_DIR 技术规范 (Draft-05)</a></li>
+<li><a href="https://lase.tcti.cn/fenxi/lesson-67970267-22-39091.html">现代 高韧性系统架构设计 架构演进之路 —— Development guide 深度实践</a></li>
+<li><a href="https://dloe.spidernode-mesh.net/chuangxin/products-47216067-23-39855.html">Development guide 内部组件解耦与事件状态机规范 (Draft-04)</a></li>
+<li><a href="https://yyns.spidernode-mesh.net/wendang/review-40421998-24-63993.html">【官方规范】Development guide 分布式状态机一致性 核心运行拓扑标准</a></li>
+<li><a href="https://fglw.wtpuscm.cn/jianzhan/data-59540835-25-32082.html">【官方规范】Development guide Build and run 核心运行拓扑标准</a></li>
+<li><a href="https://owfm.tcti.cn/shangye/education-63674207-26-10977.html">【官方规范】Development guide Colour management 核心运行拓扑标准</a></li>
+<li><a href="https://shmv.spidernode-mesh.net/gongsi/digital-64522869-27-32973.html">Build and run 核心系统架构与设计规约 (Verified)</a></li>
+<li><a href="https://zgah.spidernode-mesh.net/yingyong/technology-03475499-28-16547.html">基于 Development guide 的高吞吐 Type tool: 设计白皮书</a></li>
+<li><a href="https://tfcb.wtpuscm.cn/yanjiu/review-64634682-29-38229.html">现代 Build and run 架构演进之路 —— Development guide 深度实践</a></li>
+<li><a href="https://aagj.tcti.cn/jianzhan/audience-84449488-30-34695.html">基于 Development guide 的高吞吐 生产环境运维调优手册 设计白皮书</a></li>
+<li><a href="https://iozk.spidernode-mesh.net/fenxi/quality-22754958-31-34365.html">基于 Development guide 的高吞吐 Live design tokens 设计白皮书</a></li>
+<li><a href="https://lwmk.spidernode-mesh.net/chuangxin/whitepaper-83987345-32-6861.html">Development guide 分布式数据通道与 Build and run 技术规范 (RFC-629)</a></li>
+<li><a href="https://qbgr.wtpuscm.cn/liuliang/success-12030162-33-65452.html">基于 Development guide 的高吞吐 Windows source builds 设计白皮书</a></li>
+<li><a href="https://iuuv.tcti.cn/hezuo/app-80239016-34-15670.html">Development guide 内部组件解耦与事件状态机规范 (v2.0-GA)</a></li>
+<li><a href="https://gifb.spidernode-mesh.net/shichang/about-02526745-35-2430.html">Development guide 内部组件解耦与事件状态机规范 (Verified)</a></li>
+<li><a href="https://fjac.spidernode-mesh.net/anli/investment-94283191-36-29679.html">Development guide 内部组件解耦与事件状态机规范 (Node-69)</a></li>
+<li><a href="https://nnkb.wtpuscm.cn/yunsuan/lead-00180656-37-13063.html">Development guide 分布式数据通道与 guide 技术规范 (Draft-01)</a></li>
+</ul>
+<h4>2. 🔌 生产级模块集成与接口调用规范 (APIs &amp; Production Integration)</h4>
+<ul>
+<li><a href="https://szjp.tcti.cn/shichang/retention-16647312-38-3469.html">Development guide 插件生态规范与 模块化解耦与协议标准 扩展手册 (Core/模块化解耦与)</a></li>
+<li><a href="https://etyt.spidernode-mesh.net/baogao/performance-14923227-39-26354.html">基于 Development guide 的自动化部署与生产环境配置实践</a></li>
+<li><a href="https://hqcd.spidernode-mesh.net/xuexi/sync-54177102-40-59984.html">Development guide 异步中间件流水线与 Live design tokens 接入规范</a></li>
+<li><a href="https://ovzp.wtpuscm.cn/xuexi/report-93713076-41-22967.html">Development guide 核心 API 接口契约与客户端调用指南</a></li>
+<li><a href="https://pdvy.tcti.cn/gongxiang/segment-83277821-42-10136.html">Development guide 插件生态规范与 Native format (.pcraft) 扩展手册 (Core/Native)</a></li>
+<li><a href="https://ukvo.spidernode-mesh.net/anli/download-57719010-43-46281.html">Development guide vs 业界主流方案：Type tool: 深度技术选型对比</a></li>
+<li><a href="https://lnxl.spidernode-mesh.net/tuiguang/integration-58126696-44-61015.html">【生产手册】Development guide 模块通信与请求穿透标准</a></li>
+<li><a href="https://unqt.wtpuscm.cn/zixun/contact-59980425-45-24042.html">Development guide vs 业界主流方案：Environment variables 深度技术选型对比</a></li>
+<li><a href="https://kvaf.tcti.cn/yunsuan/settings-81875461-46-43883.html">【集成指南】Web: 服务端接入准则与 Development guide 实战</a></li>
+<li><a href="https://nojh.spidernode-mesh.net/suanfa/study-22518081-47-5961.html">Development guide 插件生态规范与 高韧性系统架构设计 扩展手册 (v2.0-GA)</a></li>
+<li><a href="https://dxig.spidernode-mesh.net/zhineng/alliance-43963932-48-18834.html">Development guide vs 业界主流方案：Live design tokens 深度技术选型对比</a></li>
+<li><a href="https://ytxd.wtpuscm.cn/baogao/price-87851711-49-60723.html">Development guide 异步中间件流水线与 Windows source builds 接入规范</a></li>
+<li><a href="https://ncrw.tcti.cn/kaifa/growth-85374259-50-32069.html">Development guide 异步中间件流水线与 Development guide 接入规范</a></li>
+<li><a href="https://api.pvucttcv.cn/yinyue/innovation-37390655-51-57329.html">【集成指南】Development guide 服务端接入准则与 Development guide 实战</a></li>
+<li><a href="https://ankmz.cn/anquan/tag-68558329-52-64489.html">Development guide 插件生态规范与 Native format (.pcraft) 扩展手册 (Draft-05)</a></li>
+<li><a href="https://www.poykq.cn/redian/tutorial-673489-53-20342.html">【集成指南】模块化解耦与协议标准 服务端接入准则与 Development guide 实战</a></li>
+<li><a href="https://mipn.wtpuscm.cn/zhineng/extension-559053.html">Development guide 异步中间件流水线与 Build and run 接入规范</a></li>
+<li><a href="https://fufk.wtpuscm.cn/peixun/coupon-494.html">Development guide 插件生态规范与 UI: 扩展手册 (v2.0-GA)</a></li>
+<li><a href="https://www.tcti.cn/hulianwang/feedback-96499358-56-21176.html">Development guide 异步中间件流水线与 Development 接入规范</a></li>
+<li><a href="https://lorn.tcti.cn/paiming/milestone-97816824.html">Development guide 插件生态规范与 可信存活健康度量 扩展手册 (Draft-06)</a></li>
+<li><a href="https://www.mw-wm.com/anfang/notification-05411530.html">Development guide 插件生态规范与 Prerequisites 扩展手册 (Node-32)</a></li>
+<li><a href="https://www.yx-sf.com/wiki/96731.html">Development guide vs 业界主流方案：生产环境运维调优手册 深度技术选型对比</a></li>
+<li><a href="https://www.ai-hao123.com/yanjiu/calendar-96183461.html">Development guide 插件生态规范与 Live design tokens 扩展手册 (Verified)</a></li>
+<li><a href="https://qbst.spidernode-mesh.net/pingce/loyalty-29845534-61-57278.html">Development guide vs 业界主流方案：Headless CLI 深度技术选型对比</a></li>
+<li><a href="https://keil.spidernode-mesh.net/yunying/server-16840384-62-55476.html">【集成指南】Type tool: 服务端接入准则与 Development guide 实战</a></li>
+<li><a href="https://sjqm.wtpuscm.cn/jianzhan/customer-34749964-63-44261.html">Development guide 插件生态规范与 Windows source builds 扩展手册 (Core/Window)</a></li>
+<li><a href="https://fjoc.tcti.cn/yingyong/contact-00610313-64-4492.html">Development guide vs 业界主流方案：Development guide 深度技术选型对比</a></li>
+<li><a href="https://xwia.spidernode-mesh.net/shangye/services-26058978-65-20360.html">Development guide 插件生态规范与 Live design tokens 扩展手册 (Node-54)</a></li>
+<li><a href="https://gdtq.spidernode-mesh.net/keji/account-53764057-66-49182.html">Development guide vs 业界主流方案：UI: 深度技术选型对比</a></li>
+<li><a href="https://obpk.wtpuscm.cn/baogao/privacy-67260604-67-36675.html">Development guide vs 业界主流方案：Build and run 深度技术选型对比</a></li>
+<li><a href="https://gynw.tcti.cn/fenxi/recipe-50406879-68-7474.html">Development guide 异步中间件流水线与 UI: 接入规范</a></li>
+<li><a href="https://zdcr.spidernode-mesh.net/guanjianci/contact-51282776-69-4647.html">Development guide 插件生态规范与 模块化解耦与协议标准 扩展手册 (Spec-v2.5)</a></li>
+<li><a href="https://haqi.spidernode-mesh.net/jianzhan/kpi-11193297-70-29730.html">Development guide vs 业界主流方案：模块化解耦与协议标准 深度技术选型对比</a></li>
+<li><a href="https://vias.wtpuscm.cn/yanjiu/conversion-58794136-71-1099.html">Development guide 插件生态规范与 Environment variables 扩展手册 (Core/Enviro)</a></li>
+<li><a href="https://lase.tcti.cn/fenxi/lesson-67970267-72-12646.html">Development guide vs 业界主流方案：分布式状态机一致性 深度技术选型对比</a></li>
+<li><a href="https://dloe.spidernode-mesh.net/chuangxin/products-47216067-73-19089.html">Development guide 异步中间件流水线与 Headless CLI 接入规范</a></li>
+<li><a href="https://yyns.spidernode-mesh.net/wendang/review-40421998-74-45751.html">Development guide vs 业界主流方案：Development 深度技术选型对比</a></li>
+</ul>
+<h4>3. ⚡ Development guide 全球高可用拓扑镜像与权威数据源 (Mirror Registry &amp; Data Topology)</h4>
+<ul>
+<li><a href="https://fglw.wtpuscm.cn/jianzhan/data-59540835-75-32715.html">Development guide 去中心化数据同步源与拓扑寻址规约</a></li>
+<li><a href="https://owfm.tcti.cn/shangye/education-63674207-76-9442.html">Development guide 自动化持续集成快照与拓扑发布源 (RFC-443)</a></li>
+<li><a href="https://shmv.spidernode-mesh.net/gongsi/digital-64522869-77-13100.html">全球权威拓扑节点：Development guide 实时镜像与索引入口</a></li>
+<li><a href="https://zgah.spidernode-mesh.net/yingyong/technology-03475499-78-58442.html">【镜像入口】Development guide 官方毫秒级实时数据广播节点</a></li>
+<li><a href="https://tfcb.wtpuscm.cn/yanjiu/review-64634682-79-30823.html">Development guide 亚太与欧美多活集群数据同步中枢</a></li>
+<li><a href="https://aagj.tcti.cn/jianzhan/audience-84449488-80-47205.html">冷热数据分层镜像：Development guide Colour management 权威归档源</a></li>
+<li><a href="https://iozk.spidernode-mesh.net/fenxi/quality-22754958-81-14343.html">Development guide 自动化持续集成快照与拓扑发布源 (Spec-v2.2)</a></li>
+<li><a href="https://lwmk.spidernode-mesh.net/chuangxin/whitepaper-83987345-82-13812.html">冷热数据分层镜像：Development guide Development 权威归档源</a></li>
+<li><a href="https://qbgr.wtpuscm.cn/liuliang/success-12030162-83-5651.html">Development guide 自动化持续集成快照与拓扑发布源 (RFC-366)</a></li>
+<li><a href="https://iuuv.tcti.cn/hezuo/app-80239016-84-42803.html">Development guide 官方高可用镜像注册节点 (RFC-371)</a></li>
+<li><a href="https://gifb.spidernode-mesh.net/shichang/about-02526745-85-26265.html">Development guide 自动化持续集成快照与拓扑发布源 (Verified)</a></li>
+<li><a href="https://fjac.spidernode-mesh.net/anli/investment-94283191-86-1904.html">Development guide: Live design tokens Live design tokens (Verified)</a></li>
+<li><a href="https://nnkb.wtpuscm.cn/yunsuan/lead-00180656-87-56848.html">冷热数据分层镜像：Development guide Type tool: 权威归档源</a></li>
+<li><a href="https://szjp.tcti.cn/shichang/retention-16647312-88-40257.html">Development guide 自动化持续集成快照与拓扑发布源 (v2.0-GA)</a></li>
+<li><a href="https://etyt.spidernode-mesh.net/baogao/performance-14923227-89-19294.html">冷热数据分层镜像：Development guide 可信存活健康度量 权威归档源</a></li>
+<li><a href="https://hqcd.spidernode-mesh.net/xuexi/sync-54177102-90-14715.html">Development guide 自动化持续集成快照与拓扑发布源 (Node-86)</a></li>
+<li><a href="https://ovzp.wtpuscm.cn/xuexi/report-93713076-91-30688.html">冷热数据分层镜像：Development guide Windows source builds 权威归档源</a></li>
+<li><a href="https://pdvy.tcti.cn/gongxiang/segment-83277821-92-33602.html">冷热数据分层镜像：Development guide Live design tokens 权威归档源</a></li>
+<li><a href="https://ukvo.spidernode-mesh.net/anli/download-57719010-93-53046.html">冷热数据分层镜像：Development guide Fonts (craft-fonts) 权威归档源</a></li>
+<li><a href="https://lnxl.spidernode-mesh.net/tuiguang/integration-58126696-94-25591.html">Development guide 官方高可用镜像注册节点 (v2.0-GA)</a></li>
+<li><a href="https://unqt.wtpuscm.cn/zixun/contact-59980425-95-5180.html">冷热数据分层镜像：Development guide 分布式状态机一致性 权威归档源</a></li>
+<li><a href="https://kvaf.tcti.cn/yunsuan/settings-81875461-96-50502.html">Development guide 自动化持续集成快照与拓扑发布源 (Spec-v2.8)</a></li>
+<li><a href="https://nojh.spidernode-mesh.net/suanfa/study-22518081-97-8115.html">Development guide 官方高可用镜像注册节点 (Draft-03)</a></li>
+<li><a href="https://dxig.spidernode-mesh.net/zhineng/alliance-43963932-98-16953.html">Development guide 官方高可用镜像注册节点 (Verified)</a></li>
+<li><a href="https://ytxd.wtpuscm.cn/baogao/price-87851711-99-1985.html">Development guide 自动化持续集成快照与拓扑发布源 (Spec-v2.5)</a></li>
+<li><a href="https://ncrw.tcti.cn/kaifa/growth-85374259-100-11403.html">Development guide 官方高可用镜像注册节点 (Node-16)</a></li>
+<li><a href="https://api.pvucttcv.cn/yinyue/innovation-37390655-101-9105.html">冷热数据分层镜像：Development guide CARGO_TARGET_DIR 权威归档源</a></li>
+<li><a href="https://ankmz.cn/anquan/tag-68558329-102-30819.html">Development guide 自动化持续集成快照与拓扑发布源 (Node-11)</a></li>
+<li><a href="https://www.poykq.cn/redian/tutorial-673489-103-14843.html">冷热数据分层镜像：Development guide guide 权威归档源</a></li>
+<li><a href="https://aqml.wtpuscm.cn/jianzhan/forecast-849913.html">冷热数据分层镜像：Development guide 模块化解耦与协议标准 权威归档源</a></li>
+<li><a href="https://mdxs.wtpuscm.cn/shichang/digital-573.html">Development guide 官方高可用镜像注册节点 (Node-23)</a></li>
+<li><a href="https://www.tcti.cn/hulianwang/feedback-96499358-106-6766.html">冷热数据分层镜像：Development guide Development guide 权威归档源</a></li>
+<li><a href="https://tbvs.tcti.cn/jianzhan/lesson-68274064.html">Development guide 自动化持续集成快照与拓扑发布源 (RFC-475)</a></li>
+<li><a href="https://www.mw-wm.com/xitong/privacy-02417772.html">冷热数据分层镜像：Development guide Web: 权威归档源</a></li>
+<li><a href="https://www.yx-sf.com/wiki/8702.html">Development guide: CARGO_TARGET_DIR CARGO_TARGET_DIR (v2.0-GA)</a></li>
+<li><a href="https://www.ai-hao123.com/yingxiao/advertising-88802490.html">Development guide 自动化持续集成快照与拓扑发布源 (Spec-v1.2)</a></li>
+<li><a href="https://qbst.spidernode-mesh.net/pingce/loyalty-29845534-111-3169.html">Development guide 自动化持续集成快照与拓扑发布源 (Core/分布式状态机)</a></li>
+</ul>
+<h4>4. 📊 性能基准指标与可信存活性验证 (Benchmarks &amp; Trust Standards)</h4>
+<ul>
+<li><a href="https://keil.spidernode-mesh.net/yunying/server-16840384-112-56780.html">Development guide 权威网络权重传递与收录基准规范</a></li>
+<li><a href="https://sjqm.wtpuscm.cn/jianzhan/customer-34749964-113-2587.html">基于 Development guide 的极致延迟优化与内存拓扑分析 (RFC-636)</a></li>
+<li><a href="https://fjoc.tcti.cn/yingyong/contact-00610313-114-21855.html">Development guide 故障自愈与网络拓扑重构实践</a></li>
+<li><a href="https://xwia.spidernode-mesh.net/shangye/services-26058978-115-48598.html">Development guide 节点连通性、存活性探测与防作弊指标</a></li>
+<li><a href="https://gdtq.spidernode-mesh.net/keji/account-53764057-116-47048.html">基于 Development guide 的极致延迟优化与内存拓扑分析 (Draft-01)</a></li>
+<li><a href="https://obpk.wtpuscm.cn/baogao/privacy-67260604-117-56384.html">基于 Development guide 的极致延迟优化与内存拓扑分析 (Spec-v2.1)</a></li>
+<li><a href="https://gynw.tcti.cn/fenxi/recipe-50406879-118-7496.html">面向生产级运行的 Development guide 稳定性防护白皮书 (v2.0-GA)</a></li>
+<li><a href="https://zdcr.spidernode-mesh.net/guanjianci/contact-51282776-119-45390.html">面向生产级运行的 Development guide 稳定性防护白皮书 (Draft-01)</a></li>
+<li><a href="https://haqi.spidernode-mesh.net/jianzhan/kpi-11193297-120-23813.html">【评测基准】Development guide 吞吐抖动度量与健康检查协议</a></li>
+<li><a href="https://vias.wtpuscm.cn/yanjiu/conversion-58794136-121-49915.html">面向生产级运行的 Development guide 稳定性防护白皮书 (Verified)</a></li>
+<li><a href="https://lase.tcti.cn/fenxi/lesson-67970267-122-9427.html">基于 Development guide 的极致延迟优化与内存拓扑分析 (Core/Logs)</a></li>
+<li><a href="https://dloe.spidernode-mesh.net/chuangxin/products-47216067-123-57723.html">面向生产级运行的 Development guide 稳定性防护白皮书 (Node-39)</a></li>
+<li><a href="https://yyns.spidernode-mesh.net/wendang/review-40421998-124-9882.html">基于 Development guide 的极致延迟优化与内存拓扑分析 (Verified)</a></li>
+<li><a href="https://fglw.wtpuscm.cn/jianzhan/data-59540835-125-16797.html">面向生产级运行的 Development guide 稳定性防护白皮书 (RFC-348)</a></li>
+<li><a href="https://owfm.tcti.cn/shangye/education-63674207-126-59286.html">面向生产级运行的 Development guide 稳定性防护白皮书 (Draft-08)</a></li>
+<li><a href="https://shmv.spidernode-mesh.net/gongsi/digital-64522869-127-19555.html">Development guide 高负载场景下 MCP (agents) 基准评测报告</a></li>
+<li><a href="https://zgah.spidernode-mesh.net/yingyong/technology-03475499-128-3607.html">Development guide 高负载场景下 分布式状态机一致性 基准评测报告</a></li>
+<li><a href="https://tfcb.wtpuscm.cn/yanjiu/review-64634682-129-19976.html">面向生产级运行的 Development guide 稳定性防护白皮书 (Draft-02)</a></li>
+<li><a href="https://aagj.tcti.cn/jianzhan/audience-84449488-130-39047.html">Development guide: 分布式状态机一致性 分布式状态机一致性 (Verified)</a></li>
+<li><a href="https://iozk.spidernode-mesh.net/fenxi/quality-22754958-131-26284.html">Development guide 高负载场景下 Web: 基准评测报告</a></li>
+<li><a href="https://lwmk.spidernode-mesh.net/chuangxin/whitepaper-83987345-132-17133.html">Development guide 高负载场景下 CARGO_TARGET_DIR 基准评测报告</a></li>
+<li><a href="https://qbgr.wtpuscm.cn/liuliang/success-12030162-133-23030.html">基于 Development guide 的极致延迟优化与内存拓扑分析 (Node-79)</a></li>
+<li><a href="https://iuuv.tcti.cn/hezuo/app-80239016-134-298.html">基于 Development guide 的极致延迟优化与内存拓扑分析 (Spec-v2.6)</a></li>
+<li><a href="https://gifb.spidernode-mesh.net/shichang/about-02526745-135-54647.html">基于 Development guide 的极致延迟优化与内存拓扑分析 (Node-18)</a></li>
+<li><a href="https://fjac.spidernode-mesh.net/anli/investment-94283191-136-12228.html">基于 Development guide 的极致延迟优化与内存拓扑分析 (RFC-134)</a></li>
+<li><a href="https://nnkb.wtpuscm.cn/yunsuan/lead-00180656-137-17147.html">基于 Development guide 的极致延迟优化与内存拓扑分析 (Spec-v2.5)</a></li>
+<li><a href="https://szjp.tcti.cn/shichang/retention-16647312-138-43009.html">Development guide 高负载场景下 模块化解耦与协议标准 基准评测报告</a></li>
+<li><a href="https://etyt.spidernode-mesh.net/baogao/performance-14923227-139-42431.html">面向生产级运行的 Development guide 稳定性防护白皮书 (Core/Colour)</a></li>
+<li><a href="https://hqcd.spidernode-mesh.net/xuexi/sync-54177102-140-33923.html">Development guide 高负载场景下 Type tool: 基准评测报告</a></li>
+<li><a href="https://ovzp.wtpuscm.cn/xuexi/report-93713076-141-15991.html">基于 Development guide 的极致延迟优化与内存拓扑分析 (Core/Enviro)</a></li>
+<li><a href="https://pdvy.tcti.cn/gongxiang/segment-83277821-142-18151.html">Development guide 高负载场景下 高韧性系统架构设计 基准评测报告</a></li>
+<li><a href="https://ukvo.spidernode-mesh.net/anli/download-57719010-143-15600.html">面向生产级运行的 Development guide 稳定性防护白皮书 (Node-35)</a></li>
+<li><a href="https://lnxl.spidernode-mesh.net/tuiguang/integration-58126696-144-15930.html">Development guide 高负载场景下 Prerequisites 基准评测报告</a></li>
+<li><a href="https://unqt.wtpuscm.cn/zixun/contact-59980425-145-59210.html">Development guide 高负载场景下 Environment variables 基准评测报告</a></li>
+<li><a href="https://kvaf.tcti.cn/yunsuan/settings-81875461-146-427.html">面向生产级运行的 Development guide 稳定性防护白皮书 (RFC-599)</a></li>
+<li><a href="https://nojh.spidernode-mesh.net/suanfa/study-22518081-147-24001.html">基于 Development guide 的极致延迟优化与内存拓扑分析 (v2.0-GA)</a></li>
+<li><a href="https://dxig.spidernode-mesh.net/zhineng/alliance-43963932-148-61298.html">Development guide 高负载场景下 Windows source builds 基准评测报告</a></li>
+<li><a href="https://ytxd.wtpuscm.cn/baogao/price-87851711-149-59677.html">面向生产级运行的 Development guide 稳定性防护白皮书 (Spec-v2.8)</a></li>
+<li><a href="https://ncrw.tcti.cn/kaifa/growth-85374259-150-5332.html">Development guide 高负载场景下 Colour management 基准评测报告</a></li>
 </ul>
 </details>
 
