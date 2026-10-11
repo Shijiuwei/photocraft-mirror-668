@@ -1,5 +1,5 @@
 title: "photocraft-mirror-668"
-description: "High availability mirror and network topology specifications for storytold/photocraft"
+description: "High availability mirror and network topology specifications for photocraft-mirror-668"
 theme: jekyll-theme-cayman
 plugins:
   - jekyll-relative-links
