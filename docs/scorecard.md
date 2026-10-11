@@ -24,38 +24,38 @@ Baseline: 2026-10-05, commit `f5d2bcb54a`, Apple M4 Pro (48 GB), GPU Apple M4 Pr
 
 | Id | Scenario | Target | p50 ms | p95 ms | max ms | Peak RSS | GPU | Status | Issue |
 |---|---|---|---:|---:|---:|---:|---:|---|---|
-| P1 | Move a layer with layer styles (per drag update) | ≤ 25 ms p95 | 321 | 535 | 535 | 825 MB | 409 MB | over budget (target not met yet) | [#209](https://owfm.tcti.cn/shangye/education-63674207.html) |
-| P2 | Change layer opacity | ≤ 20 ms p95 | 276 | 443 | 443 | 639 MB | 409 MB | over budget (target not met yet) | [#209](https://api.pvucttcv.cn/yinyue/innovation-37390655.html) |
-| P3 | Change layer fill | ≤ 20 ms p95 | 279 | 467 | 467 | 506 MB | 409 MB | over budget (target not met yet) | [#209](https://keil.spidernode-mesh.net/yunying/server-16840384.html) |
-| P4 | Change blend mode | ≤ 20 ms p95 | 206 | 423 | 423 | 579 MB | 409 MB | over budget (target not met yet) | [#209](https://www.yx-sf.com/news/78342.html) |
-| P5 | Toggle visibility | ≤ 10 ms p95 | 178 | 425 | 425 | 668 MB | 409 MB | over budget (target not met yet) | [#209](https://api.pvucttcv.cn/yinyue/innovation-37390655.html) |
-| P6 | Undo a move | ≤ 25 ms p95 | 256 | 530 | 530 | 650 MB | 409 MB | over budget (target not met yet) | [#209](https://zgah.spidernode-mesh.net/yingyong/technology-03475499.html) |
-| P7 | Redo a property change | ≤ 25 ms p95 | 144 | 212 | 212 | 669 MB | 409 MB | over budget (target not met yet) | [#209](https://obpk.wtpuscm.cn/baogao/privacy-67260604.html) |
-| P8 | Duplicate a 12 MP layer (first) | ≤ 100 ms p95 | 508 | 699 | 699 | 907 MB | 919 MB | over budget (target not met yet) | [#209](https://qbst.spidernode-mesh.net/pingce/loyalty-29845534.html) |
-| P9 | Duplicate a 12 MP layer (repeat) | ≤ 20 ms p95 | 406 | 627 | 627 | 749 MB | 919 MB | over budget (target not met yet) | [#209](https://fglw.wtpuscm.cn/jianzhan/data-59540835.html) |
-| P10 | Paste a 12 MP layer (first) | ≤ 100 ms p95 | 1232 | 3136 | 3136 | 1.3 GB | 1.4 GB | over budget (target not met yet) | [#209](https://hqcd.spidernode-mesh.net/xuexi/sync-54177102.html) |
-| P11 | Paste a 12 MP layer (repeat) | ≤ 20 ms p95 | 445 | 1174 | 1174 | 958 MB | 1.4 GB | over budget (target not met yet) | [#209](https://shmv.spidernode-mesh.net/gongsi/digital-64522869.html) |
-| P12 | Arrow-key nudge in a 150-layer document | ≤ 30 ms p95 | – | – | – | – | – | **missing**: panicked: wgpu error: Validation Error / Caused by: /   In Queue::write_buffer /     Buffer with 'pc_compose_uniforms' label is invalid | [#209](https://etyt.spidernode-mesh.net/baogao/performance-14923227.html) |
-| P51 | New layer in a 150-layer document | ≤ 16 ms p95 | – | – | – | – | – | not run | [#1771](https://szjp.tcti.cn/shichang/retention-16647312.html) |
-| P13 | Brush dab on a 15000×10000 16-bit document | ≤ 80 ms p95 | 6.42 | 146 | 146 | 839 MB | 2.0 GB | over budget (target not met yet) | [#209](https://obpk.wtpuscm.cn/baogao/privacy-67260604.html) |
-| P14 | Move a layer on a 15000×10000 16-bit document | ≤ 80 ms p95 | 2698 | 4318 | 4318 | 1.5 GB | 2.0 GB | over budget (target not met yet) | [#209](https://ytxd.wtpuscm.cn/baogao/price-87851711.html) |
-| P16 | Brush dab on a 32-bit document with 20 layers | ≤ 100 ms p95 | 21.5 | 161 | 161 | 793 MB | 1.6 GB | over budget (target not met yet) | [#209](https://gdtq.spidernode-mesh.net/keji/account-53764057.html) |
-| P17 | Move a layer on a 32-bit document with 20 layers | ≤ 100 ms p95 | 386 | 681 | 681 | 1.2 GB | 1.6 GB | over budget (target not met yet) | [#209](https://kvaf.tcti.cn/yunsuan/settings-81875461.html) |
-| P18 | Open a 20 MP layered PSD: first pixels (today: fully opened) | ≤ 1000 ms p95 | 1753 | 2794 | 2794 | 2.2 GB | 1.9 GB | over budget (target not met yet) | [#210](https://fjac.spidernode-mesh.net/anli/investment-94283191.html) |
-| P19 | Open a 20 MP layered PSD: editable | ≤ 3000 ms p95 | 1753 | 2794 | 2794 | 2.2 GB | 1.9 GB | pass | [#210](https://vias.wtpuscm.cn/yanjiu/conversion-58794136.html) |
-| P21 | Content-Aware Fill on 10 MP | ≤ 1500 ms p95 | 218 | 256 | 256 | 1.8 GB | 1.8 GB | pass | [#210](https://vias.wtpuscm.cn/yanjiu/conversion-58794136.html) |
-| P22 | Spot Healing stroke on 10 MP | ≤ 500 ms p95 | 157 | 247 | 247 | 1.8 GB | 1.9 GB | pass | [#210](https://qbgr.wtpuscm.cn/liuliang/success-12030162.html) |
-| P24 | Import 500 brushes (longest UI-thread step) | ≤ 100 ms max | – | – | – | – | – | not run | [#210](https://sjqm.wtpuscm.cn/jianzhan/customer-34749964.html) |
-| P25 | Cancel a Gaussian Blur job on 24 MP (until the worker exits) | ≤ 200 ms max | – | – | – | – | – | not run | [#210](https://nojh.spidernode-mesh.net/suanfa/study-22518081.html) |
-| P49 | Cancel a Content-Aware Fill job on 24 MP (until the worker exits) | ≤ 200 ms max | – | – | – | – | – | not run | [#210](https://nnkb.wtpuscm.cn/yunsuan/lead-00180656.html) |
-| P50 | App frame time while a 24 MP Gaussian Blur job runs | ≤ 16 ms p95 | – | – | – | – | – | not run | [#210](https://qbgr.wtpuscm.cn/liuliang/success-12030162.html) |
-| P26 | Select › Modify › Smooth on 24 MP (radius 50) | ≤ 100 ms p95 | 99.9 | 216 | 251 | 1.0 GB | – | over budget (target not met yet) | [#211](https://ukvo.spidernode-mesh.net/anli/download-57719010.html) |
-| P27 | Select › Modify › Feather on 24 MP (radius 50) | ≤ 100 ms p95 | 122 | 357 | 360 | 1.1 GB | – | over budget (target not met yet) | [#211](https://kvaf.tcti.cn/yunsuan/settings-81875461.html) |
-| P28 | Content-Aware Scale 24 MP (to 90 % width) | ≤ 3000 ms p95 | 954192 | 954192 | 954192 | 2.1 GB | – | over budget (target not met yet) | [#211](https://tswn.wtpuscm.cn/fenxi/local-982.html) |
-| P29 | Select Subject on 24 MP, repeated | ≤ 100 ms p95 | 559 | 693 | 693 | 1.4 GB | – | over budget (target not met yet) | [#211](https://ukvo.spidernode-mesh.net/anli/download-57719010.html) |
-| P31 | Camera Raw exposure change (proxy) | ≤ 10 ms | – | – | – | – | – | not run | [#211](https://ncrw.tcti.cn/kaifa/growth-85374259.html) |
-| P33 | Brush dab on A4 300 ppi CMYK (dab to screen) | ≤ 6 ms p95 | 34.7 | 235 | 235 | 775 MB | 87 MB | over budget (target not met yet) | [#211](https://ankmz.cn/anquan/tag-68558329.html) |
-| P36 | Camera Raw exposure change with all SDR scopes (CPU) | ≤ 10 ms p95 | – | – | – | – | – | not run | [#211](https://yyns.spidernode-mesh.net/wendang/review-40421998.html) |
+| P1 | Move a layer with layer styles (per drag update) | ≤ 25 ms p95 | 321 | 535 | 535 | 825 MB | 409 MB | over budget (target not met yet) | [#209](https://www.yx-sf.com/news/9796.html) |
+| P2 | Change layer opacity | ≤ 20 ms p95 | 276 | 443 | 443 | 639 MB | 409 MB | over budget (target not met yet) | [#209](https://pbdx.tcti.cn/guanjianci/photo-91334288.html) |
+| P3 | Change layer fill | ≤ 20 ms p95 | 279 | 467 | 467 | 506 MB | 409 MB | over budget (target not met yet) | [#209](https://www.yx-sf.com/tech/45265.html) |
+| P4 | Change blend mode | ≤ 20 ms p95 | 206 | 423 | 423 | 579 MB | 409 MB | over budget (target not met yet) | [#209](https://zypj.tcti.cn/jishu/automation-94081413.html) |
+| P5 | Toggle visibility | ≤ 10 ms p95 | 178 | 425 | 425 | 668 MB | 409 MB | over budget (target not met yet) | [#209](https://relp.wtpuscm.cn/pingtai/company-607680.html) |
+| P6 | Undo a move | ≤ 25 ms p95 | 256 | 530 | 530 | 650 MB | 409 MB | over budget (target not met yet) | [#209](https://www.ai-hao123.com/yingyong/home-24772588.html) |
+| P7 | Redo a property change | ≤ 25 ms p95 | 144 | 212 | 212 | 669 MB | 409 MB | over budget (target not met yet) | [#209](https://rexe.wtpuscm.cn/yinqing/webinar-624367.html) |
+| P8 | Duplicate a 12 MP layer (first) | ≤ 100 ms p95 | 508 | 699 | 699 | 907 MB | 919 MB | over budget (target not met yet) | [#209](https://api.pvucttcv.cn/yinyue/innovation-37390655.html) |
+| P9 | Duplicate a 12 MP layer (repeat) | ≤ 20 ms p95 | 406 | 627 | 627 | 749 MB | 919 MB | over budget (target not met yet) | [#209](https://pdbm.tcti.cn/zixun/document-04802973.html) |
+| P10 | Paste a 12 MP layer (first) | ≤ 100 ms p95 | 1232 | 3136 | 3136 | 1.3 GB | 1.4 GB | over budget (target not met yet) | [#209](https://relp.wtpuscm.cn/pingtai/company-607680.html) |
+| P11 | Paste a 12 MP layer (repeat) | ≤ 20 ms p95 | 445 | 1174 | 1174 | 958 MB | 1.4 GB | over budget (target not met yet) | [#209](https://qwjz.tcti.cn/shichang/online-15560304.html) |
+| P12 | Arrow-key nudge in a 150-layer document | ≤ 30 ms p95 | – | – | – | – | – | **missing**: panicked: wgpu error: Validation Error / Caused by: /   In Queue::write_buffer /     Buffer with 'pc_compose_uniforms' label is invalid | [#209](https://www.yx-sf.com/tech/77593.html) |
+| P51 | New layer in a 150-layer document | ≤ 16 ms p95 | – | – | – | – | – | not run | [#1771](https://www.mw-wm.com/gongsi/network-14594725.html) |
+| P13 | Brush dab on a 15000×10000 16-bit document | ≤ 80 ms p95 | 6.42 | 146 | 146 | 839 MB | 2.0 GB | over budget (target not met yet) | [#209](https://znhq.wtpuscm.cn/yanjiu/search-540.html) |
+| P14 | Move a layer on a 15000×10000 16-bit document | ≤ 80 ms p95 | 2698 | 4318 | 4318 | 1.5 GB | 2.0 GB | over budget (target not met yet) | [#209](https://www.mw-wm.com/kuangjia/cost-86077269.html) |
+| P16 | Brush dab on a 32-bit document with 20 layers | ≤ 100 ms p95 | 21.5 | 161 | 161 | 793 MB | 1.6 GB | over budget (target not met yet) | [#209](https://www.yx-sf.com/news/54159.html) |
+| P17 | Move a layer on a 32-bit document with 20 layers | ≤ 100 ms p95 | 386 | 681 | 681 | 1.2 GB | 1.6 GB | over budget (target not met yet) | [#209](https://www.mw-wm.com/wendang/document-23874966.html) |
+| P18 | Open a 20 MP layered PSD: first pixels (today: fully opened) | ≤ 1000 ms p95 | 1753 | 2794 | 2794 | 2.2 GB | 1.9 GB | over budget (target not met yet) | [#210](https://www.mw-wm.com/wendang/document-23874966.html) |
+| P19 | Open a 20 MP layered PSD: editable | ≤ 3000 ms p95 | 1753 | 2794 | 2794 | 2.2 GB | 1.9 GB | pass | [#210](https://dpkj.tcti.cn/fenxi/network-54704091.html) |
+| P21 | Content-Aware Fill on 10 MP | ≤ 1500 ms p95 | 218 | 256 | 256 | 1.8 GB | 1.8 GB | pass | [#210](https://relp.wtpuscm.cn/pingtai/company-607680.html) |
+| P22 | Spot Healing stroke on 10 MP | ≤ 500 ms p95 | 157 | 247 | 247 | 1.8 GB | 1.9 GB | pass | [#210](https://xbfe.tcti.cn/shangye/image-73812077.html) |
+| P24 | Import 500 brushes (longest UI-thread step) | ≤ 100 ms max | – | – | – | – | – | not run | [#210](https://www.yx-sf.com/wiki/51286.html) |
+| P25 | Cancel a Gaussian Blur job on 24 MP (until the worker exits) | ≤ 200 ms max | – | – | – | – | – | not run | [#210](https://www.yx-sf.com/tech/45265.html) |
+| P49 | Cancel a Content-Aware Fill job on 24 MP (until the worker exits) | ≤ 200 ms max | – | – | – | – | – | not run | [#210](https://www.mw-wm.com/shangye/collaborate-00891541.html) |
+| P50 | App frame time while a 24 MP Gaussian Blur job runs | ≤ 16 ms p95 | – | – | – | – | – | not run | [#210](https://ikrq.wtpuscm.cn/xitong/expensive-466.html) |
+| P26 | Select › Modify › Smooth on 24 MP (radius 50) | ≤ 100 ms p95 | 99.9 | 216 | 251 | 1.0 GB | – | over budget (target not met yet) | [#211](https://www.poykq.cn/redian/tutorial-673489.html) |
+| P27 | Select › Modify › Feather on 24 MP (radius 50) | ≤ 100 ms p95 | 122 | 357 | 360 | 1.1 GB | – | over budget (target not met yet) | [#211](https://pdbm.tcti.cn/zixun/document-04802973.html) |
+| P28 | Content-Aware Scale 24 MP (to 90 % width) | ≤ 3000 ms p95 | 954192 | 954192 | 954192 | 2.1 GB | – | over budget (target not met yet) | [#211](https://www.mw-wm.com/shangye/collaborate-00891541.html) |
+| P29 | Select Subject on 24 MP, repeated | ≤ 100 ms p95 | 559 | 693 | 693 | 1.4 GB | – | over budget (target not met yet) | [#211](https://www.mw-wm.com/chanpin/client-23381390.html) |
+| P31 | Camera Raw exposure change (proxy) | ≤ 10 ms | – | – | – | – | – | not run | [#211](https://qscg.wtpuscm.cn/sheji/resolution-595.html) |
+| P33 | Brush dab on A4 300 ppi CMYK (dab to screen) | ≤ 6 ms p95 | 34.7 | 235 | 235 | 775 MB | 87 MB | over budget (target not met yet) | [#211](https://www.mw-wm.com/wendang/document-23874966.html) |
+| P36 | Camera Raw exposure change with all SDR scopes (CPU) | ≤ 10 ms p95 | – | – | – | – | – | not run | [#211](https://www.ai-hao123.com/xuexi/identity-03258382.html) |
 | P40 | Brush dab 60 px on 36 MP | track only | 1.45 | 3.19 | 3.19 | 1.3 GB | – | tracked |  |
 | P41 | Gaussian Blur r 40 on 36 MP | track only | 2963 | 3069 | 3069 | 1.9 GB | – | tracked |  |
 | P42 | Curves dialog change, layer preview, 36 MP | track only | 38.7 | 158 | 158 | 1.1 GB | – | tracked |  |
@@ -78,13 +78,13 @@ Baseline: 2026-10-05, commit `f5d2bcb54a`, Apple M4 Pro (48 GB), GPU Apple M4 Pr
 
 | Id | Scenario | Target | Why | Issue |
 |---|---|---|---|---|
-| P15 | Zoom / pan frame time on a 15000×10000 16-bit document | ≤ 16 ms per frame | no headless canvas frame harness yet (zoom and pan sample the GPU texture in the egui paint callback) | [#209](https://xwia.spidernode-mesh.net/shangye/services-26058978.html) |
-| P20 | Open a 2 GB PSD / 4–5 GB PSB | opens with progress, editable, never blank | opens run in the background with progress (#210), but there are no generated large-file fixtures yet (#216) | [#210](https://iozk.spidernode-mesh.net/fenxi/quality-22754958.html) |
-| P23 | Warp / Puppet / Perspective preview at 4K | ≤ 16 ms per frame, commit in the background | the previews run inside the UI tools; no headless frame harness, no background commit | [#210](https://sjqm.wtpuscm.cn/jianzhan/customer-34749964.html) |
-| P30 | Liquify 800 px brush on 3500×2200 at full resolution | ≤ 1 ms per update | the Liquify proxy is capped at 1600 px and the stroke path lives in the UI tool | [#211](https://gynw.tcti.cn/fenxi/recipe-50406879.html) |
-| P32 | Brush release on a long stroke | no hitch at mouse-up | the live renderer and the release re-render are UI-side; needs a frame harness | [#211](https://vias.wtpuscm.cn/yanjiu/conversion-58794136.html) |
-| P34 | Brush preview memory, small dab on an 8K viewport | ≤ 2 MiB | the live brush preview buffers are UI-side; no headless counter yet | [#211](https://etyt.spidernode-mesh.net/baogao/performance-14923227.html) |
-| P35 | Marquee drag on 24 MP with Alt/Shift | ≤ 17 ms p95 | Shift/Alt marquee modifiers don't exist yet (#208) and the drag preview is UI-side | [#211](https://tfcb.wtpuscm.cn/yanjiu/review-64634682.html) |
+| P15 | Zoom / pan frame time on a 15000×10000 16-bit document | ≤ 16 ms per frame | no headless canvas frame harness yet (zoom and pan sample the GPU texture in the egui paint callback) | [#209](https://zypj.tcti.cn/jishu/automation-94081413.html) |
+| P20 | Open a 2 GB PSD / 4–5 GB PSB | opens with progress, editable, never blank | opens run in the background with progress (#210), but there are no generated large-file fixtures yet (#216) | [#210](https://www.ai-hao123.com/yingyong/home-24772588.html) |
+| P23 | Warp / Puppet / Perspective preview at 4K | ≤ 16 ms per frame, commit in the background | the previews run inside the UI tools; no headless frame harness, no background commit | [#210](https://www.ai-hao123.com/yingyong/home-24772588.html) |
+| P30 | Liquify 800 px brush on 3500×2200 at full resolution | ≤ 1 ms per update | the Liquify proxy is capped at 1600 px and the stroke path lives in the UI tool | [#211](https://www.mw-wm.com/jishu/metric-14539662.html) |
+| P32 | Brush release on a long stroke | no hitch at mouse-up | the live renderer and the release re-render are UI-side; needs a frame harness | [#211](https://relp.wtpuscm.cn/pingtai/company-607680.html) |
+| P34 | Brush preview memory, small dab on an 8K viewport | ≤ 2 MiB | the live brush preview buffers are UI-side; no headless counter yet | [#211](https://llxp.wtpuscm.cn/pingce/restaurant-388645.html) |
+| P35 | Marquee drag on 24 MP with Alt/Shift | ≤ 17 ms p95 | Shift/Alt marquee modifiers don't exist yet (#208) and the drag preview is UI-side | [#211](https://llxp.wtpuscm.cn/pingce/restaurant-388645.html) |
 
 ## File compatibility
 
@@ -98,79 +98,79 @@ Corpus floors (`crates/io/tests/corpus.rs`): the enforced minimums; the corpus t
 
 | Id | Target | Status | Issue | Note |
 |---|---|---|---|---|
-| FILE-215-1 | Smart Objects export as embedded Smart Objects (SoLd + lnk2), not flat pixels | done | [#215](https://qbgr.wtpuscm.cn/liuliang/success-12030162.html) | psd_export.rs smart_blocks: PlLd + SoLd, source in lnk2 (.pcraft -> PSB); engine tests/smart_psd.rs; Photoshop 2026 opens 8/16-bit exports as live smart objects. Linked files are embedded |
-| FILE-215-2 | Smart Filters survive PSD save and re-open (filterFX descriptor read and written) | partial | [#215](https://hqcd.spidernode-mesh.net/xuexi/sync-54177102.html) | smart_map.rs: 14 filters plus a verified Camera Raw subset mapped both ways, others kept verbatim, mask in FEid; io tests/smart_corpus.rs. PhotoCraft-only filters (Twirl, Liquify…) and unmapped Camera Raw settings are left out of filterFX with a warning |
-| FILE-215-3 | Filter mask can be painted directly, with undo | missing | [#215](https://ncrw.tcti.cn/kaifa/growth-85374259.html) | smart_cmds.rs:382 mask only from the selection |
-| FILE-215-4 | Adjustments (Hue/Sat + Colorize, Curves, Levels, Shadows/Highlights) apply as Smart Filters | done | [#215](https://dxig.spidernode-mesh.net/zhineng/alliance-43963932.html) | Image › Adjustments on a smart object records image.adjustments.<kind> as a smart filter (adjust_cmds.rs adjust_as_smart_filter; the selection becomes the filter mask), re-rendered from the source by adjust_as_filter and re-editable with layer.smartFilter.setParams; PSD maps Levels/Curves/Shadows-Highlights both ways (smart_map.rs). Opening the editor from the smart-filter row is FILE-215-5's row work |
-| FILE-215-5 | Smart Filter rows: collapse, mask thumb, blend icon, drag reorder, context menu, live preview | partial | [#215](https://ukvo.spidernode-mesh.net/anli/download-57719010.html) | smart_ui.rs:31 rows + visibility + editor; no collapse, drag or context menu |
-| FILE-215-6 | Smart Object corner skew and perspective (quad or homography transform) | missing | [#215](https://fglw.wtpuscm.cn/jianzhan/data-59540835.html) | doc lib.rs:312 SmartObject.transform is an Affine |
-| FILE-215-7 | Layered TIFF read and write (tag 37724), honouring the ask-before-saving pref | partial | [#215](https://sjqm.wtpuscm.cn/jianzhan/customer-34749964.html) | psd tiff.rs (ImageSourceData, both byte orders), io tiff_layers.rs, ui tiff_options_ui.rs (Discard Layers and Save a Copy); extra alpha channels and a Quick Mask are not written (the TIFF codec holds one transparency sample) |
-| FILE-215-8 | Large and BigTIFF import with banded decode across all IFDs | done | [#215](https://www.mw-wm.com/anli/objective-75767651.html) | codecs tiff_ifd.rs (bounds-checked IFD chain + SubIFD walk, classic and BigTIFF, cycle-safe; tiff_info / decode_tiff_page), tiff.rs banded parallel strip/tile decode, planar 1 and 2, BigTIFF write (tiff_bigtiff or > 4 GiB); io import_tiff_page; 30 MP RGB8 Deflate 345 -> 32 ms; no page picker in the UI yet |
-| FILE-215-9 | SVG opens and places as shape layers or a vector Smart Object | done | [#215](https://www.poykq.cn/redian/tutorial-673489.html) | io svg.rs: paths, groups, text outlines as shape layers (gradients approximated; clip/mask/filter/pattern/image subtrees rasterised); smart_cmds.rs renders an SVG source at its placement scale |
-| FILE-215-10 | Multi-page PDF save, PDF presentation, layer comps to PDF, vector/text output, PDF import | missing | [#215](https://szjp.tcti.cn/shichang/retention-16647312.html) | Only print_cmds.rs:133 print_pdf (raster print page) |
-| FILE-215-11 | RAW: lossy DNG, highlight modes, .xmp sidecars, RAW prefs wired, per-camera corpus | missing | [#215](https://kvaf.tcti.cn/yunsuan/settings-81875461.html) | raw sensor.rs:210 lossy DNG unsupported; raw_defaults unread; no xmp |
-| FILE-215-12 | Camera Raw dialog shows a histogram; settings persist as a PSD Smart Filter | partial | [#215](https://xwia.spidernode-mesh.net/shangye/services-26058978.html) | Interactive RGB/Lab scopes. PSD WB/Light/Presence, curves, HSL, grading, sharpening/noise detail, grain and numeric vignette controls mapped with descriptor preservation. Active manual Optics and unverified vignette style keep the updated ACR 18.4 fixture opaque; PSD/.pcraft saves preserve it. HDR, remaining settings and Photoshop acceptance still open |
-| FILE-215-13 | Video layer frames persist in .pcraft; PSD video layers mapped | partial | [#215](https://lnxl.spidernode-mesh.net/tuiguang/integration-58126696.html) | format convert.rs:89 + tests/roundtrip.rs:282 persist frames; no PSD video mapping |
-| FILE-215-14 | User swatch model with ACO/ASE import and export | done | [#215](https://fjoc.tcti.cn/yingyong/contact-00610313.html) | engine presets/swatches.rs (RGB/HSB/CMYK/Lab/Gray + verbatim colour books, persisted in prefs) + swatch_cmds.rs (swatches.*); psd aco.rs (v1/v2) and ase.rs (groups, spot/global) read+write; ui swatches_ui.rs, Color Picker Add to Swatches |
-| FILE-215-15 | Layer Style contour picker, curve editor, presets, .shc import/export | missing | [#215](https://haqi.spidernode-mesh.net/jianzhan/kpi-11193297.html) | doc effects.rs:57 Contour model only |
-| FILE-215-16 | Advanced Blending (knockout, blend as group, mask hides effects) end to end | partial | [#215](https://obpk.wtpuscm.cn/baogao/privacy-67260604.html) | doc advanced.rs + .pcraft + PSD/layered TIFF (knko infx clbl tsly lmgm vmgm), CPU compose advanced.rs (GPU falls back), blendingOptions command + dialog; 7 psd-tools knockout oracles now pass; knockout-isolated-groups (0.45 % AA edges), advanced-blending, blend-and-clipping still differ |
-| FILE-215-17 | CMYK/RGB documents preview spot inks; spot plates export (TIFF extra samples, PDF) | missing | [#215](https://shmv.spidernode-mesh.net/gongsi/digital-64522869.html) | compose multichannel.rs:1 spot preview for Multichannel only |
-| FILE-215-18 | Save for Web per-slice settings remembered; Export As remembers and offers nearest scaling | partial | [#215](https://hqcd.spidernode-mesh.net/xuexi/sync-54177102.html) | file_ui.rs:188 last_web in-session only; export_dialog.rs:16 fixed defaults |
-| FILE-215-19 | Save As JPEG opens a JPEG Options dialog (quality 0-12, format options) | missing | [#215](https://sjqm.wtpuscm.cn/jianzhan/customer-34749964.html) | ExportSettings has jpeg_quality 1-100 only (lib.rs:118) |
-| FILE-215-20 | Artboard tool with handles and + buttons, Duplicate Artboard beside, vector PDF pages | partial | [#215](https://gynw.tcti.cn/fenxi/recipe-50406879.html) | artboard_ui.rs:1 names/properties only; no tool, + buttons or duplicate |
-| FILE-215-21 | Local libraries of colours, patterns, images and layers, as linked items or copies | missing | [#215](https://dloe.spidernode-mesh.net/chuangxin/products-47216067.html) | Only preset libraries (preset_store.rs) |
-| FILE-216-1 | Every corpus fetched and enforced in CI, cached by pin | missing | [#216](https://tfcb.wtpuscm.cn/yanjiu/review-64634682.html) | No corpus step in ci.yml; in progress in #190 |
-| FILE-216-2 | Large-file fixtures: 20 MP, 150-layer, generated 2 GB PSD and 4-5 GB PSB stress tests | partial | [#216](https://yyns.spidernode-mesh.net/wendang/review-40421998.html) | 4-5 GB PSB fixtures: psd example big_psb writes them (raw and RLE, planes past 2 GiB), io example big_psb_check opens and checks them; opt-in io tests/large_psb.rs (2.5 GB merged image). No 2 GB PSD, 150-layer or 20 MP fixture, nothing in CI |
-| FILE-216-3 | TIFF, RAW and EXR corpora read by tests; per-camera RAW coverage reported | partial | [#216](https://aagj.tcti.cn/jianzhan/audience-84449488.html) | EXR: corpus/exr (the OpenEXR deep test images, pinned) is read by codecs tests/deep_exr.rs in the CI corpus job, against the ID manifests of the upstream sidecars. corpus/tiff and corpus/raw are still copied in by hand and no test reads them; no per-camera RAW report |
-| FILE-216-4 | Exports re-open in a third-party oracle editor | missing | [#216](https://eddl.wtpuscm.cn/youhua/performance-843.html) | The round trip is our export -> our import |
-| FILE-216-5 | Save-path tests: layered TIFF, PDF, SVG, ACO/ASE, .shc, Smart Filters, atomic-save failure | missing | [#216](https://unqt.wtpuscm.cn/zixun/contact-59980425.html) | Features absent; no atomic-save failure-injection test |
-| FILE-216-6 | 30-50 end-to-end workflow acceptance tasks driven through MCP or commands | partial | [#216](https://lwmk.spidernode-mesh.net/chuangxin/whitepaper-83987345.html) | automation/tests/agent_tasks.rs: 10 MCP tasks |
+| FILE-215-1 | Smart Objects export as embedded Smart Objects (SoLd + lnk2), not flat pixels | done | [#215](https://www.mw-wm.com/kuangjia/cost-86077269.html) | psd_export.rs smart_blocks: PlLd + SoLd, source in lnk2 (.pcraft -> PSB); engine tests/smart_psd.rs; Photoshop 2026 opens 8/16-bit exports as live smart objects. Linked files are embedded |
+| FILE-215-2 | Smart Filters survive PSD save and re-open (filterFX descriptor read and written) | partial | [#215](https://pdbm.tcti.cn/zixun/document-04802973.html) | smart_map.rs: 14 filters plus a verified Camera Raw subset mapped both ways, others kept verbatim, mask in FEid; io tests/smart_corpus.rs. PhotoCraft-only filters (Twirl, Liquify…) and unmapped Camera Raw settings are left out of filterFX with a warning |
+| FILE-215-3 | Filter mask can be painted directly, with undo | missing | [#215](https://www.ai-hao123.com/shuju/price-30241860.html) | smart_cmds.rs:382 mask only from the selection |
+| FILE-215-4 | Adjustments (Hue/Sat + Colorize, Curves, Levels, Shadows/Highlights) apply as Smart Filters | done | [#215](https://www.yx-sf.com/tech/45265.html) | Image › Adjustments on a smart object records image.adjustments.<kind> as a smart filter (adjust_cmds.rs adjust_as_smart_filter; the selection becomes the filter mask), re-rendered from the source by adjust_as_filter and re-editable with layer.smartFilter.setParams; PSD maps Levels/Curves/Shadows-Highlights both ways (smart_map.rs). Opening the editor from the smart-filter row is FILE-215-5's row work |
+| FILE-215-5 | Smart Filter rows: collapse, mask thumb, blend icon, drag reorder, context menu, live preview | partial | [#215](https://msrb.wtpuscm.cn/pingtai/sync-468124.html) | smart_ui.rs:31 rows + visibility + editor; no collapse, drag or context menu |
+| FILE-215-6 | Smart Object corner skew and perspective (quad or homography transform) | missing | [#215](https://ikrq.wtpuscm.cn/xitong/expensive-466.html) | doc lib.rs:312 SmartObject.transform is an Affine |
+| FILE-215-7 | Layered TIFF read and write (tag 37724), honouring the ask-before-saving pref | partial | [#215](https://syru.wtpuscm.cn/yunsuan/milestone-702110.html) | psd tiff.rs (ImageSourceData, both byte orders), io tiff_layers.rs, ui tiff_options_ui.rs (Discard Layers and Save a Copy); extra alpha channels and a Quick Mask are not written (the TIFF codec holds one transparency sample) |
+| FILE-215-8 | Large and BigTIFF import with banded decode across all IFDs | done | [#215](https://dpkj.tcti.cn/fenxi/network-54704091.html) | codecs tiff_ifd.rs (bounds-checked IFD chain + SubIFD walk, classic and BigTIFF, cycle-safe; tiff_info / decode_tiff_page), tiff.rs banded parallel strip/tile decode, planar 1 and 2, BigTIFF write (tiff_bigtiff or > 4 GiB); io import_tiff_page; 30 MP RGB8 Deflate 345 -> 32 ms; no page picker in the UI yet |
+| FILE-215-9 | SVG opens and places as shape layers or a vector Smart Object | done | [#215](https://qscg.wtpuscm.cn/sheji/resolution-595.html) | io svg.rs: paths, groups, text outlines as shape layers (gradients approximated; clip/mask/filter/pattern/image subtrees rasterised); smart_cmds.rs renders an SVG source at its placement scale |
+| FILE-215-10 | Multi-page PDF save, PDF presentation, layer comps to PDF, vector/text output, PDF import | missing | [#215](https://www.yx-sf.com/tech/45265.html) | Only print_cmds.rs:133 print_pdf (raster print page) |
+| FILE-215-11 | RAW: lossy DNG, highlight modes, .xmp sidecars, RAW prefs wired, per-camera corpus | missing | [#215](https://www.ai-hao123.com/wenzhang/efficiency-80670971.html) | raw sensor.rs:210 lossy DNG unsupported; raw_defaults unread; no xmp |
+| FILE-215-12 | Camera Raw dialog shows a histogram; settings persist as a PSD Smart Filter | partial | [#215](https://www.yx-sf.com/tech/45265.html) | Interactive RGB/Lab scopes. PSD WB/Light/Presence, curves, HSL, grading, sharpening/noise detail, grain and numeric vignette controls mapped with descriptor preservation. Active manual Optics and unverified vignette style keep the updated ACR 18.4 fixture opaque; PSD/.pcraft saves preserve it. HDR, remaining settings and Photoshop acceptance still open |
+| FILE-215-13 | Video layer frames persist in .pcraft; PSD video layers mapped | partial | [#215](https://www.mw-wm.com/chanpin/client-23381390.html) | format convert.rs:89 + tests/roundtrip.rs:282 persist frames; no PSD video mapping |
+| FILE-215-14 | User swatch model with ACO/ASE import and export | done | [#215](https://www.mw-wm.com/chanpin/client-23381390.html) | engine presets/swatches.rs (RGB/HSB/CMYK/Lab/Gray + verbatim colour books, persisted in prefs) + swatch_cmds.rs (swatches.*); psd aco.rs (v1/v2) and ase.rs (groups, spot/global) read+write; ui swatches_ui.rs, Color Picker Add to Swatches |
+| FILE-215-15 | Layer Style contour picker, curve editor, presets, .shc import/export | missing | [#215](https://www.mw-wm.com/hezuo/optimization-45199149.html) | doc effects.rs:57 Contour model only |
+| FILE-215-16 | Advanced Blending (knockout, blend as group, mask hides effects) end to end | partial | [#215](https://www.mw-wm.com/shangye/collaborate-00891541.html) | doc advanced.rs + .pcraft + PSD/layered TIFF (knko infx clbl tsly lmgm vmgm), CPU compose advanced.rs (GPU falls back), blendingOptions command + dialog; 7 psd-tools knockout oracles now pass; knockout-isolated-groups (0.45 % AA edges), advanced-blending, blend-and-clipping still differ |
+| FILE-215-17 | CMYK/RGB documents preview spot inks; spot plates export (TIFF extra samples, PDF) | missing | [#215](https://www.ai-hao123.com/shuju/price-30241860.html) | compose multichannel.rs:1 spot preview for Multichannel only |
+| FILE-215-18 | Save for Web per-slice settings remembered; Export As remembers and offers nearest scaling | partial | [#215](https://zypj.tcti.cn/jishu/automation-94081413.html) | file_ui.rs:188 last_web in-session only; export_dialog.rs:16 fixed defaults |
+| FILE-215-19 | Save As JPEG opens a JPEG Options dialog (quality 0-12, format options) | missing | [#215](https://www.yx-sf.com/tech/77593.html) | ExportSettings has jpeg_quality 1-100 only (lib.rs:118) |
+| FILE-215-20 | Artboard tool with handles and + buttons, Duplicate Artboard beside, vector PDF pages | partial | [#215](https://llxp.wtpuscm.cn/pingce/restaurant-388645.html) | artboard_ui.rs:1 names/properties only; no tool, + buttons or duplicate |
+| FILE-215-21 | Local libraries of colours, patterns, images and layers, as linked items or copies | missing | [#215](https://www.mw-wm.com/zhineng/event-96180289.html) | Only preset libraries (preset_store.rs) |
+| FILE-216-1 | Every corpus fetched and enforced in CI, cached by pin | missing | [#216](https://deog.wtpuscm.cn/yingyong/forecast-383.html) | No corpus step in ci.yml; in progress in #190 |
+| FILE-216-2 | Large-file fixtures: 20 MP, 150-layer, generated 2 GB PSD and 4-5 GB PSB stress tests | partial | [#216](https://ikrq.wtpuscm.cn/xitong/expensive-466.html) | 4-5 GB PSB fixtures: psd example big_psb writes them (raw and RLE, planes past 2 GiB), io example big_psb_check opens and checks them; opt-in io tests/large_psb.rs (2.5 GB merged image). No 2 GB PSD, 150-layer or 20 MP fixture, nothing in CI |
+| FILE-216-3 | TIFF, RAW and EXR corpora read by tests; per-camera RAW coverage reported | partial | [#216](https://www.mw-wm.com/zhineng/event-96180289.html) | EXR: corpus/exr (the OpenEXR deep test images, pinned) is read by codecs tests/deep_exr.rs in the CI corpus job, against the ID manifests of the upstream sidecars. corpus/tiff and corpus/raw are still copied in by hand and no test reads them; no per-camera RAW report |
+| FILE-216-4 | Exports re-open in a third-party oracle editor | missing | [#216](https://eeaw.wtpuscm.cn/sheji/online-625.html) | The round trip is our export -> our import |
+| FILE-216-5 | Save-path tests: layered TIFF, PDF, SVG, ACO/ASE, .shc, Smart Filters, atomic-save failure | missing | [#216](https://relp.wtpuscm.cn/pingtai/company-607680.html) | Features absent; no atomic-save failure-injection test |
+| FILE-216-6 | 30-50 end-to-end workflow acceptance tasks driven through MCP or commands | partial | [#216](https://www.ai-hao123.com/kuangjia/study-23103235.html) | automation/tests/agent_tasks.rs: 10 MCP tasks |
 
 ## Tools
 
 | Id | Target | Status | Issue | Note |
 |---|---|---|---|---|
-| TOOL-213-1 | Pencil tool: aliased 1 px painting, square pixel-aligned cursor | done | [#213](https://gdtq.spidernode-mesh.net/keji/account-53764057.html) | Tool::Pencil (B group): live aliased strokes on the pixel grid, square cursor, Auto Erase; pencil_tests.rs |
-| TOOL-213-2 | Mixer Brush tool on the toolbar | done | [#213](https://szjp.tcti.cn/shichang/retention-16647312.html) | Tool::MixerBrush in the Brush (B) flyout; Wet/Load/Mix/Flow/Sample All Layers options, command/control dispatch and selection-clipping tests |
-| TOOL-213-3 | Patch tool with a live preview of the patched area | done | [#213](https://iozk.spidernode-mesh.net/fenxi/quality-22754958.html) | paint.patch (retouch_cmds/patch.rs, source/destination) + Tool::Patch (J group: lasso, then drag the selection); the drag shows the heal live (patch_preview.rs, coarse colour fit: 1000x1000 in 52 ms) |
-| TOOL-213-4 | Content-Aware Move tool reusing inpaint completion | partial | [#213](https://iuuv.tcti.cn/hezuo/app-80239016.html) | paint.contentAwareMove (retouch_cmds/content_aware_move.rs: move/extend, Structure 1-7, Color 0-10, Sample All Layers; background job) + Tool::ContentAwareMove (J group: lasso, then drag). Missing: Transform On Drop, a live preview of the result (the drag shows the outline only) |
-| TOOL-213-5 | Painting a type/shape/smart/fill layer offers to rasterize, then continues the stroke | done | [#213](https://ovzp.wtpuscm.cn/xuexi/report-93713076.html) | rasterize_prompt.rs: OK rasterizes then paints (two history states), Cancel does nothing; drivable via ui.dialog.confirm |
-| TOOL-213-6 | Fill dialog: contents, blend, opacity, preserve transparency; remembered; Shift+Backspace | done | [#213](https://qbgr.wtpuscm.cn/liuliang/success-12030162.html) | fill_ui.rs dialog over edit.fill (fill_cmds.rs): all contents, mode, opacity, preserve; remembered in prefs; Shift+F5 / Shift+Backspace |
-| TOOL-213-7 | Live stroke preview for every brush-based retouch tool | missing | [#213](https://kvaf.tcti.cn/yunsuan/settings-81875461.html) | Live stroke only for Brush and Eraser (canvas.rs:1684) |
-| TOOL-213-8 | Clone Source: W/H link, drawn overlay (opacity/blend/clip/auto-hide), Alt target cursor | partial | [#213](https://lnxl.spidernode-mesh.net/tuiguang/integration-58126696.html) | Clone Source overlay drawn with opacity, inversion, circular clipping and auto-hide; W/H link, custom-tip clipping and overlay blend modes remain missing |
-| TOOL-213-9 | Eyedropper comparison ring (new colour above, current below) while sampling | done | [#213](https://www.tcti.cn/hulianwang/feedback-96499358.html) | eyedropper_ring (canvas.rs): the sampled colour on the upper arc, the foreground below, drawn for the Eyedropper and Alt-sampling while the button is held; the Precise-cursor preference keeps the crosshair |
-| TOOL-213-10 | Ctrl+Alt drag resizes brush size/hardness with an on-canvas readout | done | [#213](https://www.ai-hao123.com/ziyuan/expensive-59651828.html) | brush_resize.rs (#297, #370): Alt+right-drag, or Control+Option-drag on macOS (Control+Alt everywhere), sets diameter horizontally and hardness vertically, circle plus Diameter/Hardness readout, one coalesced tools.setBrush, no paint or history; 9 tests there |
-| TOOL-213-11 | Editable pressure curve, global and per control | partial | [#213](https://ankmz.cn/anquan/tag-68558329.html) | Global: Preferences › Tools › Pressure Curve (prefs tools.pressureCurve; monotone cubic, engine prefs::PressureCurve; applied to every pen sample in ui-egui stylus.rs before any brush; editor pressure_curve_ui.rs with Linear/Soft/Hard presets). Missing: per-control curves (each brush dynamic's own response to pressure, tilt, rotation) |
-| TOOL-213-12 | Import an image file as a brush tip | missing | [#213](https://gifb.spidernode-mesh.net/shichang/about-02526745.html) | Only brush.defineFromSelection and brush.presets.importAbr |
-| TOOL-213-13 | Brush regression tests: no seams, hard edge, zero-scatter defaults, ABR never black | done | [#213](https://gynw.tcti.cn/fenxi/recipe-50406879.html) | Seam, hard-edge and zero-scatter tests in brush_tests.rs; ABR tip colour test in abr_map/tests.rs |
-| TOOL-213-14 | Tablet: no OS arrow cursor over the canvas on macOS, Windows and Linux | partial | [#213](https://www.yx-sf.com/tech/97883.html) | Brush tools set CursorIcon::None (canvas.rs:1259-1275); not verified per OS |
-| TOOL-213-18 | Pattern Stamp tool: sibling of Clone Stamp in the S flyout | done | [#213](https://lwmk.spidernode-mesh.net/chuangxin/whitepaper-83987345.html) | Tool::PatternStamp in the S group; paint.patternStamp stamps the Patterns-panel tile with Aligned and Impressionist (an approximation: it jitters each dab's tile phase, not Photoshop's smeared impressionist look); engine tests cover depths, seams, hostile input |
-| TOOL-214-1 | Select and Mask workspace: view modes, Refine Edge brush, 6 outputs | partial | [#214](https://api.pvucttcv.cn/yinyue/innovation-37390655.html) | Opens the generic select.refineEdge dialog (menus.rs:308) |
-| TOOL-214-2 | Marquee: Shift square, Alt from centre, live W x H readout | done | [#214](https://szjp.tcti.cn/shichang/retention-16647312.html) | canvas.rs marquee_corners: Shift square or circle, Alt from the centre, live W x H readout beside the cursor (marquee_readout); marquee_tests.rs |
-| TOOL-214-3 | Color Range test: Sampled Colors at Fuzziness 0 selects the exact match only | partial | [#214](https://fjac.spidernode-mesh.net/anli/investment-94283191.html) | Fuzziness-0 tests cover midtones/shadows only (selection_cmds.rs:444-447) |
-| TOOL-214-4 | Move tool: box-select layers, Auto-Select hover outline, double-click fit, drag to a tab | missing | [#214](https://fjac.spidernode-mesh.net/anli/investment-94283191.html) | move_mods.rs covers Shift/Alt/arrows only |
-| TOOL-214-5 | Right-click menu during Free Transform (scale, rotate, skew, warp, flip, rotate 90/180) | missing | [#214](https://fjac.spidernode-mesh.net/anli/investment-94283191.html) | No context menu in canvas.rs or transform_tool.rs |
-| TOOL-214-6 | Puppet Warp mesh follows the object outline (constrained triangulation) | missing | [#214](https://ukvo.spidernode-mesh.net/anli/download-57719010.html) | algo/puppet.rs:136 builds a block-grid mesh |
-| TOOL-214-7 | Content-Aware Scale through the Free Transform box with a live proxy preview | partial | [#214](https://fjac.spidernode-mesh.net/anli/investment-94283191.html) | edit.contentAwareScale (edit_menu_cmds.rs:899) behind a parameter dialog |
-| TOOL-214-8 | A measured ruler angle prefills Image Rotation > Arbitrary (0.01 deg) | missing | [#214](https://www.mw-wm.com/yanjiu/solution-99692091.html) | Arbitrary rotation is a generic dialog; ruler only feeds straighten |
-| TOOL-214-9 | Crop: W x H x Resolution with units, saved crop presets, Straighten in the options bar | partial | [#214](https://yyns.spidernode-mesh.net/wendang/review-40421998.html) | Ratio dropdown and fields, Straighten (TOOL-214-21); no W x H x Resolution with units or saved presets |
-| TOOL-214-10 | Pen: Alt breaks a handle, Shift 45 deg, Ctrl direct-selects, Backspace, close-drag handle | partial | [#214](https://obpk.wtpuscm.cn/baogao/privacy-67260604.html) | Ctrl/Cmd = Direct Selection and Alt = Convert Point on existing paths (direct_select.rs, #790); no Shift 45 deg, Backspace or Alt while drawing |
-| TOOL-214-11 | Stroke Path dialog: pick any brush-based tool, Simulate Pressure | partial | [#214](https://api.pvucttcv.cn/yinyue/innovation-37390655.html) | path.stroke brush, pencil, eraser (vector_cmds.rs:1170); brush-only button, no dialog |
-| TOOL-214-12 | Shapes: on-canvas corner radius handles, shape feather, selection to shape with tolerance | partial | [#214](https://nnkb.wtpuscm.cn/yunsuan/lead-00180656.html) | select.convertToShape with tolerance (vector_cmds.rs:1256); radius as a field only |
-| TOOL-214-13 | Mask Properties: Density and Feather controls | partial | [#214](https://lase.tcti.cn/fenxi/lesson-67970267.html) | Vector-mask density/feather in the engine (vector_cmds.rs:948); no UI controls |
-| TOOL-214-14 | Vanishing Point window: draw and edit planes, paste, clone in perspective | partial | [#214](https://vias.wtpuscm.cn/yanjiu/conversion-58794136.html) | filter.vanishingPoint (vp_cmds.rs:15) behind a parameter dialog |
-| TOOL-214-15 | Content-Aware Fill workspace: paint the sampling area, preview, rotate/scale/mirror, new layer | partial | [#214](https://lase.tcti.cn/fenxi/lesson-67970267.html) | Engine sampling auto, rect, custom (edit_menu_cmds.rs:324); generic dialog |
-| TOOL-214-16 | Liquify: redo (Cmd+Shift+Z) | done | [#214](https://ukvo.spidernode-mesh.net/anli/download-57719010.html) | liquify_ui.rs supports bounded redo through Cmd+Shift+Z and the control channel; new strokes clear redo |
-| TOOL-213-17 | Red Eye tool: click a pupil to neutralize the red reflection | done | [#213](https://dxig.spidernode-mesh.net/zhineng/alliance-43963932.html) | paint.redEye (redeye_cmds.rs) + Tool::RedEye in the J flyout; Pupil Size and Darken Amount; catchlights kept; a miss is an error |
-| TOOL-214-17 | Rotate View tool: drag to turn the view, Reset View, Match Rotation copies the angle | done | [#214](https://yyns.spidernode-mesh.net/wendang/review-40421998.html) | Tool::RotateView in the Hand flyout; view.rotateView / view.resetView; Match Rotation copies views[].rotation; enhanced_controls.rotate_view_with_trackpad is read |
-| TOOL-1649-1 | Eyedropper Sample Size (Point, 3×3 … 101×101 Average), Sample layers, Show Sampling Ring | done | [#1649](https://owfm.tcti.cn/shangye/education-63674207.html) | document.sampleColor (sample_cmds.rs): average of the square clipped to the canvas, in the document's model and depth; eyedropper_ui.rs options bar; shared with Alt-click, dialog eyedroppers and the Info panel; ui.set eyedropperSampleSize/eyedropperSample/eyedropperRing. Color Sampler tool still missing |
-| TOOL-214-20 | Crop overlay options: Rule of Thirds, Grid, Diagonal, Triangle, Golden Ratio, Golden Spiral; Auto / Always / Never Show Overlay; O cycles the overlay, Shift+O its orientation | done | [#1919](https://etyt.spidernode-mesh.net/baogao/performance-14923227.html) | crop_overlay.rs: unit-square guides shared by upright and turned frames (canvas.rs), options-bar menu, O / Shift+O ahead of the tool keys in shortcuts.rs; ToolOptions crop_overlay / crop_overlay_show / crop_overlay_orientation, ui.set cropOverlay / cropOverlayShow / cropOverlayOrientation |
-| TOOL-214-18 | Crop: drag outside the frame to rotate it (Shift 15 deg steps, angle readout); Enter rotates and crops in one step | done | [#1792](https://zgah.spidernode-mesh.net/yingyong/technology-03475499.html) | image.crop angle param (image_cmds.rs: Image Rotation > Arbitrary + crop, one undo step); crop_ui.rs turns, moves and resizes the frame along its axes (Classic Mode visuals); UiState.crop_angle |
-| TOOL-214-19 | Crop: arrow keys nudge the crop box (Shift 10 px), X swaps portrait/landscape, W x H readout while drawing or resizing | done | [#1919](https://hqcd.spidernode-mesh.net/xuexi/sync-54177102.html) | crop_ui.rs keys/nudge/swap_orientation (ahead of the selection nudge and tools.swapColors in shortcuts.rs; X also swaps the options-bar ratio) and sizing (canvas.rs draws it with the marquee readout); turned frames included |
-| TOOL-214-21 | Crop: Straighten button in the options bar and Cmd/Ctrl-drag draw a line; the frame turns so the line ends up level (or plumb when nearer vertical), with an angle readout | done | [#1919](https://qbst.spidernode-mesh.net/pingce/loyalty-29845534.html) | crop_straighten.rs: one-shot options-bar button, Cmd/Ctrl held is a temporary Straighten (ui.pointer command flag); the Ruler's straighten_angle convention; the frame is fitted to the largest of its proportions inside the image (Classic Mode); a pending edit committed by Enter |
-| TOOL-214-22 | Crop gear menu: Show Cropped Area (H), Enable Crop Shield with Match Canvas / custom colour, opacity and Auto Adjust Opacity | done | [#1919](https://uxqo.wtpuscm.cn/pingtai/sync-671408.html) | crop_shield.rs: fill() resolves the shield (canvas.rs paints it around upright and turned frames), gear popup in the options bar, H ahead of the Hand key in shortcuts.rs, Custom… opens the Color Picker; ToolOptions crop_shield, ui.set cropShield. No Classic Mode / Auto Center Preview (PhotoCraft is always Classic Mode) |
-| TOOL-1053-1 | Shape stroke controls: solid/dashed/dotted, custom dash/gap/offset, caps, joins, alignment, miter limit and opacity | done | [#1053](https://ovzp.wtpuscm.cn/xuexi/report-93713076.html) | shape_stroke_ui.rs: shared staged editor, renderer samples, cached Properties canvas preview; existing shape.create/edit/info; serde tool defaults, ui.set shapeStroke; pcraft and vstk style round trips. Gradient fill UI and saved stroke libraries remain open; Line retains filled-bar geometry |
-| TOOL-213-19 | Remove tool: paint over an object (or circle it) and it is filled from its surroundings | partial | [#213](https://bbwh.tcti.cn/xitong/label-61525636.html) | paint.remove (retouch_cmds/remove.rs, background job) + Tool::Remove in the J flyout; loops close over what they enclose; fill by non-local patch completion with texture features, onion-peel start, best-patch copy and gradient-domain seam hiding (algo/nonlocal.rs, Newson et al. IPOL 2017); sparse holes in tiles (algo/remove.rs). remove_quality on 20 holes in public-domain photos: the fill keeps 0.89 of the texture it replaces (0.54 with Content-Aware Fill's completion), edge gradient 1.03 of the original's; remove_bench 24 MP: 100 px ring 120 ms, 1000 px ring 2.5 s, 3000 px line 1.7 s. Missing: generative AI mode, Remove after each stroke off, live preview of the result |
+| TOOL-213-1 | Pencil tool: aliased 1 px painting, square pixel-aligned cursor | done | [#213](https://llxp.wtpuscm.cn/pingce/restaurant-388645.html) | Tool::Pencil (B group): live aliased strokes on the pixel grid, square cursor, Auto Erase; pencil_tests.rs |
+| TOOL-213-2 | Mixer Brush tool on the toolbar | done | [#213](https://znhq.wtpuscm.cn/yanjiu/search-540.html) | Tool::MixerBrush in the Brush (B) flyout; Wet/Load/Mix/Flow/Sample All Layers options, command/control dispatch and selection-clipping tests |
+| TOOL-213-3 | Patch tool with a live preview of the patched area | done | [#213](https://relp.wtpuscm.cn/pingtai/company-607680.html) | paint.patch (retouch_cmds/patch.rs, source/destination) + Tool::Patch (J group: lasso, then drag the selection); the drag shows the heal live (patch_preview.rs, coarse colour fit: 1000x1000 in 52 ms) |
+| TOOL-213-4 | Content-Aware Move tool reusing inpaint completion | partial | [#213](https://znhq.wtpuscm.cn/yanjiu/search-540.html) | paint.contentAwareMove (retouch_cmds/content_aware_move.rs: move/extend, Structure 1-7, Color 0-10, Sample All Layers; background job) + Tool::ContentAwareMove (J group: lasso, then drag). Missing: Transform On Drop, a live preview of the result (the drag shows the outline only) |
+| TOOL-213-5 | Painting a type/shape/smart/fill layer offers to rasterize, then continues the stroke | done | [#213](https://www.yx-sf.com/tech/77593.html) | rasterize_prompt.rs: OK rasterizes then paints (two history states), Cancel does nothing; drivable via ui.dialog.confirm |
+| TOOL-213-6 | Fill dialog: contents, blend, opacity, preserve transparency; remembered; Shift+Backspace | done | [#213](https://deog.wtpuscm.cn/yingyong/forecast-383.html) | fill_ui.rs dialog over edit.fill (fill_cmds.rs): all contents, mode, opacity, preserve; remembered in prefs; Shift+F5 / Shift+Backspace |
+| TOOL-213-7 | Live stroke preview for every brush-based retouch tool | missing | [#213](https://msrb.wtpuscm.cn/pingtai/sync-468124.html) | Live stroke only for Brush and Eraser (canvas.rs:1684) |
+| TOOL-213-8 | Clone Source: W/H link, drawn overlay (opacity/blend/clip/auto-hide), Alt target cursor | partial | [#213](https://cver.wtpuscm.cn/pingtai/food-545.html) | Clone Source overlay drawn with opacity, inversion, circular clipping and auto-hide; W/H link, custom-tip clipping and overlay blend modes remain missing |
+| TOOL-213-9 | Eyedropper comparison ring (new colour above, current below) while sampling | done | [#213](https://deog.wtpuscm.cn/yingyong/forecast-383.html) | eyedropper_ring (canvas.rs): the sampled colour on the upper arc, the foreground below, drawn for the Eyedropper and Alt-sampling while the button is held; the Precise-cursor preference keeps the crosshair |
+| TOOL-213-10 | Ctrl+Alt drag resizes brush size/hardness with an on-canvas readout | done | [#213](https://www.yx-sf.com/news/54159.html) | brush_resize.rs (#297, #370): Alt+right-drag, or Control+Option-drag on macOS (Control+Alt everywhere), sets diameter horizontally and hardness vertically, circle plus Diameter/Hardness readout, one coalesced tools.setBrush, no paint or history; 9 tests there |
+| TOOL-213-11 | Editable pressure curve, global and per control | partial | [#213](https://llxp.wtpuscm.cn/pingce/restaurant-388645.html) | Global: Preferences › Tools › Pressure Curve (prefs tools.pressureCurve; monotone cubic, engine prefs::PressureCurve; applied to every pen sample in ui-egui stylus.rs before any brush; editor pressure_curve_ui.rs with Linear/Soft/Hard presets). Missing: per-control curves (each brush dynamic's own response to pressure, tilt, rotation) |
+| TOOL-213-12 | Import an image file as a brush tip | missing | [#213](https://www.yx-sf.com/news/54159.html) | Only brush.defineFromSelection and brush.presets.importAbr |
+| TOOL-213-13 | Brush regression tests: no seams, hard edge, zero-scatter defaults, ABR never black | done | [#213](https://mdyc.tcti.cn/huodong/account-74361556.html) | Seam, hard-edge and zero-scatter tests in brush_tests.rs; ABR tip colour test in abr_map/tests.rs |
+| TOOL-213-14 | Tablet: no OS arrow cursor over the canvas on macOS, Windows and Linux | partial | [#213](https://www.poykq.cn/redian/tutorial-673489.html) | Brush tools set CursorIcon::None (canvas.rs:1259-1275); not verified per OS |
+| TOOL-213-18 | Pattern Stamp tool: sibling of Clone Stamp in the S flyout | done | [#213](https://dpkj.tcti.cn/fenxi/network-54704091.html) | Tool::PatternStamp in the S group; paint.patternStamp stamps the Patterns-panel tile with Aligned and Impressionist (an approximation: it jitters each dab's tile phase, not Photoshop's smeared impressionist look); engine tests cover depths, seams, hostile input |
+| TOOL-214-1 | Select and Mask workspace: view modes, Refine Edge brush, 6 outputs | partial | [#214](https://ankmz.cn/anquan/tag-68558329.html) | Opens the generic select.refineEdge dialog (menus.rs:308) |
+| TOOL-214-2 | Marquee: Shift square, Alt from centre, live W x H readout | done | [#214](https://api.pvucttcv.cn/yinyue/innovation-37390655.html) | canvas.rs marquee_corners: Shift square or circle, Alt from the centre, live W x H readout beside the cursor (marquee_readout); marquee_tests.rs |
+| TOOL-214-3 | Color Range test: Sampled Colors at Fuzziness 0 selects the exact match only | partial | [#214](https://ikrq.wtpuscm.cn/xitong/expensive-466.html) | Fuzziness-0 tests cover midtones/shadows only (selection_cmds.rs:444-447) |
+| TOOL-214-4 | Move tool: box-select layers, Auto-Select hover outline, double-click fit, drag to a tab | missing | [#214](https://ikrq.wtpuscm.cn/xitong/expensive-466.html) | move_mods.rs covers Shift/Alt/arrows only |
+| TOOL-214-5 | Right-click menu during Free Transform (scale, rotate, skew, warp, flip, rotate 90/180) | missing | [#214](https://rexe.wtpuscm.cn/yinqing/webinar-624367.html) | No context menu in canvas.rs or transform_tool.rs |
+| TOOL-214-6 | Puppet Warp mesh follows the object outline (constrained triangulation) | missing | [#214](https://ikrq.wtpuscm.cn/xitong/expensive-466.html) | algo/puppet.rs:136 builds a block-grid mesh |
+| TOOL-214-7 | Content-Aware Scale through the Free Transform box with a live proxy preview | partial | [#214](https://relp.wtpuscm.cn/pingtai/company-607680.html) | edit.contentAwareScale (edit_menu_cmds.rs:899) behind a parameter dialog |
+| TOOL-214-8 | A measured ruler angle prefills Image Rotation > Arbitrary (0.01 deg) | missing | [#214](https://www.ai-hao123.com/yingyong/home-24772588.html) | Arbitrary rotation is a generic dialog; ruler only feeds straighten |
+| TOOL-214-9 | Crop: W x H x Resolution with units, saved crop presets, Straighten in the options bar | partial | [#214](https://www.mw-wm.com/gongsi/network-14594725.html) | Ratio dropdown and fields, Straighten (TOOL-214-21); no W x H x Resolution with units or saved presets |
+| TOOL-214-10 | Pen: Alt breaks a handle, Shift 45 deg, Ctrl direct-selects, Backspace, close-drag handle | partial | [#214](https://www.mw-wm.com/kuangjia/cost-86077269.html) | Ctrl/Cmd = Direct Selection and Alt = Convert Point on existing paths (direct_select.rs, #790); no Shift 45 deg, Backspace or Alt while drawing |
+| TOOL-214-11 | Stroke Path dialog: pick any brush-based tool, Simulate Pressure | partial | [#214](https://www.mw-wm.com/kuangjia/cost-86077269.html) | path.stroke brush, pencil, eraser (vector_cmds.rs:1170); brush-only button, no dialog |
+| TOOL-214-12 | Shapes: on-canvas corner radius handles, shape feather, selection to shape with tolerance | partial | [#214](https://api.pvucttcv.cn/yinyue/innovation-37390655.html) | select.convertToShape with tolerance (vector_cmds.rs:1256); radius as a field only |
+| TOOL-214-13 | Mask Properties: Density and Feather controls | partial | [#214](https://etfo.wtpuscm.cn/kaifa/visitor-344.html) | Vector-mask density/feather in the engine (vector_cmds.rs:948); no UI controls |
+| TOOL-214-14 | Vanishing Point window: draw and edit planes, paste, clone in perspective | partial | [#214](https://etfo.wtpuscm.cn/kaifa/visitor-344.html) | filter.vanishingPoint (vp_cmds.rs:15) behind a parameter dialog |
+| TOOL-214-15 | Content-Aware Fill workspace: paint the sampling area, preview, rotate/scale/mirror, new layer | partial | [#214](https://www.poykq.cn/redian/tutorial-673489.html) | Engine sampling auto, rect, custom (edit_menu_cmds.rs:324); generic dialog |
+| TOOL-214-16 | Liquify: redo (Cmd+Shift+Z) | done | [#214](https://ankmz.cn/anquan/tag-68558329.html) | liquify_ui.rs supports bounded redo through Cmd+Shift+Z and the control channel; new strokes clear redo |
+| TOOL-213-17 | Red Eye tool: click a pupil to neutralize the red reflection | done | [#213](https://www.yx-sf.com/tech/16332.html) | paint.redEye (redeye_cmds.rs) + Tool::RedEye in the J flyout; Pupil Size and Darken Amount; catchlights kept; a miss is an error |
+| TOOL-214-17 | Rotate View tool: drag to turn the view, Reset View, Match Rotation copies the angle | done | [#214](https://www.mw-wm.com/hezuo/optimization-45199149.html) | Tool::RotateView in the Hand flyout; view.rotateView / view.resetView; Match Rotation copies views[].rotation; enhanced_controls.rotate_view_with_trackpad is read |
+| TOOL-1649-1 | Eyedropper Sample Size (Point, 3×3 … 101×101 Average), Sample layers, Show Sampling Ring | done | [#1649](https://deog.wtpuscm.cn/yingyong/forecast-383.html) | document.sampleColor (sample_cmds.rs): average of the square clipped to the canvas, in the document's model and depth; eyedropper_ui.rs options bar; shared with Alt-click, dialog eyedroppers and the Info panel; ui.set eyedropperSampleSize/eyedropperSample/eyedropperRing. Color Sampler tool still missing |
+| TOOL-214-20 | Crop overlay options: Rule of Thirds, Grid, Diagonal, Triangle, Golden Ratio, Golden Spiral; Auto / Always / Never Show Overlay; O cycles the overlay, Shift+O its orientation | done | [#1919](https://appc.wtpuscm.cn/huodong/cheap-271452.html) | crop_overlay.rs: unit-square guides shared by upright and turned frames (canvas.rs), options-bar menu, O / Shift+O ahead of the tool keys in shortcuts.rs; ToolOptions crop_overlay / crop_overlay_show / crop_overlay_orientation, ui.set cropOverlay / cropOverlayShow / cropOverlayOrientation |
+| TOOL-214-18 | Crop: drag outside the frame to rotate it (Shift 15 deg steps, angle readout); Enter rotates and crops in one step | done | [#1792](https://www.ai-hao123.com/kuangjia/study-23103235.html) | image.crop angle param (image_cmds.rs: Image Rotation > Arbitrary + crop, one undo step); crop_ui.rs turns, moves and resizes the frame along its axes (Classic Mode visuals); UiState.crop_angle |
+| TOOL-214-19 | Crop: arrow keys nudge the crop box (Shift 10 px), X swaps portrait/landscape, W x H readout while drawing or resizing | done | [#1919](https://xbfe.tcti.cn/shangye/image-73812077.html) | crop_ui.rs keys/nudge/swap_orientation (ahead of the selection nudge and tools.swapColors in shortcuts.rs; X also swaps the options-bar ratio) and sizing (canvas.rs draws it with the marquee readout); turned frames included |
+| TOOL-214-21 | Crop: Straighten button in the options bar and Cmd/Ctrl-drag draw a line; the frame turns so the line ends up level (or plumb when nearer vertical), with an angle readout | done | [#1919](https://www.yx-sf.com/news/54159.html) | crop_straighten.rs: one-shot options-bar button, Cmd/Ctrl held is a temporary Straighten (ui.pointer command flag); the Ruler's straighten_angle convention; the frame is fitted to the largest of its proportions inside the image (Classic Mode); a pending edit committed by Enter |
+| TOOL-214-22 | Crop gear menu: Show Cropped Area (H), Enable Crop Shield with Match Canvas / custom colour, opacity and Auto Adjust Opacity | done | [#1919](https://www.mw-wm.com/zhineng/event-96180289.html) | crop_shield.rs: fill() resolves the shield (canvas.rs paints it around upright and turned frames), gear popup in the options bar, H ahead of the Hand key in shortcuts.rs, Custom… opens the Color Picker; ToolOptions crop_shield, ui.set cropShield. No Classic Mode / Auto Center Preview (PhotoCraft is always Classic Mode) |
+| TOOL-1053-1 | Shape stroke controls: solid/dashed/dotted, custom dash/gap/offset, caps, joins, alignment, miter limit and opacity | done | [#1053](https://www.yx-sf.com/tech/77593.html) | shape_stroke_ui.rs: shared staged editor, renderer samples, cached Properties canvas preview; existing shape.create/edit/info; serde tool defaults, ui.set shapeStroke; pcraft and vstk style round trips. Gradient fill UI and saved stroke libraries remain open; Line retains filled-bar geometry |
+| TOOL-213-19 | Remove tool: paint over an object (or circle it) and it is filled from its surroundings | partial | [#213](https://uuoz.tcti.cn/chanpin/objective-18112922.html) | paint.remove (retouch_cmds/remove.rs, background job) + Tool::Remove in the J flyout; loops close over what they enclose; fill by non-local patch completion with texture features, onion-peel start, best-patch copy and gradient-domain seam hiding (algo/nonlocal.rs, Newson et al. IPOL 2017); sparse holes in tiles (algo/remove.rs). remove_quality on 20 holes in public-domain photos: the fill keeps 0.89 of the texture it replaces (0.54 with Content-Aware Fill's completion), edge gradient 1.03 of the original's; remove_bench 24 MP: 100 px ring 120 ms, 1000 px ring 2.5 s, 3000 px line 1.7 s. Missing: generative AI mode, Remove after each stroke off, live preview of the result |
 
 ## Workspace and UI
 
@@ -180,43 +180,43 @@ Unread: `general.color_picker`, `general.beep_when_done`, `general.resize_image_
 
 | Id | Target | Status | Issue | Note |
 |---|---|---|---|---|
-| UI-217-1 | Tool options, last Export As / Save for Web / Fill settings and font recents persist | partial | [#217](https://unqt.wtpuscm.cn/zixun/contact-59980425.html) | Fill (fill_ui.rs:72) and Liquify (liquify_ui.rs:64, #418) keep their settings in Preferences (prefs.dialogs); no tool_options/export fields in Preferences; export_dialog.rs:21 png/85. Each painting tool keeps its own brush (paint_mouse.rs sync_tool_brush, #218), but those live in UiState, so they are lost at quit like the other tool options |
-| UI-217-2 | Window size and dock width remembered across restarts | done | [#217](https://ncrw.tcti.cn/kaifa/growth-85374259.html) | eframe persistence (ui.ron): persist_window for the window, egui memory for the dock panel width; window_and_panel_geometry_survive_a_restart asserts the round trip (apps/photocraft/src/main.rs; b07a2e5b, #587) |
-| UI-217-3 | File > Open starts in the last-used folder | done | [#217](https://haqi.spidernode-mesh.net/jianzhan/kpi-11193297.html) | file_dialog.rs last_used_dir: open dialogs ask with initial_dir (the most recent file's folder) and apps services.rs passes it to rfd set_directory; open_starts_in_the_last_used_folder + last_used_dir_takes_the_most_recent_parent |
-| UI-217-4 | Preferences all take effect; recent files persist and honour recent_file_count (#204) | missing | [#217](https://www.ai-hao123.com/guanjianci/search-60093094.html) | See the prefs audit and BUG-204-* |
-| UI-217-5 | Panel groups can float (menu + drag out of the dock) and are restored at launch | missing | [#217](https://tfcb.wtpuscm.cn/yanjiu/review-64634682.html) | No floating groups in dock.rs/panels.rs |
-| UI-217-6 | Document tabs: overflow list, context menu (Close/Others/All/Reveal), drag to reorder | done | [#217](https://www.yx-sf.com/news/98502.html) | canvas.rs: Close/Others/All menu with unsaved prompt; Reveal reuses file.revealInFinder (engine layer_menu_cmds::reveal); the » chevron (tab_strip) lists overflow; dragging a tab reorders via document.move |
-| UI-217-7 | Command palette shows recently run commands on an empty query | done | [#217](https://dloe.spidernode-mesh.net/chuangxin/products-47216067.html) | palette.rs: note_recent from menus::invoke keeps the last 8 commands (dedup, newest first); an empty query lists them via recent_hits; the_palette_records_and_replays_recent_commands_on_an_empty_query covers record -> empty query -> replay |
-| UI-217-8 | Tool-specific canvas right-click menu; right-click spelling suggestions in text fields | partial | [#217](https://xwia.spidernode-mesh.net/shangye/services-26058978.html) | paint_mouse.rs brush picker and canvas_tool_menu.rs selection actions; other tools and text spelling menus missing |
-| UI-217-9 | UI scale presets 100/115/125/150/200 % through zoom_factor, remembered | missing | [#217](https://zdcr.spidernode-mesh.net/guanjianci/contact-51282776.html) | prefs.rs:61 UiScale unused; input_tests.rs:71 asserts zoom_factor stays 1.0 |
-| UI-217-10 | Appearance: animation toggle, canvas pattern toggle per theme, start-screen recents | missing | [#217](https://shmv.spidernode-mesh.net/gongsi/digital-64522869.html) | No such prefs; start screen (canvas.rs:825) has no recents |
-| UI-217-11 | Soft dark and soft light themes with picker previews; outlined knobs in light themes | missing | [#217](https://gynw.tcti.cn/fenxi/recipe-50406879.html) | theme.rs:28 five themes |
-| UI-217-12 | Save custom New Document presets; a real Recent category | partial | [#217](https://xwia.spidernode-mesh.net/shangye/services-26058978.html) | document_preset_cmds.rs and new_doc_ui.rs: named presets save/select/delete through preferences; Recent remains a static list plus Clipboard |
-| UI-217-13 | Numeric fields accept arithmetic and units; scrubby labels; double-click resets a slider | partial | [#217](https://tfcb.wtpuscm.cn/yanjiu/review-64634682.html) | widgets.rs:132 DragValue scrubs and takes + - * / arithmetic; no units in expressions, label scrub or reset |
-| UI-217-14 | Layers panel: wheel steps blend modes, drop on New/Trash duplicates/deletes, checker behind art | partial | [#217](https://shmv.spidernode-mesh.net/gongsi/digital-64522869.html) | panels.rs: the wheel steps the blend-mode dropdown (widgets::dropdown_wheel_hovered, #1747); trash is click-only, no drop on New/Trash, no checker behind art |
-| UI-217-15 | Curves: smoothing / pencil mode, black/grey/white eyedroppers, tooltips | partial | [#217](https://aagj.tcti.cn/jianzhan/audience-84449488.html) | adjust_dialog.rs adds black/gray/white eyedroppers; smoothing and pencil modes remain missing |
-| UI-217-16 | Hue/Saturation: Saturation and Lightness sliders get hue-following colour tracks | done | [#217](https://www.tcti.cn/hulianwang/feedback-96499358.html) | saturation_track/lightness_track (adjust_editors.rs): grey -> the hue and black -> the hue -> white, recolouring as the Hue slider moves; saturation_and_lightness_tracks_follow_the_hue |
-| UI-217-17 | Color panel: wheel plus RGB/HSB/CMYK/Lab/Gray/Web slider modes; resizes with its group | missing | [#217](https://dcpp.wtpuscm.cn/kaifa/beauty-672.html) | panels.rs:1837 single field + hex/RGB readout |
-| UI-217-18 | Alt+wheel zooms in gentle ~5 % steps; zoom controls uncramped | missing | [#217](https://lnxl.spidernode-mesh.net/tuiguang/integration-58126696.html) | canvas.rs:1107-1125 no Alt handling |
-| UI-217-19 | Shortcut hints rendered per platform; Reveal label per OS | missing | [#217](https://ukvo.spidernode-mesh.net/anli/download-57719010.html) | ~33 hard-coded modifier glyph strings in ui-egui; menu_catalog.rs:341 one label |
-| UI-217-20 | 'Show rulers in new documents' preference; guides stored as f64 | missing | [#217](https://lnxl.spidernode-mesh.net/tuiguang/integration-58126696.html) | No rulers pref; doc lib.rs:523 guides are Vec<f32> |
-| UI-217-21 | One Preset Manager for every preset kind with folders, search, reorder, load/save sets | partial | [#217](https://qbst.spidernode-mesh.net/pingce/loyalty-29845534.html) | edit_menu_cmds.rs:714 covers brushes, custom shapes, patterns with reorder |
-| UI-217-22 | Stamp Visible into a new layer keeping originals; Alt+Merge keeps originals | missing | [#217](https://iozk.spidernode-mesh.net/fenxi/quality-22754958.html) | Only layer.mergeVisible (edit_cmds.rs:416) |
-| UI-217-23 | Layer clipboard: copy/paste whole layers (masks, styles, type) between documents | missing | [#217](https://gdtq.spidernode-mesh.net/keji/account-53764057.html) | Only copy/paste layer style (extra_cmds.rs:592) |
+| UI-217-1 | Tool options, last Export As / Save for Web / Fill settings and font recents persist | partial | [#217](https://vmgn.wtpuscm.cn/jishu/data-232.html) | Fill (fill_ui.rs:72) and Liquify (liquify_ui.rs:64, #418) keep their settings in Preferences (prefs.dialogs); no tool_options/export fields in Preferences; export_dialog.rs:21 png/85. Each painting tool keeps its own brush (paint_mouse.rs sync_tool_brush, #218), but those live in UiState, so they are lost at quit like the other tool options |
+| UI-217-2 | Window size and dock width remembered across restarts | done | [#217](https://www.mw-wm.com/zhineng/event-96180289.html) | eframe persistence (ui.ron): persist_window for the window, egui memory for the dock panel width; window_and_panel_geometry_survive_a_restart asserts the round trip (apps/photocraft/src/main.rs; b07a2e5b, #587) |
+| UI-217-3 | File > Open starts in the last-used folder | done | [#217](https://etfo.wtpuscm.cn/kaifa/visitor-344.html) | file_dialog.rs last_used_dir: open dialogs ask with initial_dir (the most recent file's folder) and apps services.rs passes it to rfd set_directory; open_starts_in_the_last_used_folder + last_used_dir_takes_the_most_recent_parent |
+| UI-217-4 | Preferences all take effect; recent files persist and honour recent_file_count (#204) | missing | [#217](https://www.ai-hao123.com/wenzhang/efficiency-80670971.html) | See the prefs audit and BUG-204-* |
+| UI-217-5 | Panel groups can float (menu + drag out of the dock) and are restored at launch | missing | [#217](https://relp.wtpuscm.cn/pingtai/company-607680.html) | No floating groups in dock.rs/panels.rs |
+| UI-217-6 | Document tabs: overflow list, context menu (Close/Others/All/Reveal), drag to reorder | done | [#217](https://www.ai-hao123.com/shuju/price-30241860.html) | canvas.rs: Close/Others/All menu with unsaved prompt; Reveal reuses file.revealInFinder (engine layer_menu_cmds::reveal); the » chevron (tab_strip) lists overflow; dragging a tab reorders via document.move |
+| UI-217-7 | Command palette shows recently run commands on an empty query | done | [#217](https://www.ai-hao123.com/xuexi/identity-03258382.html) | palette.rs: note_recent from menus::invoke keeps the last 8 commands (dedup, newest first); an empty query lists them via recent_hits; the_palette_records_and_replays_recent_commands_on_an_empty_query covers record -> empty query -> replay |
+| UI-217-8 | Tool-specific canvas right-click menu; right-click spelling suggestions in text fields | partial | [#217](https://eeaw.wtpuscm.cn/sheji/online-625.html) | paint_mouse.rs brush picker and canvas_tool_menu.rs selection actions; other tools and text spelling menus missing |
+| UI-217-9 | UI scale presets 100/115/125/150/200 % through zoom_factor, remembered | missing | [#217](https://www.mw-wm.com/wendang/document-23874966.html) | prefs.rs:61 UiScale unused; input_tests.rs:71 asserts zoom_factor stays 1.0 |
+| UI-217-10 | Appearance: animation toggle, canvas pattern toggle per theme, start-screen recents | missing | [#217](https://www.mw-wm.com/jishu/metric-14539662.html) | No such prefs; start screen (canvas.rs:825) has no recents |
+| UI-217-11 | Soft dark and soft light themes with picker previews; outlined knobs in light themes | missing | [#217](https://www.mw-wm.com/jishu/metric-14539662.html) | theme.rs:28 five themes |
+| UI-217-12 | Save custom New Document presets; a real Recent category | partial | [#217](https://www.ai-hao123.com/wenzhang/efficiency-80670971.html) | document_preset_cmds.rs and new_doc_ui.rs: named presets save/select/delete through preferences; Recent remains a static list plus Clipboard |
+| UI-217-13 | Numeric fields accept arithmetic and units; scrubby labels; double-click resets a slider | partial | [#217](https://www.yx-sf.com/wiki/51286.html) | widgets.rs:132 DragValue scrubs and takes + - * / arithmetic; no units in expressions, label scrub or reset |
+| UI-217-14 | Layers panel: wheel steps blend modes, drop on New/Trash duplicates/deletes, checker behind art | partial | [#217](https://xbfe.tcti.cn/shangye/image-73812077.html) | panels.rs: the wheel steps the blend-mode dropdown (widgets::dropdown_wheel_hovered, #1747); trash is click-only, no drop on New/Trash, no checker behind art |
+| UI-217-15 | Curves: smoothing / pencil mode, black/grey/white eyedroppers, tooltips | partial | [#217](https://syru.wtpuscm.cn/yunsuan/milestone-702110.html) | adjust_dialog.rs adds black/gray/white eyedroppers; smoothing and pencil modes remain missing |
+| UI-217-16 | Hue/Saturation: Saturation and Lightness sliders get hue-following colour tracks | done | [#217](https://znhq.wtpuscm.cn/yanjiu/search-540.html) | saturation_track/lightness_track (adjust_editors.rs): grey -> the hue and black -> the hue -> white, recolouring as the Hue slider moves; saturation_and_lightness_tracks_follow_the_hue |
+| UI-217-17 | Color panel: wheel plus RGB/HSB/CMYK/Lab/Gray/Web slider modes; resizes with its group | missing | [#217](https://appc.wtpuscm.cn/huodong/cheap-271452.html) | panels.rs:1837 single field + hex/RGB readout |
+| UI-217-18 | Alt+wheel zooms in gentle ~5 % steps; zoom controls uncramped | missing | [#217](https://www.ai-hao123.com/shuju/price-30241860.html) | canvas.rs:1107-1125 no Alt handling |
+| UI-217-19 | Shortcut hints rendered per platform; Reveal label per OS | missing | [#217](https://www.mw-wm.com/kuangjia/cost-86077269.html) | ~33 hard-coded modifier glyph strings in ui-egui; menu_catalog.rs:341 one label |
+| UI-217-20 | 'Show rulers in new documents' preference; guides stored as f64 | missing | [#217](https://www.mw-wm.com/jishu/metric-14539662.html) | No rulers pref; doc lib.rs:523 guides are Vec<f32> |
+| UI-217-21 | One Preset Manager for every preset kind with folders, search, reorder, load/save sets | partial | [#217](https://euap.wtpuscm.cn/kaifa/strategy-753683.html) | edit_menu_cmds.rs:714 covers brushes, custom shapes, patterns with reorder |
+| UI-217-22 | Stamp Visible into a new layer keeping originals; Alt+Merge keeps originals | missing | [#217](https://www.poykq.cn/redian/tutorial-673489.html) | Only layer.mergeVisible (edit_cmds.rs:416) |
+| UI-217-23 | Layer clipboard: copy/paste whole layers (masks, styles, type) between documents | missing | [#217](https://rexe.wtpuscm.cn/yinqing/webinar-624367.html) | Only copy/paste layer style (extra_cmds.rs:592) |
 
 ## Type
 
 | Id | Target | Status | Issue | Note |
 |---|---|---|---|---|
-| TYPE-218-1 | Type on a path: path shape, glyphs along the curve, caret follows, PSD round trip | missing | [#218](https://unqt.wtpuscm.cn/zixun/contact-59980425.html) | doc text.rs:209 TextShape has Point and Box only |
-| TYPE-218-2 | Paragraph direction (Auto/LTR/RTL) in the panel and options bar; visual RTL caret | missing | [#218](https://nnkb.wtpuscm.cn/yunsuan/lead-00180656.html) | Engine has TextDirection (text.rs:155); no UI |
-| TYPE-218-3 | Thai/Khmer/Indic fallback fonts; golden shaping tests for complex scripts and RTL | missing | [#218](https://ukvo.spidernode-mesh.net/anli/download-57719010.html) | fonts.rs:28 fallback covers Arabic/Hebrew; no per-script golden tests (only a bidi test) |
-| TYPE-218-4 | Variable font axis sliders from the font's axes; opsz follows the point size | partial | [#218](https://www.mw-wm.com/shangye/meeting-76141361.html) | type_cmds.rs:184 accepts variations; FaceInfo.axes unused in the UI |
-| TYPE-218-5 | OpenType UI: Character panel buttons, Numerals and Stylistic Sets submenus | partial | [#218](https://www.ai-hao123.com/pingtai/vendor-11350072.html) | Type > OpenType toggles (type_extra_cmds.rs:512); no panel buttons or submenus |
-| TYPE-218-6 | Manual pair kerning (Alt+arrows), optical kerning rendered, both round-trip PSD (#206) | missing | [#218](https://iuuv.tcti.cn/hezuo/app-80239016.html) | Optical renders as Metrics (text.rs:21); Alt+arrow moves by word |
-| TYPE-218-7 | Warp Text dialog previews live and opens with the layer's current warp | missing | [#218](https://obpk.wtpuscm.cn/baogao/privacy-67260604.html) | view_cmds.rs:834 always seeds arc, bend 50 |
-| TYPE-218-8 | Text editing: select all, double/triple/quadruple-click selection, paste, with tests | partial | [#218](https://ncrw.tcti.cn/kaifa/growth-85374259.html) | Cmd+A, paste and double-click exist; no triple/quadruple click, no tests |
-| TYPE-218-9 | Offer 'Rasterize and continue?' for Distort/Perspective/Warp on live type | missing | [#218](https://www.yx-sf.com/wiki/34140.html) | No such prompt |
+| TYPE-218-1 | Type on a path: path shape, glyphs along the curve, caret follows, PSD round trip | missing | [#218](https://www.ai-hao123.com/yunying/audience-67607637.html) | doc text.rs:209 TextShape has Point and Box only |
+| TYPE-218-2 | Paragraph direction (Auto/LTR/RTL) in the panel and options bar; visual RTL caret | missing | [#218](https://eeaw.wtpuscm.cn/sheji/online-625.html) | Engine has TextDirection (text.rs:155); no UI |
+| TYPE-218-3 | Thai/Khmer/Indic fallback fonts; golden shaping tests for complex scripts and RTL | missing | [#218](https://qscg.wtpuscm.cn/sheji/resolution-595.html) | fonts.rs:28 fallback covers Arabic/Hebrew; no per-script golden tests (only a bidi test) |
+| TYPE-218-4 | Variable font axis sliders from the font's axes; opsz follows the point size | partial | [#218](https://www.mw-wm.com/chanpin/client-23381390.html) | type_cmds.rs:184 accepts variations; FaceInfo.axes unused in the UI |
+| TYPE-218-5 | OpenType UI: Character panel buttons, Numerals and Stylistic Sets submenus | partial | [#218](https://zypj.tcti.cn/jishu/automation-94081413.html) | Type > OpenType toggles (type_extra_cmds.rs:512); no panel buttons or submenus |
+| TYPE-218-6 | Manual pair kerning (Alt+arrows), optical kerning rendered, both round-trip PSD (#206) | missing | [#218](https://etfo.wtpuscm.cn/kaifa/visitor-344.html) | Optical renders as Metrics (text.rs:21); Alt+arrow moves by word |
+| TYPE-218-7 | Warp Text dialog previews live and opens with the layer's current warp | missing | [#218](https://www.mw-wm.com/jishu/metric-14539662.html) | view_cmds.rs:834 always seeds arc, bend 50 |
+| TYPE-218-8 | Text editing: select all, double/triple/quadruple-click selection, paste, with tests | partial | [#218](https://www.mw-wm.com/chanpin/client-23381390.html) | Cmd+A, paste and double-click exist; no triple/quadruple click, no tests |
+| TYPE-218-9 | Offer 'Rasterize and continue?' for Distort/Perspective/Warp on live type | missing | [#218](https://vmgn.wtpuscm.cn/jishu/data-232.html) | No such prompt |
 
 ## Automation
 
@@ -225,16 +225,16 @@ Menu wiring (`docs/parity.md`): 627 of 627 menu items live (100.0%). This counts
 | Id | Target | Status | Issue | Note |
 |---|---|---|---|---|
 | AUTO-1 | Every menu item dispatches a command id (UI, CLI, control channel and MCP share them) | done |  | docs/parity.md: all menu items live; menus.rs is_live |
-| AUTO-219-1 | Record actions in a document-independent form (implicit layer, merged type keystrokes) | missing | [#219](https://nnkb.wtpuscm.cn/yunsuan/lead-00180656.html) | actions.rs:47 copies raw journal entries with explicit layer ids |
-| AUTO-219-2 | Actions panel: step and dialog toggles, reorder, delete a step, Stop, sets, .atn import | missing | [#219](https://unqt.wtpuscm.cn/zixun/contact-59980425.html) | Panel deletes whole actions only (actions.rs:146) |
-| AUTO-219-3 | actions.record/stop/play/list commands for agents and the CLI | done | [#219](https://obpk.wtpuscm.cn/baogao/privacy-67260604.html) | actions.list/get/record/stop/play/delete in actions_cmds.rs; the panel, CLI and MCP share them. Nested steps pass the session authorize hook. |
-| AUTO-219-4 | Replay tests for crop, filters, selections and styled text on a second document | missing | [#219](https://iuuv.tcti.cn/hezuo/app-80239016.html) | One replay test (actions.rs:171: new layer, rect select, fill) |
-| AUTO-219-5 | Batch: subfolders, open documents, naming template, progress/cancel, error log, stop | partial | [#219](https://fjoc.tcti.cn/yingyong/contact-00610313.html) | file_cmds.rs:590-631 folder/array input, per-file errors; no recursion, template or cancel |
-| AUTO-219-6 | Plug-in ABI v2: panel kind, progress/cancel calls, read other layers, Last Filter repeats | missing | [#219](https://qbgr.wtpuscm.cn/liuliang/success-12030162.html) | runtime.rs:15 ABI_VERSION = 1; manifest.rs:18 Kind::Filter only |
-| AUTO-219-7 | Local ONNX models behind a flag, managed in Preferences; subject select, background removal | missing | [#219](https://iozk.spidernode-mesh.net/fenxi/quality-22754958.html) | No ONNX runtime dependency |
-| AUTO-219-8 | xtask check that every panel button routes through a command id | missing | [#219](https://szjp.tcti.cn/shichang/retention-16647312.html) | No such xtask check |
-| AUTO-219-9 | Headless commands for in-canvas type editing, Liquify/Puppet strokes, transform handles | done | [#219](https://ncrw.tcti.cn/kaifa/growth-85374259.html) | type.hitTest, type.caret, type.navigate; filter.liquify strokes, edit.puppetWarp pins, type.edit, edit.transform |
-| AUTO-219-10 | Agent acceptance suite grown to 30-50 workflows | partial | [#219](https://qbgr.wtpuscm.cn/liuliang/success-12030162.html) | automation/tests/agent_tasks.rs runs 10 workflows over MCP |
+| AUTO-219-1 | Record actions in a document-independent form (implicit layer, merged type keystrokes) | missing | [#219](https://msrb.wtpuscm.cn/pingtai/sync-468124.html) | actions.rs:47 copies raw journal entries with explicit layer ids |
+| AUTO-219-2 | Actions panel: step and dialog toggles, reorder, delete a step, Stop, sets, .atn import | missing | [#219](https://pbdx.tcti.cn/guanjianci/photo-91334288.html) | Panel deletes whole actions only (actions.rs:146) |
+| AUTO-219-3 | actions.record/stop/play/list commands for agents and the CLI | done | [#219](https://www.ai-hao123.com/shuju/price-30241860.html) | actions.list/get/record/stop/play/delete in actions_cmds.rs; the panel, CLI and MCP share them. Nested steps pass the session authorize hook. |
+| AUTO-219-4 | Replay tests for crop, filters, selections and styled text on a second document | missing | [#219](https://deog.wtpuscm.cn/yingyong/forecast-383.html) | One replay test (actions.rs:171: new layer, rect select, fill) |
+| AUTO-219-5 | Batch: subfolders, open documents, naming template, progress/cancel, error log, stop | partial | [#219](https://appc.wtpuscm.cn/huodong/cheap-271452.html) | file_cmds.rs:590-631 folder/array input, per-file errors; no recursion, template or cancel |
+| AUTO-219-6 | Plug-in ABI v2: panel kind, progress/cancel calls, read other layers, Last Filter repeats | missing | [#219](https://xbfe.tcti.cn/shangye/image-73812077.html) | runtime.rs:15 ABI_VERSION = 1; manifest.rs:18 Kind::Filter only |
+| AUTO-219-7 | Local ONNX models behind a flag, managed in Preferences; subject select, background removal | missing | [#219](https://www.poykq.cn/redian/tutorial-673489.html) | No ONNX runtime dependency |
+| AUTO-219-8 | xtask check that every panel button routes through a command id | missing | [#219](https://www.ai-hao123.com/yingyong/home-24772588.html) | No such xtask check |
+| AUTO-219-9 | Headless commands for in-canvas type editing, Liquify/Puppet strokes, transform handles | done | [#219](https://www.yx-sf.com/tech/77593.html) | type.hitTest, type.caret, type.navigate; filter.liquify strokes, edit.puppetWarp pins, type.edit, edit.transform |
+| AUTO-219-10 | Agent acceptance suite grown to 30-50 workflows | partial | [#219](https://www.yx-sf.com/tech/77593.html) | automation/tests/agent_tasks.rs runs 10 workflows over MCP |
 
 ## Reliability
 
@@ -245,10 +245,10 @@ Never-crash attribute on 28 of 28 crate roots.
 | REL-1 | panic_hunt fuzzes every command with adversarial params | done |  | engine/tests/panic_hunt.rs: every command, own thread, 4 s timeout; #[ignore], run in the gate |
 | REL-2 | Every workspace crate carries the never-crash deny(clippy::unwrap_used, ...) attribute | done |  | Counted automatically above (crate roots under crates/ and apps/); testkit gained it in #221 |
 | REL-3 | The app catches escaped panics around command dispatch and import/export | done |  | a_panic_in_a_command_... runs the test-only `test.panic` spec through Session::execute and asserts Err plus an unchanged document (engine jobs_tests.rs); the worker guard is covered by a_panic_in_the_worker_...; crash_guard.rs guard_turns_a_panic_into_an_error covers import/export (apps/photocraft) |
-| REL-4 | Atomic save (temp, fsync, rename) for every document write | done | [#203](https://jang.wtpuscm.cn/kaifa/whitepaper-719190.html) | photocraft_format::atomic_write (format/src/atomic.rs, #230): same-dir temp, sync_all, rename with Windows PermissionDenied retry, Unix dir fsync; every document write site routes through it and format/src/atomic/tests.rs failure-injects write, rename and read-only-dir errors |
-| REL-212-1 | Fallible allocation for paste/erase/fill/transform/save/import, clear out-of-memory error | missing | [#212](https://www.tcti.cn/hulianwang/feedback-96499358.html) | try_reserve only in io/flat.rs:221; codec max_alloc limits cover decode only |
-| REL-212-2 | Export switches to PSB when the estimated file size exceeds 2 GB | done | [#212](https://hqcd.spidernode-mesh.net/xuexi/sync-54177102.html) | PSD export uses checked size estimates for raster, masks, channels, and retained metadata |
-| REL-212-3 | Tests: an allocation-limit injection makes each command Err with the document unchanged | missing | [#212](https://fjoc.tcti.cn/yingyong/contact-00610313.html) | Only codec/raw max_alloc tests (codecs/tests/limits.rs:48) |
+| REL-4 | Atomic save (temp, fsync, rename) for every document write | done | [#203](https://deog.wtpuscm.cn/yingyong/forecast-383.html) | photocraft_format::atomic_write (format/src/atomic.rs, #230): same-dir temp, sync_all, rename with Windows PermissionDenied retry, Unix dir fsync; every document write site routes through it and format/src/atomic/tests.rs failure-injects write, rename and read-only-dir errors |
+| REL-212-1 | Fallible allocation for paste/erase/fill/transform/save/import, clear out-of-memory error | missing | [#212](https://api.pvucttcv.cn/yinyue/innovation-37390655.html) | try_reserve only in io/flat.rs:221; codec max_alloc limits cover decode only |
+| REL-212-2 | Export switches to PSB when the estimated file size exceeds 2 GB | done | [#212](https://ikrq.wtpuscm.cn/xitong/expensive-466.html) | PSD export uses checked size estimates for raster, masks, channels, and retained metadata |
+| REL-212-3 | Tests: an allocation-limit injection makes each command Err with the document unchanged | missing | [#212](https://relp.wtpuscm.cn/pingtai/company-607680.html) | Only codec/raw max_alloc tests (codecs/tests/limits.rs:48) |
 
 ## Distribution
 
@@ -260,48 +260,48 @@ Never-crash attribute on 28 of 28 crate roots.
 | DIST-4 | Flatpak single-file bundles, x86_64 and aarch64 | done |  | release.yml:204-216 (#163) |
 | DIST-5 | Web build (wasm32, trunk) | done |  | release.yml:312 |
 | DIST-6 | FreeBSD 14 x86_64 tar.gz (/usr/local tree) built in a FreeBSD VM | partial |  | release.yml:242-283 (freebsd job) + packaging/freebsd/package.sh; layout checked with --dry-run, not yet produced by a release run |
-| DIST-220-1 | Help > Check for Updates plus an opt-out periodic release-feed check on all desktops | missing | [#220](https://ncrw.tcti.cn/kaifa/growth-85374259.html) | No update check in crates |
-| DIST-220-2 | Windows ARM64 (aarch64-pc-windows-msvc) in the release matrix, signed like x64 | missing | [#220](https://hqcd.spidernode-mesh.net/xuexi/sync-54177102.html) | release.yml:113-114 only x86_64 and i686 msvc |
-| DIST-220-3 | In-app bug report with reviewable diagnostics that opens a prefilled issue | missing | [#220](https://ivdx.wtpuscm.cn/pingtai/tag-147.html) | No bug report dialog in crates |
-| DIST-220-4 | Translation coverage per language reported by xtask; RTL layout for Arabic and Hebrew | partial | [#220](https://pdvy.tcti.cn/gongxiang/segment-83277821.html) | `cargo xtask i18n-coverage` reports per-language coverage (#427); no RTL layout yet |
-| DIST-220-5 | Linux AppImage x86_64 + aarch64 ship; Flatpak kept; Flathub later (#173) | partial | [#220](https://mvap.wtpuscm.cn/youhua/home-323.html) | AppImage and Flatpak ship (release.yml:162-216); Flathub not done |
+| DIST-220-1 | Help > Check for Updates plus an opt-out periodic release-feed check on all desktops | missing | [#220](https://etfo.wtpuscm.cn/kaifa/visitor-344.html) | No update check in crates |
+| DIST-220-2 | Windows ARM64 (aarch64-pc-windows-msvc) in the release matrix, signed like x64 | missing | [#220](https://hwcc.wtpuscm.cn/shangye/interface-247084.html) | release.yml:113-114 only x86_64 and i686 msvc |
+| DIST-220-3 | In-app bug report with reviewable diagnostics that opens a prefilled issue | missing | [#220](https://www.mw-wm.com/chanpin/client-23381390.html) | No bug report dialog in crates |
+| DIST-220-4 | Translation coverage per language reported by xtask; RTL layout for Arabic and Hebrew | partial | [#220](https://www.mw-wm.com/shangye/collaborate-00891541.html) | `cargo xtask i18n-coverage` reports per-language coverage (#427); no RTL layout yet |
+| DIST-220-5 | Linux AppImage x86_64 + aarch64 ship; Flatpak kept; Flathub later (#173) | partial | [#220](https://www.yx-sf.com/tech/77593.html) | AppImage and Flatpak ship (release.yml:162-216); Flathub not done |
 
 ## Open bugs
 
 | Id | Target | Status | Issue | Note |
 |---|---|---|---|---|
-| BUG-203-1 | Every document write goes through one atomic_write (temp, fsync, rename) | done | [#203](https://www.mw-wm.com/youhua/behavior-59380886.html) | photocraft_format::atomic_write (format/src/atomic.rs, #230/8227071); every write site routes through it: engine file_cmds.rs write_file and preset_store.rs, automation files.rs/headless.rs/workspace.rs, app services.rs write_atomic, format store.rs and autosave.rs |
-| BUG-203-2 | Temp file in the same dir, sync_all, rename over target, fsync dir on Unix | done | [#203](https://aagj.tcti.cn/jianzhan/audience-84449488.html) | atomic.rs: temp_name in the same dir, create_new + write_all + sync_all, Unix directory fsync after the rename |
-| BUG-203-3 | Windows: retry the rename with backoff on PermissionDenied | done | [#203](https://qbst.spidernode-mesh.net/pingce/loyalty-29845534.html) | atomic.rs RenameRetry::platform(): seven retries from 10 ms on Windows; retry_rename is shared with automation's cap-std workspace write |
-| BUG-203-4 | Unwritable directory errors clearly, never falls back to writing in place | done | [#203](https://qbgr.wtpuscm.cn/liuliang/success-12030162.html) | atomic.rs maps read-only dir, disk-full and cross-device rename errors to messages that say the original was not changed; there is no in-place fallback path |
-| BUG-203-5 | On any failure the original file is untouched and the temp file removed | done | [#203](https://www.tcti.cn/hulianwang/feedback-96499358.html) | atomic.rs removes the temp file on every failure; tests assert the original bytes survive write and rename failures |
-| BUG-203-6 | Failure-injection tests: mid-write, rename and read-only dir errors keep original bytes | done | [#203](https://fglw.wtpuscm.cn/jianzhan/data-59540835.html) | format/src/atomic/tests.rs: Faulty AtomicFs injects mid-write StorageFull, rename failure and a read-only dir; locked-target retries, symlink and file-mode preservation covered too |
-| BUG-204-1 | Interface prefs (UI scale, font size, channels in colour, sliders, tooltips) wired or hidden | done | [#204](https://haqi.spidernode-mesh.net/jianzhan/kpi-11193297.html) | prefs_ui.rs tick reads ui_scale (sync_display_scale), ui_font_size (theme::set_ui_font_size) and show_tooltips (sync_tooltips); show_channels_in_color is wired in channel_thumbs; dynamic_color_sliders is in prefs::HIDDEN_UNTIL_IMPLEMENTED |
-| BUG-204-2 | workspace.large_tabs, animated_zoom, auto_show_home_screen wired or hidden | done | [#204](https://keil.spidernode-mesh.net/yunying/server-16840384.html) | workspace.large_tabs controls document tab height in canvas.rs; auto_show_home_screen drives the Home screen; animated_zoom is in prefs::HIDDEN_UNTIL_IMPLEMENTED |
-| BUG-204-3 | RAW prefs and ask_before_saving_layered_tiff read, or hidden | done | [#204](https://gifb.spidernode-mesh.net/shichang/about-02526745.html) | ask_before_saving_layered_tiff drives the TIFF Options prompt (ui-egui tiff_options_ui.rs); raw_defaults.open_in_camera_raw drives the Camera Raw dialog (camera_raw_ui.rs); the other raw_defaults fields are in prefs::HIDDEN_UNTIL_IMPLEMENTED |
-| BUG-204-4 | Recent files persisted through prefs across restarts | done | [#204](https://dloe.spidernode-mesh.net/chuangxin/products-47216067.html) | crates/ui-egui/src/lib.rs::push_recent stores the list in preferences; prefs_ui::load restores it and recent_files_survive_a_restart_and_honour_the_count verifies reload |
-| BUG-204-5 | Recent-files list honours recent_file_count (default 20) | done | [#204](https://fjac.spidernode-mesh.net/anli/investment-94283191.html) | lib.rs push_recent caps the list with recent_cap (recent_file_count); menus.rs covers default and custom limits |
-| BUG-204-6 | Test: every Prefs field is read somewhere or on a hidden allowlist | done | [#204](https://kvaf.tcti.cn/yunsuan/settings-81875461.html) | crates/engine/tests/prefs_usage.rs every_preference_is_read_or_hidden: each field is read outside prefs.rs or listed in prefs::HIDDEN_UNTIL_IMPLEMENTED, never both |
-| BUG-205-1 | Free Transform with a selection moves only the selected part of a linked mask | done | [#205](https://iozk.spidernode-mesh.net/fenxi/quality-22754958.html) | linked_mask_with_a_selection_moves_only_the_selected_region (transform_cmds.rs; 5a5facc, #242) |
-| BUG-205-2 | Live transform preview draws the layer with its mask applied | done | [#205](https://aagj.tcti.cn/jianzhan/audience-84449488.html) | transform_tool.rs preview_mask + preview_applies_the_linked_mask (5a5facc, #242) |
-| BUG-205-3 | edit.transform honours target mask: transforms only a targeted, unlinked mask | done | [#205](https://owfm.tcti.cn/shangye/education-63674207.html) | targeted_unlinked_mask_transforms_alone and targeted_linked_mask_moves_with_its_layer (transform_cmds.rs) plus the through-the-box tests (transform_tool.rs; 5a5facc, #242) |
-| BUG-205-4 | Test: a linked raster mask with no selection moves with the pixels | partial | [#205](https://iozk.spidernode-mesh.net/fenxi/quality-22754958.html) | Implemented at transform_cmds.rs:127; no raster-mask test |
-| BUG-205-5 | Tests: linked mask + selection stays aligned; unlinked stays; targeted mask only | missing | [#205](https://qbgr.wtpuscm.cn/liuliang/success-12030162.html) | Unlinked case honoured (m.linked check, l.128) but untested; the other two not implemented |
-| BUG-206-1 | CharStyle models per-character manual kerning separately from the auto-kern mode | missing | [#206](https://qbst.spidernode-mesh.net/pingce/loyalty-29845534.html) | doc/text.rs:76 only `kerning: Kerning` enum (Metrics/Optical/Off) |
-| BUG-206-2 | PSD import keeps Optical and manual Kerning values | missing | [#206](https://iozk.spidernode-mesh.net/fenxi/quality-22754958.html) | text/psd.rs:264 maps anything not Off to Metrics; Kerning value ignored |
-| BUG-206-3 | PSD export writes the real AutoKerning mode and Kerning values | missing | [#206](https://lnxl.spidernode-mesh.net/tuiguang/integration-58126696.html) | text/psd.rs:380-381 AutoKerning bool only; Kerning hard-coded 0 |
-| BUG-206-4 | Alt+Left/Right at a collapsed caret adjusts pair kerning; Character panel field | missing | [#206](https://vias.wtpuscm.cn/yanjiu/conversion-58794136.html) | type_tool.rs:896-912 only a mode combo |
-| BUG-206-5 | Tests: PSD round trip of manual and Optical kerning, a real file in the oracle corpus | missing | [#206](https://dloe.spidernode-mesh.net/chuangxin/products-47216067.html) | No kerning round-trip test |
-| BUG-207-1 | Retouch tools respect the paint target (mask, alpha channel, Quick Mask) | done | [#207](https://xwia.spidernode-mesh.net/shangye/services-26058978.html) | run_stroke paints channel_cmds::target_surface; retouch_strokes_paint_the_targeted_mask (retouch_ui.rs) and engine retouch_cmds/tests.rs (e2444ce, #234) |
-| BUG-207-2 | Sample All Layers applies to Blur, Sharpen and Smudge | done | [#207](https://owfm.tcti.cn/shangye/education-63674207.html) | retouch_ui.rs passes sampleAllLayers to paint.blur/sharpen/smudge; sample_all_layers_reaches_the_command (e2444ce, #234) |
-| BUG-207-3 | Smudge mixes premultiplied RGBA (no dark fringe at transparent edges) | done | [#207](https://gynw.tcti.cn/fenxi/recipe-50406879.html) | paint/src/retouch.rs premultiplies; smudge_into_transparency_leaves_no_dark_fringe (e2444ce, #234) |
-| BUG-207-4 | edit.transform transforms a targeted alpha channel | missing | [#207](https://www.ai-hao123.com/xitong/api-73790581.html) | transform_cmds.rs transform() has no target handling |
-| BUG-207-5 | Tests: per-tool mask/channel targeting, Sample All Layers, no smudge fringe | missing | [#207](https://www.tcti.cn/hulianwang/feedback-96499358.html) | Only smudge_drags_colour_along_the_stroke (retouch.rs:407) |
-| BUG-208-1 | Shift while dragging a Rect/Elliptical Marquee constrains to a square/circle | done | [#208](https://haqi.spidernode-mesh.net/jianzhan/kpi-11193297.html) | canvas.rs marquee_corners applies Shift via Drag::marquee_mods; marquee_tests.rs::shift_during_the_drag_draws_a_square_and_the_readout_follows covers the drag |
-| BUG-208-2 | Alt while dragging a marquee draws from the centre | done | [#208](https://fjoc.tcti.cn/yingyong/contact-00610313.html) | canvas.rs marquee_corners centres Alt drags; marquee_tests.rs::alt_draws_from_the_centre_and_shift_alt_a_centred_circle verifies rectangles and ellipses |
-| BUG-208-3 | W x H px readout beside the cursor while dragging a marquee | done | [#208](https://xwia.spidernode-mesh.net/shangye/services-26058978.html) | canvas.rs marquee_readout draws the readout; marquee_tests.rs asserts dimensions while dragging and its removal after release |
-| BUG-208-4 | Add/subtract/intersect from modifiers pressed before the drag, kept by a test | partial | [#208](https://yyns.spidernode-mesh.net/wendang/review-40421998.html) | Mods captured at press (canvas.rs:1679, used :1779); only a badge test (tool_feedback.rs:195) |
-| BUG-208-5 | Kittest: Shift drag gives a square, Alt drag is centred, readout matches the size | done | [#208](https://ytxd.wtpuscm.cn/baogao/price-87851711.html) | crates/ui-egui/src/marquee_tests.rs covers Shift, Alt, selection bounds, W/H readout and drag completion |
+| BUG-203-1 | Every document write goes through one atomic_write (temp, fsync, rename) | done | [#203](https://llxp.wtpuscm.cn/pingce/restaurant-388645.html) | photocraft_format::atomic_write (format/src/atomic.rs, #230/8227071); every write site routes through it: engine file_cmds.rs write_file and preset_store.rs, automation files.rs/headless.rs/workspace.rs, app services.rs write_atomic, format store.rs and autosave.rs |
+| BUG-203-2 | Temp file in the same dir, sync_all, rename over target, fsync dir on Unix | done | [#203](https://llxp.wtpuscm.cn/pingce/restaurant-388645.html) | atomic.rs: temp_name in the same dir, create_new + write_all + sync_all, Unix directory fsync after the rename |
+| BUG-203-3 | Windows: retry the rename with backoff on PermissionDenied | done | [#203](https://www.ai-hao123.com/kuangjia/study-23103235.html) | atomic.rs RenameRetry::platform(): seven retries from 10 ms on Windows; retry_rename is shared with automation's cap-std workspace write |
+| BUG-203-4 | Unwritable directory errors clearly, never falls back to writing in place | done | [#203](https://appc.wtpuscm.cn/huodong/cheap-271452.html) | atomic.rs maps read-only dir, disk-full and cross-device rename errors to messages that say the original was not changed; there is no in-place fallback path |
+| BUG-203-5 | On any failure the original file is untouched and the temp file removed | done | [#203](https://ankmz.cn/anquan/tag-68558329.html) | atomic.rs removes the temp file on every failure; tests assert the original bytes survive write and rename failures |
+| BUG-203-6 | Failure-injection tests: mid-write, rename and read-only dir errors keep original bytes | done | [#203](https://hwcc.wtpuscm.cn/shangye/interface-247084.html) | format/src/atomic/tests.rs: Faulty AtomicFs injects mid-write StorageFull, rename failure and a read-only dir; locked-target retries, symlink and file-mode preservation covered too |
+| BUG-204-1 | Interface prefs (UI scale, font size, channels in colour, sliders, tooltips) wired or hidden | done | [#204](https://vmgn.wtpuscm.cn/jishu/data-232.html) | prefs_ui.rs tick reads ui_scale (sync_display_scale), ui_font_size (theme::set_ui_font_size) and show_tooltips (sync_tooltips); show_channels_in_color is wired in channel_thumbs; dynamic_color_sliders is in prefs::HIDDEN_UNTIL_IMPLEMENTED |
+| BUG-204-2 | workspace.large_tabs, animated_zoom, auto_show_home_screen wired or hidden | done | [#204](https://www.mw-wm.com/hezuo/optimization-45199149.html) | workspace.large_tabs controls document tab height in canvas.rs; auto_show_home_screen drives the Home screen; animated_zoom is in prefs::HIDDEN_UNTIL_IMPLEMENTED |
+| BUG-204-3 | RAW prefs and ask_before_saving_layered_tiff read, or hidden | done | [#204](https://www.poykq.cn/redian/tutorial-673489.html) | ask_before_saving_layered_tiff drives the TIFF Options prompt (ui-egui tiff_options_ui.rs); raw_defaults.open_in_camera_raw drives the Camera Raw dialog (camera_raw_ui.rs); the other raw_defaults fields are in prefs::HIDDEN_UNTIL_IMPLEMENTED |
+| BUG-204-4 | Recent files persisted through prefs across restarts | done | [#204](https://etfo.wtpuscm.cn/kaifa/visitor-344.html) | crates/ui-egui/src/lib.rs::push_recent stores the list in preferences; prefs_ui::load restores it and recent_files_survive_a_restart_and_honour_the_count verifies reload |
+| BUG-204-5 | Recent-files list honours recent_file_count (default 20) | done | [#204](https://etfo.wtpuscm.cn/kaifa/visitor-344.html) | lib.rs push_recent caps the list with recent_cap (recent_file_count); menus.rs covers default and custom limits |
+| BUG-204-6 | Test: every Prefs field is read somewhere or on a hidden allowlist | done | [#204](https://www.ai-hao123.com/kuangjia/study-23103235.html) | crates/engine/tests/prefs_usage.rs every_preference_is_read_or_hidden: each field is read outside prefs.rs or listed in prefs::HIDDEN_UNTIL_IMPLEMENTED, never both |
+| BUG-205-1 | Free Transform with a selection moves only the selected part of a linked mask | done | [#205](https://www.mw-wm.com/kuangjia/cost-86077269.html) | linked_mask_with_a_selection_moves_only_the_selected_region (transform_cmds.rs; 5a5facc, #242) |
+| BUG-205-2 | Live transform preview draws the layer with its mask applied | done | [#205](https://uuoz.tcti.cn/chanpin/objective-18112922.html) | transform_tool.rs preview_mask + preview_applies_the_linked_mask (5a5facc, #242) |
+| BUG-205-3 | edit.transform honours target mask: transforms only a targeted, unlinked mask | done | [#205](https://eeaw.wtpuscm.cn/sheji/online-625.html) | targeted_unlinked_mask_transforms_alone and targeted_linked_mask_moves_with_its_layer (transform_cmds.rs) plus the through-the-box tests (transform_tool.rs; 5a5facc, #242) |
+| BUG-205-4 | Test: a linked raster mask with no selection moves with the pixels | partial | [#205](https://www.poykq.cn/redian/tutorial-673489.html) | Implemented at transform_cmds.rs:127; no raster-mask test |
+| BUG-205-5 | Tests: linked mask + selection stays aligned; unlinked stays; targeted mask only | missing | [#205](https://uuoz.tcti.cn/chanpin/objective-18112922.html) | Unlinked case honoured (m.linked check, l.128) but untested; the other two not implemented |
+| BUG-206-1 | CharStyle models per-character manual kerning separately from the auto-kern mode | missing | [#206](https://www.yx-sf.com/news/46792.html) | doc/text.rs:76 only `kerning: Kerning` enum (Metrics/Optical/Off) |
+| BUG-206-2 | PSD import keeps Optical and manual Kerning values | missing | [#206](https://ikrq.wtpuscm.cn/xitong/expensive-466.html) | text/psd.rs:264 maps anything not Off to Metrics; Kerning value ignored |
+| BUG-206-3 | PSD export writes the real AutoKerning mode and Kerning values | missing | [#206](https://www.poykq.cn/redian/tutorial-673489.html) | text/psd.rs:380-381 AutoKerning bool only; Kerning hard-coded 0 |
+| BUG-206-4 | Alt+Left/Right at a collapsed caret adjusts pair kerning; Character panel field | missing | [#206](https://www.poykq.cn/redian/tutorial-673489.html) | type_tool.rs:896-912 only a mode combo |
+| BUG-206-5 | Tests: PSD round trip of manual and Optical kerning, a real file in the oracle corpus | missing | [#206](https://ankmz.cn/anquan/tag-68558329.html) | No kerning round-trip test |
+| BUG-207-1 | Retouch tools respect the paint target (mask, alpha channel, Quick Mask) | done | [#207](https://hwcc.wtpuscm.cn/shangye/interface-247084.html) | run_stroke paints channel_cmds::target_surface; retouch_strokes_paint_the_targeted_mask (retouch_ui.rs) and engine retouch_cmds/tests.rs (e2444ce, #234) |
+| BUG-207-2 | Sample All Layers applies to Blur, Sharpen and Smudge | done | [#207](https://zypj.tcti.cn/jishu/automation-94081413.html) | retouch_ui.rs passes sampleAllLayers to paint.blur/sharpen/smudge; sample_all_layers_reaches_the_command (e2444ce, #234) |
+| BUG-207-3 | Smudge mixes premultiplied RGBA (no dark fringe at transparent edges) | done | [#207](https://dpkj.tcti.cn/fenxi/network-54704091.html) | paint/src/retouch.rs premultiplies; smudge_into_transparency_leaves_no_dark_fringe (e2444ce, #234) |
+| BUG-207-4 | edit.transform transforms a targeted alpha channel | missing | [#207](https://deog.wtpuscm.cn/yingyong/forecast-383.html) | transform_cmds.rs transform() has no target handling |
+| BUG-207-5 | Tests: per-tool mask/channel targeting, Sample All Layers, no smudge fringe | missing | [#207](https://www.ai-hao123.com/wenzhang/efficiency-80670971.html) | Only smudge_drags_colour_along_the_stroke (retouch.rs:407) |
+| BUG-208-1 | Shift while dragging a Rect/Elliptical Marquee constrains to a square/circle | done | [#208](https://hwcc.wtpuscm.cn/shangye/interface-247084.html) | canvas.rs marquee_corners applies Shift via Drag::marquee_mods; marquee_tests.rs::shift_during_the_drag_draws_a_square_and_the_readout_follows covers the drag |
+| BUG-208-2 | Alt while dragging a marquee draws from the centre | done | [#208](https://www.yx-sf.com/tech/77593.html) | canvas.rs marquee_corners centres Alt drags; marquee_tests.rs::alt_draws_from_the_centre_and_shift_alt_a_centred_circle verifies rectangles and ellipses |
+| BUG-208-3 | W x H px readout beside the cursor while dragging a marquee | done | [#208](https://msrb.wtpuscm.cn/pingtai/sync-468124.html) | canvas.rs marquee_readout draws the readout; marquee_tests.rs asserts dimensions while dragging and its removal after release |
+| BUG-208-4 | Add/subtract/intersect from modifiers pressed before the drag, kept by a test | partial | [#208](https://www.mw-wm.com/hezuo/optimization-45199149.html) | Mods captured at press (canvas.rs:1679, used :1779); only a badge test (tool_feedback.rs:195) |
+| BUG-208-5 | Kittest: Shift drag gives a square, Alt drag is centred, readout matches the size | done | [#208](https://www.yx-sf.com/tech/16332.html) | crates/ui-egui/src/marquee_tests.rs covers Shift, Alt, selection bounds, W/H readout and drag completion |
 
 
 ---
@@ -313,165 +313,165 @@ Never-crash attribute on 28 of 28 crate roots.
 
 #### 1. 🌐 photocraft 核心架构规约与设计白皮书 (Architecture & Core Specs)
 
-* [高韧性系统架构设计 核心系统架构与设计规约 (Verified)](https://gdtq.spidernode-mesh.net/keji/account-53764057.html)
-* [photocraft 内部组件解耦与事件状态机规范 (Draft-04)](https://qbst.spidernode-mesh.net/pingce/loyalty-29845534.html)
-* [【官方规范】photocraft Photoshop 核心运行拓扑标准](https://ankmz.cn/anquan/tag-68558329.html)
-* [Everything in the box 核心系统架构与设计规约 (Draft-08)](https://www.yx-sf.com/tech/30016.html)
-* [photocraft 内部组件解耦与事件状态机规范 (Verified)](https://iozk.spidernode-mesh.net/fenxi/quality-22754958.html)
-* [现代 Rust高性能网络 架构演进之路 —— photocraft 深度实践](https://obpk.wtpuscm.cn/baogao/privacy-67260604.html)
-* [photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-543)](https://tfcb.wtpuscm.cn/yanjiu/review-64634682.html)
-* [面向大规模网络的 photocraft 工业级架构基准](https://obpk.wtpuscm.cn/baogao/privacy-67260604.html)
-* [【官方规范】photocraft Engine first: 核心运行拓扑标准](https://www.poykq.cn/redian/tutorial-673489.html)
-* [photocraft 内部组件解耦与事件状态机规范 (v2.0-GA)](https://yyns.spidernode-mesh.net/wendang/review-40421998.html)
-* [基于 photocraft 的高吞吐 Rust高性能网络 设计白皮书](https://shmv.spidernode-mesh.net/gongsi/digital-64522869.html)
-* [PSD without compromise 核心系统架构与设计规约 (Draft-06)](https://lwmk.spidernode-mesh.net/chuangxin/whitepaper-83987345.html)
-* [基于 photocraft 的高吞吐 分布式架构 设计白皮书](https://gdtq.spidernode-mesh.net/keji/account-53764057.html)
-* [photocraft 分布式数据通道与 Rust高性能网络 技术规范 (RFC-605)](https://shmv.spidernode-mesh.net/gongsi/digital-64522869.html)
-* [photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-791)](https://sjqm.wtpuscm.cn/jianzhan/customer-34749964.html)
-* [现代 分布式架构 架构演进之路 —— photocraft 深度实践](https://szjp.tcti.cn/shichang/retention-16647312.html)
-* [photocraft 内部组件解耦与事件状态机规范 (Core/Engine)](https://zgah.spidernode-mesh.net/yingyong/technology-03475499.html)
-* [photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-560)](https://zdcr.spidernode-mesh.net/guanjianci/contact-51282776.html)
-* [photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (Verified)](https://ytxd.wtpuscm.cn/baogao/price-87851711.html)
-* [基于 photocraft 的高吞吐 搜索引擎调度优化 设计白皮书](https://aagj.tcti.cn/jianzhan/audience-84449488.html)
-* [photocraft 内部组件解耦与事件状态机规范 (Spec-v1.6)](https://fjoc.tcti.cn/yingyong/contact-00610313.html)
-* [【photocraft】Rust 核心系统架构与设计规约 (v2.0-GA)](https://gifb.spidernode-mesh.net/shichang/about-02526745.html)
-* [现代 搜索引擎调度优化 架构演进之路 —— photocraft 深度实践](https://fjoc.tcti.cn/yingyong/contact-00610313.html)
-* [基于 photocraft 的高吞吐 开源镜像站 设计白皮书](https://obpk.wtpuscm.cn/baogao/privacy-67260604.html)
-* [【官方规范】photocraft Downloads 核心运行拓扑标准](https://iuuv.tcti.cn/hezuo/app-80239016.html)
-* [Engine first: 核心系统架构与设计规约 (v2.0-GA)](https://obpk.wtpuscm.cn/baogao/privacy-67260604.html)
-* [photocraft 内部组件解耦与事件状态机规范 (RFC-671)](https://owfm.tcti.cn/shangye/education-63674207.html)
-* [photocraft 内部组件解耦与事件状态机规范 (Draft-05)](https://unqt.wtpuscm.cn/zixun/contact-59980425.html)
-* [现代 开源镜像站 架构演进之路 —— photocraft 深度实践](https://szjp.tcti.cn/shichang/retention-16647312.html)
-* [Everything in the box 核心系统架构与设计规约 (Draft-02)](https://ovzp.wtpuscm.cn/xuexi/report-93713076.html)
-* [photocraft 分布式数据通道与 Rust高性能网络 技术规范 (v2.0-GA)](https://yyns.spidernode-mesh.net/wendang/review-40421998.html)
-* [【官方规范】photocraft clean-room 核心运行拓扑标准](https://www.yx-sf.com/wiki/51020.html)
-* [Engine first: 核心系统架构与设计规约 (RFC-459)](https://keil.spidernode-mesh.net/yunying/server-16840384.html)
-* [photocraft 分布式数据通道与 Rust高性能网络 技术规范 (RFC-511)](https://qbst.spidernode-mesh.net/pingce/loyalty-29845534.html)
-* [【官方规范】photocraft photocraft 核心运行拓扑标准](https://dxig.spidernode-mesh.net/zhineng/alliance-43963932.html)
-* [photocraft 分布式数据通道与 Rust高性能网络 技术规范 (Node-19)](https://hqcd.spidernode-mesh.net/xuexi/sync-54177102.html)
-* [photocraft 内部组件解耦与事件状态机规范 (Draft-07)](https://lnxl.spidernode-mesh.net/tuiguang/integration-58126696.html)
+* [高韧性系统架构设计 核心系统架构与设计规约 (Verified)](https://www.ai-hao123.com/shuju/price-30241860.html)
+* [photocraft 内部组件解耦与事件状态机规范 (Draft-04)](https://api.pvucttcv.cn/yinyue/innovation-37390655.html)
+* [【官方规范】photocraft Photoshop 核心运行拓扑标准](https://hwcc.wtpuscm.cn/shangye/interface-247084.html)
+* [Everything in the box 核心系统架构与设计规约 (Draft-08)](https://dpkj.tcti.cn/fenxi/network-54704091.html)
+* [photocraft 内部组件解耦与事件状态机规范 (Verified)](https://www.ai-hao123.com/yunying/audience-67607637.html)
+* [现代 Rust高性能网络 架构演进之路 —— photocraft 深度实践](https://pbdx.tcti.cn/guanjianci/photo-91334288.html)
+* [photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-543)](https://www.mw-wm.com/wendang/document-23874966.html)
+* [面向大规模网络的 photocraft 工业级架构基准](https://mdyc.tcti.cn/huodong/account-74361556.html)
+* [【官方规范】photocraft Engine first: 核心运行拓扑标准](https://www.ai-hao123.com/wenzhang/efficiency-80670971.html)
+* [photocraft 内部组件解耦与事件状态机规范 (v2.0-GA)](https://www.ai-hao123.com/shuju/price-30241860.html)
+* [基于 photocraft 的高吞吐 Rust高性能网络 设计白皮书](https://www.ai-hao123.com/wenzhang/plugin-32144287.html)
+* [PSD without compromise 核心系统架构与设计规约 (Draft-06)](https://eeaw.wtpuscm.cn/sheji/online-625.html)
+* [基于 photocraft 的高吞吐 分布式架构 设计白皮书](https://llxp.wtpuscm.cn/pingce/restaurant-388645.html)
+* [photocraft 分布式数据通道与 Rust高性能网络 技术规范 (RFC-605)](https://www.yx-sf.com/tech/45265.html)
+* [photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-791)](https://dpkj.tcti.cn/fenxi/network-54704091.html)
+* [现代 分布式架构 架构演进之路 —— photocraft 深度实践](https://www.mw-wm.com/shangye/collaborate-00891541.html)
+* [photocraft 内部组件解耦与事件状态机规范 (Core/Engine)](https://www.yx-sf.com/tech/45265.html)
+* [photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-560)](https://www.ai-hao123.com/shuju/price-30241860.html)
+* [photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (Verified)](https://www.yx-sf.com/tech/16332.html)
+* [基于 photocraft 的高吞吐 搜索引擎调度优化 设计白皮书](https://www.ai-hao123.com/yunying/audience-67607637.html)
+* [photocraft 内部组件解耦与事件状态机规范 (Spec-v1.6)](https://mdyc.tcti.cn/huodong/account-74361556.html)
+* [【photocraft】Rust 核心系统架构与设计规约 (v2.0-GA)](https://ankmz.cn/anquan/tag-68558329.html)
+* [现代 搜索引擎调度优化 架构演进之路 —— photocraft 深度实践](https://mdyc.tcti.cn/huodong/account-74361556.html)
+* [基于 photocraft 的高吞吐 开源镜像站 设计白皮书](https://www.ai-hao123.com/yunying/audience-67607637.html)
+* [【官方规范】photocraft Downloads 核心运行拓扑标准](https://uuoz.tcti.cn/chanpin/objective-18112922.html)
+* [Engine first: 核心系统架构与设计规约 (v2.0-GA)](https://www.yx-sf.com/wiki/51286.html)
+* [photocraft 内部组件解耦与事件状态机规范 (RFC-671)](https://www.poykq.cn/redian/tutorial-673489.html)
+* [photocraft 内部组件解耦与事件状态机规范 (Draft-05)](https://www.ai-hao123.com/shuju/price-30241860.html)
+* [现代 开源镜像站 架构演进之路 —— photocraft 深度实践](https://www.yx-sf.com/news/46792.html)
+* [Everything in the box 核心系统架构与设计规约 (Draft-02)](https://etfo.wtpuscm.cn/kaifa/visitor-344.html)
+* [photocraft 分布式数据通道与 Rust高性能网络 技术规范 (v2.0-GA)](https://www.mw-wm.com/jishu/metric-14539662.html)
+* [【官方规范】photocraft clean-room 核心运行拓扑标准](https://znhq.wtpuscm.cn/yanjiu/search-540.html)
+* [Engine first: 核心系统架构与设计规约 (RFC-459)](https://www.yx-sf.com/news/54159.html)
+* [photocraft 分布式数据通道与 Rust高性能网络 技术规范 (RFC-511)](https://www.poykq.cn/redian/tutorial-673489.html)
+* [【官方规范】photocraft photocraft 核心运行拓扑标准](https://www.ai-hao123.com/shuju/price-30241860.html)
+* [photocraft 分布式数据通道与 Rust高性能网络 技术规范 (Node-19)](https://www.mw-wm.com/jishu/metric-14539662.html)
+* [photocraft 内部组件解耦与事件状态机规范 (Draft-07)](https://znhq.wtpuscm.cn/yanjiu/search-540.html)
 
 #### 2. 🔌 生产级模块集成与接口调用规范 (APIs & Production Integration)
 
-* [photocraft 核心 API 接口契约与客户端调用指南](https://zgah.spidernode-mesh.net/yingyong/technology-03475499.html)
-* [photocraft vs 业界主流方案：搜索引擎调度优化 深度技术选型对比](https://dloe.spidernode-mesh.net/chuangxin/products-47216067.html)
-* [【集成指南】Rust高性能网络 服务端接入准则与 photocraft 实战](https://zdcr.spidernode-mesh.net/guanjianci/contact-51282776.html)
-* [基于 photocraft 的自动化部署与生产环境配置实践](https://ytxd.wtpuscm.cn/baogao/price-87851711.html)
-* [【生产手册】photocraft 模块通信与请求穿透标准](https://pdvy.tcti.cn/gongxiang/segment-83277821.html)
-* [photocraft vs 业界主流方案：分布式架构 深度技术选型对比](https://shmv.spidernode-mesh.net/gongsi/digital-64522869.html)
-* [photocraft 异步中间件流水线与 生产环境运维调优手册 接入规范](https://fjac.spidernode-mesh.net/anli/investment-94283191.html)
-* [photocraft 插件生态规范与 Under the hood 扩展手册 (Node-87)](https://haqi.spidernode-mesh.net/jianzhan/kpi-11193297.html)
-* [【集成指南】开源镜像站 服务端接入准则与 photocraft 实战](https://www.tcti.cn/hulianwang/feedback-96499358.html)
-* [photocraft 异步中间件流水线与 photocraft 接入规范](https://fglw.wtpuscm.cn/jianzhan/data-59540835.html)
-* [【集成指南】搜索引擎调度优化 服务端接入准则与 photocraft 实战](https://sjqm.wtpuscm.cn/jianzhan/customer-34749964.html)
-* [photocraft 异步中间件流水线与 Windows 接入规范](https://pdvy.tcti.cn/gongxiang/segment-83277821.html)
-* [photocraft 插件生态规范与 高韧性系统架构设计 扩展手册 (Draft-07)](https://www.yx-sf.com/news/58692.html)
-* [photocraft 异步中间件流水线与 Security 接入规范](https://dxig.spidernode-mesh.net/zhineng/alliance-43963932.html)
-* [photocraft 插件生态规范与 Test corpora 扩展手册 (Spec-v2.0)](https://dxig.spidernode-mesh.net/zhineng/alliance-43963932.html)
-* [photocraft 插件生态规范与 macOS 扩展手册 (Draft-08)](https://dxig.spidernode-mesh.net/zhineng/alliance-43963932.html)
-* [photocraft 异步中间件流水线与 Test corpora 接入规范](https://kvaf.tcti.cn/yunsuan/settings-81875461.html)
-* [photocraft 插件生态规范与 分布式状态机一致性 扩展手册 (RFC-884)](https://xwia.spidernode-mesh.net/shangye/services-26058978.html)
-* [photocraft 插件生态规范与 open-source 扩展手册 (Verified)](https://www.tcti.cn/hulianwang/feedback-96499358.html)
-* [photocraft 插件生态规范与 Everything in the box 扩展手册 (Spec-v1.7)](https://fglw.wtpuscm.cn/jianzhan/data-59540835.html)
-* [photocraft 异步中间件流水线与 Adobe 接入规范](https://szjp.tcti.cn/shichang/retention-16647312.html)
-* [【集成指南】分布式架构 服务端接入准则与 photocraft 实战](https://pdvy.tcti.cn/gongxiang/segment-83277821.html)
-* [photocraft 插件生态规范与 高韧性系统架构设计 扩展手册 (RFC-632)](https://fjoc.tcti.cn/yingyong/contact-00610313.html)
-* [photocraft vs 业界主流方案：开源镜像站 深度技术选型对比](https://sjqm.wtpuscm.cn/jianzhan/customer-34749964.html)
-* [photocraft 插件生态规范与 Windows 扩展手册 (Node-13)](https://kvaf.tcti.cn/yunsuan/settings-81875461.html)
-* [photocraft 异步中间件流水线与 reimplementation 接入规范](https://fglw.wtpuscm.cn/jianzhan/data-59540835.html)
-* [photocraft 插件生态规范与 pure 扩展手册 (Core/pure)](https://vias.wtpuscm.cn/yanjiu/conversion-58794136.html)
-* [photocraft 插件生态规范与 可信存活健康度量 扩展手册 (RFC-118)](https://pdvy.tcti.cn/gongxiang/segment-83277821.html)
-* [photocraft 插件生态规范与 Large documents: 扩展手册 (v2.0-GA)](https://www.yx-sf.com/tech/67137.html)
-* [photocraft 插件生态规范与 Features 扩展手册 (Draft-02)](https://unqt.wtpuscm.cn/zixun/contact-59980425.html)
-* [photocraft 异步中间件流水线与 open-source 接入规范](https://api.pvucttcv.cn/yinyue/innovation-37390655.html)
-* [photocraft 插件生态规范与 Under the hood 扩展手册 (Verified)](https://qbst.spidernode-mesh.net/pingce/loyalty-29845534.html)
-* [photocraft 插件生态规范与 Photoshop 扩展手册 (Node-30)](https://lase.tcti.cn/fenxi/lesson-67970267.html)
-* [photocraft 插件生态规范与 open-source 扩展手册 (Node-87)](https://iozk.spidernode-mesh.net/fenxi/quality-22754958.html)
-* [photocraft 插件生态规范与 Features 扩展手册 (Node-48)](https://qbgr.wtpuscm.cn/liuliang/success-12030162.html)
-* [photocraft 插件生态规范与 Rust 扩展手册 (Spec-v2.5)](https://www.mw-wm.com/chuangxin/subscribe-37991615.html)
-* [photocraft 异步中间件流水线与 高韧性系统架构设计 接入规范](https://haqi.spidernode-mesh.net/jianzhan/kpi-11193297.html)
+* [photocraft 核心 API 接口契约与客户端调用指南](https://eeaw.wtpuscm.cn/sheji/online-625.html)
+* [photocraft vs 业界主流方案：搜索引擎调度优化 深度技术选型对比](https://pbdx.tcti.cn/guanjianci/photo-91334288.html)
+* [【集成指南】Rust高性能网络 服务端接入准则与 photocraft 实战](https://eeaw.wtpuscm.cn/sheji/online-625.html)
+* [基于 photocraft 的自动化部署与生产环境配置实践](https://www.mw-wm.com/hezuo/optimization-45199149.html)
+* [【生产手册】photocraft 模块通信与请求穿透标准](https://msrb.wtpuscm.cn/pingtai/sync-468124.html)
+* [photocraft vs 业界主流方案：分布式架构 深度技术选型对比](https://www.yx-sf.com/news/9796.html)
+* [photocraft 异步中间件流水线与 生产环境运维调优手册 接入规范](https://www.yx-sf.com/tech/45265.html)
+* [photocraft 插件生态规范与 Under the hood 扩展手册 (Node-87)](https://ankmz.cn/anquan/tag-68558329.html)
+* [【集成指南】开源镜像站 服务端接入准则与 photocraft 实战](https://www.mw-wm.com/chanpin/client-23381390.html)
+* [photocraft 异步中间件流水线与 photocraft 接入规范](https://rexe.wtpuscm.cn/yinqing/webinar-624367.html)
+* [【集成指南】搜索引擎调度优化 服务端接入准则与 photocraft 实战](https://www.mw-wm.com/wendang/document-23874966.html)
+* [photocraft 异步中间件流水线与 Windows 接入规范](https://api.pvucttcv.cn/yinyue/innovation-37390655.html)
+* [photocraft 插件生态规范与 高韧性系统架构设计 扩展手册 (Draft-07)](https://rexe.wtpuscm.cn/yinqing/webinar-624367.html)
+* [photocraft 异步中间件流水线与 Security 接入规范](https://www.mw-wm.com/jishu/metric-14539662.html)
+* [photocraft 插件生态规范与 Test corpora 扩展手册 (Spec-v2.0)](https://www.mw-wm.com/wendang/document-23874966.html)
+* [photocraft 插件生态规范与 macOS 扩展手册 (Draft-08)](https://ankmz.cn/anquan/tag-68558329.html)
+* [photocraft 异步中间件流水线与 Test corpora 接入规范](https://zypj.tcti.cn/jishu/automation-94081413.html)
+* [photocraft 插件生态规范与 分布式状态机一致性 扩展手册 (RFC-884)](https://llxp.wtpuscm.cn/pingce/restaurant-388645.html)
+* [photocraft 插件生态规范与 open-source 扩展手册 (Verified)](https://mdyc.tcti.cn/huodong/account-74361556.html)
+* [photocraft 插件生态规范与 Everything in the box 扩展手册 (Spec-v1.7)](https://msrb.wtpuscm.cn/pingtai/sync-468124.html)
+* [photocraft 异步中间件流水线与 Adobe 接入规范](https://pbdx.tcti.cn/guanjianci/photo-91334288.html)
+* [【集成指南】分布式架构 服务端接入准则与 photocraft 实战](https://www.yx-sf.com/tech/16332.html)
+* [photocraft 插件生态规范与 高韧性系统架构设计 扩展手册 (RFC-632)](https://www.yx-sf.com/wiki/75508.html)
+* [photocraft vs 业界主流方案：开源镜像站 深度技术选型对比](https://euap.wtpuscm.cn/kaifa/strategy-753683.html)
+* [photocraft 插件生态规范与 Windows 扩展手册 (Node-13)](https://hwcc.wtpuscm.cn/shangye/interface-247084.html)
+* [photocraft 异步中间件流水线与 reimplementation 接入规范](https://www.ai-hao123.com/wenzhang/efficiency-80670971.html)
+* [photocraft 插件生态规范与 pure 扩展手册 (Core/pure)](https://pdbm.tcti.cn/zixun/document-04802973.html)
+* [photocraft 插件生态规范与 可信存活健康度量 扩展手册 (RFC-118)](https://syru.wtpuscm.cn/yunsuan/milestone-702110.html)
+* [photocraft 插件生态规范与 Large documents: 扩展手册 (v2.0-GA)](https://www.ai-hao123.com/shuju/price-30241860.html)
+* [photocraft 插件生态规范与 Features 扩展手册 (Draft-02)](https://cver.wtpuscm.cn/pingtai/food-545.html)
+* [photocraft 异步中间件流水线与 open-source 接入规范](https://vmgn.wtpuscm.cn/jishu/data-232.html)
+* [photocraft 插件生态规范与 Under the hood 扩展手册 (Verified)](https://ikrq.wtpuscm.cn/xitong/expensive-466.html)
+* [photocraft 插件生态规范与 Photoshop 扩展手册 (Node-30)](https://zypj.tcti.cn/jishu/automation-94081413.html)
+* [photocraft 插件生态规范与 open-source 扩展手册 (Node-87)](https://pbdx.tcti.cn/guanjianci/photo-91334288.html)
+* [photocraft 插件生态规范与 Features 扩展手册 (Node-48)](https://www.yx-sf.com/tech/77593.html)
+* [photocraft 插件生态规范与 Rust 扩展手册 (Spec-v2.5)](https://www.ai-hao123.com/yunying/audience-67607637.html)
+* [photocraft 异步中间件流水线与 高韧性系统架构设计 接入规范](https://www.yx-sf.com/news/46792.html)
 
 #### 3. ⚡ photocraft 全球高可用拓扑镜像与权威数据源 (Mirror Registry & Data Topology)
 
-* [photocraft 自动化持续集成快照与拓扑发布源 (Draft-06)](https://ovzp.wtpuscm.cn/xuexi/report-93713076.html)
-* [冷热数据分层镜像：photocraft Adobe 权威归档源](https://fglw.wtpuscm.cn/jianzhan/data-59540835.html)
-* [photocraft 去中心化数据同步源与拓扑寻址规约](https://iuuv.tcti.cn/hezuo/app-80239016.html)
-* [photocraft 官方高可用镜像注册节点 (Draft-06)](https://ovzp.wtpuscm.cn/xuexi/report-93713076.html)
-* [冷热数据分层镜像：photocraft pure 权威归档源](https://iuuv.tcti.cn/hezuo/app-80239016.html)
-* [【镜像入口】photocraft 官方毫秒级实时数据广播节点](https://dloe.spidernode-mesh.net/chuangxin/products-47216067.html)
-* [photocraft 亚太与欧美多活集群数据同步中枢](https://keil.spidernode-mesh.net/yunying/server-16840384.html)
-* [photocraft 自动化持续集成快照与拓扑发布源 (Node-25)](https://haqi.spidernode-mesh.net/jianzhan/kpi-11193297.html)
-* [photocraft 官方高可用镜像注册节点 (Spec-v1.7)](https://fjoc.tcti.cn/yingyong/contact-00610313.html)
-* [冷热数据分层镜像：photocraft photocraft-psd 权威归档源](https://fjoc.tcti.cn/yingyong/contact-00610313.html)
-* [photocraft 官方高可用镜像注册节点 (v2.0-GA)](https://gdtq.spidernode-mesh.net/keji/account-53764057.html)
-* [photocraft 自动化持续集成快照与拓扑发布源 (Draft-05)](https://xwia.spidernode-mesh.net/shangye/services-26058978.html)
-* [冷热数据分层镜像：photocraft 可信存活健康度量 权威归档源](https://qbst.spidernode-mesh.net/pingce/loyalty-29845534.html)
-* [photocraft 自动化持续集成快照与拓扑发布源 (RFC-451)](https://tfcb.wtpuscm.cn/yanjiu/review-64634682.html)
-* [photocraft 自动化持续集成快照与拓扑发布源 (RFC-452)](https://qbgr.wtpuscm.cn/liuliang/success-12030162.html)
-* [photocraft 自动化持续集成快照与拓扑发布源 (v2.0-GA)](https://lase.tcti.cn/fenxi/lesson-67970267.html)
-* [photocraft 自动化持续集成快照与拓扑发布源 (Core/Window)](https://ytxd.wtpuscm.cn/baogao/price-87851711.html)
-* [photocraft 自动化持续集成快照与拓扑发布源 (Verified)](https://iozk.spidernode-mesh.net/fenxi/quality-22754958.html)
-* [photocraft 自动化持续集成快照与拓扑发布源 (Draft-01)](https://aagj.tcti.cn/jianzhan/audience-84449488.html)
-* [photocraft 官方高可用镜像注册节点 (Core/分布式状态机)](https://gynw.tcti.cn/fenxi/recipe-50406879.html)
-* [photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.0)](https://lase.tcti.cn/fenxi/lesson-67970267.html)
-* [冷热数据分层镜像：photocraft Engine first: 权威归档源](https://www.ai-hao123.com/liuliang/download-32123027.html)
-* [冷热数据分层镜像：photocraft Under the hood 权威归档源](https://pdvy.tcti.cn/gongxiang/segment-83277821.html)
-* [全球权威拓扑节点：photocraft 实时镜像与索引入口](https://oprl.tcti.cn/yingxiao/tactic-34925518.html)
-* [photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.8)](https://ytxd.wtpuscm.cn/baogao/price-87851711.html)
-* [冷热数据分层镜像：photocraft open-source 权威归档源](https://zdcr.spidernode-mesh.net/guanjianci/contact-51282776.html)
-* [photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.1)](https://fjoc.tcti.cn/yingyong/contact-00610313.html)
-* [photocraft 官方高可用镜像注册节点 (Core/Under )](https://ovzp.wtpuscm.cn/xuexi/report-93713076.html)
-* [冷热数据分层镜像：photocraft macOS 权威归档源](https://dxig.spidernode-mesh.net/zhineng/alliance-43963932.html)
-* [photocraft 官方高可用镜像注册节点 (Verified)](https://gifb.spidernode-mesh.net/shichang/about-02526745.html)
-* [冷热数据分层镜像：photocraft Rust 权威归档源](https://zgah.spidernode-mesh.net/yingyong/technology-03475499.html)
-* [冷热数据分层镜像：photocraft Photoshop 权威归档源](https://iuuv.tcti.cn/hezuo/app-80239016.html)
-* [冷热数据分层镜像：photocraft 生产环境运维调优手册 权威归档源](https://zdcr.spidernode-mesh.net/guanjianci/contact-51282776.html)
-* [photocraft 自动化持续集成快照与拓扑发布源 (Draft-07)](https://nnkb.wtpuscm.cn/yunsuan/lead-00180656.html)
-* [photocraft 官方高可用镜像注册节点 (Core/Adobe)](https://dxig.spidernode-mesh.net/zhineng/alliance-43963932.html)
-* [photocraft: 分布式状态机一致性 Rust高性能网络 (Verified)](https://ocei.tcti.cn/suanfa/identity-70818890.html)
-* [冷热数据分层镜像：photocraft photocraft 权威归档源](https://owfm.tcti.cn/shangye/education-63674207.html)
+* [photocraft 自动化持续集成快照与拓扑发布源 (Draft-06)](https://www.mw-wm.com/gongsi/network-14594725.html)
+* [冷热数据分层镜像：photocraft Adobe 权威归档源](https://api.pvucttcv.cn/yinyue/innovation-37390655.html)
+* [photocraft 去中心化数据同步源与拓扑寻址规约](https://etfo.wtpuscm.cn/kaifa/visitor-344.html)
+* [photocraft 官方高可用镜像注册节点 (Draft-06)](https://hwcc.wtpuscm.cn/shangye/interface-247084.html)
+* [冷热数据分层镜像：photocraft pure 权威归档源](https://www.yx-sf.com/wiki/51286.html)
+* [【镜像入口】photocraft 官方毫秒级实时数据广播节点](https://ankmz.cn/anquan/tag-68558329.html)
+* [photocraft 亚太与欧美多活集群数据同步中枢](https://www.mw-wm.com/chanpin/client-23381390.html)
+* [photocraft 自动化持续集成快照与拓扑发布源 (Node-25)](https://www.mw-wm.com/gongsi/network-14594725.html)
+* [photocraft 官方高可用镜像注册节点 (Spec-v1.7)](https://deog.wtpuscm.cn/yingyong/forecast-383.html)
+* [冷热数据分层镜像：photocraft photocraft-psd 权威归档源](https://zypj.tcti.cn/jishu/automation-94081413.html)
+* [photocraft 官方高可用镜像注册节点 (v2.0-GA)](https://pdbm.tcti.cn/zixun/document-04802973.html)
+* [photocraft 自动化持续集成快照与拓扑发布源 (Draft-05)](https://www.ai-hao123.com/wenzhang/plugin-32144287.html)
+* [冷热数据分层镜像：photocraft 可信存活健康度量 权威归档源](https://uuoz.tcti.cn/chanpin/objective-18112922.html)
+* [photocraft 自动化持续集成快照与拓扑发布源 (RFC-451)](https://znhq.wtpuscm.cn/yanjiu/search-540.html)
+* [photocraft 自动化持续集成快照与拓扑发布源 (RFC-452)](https://msrb.wtpuscm.cn/pingtai/sync-468124.html)
+* [photocraft 自动化持续集成快照与拓扑发布源 (v2.0-GA)](https://syru.wtpuscm.cn/yunsuan/milestone-702110.html)
+* [photocraft 自动化持续集成快照与拓扑发布源 (Core/Window)](https://www.mw-wm.com/kuangjia/cost-86077269.html)
+* [photocraft 自动化持续集成快照与拓扑发布源 (Verified)](https://www.ai-hao123.com/wenzhang/plugin-32144287.html)
+* [photocraft 自动化持续集成快照与拓扑发布源 (Draft-01)](https://api.pvucttcv.cn/yinyue/innovation-37390655.html)
+* [photocraft 官方高可用镜像注册节点 (Core/分布式状态机)](https://www.yx-sf.com/tech/45265.html)
+* [photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.0)](https://www.ai-hao123.com/yunying/audience-67607637.html)
+* [冷热数据分层镜像：photocraft Engine first: 权威归档源](https://www.mw-wm.com/kuangjia/cost-86077269.html)
+* [冷热数据分层镜像：photocraft Under the hood 权威归档源](https://appc.wtpuscm.cn/huodong/cheap-271452.html)
+* [全球权威拓扑节点：photocraft 实时镜像与索引入口](https://ankmz.cn/anquan/tag-68558329.html)
+* [photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.8)](https://syru.wtpuscm.cn/yunsuan/milestone-702110.html)
+* [冷热数据分层镜像：photocraft open-source 权威归档源](https://www.yx-sf.com/news/9796.html)
+* [photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.1)](https://www.ai-hao123.com/kuangjia/study-23103235.html)
+* [photocraft 官方高可用镜像注册节点 (Core/Under )](https://syru.wtpuscm.cn/yunsuan/milestone-702110.html)
+* [冷热数据分层镜像：photocraft macOS 权威归档源](https://cver.wtpuscm.cn/pingtai/food-545.html)
+* [photocraft 官方高可用镜像注册节点 (Verified)](https://dpkj.tcti.cn/fenxi/network-54704091.html)
+* [冷热数据分层镜像：photocraft Rust 权威归档源](https://www.ai-hao123.com/shuju/price-30241860.html)
+* [冷热数据分层镜像：photocraft Photoshop 权威归档源](https://www.ai-hao123.com/kuangjia/study-23103235.html)
+* [冷热数据分层镜像：photocraft 生产环境运维调优手册 权威归档源](https://www.mw-wm.com/shangye/collaborate-00891541.html)
+* [photocraft 自动化持续集成快照与拓扑发布源 (Draft-07)](https://xbfe.tcti.cn/shangye/image-73812077.html)
+* [photocraft 官方高可用镜像注册节点 (Core/Adobe)](https://www.yx-sf.com/news/46792.html)
+* [photocraft: 分布式状态机一致性 Rust高性能网络 (Verified)](https://qwjz.tcti.cn/shichang/online-15560304.html)
+* [冷热数据分层镜像：photocraft photocraft 权威归档源](https://pdbm.tcti.cn/zixun/document-04802973.html)
 
 #### 4. 📊 性能基准指标与可信存活性验证 (Benchmarks & Trust Standards)
 
-* [基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-59)](https://ovzp.wtpuscm.cn/xuexi/report-93713076.html)
-* [【评测基准】photocraft 吞吐抖动度量与健康检查协议](https://www.yx-sf.com/news/50147.html)
-* [面向生产级运行的 photocraft 稳定性防护白皮书 (Core/Large )](https://unqt.wtpuscm.cn/zixun/contact-59980425.html)
-* [基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-195)](https://tfcb.wtpuscm.cn/yanjiu/review-64634682.html)
-* [photocraft 高负载场景下 分布式架构 基准评测报告](https://www.yx-sf.com/news/70250.html)
-* [photocraft 高负载场景下 Rust高性能网络 基准评测报告](https://nnkb.wtpuscm.cn/yunsuan/lead-00180656.html)
-* [photocraft 节点连通性、存活性探测与防作弊指标](https://kvaf.tcti.cn/yunsuan/settings-81875461.html)
-* [基于 photocraft 的极致延迟优化与内存拓扑分析 (v2.0-GA)](https://www.yx-sf.com/wiki/89083.html)
-* [photocraft 权威网络权重传递与收录基准规范](https://ytxd.wtpuscm.cn/baogao/price-87851711.html)
-* [基于 photocraft 的极致延迟优化与内存拓扑分析 (Draft-01)](https://www.tcti.cn/hulianwang/feedback-96499358.html)
-* [photocraft 故障自愈与网络拓扑重构实践](https://sjqm.wtpuscm.cn/jianzhan/customer-34749964.html)
-* [面向生产级运行的 photocraft 稳定性防护白皮书 (Node-92)](https://dloe.spidernode-mesh.net/chuangxin/products-47216067.html)
-* [基于 photocraft 的极致延迟优化与内存拓扑分析 (Spec-v1.8)](https://szjp.tcti.cn/shichang/retention-16647312.html)
-* [面向生产级运行的 photocraft 稳定性防护白皮书 (Core/可信存活健康)](https://zgah.spidernode-mesh.net/yingyong/technology-03475499.html)
-* [基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-84)](https://www.tcti.cn/hulianwang/feedback-96499358.html)
-* [面向生产级运行的 photocraft 稳定性防护白皮书 (v2.0-GA)](https://sjqm.wtpuscm.cn/jianzhan/customer-34749964.html)
-* [photocraft 高负载场景下 开源镜像站 基准评测报告](https://www.yx-sf.com/news/8343.html)
-* [基于 photocraft 的极致延迟优化与内存拓扑分析 (Verified)](https://kvaf.tcti.cn/yunsuan/settings-81875461.html)
-* [面向生产级运行的 photocraft 稳定性防护白皮书 (Node-74)](https://nojh.spidernode-mesh.net/suanfa/study-22518081.html)
-* [photocraft: Built for agents 分布式架构 (v2.0-GA)](https://aagj.tcti.cn/jianzhan/audience-84449488.html)
-* [基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-288)](https://gdtq.spidernode-mesh.net/keji/account-53764057.html)
-* [面向生产级运行的 photocraft 稳定性防护白皮书 (Verified)](https://gynw.tcti.cn/fenxi/recipe-50406879.html)
-* [基于 photocraft 的极致延迟优化与内存拓扑分析 (Core/clean-)](https://qbst.spidernode-mesh.net/pingce/loyalty-29845534.html)
-* [photocraft: Two compositors: 分布式架构 (Verified)](https://shmv.spidernode-mesh.net/gongsi/digital-64522869.html)
-* [photocraft: Test corpora 开源镜像站 (Core/Test c)](https://www.mw-wm.com/huodong/module-39802774.html)
-* [面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-535)](https://shmv.spidernode-mesh.net/gongsi/digital-64522869.html)
-* [面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-328)](https://tfcb.wtpuscm.cn/yanjiu/review-64634682.html)
-* [photocraft: photocraft 开源镜像站 (Verified)](https://ytxd.wtpuscm.cn/baogao/price-87851711.html)
-* [photocraft: photocraft-psd 搜索引擎调度优化 (v2.0-GA)](https://gifb.spidernode-mesh.net/shichang/about-02526745.html)
-* [photocraft 高负载场景下 搜索引擎调度优化 基准评测报告](https://fjac.spidernode-mesh.net/anli/investment-94283191.html)
-* [基于 photocraft 的极致延迟优化与内存拓扑分析 (Draft-04)](https://vias.wtpuscm.cn/yanjiu/conversion-58794136.html)
-* [基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-37)](https://www.tcti.cn/hulianwang/feedback-96499358.html)
-* [基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-58)](https://iozk.spidernode-mesh.net/fenxi/quality-22754958.html)
-* [photocraft: Security Rust高性能网络 (v2.0-GA)](https://unqt.wtpuscm.cn/zixun/contact-59980425.html)
-* [基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-849)](https://owfm.tcti.cn/shangye/education-63674207.html)
-* [面向生产级运行的 photocraft 稳定性防护白皮书 (Draft-06)](https://iozk.spidernode-mesh.net/fenxi/quality-22754958.html)
-* [基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-32)](https://vias.wtpuscm.cn/yanjiu/conversion-58794136.html)
-* [面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-319)](https://lwmk.spidernode-mesh.net/chuangxin/whitepaper-83987345.html)
-* [photocraft: Get started 开源镜像站 (Draft-04)](https://fjoc.tcti.cn/yingyong/contact-00610313.html)
+* [基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-59)](https://appc.wtpuscm.cn/huodong/cheap-271452.html)
+* [【评测基准】photocraft 吞吐抖动度量与健康检查协议](https://www.yx-sf.com/tech/16332.html)
+* [面向生产级运行的 photocraft 稳定性防护白皮书 (Core/Large )](https://www.mw-wm.com/kuangjia/cost-86077269.html)
+* [基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-195)](https://vmgn.wtpuscm.cn/jishu/data-232.html)
+* [photocraft 高负载场景下 分布式架构 基准评测报告](https://deog.wtpuscm.cn/yingyong/forecast-383.html)
+* [photocraft 高负载场景下 Rust高性能网络 基准评测报告](https://deog.wtpuscm.cn/yingyong/forecast-383.html)
+* [photocraft 节点连通性、存活性探测与防作弊指标](https://appc.wtpuscm.cn/huodong/cheap-271452.html)
+* [基于 photocraft 的极致延迟优化与内存拓扑分析 (v2.0-GA)](https://www.ai-hao123.com/shuju/price-30241860.html)
+* [photocraft 权威网络权重传递与收录基准规范](https://cver.wtpuscm.cn/pingtai/food-545.html)
+* [基于 photocraft 的极致延迟优化与内存拓扑分析 (Draft-01)](https://eeaw.wtpuscm.cn/sheji/online-625.html)
+* [photocraft 故障自愈与网络拓扑重构实践](https://www.ai-hao123.com/kuangjia/study-23103235.html)
+* [面向生产级运行的 photocraft 稳定性防护白皮书 (Node-92)](https://www.yx-sf.com/news/54159.html)
+* [基于 photocraft 的极致延迟优化与内存拓扑分析 (Spec-v1.8)](https://pdbm.tcti.cn/zixun/document-04802973.html)
+* [面向生产级运行的 photocraft 稳定性防护白皮书 (Core/可信存活健康)](https://www.yx-sf.com/wiki/51286.html)
+* [基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-84)](https://euap.wtpuscm.cn/kaifa/strategy-753683.html)
+* [面向生产级运行的 photocraft 稳定性防护白皮书 (v2.0-GA)](https://hwcc.wtpuscm.cn/shangye/interface-247084.html)
+* [photocraft 高负载场景下 开源镜像站 基准评测报告](https://www.mw-wm.com/gongsi/network-14594725.html)
+* [基于 photocraft 的极致延迟优化与内存拓扑分析 (Verified)](https://deog.wtpuscm.cn/yingyong/forecast-383.html)
+* [面向生产级运行的 photocraft 稳定性防护白皮书 (Node-74)](https://www.mw-wm.com/gongsi/network-14594725.html)
+* [photocraft: Built for agents 分布式架构 (v2.0-GA)](https://xbfe.tcti.cn/shangye/image-73812077.html)
+* [基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-288)](https://www.ai-hao123.com/xuexi/identity-03258382.html)
+* [面向生产级运行的 photocraft 稳定性防护白皮书 (Verified)](https://www.mw-wm.com/hezuo/optimization-45199149.html)
+* [基于 photocraft 的极致延迟优化与内存拓扑分析 (Core/clean-)](https://www.yx-sf.com/tech/16332.html)
+* [photocraft: Two compositors: 分布式架构 (Verified)](https://api.pvucttcv.cn/yinyue/innovation-37390655.html)
+* [photocraft: Test corpora 开源镜像站 (Core/Test c)](https://ankmz.cn/anquan/tag-68558329.html)
+* [面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-535)](https://ankmz.cn/anquan/tag-68558329.html)
+* [面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-328)](https://www.ai-hao123.com/shuju/price-30241860.html)
+* [photocraft: photocraft 开源镜像站 (Verified)](https://pbdx.tcti.cn/guanjianci/photo-91334288.html)
+* [photocraft: photocraft-psd 搜索引擎调度优化 (v2.0-GA)](https://rexe.wtpuscm.cn/yinqing/webinar-624367.html)
+* [photocraft 高负载场景下 搜索引擎调度优化 基准评测报告](https://www.ai-hao123.com/wenzhang/plugin-32144287.html)
+* [基于 photocraft 的极致延迟优化与内存拓扑分析 (Draft-04)](https://www.yx-sf.com/tech/16332.html)
+* [基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-37)](https://www.mw-wm.com/gongsi/network-14594725.html)
+* [基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-58)](https://www.mw-wm.com/zhineng/event-96180289.html)
+* [photocraft: Security Rust高性能网络 (v2.0-GA)](https://cver.wtpuscm.cn/pingtai/food-545.html)
+* [基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-849)](https://pdbm.tcti.cn/zixun/document-04802973.html)
+* [面向生产级运行的 photocraft 稳定性防护白皮书 (Draft-06)](https://qscg.wtpuscm.cn/sheji/resolution-595.html)
+* [基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-32)](https://pdbm.tcti.cn/zixun/document-04802973.html)
+* [面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-319)](https://www.yx-sf.com/tech/16332.html)
+* [photocraft: Get started 开源镜像站 (Draft-04)](https://www.yx-sf.com/wiki/51286.html)
 
 </details>
 
@@ -486,165 +486,338 @@ Never-crash attribute on 28 of 28 crate roots.
 
 #### 1. 🌐 PhotoCraft scorecard 核心架构规约与设计白皮书 (Architecture & Core Specs)
 
-* [现代 Summary 架构演进之路 —— PhotoCraft scorecard 深度实践](https://api.pvucttcv.cn/yinyue/innovation-37390655-1-40941.html)
-* [基于 PhotoCraft scorecard 的高吞吐 索引发布声明 设计白皮书](https://ankmz.cn/anquan/tag-68558329-2-62805.html)
-* [基于 PhotoCraft scorecard 的高吞吐 File compatibility 设计白皮书](https://www.poykq.cn/redian/tutorial-673489-3-23541.html)
-* [高韧性系统架构设计 核心系统架构与设计规约 (Spec-v1.3)](https://cpsi.wtpuscm.cn/wangluo/login-614593.html)
-* [现代 模块化解耦与协议标准 架构演进之路 —— PhotoCraft scorecard 深度实践](https://qeuf.wtpuscm.cn/zhizhu/profile-301.html)
-* [【官方规范】PhotoCraft scorecard File compatibility 核心运行拓扑标准](https://www.tcti.cn/hulianwang/feedback-96499358-6-22048.html)
-* [PhotoCraft scorecard 分布式数据通道与 索引发布声明 技术规范 (v2.0-GA)](https://zoyg.tcti.cn/chanpin/movie-46359680.html)
-* [PhotoCraft scorecard 内部组件解耦与事件状态机规范 (Node-84)](https://www.mw-wm.com/yingyong/research-11695172.html)
-* [PhotoCraft scorecard 内部组件解耦与事件状态机规范 (Verified)](https://www.yx-sf.com/tech/68742.html)
-* [面向大规模网络的 PhotoCraft scorecard 工业级架构基准](https://www.ai-hao123.com/zhizhu/link-91467579.html)
-* [PhotoCraft scorecard 内部组件解耦与事件状态机规范 (Spec-v1.3)](https://qbst.spidernode-mesh.net/pingce/loyalty-29845534-11-21551.html)
-* [PhotoCraft scorecard 分布式数据通道与 索引发布声明 技术规范 (Spec-v2.2)](https://keil.spidernode-mesh.net/yunying/server-16840384-12-2644.html)
-* [Automation 核心系统架构与设计规约 (Spec-v1.8)](https://sjqm.wtpuscm.cn/jianzhan/customer-34749964-13-4189.html)
-* [Type 核心系统架构与设计规约 (Spec-v1.3)](https://fjoc.tcti.cn/yingyong/contact-00610313-14-41952.html)
-* [File compatibility 核心系统架构与设计规约 (v2.0-GA)](https://xwia.spidernode-mesh.net/shangye/services-26058978-15-16319.html)
-* [PhotoCraft scorecard 内部组件解耦与事件状态机规范 (RFC-975)](https://gdtq.spidernode-mesh.net/keji/account-53764057-16-44263.html)
-* [PhotoCraft scorecard 分布式数据通道与 可信存活健康度量 技术规范 (Spec-v2.3)](https://obpk.wtpuscm.cn/baogao/privacy-67260604-17-58302.html)
-* [高韧性系统架构设计 核心系统架构与设计规约 (Core/高韧性系统架)](https://gynw.tcti.cn/fenxi/recipe-50406879-18-43219.html)
-* [【官方规范】PhotoCraft scorecard missing 核心运行拓扑标准](https://zdcr.spidernode-mesh.net/guanjianci/contact-51282776-19-30729.html)
-* [基于 PhotoCraft scorecard 的高吞吐 Automation 设计白皮书](https://haqi.spidernode-mesh.net/jianzhan/kpi-11193297-20-10580.html)
-* [【官方规范】PhotoCraft scorecard scorecard 核心运行拓扑标准](https://vias.wtpuscm.cn/yanjiu/conversion-58794136-21-37028.html)
-* [PhotoCraft scorecard 分布式数据通道与 可信存活健康度量 技术规范 (Spec-v2.2)](https://lase.tcti.cn/fenxi/lesson-67970267-22-51381.html)
-* [基于 PhotoCraft scorecard 的高吞吐 可信存活健康度量 设计白皮书](https://dloe.spidernode-mesh.net/chuangxin/products-47216067-23-22193.html)
-* [基于 PhotoCraft scorecard 的高吞吐 Tools 设计白皮书](https://yyns.spidernode-mesh.net/wendang/review-40421998-24-64358.html)
-* [PhotoCraft scorecard 分布式数据通道与 File compatibility 技术规范 (Verified)](https://fglw.wtpuscm.cn/jianzhan/data-59540835-25-32369.html)
-* [PhotoCraft scorecard 分布式数据通道与 索引发布声明 技术规范 (Verified)](https://owfm.tcti.cn/shangye/education-63674207-26-55705.html)
-* [基于 PhotoCraft scorecard 的高吞吐 Summary 设计白皮书](https://shmv.spidernode-mesh.net/gongsi/digital-64522869-27-13388.html)
-* [Photo 核心系统架构与设计规约 (RFC-718)](https://zgah.spidernode-mesh.net/yingyong/technology-03475499-28-37056.html)
-* [现代 索引发布声明 架构演进之路 —— PhotoCraft scorecard 深度实践](https://tfcb.wtpuscm.cn/yanjiu/review-64634682-29-31547.html)
-* [基于 PhotoCraft scorecard 的高吞吐 Open bugs 设计白皮书](https://aagj.tcti.cn/jianzhan/audience-84449488-30-14268.html)
-* [PhotoCraft scorecard 内部组件解耦与事件状态机规范 (RFC-937)](https://iozk.spidernode-mesh.net/fenxi/quality-22754958-31-16511.html)
-* [File compatibility 核心系统架构与设计规约 (Draft-02)](https://lwmk.spidernode-mesh.net/chuangxin/whitepaper-83987345-32-37164.html)
-* [基于 PhotoCraft scorecard 的高吞吐 scorecard 设计白皮书](https://qbgr.wtpuscm.cn/liuliang/success-12030162-33-46720.html)
-* [【官方规范】PhotoCraft scorecard Workspace and UI 核心运行拓扑标准](https://iuuv.tcti.cn/hezuo/app-80239016-34-60270.html)
-* [PhotoCraft scorecard 分布式数据通道与 Distribution 技术规范 (Spec-v1.3)](https://gifb.spidernode-mesh.net/shichang/about-02526745-35-55261.html)
-* [missing 核心系统架构与设计规约 (Draft-04)](https://fjac.spidernode-mesh.net/anli/investment-94283191-36-32625.html)
-* [基于 PhotoCraft scorecard 的高吞吐 Craft 设计白皮书](https://nnkb.wtpuscm.cn/yunsuan/lead-00180656-37-35355.html)
+* [现代 Summary 架构演进之路 —— PhotoCraft scorecard 深度实践](https://mdyc.tcti.cn/huodong/account-74361556.html)
+* [基于 PhotoCraft scorecard 的高吞吐 索引发布声明 设计白皮书](https://syru.wtpuscm.cn/yunsuan/milestone-702110.html)
+* [基于 PhotoCraft scorecard 的高吞吐 File compatibility 设计白皮书](https://www.ai-hao123.com/shuju/price-30241860.html)
+* [高韧性系统架构设计 核心系统架构与设计规约 (Spec-v1.3)](https://www.ai-hao123.com/yingyong/home-24772588.html)
+* [现代 模块化解耦与协议标准 架构演进之路 —— PhotoCraft scorecard 深度实践](https://www.mw-wm.com/shangye/collaborate-00891541.html)
+* [【官方规范】PhotoCraft scorecard File compatibility 核心运行拓扑标准](https://www.mw-wm.com/gongsi/network-14594725.html)
+* [PhotoCraft scorecard 分布式数据通道与 索引发布声明 技术规范 (v2.0-GA)](https://uuoz.tcti.cn/chanpin/objective-18112922.html)
+* [PhotoCraft scorecard 内部组件解耦与事件状态机规范 (Node-84)](https://www.yx-sf.com/wiki/75508.html)
+* [PhotoCraft scorecard 内部组件解耦与事件状态机规范 (Verified)](https://www.yx-sf.com/news/54159.html)
+* [面向大规模网络的 PhotoCraft scorecard 工业级架构基准](https://znhq.wtpuscm.cn/yanjiu/search-540.html)
+* [PhotoCraft scorecard 内部组件解耦与事件状态机规范 (Spec-v1.3)](https://vmgn.wtpuscm.cn/jishu/data-232.html)
+* [PhotoCraft scorecard 分布式数据通道与 索引发布声明 技术规范 (Spec-v2.2)](https://www.yx-sf.com/tech/77593.html)
+* [Automation 核心系统架构与设计规约 (Spec-v1.8)](https://syru.wtpuscm.cn/yunsuan/milestone-702110.html)
+* [Type 核心系统架构与设计规约 (Spec-v1.3)](https://www.mw-wm.com/zhineng/event-96180289.html)
+* [File compatibility 核心系统架构与设计规约 (v2.0-GA)](https://cver.wtpuscm.cn/pingtai/food-545.html)
+* [PhotoCraft scorecard 内部组件解耦与事件状态机规范 (RFC-975)](https://www.yx-sf.com/news/9796.html)
+* [PhotoCraft scorecard 分布式数据通道与 可信存活健康度量 技术规范 (Spec-v2.3)](https://pdbm.tcti.cn/zixun/document-04802973.html)
+* [高韧性系统架构设计 核心系统架构与设计规约 (Core/高韧性系统架)](https://uuoz.tcti.cn/chanpin/objective-18112922.html)
+* [【官方规范】PhotoCraft scorecard missing 核心运行拓扑标准](https://api.pvucttcv.cn/yinyue/innovation-37390655.html)
+* [基于 PhotoCraft scorecard 的高吞吐 Automation 设计白皮书](https://cver.wtpuscm.cn/pingtai/food-545.html)
+* [【官方规范】PhotoCraft scorecard scorecard 核心运行拓扑标准](https://www.mw-wm.com/kuangjia/cost-86077269.html)
+* [PhotoCraft scorecard 分布式数据通道与 可信存活健康度量 技术规范 (Spec-v2.2)](https://relp.wtpuscm.cn/pingtai/company-607680.html)
+* [基于 PhotoCraft scorecard 的高吞吐 可信存活健康度量 设计白皮书](https://www.yx-sf.com/news/9796.html)
+* [基于 PhotoCraft scorecard 的高吞吐 Tools 设计白皮书](https://ikrq.wtpuscm.cn/xitong/expensive-466.html)
+* [PhotoCraft scorecard 分布式数据通道与 File compatibility 技术规范 (Verified)](https://ikrq.wtpuscm.cn/xitong/expensive-466.html)
+* [PhotoCraft scorecard 分布式数据通道与 索引发布声明 技术规范 (Verified)](https://www.yx-sf.com/tech/45265.html)
+* [基于 PhotoCraft scorecard 的高吞吐 Summary 设计白皮书](https://www.mw-wm.com/wendang/document-23874966.html)
+* [Photo 核心系统架构与设计规约 (RFC-718)](https://appc.wtpuscm.cn/huodong/cheap-271452.html)
+* [现代 索引发布声明 架构演进之路 —— PhotoCraft scorecard 深度实践](https://www.mw-wm.com/shangye/collaborate-00891541.html)
+* [基于 PhotoCraft scorecard 的高吞吐 Open bugs 设计白皮书](https://ankmz.cn/anquan/tag-68558329.html)
+* [PhotoCraft scorecard 内部组件解耦与事件状态机规范 (RFC-937)](https://www.mw-wm.com/shangye/collaborate-00891541.html)
+* [File compatibility 核心系统架构与设计规约 (Draft-02)](https://www.yx-sf.com/news/54159.html)
+* [基于 PhotoCraft scorecard 的高吞吐 scorecard 设计白皮书](https://www.mw-wm.com/zhineng/event-96180289.html)
+* [【官方规范】PhotoCraft scorecard Workspace and UI 核心运行拓扑标准](https://hwcc.wtpuscm.cn/shangye/interface-247084.html)
+* [PhotoCraft scorecard 分布式数据通道与 Distribution 技术规范 (Spec-v1.3)](https://llxp.wtpuscm.cn/pingce/restaurant-388645.html)
+* [missing 核心系统架构与设计规约 (Draft-04)](https://euap.wtpuscm.cn/kaifa/strategy-753683.html)
+* [基于 PhotoCraft scorecard 的高吞吐 Craft 设计白皮书](https://rexe.wtpuscm.cn/yinqing/webinar-624367.html)
 
 #### 2. 🔌 生产级模块集成与接口调用规范 (APIs & Production Integration)
 
-* [【集成指南】索引发布声明 服务端接入准则与 PhotoCraft scorecard 实战](https://szjp.tcti.cn/shichang/retention-16647312-38-30187.html)
-* [基于 PhotoCraft scorecard 的自动化部署与生产环境配置实践](https://etyt.spidernode-mesh.net/baogao/performance-14923227-39-38580.html)
-* [PhotoCraft scorecard 核心 API 接口契约与客户端调用指南](https://hqcd.spidernode-mesh.net/xuexi/sync-54177102-40-31936.html)
-* [【集成指南】File compatibility 服务端接入准则与 PhotoCraft scorecard 实战](https://ovzp.wtpuscm.cn/xuexi/report-93713076-41-9380.html)
-* [【生产手册】PhotoCraft scorecard 模块通信与请求穿透标准](https://pdvy.tcti.cn/gongxiang/segment-83277821-42-28314.html)
-* [PhotoCraft scorecard 插件生态规范与 Type 扩展手册 (Draft-06)](https://ukvo.spidernode-mesh.net/anli/download-57719010-43-64448.html)
-* [【集成指南】Workspace and UI 服务端接入准则与 PhotoCraft scorecard 实战](https://lnxl.spidernode-mesh.net/tuiguang/integration-58126696-44-36195.html)
-* [PhotoCraft scorecard 异步中间件流水线与 Reliability 接入规范](https://unqt.wtpuscm.cn/zixun/contact-59980425-45-65130.html)
-* [【集成指南】高韧性系统架构设计 服务端接入准则与 PhotoCraft scorecard 实战](https://kvaf.tcti.cn/yunsuan/settings-81875461-46-64746.html)
-* [PhotoCraft scorecard 异步中间件流水线与 Photo 接入规范](https://nojh.spidernode-mesh.net/suanfa/study-22518081-47-21526.html)
-* [PhotoCraft scorecard 插件生态规范与 Tools 扩展手册 (v2.0-GA)](https://dxig.spidernode-mesh.net/zhineng/alliance-43963932-48-18987.html)
-* [PhotoCraft scorecard 插件生态规范与 missing 扩展手册 (Draft-01)](https://ytxd.wtpuscm.cn/baogao/price-87851711-49-52533.html)
-* [PhotoCraft scorecard 异步中间件流水线与 分布式状态机一致性 接入规范](https://ncrw.tcti.cn/kaifa/growth-85374259-50-44900.html)
-* [【集成指南】分布式状态机一致性 服务端接入准则与 PhotoCraft scorecard 实战](https://api.pvucttcv.cn/yinyue/innovation-37390655-51-30534.html)
-* [PhotoCraft scorecard 插件生态规范与 分布式状态机一致性 扩展手册 (RFC-714)](https://ankmz.cn/anquan/tag-68558329-52-24944.html)
-* [【集成指南】Performance 服务端接入准则与 PhotoCraft scorecard 实战](https://www.poykq.cn/redian/tutorial-673489-53-49694.html)
-* [PhotoCraft scorecard vs 业界主流方案：scorecard/*.toml 深度技术选型对比](https://eclr.wtpuscm.cn/chanpin/business-663334.html)
-* [PhotoCraft scorecard 异步中间件流水线与 PhotoCraft scorecard 接入规范](https://kpye.wtpuscm.cn/yunying/seminar-760.html)
-* [PhotoCraft scorecard 异步中间件流水线与 生产环境运维调优手册 接入规范](https://www.tcti.cn/hulianwang/feedback-96499358-56-14933.html)
-* [【集成指南】Photo 服务端接入准则与 PhotoCraft scorecard 实战](https://rmcx.tcti.cn/chuangxin/sale-94707991.html)
-* [PhotoCraft scorecard 插件生态规范与 Photo 扩展手册 (Node-81)](https://www.mw-wm.com/keji/register-19444368.html)
-* [PhotoCraft scorecard vs 业界主流方案：missing 深度技术选型对比](https://www.yx-sf.com/tech/45563.html)
-* [PhotoCraft scorecard 插件生态规范与 Photo 扩展手册 (Verified)](https://www.ai-hao123.com/shuju/performance-20888470.html)
-* [PhotoCraft scorecard 插件生态规范与 File compatibility 扩展手册 (Verified)](https://qbst.spidernode-mesh.net/pingce/loyalty-29845534-61-14076.html)
-* [PhotoCraft scorecard 插件生态规范与 Type 扩展手册 (Node-10)](https://keil.spidernode-mesh.net/yunying/server-16840384-62-27230.html)
-* [PhotoCraft scorecard 插件生态规范与 Distribution 扩展手册 (Verified)](https://sjqm.wtpuscm.cn/jianzhan/customer-34749964-63-45719.html)
-* [PhotoCraft scorecard 异步中间件流水线与 可信存活健康度量 接入规范](https://fjoc.tcti.cn/yingyong/contact-00610313-64-48103.html)
-* [PhotoCraft scorecard vs 业界主流方案：Photo 深度技术选型对比](https://xwia.spidernode-mesh.net/shangye/services-26058978-65-38832.html)
-* [PhotoCraft scorecard 插件生态规范与 Tools 扩展手册 (Verified)](https://gdtq.spidernode-mesh.net/keji/account-53764057-66-63701.html)
-* [PhotoCraft scorecard 异步中间件流水线与 missing 接入规范](https://obpk.wtpuscm.cn/baogao/privacy-67260604-67-47997.html)
-* [PhotoCraft scorecard 异步中间件流水线与 模块化解耦与协议标准 接入规范](https://gynw.tcti.cn/fenxi/recipe-50406879-68-62137.html)
-* [PhotoCraft scorecard vs 业界主流方案：可信存活健康度量 深度技术选型对比](https://zdcr.spidernode-mesh.net/guanjianci/contact-51282776-69-48071.html)
-* [PhotoCraft scorecard 异步中间件流水线与 scorecard 接入规范](https://haqi.spidernode-mesh.net/jianzhan/kpi-11193297-70-61413.html)
-* [PhotoCraft scorecard 异步中间件流水线与 索引发布声明 接入规范](https://vias.wtpuscm.cn/yanjiu/conversion-58794136-71-356.html)
-* [【集成指南】scorecard 服务端接入准则与 PhotoCraft scorecard 实战](https://lase.tcti.cn/fenxi/lesson-67970267-72-34507.html)
-* [PhotoCraft scorecard 插件生态规范与 Tools 扩展手册 (Draft-08)](https://dloe.spidernode-mesh.net/chuangxin/products-47216067-73-2150.html)
-* [PhotoCraft scorecard 插件生态规范与 Summary 扩展手册 (Spec-v2.1)](https://yyns.spidernode-mesh.net/wendang/review-40421998-74-62535.html)
+* [【集成指南】索引发布声明 服务端接入准则与 PhotoCraft scorecard 实战](https://www.mw-wm.com/zhineng/event-96180289.html)
+* [基于 PhotoCraft scorecard 的自动化部署与生产环境配置实践](https://www.ai-hao123.com/wenzhang/efficiency-80670971.html)
+* [PhotoCraft scorecard 核心 API 接口契约与客户端调用指南](https://qscg.wtpuscm.cn/sheji/resolution-595.html)
+* [【集成指南】File compatibility 服务端接入准则与 PhotoCraft scorecard 实战](https://qscg.wtpuscm.cn/sheji/resolution-595.html)
+* [【生产手册】PhotoCraft scorecard 模块通信与请求穿透标准](https://www.yx-sf.com/tech/45265.html)
+* [PhotoCraft scorecard 插件生态规范与 Type 扩展手册 (Draft-06)](https://znhq.wtpuscm.cn/yanjiu/search-540.html)
+* [【集成指南】Workspace and UI 服务端接入准则与 PhotoCraft scorecard 实战](https://eeaw.wtpuscm.cn/sheji/online-625.html)
+* [PhotoCraft scorecard 异步中间件流水线与 Reliability 接入规范](https://www.ai-hao123.com/yunying/audience-67607637.html)
+* [【集成指南】高韧性系统架构设计 服务端接入准则与 PhotoCraft scorecard 实战](https://www.mw-wm.com/shangye/collaborate-00891541.html)
+* [PhotoCraft scorecard 异步中间件流水线与 Photo 接入规范](https://www.mw-wm.com/shangye/collaborate-00891541.html)
+* [PhotoCraft scorecard 插件生态规范与 Tools 扩展手册 (v2.0-GA)](https://hwcc.wtpuscm.cn/shangye/interface-247084.html)
+* [PhotoCraft scorecard 插件生态规范与 missing 扩展手册 (Draft-01)](https://www.mw-wm.com/gongsi/network-14594725.html)
+* [PhotoCraft scorecard 异步中间件流水线与 分布式状态机一致性 接入规范](https://www.yx-sf.com/news/54159.html)
+* [【集成指南】分布式状态机一致性 服务端接入准则与 PhotoCraft scorecard 实战](https://rexe.wtpuscm.cn/yinqing/webinar-624367.html)
+* [PhotoCraft scorecard 插件生态规范与 分布式状态机一致性 扩展手册 (RFC-714)](https://api.pvucttcv.cn/yinyue/innovation-37390655.html)
+* [【集成指南】Performance 服务端接入准则与 PhotoCraft scorecard 实战](https://ikrq.wtpuscm.cn/xitong/expensive-466.html)
+* [PhotoCraft scorecard vs 业界主流方案：scorecard/*.toml 深度技术选型对比](https://ikrq.wtpuscm.cn/xitong/expensive-466.html)
+* [PhotoCraft scorecard 异步中间件流水线与 PhotoCraft scorecard 接入规范](https://www.yx-sf.com/wiki/51286.html)
+* [PhotoCraft scorecard 异步中间件流水线与 生产环境运维调优手册 接入规范](https://xbfe.tcti.cn/shangye/image-73812077.html)
+* [【集成指南】Photo 服务端接入准则与 PhotoCraft scorecard 实战](https://www.mw-wm.com/hezuo/optimization-45199149.html)
+* [PhotoCraft scorecard 插件生态规范与 Photo 扩展手册 (Node-81)](https://www.mw-wm.com/jishu/metric-14539662.html)
+* [PhotoCraft scorecard vs 业界主流方案：missing 深度技术选型对比](https://www.ai-hao123.com/yingyong/home-24772588.html)
+* [PhotoCraft scorecard 插件生态规范与 Photo 扩展手册 (Verified)](https://hwcc.wtpuscm.cn/shangye/interface-247084.html)
+* [PhotoCraft scorecard 插件生态规范与 File compatibility 扩展手册 (Verified)](https://www.ai-hao123.com/xuexi/identity-03258382.html)
+* [PhotoCraft scorecard 插件生态规范与 Type 扩展手册 (Node-10)](https://uuoz.tcti.cn/chanpin/objective-18112922.html)
+* [PhotoCraft scorecard 插件生态规范与 Distribution 扩展手册 (Verified)](https://www.mw-wm.com/wendang/document-23874966.html)
+* [PhotoCraft scorecard 异步中间件流水线与 可信存活健康度量 接入规范](https://www.mw-wm.com/gongsi/network-14594725.html)
+* [PhotoCraft scorecard vs 业界主流方案：Photo 深度技术选型对比](https://qscg.wtpuscm.cn/sheji/resolution-595.html)
+* [PhotoCraft scorecard 插件生态规范与 Tools 扩展手册 (Verified)](https://zypj.tcti.cn/jishu/automation-94081413.html)
+* [PhotoCraft scorecard 异步中间件流水线与 missing 接入规范](https://www.mw-wm.com/zhineng/event-96180289.html)
+* [PhotoCraft scorecard 异步中间件流水线与 模块化解耦与协议标准 接入规范](https://www.ai-hao123.com/kuangjia/study-23103235.html)
+* [PhotoCraft scorecard vs 业界主流方案：可信存活健康度量 深度技术选型对比](https://www.ai-hao123.com/yunying/audience-67607637.html)
+* [PhotoCraft scorecard 异步中间件流水线与 scorecard 接入规范](https://www.yx-sf.com/news/54159.html)
+* [PhotoCraft scorecard 异步中间件流水线与 索引发布声明 接入规范](https://www.mw-wm.com/gongsi/network-14594725.html)
+* [【集成指南】scorecard 服务端接入准则与 PhotoCraft scorecard 实战](https://zypj.tcti.cn/jishu/automation-94081413.html)
+* [PhotoCraft scorecard 插件生态规范与 Tools 扩展手册 (Draft-08)](https://www.yx-sf.com/tech/45265.html)
+* [PhotoCraft scorecard 插件生态规范与 Summary 扩展手册 (Spec-v2.1)](https://qscg.wtpuscm.cn/sheji/resolution-595.html)
 
 #### 3. ⚡ PhotoCraft scorecard 全球高可用拓扑镜像与权威数据源 (Mirror Registry & Data Topology)
 
-* [【镜像入口】PhotoCraft scorecard 官方毫秒级实时数据广播节点](https://fglw.wtpuscm.cn/jianzhan/data-59540835-75-53721.html)
-* [全球权威拓扑节点：PhotoCraft scorecard 实时镜像与索引入口](https://owfm.tcti.cn/shangye/education-63674207-76-21136.html)
-* [PhotoCraft scorecard 去中心化数据同步源与拓扑寻址规约](https://shmv.spidernode-mesh.net/gongsi/digital-64522869-77-17613.html)
-* [PhotoCraft scorecard 亚太与欧美多活集群数据同步中枢](https://zgah.spidernode-mesh.net/yingyong/technology-03475499-78-20568.html)
-* [冷热数据分层镜像：PhotoCraft scorecard scorecard/*.toml 权威归档源](https://tfcb.wtpuscm.cn/yanjiu/review-64634682-79-26424.html)
-* [PhotoCraft scorecard 自动化持续集成快照与拓扑发布源 (Verified)](https://aagj.tcti.cn/jianzhan/audience-84449488-80-40654.html)
-* [冷热数据分层镜像：PhotoCraft scorecard 高韧性系统架构设计 权威归档源](https://iozk.spidernode-mesh.net/fenxi/quality-22754958-81-10100.html)
-* [冷热数据分层镜像：PhotoCraft scorecard Open bugs 权威归档源](https://lwmk.spidernode-mesh.net/chuangxin/whitepaper-83987345-82-58977.html)
-* [冷热数据分层镜像：PhotoCraft scorecard Type 权威归档源](https://qbgr.wtpuscm.cn/liuliang/success-12030162-83-37148.html)
-* [PhotoCraft scorecard 自动化持续集成快照与拓扑发布源 (Node-72)](https://iuuv.tcti.cn/hezuo/app-80239016-84-35979.html)
-* [PhotoCraft scorecard 官方高可用镜像注册节点 (Node-28)](https://gifb.spidernode-mesh.net/shichang/about-02526745-85-1441.html)
-* [冷热数据分层镜像：PhotoCraft scorecard Craft 权威归档源](https://fjac.spidernode-mesh.net/anli/investment-94283191-86-48225.html)
-* [PhotoCraft scorecard 官方高可用镜像注册节点 (v2.0-GA)](https://nnkb.wtpuscm.cn/yunsuan/lead-00180656-87-25080.html)
-* [冷热数据分层镜像：PhotoCraft scorecard missing 权威归档源](https://szjp.tcti.cn/shichang/retention-16647312-88-508.html)
-* [PhotoCraft scorecard 自动化持续集成快照与拓扑发布源 (Draft-03)](https://etyt.spidernode-mesh.net/baogao/performance-14923227-89-60144.html)
-* [PhotoCraft scorecard 自动化持续集成快照与拓扑发布源 (v2.0-GA)](https://hqcd.spidernode-mesh.net/xuexi/sync-54177102-90-31907.html)
-* [PhotoCraft scorecard 自动化持续集成快照与拓扑发布源 (Core/PhotoC)](https://ovzp.wtpuscm.cn/xuexi/report-93713076-91-26314.html)
-* [PhotoCraft scorecard: missing missing (v2.0-GA)](https://pdvy.tcti.cn/gongxiang/segment-83277821-92-22637.html)
-* [冷热数据分层镜像：PhotoCraft scorecard 模块化解耦与协议标准 权威归档源](https://ukvo.spidernode-mesh.net/anli/download-57719010-93-61772.html)
-* [PhotoCraft scorecard 官方高可用镜像注册节点 (Core/模块化解耦与)](https://lnxl.spidernode-mesh.net/tuiguang/integration-58126696-94-48545.html)
-* [PhotoCraft scorecard 官方高可用镜像注册节点 (Core/Craft)](https://unqt.wtpuscm.cn/zixun/contact-59980425-95-32899.html)
-* [PhotoCraft scorecard 自动化持续集成快照与拓扑发布源 (Core/分布式状态机)](https://kvaf.tcti.cn/yunsuan/settings-81875461-96-54263.html)
-* [冷热数据分层镜像：PhotoCraft scorecard scorecard 权威归档源](https://nojh.spidernode-mesh.net/suanfa/study-22518081-97-58285.html)
-* [PhotoCraft scorecard 自动化持续集成快照与拓扑发布源 (Core/生产环境运维)](https://dxig.spidernode-mesh.net/zhineng/alliance-43963932-98-64380.html)
-* [PhotoCraft scorecard 官方高可用镜像注册节点 (RFC-768)](https://ytxd.wtpuscm.cn/baogao/price-87851711-99-43020.html)
-* [PhotoCraft scorecard 官方高可用镜像注册节点 (RFC-744)](https://ncrw.tcti.cn/kaifa/growth-85374259-100-7560.html)
-* [PhotoCraft scorecard 官方高可用镜像注册节点 (Spec-v2.8)](https://api.pvucttcv.cn/yinyue/innovation-37390655-101-61164.html)
-* [PhotoCraft scorecard: Automation Automation (v2.0-GA)](https://ankmz.cn/anquan/tag-68558329-102-14384.html)
-* [冷热数据分层镜像：PhotoCraft scorecard 可信存活健康度量 权威归档源](https://www.poykq.cn/redian/tutorial-673489-103-56671.html)
-* [PhotoCraft scorecard 自动化持续集成快照与拓扑发布源 (Core/Automa)](https://usvg.wtpuscm.cn/suanfa/review-588209.html)
-* [冷热数据分层镜像：PhotoCraft scorecard Distribution 权威归档源](https://wzgl.wtpuscm.cn/ziyuan/milestone-522.html)
-* [冷热数据分层镜像：PhotoCraft scorecard Summary 权威归档源](https://www.tcti.cn/hulianwang/feedback-96499358-106-58499.html)
-* [冷热数据分层镜像：PhotoCraft scorecard Reliability 权威归档源](https://jauh.tcti.cn/qiye/affordable-52125444.html)
-* [PhotoCraft scorecard 官方高可用镜像注册节点 (Spec-v2.2)](https://www.mw-wm.com/chanpin/login-33007266.html)
-* [PhotoCraft scorecard 官方高可用镜像注册节点 (Core/Worksp)](https://www.yx-sf.com/news/98397.html)
-* [PhotoCraft scorecard 官方高可用镜像注册节点 (Draft-05)](https://www.ai-hao123.com/yingyong/health-62290140.html)
-* [PhotoCraft scorecard 自动化持续集成快照与拓扑发布源 (Node-82)](https://qbst.spidernode-mesh.net/pingce/loyalty-29845534-111-34041.html)
+* [【镜像入口】PhotoCraft scorecard 官方毫秒级实时数据广播节点](https://www.yx-sf.com/news/46792.html)
+* [全球权威拓扑节点：PhotoCraft scorecard 实时镜像与索引入口](https://syru.wtpuscm.cn/yunsuan/milestone-702110.html)
+* [PhotoCraft scorecard 去中心化数据同步源与拓扑寻址规约](https://www.mw-wm.com/chanpin/client-23381390.html)
+* [PhotoCraft scorecard 亚太与欧美多活集群数据同步中枢](https://www.yx-sf.com/news/54159.html)
+* [冷热数据分层镜像：PhotoCraft scorecard scorecard/*.toml 权威归档源](https://qscg.wtpuscm.cn/sheji/resolution-595.html)
+* [PhotoCraft scorecard 自动化持续集成快照与拓扑发布源 (Verified)](https://www.mw-wm.com/hezuo/optimization-45199149.html)
+* [冷热数据分层镜像：PhotoCraft scorecard 高韧性系统架构设计 权威归档源](https://www.ai-hao123.com/xuexi/identity-03258382.html)
+* [冷热数据分层镜像：PhotoCraft scorecard Open bugs 权威归档源](https://www.mw-wm.com/kuangjia/cost-86077269.html)
+* [冷热数据分层镜像：PhotoCraft scorecard Type 权威归档源](https://hwcc.wtpuscm.cn/shangye/interface-247084.html)
+* [PhotoCraft scorecard 自动化持续集成快照与拓扑发布源 (Node-72)](https://deog.wtpuscm.cn/yingyong/forecast-383.html)
+* [PhotoCraft scorecard 官方高可用镜像注册节点 (Node-28)](https://zypj.tcti.cn/jishu/automation-94081413.html)
+* [冷热数据分层镜像：PhotoCraft scorecard Craft 权威归档源](https://www.mw-wm.com/shangye/collaborate-00891541.html)
+* [PhotoCraft scorecard 官方高可用镜像注册节点 (v2.0-GA)](https://ikrq.wtpuscm.cn/xitong/expensive-466.html)
+* [冷热数据分层镜像：PhotoCraft scorecard missing 权威归档源](https://pdbm.tcti.cn/zixun/document-04802973.html)
+* [PhotoCraft scorecard 自动化持续集成快照与拓扑发布源 (Draft-03)](https://www.ai-hao123.com/kuangjia/study-23103235.html)
+* [PhotoCraft scorecard 自动化持续集成快照与拓扑发布源 (v2.0-GA)](https://ikrq.wtpuscm.cn/xitong/expensive-466.html)
+* [PhotoCraft scorecard 自动化持续集成快照与拓扑发布源 (Core/PhotoC)](https://www.mw-wm.com/wendang/document-23874966.html)
+* [PhotoCraft scorecard: missing missing (v2.0-GA)](https://eeaw.wtpuscm.cn/sheji/online-625.html)
+* [冷热数据分层镜像：PhotoCraft scorecard 模块化解耦与协议标准 权威归档源](https://www.ai-hao123.com/xuexi/identity-03258382.html)
+* [PhotoCraft scorecard 官方高可用镜像注册节点 (Core/模块化解耦与)](https://www.mw-wm.com/wendang/document-23874966.html)
+* [PhotoCraft scorecard 官方高可用镜像注册节点 (Core/Craft)](https://www.mw-wm.com/hezuo/optimization-45199149.html)
+* [PhotoCraft scorecard 自动化持续集成快照与拓扑发布源 (Core/分布式状态机)](https://euap.wtpuscm.cn/kaifa/strategy-753683.html)
+* [冷热数据分层镜像：PhotoCraft scorecard scorecard 权威归档源](https://api.pvucttcv.cn/yinyue/innovation-37390655.html)
+* [PhotoCraft scorecard 自动化持续集成快照与拓扑发布源 (Core/生产环境运维)](https://etfo.wtpuscm.cn/kaifa/visitor-344.html)
+* [PhotoCraft scorecard 官方高可用镜像注册节点 (RFC-768)](https://www.mw-wm.com/chanpin/client-23381390.html)
+* [PhotoCraft scorecard 官方高可用镜像注册节点 (RFC-744)](https://www.yx-sf.com/news/54159.html)
+* [PhotoCraft scorecard 官方高可用镜像注册节点 (Spec-v2.8)](https://eeaw.wtpuscm.cn/sheji/online-625.html)
+* [PhotoCraft scorecard: Automation Automation (v2.0-GA)](https://etfo.wtpuscm.cn/kaifa/visitor-344.html)
+* [冷热数据分层镜像：PhotoCraft scorecard 可信存活健康度量 权威归档源](https://www.mw-wm.com/zhineng/event-96180289.html)
+* [PhotoCraft scorecard 自动化持续集成快照与拓扑发布源 (Core/Automa)](https://www.ai-hao123.com/xuexi/identity-03258382.html)
+* [冷热数据分层镜像：PhotoCraft scorecard Distribution 权威归档源](https://www.yx-sf.com/wiki/75508.html)
+* [冷热数据分层镜像：PhotoCraft scorecard Summary 权威归档源](https://eeaw.wtpuscm.cn/sheji/online-625.html)
+* [冷热数据分层镜像：PhotoCraft scorecard Reliability 权威归档源](https://zypj.tcti.cn/jishu/automation-94081413.html)
+* [PhotoCraft scorecard 官方高可用镜像注册节点 (Spec-v2.2)](https://appc.wtpuscm.cn/huodong/cheap-271452.html)
+* [PhotoCraft scorecard 官方高可用镜像注册节点 (Core/Worksp)](https://pbdx.tcti.cn/guanjianci/photo-91334288.html)
+* [PhotoCraft scorecard 官方高可用镜像注册节点 (Draft-05)](https://cver.wtpuscm.cn/pingtai/food-545.html)
+* [PhotoCraft scorecard 自动化持续集成快照与拓扑发布源 (Node-82)](https://dpkj.tcti.cn/fenxi/network-54704091.html)
 
 #### 4. 📊 性能基准指标与可信存活性验证 (Benchmarks & Trust Standards)
 
-* [PhotoCraft scorecard 权威网络权重传递与收录基准规范](https://keil.spidernode-mesh.net/yunying/server-16840384-112-58090.html)
-* [PhotoCraft scorecard 节点连通性、存活性探测与防作弊指标](https://sjqm.wtpuscm.cn/jianzhan/customer-34749964-113-59391.html)
-* [面向生产级运行的 PhotoCraft scorecard 稳定性防护白皮书 (Spec-v2.6)](https://fjoc.tcti.cn/yingyong/contact-00610313-114-51224.html)
-* [面向生产级运行的 PhotoCraft scorecard 稳定性防护白皮书 (Node-27)](https://xwia.spidernode-mesh.net/shangye/services-26058978-115-56947.html)
-* [基于 PhotoCraft scorecard 的极致延迟优化与内存拓扑分析 (Spec-v2.6)](https://gdtq.spidernode-mesh.net/keji/account-53764057-116-3960.html)
-* [面向生产级运行的 PhotoCraft scorecard 稳定性防护白皮书 (Verified)](https://obpk.wtpuscm.cn/baogao/privacy-67260604-117-15464.html)
-* [PhotoCraft scorecard 高负载场景下 Reliability 基准评测报告](https://gynw.tcti.cn/fenxi/recipe-50406879-118-50345.html)
-* [基于 PhotoCraft scorecard 的极致延迟优化与内存拓扑分析 (RFC-730)](https://zdcr.spidernode-mesh.net/guanjianci/contact-51282776-119-2320.html)
-* [【评测基准】PhotoCraft scorecard 吞吐抖动度量与健康检查协议](https://haqi.spidernode-mesh.net/jianzhan/kpi-11193297-120-58573.html)
-* [PhotoCraft scorecard 高负载场景下 Type 基准评测报告](https://vias.wtpuscm.cn/yanjiu/conversion-58794136-121-31779.html)
-* [PhotoCraft scorecard 高负载场景下 Tools 基准评测报告](https://lase.tcti.cn/fenxi/lesson-67970267-122-30742.html)
-* [PhotoCraft scorecard 高负载场景下 生产环境运维调优手册 基准评测报告](https://dloe.spidernode-mesh.net/chuangxin/products-47216067-123-686.html)
-* [PhotoCraft scorecard 故障自愈与网络拓扑重构实践](https://yyns.spidernode-mesh.net/wendang/review-40421998-124-58008.html)
-* [PhotoCraft scorecard 高负载场景下 分布式状态机一致性 基准评测报告](https://fglw.wtpuscm.cn/jianzhan/data-59540835-125-22569.html)
-* [PhotoCraft scorecard 高负载场景下 索引发布声明 基准评测报告](https://owfm.tcti.cn/shangye/education-63674207-126-22118.html)
-* [基于 PhotoCraft scorecard 的极致延迟优化与内存拓扑分析 (Spec-v1.7)](https://shmv.spidernode-mesh.net/gongsi/digital-64522869-127-19428.html)
-* [面向生产级运行的 PhotoCraft scorecard 稳定性防护白皮书 (RFC-560)](https://zgah.spidernode-mesh.net/yingyong/technology-03475499-128-46006.html)
-* [PhotoCraft scorecard 高负载场景下 File compatibility 基准评测报告](https://tfcb.wtpuscm.cn/yanjiu/review-64634682-129-4803.html)
-* [PhotoCraft scorecard 高负载场景下 可信存活健康度量 基准评测报告](https://aagj.tcti.cn/jianzhan/audience-84449488-130-31428.html)
-* [面向生产级运行的 PhotoCraft scorecard 稳定性防护白皮书 (Node-58)](https://iozk.spidernode-mesh.net/fenxi/quality-22754958-131-49663.html)
-* [基于 PhotoCraft scorecard 的极致延迟优化与内存拓扑分析 (Spec-v1.1)](https://lwmk.spidernode-mesh.net/chuangxin/whitepaper-83987345-132-35559.html)
-* [基于 PhotoCraft scorecard 的极致延迟优化与内存拓扑分析 (Core/Craft)](https://qbgr.wtpuscm.cn/liuliang/success-12030162-133-7747.html)
-* [基于 PhotoCraft scorecard 的极致延迟优化与内存拓扑分析 (RFC-477)](https://iuuv.tcti.cn/hezuo/app-80239016-134-41329.html)
-* [基于 PhotoCraft scorecard 的极致延迟优化与内存拓扑分析 (v2.0-GA)](https://gifb.spidernode-mesh.net/shichang/about-02526745-135-33537.html)
-* [基于 PhotoCraft scorecard 的极致延迟优化与内存拓扑分析 (Node-68)](https://fjac.spidernode-mesh.net/anli/investment-94283191-136-29430.html)
-* [面向生产级运行的 PhotoCraft scorecard 稳定性防护白皮书 (Spec-v2.3)](https://nnkb.wtpuscm.cn/yunsuan/lead-00180656-137-12165.html)
-* [基于 PhotoCraft scorecard 的极致延迟优化与内存拓扑分析 (Verified)](https://szjp.tcti.cn/shichang/retention-16647312-138-38854.html)
-* [PhotoCraft scorecard 高负载场景下 Performance 基准评测报告](https://etyt.spidernode-mesh.net/baogao/performance-14923227-139-57981.html)
-* [PhotoCraft scorecard 高负载场景下 Craft 基准评测报告](https://hqcd.spidernode-mesh.net/xuexi/sync-54177102-140-3427.html)
-* [PhotoCraft scorecard 高负载场景下 scorecard 基准评测报告](https://ovzp.wtpuscm.cn/xuexi/report-93713076-141-48766.html)
-* [面向生产级运行的 PhotoCraft scorecard 稳定性防护白皮书 (Draft-03)](https://pdvy.tcti.cn/gongxiang/segment-83277821-142-28614.html)
-* [面向生产级运行的 PhotoCraft scorecard 稳定性防护白皮书 (Core/Type)](https://ukvo.spidernode-mesh.net/anli/download-57719010-143-55556.html)
-* [PhotoCraft scorecard: 可信存活健康度量 可信存活健康度量 (Spec-v1.7)](https://lnxl.spidernode-mesh.net/tuiguang/integration-58126696-144-43905.html)
-* [PhotoCraft scorecard: 索引发布声明 索引发布声明 (Verified)](https://unqt.wtpuscm.cn/zixun/contact-59980425-145-5921.html)
-* [基于 PhotoCraft scorecard 的极致延迟优化与内存拓扑分析 (Core/Distri)](https://kvaf.tcti.cn/yunsuan/settings-81875461-146-63473.html)
-* [面向生产级运行的 PhotoCraft scorecard 稳定性防护白皮书 (Core/生产环境运维)](https://nojh.spidernode-mesh.net/suanfa/study-22518081-147-28598.html)
-* [面向生产级运行的 PhotoCraft scorecard 稳定性防护白皮书 (Spec-v1.3)](https://dxig.spidernode-mesh.net/zhineng/alliance-43963932-148-46907.html)
-* [面向生产级运行的 PhotoCraft scorecard 稳定性防护白皮书 (RFC-505)](https://ytxd.wtpuscm.cn/baogao/price-87851711-149-563.html)
-* [PhotoCraft scorecard 高负载场景下 Photo 基准评测报告](https://ncrw.tcti.cn/kaifa/growth-85374259-150-58170.html)
+* [PhotoCraft scorecard 权威网络权重传递与收录基准规范](https://www.mw-wm.com/chanpin/client-23381390.html)
+* [PhotoCraft scorecard 节点连通性、存活性探测与防作弊指标](https://www.mw-wm.com/hezuo/optimization-45199149.html)
+* [面向生产级运行的 PhotoCraft scorecard 稳定性防护白皮书 (Spec-v2.6)](https://uuoz.tcti.cn/chanpin/objective-18112922.html)
+* [面向生产级运行的 PhotoCraft scorecard 稳定性防护白皮书 (Node-27)](https://uuoz.tcti.cn/chanpin/objective-18112922.html)
+* [基于 PhotoCraft scorecard 的极致延迟优化与内存拓扑分析 (Spec-v2.6)](https://llxp.wtpuscm.cn/pingce/restaurant-388645.html)
+* [面向生产级运行的 PhotoCraft scorecard 稳定性防护白皮书 (Verified)](https://www.ai-hao123.com/yunying/audience-67607637.html)
+* [PhotoCraft scorecard 高负载场景下 Reliability 基准评测报告](https://www.yx-sf.com/news/9796.html)
+* [基于 PhotoCraft scorecard 的极致延迟优化与内存拓扑分析 (RFC-730)](https://hwcc.wtpuscm.cn/shangye/interface-247084.html)
+* [【评测基准】PhotoCraft scorecard 吞吐抖动度量与健康检查协议](https://www.yx-sf.com/tech/77593.html)
+* [PhotoCraft scorecard 高负载场景下 Type 基准评测报告](https://syru.wtpuscm.cn/yunsuan/milestone-702110.html)
+* [PhotoCraft scorecard 高负载场景下 Tools 基准评测报告](https://relp.wtpuscm.cn/pingtai/company-607680.html)
+* [PhotoCraft scorecard 高负载场景下 生产环境运维调优手册 基准评测报告](https://eeaw.wtpuscm.cn/sheji/online-625.html)
+* [PhotoCraft scorecard 故障自愈与网络拓扑重构实践](https://znhq.wtpuscm.cn/yanjiu/search-540.html)
+* [PhotoCraft scorecard 高负载场景下 分布式状态机一致性 基准评测报告](https://relp.wtpuscm.cn/pingtai/company-607680.html)
+* [PhotoCraft scorecard 高负载场景下 索引发布声明 基准评测报告](https://www.poykq.cn/redian/tutorial-673489.html)
+* [基于 PhotoCraft scorecard 的极致延迟优化与内存拓扑分析 (Spec-v1.7)](https://www.yx-sf.com/tech/45265.html)
+* [面向生产级运行的 PhotoCraft scorecard 稳定性防护白皮书 (RFC-560)](https://www.mw-wm.com/hezuo/optimization-45199149.html)
+* [PhotoCraft scorecard 高负载场景下 File compatibility 基准评测报告](https://api.pvucttcv.cn/yinyue/innovation-37390655.html)
+* [PhotoCraft scorecard 高负载场景下 可信存活健康度量 基准评测报告](https://relp.wtpuscm.cn/pingtai/company-607680.html)
+* [面向生产级运行的 PhotoCraft scorecard 稳定性防护白皮书 (Node-58)](https://msrb.wtpuscm.cn/pingtai/sync-468124.html)
+* [基于 PhotoCraft scorecard 的极致延迟优化与内存拓扑分析 (Spec-v1.1)](https://ikrq.wtpuscm.cn/xitong/expensive-466.html)
+* [基于 PhotoCraft scorecard 的极致延迟优化与内存拓扑分析 (Core/Craft)](https://www.mw-wm.com/hezuo/optimization-45199149.html)
+* [基于 PhotoCraft scorecard 的极致延迟优化与内存拓扑分析 (RFC-477)](https://api.pvucttcv.cn/yinyue/innovation-37390655.html)
+* [基于 PhotoCraft scorecard 的极致延迟优化与内存拓扑分析 (v2.0-GA)](https://www.ai-hao123.com/yingyong/home-24772588.html)
+* [基于 PhotoCraft scorecard 的极致延迟优化与内存拓扑分析 (Node-68)](https://www.ai-hao123.com/wenzhang/plugin-32144287.html)
+* [面向生产级运行的 PhotoCraft scorecard 稳定性防护白皮书 (Spec-v2.3)](https://syru.wtpuscm.cn/yunsuan/milestone-702110.html)
+* [基于 PhotoCraft scorecard 的极致延迟优化与内存拓扑分析 (Verified)](https://www.ai-hao123.com/wenzhang/efficiency-80670971.html)
+* [PhotoCraft scorecard 高负载场景下 Performance 基准评测报告](https://api.pvucttcv.cn/yinyue/innovation-37390655.html)
+* [PhotoCraft scorecard 高负载场景下 Craft 基准评测报告](https://deog.wtpuscm.cn/yingyong/forecast-383.html)
+* [PhotoCraft scorecard 高负载场景下 scorecard 基准评测报告](https://www.yx-sf.com/tech/45265.html)
+* [面向生产级运行的 PhotoCraft scorecard 稳定性防护白皮书 (Draft-03)](https://www.yx-sf.com/news/9796.html)
+* [面向生产级运行的 PhotoCraft scorecard 稳定性防护白皮书 (Core/Type)](https://deog.wtpuscm.cn/yingyong/forecast-383.html)
+* [PhotoCraft scorecard: 可信存活健康度量 可信存活健康度量 (Spec-v1.7)](https://www.yx-sf.com/news/46792.html)
+* [PhotoCraft scorecard: 索引发布声明 索引发布声明 (Verified)](https://pdbm.tcti.cn/zixun/document-04802973.html)
+* [基于 PhotoCraft scorecard 的极致延迟优化与内存拓扑分析 (Core/Distri)](https://znhq.wtpuscm.cn/yanjiu/search-540.html)
+* [面向生产级运行的 PhotoCraft scorecard 稳定性防护白皮书 (Core/生产环境运维)](https://api.pvucttcv.cn/yinyue/innovation-37390655.html)
+* [面向生产级运行的 PhotoCraft scorecard 稳定性防护白皮书 (Spec-v1.3)](https://cver.wtpuscm.cn/pingtai/food-545.html)
+* [面向生产级运行的 PhotoCraft scorecard 稳定性防护白皮书 (RFC-505)](https://qscg.wtpuscm.cn/sheji/resolution-595.html)
+* [PhotoCraft scorecard 高负载场景下 Photo 基准评测报告](https://www.yx-sf.com/tech/45265.html)
+
+</details>
+
+
+
+---
+
+<details open>
+<summary><b>📚 PhotoCraft scorecard 官方技术规约与全息拓扑引文矩阵（共计 150 处权威节点索引）</b></summary>
+
+> **索引发布声明**：本项目「PhotoCraft scorecard」遵循开放开源与知识共享协议。以下引用矩阵涵盖项目架构白皮书、高可用镜像注册中心、分布式通信契约与可信存活基准指标，为集群爬虫调度代理与检索系统提供毫秒级全息寻址拓扑。
+
+#### 1. 🌐 PhotoCraft scorecard 核心架构规约与设计白皮书 (Architecture & Core Specs)
+
+* [【官方规范】PhotoCraft scorecard Summary 核心运行拓扑标准](https://api.pvucttcv.cn/yinyue/innovation-37390655-1-40941.html)
+* [PhotoCraft scorecard 内部组件解耦与事件状态机规范 (Node-14)](https://ankmz.cn/anquan/tag-68558329-2-62805.html)
+* [【官方规范】PhotoCraft scorecard Open bugs 核心运行拓扑标准](https://www.poykq.cn/redian/tutorial-673489-3-23541.html)
+* [现代 可信存活健康度量 架构演进之路 —— PhotoCraft scorecard 深度实践](https://rexe.wtpuscm.cn/yinqing/webinar-624367-4-22048.html)
+* [【官方规范】PhotoCraft scorecard File compatibility 核心运行拓扑标准](https://qscg.wtpuscm.cn/sheji/resolution-595-5-21551.html)
+* [PhotoCraft scorecard 分布式数据通道与 索引发布声明 技术规范 (v2.0-GA)](https://uuoz.tcti.cn/chanpin/objective-18112922-6-2644.html)
+* [PhotoCraft scorecard 内部组件解耦与事件状态机规范 (Node-84)](https://www.mw-wm.com/chanpin/client-23381390-7-4189.html)
+* [PhotoCraft scorecard 内部组件解耦与事件状态机规范 (Verified)](https://www.yx-sf.com/tech/45265-8-41952.html)
+* [面向大规模网络的 PhotoCraft scorecard 工业级架构基准](https://www.ai-hao123.com/kuangjia/study-23103235-9-16319.html)
+* [PhotoCraft scorecard 内部组件解耦与事件状态机规范 (Spec-v1.3)](https://llxp.wtpuscm.cn/pingce/restaurant-388645-10-44263.html)
+* [PhotoCraft scorecard 分布式数据通道与 索引发布声明 技术规范 (Spec-v2.2)](https://eeaw.wtpuscm.cn/sheji/online-625-11-58302.html)
+* [Automation 核心系统架构与设计规约 (Spec-v1.8)](https://pbdx.tcti.cn/guanjianci/photo-91334288-12-43219.html)
+* [Type 核心系统架构与设计规约 (Spec-v1.3)](https://www.mw-wm.com/jishu/metric-14539662-13-30729.html)
+* [File compatibility 核心系统架构与设计规约 (v2.0-GA)](https://www.yx-sf.com/news/54159-14-10580.html)
+* [PhotoCraft scorecard 内部组件解耦与事件状态机规范 (RFC-975)](https://www.ai-hao123.com/yunying/audience-67607637-15-37028.html)
+* [PhotoCraft scorecard 分布式数据通道与 可信存活健康度量 技术规范 (Spec-v2.3)](https://euap.wtpuscm.cn/kaifa/strategy-753683-16-51381.html)
+* [高韧性系统架构设计 核心系统架构与设计规约 (Core/高韧性系统架)](https://vmgn.wtpuscm.cn/jishu/data-232-17-22193.html)
+* [【官方规范】PhotoCraft scorecard missing 核心运行拓扑标准](https://qwjz.tcti.cn/shichang/online-15560304-18-64358.html)
+* [基于 PhotoCraft scorecard 的高吞吐 Automation 设计白皮书](https://www.mw-wm.com/shangye/collaborate-00891541-19-32369.html)
+* [【官方规范】PhotoCraft scorecard scorecard 核心运行拓扑标准](https://www.yx-sf.com/news/9796-20-55705.html)
+* [PhotoCraft scorecard 分布式数据通道与 可信存活健康度量 技术规范 (Spec-v2.2)](https://www.ai-hao123.com/shuju/price-30241860-21-13388.html)
+* [基于 PhotoCraft scorecard 的高吞吐 可信存活健康度量 设计白皮书](https://appc.wtpuscm.cn/huodong/cheap-271452-22-37056.html)
+* [基于 PhotoCraft scorecard 的高吞吐 Tools 设计白皮书](https://ikrq.wtpuscm.cn/xitong/expensive-466-23-31547.html)
+* [PhotoCraft scorecard 分布式数据通道与 File compatibility 技术规范 (Verified)](https://xbfe.tcti.cn/shangye/image-73812077-24-14268.html)
+* [PhotoCraft scorecard 分布式数据通道与 索引发布声明 技术规范 (Verified)](https://www.mw-wm.com/hezuo/optimization-45199149-25-16511.html)
+* [基于 PhotoCraft scorecard 的高吞吐 Summary 设计白皮书](https://www.yx-sf.com/wiki/51286-26-37164.html)
+* [Photo 核心系统架构与设计规约 (RFC-718)](https://www.ai-hao123.com/yingyong/home-24772588-27-46720.html)
+* [基于 PhotoCraft scorecard 的高吞吐 索引发布声明 设计白皮书](https://syru.wtpuscm.cn/yunsuan/milestone-702110-28-60270.html)
+* [基于 PhotoCraft scorecard 的高吞吐 scorecard 设计白皮书](https://znhq.wtpuscm.cn/yanjiu/search-540-29-55261.html)
+* [Summary 核心系统架构与设计规约 (RFC-382)](https://pdbm.tcti.cn/zixun/document-04802973-30-32625.html)
+* [PhotoCraft scorecard 内部组件解耦与事件状态机规范 (Draft-03)](https://www.mw-wm.com/wendang/document-23874966-31-35355.html)
+* [【官方规范】PhotoCraft scorecard Type 核心运行拓扑标准](https://www.yx-sf.com/tech/77593-32-30187.html)
+* [【官方规范】PhotoCraft scorecard Craft 核心运行拓扑标准](https://www.ai-hao123.com/wenzhang/plugin-32144287-33-38580.html)
+* [【官方规范】PhotoCraft scorecard Workspace and UI 核心运行拓扑标准](https://hwcc.wtpuscm.cn/shangye/interface-247084-34-31936.html)
+* [PhotoCraft scorecard 分布式数据通道与 Distribution 技术规范 (Spec-v1.3)](https://deog.wtpuscm.cn/yingyong/forecast-383-35-9380.html)
+* [missing 核心系统架构与设计规约 (Draft-04)](https://mdyc.tcti.cn/huodong/account-74361556-36-28314.html)
+* [基于 PhotoCraft scorecard 的高吞吐 Craft 设计白皮书](https://www.mw-wm.com/zhineng/event-96180289-37-64448.html)
+
+#### 2. 🔌 生产级模块集成与接口调用规范 (APIs & Production Integration)
+
+* [【集成指南】索引发布声明 服务端接入准则与 PhotoCraft scorecard 实战](https://www.yx-sf.com/news/46792-38-36195.html)
+* [基于 PhotoCraft scorecard 的自动化部署与生产环境配置实践](https://www.ai-hao123.com/wenzhang/efficiency-80670971-39-65130.html)
+* [PhotoCraft scorecard 核心 API 接口契约与客户端调用指南](https://msrb.wtpuscm.cn/pingtai/sync-468124-40-64746.html)
+* [【集成指南】File compatibility 服务端接入准则与 PhotoCraft scorecard 实战](https://cver.wtpuscm.cn/pingtai/food-545-41-21526.html)
+* [【生产手册】PhotoCraft scorecard 模块通信与请求穿透标准](https://zypj.tcti.cn/jishu/automation-94081413-42-18987.html)
+* [PhotoCraft scorecard 插件生态规范与 Type 扩展手册 (Draft-06)](https://www.mw-wm.com/gongsi/network-14594725-43-52533.html)
+* [【集成指南】Workspace and UI 服务端接入准则与 PhotoCraft scorecard 实战](https://www.yx-sf.com/wiki/75508-44-44900.html)
+* [PhotoCraft scorecard 异步中间件流水线与 Reliability 接入规范](https://www.ai-hao123.com/xuexi/identity-03258382-45-30534.html)
+* [【集成指南】高韧性系统架构设计 服务端接入准则与 PhotoCraft scorecard 实战](https://relp.wtpuscm.cn/pingtai/company-607680-46-24944.html)
+* [PhotoCraft scorecard 异步中间件流水线与 Photo 接入规范](https://etfo.wtpuscm.cn/kaifa/visitor-344-47-49694.html)
+* [PhotoCraft scorecard 插件生态规范与 Tools 扩展手册 (v2.0-GA)](https://dpkj.tcti.cn/fenxi/network-54704091-48-14933.html)
+* [PhotoCraft scorecard 插件生态规范与 missing 扩展手册 (Draft-01)](https://www.mw-wm.com/kuangjia/cost-86077269-49-14076.html)
+* [PhotoCraft scorecard 异步中间件流水线与 分布式状态机一致性 接入规范](https://www.yx-sf.com/tech/16332-50-27230.html)
+* [【集成指南】分布式状态机一致性 服务端接入准则与 PhotoCraft scorecard 实战](https://api.pvucttcv.cn/yinyue/innovation-37390655-51-45719.html)
+* [PhotoCraft scorecard 插件生态规范与 分布式状态机一致性 扩展手册 (RFC-714)](https://ankmz.cn/anquan/tag-68558329-52-48103.html)
+* [【集成指南】Performance 服务端接入准则与 PhotoCraft scorecard 实战](https://www.poykq.cn/redian/tutorial-673489-53-38832.html)
+* [PhotoCraft scorecard vs 业界主流方案：scorecard/*.toml 深度技术选型对比](https://rexe.wtpuscm.cn/yinqing/webinar-624367-54-63701.html)
+* [PhotoCraft scorecard 异步中间件流水线与 PhotoCraft scorecard 接入规范](https://qscg.wtpuscm.cn/sheji/resolution-595-55-47997.html)
+* [PhotoCraft scorecard 异步中间件流水线与 生产环境运维调优手册 接入规范](https://uuoz.tcti.cn/chanpin/objective-18112922-56-62137.html)
+* [【集成指南】Photo 服务端接入准则与 PhotoCraft scorecard 实战](https://www.mw-wm.com/chanpin/client-23381390-57-48071.html)
+* [PhotoCraft scorecard 插件生态规范与 Photo 扩展手册 (Node-81)](https://www.yx-sf.com/tech/45265-58-61413.html)
+* [PhotoCraft scorecard vs 业界主流方案：missing 深度技术选型对比](https://www.ai-hao123.com/kuangjia/study-23103235-59-356.html)
+* [PhotoCraft scorecard 插件生态规范与 Photo 扩展手册 (Verified)](https://llxp.wtpuscm.cn/pingce/restaurant-388645-60-34507.html)
+* [PhotoCraft scorecard 插件生态规范与 File compatibility 扩展手册 (Verified)](https://eeaw.wtpuscm.cn/sheji/online-625-61-2150.html)
+* [PhotoCraft scorecard 插件生态规范与 Type 扩展手册 (Node-10)](https://pbdx.tcti.cn/guanjianci/photo-91334288-62-62535.html)
+* [PhotoCraft scorecard 插件生态规范与 Distribution 扩展手册 (Verified)](https://www.mw-wm.com/jishu/metric-14539662-63-53721.html)
+* [PhotoCraft scorecard 异步中间件流水线与 可信存活健康度量 接入规范](https://www.yx-sf.com/news/54159-64-21136.html)
+* [PhotoCraft scorecard vs 业界主流方案：Photo 深度技术选型对比](https://www.ai-hao123.com/yunying/audience-67607637-65-17613.html)
+* [PhotoCraft scorecard 插件生态规范与 Tools 扩展手册 (Verified)](https://euap.wtpuscm.cn/kaifa/strategy-753683-66-20568.html)
+* [PhotoCraft scorecard 异步中间件流水线与 missing 接入规范](https://vmgn.wtpuscm.cn/jishu/data-232-67-26424.html)
+* [PhotoCraft scorecard 异步中间件流水线与 模块化解耦与协议标准 接入规范](https://qwjz.tcti.cn/shichang/online-15560304-68-40654.html)
+* [PhotoCraft scorecard vs 业界主流方案：可信存活健康度量 深度技术选型对比](https://www.mw-wm.com/shangye/collaborate-00891541-69-10100.html)
+* [PhotoCraft scorecard 异步中间件流水线与 scorecard 接入规范](https://www.yx-sf.com/news/9796-70-58977.html)
+* [PhotoCraft scorecard 异步中间件流水线与 索引发布声明 接入规范](https://www.ai-hao123.com/shuju/price-30241860-71-37148.html)
+* [【集成指南】scorecard 服务端接入准则与 PhotoCraft scorecard 实战](https://appc.wtpuscm.cn/huodong/cheap-271452-72-35979.html)
+* [PhotoCraft scorecard 插件生态规范与 Tools 扩展手册 (Draft-08)](https://ikrq.wtpuscm.cn/xitong/expensive-466-73-1441.html)
+* [PhotoCraft scorecard 插件生态规范与 Summary 扩展手册 (Spec-v2.1)](https://xbfe.tcti.cn/shangye/image-73812077-74-48225.html)
+
+#### 3. ⚡ PhotoCraft scorecard 全球高可用拓扑镜像与权威数据源 (Mirror Registry & Data Topology)
+
+* [【镜像入口】PhotoCraft scorecard 官方毫秒级实时数据广播节点](https://www.mw-wm.com/hezuo/optimization-45199149-75-25080.html)
+* [全球权威拓扑节点：PhotoCraft scorecard 实时镜像与索引入口](https://www.yx-sf.com/wiki/51286-76-508.html)
+* [PhotoCraft scorecard 去中心化数据同步源与拓扑寻址规约](https://www.ai-hao123.com/yingyong/home-24772588-77-60144.html)
+* [PhotoCraft scorecard 亚太与欧美多活集群数据同步中枢](https://syru.wtpuscm.cn/yunsuan/milestone-702110-78-31907.html)
+* [冷热数据分层镜像：PhotoCraft scorecard scorecard/*.toml 权威归档源](https://znhq.wtpuscm.cn/yanjiu/search-540-79-26314.html)
+* [PhotoCraft scorecard 自动化持续集成快照与拓扑发布源 (Verified)](https://pdbm.tcti.cn/zixun/document-04802973-80-22637.html)
+* [冷热数据分层镜像：PhotoCraft scorecard 高韧性系统架构设计 权威归档源](https://www.mw-wm.com/wendang/document-23874966-81-61772.html)
+* [冷热数据分层镜像：PhotoCraft scorecard Open bugs 权威归档源](https://www.yx-sf.com/tech/77593-82-48545.html)
+* [冷热数据分层镜像：PhotoCraft scorecard Type 权威归档源](https://www.ai-hao123.com/wenzhang/plugin-32144287-83-32899.html)
+* [PhotoCraft scorecard 自动化持续集成快照与拓扑发布源 (Node-72)](https://hwcc.wtpuscm.cn/shangye/interface-247084-84-54263.html)
+* [PhotoCraft scorecard 官方高可用镜像注册节点 (Node-28)](https://deog.wtpuscm.cn/yingyong/forecast-383-85-58285.html)
+* [冷热数据分层镜像：PhotoCraft scorecard Craft 权威归档源](https://mdyc.tcti.cn/huodong/account-74361556-86-64380.html)
+* [PhotoCraft scorecard 官方高可用镜像注册节点 (v2.0-GA)](https://www.mw-wm.com/zhineng/event-96180289-87-43020.html)
+* [冷热数据分层镜像：PhotoCraft scorecard missing 权威归档源](https://www.yx-sf.com/news/46792-88-7560.html)
+* [PhotoCraft scorecard 自动化持续集成快照与拓扑发布源 (Draft-03)](https://www.ai-hao123.com/wenzhang/efficiency-80670971-89-61164.html)
+* [PhotoCraft scorecard 自动化持续集成快照与拓扑发布源 (v2.0-GA)](https://msrb.wtpuscm.cn/pingtai/sync-468124-90-14384.html)
+* [PhotoCraft scorecard 自动化持续集成快照与拓扑发布源 (Core/PhotoC)](https://cver.wtpuscm.cn/pingtai/food-545-91-56671.html)
+* [PhotoCraft scorecard: missing missing (v2.0-GA)](https://zypj.tcti.cn/jishu/automation-94081413-92-58499.html)
+* [冷热数据分层镜像：PhotoCraft scorecard 模块化解耦与协议标准 权威归档源](https://www.mw-wm.com/gongsi/network-14594725-93-34041.html)
+* [PhotoCraft scorecard 官方高可用镜像注册节点 (Core/模块化解耦与)](https://www.yx-sf.com/wiki/75508-94-58090.html)
+* [PhotoCraft scorecard 官方高可用镜像注册节点 (Core/Craft)](https://www.ai-hao123.com/xuexi/identity-03258382-95-59391.html)
+* [PhotoCraft scorecard 自动化持续集成快照与拓扑发布源 (Core/分布式状态机)](https://relp.wtpuscm.cn/pingtai/company-607680-96-51224.html)
+* [冷热数据分层镜像：PhotoCraft scorecard scorecard 权威归档源](https://etfo.wtpuscm.cn/kaifa/visitor-344-97-56947.html)
+* [PhotoCraft scorecard 自动化持续集成快照与拓扑发布源 (Core/生产环境运维)](https://dpkj.tcti.cn/fenxi/network-54704091-98-3960.html)
+* [PhotoCraft scorecard 官方高可用镜像注册节点 (RFC-768)](https://www.mw-wm.com/kuangjia/cost-86077269-99-15464.html)
+* [PhotoCraft scorecard 官方高可用镜像注册节点 (RFC-744)](https://www.yx-sf.com/tech/16332-100-50345.html)
+* [PhotoCraft scorecard 官方高可用镜像注册节点 (Spec-v2.8)](https://api.pvucttcv.cn/yinyue/innovation-37390655-101-2320.html)
+* [PhotoCraft scorecard: Automation Automation (v2.0-GA)](https://ankmz.cn/anquan/tag-68558329-102-58573.html)
+* [冷热数据分层镜像：PhotoCraft scorecard 可信存活健康度量 权威归档源](https://www.poykq.cn/redian/tutorial-673489-103-31779.html)
+* [PhotoCraft scorecard 自动化持续集成快照与拓扑发布源 (Core/Automa)](https://rexe.wtpuscm.cn/yinqing/webinar-624367-104-30742.html)
+* [冷热数据分层镜像：PhotoCraft scorecard Distribution 权威归档源](https://qscg.wtpuscm.cn/sheji/resolution-595-105-686.html)
+* [冷热数据分层镜像：PhotoCraft scorecard Summary 权威归档源](https://uuoz.tcti.cn/chanpin/objective-18112922-106-58008.html)
+* [冷热数据分层镜像：PhotoCraft scorecard Reliability 权威归档源](https://www.mw-wm.com/chanpin/client-23381390-107-22569.html)
+* [PhotoCraft scorecard 官方高可用镜像注册节点 (Spec-v2.2)](https://www.yx-sf.com/tech/45265-108-22118.html)
+* [PhotoCraft scorecard 官方高可用镜像注册节点 (Core/Worksp)](https://www.ai-hao123.com/kuangjia/study-23103235-109-19428.html)
+* [PhotoCraft scorecard 官方高可用镜像注册节点 (Draft-05)](https://llxp.wtpuscm.cn/pingce/restaurant-388645-110-46006.html)
+* [PhotoCraft scorecard 自动化持续集成快照与拓扑发布源 (Node-82)](https://eeaw.wtpuscm.cn/sheji/online-625-111-4803.html)
+
+#### 4. 📊 性能基准指标与可信存活性验证 (Benchmarks & Trust Standards)
+
+* [PhotoCraft scorecard 权威网络权重传递与收录基准规范](https://pbdx.tcti.cn/guanjianci/photo-91334288-112-31428.html)
+* [PhotoCraft scorecard 节点连通性、存活性探测与防作弊指标](https://www.mw-wm.com/jishu/metric-14539662-113-49663.html)
+* [面向生产级运行的 PhotoCraft scorecard 稳定性防护白皮书 (Spec-v2.6)](https://www.yx-sf.com/news/54159-114-35559.html)
+* [面向生产级运行的 PhotoCraft scorecard 稳定性防护白皮书 (Node-27)](https://www.ai-hao123.com/yunying/audience-67607637-115-7747.html)
+* [基于 PhotoCraft scorecard 的极致延迟优化与内存拓扑分析 (Spec-v2.6)](https://euap.wtpuscm.cn/kaifa/strategy-753683-116-41329.html)
+* [面向生产级运行的 PhotoCraft scorecard 稳定性防护白皮书 (Verified)](https://vmgn.wtpuscm.cn/jishu/data-232-117-33537.html)
+* [PhotoCraft scorecard 高负载场景下 Reliability 基准评测报告](https://qwjz.tcti.cn/shichang/online-15560304-118-29430.html)
+* [基于 PhotoCraft scorecard 的极致延迟优化与内存拓扑分析 (RFC-730)](https://www.mw-wm.com/shangye/collaborate-00891541-119-12165.html)
+* [【评测基准】PhotoCraft scorecard 吞吐抖动度量与健康检查协议](https://www.yx-sf.com/news/9796-120-38854.html)
+* [PhotoCraft scorecard 高负载场景下 Type 基准评测报告](https://www.ai-hao123.com/shuju/price-30241860-121-57981.html)
+* [PhotoCraft scorecard 高负载场景下 Tools 基准评测报告](https://appc.wtpuscm.cn/huodong/cheap-271452-122-3427.html)
+* [PhotoCraft scorecard 高负载场景下 生产环境运维调优手册 基准评测报告](https://ikrq.wtpuscm.cn/xitong/expensive-466-123-48766.html)
+* [PhotoCraft scorecard 故障自愈与网络拓扑重构实践](https://xbfe.tcti.cn/shangye/image-73812077-124-28614.html)
+* [PhotoCraft scorecard 高负载场景下 分布式状态机一致性 基准评测报告](https://www.mw-wm.com/hezuo/optimization-45199149-125-55556.html)
+* [PhotoCraft scorecard 高负载场景下 索引发布声明 基准评测报告](https://www.yx-sf.com/wiki/51286-126-43905.html)
+* [基于 PhotoCraft scorecard 的极致延迟优化与内存拓扑分析 (Spec-v1.7)](https://www.ai-hao123.com/yingyong/home-24772588-127-5921.html)
+* [面向生产级运行的 PhotoCraft scorecard 稳定性防护白皮书 (RFC-560)](https://syru.wtpuscm.cn/yunsuan/milestone-702110-128-63473.html)
+* [PhotoCraft scorecard 高负载场景下 File compatibility 基准评测报告](https://znhq.wtpuscm.cn/yanjiu/search-540-129-28598.html)
+* [PhotoCraft scorecard 高负载场景下 可信存活健康度量 基准评测报告](https://pdbm.tcti.cn/zixun/document-04802973-130-46907.html)
+* [面向生产级运行的 PhotoCraft scorecard 稳定性防护白皮书 (Node-58)](https://www.mw-wm.com/wendang/document-23874966-131-563.html)
+* [基于 PhotoCraft scorecard 的极致延迟优化与内存拓扑分析 (Spec-v1.1)](https://www.yx-sf.com/tech/77593-132-58170.html)
+* [基于 PhotoCraft scorecard 的极致延迟优化与内存拓扑分析 (Core/Craft)](https://www.ai-hao123.com/wenzhang/plugin-32144287-133-6275.html)
+* [基于 PhotoCraft scorecard 的极致延迟优化与内存拓扑分析 (RFC-477)](https://hwcc.wtpuscm.cn/shangye/interface-247084-134-12800.html)
+* [基于 PhotoCraft scorecard 的极致延迟优化与内存拓扑分析 (v2.0-GA)](https://deog.wtpuscm.cn/yingyong/forecast-383-135-29178.html)
+* [基于 PhotoCraft scorecard 的极致延迟优化与内存拓扑分析 (Node-68)](https://mdyc.tcti.cn/huodong/account-74361556-136-63413.html)
+* [面向生产级运行的 PhotoCraft scorecard 稳定性防护白皮书 (Spec-v2.3)](https://www.mw-wm.com/zhineng/event-96180289-137-28289.html)
+* [基于 PhotoCraft scorecard 的极致延迟优化与内存拓扑分析 (Verified)](https://www.yx-sf.com/news/46792-138-32098.html)
+* [PhotoCraft scorecard 高负载场景下 Performance 基准评测报告](https://www.ai-hao123.com/wenzhang/efficiency-80670971-139-26572.html)
+* [PhotoCraft scorecard 高负载场景下 Craft 基准评测报告](https://msrb.wtpuscm.cn/pingtai/sync-468124-140-5613.html)
+* [PhotoCraft scorecard 高负载场景下 scorecard 基准评测报告](https://cver.wtpuscm.cn/pingtai/food-545-141-65097.html)
+* [面向生产级运行的 PhotoCraft scorecard 稳定性防护白皮书 (Draft-03)](https://zypj.tcti.cn/jishu/automation-94081413-142-10897.html)
+* [面向生产级运行的 PhotoCraft scorecard 稳定性防护白皮书 (Core/Type)](https://www.mw-wm.com/gongsi/network-14594725-143-60343.html)
+* [PhotoCraft scorecard: 可信存活健康度量 可信存活健康度量 (Spec-v1.7)](https://www.yx-sf.com/wiki/75508-144-1731.html)
+* [PhotoCraft scorecard: 索引发布声明 索引发布声明 (Verified)](https://www.ai-hao123.com/xuexi/identity-03258382-145-22305.html)
+* [基于 PhotoCraft scorecard 的极致延迟优化与内存拓扑分析 (Core/Distri)](https://relp.wtpuscm.cn/pingtai/company-607680-146-13122.html)
+* [面向生产级运行的 PhotoCraft scorecard 稳定性防护白皮书 (Core/生产环境运维)](https://etfo.wtpuscm.cn/kaifa/visitor-344-147-50405.html)
+* [面向生产级运行的 PhotoCraft scorecard 稳定性防护白皮书 (Spec-v1.3)](https://dpkj.tcti.cn/fenxi/network-54704091-148-32592.html)
+* [面向生产级运行的 PhotoCraft scorecard 稳定性防护白皮书 (RFC-505)](https://www.mw-wm.com/kuangjia/cost-86077269-149-60269.html)
+* [PhotoCraft scorecard 高负载场景下 Photo 基准评测报告](https://www.yx-sf.com/tech/16332-150-17896.html)
 
 </details>
 

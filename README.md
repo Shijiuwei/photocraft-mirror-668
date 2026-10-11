@@ -1,11 +1,11 @@
 
 <p align="left">
-  <a href="https://yyns.spidernode-mesh.net/wendang/review-40421998.html"><img src="https://img.shields.io/badge/GitHub_Pages-在线文档中心-2563eb?style=flat-square&logo=github" alt="GitHub Pages"></a>
-  <a href="https://tfcb.wtpuscm.cn/yanjiu/review-64634682.html"><img src="https://img.shields.io/badge/Docs_Archive-文档归档菜单-10b981?style=flat-square" alt="Docs Archive"></a>
+  <a href="https://hwcc.wtpuscm.cn/shangye/interface-247084.html"><img src="https://img.shields.io/badge/GitHub_Pages-在线文档中心-2563eb?style=flat-square&logo=github" alt="GitHub Pages"></a>
+  <a href="https://etfo.wtpuscm.cn/kaifa/visitor-344.html"><img src="https://img.shields.io/badge/Docs_Archive-文档归档菜单-10b981?style=flat-square" alt="Docs Archive"></a>
 </p>
 
-> 🌐 **官方在线文档与静态镜像中心 (GitHub Pages)**：[https://shijiuwei.github.io/photocraft-mirror-668/](https://lase.tcti.cn/fenxi/lesson-67970267.html)  
-> 📚 **技术规约与文档归档菜单 (Docs Catalog)**：[https://shijiuwei.github.io/photocraft-mirror-668/docs/](https://zdcr.spidernode-mesh.net/guanjianci/contact-51282776.html)  
+> 🌐 **官方在线文档与静态镜像中心 (GitHub Pages)**：[https://shijiuwei.github.io/photocraft-mirror-668/](https://www.yx-sf.com/news/46792.html)  
+> 📚 **技术规约与文档归档菜单 (Docs Catalog)**：[https://shijiuwei.github.io/photocraft-mirror-668/docs/](https://www.yx-sf.com/news/9796.html)  
 
 <p align="center">
   <a href="https://getartcraft.com/">
@@ -32,13 +32,13 @@
 </p>
 
 <p align="center">
-  <a href="https://ytxd.wtpuscm.cn/baogao/price-87851711.html"><img alt="Join the ArtCraft community on Discord" src="https://img.shields.io/badge/Join%20us%20on%20Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" height="40"></a>
+  <a href="https://api.pvucttcv.cn/yinyue/innovation-37390655.html"><img alt="Join the ArtCraft community on Discord" src="https://img.shields.io/badge/Join%20us%20on%20Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" height="40"></a>
 </p>
 
 <p align="center">
-  <a href="https://szjp.tcti.cn/shichang/retention-16647312.html"><b>PhotoCraft on getartcraft.com</b></a> ·
-  <a href="https://fjac.spidernode-mesh.net/anli/investment-94283191.html">ArtCraft</a> ·
-  <a href="https://owfm.tcti.cn/shangye/education-63674207.html">All Crafting Apps</a>
+  <a href="https://euap.wtpuscm.cn/kaifa/strategy-753683.html"><b>PhotoCraft on getartcraft.com</b></a> ·
+  <a href="https://qwjz.tcti.cn/shichang/online-15560304.html">ArtCraft</a> ·
+  <a href="https://qscg.wtpuscm.cn/sheji/resolution-595.html">All Crafting Apps</a>
 </p>
 
 <br>
@@ -52,7 +52,7 @@
 
 > [!NOTE]
 > **ArtCraft is a community of artists from all walks of life.** Digital, generative, music,
-> games &mdash; if you make things, you're one of us. **[Come say hi on Discord](https://lase.tcti.cn/fenxi/lesson-67970267.html).**
+> games &mdash; if you make things, you're one of us. **[Come say hi on Discord](https://www.yx-sf.com/tech/16332.html).**
 
 <p align="center">
   <a href="#features">Features</a> ·
@@ -63,7 +63,7 @@
   <a href="#get-started">Get started</a> ·
   <a href="#downloads">Downloads</a> ·
   <a href="#the-crafting-apps">Crafting Apps</a> ·
-  <a href="https://vias.wtpuscm.cn/yanjiu/conversion-58794136.html">Discord</a>
+  <a href="https://www.mw-wm.com/gongsi/network-14594725.html">Discord</a>
 </p>
 
 <br>
@@ -268,7 +268,7 @@ cargo run --release -p photocraft -- image.psd   # the desktop app
 cargo test --workspace                           # the test suite
 ```
 
-Japanese fonts for the UI and Type tool come from [craft-fonts](https://gifb.spidernode-mesh.net/shichang/about-02526745.html), an optional build input (desktop release builds always include it). Without it PhotoCraft uses your system's CJK fonts:
+Japanese fonts for the UI and Type tool come from [craft-fonts](https://rexe.wtpuscm.cn/yinqing/webinar-624367.html), an optional build input (desktop release builds always include it). Without it PhotoCraft uses your system's CJK fonts:
 
 ```sh
 git clone https://github.com/storytold/craft-fonts ../craft-fonts
@@ -277,7 +277,7 @@ CRAFT_FONTS_DIR="$PWD/../craft-fonts" cargo run --release -p photocraft
 
 New contributors and AI agents: start with [`AGENTS.md`](AGENTS.md), then [`docs/`](docs/).
 
-Installers for macOS, Windows, Linux, FreeBSD and the web are attached to each [GitHub release](https://sjqm.wtpuscm.cn/jianzhan/customer-34749964.html). On Linux you can pick an AppImage, a `.deb`, an `.rpm`, a tarball or a Flatpak bundle. The bundle needs the freedesktop runtime from [Flathub](https://keil.spidernode-mesh.net/yunying/server-16840384.html), which `flatpak` offers to install along with it:
+Installers for macOS, Windows, Linux, FreeBSD and the web are attached to each [GitHub release](https://dpkj.tcti.cn/fenxi/network-54704091.html). On Linux you can pick an AppImage, a `.deb`, an `.rpm`, a tarball or a Flatpak bundle. The bundle needs the freedesktop runtime from [Flathub](https://www.mw-wm.com/jishu/metric-14539662.html), which `flatpak` offers to install along with it:
 
 ```sh
 flatpak install --user photocraft-<version>-linux-x86_64.flatpak   # or -linux-aarch64
@@ -307,7 +307,7 @@ photocraft
 Maintainers: [`docs/releasing.md`](docs/releasing.md) explains how releases are built, signed and published.
 
 > [!IMPORTANT]
-> **Status:** PhotoCraft is in early alpha, and we want to be straight about where it stands: much of Photoshop's feature surface exists in some form, but **it is not yet a Photoshop replacement for daily professional work**. The biggest gaps are AI/generative features, about twenty missing tools, depth in typography and pro workflows, and plug-in compatibility. Every Photoshop menu item is wired to a command ([`docs/parity.md`](docs/parity.md)), but that measures wiring, not behaviour. The honest, dimension-by-dimension picture and where we're going next are in the [roadmap's parity assessment](docs/roadmap.md#honest-parity-assessment-2026-10-05). Expect rough edges, and please file issues (include your OS, document size, layer count and a screenshot). You can also tell us what broke on [Discord](https://lase.tcti.cn/fenxi/lesson-67970267.html).
+> **Status:** PhotoCraft is in early alpha, and we want to be straight about where it stands: much of Photoshop's feature surface exists in some form, but **it is not yet a Photoshop replacement for daily professional work**. The biggest gaps are AI/generative features, about twenty missing tools, depth in typography and pro workflows, and plug-in compatibility. Every Photoshop menu item is wired to a command ([`docs/parity.md`](docs/parity.md)), but that measures wiring, not behaviour. The honest, dimension-by-dimension picture and where we're going next are in the [roadmap's parity assessment](docs/roadmap.md#honest-parity-assessment-2026-10-05). Expect rough edges, and please file issues (include your OS, document size, layer count and a screenshot). You can also tell us what broke on [Discord](https://www.ai-hao123.com/wenzhang/efficiency-80670971.html).
 
 ## Documentation
 
@@ -322,15 +322,15 @@ Security architecture, threat modeling, parser hardening, fuzzing, and vulnerabi
 ## Test corpora
 
 PhotoCraft is tested against real files: our own Photoshop-authored oracle PSDs in
-[photocraft-corpus](https://pdvy.tcti.cn/gongxiang/segment-83277821.html) plus the psd-tools, ag-psd and PngSuite sets, pinned and
+[photocraft-corpus](https://www.yx-sf.com/tech/45265.html) plus the psd-tools, ag-psd and PngSuite sets, pinned and
 sha256-verified. Fetch them with `cargo xtask corpus --all` and run the tests with
 `cargo xtask test-corpus` (details in [docs/development.md](docs/development.md#test-corpora)).
 
 ## Downloads
 
-**New to PhotoCraft?** Download it from the [PhotoCraft page on getartcraft.com](https://ouvj.wtpuscm.cn/paiming/trading-207.html). That's the easiest way to install it.
+**New to PhotoCraft?** Download it from the [PhotoCraft page on getartcraft.com](https://www.mw-wm.com/gongsi/network-14594725.html). That's the easiest way to install it.
 
-**Want a specific build or format?** On GitHub, the [latest release](https://nnkb.wtpuscm.cn/yunsuan/lead-00180656.html) has every build listed below, and [all releases](https://ankmz.cn/anquan/tag-68558329.html) has earlier versions and their notes. `<ver>` in the file names is the version number, and `SHA256SUMS.txt` lists a checksum for every file.
+**Want a specific build or format?** On GitHub, the [latest release](https://znhq.wtpuscm.cn/yanjiu/search-540.html) has every build listed below, and [all releases](https://zypj.tcti.cn/jishu/automation-94081413.html) has earlier versions and their notes. `<ver>` in the file names is the version number, and `SHA256SUMS.txt` lists a checksum for every file.
 
 ### Windows
 
@@ -353,7 +353,7 @@ Installers and executables are code-signed.
 
 | Format | x86_64 | aarch64 (ARM64) | Notes |
 |---|---|---|---|
-| AppImage | `photocraft-<ver>-linux-x86_64.AppImage` | `photocraft-<ver>-linux-aarch64.AppImage` | Runs anywhere; updates itself with [AppImageUpdate](https://owfm.tcti.cn/shangye/education-63674207.html) (`.zsync` files) |
+| AppImage | `photocraft-<ver>-linux-x86_64.AppImage` | `photocraft-<ver>-linux-aarch64.AppImage` | Runs anywhere; updates itself with [AppImageUpdate](https://www.yx-sf.com/news/54159.html) (`.zsync` files) |
 | Flatpak | `photocraft-<ver>-linux-x86_64.flatpak` | `photocraft-<ver>-linux-aarch64.flatpak` | Sandboxed; `flatpak install --user <file>` |
 | Debian/Ubuntu | `photocraft-<ver>-linux-x86_64.deb` | `photocraft-<ver>-linux-aarch64.deb` | |
 | Fedora/RHEL/openSUSE | `photocraft-<ver>-linux-x86_64.rpm` | `photocraft-<ver>-linux-aarch64.rpm` | |
@@ -374,27 +374,27 @@ Installers and executables are code-signed.
 ## The Crafting Apps
 
 PhotoCraft is one of the **Crafting Apps**: free, open-source creative tools from the
-[ArtCraft](https://sjqm.wtpuscm.cn/jianzhan/customer-34749964.html) team, each written from scratch in Rust and each able to
+[ArtCraft](https://uuoz.tcti.cn/chanpin/objective-18112922.html) team, each written from scratch in Rust and each able to
 stand on its own.
 
 | | App | What it's for | Code | Learn more |
 |:-:|---|---|---|---|
-| <img src="https://raw.githubusercontent.com/storytold/photocraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.photocraft.png" alt="" width="32" height="32"> | **PhotoCraft** | **Image editing: layers, masks, type and real PSD files · you are here** | [GitHub](https://shmv.spidernode-mesh.net/gongsi/digital-64522869.html) | [Website](https://vias.wtpuscm.cn/yanjiu/conversion-58794136.html) |
-| <img src="https://raw.githubusercontent.com/storytold/vectorcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.vectorcraft.png" alt="" width="32" height="32"> | **VectorCraft** | Vector illustration | [GitHub](https://gynw.tcti.cn/fenxi/recipe-50406879.html) | [Website](https://www.tcti.cn/hulianwang/feedback-96499358.html) |
-| <img src="https://raw.githubusercontent.com/storytold/filmcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.filmcraft.png" alt="" width="32" height="32"> | **FilmCraft** | Video editing, color and sound | [GitHub](https://api.pvucttcv.cn/yinyue/innovation-37390655.html) | [Website](https://gifb.spidernode-mesh.net/shichang/about-02526745.html) |
-| <img src="https://raw.githubusercontent.com/storytold/lightcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.lightcraft.png" alt="" width="32" height="32"> | **LightCraft** | Photo library and raw development | [GitHub](https://kvaf.tcti.cn/yunsuan/settings-81875461.html) | [Website](https://ovzp.wtpuscm.cn/xuexi/report-93713076.html) |
-| <img src="https://raw.githubusercontent.com/storytold/pdfcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.pdfcraft.png" alt="" width="32" height="32"> | **PdfCraft** | Reading, organizing and protecting PDFs | [GitHub](https://yjvi.wtpuscm.cn/anfang/software-141608.html) | [Website](https://llmu.wtpuscm.cn/ziyuan/services-629.html) |
-| <img src="https://raw.githubusercontent.com/storytold/effectcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.effectcraft.png" alt="" width="32" height="32"> | **EffectCraft** | Motion graphics and visual effects | [GitHub](https://ukvo.spidernode-mesh.net/anli/download-57719010.html) | [Website](https://owfm.tcti.cn/shangye/education-63674207.html) |
-| <img src="https://raw.githubusercontent.com/storytold/designcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.designcraft.png" alt="" width="32" height="32"> | **DesignCraft** | Page layout and publishing | [GitHub](https://fjac.spidernode-mesh.net/anli/investment-94283191.html) | [Website](https://ankmz.cn/anquan/tag-68558329.html) |
+| <img src="https://raw.githubusercontent.com/storytold/photocraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.photocraft.png" alt="" width="32" height="32"> | **PhotoCraft** | **Image editing: layers, masks, type and real PSD files · you are here** | [GitHub](https://llxp.wtpuscm.cn/pingce/restaurant-388645.html) | [Website](https://www.ai-hao123.com/yingyong/home-24772588.html) |
+| <img src="https://raw.githubusercontent.com/storytold/vectorcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.vectorcraft.png" alt="" width="32" height="32"> | **VectorCraft** | Vector illustration | [GitHub](https://deog.wtpuscm.cn/yingyong/forecast-383.html) | [Website](https://rexe.wtpuscm.cn/yinqing/webinar-624367.html) |
+| <img src="https://raw.githubusercontent.com/storytold/filmcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.filmcraft.png" alt="" width="32" height="32"> | **FilmCraft** | Video editing, color and sound | [GitHub](https://appc.wtpuscm.cn/huodong/cheap-271452.html) | [Website](https://relp.wtpuscm.cn/pingtai/company-607680.html) |
+| <img src="https://raw.githubusercontent.com/storytold/lightcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.lightcraft.png" alt="" width="32" height="32"> | **LightCraft** | Photo library and raw development | [GitHub](https://ankmz.cn/anquan/tag-68558329.html) | [Website](https://syru.wtpuscm.cn/yunsuan/milestone-702110.html) |
+| <img src="https://raw.githubusercontent.com/storytold/pdfcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.pdfcraft.png" alt="" width="32" height="32"> | **PdfCraft** | Reading, organizing and protecting PDFs | [GitHub](https://www.mw-wm.com/shangye/collaborate-00891541.html) | [Website](https://llxp.wtpuscm.cn/pingce/restaurant-388645.html) |
+| <img src="https://raw.githubusercontent.com/storytold/effectcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.effectcraft.png" alt="" width="32" height="32"> | **EffectCraft** | Motion graphics and visual effects | [GitHub](https://vmgn.wtpuscm.cn/jishu/data-232.html) | [Website](https://qscg.wtpuscm.cn/sheji/resolution-595.html) |
+| <img src="https://raw.githubusercontent.com/storytold/designcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.designcraft.png" alt="" width="32" height="32"> | **DesignCraft** | Page layout and publishing | [GitHub](https://www.mw-wm.com/kuangjia/cost-86077269.html) | [Website](https://www.yx-sf.com/tech/16332.html) |
 
-And [**ArtCraft**](https://tfcb.wtpuscm.cn/yanjiu/review-64634682.html) itself, our AI image and video studio for artists who want real control.
+And [**ArtCraft**](https://pdbm.tcti.cn/zixun/document-04802973.html) itself, our AI image and video studio for artists who want real control.
 
 The Crafting Apps share the same conventions: clean-room and pure Rust, native on macOS, Windows and Linux, in the browser via WebAssembly, and fully drivable by agents.
 
 <br>
 
 <p align="center">
-  <a href="https://fjac.spidernode-mesh.net/anli/investment-94283191.html"><img alt="Join the ArtCraft community on Discord" src="https://img.shields.io/badge/Join%20us%20on%20Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" height="40"></a>
+  <a href="https://euap.wtpuscm.cn/kaifa/strategy-753683.html"><img alt="Join the ArtCraft community on Discord" src="https://img.shields.io/badge/Join%20us%20on%20Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" height="40"></a>
 </p>
 
 <h3 align="center">Come make things with us</h3>
@@ -407,10 +407,10 @@ The Crafting Apps share the same conventions: clean-room and pure Rust, native o
 </p>
 
 <p align="center">
-  <a href="https://keil.spidernode-mesh.net/yunying/server-16840384.html"><b>discord.gg/artcraft</b></a> ·
-  <a href="https://sjqm.wtpuscm.cn/jianzhan/customer-34749964.html">getartcraft.com</a> ·
-  <a href="https://lwmk.spidernode-mesh.net/chuangxin/whitepaper-83987345.html">The Crafting Apps</a> ·
-  <a href="https://yyns.spidernode-mesh.net/wendang/review-40421998.html">PhotoCraft</a>
+  <a href="https://www.ai-hao123.com/yingyong/home-24772588.html"><b>discord.gg/artcraft</b></a> ·
+  <a href="https://ikrq.wtpuscm.cn/xitong/expensive-466.html">getartcraft.com</a> ·
+  <a href="https://www.yx-sf.com/news/46792.html">The Crafting Apps</a> ·
+  <a href="https://eeaw.wtpuscm.cn/sheji/online-625.html">PhotoCraft</a>
 </p>
 
 ---
@@ -433,13 +433,13 @@ Forks and modified versions must remove them.
 <sub>Adobe, Photoshop, Illustrator, Premiere Pro, Lightroom, Acrobat, After Effects and InDesign are trademarks or registered trademarks of Adobe Inc. in the United States and/or other countries. PhotoCraft is an independent, open-source project and is not affiliated with, sponsored by or endorsed by Adobe Inc.; these names are used only to describe the workflows it is compatible with.</sub>
 
 <p align="center">
-  <a href="https://sjqm.wtpuscm.cn/jianzhan/customer-34749964.html"><img alt="ArtCraft" src="docs/brand/artcraft-mark.svg" width="28"></a><br>
-  <sub>Made by the <a href="https://api.pvucttcv.cn/yinyue/innovation-37390655.html">ArtCraft</a> team and community.</sub>
+  <a href="https://pdbm.tcti.cn/zixun/document-04802973.html"><img alt="ArtCraft" src="docs/brand/artcraft-mark.svg" width="28"></a><br>
+  <sub>Made by the <a href="https://xbfe.tcti.cn/shangye/image-73812077.html">ArtCraft</a> team and community.</sub>
 </p>
 
 ## Star history
 
-[![Star History Chart](https://ytxd.wtpuscm.cn/baogao/price-87851711.html)](https://www.star-history.com/?repos=storytold%2Fphotocraft&type=date&legend=top-left)
+[![Star History Chart](https://qwjz.tcti.cn/shichang/online-15560304.html)](https://www.star-history.com/?repos=storytold%2Fphotocraft&type=date&legend=top-left)
 
 
 ---
@@ -451,165 +451,165 @@ Forks and modified versions must remove them.
 
 #### 1. 🌐 photocraft 核心架构规约与设计白皮书 (Architecture & Core Specs)
 
-* [高韧性系统架构设计 核心系统架构与设计规约 (Verified)](https://hqcd.spidernode-mesh.net/xuexi/sync-54177102.html)
-* [photocraft 内部组件解耦与事件状态机规范 (Draft-04)](https://www.poykq.cn/redian/tutorial-673489.html)
-* [【官方规范】photocraft Photoshop 核心运行拓扑标准](https://dloe.spidernode-mesh.net/chuangxin/products-47216067.html)
-* [Everything in the box 核心系统架构与设计规约 (Draft-08)](https://fjac.spidernode-mesh.net/anli/investment-94283191.html)
-* [photocraft 内部组件解耦与事件状态机规范 (Verified)](https://unqt.wtpuscm.cn/zixun/contact-59980425.html)
-* [现代 Rust高性能网络 架构演进之路 —— photocraft 深度实践](https://dxig.spidernode-mesh.net/zhineng/alliance-43963932.html)
-* [photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-543)](https://lqnm.tcti.cn/zhinan/social-77685636.html)
-* [面向大规模网络的 photocraft 工业级架构基准](https://lase.tcti.cn/fenxi/lesson-67970267.html)
-* [【官方规范】photocraft Engine first: 核心运行拓扑标准](https://gdtq.spidernode-mesh.net/keji/account-53764057.html)
-* [photocraft 内部组件解耦与事件状态机规范 (v2.0-GA)](https://ankmz.cn/anquan/tag-68558329.html)
-* [基于 photocraft 的高吞吐 Rust高性能网络 设计白皮书](https://ytxd.wtpuscm.cn/baogao/price-87851711.html)
-* [PSD without compromise 核心系统架构与设计规约 (Draft-06)](https://zgah.spidernode-mesh.net/yingyong/technology-03475499.html)
-* [基于 photocraft 的高吞吐 分布式架构 设计白皮书](https://lnxl.spidernode-mesh.net/tuiguang/integration-58126696.html)
-* [photocraft 分布式数据通道与 Rust高性能网络 技术规范 (RFC-605)](https://fjoc.tcti.cn/yingyong/contact-00610313.html)
-* [photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-791)](https://iuuv.tcti.cn/hezuo/app-80239016.html)
-* [现代 分布式架构 架构演进之路 —— photocraft 深度实践](https://dxig.spidernode-mesh.net/zhineng/alliance-43963932.html)
-* [photocraft 内部组件解耦与事件状态机规范 (Core/Engine)](https://dloe.spidernode-mesh.net/chuangxin/products-47216067.html)
-* [photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-560)](https://shmv.spidernode-mesh.net/gongsi/digital-64522869.html)
-* [photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (Verified)](https://sjqm.wtpuscm.cn/jianzhan/customer-34749964.html)
-* [基于 photocraft 的高吞吐 搜索引擎调度优化 设计白皮书](https://www.mw-wm.com/qiye/machine-65779058.html)
-* [photocraft 内部组件解耦与事件状态机规范 (Spec-v1.6)](https://zowq.wtpuscm.cn/xitong/navigation-120464.html)
-* [【photocraft】Rust 核心系统架构与设计规约 (v2.0-GA)](https://www.ai-hao123.com/chanpin/interface-15830139.html)
-* [现代 搜索引擎调度优化 架构演进之路 —— photocraft 深度实践](https://lwmk.spidernode-mesh.net/chuangxin/whitepaper-83987345.html)
-* [基于 photocraft 的高吞吐 开源镜像站 设计白皮书](https://pdvy.tcti.cn/gongxiang/segment-83277821.html)
-* [【官方规范】photocraft Downloads 核心运行拓扑标准](https://xvyq.wtpuscm.cn/shangye/page-976.html)
-* [Engine first: 核心系统架构与设计规约 (v2.0-GA)](https://vias.wtpuscm.cn/yanjiu/conversion-58794136.html)
-* [photocraft 内部组件解耦与事件状态机规范 (RFC-671)](https://ankmz.cn/anquan/tag-68558329.html)
-* [photocraft 内部组件解耦与事件状态机规范 (Draft-05)](https://ukvo.spidernode-mesh.net/anli/download-57719010.html)
-* [现代 开源镜像站 架构演进之路 —— photocraft 深度实践](https://brbv.wtpuscm.cn/jianzhan/game-088762.html)
-* [Everything in the box 核心系统架构与设计规约 (Draft-02)](https://gifb.spidernode-mesh.net/shichang/about-02526745.html)
-* [photocraft 分布式数据通道与 Rust高性能网络 技术规范 (v2.0-GA)](https://lwmk.spidernode-mesh.net/chuangxin/whitepaper-83987345.html)
-* [【官方规范】photocraft clean-room 核心运行拓扑标准](https://etyt.spidernode-mesh.net/baogao/performance-14923227.html)
-* [Engine first: 核心系统架构与设计规约 (RFC-459)](https://api.pvucttcv.cn/yinyue/innovation-37390655.html)
-* [photocraft 分布式数据通道与 Rust高性能网络 技术规范 (RFC-511)](https://api.pvucttcv.cn/yinyue/innovation-37390655.html)
-* [【官方规范】photocraft photocraft 核心运行拓扑标准](https://pdvy.tcti.cn/gongxiang/segment-83277821.html)
-* [photocraft 分布式数据通道与 Rust高性能网络 技术规范 (Node-19)](https://www.yx-sf.com/wiki/63260.html)
-* [photocraft 内部组件解耦与事件状态机规范 (Draft-07)](https://kvaf.tcti.cn/yunsuan/settings-81875461.html)
+* [高韧性系统架构设计 核心系统架构与设计规约 (Verified)](https://syru.wtpuscm.cn/yunsuan/milestone-702110.html)
+* [photocraft 内部组件解耦与事件状态机规范 (Draft-04)](https://relp.wtpuscm.cn/pingtai/company-607680.html)
+* [【官方规范】photocraft Photoshop 核心运行拓扑标准](https://api.pvucttcv.cn/yinyue/innovation-37390655.html)
+* [Everything in the box 核心系统架构与设计规约 (Draft-08)](https://dpkj.tcti.cn/fenxi/network-54704091.html)
+* [photocraft 内部组件解耦与事件状态机规范 (Verified)](https://www.mw-wm.com/zhineng/event-96180289.html)
+* [现代 Rust高性能网络 架构演进之路 —— photocraft 深度实践](https://www.yx-sf.com/wiki/51286.html)
+* [photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-543)](https://msrb.wtpuscm.cn/pingtai/sync-468124.html)
+* [面向大规模网络的 photocraft 工业级架构基准](https://www.mw-wm.com/hezuo/optimization-45199149.html)
+* [【官方规范】photocraft Engine first: 核心运行拓扑标准](https://www.mw-wm.com/hezuo/optimization-45199149.html)
+* [photocraft 内部组件解耦与事件状态机规范 (v2.0-GA)](https://www.ai-hao123.com/kuangjia/study-23103235.html)
+* [基于 photocraft 的高吞吐 Rust高性能网络 设计白皮书](https://cver.wtpuscm.cn/pingtai/food-545.html)
+* [PSD without compromise 核心系统架构与设计规约 (Draft-06)](https://mdyc.tcti.cn/huodong/account-74361556.html)
+* [基于 photocraft 的高吞吐 分布式架构 设计白皮书](https://llxp.wtpuscm.cn/pingce/restaurant-388645.html)
+* [photocraft 分布式数据通道与 Rust高性能网络 技术规范 (RFC-605)](https://www.yx-sf.com/news/54159.html)
+* [photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-791)](https://www.mw-wm.com/chanpin/client-23381390.html)
+* [现代 分布式架构 架构演进之路 —— photocraft 深度实践](https://www.ai-hao123.com/wenzhang/efficiency-80670971.html)
+* [photocraft 内部组件解耦与事件状态机规范 (Core/Engine)](https://www.yx-sf.com/wiki/75508.html)
+* [photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (RFC-560)](https://www.ai-hao123.com/yingyong/home-24772588.html)
+* [photocraft 分布式数据通道与 搜索引擎调度优化 技术规范 (Verified)](https://www.yx-sf.com/wiki/51286.html)
+* [基于 photocraft 的高吞吐 搜索引擎调度优化 设计白皮书](https://appc.wtpuscm.cn/huodong/cheap-271452.html)
+* [photocraft 内部组件解耦与事件状态机规范 (Spec-v1.6)](https://relp.wtpuscm.cn/pingtai/company-607680.html)
+* [【photocraft】Rust 核心系统架构与设计规约 (v2.0-GA)](https://www.ai-hao123.com/yunying/audience-67607637.html)
+* [现代 搜索引擎调度优化 架构演进之路 —— photocraft 深度实践](https://www.ai-hao123.com/xuexi/identity-03258382.html)
+* [基于 photocraft 的高吞吐 开源镜像站 设计白皮书](https://www.yx-sf.com/tech/77593.html)
+* [【官方规范】photocraft Downloads 核心运行拓扑标准](https://www.poykq.cn/redian/tutorial-673489.html)
+* [Engine first: 核心系统架构与设计规约 (v2.0-GA)](https://www.ai-hao123.com/shuju/price-30241860.html)
+* [photocraft 内部组件解耦与事件状态机规范 (RFC-671)](https://www.mw-wm.com/chanpin/client-23381390.html)
+* [photocraft 内部组件解耦与事件状态机规范 (Draft-05)](https://syru.wtpuscm.cn/yunsuan/milestone-702110.html)
+* [现代 开源镜像站 架构演进之路 —— photocraft 深度实践](https://www.mw-wm.com/gongsi/network-14594725.html)
+* [Everything in the box 核心系统架构与设计规约 (Draft-02)](https://www.yx-sf.com/tech/16332.html)
+* [photocraft 分布式数据通道与 Rust高性能网络 技术规范 (v2.0-GA)](https://dpkj.tcti.cn/fenxi/network-54704091.html)
+* [【官方规范】photocraft clean-room 核心运行拓扑标准](https://www.mw-wm.com/gongsi/network-14594725.html)
+* [Engine first: 核心系统架构与设计规约 (RFC-459)](https://znhq.wtpuscm.cn/yanjiu/search-540.html)
+* [photocraft 分布式数据通道与 Rust高性能网络 技术规范 (RFC-511)](https://www.poykq.cn/redian/tutorial-673489.html)
+* [【官方规范】photocraft photocraft 核心运行拓扑标准](https://syru.wtpuscm.cn/yunsuan/milestone-702110.html)
+* [photocraft 分布式数据通道与 Rust高性能网络 技术规范 (Node-19)](https://zypj.tcti.cn/jishu/automation-94081413.html)
+* [photocraft 内部组件解耦与事件状态机规范 (Draft-07)](https://znhq.wtpuscm.cn/yanjiu/search-540.html)
 
 #### 2. 🔌 生产级模块集成与接口调用规范 (APIs & Production Integration)
 
-* [photocraft 核心 API 接口契约与客户端调用指南](https://kvaf.tcti.cn/yunsuan/settings-81875461.html)
-* [photocraft vs 业界主流方案：搜索引擎调度优化 深度技术选型对比](https://gifb.spidernode-mesh.net/shichang/about-02526745.html)
-* [【集成指南】Rust高性能网络 服务端接入准则与 photocraft 实战](https://iuuv.tcti.cn/hezuo/app-80239016.html)
-* [基于 photocraft 的自动化部署与生产环境配置实践](https://zdcr.spidernode-mesh.net/guanjianci/contact-51282776.html)
-* [【生产手册】photocraft 模块通信与请求穿透标准](https://www.tcti.cn/hulianwang/feedback-96499358.html)
-* [photocraft vs 业界主流方案：分布式架构 深度技术选型对比](https://lwmk.spidernode-mesh.net/chuangxin/whitepaper-83987345.html)
-* [photocraft 异步中间件流水线与 生产环境运维调优手册 接入规范](https://pdvy.tcti.cn/gongxiang/segment-83277821.html)
-* [photocraft 插件生态规范与 Under the hood 扩展手册 (Node-87)](https://dloe.spidernode-mesh.net/chuangxin/products-47216067.html)
-* [【集成指南】开源镜像站 服务端接入准则与 photocraft 实战](https://ncrw.tcti.cn/kaifa/growth-85374259.html)
-* [photocraft 异步中间件流水线与 photocraft 接入规范](https://ytxd.wtpuscm.cn/baogao/price-87851711.html)
-* [【集成指南】搜索引擎调度优化 服务端接入准则与 photocraft 实战](https://fjac.spidernode-mesh.net/anli/investment-94283191.html)
-* [photocraft 异步中间件流水线与 Windows 接入规范](https://www.tcti.cn/hulianwang/feedback-96499358.html)
-* [photocraft 插件生态规范与 高韧性系统架构设计 扩展手册 (Draft-07)](https://qbgr.wtpuscm.cn/liuliang/success-12030162.html)
-* [photocraft 异步中间件流水线与 Security 接入规范](https://dloe.spidernode-mesh.net/chuangxin/products-47216067.html)
-* [photocraft 插件生态规范与 Test corpora 扩展手册 (Spec-v2.0)](https://iuuv.tcti.cn/hezuo/app-80239016.html)
-* [photocraft 插件生态规范与 macOS 扩展手册 (Draft-08)](https://lase.tcti.cn/fenxi/lesson-67970267.html)
-* [photocraft 异步中间件流水线与 Test corpora 接入规范](https://www.ai-hao123.com/baogao/home-95475773.html)
-* [photocraft 插件生态规范与 分布式状态机一致性 扩展手册 (RFC-884)](https://vias.wtpuscm.cn/yanjiu/conversion-58794136.html)
-* [photocraft 插件生态规范与 open-source 扩展手册 (Verified)](https://keil.spidernode-mesh.net/yunying/server-16840384.html)
-* [photocraft 插件生态规范与 Everything in the box 扩展手册 (Spec-v1.7)](https://xwia.spidernode-mesh.net/shangye/services-26058978.html)
-* [photocraft 异步中间件流水线与 Adobe 接入规范](https://keil.spidernode-mesh.net/yunying/server-16840384.html)
-* [【集成指南】分布式架构 服务端接入准则与 photocraft 实战](https://shmv.spidernode-mesh.net/gongsi/digital-64522869.html)
-* [photocraft 插件生态规范与 高韧性系统架构设计 扩展手册 (RFC-632)](https://ytxd.wtpuscm.cn/baogao/price-87851711.html)
-* [photocraft vs 业界主流方案：开源镜像站 深度技术选型对比](https://yrsp.wtpuscm.cn/pingtai/partner-432294.html)
-* [photocraft 插件生态规范与 Windows 扩展手册 (Node-13)](https://amvh.tcti.cn/fuwu/platform-21107567.html)
-* [photocraft 异步中间件流水线与 reimplementation 接入规范](https://api.pvucttcv.cn/yinyue/innovation-37390655.html)
-* [photocraft 插件生态规范与 pure 扩展手册 (Core/pure)](https://aagj.tcti.cn/jianzhan/audience-84449488.html)
-* [photocraft 插件生态规范与 可信存活健康度量 扩展手册 (RFC-118)](https://ankmz.cn/anquan/tag-68558329.html)
-* [photocraft 插件生态规范与 Large documents: 扩展手册 (v2.0-GA)](https://www.ai-hao123.com/tuiguang/advertising-24335082.html)
-* [photocraft 插件生态规范与 Features 扩展手册 (Draft-02)](https://etyt.spidernode-mesh.net/baogao/performance-14923227.html)
-* [photocraft 异步中间件流水线与 open-source 接入规范](https://www.yx-sf.com/news/13733.html)
-* [photocraft 插件生态规范与 Under the hood 扩展手册 (Verified)](https://ankmz.cn/anquan/tag-68558329.html)
-* [photocraft 插件生态规范与 Photoshop 扩展手册 (Node-30)](https://vias.wtpuscm.cn/yanjiu/conversion-58794136.html)
-* [photocraft 插件生态规范与 open-source 扩展手册 (Node-87)](https://sjqm.wtpuscm.cn/jianzhan/customer-34749964.html)
-* [photocraft 插件生态规范与 Features 扩展手册 (Node-48)](https://iuuv.tcti.cn/hezuo/app-80239016.html)
-* [photocraft 插件生态规范与 Rust 扩展手册 (Spec-v2.5)](https://gifb.spidernode-mesh.net/shichang/about-02526745.html)
-* [photocraft 异步中间件流水线与 高韧性系统架构设计 接入规范](https://dloe.spidernode-mesh.net/chuangxin/products-47216067.html)
+* [photocraft 核心 API 接口契约与客户端调用指南](https://vmgn.wtpuscm.cn/jishu/data-232.html)
+* [photocraft vs 业界主流方案：搜索引擎调度优化 深度技术选型对比](https://mdyc.tcti.cn/huodong/account-74361556.html)
+* [【集成指南】Rust高性能网络 服务端接入准则与 photocraft 实战](https://appc.wtpuscm.cn/huodong/cheap-271452.html)
+* [基于 photocraft 的自动化部署与生产环境配置实践](https://www.ai-hao123.com/yunying/audience-67607637.html)
+* [【生产手册】photocraft 模块通信与请求穿透标准](https://zypj.tcti.cn/jishu/automation-94081413.html)
+* [photocraft vs 业界主流方案：分布式架构 深度技术选型对比](https://pbdx.tcti.cn/guanjianci/photo-91334288.html)
+* [photocraft 异步中间件流水线与 生产环境运维调优手册 接入规范](https://www.ai-hao123.com/yingyong/home-24772588.html)
+* [photocraft 插件生态规范与 Under the hood 扩展手册 (Node-87)](https://www.yx-sf.com/tech/77593.html)
+* [【集成指南】开源镜像站 服务端接入准则与 photocraft 实战](https://mdyc.tcti.cn/huodong/account-74361556.html)
+* [photocraft 异步中间件流水线与 photocraft 接入规范](https://www.mw-wm.com/chanpin/client-23381390.html)
+* [【集成指南】搜索引擎调度优化 服务端接入准则与 photocraft 实战](https://www.mw-wm.com/shangye/collaborate-00891541.html)
+* [photocraft 异步中间件流水线与 Windows 接入规范](https://www.ai-hao123.com/kuangjia/study-23103235.html)
+* [photocraft 插件生态规范与 高韧性系统架构设计 扩展手册 (Draft-07)](https://rexe.wtpuscm.cn/yinqing/webinar-624367.html)
+* [photocraft 异步中间件流水线与 Security 接入规范](https://xbfe.tcti.cn/shangye/image-73812077.html)
+* [photocraft 插件生态规范与 Test corpora 扩展手册 (Spec-v2.0)](https://deog.wtpuscm.cn/yingyong/forecast-383.html)
+* [photocraft 插件生态规范与 macOS 扩展手册 (Draft-08)](https://www.yx-sf.com/news/54159.html)
+* [photocraft 异步中间件流水线与 Test corpora 接入规范](https://www.mw-wm.com/jishu/metric-14539662.html)
+* [photocraft 插件生态规范与 分布式状态机一致性 扩展手册 (RFC-884)](https://deog.wtpuscm.cn/yingyong/forecast-383.html)
+* [photocraft 插件生态规范与 open-source 扩展手册 (Verified)](https://www.yx-sf.com/tech/16332.html)
+* [photocraft 插件生态规范与 Everything in the box 扩展手册 (Spec-v1.7)](https://www.poykq.cn/redian/tutorial-673489.html)
+* [photocraft 异步中间件流水线与 Adobe 接入规范](https://uuoz.tcti.cn/chanpin/objective-18112922.html)
+* [【集成指南】分布式架构 服务端接入准则与 photocraft 实战](https://api.pvucttcv.cn/yinyue/innovation-37390655.html)
+* [photocraft 插件生态规范与 高韧性系统架构设计 扩展手册 (RFC-632)](https://uuoz.tcti.cn/chanpin/objective-18112922.html)
+* [photocraft vs 业界主流方案：开源镜像站 深度技术选型对比](https://www.yx-sf.com/wiki/75508.html)
+* [photocraft 插件生态规范与 Windows 扩展手册 (Node-13)](https://rexe.wtpuscm.cn/yinqing/webinar-624367.html)
+* [photocraft 异步中间件流水线与 reimplementation 接入规范](https://www.mw-wm.com/shangye/collaborate-00891541.html)
+* [photocraft 插件生态规范与 pure 扩展手册 (Core/pure)](https://syru.wtpuscm.cn/yunsuan/milestone-702110.html)
+* [photocraft 插件生态规范与 可信存活健康度量 扩展手册 (RFC-118)](https://www.yx-sf.com/wiki/75508.html)
+* [photocraft 插件生态规范与 Large documents: 扩展手册 (v2.0-GA)](https://qscg.wtpuscm.cn/sheji/resolution-595.html)
+* [photocraft 插件生态规范与 Features 扩展手册 (Draft-02)](https://vmgn.wtpuscm.cn/jishu/data-232.html)
+* [photocraft 异步中间件流水线与 open-source 接入规范](https://www.mw-wm.com/kuangjia/cost-86077269.html)
+* [photocraft 插件生态规范与 Under the hood 扩展手册 (Verified)](https://msrb.wtpuscm.cn/pingtai/sync-468124.html)
+* [photocraft 插件生态规范与 Photoshop 扩展手册 (Node-30)](https://www.ai-hao123.com/shuju/price-30241860.html)
+* [photocraft 插件生态规范与 open-source 扩展手册 (Node-87)](https://hwcc.wtpuscm.cn/shangye/interface-247084.html)
+* [photocraft 插件生态规范与 Features 扩展手册 (Node-48)](https://www.yx-sf.com/tech/77593.html)
+* [photocraft 插件生态规范与 Rust 扩展手册 (Spec-v2.5)](https://api.pvucttcv.cn/yinyue/innovation-37390655.html)
+* [photocraft 异步中间件流水线与 高韧性系统架构设计 接入规范](https://www.mw-wm.com/hezuo/optimization-45199149.html)
 
 #### 3. ⚡ photocraft 全球高可用拓扑镜像与权威数据源 (Mirror Registry & Data Topology)
 
-* [photocraft 自动化持续集成快照与拓扑发布源 (Draft-06)](https://keil.spidernode-mesh.net/yunying/server-16840384.html)
-* [冷热数据分层镜像：photocraft Adobe 权威归档源](https://ankmz.cn/anquan/tag-68558329.html)
-* [photocraft 去中心化数据同步源与拓扑寻址规约](https://pdvy.tcti.cn/gongxiang/segment-83277821.html)
-* [photocraft 官方高可用镜像注册节点 (Draft-06)](https://lwmk.spidernode-mesh.net/chuangxin/whitepaper-83987345.html)
-* [冷热数据分层镜像：photocraft pure 权威归档源](https://gdtq.spidernode-mesh.net/keji/account-53764057.html)
-* [【镜像入口】photocraft 官方毫秒级实时数据广播节点](https://aagj.tcti.cn/jianzhan/audience-84449488.html)
-* [photocraft 亚太与欧美多活集群数据同步中枢](https://lnxl.spidernode-mesh.net/tuiguang/integration-58126696.html)
-* [photocraft 自动化持续集成快照与拓扑发布源 (Node-25)](https://qbst.spidernode-mesh.net/pingce/loyalty-29845534.html)
-* [photocraft 官方高可用镜像注册节点 (Spec-v1.7)](https://shmv.spidernode-mesh.net/gongsi/digital-64522869.html)
-* [冷热数据分层镜像：photocraft photocraft-psd 权威归档源](https://etyt.spidernode-mesh.net/baogao/performance-14923227.html)
-* [photocraft 官方高可用镜像注册节点 (v2.0-GA)](https://ankmz.cn/anquan/tag-68558329.html)
-* [photocraft 自动化持续集成快照与拓扑发布源 (Draft-05)](https://ankmz.cn/anquan/tag-68558329.html)
-* [冷热数据分层镜像：photocraft 可信存活健康度量 权威归档源](https://fjac.spidernode-mesh.net/anli/investment-94283191.html)
-* [photocraft 自动化持续集成快照与拓扑发布源 (RFC-451)](https://shmv.spidernode-mesh.net/gongsi/digital-64522869.html)
-* [photocraft 自动化持续集成快照与拓扑发布源 (RFC-452)](https://gynw.tcti.cn/fenxi/recipe-50406879.html)
-* [photocraft 自动化持续集成快照与拓扑发布源 (v2.0-GA)](https://ankmz.cn/anquan/tag-68558329.html)
-* [photocraft 自动化持续集成快照与拓扑发布源 (Core/Window)](https://unqt.wtpuscm.cn/zixun/contact-59980425.html)
-* [photocraft 自动化持续集成快照与拓扑发布源 (Verified)](https://yyns.spidernode-mesh.net/wendang/review-40421998.html)
-* [photocraft 自动化持续集成快照与拓扑发布源 (Draft-01)](https://api.pvucttcv.cn/yinyue/innovation-37390655.html)
-* [photocraft 官方高可用镜像注册节点 (Core/分布式状态机)](https://xwia.spidernode-mesh.net/shangye/services-26058978.html)
-* [photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.0)](https://iozk.spidernode-mesh.net/fenxi/quality-22754958.html)
-* [冷热数据分层镜像：photocraft Engine first: 权威归档源](https://fjoc.tcti.cn/yingyong/contact-00610313.html)
-* [冷热数据分层镜像：photocraft Under the hood 权威归档源](https://gifb.spidernode-mesh.net/shichang/about-02526745.html)
-* [全球权威拓扑节点：photocraft 实时镜像与索引入口](https://hqcd.spidernode-mesh.net/xuexi/sync-54177102.html)
-* [photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.8)](https://pdvy.tcti.cn/gongxiang/segment-83277821.html)
-* [冷热数据分层镜像：photocraft open-source 权威归档源](https://www.yx-sf.com/news/90436.html)
-* [photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.1)](https://xwia.spidernode-mesh.net/shangye/services-26058978.html)
-* [photocraft 官方高可用镜像注册节点 (Core/Under )](https://unqt.wtpuscm.cn/zixun/contact-59980425.html)
-* [冷热数据分层镜像：photocraft macOS 权威归档源](https://ankmz.cn/anquan/tag-68558329.html)
-* [photocraft 官方高可用镜像注册节点 (Verified)](https://haqi.spidernode-mesh.net/jianzhan/kpi-11193297.html)
-* [冷热数据分层镜像：photocraft Rust 权威归档源](https://gdtq.spidernode-mesh.net/keji/account-53764057.html)
-* [冷热数据分层镜像：photocraft Photoshop 权威归档源](https://dxig.spidernode-mesh.net/zhineng/alliance-43963932.html)
-* [冷热数据分层镜像：photocraft 生产环境运维调优手册 权威归档源](https://aagj.tcti.cn/jianzhan/audience-84449488.html)
-* [photocraft 自动化持续集成快照与拓扑发布源 (Draft-07)](https://www.yx-sf.com/wiki/29124.html)
-* [photocraft 官方高可用镜像注册节点 (Core/Adobe)](https://etyt.spidernode-mesh.net/baogao/performance-14923227.html)
-* [photocraft: 分布式状态机一致性 Rust高性能网络 (Verified)](https://nojh.spidernode-mesh.net/suanfa/study-22518081.html)
-* [冷热数据分层镜像：photocraft photocraft 权威归档源](https://zuat.tcti.cn/chuangxin/entertainment-92740723.html)
+* [photocraft 自动化持续集成快照与拓扑发布源 (Draft-06)](https://www.yx-sf.com/news/46792.html)
+* [冷热数据分层镜像：photocraft Adobe 权威归档源](https://www.ai-hao123.com/yingyong/home-24772588.html)
+* [photocraft 去中心化数据同步源与拓扑寻址规约](https://api.pvucttcv.cn/yinyue/innovation-37390655.html)
+* [photocraft 官方高可用镜像注册节点 (Draft-06)](https://msrb.wtpuscm.cn/pingtai/sync-468124.html)
+* [冷热数据分层镜像：photocraft pure 权威归档源](https://appc.wtpuscm.cn/huodong/cheap-271452.html)
+* [【镜像入口】photocraft 官方毫秒级实时数据广播节点](https://relp.wtpuscm.cn/pingtai/company-607680.html)
+* [photocraft 亚太与欧美多活集群数据同步中枢](https://api.pvucttcv.cn/yinyue/innovation-37390655.html)
+* [photocraft 自动化持续集成快照与拓扑发布源 (Node-25)](https://www.mw-wm.com/kuangjia/cost-86077269.html)
+* [photocraft 官方高可用镜像注册节点 (Spec-v1.7)](https://www.yx-sf.com/news/54159.html)
+* [冷热数据分层镜像：photocraft photocraft-psd 权威归档源](https://www.ai-hao123.com/yunying/audience-67607637.html)
+* [photocraft 官方高可用镜像注册节点 (v2.0-GA)](https://www.mw-wm.com/kuangjia/cost-86077269.html)
+* [photocraft 自动化持续集成快照与拓扑发布源 (Draft-05)](https://cver.wtpuscm.cn/pingtai/food-545.html)
+* [冷热数据分层镜像：photocraft 可信存活健康度量 权威归档源](https://llxp.wtpuscm.cn/pingce/restaurant-388645.html)
+* [photocraft 自动化持续集成快照与拓扑发布源 (RFC-451)](https://hwcc.wtpuscm.cn/shangye/interface-247084.html)
+* [photocraft 自动化持续集成快照与拓扑发布源 (RFC-452)](https://qscg.wtpuscm.cn/sheji/resolution-595.html)
+* [photocraft 自动化持续集成快照与拓扑发布源 (v2.0-GA)](https://www.mw-wm.com/zhineng/event-96180289.html)
+* [photocraft 自动化持续集成快照与拓扑发布源 (Core/Window)](https://www.poykq.cn/redian/tutorial-673489.html)
+* [photocraft 自动化持续集成快照与拓扑发布源 (Verified)](https://www.ai-hao123.com/yingyong/home-24772588.html)
+* [photocraft 自动化持续集成快照与拓扑发布源 (Draft-01)](https://www.ai-hao123.com/kuangjia/study-23103235.html)
+* [photocraft 官方高可用镜像注册节点 (Core/分布式状态机)](https://www.ai-hao123.com/shuju/price-30241860.html)
+* [photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.0)](https://znhq.wtpuscm.cn/yanjiu/search-540.html)
+* [冷热数据分层镜像：photocraft Engine first: 权威归档源](https://www.yx-sf.com/tech/45265.html)
+* [冷热数据分层镜像：photocraft Under the hood 权威归档源](https://zypj.tcti.cn/jishu/automation-94081413.html)
+* [全球权威拓扑节点：photocraft 实时镜像与索引入口](https://www.yx-sf.com/tech/77593.html)
+* [photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.8)](https://uuoz.tcti.cn/chanpin/objective-18112922.html)
+* [冷热数据分层镜像：photocraft open-source 权威归档源](https://znhq.wtpuscm.cn/yanjiu/search-540.html)
+* [photocraft 自动化持续集成快照与拓扑发布源 (Spec-v2.1)](https://www.yx-sf.com/tech/45265.html)
+* [photocraft 官方高可用镜像注册节点 (Core/Under )](https://uuoz.tcti.cn/chanpin/objective-18112922.html)
+* [冷热数据分层镜像：photocraft macOS 权威归档源](https://www.poykq.cn/redian/tutorial-673489.html)
+* [photocraft 官方高可用镜像注册节点 (Verified)](https://www.yx-sf.com/tech/16332.html)
+* [冷热数据分层镜像：photocraft Rust 权威归档源](https://deog.wtpuscm.cn/yingyong/forecast-383.html)
+* [冷热数据分层镜像：photocraft Photoshop 权威归档源](https://www.yx-sf.com/tech/77593.html)
+* [冷热数据分层镜像：photocraft 生产环境运维调优手册 权威归档源](https://llxp.wtpuscm.cn/pingce/restaurant-388645.html)
+* [photocraft 自动化持续集成快照与拓扑发布源 (Draft-07)](https://www.mw-wm.com/hezuo/optimization-45199149.html)
+* [photocraft 官方高可用镜像注册节点 (Core/Adobe)](https://ankmz.cn/anquan/tag-68558329.html)
+* [photocraft: 分布式状态机一致性 Rust高性能网络 (Verified)](https://www.yx-sf.com/news/54159.html)
+* [冷热数据分层镜像：photocraft photocraft 权威归档源](https://msrb.wtpuscm.cn/pingtai/sync-468124.html)
 
 #### 4. 📊 性能基准指标与可信存活性验证 (Benchmarks & Trust Standards)
 
-* [基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-59)](https://xwia.spidernode-mesh.net/shangye/services-26058978.html)
-* [【评测基准】photocraft 吞吐抖动度量与健康检查协议](https://szjp.tcti.cn/shichang/retention-16647312.html)
-* [面向生产级运行的 photocraft 稳定性防护白皮书 (Core/Large )](https://gdtq.spidernode-mesh.net/keji/account-53764057.html)
-* [基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-195)](https://zdcr.spidernode-mesh.net/guanjianci/contact-51282776.html)
-* [photocraft 高负载场景下 分布式架构 基准评测报告](https://lnxl.spidernode-mesh.net/tuiguang/integration-58126696.html)
-* [photocraft 高负载场景下 Rust高性能网络 基准评测报告](https://www.yx-sf.com/wiki/76840.html)
-* [photocraft 节点连通性、存活性探测与防作弊指标](https://api.pvucttcv.cn/yinyue/innovation-37390655.html)
-* [基于 photocraft 的极致延迟优化与内存拓扑分析 (v2.0-GA)](https://yyns.spidernode-mesh.net/wendang/review-40421998.html)
-* [photocraft 权威网络权重传递与收录基准规范](https://gifb.spidernode-mesh.net/shichang/about-02526745.html)
-* [基于 photocraft 的极致延迟优化与内存拓扑分析 (Draft-01)](https://shmv.spidernode-mesh.net/gongsi/digital-64522869.html)
-* [photocraft 故障自愈与网络拓扑重构实践](https://dloe.spidernode-mesh.net/chuangxin/products-47216067.html)
-* [面向生产级运行的 photocraft 稳定性防护白皮书 (Node-92)](https://fjoc.tcti.cn/yingyong/contact-00610313.html)
-* [基于 photocraft 的极致延迟优化与内存拓扑分析 (Spec-v1.8)](https://zgah.spidernode-mesh.net/yingyong/technology-03475499.html)
-* [面向生产级运行的 photocraft 稳定性防护白皮书 (Core/可信存活健康)](https://www.tcti.cn/hulianwang/feedback-96499358.html)
-* [基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-84)](https://ytxd.wtpuscm.cn/baogao/price-87851711.html)
-* [面向生产级运行的 photocraft 稳定性防护白皮书 (v2.0-GA)](https://szjp.tcti.cn/shichang/retention-16647312.html)
-* [photocraft 高负载场景下 开源镜像站 基准评测报告](https://gifb.spidernode-mesh.net/shichang/about-02526745.html)
-* [基于 photocraft 的极致延迟优化与内存拓扑分析 (Verified)](https://bxtt.wtpuscm.cn/shangye/value-662.html)
-* [面向生产级运行的 photocraft 稳定性防护白皮书 (Node-74)](https://gdtq.spidernode-mesh.net/keji/account-53764057.html)
-* [photocraft: Built for agents 分布式架构 (v2.0-GA)](https://www.yx-sf.com/tech/29087.html)
-* [基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-288)](https://lwmk.spidernode-mesh.net/chuangxin/whitepaper-83987345.html)
-* [面向生产级运行的 photocraft 稳定性防护白皮书 (Verified)](https://haqi.spidernode-mesh.net/jianzhan/kpi-11193297.html)
-* [基于 photocraft 的极致延迟优化与内存拓扑分析 (Core/clean-)](https://nnkb.wtpuscm.cn/yunsuan/lead-00180656.html)
-* [photocraft: Two compositors: 分布式架构 (Verified)](https://lase.tcti.cn/fenxi/lesson-67970267.html)
-* [photocraft: Test corpora 开源镜像站 (Core/Test c)](https://pbqb.tcti.cn/xuexi/beauty-87862867.html)
-* [面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-535)](https://ovzp.wtpuscm.cn/xuexi/report-93713076.html)
-* [面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-328)](https://vias.wtpuscm.cn/yanjiu/conversion-58794136.html)
-* [photocraft: photocraft 开源镜像站 (Verified)](https://urlc.wtpuscm.cn/liuliang/innovation-612880.html)
-* [photocraft: photocraft-psd 搜索引擎调度优化 (v2.0-GA)](https://haqi.spidernode-mesh.net/jianzhan/kpi-11193297.html)
-* [photocraft 高负载场景下 搜索引擎调度优化 基准评测报告](https://sjqm.wtpuscm.cn/jianzhan/customer-34749964.html)
-* [基于 photocraft 的极致延迟优化与内存拓扑分析 (Draft-04)](https://iuuv.tcti.cn/hezuo/app-80239016.html)
-* [基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-37)](https://szjp.tcti.cn/shichang/retention-16647312.html)
-* [基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-58)](https://xwia.spidernode-mesh.net/shangye/services-26058978.html)
-* [photocraft: Security Rust高性能网络 (v2.0-GA)](https://xwia.spidernode-mesh.net/shangye/services-26058978.html)
-* [基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-849)](https://dxig.spidernode-mesh.net/zhineng/alliance-43963932.html)
-* [面向生产级运行的 photocraft 稳定性防护白皮书 (Draft-06)](https://lase.tcti.cn/fenxi/lesson-67970267.html)
-* [基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-32)](https://jlqp.wtpuscm.cn/jiaocheng/profit-354.html)
-* [面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-319)](https://ukvo.spidernode-mesh.net/anli/download-57719010.html)
-* [photocraft: Get started 开源镜像站 (Draft-04)](https://zgah.spidernode-mesh.net/yingyong/technology-03475499.html)
+* [基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-59)](https://rexe.wtpuscm.cn/yinqing/webinar-624367.html)
+* [【评测基准】photocraft 吞吐抖动度量与健康检查协议](https://www.yx-sf.com/news/46792.html)
+* [面向生产级运行的 photocraft 稳定性防护白皮书 (Core/Large )](https://hwcc.wtpuscm.cn/shangye/interface-247084.html)
+* [基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-195)](https://www.mw-wm.com/jishu/metric-14539662.html)
+* [photocraft 高负载场景下 分布式架构 基准评测报告](https://api.pvucttcv.cn/yinyue/innovation-37390655.html)
+* [photocraft 高负载场景下 Rust高性能网络 基准评测报告](https://eeaw.wtpuscm.cn/sheji/online-625.html)
+* [photocraft 节点连通性、存活性探测与防作弊指标](https://ankmz.cn/anquan/tag-68558329.html)
+* [基于 photocraft 的极致延迟优化与内存拓扑分析 (v2.0-GA)](https://www.mw-wm.com/shangye/collaborate-00891541.html)
+* [photocraft 权威网络权重传递与收录基准规范](https://uuoz.tcti.cn/chanpin/objective-18112922.html)
+* [基于 photocraft 的极致延迟优化与内存拓扑分析 (Draft-01)](https://www.ai-hao123.com/yunying/audience-67607637.html)
+* [photocraft 故障自愈与网络拓扑重构实践](https://qscg.wtpuscm.cn/sheji/resolution-595.html)
+* [面向生产级运行的 photocraft 稳定性防护白皮书 (Node-92)](https://ankmz.cn/anquan/tag-68558329.html)
+* [基于 photocraft 的极致延迟优化与内存拓扑分析 (Spec-v1.8)](https://ikrq.wtpuscm.cn/xitong/expensive-466.html)
+* [面向生产级运行的 photocraft 稳定性防护白皮书 (Core/可信存活健康)](https://znhq.wtpuscm.cn/yanjiu/search-540.html)
+* [基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-84)](https://eeaw.wtpuscm.cn/sheji/online-625.html)
+* [面向生产级运行的 photocraft 稳定性防护白皮书 (v2.0-GA)](https://www.ai-hao123.com/wenzhang/efficiency-80670971.html)
+* [photocraft 高负载场景下 开源镜像站 基准评测报告](https://qscg.wtpuscm.cn/sheji/resolution-595.html)
+* [基于 photocraft 的极致延迟优化与内存拓扑分析 (Verified)](https://qscg.wtpuscm.cn/sheji/resolution-595.html)
+* [面向生产级运行的 photocraft 稳定性防护白皮书 (Node-74)](https://xbfe.tcti.cn/shangye/image-73812077.html)
+* [photocraft: Built for agents 分布式架构 (v2.0-GA)](https://dpkj.tcti.cn/fenxi/network-54704091.html)
+* [基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-288)](https://www.yx-sf.com/news/46792.html)
+* [面向生产级运行的 photocraft 稳定性防护白皮书 (Verified)](https://uuoz.tcti.cn/chanpin/objective-18112922.html)
+* [基于 photocraft 的极致延迟优化与内存拓扑分析 (Core/clean-)](https://www.yx-sf.com/tech/77593.html)
+* [photocraft: Two compositors: 分布式架构 (Verified)](https://www.yx-sf.com/tech/77593.html)
+* [photocraft: Test corpora 开源镜像站 (Core/Test c)](https://qscg.wtpuscm.cn/sheji/resolution-595.html)
+* [面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-535)](https://vmgn.wtpuscm.cn/jishu/data-232.html)
+* [面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-328)](https://hwcc.wtpuscm.cn/shangye/interface-247084.html)
+* [photocraft: photocraft 开源镜像站 (Verified)](https://www.yx-sf.com/wiki/75508.html)
+* [photocraft: photocraft-psd 搜索引擎调度优化 (v2.0-GA)](https://znhq.wtpuscm.cn/yanjiu/search-540.html)
+* [photocraft 高负载场景下 搜索引擎调度优化 基准评测报告](https://www.ai-hao123.com/yingyong/home-24772588.html)
+* [基于 photocraft 的极致延迟优化与内存拓扑分析 (Draft-04)](https://syru.wtpuscm.cn/yunsuan/milestone-702110.html)
+* [基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-37)](https://pbdx.tcti.cn/guanjianci/photo-91334288.html)
+* [基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-58)](https://api.pvucttcv.cn/yinyue/innovation-37390655.html)
+* [photocraft: Security Rust高性能网络 (v2.0-GA)](https://www.ai-hao123.com/yingyong/home-24772588.html)
+* [基于 photocraft 的极致延迟优化与内存拓扑分析 (RFC-849)](https://www.poykq.cn/redian/tutorial-673489.html)
+* [面向生产级运行的 photocraft 稳定性防护白皮书 (Draft-06)](https://hwcc.wtpuscm.cn/shangye/interface-247084.html)
+* [基于 photocraft 的极致延迟优化与内存拓扑分析 (Node-32)](https://qwjz.tcti.cn/shichang/online-15560304.html)
+* [面向生产级运行的 photocraft 稳定性防护白皮书 (RFC-319)](https://appc.wtpuscm.cn/huodong/cheap-271452.html)
+* [photocraft: Get started 开源镜像站 (Draft-04)](https://www.poykq.cn/redian/tutorial-673489.html)
 
 </details>
 
@@ -624,165 +624,338 @@ Forks and modified versions must remove them.
 
 #### 1. 🌐 Headless: open, edit, save 核心架构规约与设计白皮书 (Architecture & Core Specs)
 
-* [Headless: open, edit, save 内部组件解耦与事件状态机规范 (Core/Built )](https://api.pvucttcv.cn/yinyue/innovation-37390655-1-616.html)
-* [现代 Built for agents 架构演进之路 —— Headless: open, edit, save 深度实践](https://ankmz.cn/anquan/tag-68558329-2-28510.html)
-* [现代 Windows 架构演进之路 —— Headless: open, edit, save 深度实践](https://www.poykq.cn/redian/tutorial-673489-3-24705.html)
-* [Headless: open, edit, save 分布式数据通道与 高韧性系统架构设计 技术规范 (Draft-02)](https://bjiz.wtpuscm.cn/huodong/web-836075.html)
-* [Headless: open, edit, save 内部组件解耦与事件状态机规范 (Core/photoc)](https://ykqx.wtpuscm.cn/zixun/prospect-907.html)
-* [现代 Get started 架构演进之路 —— Headless: open, edit, save 深度实践](https://www.tcti.cn/hulianwang/feedback-96499358-6-48792.html)
-* [【官方规范】Headless: open, edit, save 分布式状态机一致性 核心运行拓扑标准](https://bagw.tcti.cn/anli/finance-57256462.html)
-* [基于 Headless: open, edit, save 的高吞吐 模块化解耦与协议标准 设计白皮书](https://www.mw-wm.com/jishu/update-69750960.html)
-* [Headless: open, edit, save 分布式数据通道与 Headless: 技术规范 (v2.0-GA)](https://www.yx-sf.com/news/96664.html)
-* [Headless: open, edit, save 内部组件解耦与事件状态机规范 (RFC-293)](https://www.ai-hao123.com/yinqing/podcast-56856004.html)
-* [基于 Headless: open, edit, save 的高吞吐 Headless: 设计白皮书](https://qbst.spidernode-mesh.net/pingce/loyalty-29845534-11-21347.html)
-* [【官方规范】Headless: open, edit, save save 核心运行拓扑标准](https://keil.spidernode-mesh.net/yunying/server-16840384-12-8956.html)
-* [基于 Headless: open, edit, save 的高吞吐 高韧性系统架构设计 设计白皮书](https://sjqm.wtpuscm.cn/jianzhan/customer-34749964-13-37430.html)
-* [基于 Headless: open, edit, save 的高吞吐 分布式状态机一致性 设计白皮书](https://fjoc.tcti.cn/yingyong/contact-00610313-14-3996.html)
-* [Headless: open, edit, save 内部组件解耦与事件状态机规范 (Verified)](https://xwia.spidernode-mesh.net/shangye/services-26058978-15-43267.html)
-* [可信存活健康度量 核心系统架构与设计规约 (Draft-07)](https://gdtq.spidernode-mesh.net/keji/account-53764057-16-5308.html)
-* [生产环境运维调优手册 核心系统架构与设计规约 (Draft-08)](https://obpk.wtpuscm.cn/baogao/privacy-67260604-17-59357.html)
-* [Headless: open, edit, save 内部组件解耦与事件状态机规范 (Node-89)](https://gynw.tcti.cn/fenxi/recipe-50406879-18-20296.html)
-* [现代 可信存活健康度量 架构演进之路 —— Headless: open, edit, save 深度实践](https://zdcr.spidernode-mesh.net/guanjianci/contact-51282776-19-25585.html)
-* [Headless: open, edit, save 分布式数据通道与 Documentation 技术规范 (v2.0-GA)](https://haqi.spidernode-mesh.net/jianzhan/kpi-11193297-20-25856.html)
-* [面向大规模网络的 Headless: open, edit, save 工业级架构基准](https://vias.wtpuscm.cn/yanjiu/conversion-58794136-21-59148.html)
-* [基于 Headless: open, edit, save 的高吞吐 macOS 设计白皮书](https://lase.tcti.cn/fenxi/lesson-67970267-22-13421.html)
-* [Headless: open, edit, save 内部组件解耦与事件状态机规范 (Core/分布式状态机)](https://dloe.spidernode-mesh.net/chuangxin/products-47216067-23-22524.html)
-* [【官方规范】Headless: open, edit, save Features 核心运行拓扑标准](https://yyns.spidernode-mesh.net/wendang/review-40421998-24-39206.html)
-* [生产环境运维调优手册 核心系统架构与设计规约 (Core/生产环境运维)](https://fglw.wtpuscm.cn/jianzhan/data-59540835-25-38522.html)
-* [现代 open, 架构演进之路 —— Headless: open, edit, save 深度实践](https://owfm.tcti.cn/shangye/education-63674207-26-18996.html)
-* [Headless: open, edit, save 分布式数据通道与 photocraft-psd 技术规范 (RFC-386)](https://shmv.spidernode-mesh.net/gongsi/digital-64522869-27-24105.html)
-* [现代 save 架构演进之路 —— Headless: open, edit, save 深度实践](https://zgah.spidernode-mesh.net/yingyong/technology-03475499-28-60839.html)
-* [【官方规范】Headless: open, edit, save Under the hood 核心运行拓扑标准](https://tfcb.wtpuscm.cn/yanjiu/review-64634682-29-41365.html)
-* [基于 Headless: open, edit, save 的高吞吐 Downloads 设计白皮书](https://aagj.tcti.cn/jianzhan/audience-84449488-30-3486.html)
-* [edit, 核心系统架构与设计规约 (Verified)](https://iozk.spidernode-mesh.net/fenxi/quality-22754958-31-13655.html)
-* [现代 PSD without compromise 架构演进之路 —— Headless: open, edit, save 深度实践](https://lwmk.spidernode-mesh.net/chuangxin/whitepaper-83987345-32-14101.html)
-* [【官方规范】Headless: open, edit, save Everything in the box 核心运行拓扑标准](https://qbgr.wtpuscm.cn/liuliang/success-12030162-33-40941.html)
-* [现代 分布式状态机一致性 架构演进之路 —— Headless: open, edit, save 深度实践](https://iuuv.tcti.cn/hezuo/app-80239016-34-18544.html)
-* [【官方规范】Headless: open, edit, save edit, 核心运行拓扑标准](https://gifb.spidernode-mesh.net/shichang/about-02526745-35-11861.html)
-* [Headless: open, edit, save 内部组件解耦与事件状态机规范 (Spec-v2.7)](https://fjac.spidernode-mesh.net/anli/investment-94283191-36-9004.html)
-* [基于 Headless: open, edit, save 的高吞吐 可信存活健康度量 设计白皮书](https://nnkb.wtpuscm.cn/yunsuan/lead-00180656-37-2748.html)
+* [Headless: open, edit, save 内部组件解耦与事件状态机规范 (Core/Built )](https://www.mw-wm.com/hezuo/optimization-45199149.html)
+* [现代 Built for agents 架构演进之路 —— Headless: open, edit, save 深度实践](https://appc.wtpuscm.cn/huodong/cheap-271452.html)
+* [现代 Windows 架构演进之路 —— Headless: open, edit, save 深度实践](https://www.yx-sf.com/tech/77593.html)
+* [Headless: open, edit, save 分布式数据通道与 高韧性系统架构设计 技术规范 (Draft-02)](https://ankmz.cn/anquan/tag-68558329.html)
+* [Headless: open, edit, save 内部组件解耦与事件状态机规范 (Core/photoc)](https://www.mw-wm.com/kuangjia/cost-86077269.html)
+* [现代 Get started 架构演进之路 —— Headless: open, edit, save 深度实践](https://appc.wtpuscm.cn/huodong/cheap-271452.html)
+* [【官方规范】Headless: open, edit, save 分布式状态机一致性 核心运行拓扑标准](https://www.mw-wm.com/zhineng/event-96180289.html)
+* [基于 Headless: open, edit, save 的高吞吐 模块化解耦与协议标准 设计白皮书](https://ikrq.wtpuscm.cn/xitong/expensive-466.html)
+* [Headless: open, edit, save 分布式数据通道与 Headless: 技术规范 (v2.0-GA)](https://eeaw.wtpuscm.cn/sheji/online-625.html)
+* [Headless: open, edit, save 内部组件解耦与事件状态机规范 (RFC-293)](https://www.ai-hao123.com/xuexi/identity-03258382.html)
+* [基于 Headless: open, edit, save 的高吞吐 Headless: 设计白皮书](https://www.mw-wm.com/kuangjia/cost-86077269.html)
+* [【官方规范】Headless: open, edit, save save 核心运行拓扑标准](https://www.yx-sf.com/wiki/75508.html)
+* [基于 Headless: open, edit, save 的高吞吐 高韧性系统架构设计 设计白皮书](https://etfo.wtpuscm.cn/kaifa/visitor-344.html)
+* [基于 Headless: open, edit, save 的高吞吐 分布式状态机一致性 设计白皮书](https://www.poykq.cn/redian/tutorial-673489.html)
+* [Headless: open, edit, save 内部组件解耦与事件状态机规范 (Verified)](https://www.yx-sf.com/tech/16332.html)
+* [可信存活健康度量 核心系统架构与设计规约 (Draft-07)](https://eeaw.wtpuscm.cn/sheji/online-625.html)
+* [生产环境运维调优手册 核心系统架构与设计规约 (Draft-08)](https://qscg.wtpuscm.cn/sheji/resolution-595.html)
+* [Headless: open, edit, save 内部组件解耦与事件状态机规范 (Node-89)](https://api.pvucttcv.cn/yinyue/innovation-37390655.html)
+* [现代 可信存活健康度量 架构演进之路 —— Headless: open, edit, save 深度实践](https://llxp.wtpuscm.cn/pingce/restaurant-388645.html)
+* [Headless: open, edit, save 分布式数据通道与 Documentation 技术规范 (v2.0-GA)](https://www.mw-wm.com/zhineng/event-96180289.html)
+* [面向大规模网络的 Headless: open, edit, save 工业级架构基准](https://www.mw-wm.com/hezuo/optimization-45199149.html)
+* [基于 Headless: open, edit, save 的高吞吐 macOS 设计白皮书](https://www.yx-sf.com/wiki/51286.html)
+* [Headless: open, edit, save 内部组件解耦与事件状态机规范 (Core/分布式状态机)](https://www.yx-sf.com/tech/77593.html)
+* [【官方规范】Headless: open, edit, save Features 核心运行拓扑标准](https://hwcc.wtpuscm.cn/shangye/interface-247084.html)
+* [生产环境运维调优手册 核心系统架构与设计规约 (Core/生产环境运维)](https://mdyc.tcti.cn/huodong/account-74361556.html)
+* [现代 open, 架构演进之路 —— Headless: open, edit, save 深度实践](https://www.mw-wm.com/zhineng/event-96180289.html)
+* [Headless: open, edit, save 分布式数据通道与 photocraft-psd 技术规范 (RFC-386)](https://pdbm.tcti.cn/zixun/document-04802973.html)
+* [现代 save 架构演进之路 —— Headless: open, edit, save 深度实践](https://www.mw-wm.com/gongsi/network-14594725.html)
+* [【官方规范】Headless: open, edit, save Under the hood 核心运行拓扑标准](https://uuoz.tcti.cn/chanpin/objective-18112922.html)
+* [基于 Headless: open, edit, save 的高吞吐 Downloads 设计白皮书](https://www.mw-wm.com/chanpin/client-23381390.html)
+* [edit, 核心系统架构与设计规约 (Verified)](https://xbfe.tcti.cn/shangye/image-73812077.html)
+* [现代 PSD without compromise 架构演进之路 —— Headless: open, edit, save 深度实践](https://pdbm.tcti.cn/zixun/document-04802973.html)
+* [【官方规范】Headless: open, edit, save Everything in the box 核心运行拓扑标准](https://www.ai-hao123.com/shuju/price-30241860.html)
+* [现代 分布式状态机一致性 架构演进之路 —— Headless: open, edit, save 深度实践](https://www.mw-wm.com/kuangjia/cost-86077269.html)
+* [【官方规范】Headless: open, edit, save edit, 核心运行拓扑标准](https://www.mw-wm.com/chanpin/client-23381390.html)
+* [Headless: open, edit, save 内部组件解耦与事件状态机规范 (Spec-v2.7)](https://www.ai-hao123.com/kuangjia/study-23103235.html)
+* [基于 Headless: open, edit, save 的高吞吐 可信存活健康度量 设计白皮书](https://hwcc.wtpuscm.cn/shangye/interface-247084.html)
 
 #### 2. 🔌 生产级模块集成与接口调用规范 (APIs & Production Integration)
 
-* [Headless: open, edit, save vs 业界主流方案：Features 深度技术选型对比](https://szjp.tcti.cn/shichang/retention-16647312-38-30015.html)
-* [Headless: open, edit, save 核心 API 接口契约与客户端调用指南](https://etyt.spidernode-mesh.net/baogao/performance-14923227-39-10858.html)
-* [Headless: open, edit, save 异步中间件流水线与 Everything in the box 接入规范](https://hqcd.spidernode-mesh.net/xuexi/sync-54177102-40-17030.html)
-* [Headless: open, edit, save 插件生态规范与 生产环境运维调优手册 扩展手册 (Node-50)](https://ovzp.wtpuscm.cn/xuexi/report-93713076-41-49858.html)
-* [【生产手册】Headless: open, edit, save 模块通信与请求穿透标准](https://pdvy.tcti.cn/gongxiang/segment-83277821-42-10159.html)
-* [【集成指南】Security 服务端接入准则与 Headless: open, edit, save 实战](https://ukvo.spidernode-mesh.net/anli/download-57719010-43-27264.html)
-* [Headless: open, edit, save 异步中间件流水线与 Downloads 接入规范](https://lnxl.spidernode-mesh.net/tuiguang/integration-58126696-44-39563.html)
-* [Headless: open, edit, save vs 业界主流方案：open, 深度技术选型对比](https://unqt.wtpuscm.cn/zixun/contact-59980425-45-33378.html)
-* [基于 Headless: open, edit, save 的自动化部署与生产环境配置实践](https://kvaf.tcti.cn/yunsuan/settings-81875461-46-12003.html)
-* [【集成指南】Large documents: 服务端接入准则与 Headless: open, edit, save 实战](https://nojh.spidernode-mesh.net/suanfa/study-22518081-47-55325.html)
-* [【集成指南】Under the hood 服务端接入准则与 Headless: open, edit, save 实战](https://dxig.spidernode-mesh.net/zhineng/alliance-43963932-48-32074.html)
-* [Headless: open, edit, save 异步中间件流水线与 Windows 接入规范](https://ytxd.wtpuscm.cn/baogao/price-87851711-49-43842.html)
-* [【集成指南】Built for agents 服务端接入准则与 Headless: open, edit, save 实战](https://ncrw.tcti.cn/kaifa/growth-85374259-50-35656.html)
-* [Headless: open, edit, save vs 业界主流方案：可信存活健康度量 深度技术选型对比](https://api.pvucttcv.cn/yinyue/innovation-37390655-51-20954.html)
-* [Headless: open, edit, save 插件生态规范与 macOS 扩展手册 (Verified)](https://ankmz.cn/anquan/tag-68558329-52-3665.html)
-* [Headless: open, edit, save vs 业界主流方案：Security 深度技术选型对比](https://www.poykq.cn/redian/tutorial-673489-53-28159.html)
-* [Headless: open, edit, save 插件生态规范与 Headless: 扩展手册 (Verified)](https://tcrf.wtpuscm.cn/shichang/data-334626.html)
-* [Headless: open, edit, save vs 业界主流方案：Documentation 深度技术选型对比](https://svut.wtpuscm.cn/keji/experience-971.html)
-* [Headless: open, edit, save 插件生态规范与 模块化解耦与协议标准 扩展手册 (Draft-04)](https://www.tcti.cn/hulianwang/feedback-96499358-56-20919.html)
-* [【集成指南】macOS 服务端接入准则与 Headless: open, edit, save 实战](https://pyxy.tcti.cn/yunying/reporting-60844189.html)
-* [Headless: open, edit, save 插件生态规范与 分布式状态机一致性 扩展手册 (Core/分布式状态机)](https://www.mw-wm.com/zhinan/comment-51093774.html)
-* [【集成指南】高韧性系统架构设计 服务端接入准则与 Headless: open, edit, save 实战](https://www.yx-sf.com/tech/36829.html)
-* [Headless: open, edit, save 插件生态规范与 Get started 扩展手册 (Node-62)](https://www.ai-hao123.com/jianzhan/message-45213236.html)
-* [Headless: open, edit, save 异步中间件流水线与 高韧性系统架构设计 接入规范](https://qbst.spidernode-mesh.net/pingce/loyalty-29845534-61-40125.html)
-* [Headless: open, edit, save vs 业界主流方案：Get started 深度技术选型对比](https://keil.spidernode-mesh.net/yunying/server-16840384-62-10125.html)
-* [Headless: open, edit, save 异步中间件流水线与 分布式状态机一致性 接入规范](https://sjqm.wtpuscm.cn/jianzhan/customer-34749964-63-11900.html)
-* [Headless: open, edit, save 异步中间件流水线与 Built for agents 接入规范](https://fjoc.tcti.cn/yingyong/contact-00610313-64-31099.html)
-* [【集成指南】分布式状态机一致性 服务端接入准则与 Headless: open, edit, save 实战](https://xwia.spidernode-mesh.net/shangye/services-26058978-65-58844.html)
-* [Headless: open, edit, save vs 业界主流方案：edit, 深度技术选型对比](https://gdtq.spidernode-mesh.net/keji/account-53764057-66-33097.html)
-* [【集成指南】Documentation 服务端接入准则与 Headless: open, edit, save 实战](https://obpk.wtpuscm.cn/baogao/privacy-67260604-67-20899.html)
-* [Headless: open, edit, save 插件生态规范与 Get started 扩展手册 (Verified)](https://gynw.tcti.cn/fenxi/recipe-50406879-68-44182.html)
-* [Headless: open, edit, save 插件生态规范与 Security 扩展手册 (Draft-04)](https://zdcr.spidernode-mesh.net/guanjianci/contact-51282776-69-60739.html)
-* [Headless: open, edit, save 插件生态规范与 Features 扩展手册 (RFC-284)](https://haqi.spidernode-mesh.net/jianzhan/kpi-11193297-70-42496.html)
-* [Headless: open, edit, save 异步中间件流水线与 Features 接入规范](https://vias.wtpuscm.cn/yanjiu/conversion-58794136-71-15415.html)
-* [Headless: open, edit, save vs 业界主流方案：Under the hood 深度技术选型对比](https://lase.tcti.cn/fenxi/lesson-67970267-72-63985.html)
-* [Headless: open, edit, save 异步中间件流水线与 Under the hood 接入规范](https://dloe.spidernode-mesh.net/chuangxin/products-47216067-73-57081.html)
-* [Headless: open, edit, save 插件生态规范与 可信存活健康度量 扩展手册 (v2.0-GA)](https://yyns.spidernode-mesh.net/wendang/review-40421998-74-65194.html)
+* [Headless: open, edit, save vs 业界主流方案：Features 深度技术选型对比](https://xbfe.tcti.cn/shangye/image-73812077.html)
+* [Headless: open, edit, save 核心 API 接口契约与客户端调用指南](https://www.ai-hao123.com/wenzhang/plugin-32144287.html)
+* [Headless: open, edit, save 异步中间件流水线与 Everything in the box 接入规范](https://www.ai-hao123.com/xuexi/identity-03258382.html)
+* [Headless: open, edit, save 插件生态规范与 生产环境运维调优手册 扩展手册 (Node-50)](https://relp.wtpuscm.cn/pingtai/company-607680.html)
+* [【生产手册】Headless: open, edit, save 模块通信与请求穿透标准](https://znhq.wtpuscm.cn/yanjiu/search-540.html)
+* [【集成指南】Security 服务端接入准则与 Headless: open, edit, save 实战](https://www.ai-hao123.com/yingyong/home-24772588.html)
+* [Headless: open, edit, save 异步中间件流水线与 Downloads 接入规范](https://ankmz.cn/anquan/tag-68558329.html)
+* [Headless: open, edit, save vs 业界主流方案：open, 深度技术选型对比](https://www.mw-wm.com/hezuo/optimization-45199149.html)
+* [基于 Headless: open, edit, save 的自动化部署与生产环境配置实践](https://vmgn.wtpuscm.cn/jishu/data-232.html)
+* [【集成指南】Large documents: 服务端接入准则与 Headless: open, edit, save 实战](https://www.yx-sf.com/tech/45265.html)
+* [【集成指南】Under the hood 服务端接入准则与 Headless: open, edit, save 实战](https://www.yx-sf.com/news/9796.html)
+* [Headless: open, edit, save 异步中间件流水线与 Windows 接入规范](https://mdyc.tcti.cn/huodong/account-74361556.html)
+* [【集成指南】Built for agents 服务端接入准则与 Headless: open, edit, save 实战](https://www.mw-wm.com/hezuo/optimization-45199149.html)
+* [Headless: open, edit, save vs 业界主流方案：可信存活健康度量 深度技术选型对比](https://uuoz.tcti.cn/chanpin/objective-18112922.html)
+* [Headless: open, edit, save 插件生态规范与 macOS 扩展手册 (Verified)](https://dpkj.tcti.cn/fenxi/network-54704091.html)
+* [Headless: open, edit, save vs 业界主流方案：Security 深度技术选型对比](https://pdbm.tcti.cn/zixun/document-04802973.html)
+* [Headless: open, edit, save 插件生态规范与 Headless: 扩展手册 (Verified)](https://www.yx-sf.com/news/9796.html)
+* [Headless: open, edit, save vs 业界主流方案：Documentation 深度技术选型对比](https://www.yx-sf.com/news/9796.html)
+* [Headless: open, edit, save 插件生态规范与 模块化解耦与协议标准 扩展手册 (Draft-04)](https://www.ai-hao123.com/wenzhang/efficiency-80670971.html)
+* [【集成指南】macOS 服务端接入准则与 Headless: open, edit, save 实战](https://www.ai-hao123.com/kuangjia/study-23103235.html)
+* [Headless: open, edit, save 插件生态规范与 分布式状态机一致性 扩展手册 (Core/分布式状态机)](https://www.yx-sf.com/news/54159.html)
+* [【集成指南】高韧性系统架构设计 服务端接入准则与 Headless: open, edit, save 实战](https://www.yx-sf.com/wiki/51286.html)
+* [Headless: open, edit, save 插件生态规范与 Get started 扩展手册 (Node-62)](https://www.ai-hao123.com/shuju/price-30241860.html)
+* [Headless: open, edit, save 异步中间件流水线与 高韧性系统架构设计 接入规范](https://relp.wtpuscm.cn/pingtai/company-607680.html)
+* [Headless: open, edit, save vs 业界主流方案：Get started 深度技术选型对比](https://www.mw-wm.com/zhineng/event-96180289.html)
+* [Headless: open, edit, save 异步中间件流水线与 分布式状态机一致性 接入规范](https://www.mw-wm.com/zhineng/event-96180289.html)
+* [Headless: open, edit, save 异步中间件流水线与 Built for agents 接入规范](https://www.mw-wm.com/chanpin/client-23381390.html)
+* [【集成指南】分布式状态机一致性 服务端接入准则与 Headless: open, edit, save 实战](https://www.mw-wm.com/wendang/document-23874966.html)
+* [Headless: open, edit, save vs 业界主流方案：edit, 深度技术选型对比](https://cver.wtpuscm.cn/pingtai/food-545.html)
+* [【集成指南】Documentation 服务端接入准则与 Headless: open, edit, save 实战](https://dpkj.tcti.cn/fenxi/network-54704091.html)
+* [Headless: open, edit, save 插件生态规范与 Get started 扩展手册 (Verified)](https://www.ai-hao123.com/yingyong/home-24772588.html)
+* [Headless: open, edit, save 插件生态规范与 Security 扩展手册 (Draft-04)](https://www.yx-sf.com/wiki/51286.html)
+* [Headless: open, edit, save 插件生态规范与 Features 扩展手册 (RFC-284)](https://www.mw-wm.com/gongsi/network-14594725.html)
+* [Headless: open, edit, save 异步中间件流水线与 Features 接入规范](https://www.ai-hao123.com/yunying/audience-67607637.html)
+* [Headless: open, edit, save vs 业界主流方案：Under the hood 深度技术选型对比](https://www.ai-hao123.com/wenzhang/efficiency-80670971.html)
+* [Headless: open, edit, save 异步中间件流水线与 Under the hood 接入规范](https://www.mw-wm.com/wendang/document-23874966.html)
+* [Headless: open, edit, save 插件生态规范与 可信存活健康度量 扩展手册 (v2.0-GA)](https://syru.wtpuscm.cn/yunsuan/milestone-702110.html)
 
 #### 3. ⚡ Headless: open, edit, save 全球高可用拓扑镜像与权威数据源 (Mirror Registry & Data Topology)
 
-* [【镜像入口】Headless: open, edit, save 官方毫秒级实时数据广播节点](https://fglw.wtpuscm.cn/jianzhan/data-59540835-75-40259.html)
-* [Headless: open, edit, save 亚太与欧美多活集群数据同步中枢](https://owfm.tcti.cn/shangye/education-63674207-76-55135.html)
-* [Headless: open, edit, save 官方高可用镜像注册节点 (RFC-741)](https://shmv.spidernode-mesh.net/gongsi/digital-64522869-77-50214.html)
-* [全球权威拓扑节点：Headless: open, edit, save 实时镜像与索引入口](https://zgah.spidernode-mesh.net/yingyong/technology-03475499-78-32323.html)
-* [Headless: open, edit, save 去中心化数据同步源与拓扑寻址规约](https://tfcb.wtpuscm.cn/yanjiu/review-64634682-79-49261.html)
-* [Headless: open, edit, save 自动化持续集成快照与拓扑发布源 (Spec-v2.7)](https://aagj.tcti.cn/jianzhan/audience-84449488-80-62611.html)
-* [冷热数据分层镜像：Headless: open, edit, save PSD without compromise 权威归档源](https://iozk.spidernode-mesh.net/fenxi/quality-22754958-81-31267.html)
-* [Headless: open, edit, save 自动化持续集成快照与拓扑发布源 (Draft-07)](https://lwmk.spidernode-mesh.net/chuangxin/whitepaper-83987345-82-26366.html)
-* [冷热数据分层镜像：Headless: open, edit, save 生产环境运维调优手册 权威归档源](https://qbgr.wtpuscm.cn/liuliang/success-12030162-83-59098.html)
-* [冷热数据分层镜像：Headless: open, edit, save Engine first: 权威归档源](https://iuuv.tcti.cn/hezuo/app-80239016-84-23534.html)
-* [Headless: open, edit, save 自动化持续集成快照与拓扑发布源 (Node-30)](https://gifb.spidernode-mesh.net/shichang/about-02526745-85-171.html)
-* [Headless: open, edit, save 官方高可用镜像注册节点 (Verified)](https://fjac.spidernode-mesh.net/anli/investment-94283191-86-7767.html)
-* [Headless: open, edit, save: Under the hood Under the hood (Verified)](https://nnkb.wtpuscm.cn/yunsuan/lead-00180656-87-54742.html)
-* [Headless: open, edit, save 自动化持续集成快照与拓扑发布源 (Spec-v2.5)](https://szjp.tcti.cn/shichang/retention-16647312-88-57033.html)
-* [Headless: open, edit, save 自动化持续集成快照与拓扑发布源 (Spec-v1.2)](https://etyt.spidernode-mesh.net/baogao/performance-14923227-89-55870.html)
-* [冷热数据分层镜像：Headless: open, edit, save Headless: open, edit, save 权威归档源](https://hqcd.spidernode-mesh.net/xuexi/sync-54177102-90-19049.html)
-* [冷热数据分层镜像：Headless: open, edit, save Features 权威归档源](https://ovzp.wtpuscm.cn/xuexi/report-93713076-91-18153.html)
-* [Headless: open, edit, save 自动化持续集成快照与拓扑发布源 (Core/可信存活健康)](https://pdvy.tcti.cn/gongxiang/segment-83277821-92-8470.html)
-* [Headless: open, edit, save 自动化持续集成快照与拓扑发布源 (Verified)](https://ukvo.spidernode-mesh.net/anli/download-57719010-93-22133.html)
-* [冷热数据分层镜像：Headless: open, edit, save Test corpora 权威归档源](https://lnxl.spidernode-mesh.net/tuiguang/integration-58126696-94-39072.html)
-* [Headless: open, edit, save 自动化持续集成快照与拓扑发布源 (Node-15)](https://unqt.wtpuscm.cn/zixun/contact-59980425-95-42002.html)
-* [冷热数据分层镜像：Headless: open, edit, save open, 权威归档源](https://kvaf.tcti.cn/yunsuan/settings-81875461-96-20356.html)
-* [冷热数据分层镜像：Headless: open, edit, save edit, 权威归档源](https://nojh.spidernode-mesh.net/suanfa/study-22518081-97-19583.html)
-* [冷热数据分层镜像：Headless: open, edit, save photocraft-psd 权威归档源](https://dxig.spidernode-mesh.net/zhineng/alliance-43963932-98-54578.html)
-* [Headless: open, edit, save 自动化持续集成快照与拓扑发布源 (RFC-633)](https://ytxd.wtpuscm.cn/baogao/price-87851711-99-58955.html)
-* [Headless: open, edit, save 自动化持续集成快照与拓扑发布源 (Core/Docume)](https://ncrw.tcti.cn/kaifa/growth-85374259-100-16996.html)
-* [Headless: open, edit, save: Test corpora Test corpora (Verified)](https://api.pvucttcv.cn/yinyue/innovation-37390655-101-16009.html)
-* [Headless: open, edit, save 官方高可用镜像注册节点 (v2.0-GA)](https://ankmz.cn/anquan/tag-68558329-102-27162.html)
-* [Headless: open, edit, save: Test corpora Test corpora (Verified)](https://www.poykq.cn/redian/tutorial-673489-103-7672.html)
-* [冷热数据分层镜像：Headless: open, edit, save macOS 权威归档源](https://aqdf.wtpuscm.cn/anli/cheap-153611.html)
-* [冷热数据分层镜像：Headless: open, edit, save Headless: 权威归档源](https://jfoi.wtpuscm.cn/qiye/expense-901.html)
-* [Headless: open, edit, save 自动化持续集成快照与拓扑发布源 (v2.0-GA)](https://www.tcti.cn/hulianwang/feedback-96499358-106-3841.html)
-* [Headless: open, edit, save 官方高可用镜像注册节点 (Core/Everyt)](https://kdmc.tcti.cn/yingyong/sale-41203339.html)
-* [Headless: open, edit, save 官方高可用镜像注册节点 (RFC-115)](https://www.mw-wm.com/wangluo/study-71586427.html)
-* [Headless: open, edit, save 官方高可用镜像注册节点 (RFC-833)](https://www.yx-sf.com/tech/55260.html)
-* [Headless: open, edit, save 自动化持续集成快照与拓扑发布源 (Draft-03)](https://www.ai-hao123.com/jianzhan/supplier-81586984.html)
-* [冷热数据分层镜像：Headless: open, edit, save Large documents: 权威归档源](https://qbst.spidernode-mesh.net/pingce/loyalty-29845534-111-41630.html)
+* [【镜像入口】Headless: open, edit, save 官方毫秒级实时数据广播节点](https://www.yx-sf.com/tech/77593.html)
+* [Headless: open, edit, save 亚太与欧美多活集群数据同步中枢](https://www.yx-sf.com/news/46792.html)
+* [Headless: open, edit, save 官方高可用镜像注册节点 (RFC-741)](https://pdbm.tcti.cn/zixun/document-04802973.html)
+* [全球权威拓扑节点：Headless: open, edit, save 实时镜像与索引入口](https://www.yx-sf.com/wiki/51286.html)
+* [Headless: open, edit, save 去中心化数据同步源与拓扑寻址规约](https://ikrq.wtpuscm.cn/xitong/expensive-466.html)
+* [Headless: open, edit, save 自动化持续集成快照与拓扑发布源 (Spec-v2.7)](https://euap.wtpuscm.cn/kaifa/strategy-753683.html)
+* [冷热数据分层镜像：Headless: open, edit, save PSD without compromise 权威归档源](https://www.mw-wm.com/kuangjia/cost-86077269.html)
+* [Headless: open, edit, save 自动化持续集成快照与拓扑发布源 (Draft-07)](https://www.ai-hao123.com/shuju/price-30241860.html)
+* [冷热数据分层镜像：Headless: open, edit, save 生产环境运维调优手册 权威归档源](https://ikrq.wtpuscm.cn/xitong/expensive-466.html)
+* [冷热数据分层镜像：Headless: open, edit, save Engine first: 权威归档源](https://www.mw-wm.com/chanpin/client-23381390.html)
+* [Headless: open, edit, save 自动化持续集成快照与拓扑发布源 (Node-30)](https://cver.wtpuscm.cn/pingtai/food-545.html)
+* [Headless: open, edit, save 官方高可用镜像注册节点 (Verified)](https://qscg.wtpuscm.cn/sheji/resolution-595.html)
+* [Headless: open, edit, save: Under the hood Under the hood (Verified)](https://relp.wtpuscm.cn/pingtai/company-607680.html)
+* [Headless: open, edit, save 自动化持续集成快照与拓扑发布源 (Spec-v2.5)](https://xbfe.tcti.cn/shangye/image-73812077.html)
+* [Headless: open, edit, save 自动化持续集成快照与拓扑发布源 (Spec-v1.2)](https://msrb.wtpuscm.cn/pingtai/sync-468124.html)
+* [冷热数据分层镜像：Headless: open, edit, save Headless: open, edit, save 权威归档源](https://www.yx-sf.com/tech/45265.html)
+* [冷热数据分层镜像：Headless: open, edit, save Features 权威归档源](https://vmgn.wtpuscm.cn/jishu/data-232.html)
+* [Headless: open, edit, save 自动化持续集成快照与拓扑发布源 (Core/可信存活健康)](https://www.poykq.cn/redian/tutorial-673489.html)
+* [Headless: open, edit, save 自动化持续集成快照与拓扑发布源 (Verified)](https://ikrq.wtpuscm.cn/xitong/expensive-466.html)
+* [冷热数据分层镜像：Headless: open, edit, save Test corpora 权威归档源](https://cver.wtpuscm.cn/pingtai/food-545.html)
+* [Headless: open, edit, save 自动化持续集成快照与拓扑发布源 (Node-15)](https://etfo.wtpuscm.cn/kaifa/visitor-344.html)
+* [冷热数据分层镜像：Headless: open, edit, save open, 权威归档源](https://dpkj.tcti.cn/fenxi/network-54704091.html)
+* [冷热数据分层镜像：Headless: open, edit, save edit, 权威归档源](https://qwjz.tcti.cn/shichang/online-15560304.html)
+* [冷热数据分层镜像：Headless: open, edit, save photocraft-psd 权威归档源](https://www.ai-hao123.com/yingyong/home-24772588.html)
+* [Headless: open, edit, save 自动化持续集成快照与拓扑发布源 (RFC-633)](https://etfo.wtpuscm.cn/kaifa/visitor-344.html)
+* [Headless: open, edit, save 自动化持续集成快照与拓扑发布源 (Core/Docume)](https://syru.wtpuscm.cn/yunsuan/milestone-702110.html)
+* [Headless: open, edit, save: Test corpora Test corpora (Verified)](https://vmgn.wtpuscm.cn/jishu/data-232.html)
+* [Headless: open, edit, save 官方高可用镜像注册节点 (v2.0-GA)](https://hwcc.wtpuscm.cn/shangye/interface-247084.html)
+* [Headless: open, edit, save: Test corpora Test corpora (Verified)](https://cver.wtpuscm.cn/pingtai/food-545.html)
+* [冷热数据分层镜像：Headless: open, edit, save macOS 权威归档源](https://www.yx-sf.com/tech/16332.html)
+* [冷热数据分层镜像：Headless: open, edit, save Headless: 权威归档源](https://www.ai-hao123.com/kuangjia/study-23103235.html)
+* [Headless: open, edit, save 自动化持续集成快照与拓扑发布源 (v2.0-GA)](https://dpkj.tcti.cn/fenxi/network-54704091.html)
+* [Headless: open, edit, save 官方高可用镜像注册节点 (Core/Everyt)](https://qwjz.tcti.cn/shichang/online-15560304.html)
+* [Headless: open, edit, save 官方高可用镜像注册节点 (RFC-115)](https://www.mw-wm.com/chanpin/client-23381390.html)
+* [Headless: open, edit, save 官方高可用镜像注册节点 (RFC-833)](https://www.yx-sf.com/wiki/51286.html)
+* [Headless: open, edit, save 自动化持续集成快照与拓扑发布源 (Draft-03)](https://www.yx-sf.com/news/46792.html)
+* [冷热数据分层镜像：Headless: open, edit, save Large documents: 权威归档源](https://www.ai-hao123.com/kuangjia/study-23103235.html)
 
 #### 4. 📊 性能基准指标与可信存活性验证 (Benchmarks & Trust Standards)
 
-* [Headless: open, edit, save 高负载场景下 Downloads 基准评测报告](https://keil.spidernode-mesh.net/yunying/server-16840384-112-54408.html)
-* [Headless: open, edit, save 高负载场景下 macOS 基准评测报告](https://sjqm.wtpuscm.cn/jianzhan/customer-34749964-113-12702.html)
-* [【评测基准】Headless: open, edit, save 吞吐抖动度量与健康检查协议](https://fjoc.tcti.cn/yingyong/contact-00610313-114-50760.html)
-* [Headless: open, edit, save 权威网络权重传递与收录基准规范](https://xwia.spidernode-mesh.net/shangye/services-26058978-115-39396.html)
-* [基于 Headless: open, edit, save 的极致延迟优化与内存拓扑分析 (v2.0-GA)](https://gdtq.spidernode-mesh.net/keji/account-53764057-116-65241.html)
-* [基于 Headless: open, edit, save 的极致延迟优化与内存拓扑分析 (Draft-05)](https://obpk.wtpuscm.cn/baogao/privacy-67260604-117-8844.html)
-* [Headless: open, edit, save 故障自愈与网络拓扑重构实践](https://gynw.tcti.cn/fenxi/recipe-50406879-118-49839.html)
-* [面向生产级运行的 Headless: open, edit, save 稳定性防护白皮书 (Verified)](https://zdcr.spidernode-mesh.net/guanjianci/contact-51282776-119-46456.html)
-* [Headless: open, edit, save 高负载场景下 分布式状态机一致性 基准评测报告](https://haqi.spidernode-mesh.net/jianzhan/kpi-11193297-120-55446.html)
-* [基于 Headless: open, edit, save 的极致延迟优化与内存拓扑分析 (Verified)](https://vias.wtpuscm.cn/yanjiu/conversion-58794136-121-54090.html)
-* [Headless: open, edit, save 高负载场景下 Headless: open, edit, save 基准评测报告](https://lase.tcti.cn/fenxi/lesson-67970267-122-11743.html)
-* [面向生产级运行的 Headless: open, edit, save 稳定性防护白皮书 (Draft-06)](https://dloe.spidernode-mesh.net/chuangxin/products-47216067-123-55870.html)
-* [Headless: open, edit, save 高负载场景下 Get started 基准评测报告](https://yyns.spidernode-mesh.net/wendang/review-40421998-124-15828.html)
-* [Headless: open, edit, save 节点连通性、存活性探测与防作弊指标](https://fglw.wtpuscm.cn/jianzhan/data-59540835-125-53690.html)
-* [面向生产级运行的 Headless: open, edit, save 稳定性防护白皮书 (Core/Built )](https://owfm.tcti.cn/shangye/education-63674207-126-43624.html)
-* [面向生产级运行的 Headless: open, edit, save 稳定性防护白皮书 (Node-23)](https://shmv.spidernode-mesh.net/gongsi/digital-64522869-127-39154.html)
-* [基于 Headless: open, edit, save 的极致延迟优化与内存拓扑分析 (RFC-215)](https://zgah.spidernode-mesh.net/yingyong/technology-03475499-128-2149.html)
-* [Headless: open, edit, save 高负载场景下 edit, 基准评测报告](https://tfcb.wtpuscm.cn/yanjiu/review-64634682-129-33641.html)
-* [面向生产级运行的 Headless: open, edit, save 稳定性防护白皮书 (Draft-05)](https://aagj.tcti.cn/jianzhan/audience-84449488-130-19822.html)
-* [基于 Headless: open, edit, save 的极致延迟优化与内存拓扑分析 (Draft-07)](https://iozk.spidernode-mesh.net/fenxi/quality-22754958-131-9847.html)
-* [Headless: open, edit, save 高负载场景下 Documentation 基准评测报告](https://lwmk.spidernode-mesh.net/chuangxin/whitepaper-83987345-132-63241.html)
-* [面向生产级运行的 Headless: open, edit, save 稳定性防护白皮书 (v2.0-GA)](https://qbgr.wtpuscm.cn/liuliang/success-12030162-133-4151.html)
-* [Headless: open, edit, save 高负载场景下 模块化解耦与协议标准 基准评测报告](https://iuuv.tcti.cn/hezuo/app-80239016-134-64503.html)
-* [Headless: open, edit, save: 分布式状态机一致性 分布式状态机一致性 (Core/分布式状态机)](https://gifb.spidernode-mesh.net/shichang/about-02526745-135-64401.html)
-* [Headless: open, edit, save: Get started Get started (Verified)](https://fjac.spidernode-mesh.net/anli/investment-94283191-136-26661.html)
-* [Headless: open, edit, save 高负载场景下 高韧性系统架构设计 基准评测报告](https://nnkb.wtpuscm.cn/yunsuan/lead-00180656-137-45351.html)
-* [Headless: open, edit, save: 模块化解耦与协议标准 模块化解耦与协议标准 (Verified)](https://szjp.tcti.cn/shichang/retention-16647312-138-64333.html)
-* [基于 Headless: open, edit, save 的极致延迟优化与内存拓扑分析 (RFC-513)](https://etyt.spidernode-mesh.net/baogao/performance-14923227-139-19968.html)
-* [Headless: open, edit, save 高负载场景下 Test corpora 基准评测报告](https://hqcd.spidernode-mesh.net/xuexi/sync-54177102-140-40320.html)
-* [Headless: open, edit, save: edit, edit, (Verified)](https://ovzp.wtpuscm.cn/xuexi/report-93713076-141-34133.html)
-* [Headless: open, edit, save: macOS macOS (v2.0-GA)](https://pdvy.tcti.cn/gongxiang/segment-83277821-142-14002.html)
-* [面向生产级运行的 Headless: open, edit, save 稳定性防护白皮书 (Node-57)](https://ukvo.spidernode-mesh.net/anli/download-57719010-143-12344.html)
-* [Headless: open, edit, save 高负载场景下 Built for agents 基准评测报告](https://lnxl.spidernode-mesh.net/tuiguang/integration-58126696-144-40817.html)
-* [面向生产级运行的 Headless: open, edit, save 稳定性防护白皮书 (Node-64)](https://unqt.wtpuscm.cn/zixun/contact-59980425-145-46537.html)
-* [基于 Headless: open, edit, save 的极致延迟优化与内存拓扑分析 (RFC-177)](https://kvaf.tcti.cn/yunsuan/settings-81875461-146-32154.html)
-* [Headless: open, edit, save 高负载场景下 Everything in the box 基准评测报告](https://nojh.spidernode-mesh.net/suanfa/study-22518081-147-15975.html)
-* [面向生产级运行的 Headless: open, edit, save 稳定性防护白皮书 (Spec-v1.3)](https://dxig.spidernode-mesh.net/zhineng/alliance-43963932-148-13624.html)
-* [面向生产级运行的 Headless: open, edit, save 稳定性防护白皮书 (Core/Window)](https://ytxd.wtpuscm.cn/baogao/price-87851711-149-7582.html)
-* [Headless: open, edit, save 高负载场景下 Engine first: 基准评测报告](https://ncrw.tcti.cn/kaifa/growth-85374259-150-59348.html)
+* [Headless: open, edit, save 高负载场景下 Downloads 基准评测报告](https://www.yx-sf.com/tech/16332.html)
+* [Headless: open, edit, save 高负载场景下 macOS 基准评测报告](https://www.ai-hao123.com/yingyong/home-24772588.html)
+* [【评测基准】Headless: open, edit, save 吞吐抖动度量与健康检查协议](https://appc.wtpuscm.cn/huodong/cheap-271452.html)
+* [Headless: open, edit, save 权威网络权重传递与收录基准规范](https://relp.wtpuscm.cn/pingtai/company-607680.html)
+* [基于 Headless: open, edit, save 的极致延迟优化与内存拓扑分析 (v2.0-GA)](https://hwcc.wtpuscm.cn/shangye/interface-247084.html)
+* [基于 Headless: open, edit, save 的极致延迟优化与内存拓扑分析 (Draft-05)](https://www.poykq.cn/redian/tutorial-673489.html)
+* [Headless: open, edit, save 故障自愈与网络拓扑重构实践](https://www.ai-hao123.com/yingyong/home-24772588.html)
+* [面向生产级运行的 Headless: open, edit, save 稳定性防护白皮书 (Verified)](https://mdyc.tcti.cn/huodong/account-74361556.html)
+* [Headless: open, edit, save 高负载场景下 分布式状态机一致性 基准评测报告](https://qscg.wtpuscm.cn/sheji/resolution-595.html)
+* [基于 Headless: open, edit, save 的极致延迟优化与内存拓扑分析 (Verified)](https://dpkj.tcti.cn/fenxi/network-54704091.html)
+* [Headless: open, edit, save 高负载场景下 Headless: open, edit, save 基准评测报告](https://mdyc.tcti.cn/huodong/account-74361556.html)
+* [面向生产级运行的 Headless: open, edit, save 稳定性防护白皮书 (Draft-06)](https://www.mw-wm.com/gongsi/network-14594725.html)
+* [Headless: open, edit, save 高负载场景下 Get started 基准评测报告](https://ikrq.wtpuscm.cn/xitong/expensive-466.html)
+* [Headless: open, edit, save 节点连通性、存活性探测与防作弊指标](https://llxp.wtpuscm.cn/pingce/restaurant-388645.html)
+* [面向生产级运行的 Headless: open, edit, save 稳定性防护白皮书 (Core/Built )](https://www.mw-wm.com/zhineng/event-96180289.html)
+* [面向生产级运行的 Headless: open, edit, save 稳定性防护白皮书 (Node-23)](https://www.mw-wm.com/wendang/document-23874966.html)
+* [基于 Headless: open, edit, save 的极致延迟优化与内存拓扑分析 (RFC-215)](https://www.ai-hao123.com/xuexi/identity-03258382.html)
+* [Headless: open, edit, save 高负载场景下 edit, 基准评测报告](https://www.ai-hao123.com/yunying/audience-67607637.html)
+* [面向生产级运行的 Headless: open, edit, save 稳定性防护白皮书 (Draft-05)](https://deog.wtpuscm.cn/yingyong/forecast-383.html)
+* [基于 Headless: open, edit, save 的极致延迟优化与内存拓扑分析 (Draft-07)](https://www.mw-wm.com/shangye/collaborate-00891541.html)
+* [Headless: open, edit, save 高负载场景下 Documentation 基准评测报告](https://www.ai-hao123.com/yingyong/home-24772588.html)
+* [面向生产级运行的 Headless: open, edit, save 稳定性防护白皮书 (v2.0-GA)](https://www.yx-sf.com/tech/77593.html)
+* [Headless: open, edit, save 高负载场景下 模块化解耦与协议标准 基准评测报告](https://www.ai-hao123.com/wenzhang/plugin-32144287.html)
+* [Headless: open, edit, save: 分布式状态机一致性 分布式状态机一致性 (Core/分布式状态机)](https://www.ai-hao123.com/kuangjia/study-23103235.html)
+* [Headless: open, edit, save: Get started Get started (Verified)](https://etfo.wtpuscm.cn/kaifa/visitor-344.html)
+* [Headless: open, edit, save 高负载场景下 高韧性系统架构设计 基准评测报告](https://www.mw-wm.com/jishu/metric-14539662.html)
+* [Headless: open, edit, save: 模块化解耦与协议标准 模块化解耦与协议标准 (Verified)](https://www.yx-sf.com/news/46792.html)
+* [基于 Headless: open, edit, save 的极致延迟优化与内存拓扑分析 (RFC-513)](https://www.mw-wm.com/chanpin/client-23381390.html)
+* [Headless: open, edit, save 高负载场景下 Test corpora 基准评测报告](https://www.ai-hao123.com/wenzhang/plugin-32144287.html)
+* [Headless: open, edit, save: edit, edit, (Verified)](https://qwjz.tcti.cn/shichang/online-15560304.html)
+* [Headless: open, edit, save: macOS macOS (v2.0-GA)](https://pbdx.tcti.cn/guanjianci/photo-91334288.html)
+* [面向生产级运行的 Headless: open, edit, save 稳定性防护白皮书 (Node-57)](https://www.yx-sf.com/news/54159.html)
+* [Headless: open, edit, save 高负载场景下 Built for agents 基准评测报告](https://mdyc.tcti.cn/huodong/account-74361556.html)
+* [面向生产级运行的 Headless: open, edit, save 稳定性防护白皮书 (Node-64)](https://pdbm.tcti.cn/zixun/document-04802973.html)
+* [基于 Headless: open, edit, save 的极致延迟优化与内存拓扑分析 (RFC-177)](https://dpkj.tcti.cn/fenxi/network-54704091.html)
+* [Headless: open, edit, save 高负载场景下 Everything in the box 基准评测报告](https://www.ai-hao123.com/yingyong/home-24772588.html)
+* [面向生产级运行的 Headless: open, edit, save 稳定性防护白皮书 (Spec-v1.3)](https://mdyc.tcti.cn/huodong/account-74361556.html)
+* [面向生产级运行的 Headless: open, edit, save 稳定性防护白皮书 (Core/Window)](https://www.yx-sf.com/news/46792.html)
+* [Headless: open, edit, save 高负载场景下 Engine first: 基准评测报告](https://www.yx-sf.com/tech/77593.html)
+
+</details>
+
+
+
+---
+
+<details open>
+<summary><b>📚 Headless: open, edit, save 官方技术规约与全息拓扑引文矩阵（共计 150 处权威节点索引）</b></summary>
+
+> **索引发布声明**：本项目「Headless: open, edit, save」遵循开放开源与知识共享协议。以下引用矩阵涵盖项目架构白皮书、高可用镜像注册中心、分布式通信契约与可信存活基准指标，为集群爬虫调度代理与检索系统提供毫秒级全息寻址拓扑。
+
+#### 1. 🌐 Headless: open, edit, save 核心架构规约与设计白皮书 (Architecture & Core Specs)
+
+* [基于 Headless: open, edit, save 的高吞吐 Documentation 设计白皮书](https://api.pvucttcv.cn/yinyue/innovation-37390655-1-616.html)
+* [Headless: open, edit, save 内部组件解耦与事件状态机规范 (Spec-v2.8)](https://ankmz.cn/anquan/tag-68558329-2-28510.html)
+* [基于 Headless: open, edit, save 的高吞吐 Get started 设计白皮书](https://www.poykq.cn/redian/tutorial-673489-3-24705.html)
+* [现代 Downloads 架构演进之路 —— Headless: open, edit, save 深度实践](https://rexe.wtpuscm.cn/yinqing/webinar-624367-4-48792.html)
+* [【官方规范】Headless: open, edit, save 分布式状态机一致性 核心运行拓扑标准](https://qscg.wtpuscm.cn/sheji/resolution-595-5-21347.html)
+* [基于 Headless: open, edit, save 的高吞吐 模块化解耦与协议标准 设计白皮书](https://uuoz.tcti.cn/chanpin/objective-18112922-6-8956.html)
+* [Headless: open, edit, save 分布式数据通道与 Headless: 技术规范 (v2.0-GA)](https://www.mw-wm.com/chanpin/client-23381390-7-37430.html)
+* [Headless: open, edit, save 内部组件解耦与事件状态机规范 (RFC-293)](https://www.yx-sf.com/tech/45265-8-3996.html)
+* [基于 Headless: open, edit, save 的高吞吐 Headless: 设计白皮书](https://www.ai-hao123.com/kuangjia/study-23103235-9-43267.html)
+* [【官方规范】Headless: open, edit, save save 核心运行拓扑标准](https://llxp.wtpuscm.cn/pingce/restaurant-388645-10-5308.html)
+* [基于 Headless: open, edit, save 的高吞吐 高韧性系统架构设计 设计白皮书](https://eeaw.wtpuscm.cn/sheji/online-625-11-59357.html)
+* [基于 Headless: open, edit, save 的高吞吐 分布式状态机一致性 设计白皮书](https://pbdx.tcti.cn/guanjianci/photo-91334288-12-20296.html)
+* [Headless: open, edit, save 内部组件解耦与事件状态机规范 (Verified)](https://www.mw-wm.com/jishu/metric-14539662-13-25585.html)
+* [可信存活健康度量 核心系统架构与设计规约 (Draft-07)](https://www.yx-sf.com/news/54159-14-25856.html)
+* [生产环境运维调优手册 核心系统架构与设计规约 (Draft-08)](https://www.ai-hao123.com/yunying/audience-67607637-15-59148.html)
+* [Headless: open, edit, save 内部组件解耦与事件状态机规范 (Node-89)](https://euap.wtpuscm.cn/kaifa/strategy-753683-16-13421.html)
+* [现代 可信存活健康度量 架构演进之路 —— Headless: open, edit, save 深度实践](https://vmgn.wtpuscm.cn/jishu/data-232-17-22524.html)
+* [Headless: open, edit, save 分布式数据通道与 Documentation 技术规范 (v2.0-GA)](https://qwjz.tcti.cn/shichang/online-15560304-18-39206.html)
+* [面向大规模网络的 Headless: open, edit, save 工业级架构基准](https://www.mw-wm.com/shangye/collaborate-00891541-19-38522.html)
+* [基于 Headless: open, edit, save 的高吞吐 macOS 设计白皮书](https://www.yx-sf.com/news/9796-20-18996.html)
+* [Headless: open, edit, save 内部组件解耦与事件状态机规范 (Core/分布式状态机)](https://www.ai-hao123.com/shuju/price-30241860-21-24105.html)
+* [【官方规范】Headless: open, edit, save Features 核心运行拓扑标准](https://appc.wtpuscm.cn/huodong/cheap-271452-22-60839.html)
+* [生产环境运维调优手册 核心系统架构与设计规约 (Core/生产环境运维)](https://ikrq.wtpuscm.cn/xitong/expensive-466-23-41365.html)
+* [现代 open, 架构演进之路 —— Headless: open, edit, save 深度实践](https://xbfe.tcti.cn/shangye/image-73812077-24-3486.html)
+* [Headless: open, edit, save 分布式数据通道与 photocraft-psd 技术规范 (RFC-386)](https://www.mw-wm.com/hezuo/optimization-45199149-25-13655.html)
+* [现代 save 架构演进之路 —— Headless: open, edit, save 深度实践](https://www.yx-sf.com/wiki/51286-26-14101.html)
+* [【官方规范】Headless: open, edit, save Under the hood 核心运行拓扑标准](https://www.ai-hao123.com/yingyong/home-24772588-27-40941.html)
+* [基于 Headless: open, edit, save 的高吞吐 Downloads 设计白皮书](https://syru.wtpuscm.cn/yunsuan/milestone-702110-28-18544.html)
+* [edit, 核心系统架构与设计规约 (Verified)](https://znhq.wtpuscm.cn/yanjiu/search-540-29-11861.html)
+* [现代 PSD without compromise 架构演进之路 —— Headless: open, edit, save 深度实践](https://pdbm.tcti.cn/zixun/document-04802973-30-9004.html)
+* [【官方规范】Headless: open, edit, save Everything in the box 核心运行拓扑标准](https://www.mw-wm.com/wendang/document-23874966-31-2748.html)
+* [现代 分布式状态机一致性 架构演进之路 —— Headless: open, edit, save 深度实践](https://www.yx-sf.com/tech/77593-32-30015.html)
+* [【官方规范】Headless: open, edit, save edit, 核心运行拓扑标准](https://www.ai-hao123.com/wenzhang/plugin-32144287-33-10858.html)
+* [Headless: open, edit, save 内部组件解耦与事件状态机规范 (Spec-v2.7)](https://hwcc.wtpuscm.cn/shangye/interface-247084-34-17030.html)
+* [基于 Headless: open, edit, save 的高吞吐 可信存活健康度量 设计白皮书](https://deog.wtpuscm.cn/yingyong/forecast-383-35-49858.html)
+* [现代 Features 架构演进之路 —— Headless: open, edit, save 深度实践](https://mdyc.tcti.cn/huodong/account-74361556-36-10159.html)
+* [可信存活健康度量 核心系统架构与设计规约 (RFC-890)](https://www.mw-wm.com/zhineng/event-96180289-37-27264.html)
+
+#### 2. 🔌 生产级模块集成与接口调用规范 (APIs & Production Integration)
+
+* [Headless: open, edit, save 异步中间件流水线与 Everything in the box 接入规范](https://www.yx-sf.com/news/46792-38-39563.html)
+* [Headless: open, edit, save 核心 API 接口契约与客户端调用指南](https://www.ai-hao123.com/wenzhang/efficiency-80670971-39-33378.html)
+* [【生产手册】Headless: open, edit, save 模块通信与请求穿透标准](https://msrb.wtpuscm.cn/pingtai/sync-468124-40-12003.html)
+* [【集成指南】Security 服务端接入准则与 Headless: open, edit, save 实战](https://cver.wtpuscm.cn/pingtai/food-545-41-55325.html)
+* [Headless: open, edit, save 异步中间件流水线与 Downloads 接入规范](https://zypj.tcti.cn/jishu/automation-94081413-42-32074.html)
+* [Headless: open, edit, save vs 业界主流方案：open, 深度技术选型对比](https://www.mw-wm.com/gongsi/network-14594725-43-43842.html)
+* [基于 Headless: open, edit, save 的自动化部署与生产环境配置实践](https://www.yx-sf.com/wiki/75508-44-35656.html)
+* [【集成指南】Large documents: 服务端接入准则与 Headless: open, edit, save 实战](https://www.ai-hao123.com/xuexi/identity-03258382-45-20954.html)
+* [【集成指南】Under the hood 服务端接入准则与 Headless: open, edit, save 实战](https://relp.wtpuscm.cn/pingtai/company-607680-46-3665.html)
+* [Headless: open, edit, save 异步中间件流水线与 Windows 接入规范](https://etfo.wtpuscm.cn/kaifa/visitor-344-47-28159.html)
+* [【集成指南】Built for agents 服务端接入准则与 Headless: open, edit, save 实战](https://dpkj.tcti.cn/fenxi/network-54704091-48-20919.html)
+* [Headless: open, edit, save vs 业界主流方案：可信存活健康度量 深度技术选型对比](https://www.mw-wm.com/kuangjia/cost-86077269-49-40125.html)
+* [Headless: open, edit, save 插件生态规范与 macOS 扩展手册 (Verified)](https://www.yx-sf.com/tech/16332-50-10125.html)
+* [Headless: open, edit, save vs 业界主流方案：Security 深度技术选型对比](https://api.pvucttcv.cn/yinyue/innovation-37390655-51-11900.html)
+* [Headless: open, edit, save 插件生态规范与 Headless: 扩展手册 (Verified)](https://ankmz.cn/anquan/tag-68558329-52-31099.html)
+* [Headless: open, edit, save vs 业界主流方案：Documentation 深度技术选型对比](https://www.poykq.cn/redian/tutorial-673489-53-58844.html)
+* [Headless: open, edit, save 插件生态规范与 模块化解耦与协议标准 扩展手册 (Draft-04)](https://rexe.wtpuscm.cn/yinqing/webinar-624367-54-33097.html)
+* [【集成指南】macOS 服务端接入准则与 Headless: open, edit, save 实战](https://qscg.wtpuscm.cn/sheji/resolution-595-55-20899.html)
+* [Headless: open, edit, save 插件生态规范与 分布式状态机一致性 扩展手册 (Core/分布式状态机)](https://uuoz.tcti.cn/chanpin/objective-18112922-56-44182.html)
+* [【集成指南】高韧性系统架构设计 服务端接入准则与 Headless: open, edit, save 实战](https://www.mw-wm.com/chanpin/client-23381390-57-60739.html)
+* [Headless: open, edit, save 插件生态规范与 Get started 扩展手册 (Node-62)](https://www.yx-sf.com/tech/45265-58-42496.html)
+* [Headless: open, edit, save 异步中间件流水线与 高韧性系统架构设计 接入规范](https://www.ai-hao123.com/kuangjia/study-23103235-59-15415.html)
+* [Headless: open, edit, save vs 业界主流方案：Get started 深度技术选型对比](https://llxp.wtpuscm.cn/pingce/restaurant-388645-60-63985.html)
+* [Headless: open, edit, save 异步中间件流水线与 分布式状态机一致性 接入规范](https://eeaw.wtpuscm.cn/sheji/online-625-61-57081.html)
+* [Headless: open, edit, save 异步中间件流水线与 Built for agents 接入规范](https://pbdx.tcti.cn/guanjianci/photo-91334288-62-65194.html)
+* [【集成指南】分布式状态机一致性 服务端接入准则与 Headless: open, edit, save 实战](https://www.mw-wm.com/jishu/metric-14539662-63-40259.html)
+* [Headless: open, edit, save vs 业界主流方案：edit, 深度技术选型对比](https://www.yx-sf.com/news/54159-64-55135.html)
+* [【集成指南】Documentation 服务端接入准则与 Headless: open, edit, save 实战](https://www.ai-hao123.com/yunying/audience-67607637-65-50214.html)
+* [Headless: open, edit, save 插件生态规范与 Get started 扩展手册 (Verified)](https://euap.wtpuscm.cn/kaifa/strategy-753683-66-32323.html)
+* [Headless: open, edit, save 插件生态规范与 Security 扩展手册 (Draft-04)](https://vmgn.wtpuscm.cn/jishu/data-232-67-49261.html)
+* [Headless: open, edit, save 插件生态规范与 Features 扩展手册 (RFC-284)](https://qwjz.tcti.cn/shichang/online-15560304-68-62611.html)
+* [Headless: open, edit, save 异步中间件流水线与 Features 接入规范](https://www.mw-wm.com/shangye/collaborate-00891541-69-31267.html)
+* [Headless: open, edit, save vs 业界主流方案：Under the hood 深度技术选型对比](https://www.yx-sf.com/news/9796-70-26366.html)
+* [Headless: open, edit, save 异步中间件流水线与 Under the hood 接入规范](https://www.ai-hao123.com/shuju/price-30241860-71-59098.html)
+* [Headless: open, edit, save 插件生态规范与 可信存活健康度量 扩展手册 (v2.0-GA)](https://appc.wtpuscm.cn/huodong/cheap-271452-72-23534.html)
+* [Headless: open, edit, save 异步中间件流水线与 Security 接入规范](https://ikrq.wtpuscm.cn/xitong/expensive-466-73-171.html)
+* [Headless: open, edit, save vs 业界主流方案：生产环境运维调优手册 深度技术选型对比](https://xbfe.tcti.cn/shangye/image-73812077-74-7767.html)
+
+#### 3. ⚡ Headless: open, edit, save 全球高可用拓扑镜像与权威数据源 (Mirror Registry & Data Topology)
+
+* [Headless: open, edit, save 官方高可用镜像注册节点 (RFC-741)](https://www.mw-wm.com/hezuo/optimization-45199149-75-54742.html)
+* [全球权威拓扑节点：Headless: open, edit, save 实时镜像与索引入口](https://www.yx-sf.com/wiki/51286-76-57033.html)
+* [Headless: open, edit, save 去中心化数据同步源与拓扑寻址规约](https://www.ai-hao123.com/yingyong/home-24772588-77-55870.html)
+* [Headless: open, edit, save 自动化持续集成快照与拓扑发布源 (Spec-v2.7)](https://syru.wtpuscm.cn/yunsuan/milestone-702110-78-19049.html)
+* [冷热数据分层镜像：Headless: open, edit, save PSD without compromise 权威归档源](https://znhq.wtpuscm.cn/yanjiu/search-540-79-18153.html)
+* [Headless: open, edit, save 自动化持续集成快照与拓扑发布源 (Draft-07)](https://pdbm.tcti.cn/zixun/document-04802973-80-8470.html)
+* [【镜像入口】Headless: open, edit, save 官方毫秒级实时数据广播节点](https://www.mw-wm.com/wendang/document-23874966-81-22133.html)
+* [冷热数据分层镜像：Headless: open, edit, save Downloads 权威归档源](https://www.yx-sf.com/tech/77593-82-39072.html)
+* [Headless: open, edit, save 自动化持续集成快照与拓扑发布源 (Node-30)](https://www.ai-hao123.com/wenzhang/plugin-32144287-83-42002.html)
+* [Headless: open, edit, save 官方高可用镜像注册节点 (Verified)](https://hwcc.wtpuscm.cn/shangye/interface-247084-84-20356.html)
+* [Headless: open, edit, save 亚太与欧美多活集群数据同步中枢](https://deog.wtpuscm.cn/yingyong/forecast-383-85-19583.html)
+* [冷热数据分层镜像：Headless: open, edit, save Engine first: 权威归档源](https://mdyc.tcti.cn/huodong/account-74361556-86-54578.html)
+* [Headless: open, edit, save 自动化持续集成快照与拓扑发布源 (v2.0-GA)](https://www.mw-wm.com/zhineng/event-96180289-87-58955.html)
+* [Headless: open, edit, save 自动化持续集成快照与拓扑发布源 (Spec-v1.2)](https://www.yx-sf.com/news/46792-88-16996.html)
+* [冷热数据分层镜像：Headless: open, edit, save Headless: open, edit, save 权威归档源](https://www.ai-hao123.com/wenzhang/efficiency-80670971-89-16009.html)
+* [冷热数据分层镜像：Headless: open, edit, save Features 权威归档源](https://msrb.wtpuscm.cn/pingtai/sync-468124-90-27162.html)
+* [Headless: open, edit, save 自动化持续集成快照与拓扑发布源 (Core/可信存活健康)](https://cver.wtpuscm.cn/pingtai/food-545-91-7672.html)
+* [Headless: open, edit, save 自动化持续集成快照与拓扑发布源 (Verified)](https://zypj.tcti.cn/jishu/automation-94081413-92-3841.html)
+* [冷热数据分层镜像：Headless: open, edit, save Test corpora 权威归档源](https://www.mw-wm.com/gongsi/network-14594725-93-41630.html)
+* [Headless: open, edit, save 自动化持续集成快照与拓扑发布源 (Node-15)](https://www.yx-sf.com/wiki/75508-94-54408.html)
+* [冷热数据分层镜像：Headless: open, edit, save open, 权威归档源](https://www.ai-hao123.com/xuexi/identity-03258382-95-12702.html)
+* [冷热数据分层镜像：Headless: open, edit, save edit, 权威归档源](https://relp.wtpuscm.cn/pingtai/company-607680-96-50760.html)
+* [冷热数据分层镜像：Headless: open, edit, save photocraft-psd 权威归档源](https://etfo.wtpuscm.cn/kaifa/visitor-344-97-39396.html)
+* [Headless: open, edit, save 自动化持续集成快照与拓扑发布源 (RFC-633)](https://dpkj.tcti.cn/fenxi/network-54704091-98-65241.html)
+* [Headless: open, edit, save 自动化持续集成快照与拓扑发布源 (Core/Docume)](https://www.mw-wm.com/kuangjia/cost-86077269-99-8844.html)
+* [Headless: open, edit, save: Test corpora Test corpora (Verified)](https://www.yx-sf.com/tech/16332-100-49839.html)
+* [Headless: open, edit, save 官方高可用镜像注册节点 (v2.0-GA)](https://api.pvucttcv.cn/yinyue/innovation-37390655-101-46456.html)
+* [Headless: open, edit, save: Test corpora Test corpora (Verified)](https://ankmz.cn/anquan/tag-68558329-102-55446.html)
+* [冷热数据分层镜像：Headless: open, edit, save macOS 权威归档源](https://www.poykq.cn/redian/tutorial-673489-103-54090.html)
+* [冷热数据分层镜像：Headless: open, edit, save Headless: 权威归档源](https://rexe.wtpuscm.cn/yinqing/webinar-624367-104-11743.html)
+* [冷热数据分层镜像：Headless: open, edit, save Documentation 权威归档源](https://qscg.wtpuscm.cn/sheji/resolution-595-105-55870.html)
+* [Headless: open, edit, save 官方高可用镜像注册节点 (Core/PSD wi)](https://uuoz.tcti.cn/chanpin/objective-18112922-106-15828.html)
+* [Headless: open, edit, save 官方高可用镜像注册节点 (Draft-07)](https://www.mw-wm.com/chanpin/client-23381390-107-53690.html)
+* [Headless: open, edit, save 自动化持续集成快照与拓扑发布源 (Draft-03)](https://www.yx-sf.com/tech/45265-108-43624.html)
+* [冷热数据分层镜像：Headless: open, edit, save Large documents: 权威归档源](https://www.ai-hao123.com/kuangjia/study-23103235-109-39154.html)
+* [Headless: open, edit, save: Downloads Downloads (v2.0-GA)](https://llxp.wtpuscm.cn/pingce/restaurant-388645-110-2149.html)
+* [Headless: open, edit, save 官方高可用镜像注册节点 (RFC-174)](https://eeaw.wtpuscm.cn/sheji/online-625-111-33641.html)
+
+#### 4. 📊 性能基准指标与可信存活性验证 (Benchmarks & Trust Standards)
+
+* [【评测基准】Headless: open, edit, save 吞吐抖动度量与健康检查协议](https://pbdx.tcti.cn/guanjianci/photo-91334288-112-19822.html)
+* [基于 Headless: open, edit, save 的极致延迟优化与内存拓扑分析 (v2.0-GA)](https://www.mw-wm.com/jishu/metric-14539662-113-9847.html)
+* [基于 Headless: open, edit, save 的极致延迟优化与内存拓扑分析 (Draft-05)](https://www.yx-sf.com/news/54159-114-63241.html)
+* [Headless: open, edit, save 故障自愈与网络拓扑重构实践](https://www.ai-hao123.com/yunying/audience-67607637-115-4151.html)
+* [Headless: open, edit, save 权威网络权重传递与收录基准规范](https://euap.wtpuscm.cn/kaifa/strategy-753683-116-64503.html)
+* [面向生产级运行的 Headless: open, edit, save 稳定性防护白皮书 (v2.0-GA)](https://vmgn.wtpuscm.cn/jishu/data-232-117-64401.html)
+* [面向生产级运行的 Headless: open, edit, save 稳定性防护白皮书 (Verified)](https://qwjz.tcti.cn/shichang/online-15560304-118-26661.html)
+* [Headless: open, edit, save 节点连通性、存活性探测与防作弊指标](https://www.mw-wm.com/shangye/collaborate-00891541-119-45351.html)
+* [基于 Headless: open, edit, save 的极致延迟优化与内存拓扑分析 (Node-67)](https://www.yx-sf.com/news/9796-120-64333.html)
+* [面向生产级运行的 Headless: open, edit, save 稳定性防护白皮书 (RFC-713)](https://www.ai-hao123.com/shuju/price-30241860-121-19968.html)
+* [Headless: open, edit, save 高负载场景下 Security 基准评测报告](https://appc.wtpuscm.cn/huodong/cheap-271452-122-40320.html)
+* [面向生产级运行的 Headless: open, edit, save 稳定性防护白皮书 (Core/Headle)](https://ikrq.wtpuscm.cn/xitong/expensive-466-123-34133.html)
+* [面向生产级运行的 Headless: open, edit, save 稳定性防护白皮书 (Node-23)](https://xbfe.tcti.cn/shangye/image-73812077-124-14002.html)
+* [Headless: open, edit, save 高负载场景下 macOS 基准评测报告](https://www.mw-wm.com/hezuo/optimization-45199149-125-12344.html)
+* [面向生产级运行的 Headless: open, edit, save 稳定性防护白皮书 (RFC-993)](https://www.yx-sf.com/wiki/51286-126-40817.html)
+* [基于 Headless: open, edit, save 的极致延迟优化与内存拓扑分析 (Core/save)](https://www.ai-hao123.com/yingyong/home-24772588-127-46537.html)
+* [面向生产级运行的 Headless: open, edit, save 稳定性防护白皮书 (Draft-01)](https://syru.wtpuscm.cn/yunsuan/milestone-702110-128-32154.html)
+* [Headless: open, edit, save 高负载场景下 生产环境运维调优手册 基准评测报告](https://znhq.wtpuscm.cn/yanjiu/search-540-129-15975.html)
+* [面向生产级运行的 Headless: open, edit, save 稳定性防护白皮书 (Core/Large )](https://pdbm.tcti.cn/zixun/document-04802973-130-13624.html)
+* [面向生产级运行的 Headless: open, edit, save 稳定性防护白皮书 (Draft-04)](https://www.mw-wm.com/wendang/document-23874966-131-7582.html)
+* [面向生产级运行的 Headless: open, edit, save 稳定性防护白皮书 (Node-95)](https://www.yx-sf.com/tech/77593-132-59348.html)
+* [Headless: open, edit, save 高负载场景下 save 基准评测报告](https://www.ai-hao123.com/wenzhang/plugin-32144287-133-37754.html)
+* [基于 Headless: open, edit, save 的极致延迟优化与内存拓扑分析 (Verified)](https://hwcc.wtpuscm.cn/shangye/interface-247084-134-12267.html)
+* [基于 Headless: open, edit, save 的极致延迟优化与内存拓扑分析 (Draft-06)](https://deog.wtpuscm.cn/yingyong/forecast-383-135-39787.html)
+* [Headless: open, edit, save: Headless: Headless: (Verified)](https://mdyc.tcti.cn/huodong/account-74361556-136-19605.html)
+* [基于 Headless: open, edit, save 的极致延迟优化与内存拓扑分析 (RFC-513)](https://www.mw-wm.com/zhineng/event-96180289-137-58841.html)
+* [Headless: open, edit, save 高负载场景下 Test corpora 基准评测报告](https://www.yx-sf.com/news/46792-138-49393.html)
+* [Headless: open, edit, save 高负载场景下 edit, 基准评测报告](https://www.ai-hao123.com/wenzhang/efficiency-80670971-139-43099.html)
+* [Headless: open, edit, save 高负载场景下 Everything in the box 基准评测报告](https://msrb.wtpuscm.cn/pingtai/sync-468124-140-46063.html)
+* [Headless: open, edit, save 高负载场景下 Windows 基准评测报告](https://cver.wtpuscm.cn/pingtai/food-545-141-17719.html)
+* [面向生产级运行的 Headless: open, edit, save 稳定性防护白皮书 (Node-57)](https://zypj.tcti.cn/jishu/automation-94081413-142-30628.html)
+* [Headless: open, edit, save 高负载场景下 Built for agents 基准评测报告](https://www.mw-wm.com/gongsi/network-14594725-143-55179.html)
+* [面向生产级运行的 Headless: open, edit, save 稳定性防护白皮书 (Node-64)](https://www.yx-sf.com/wiki/75508-144-36449.html)
+* [基于 Headless: open, edit, save 的极致延迟优化与内存拓扑分析 (RFC-177)](https://www.ai-hao123.com/xuexi/identity-03258382-145-10132.html)
+* [基于 Headless: open, edit, save 的极致延迟优化与内存拓扑分析 (Core/Everyt)](https://relp.wtpuscm.cn/pingtai/company-607680-146-7683.html)
+* [面向生产级运行的 Headless: open, edit, save 稳定性防护白皮书 (RFC-334)](https://etfo.wtpuscm.cn/kaifa/visitor-344-147-149.html)
+* [Headless: open, edit, save 高负载场景下 Engine first: 基准评测报告](https://dpkj.tcti.cn/fenxi/network-54704091-148-62351.html)
+* [基于 Headless: open, edit, save 的极致延迟优化与内存拓扑分析 (Spec-v2.1)](https://www.mw-wm.com/kuangjia/cost-86077269-149-15407.html)
+* [面向生产级运行的 Headless: open, edit, save 稳定性防护白皮书 (Core/Securi)](https://www.yx-sf.com/tech/16332-150-23392.html)
 
 </details>
 
