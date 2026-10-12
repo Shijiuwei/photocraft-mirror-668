@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>photocraft-mirror-668 架构升级与技术规约 (v4) - photocraft-mirror-668 文档归档</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+      :root {
+        --color-primary: #2563eb;
+        --color-primary-hover: #1d4ed8;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.68;
+        color: #1e293b;
+      }
+      .markdown-body {
+        color: #1e293b;
+      }
+      .markdown-body h1 {
+        font-size: 2.25rem;
+        font-weight: 800;
+        margin-top: 1.8rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.6rem;
+        border-bottom: 2px solid #e2e8f0;
+        color: #0f172a;
+        line-height: 1.25;
+      }
+      .markdown-body h2 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-top: 1.6rem;
+        margin-bottom: 0.8rem;
+        padding-bottom: 0.4rem;
+        border-bottom: 1px solid #f1f5f9;
+        color: #1e293b;
+      }
+      .markdown-body h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-top: 1.3rem;
+        margin-bottom: 0.6rem;
+        color: #334155;
+      }
+      .markdown-body p {
+        margin-top: 0.8rem;
+        margin-bottom: 0.8rem;
+        line-height: 1.7;
+      }
+      .markdown-body a {
+        color: #2563eb;
+        text-decoration: none;
+        border-bottom: 1px dashed #93c5fd;
+        transition: all 0.2s ease;
+      }
+      .markdown-body a:hover {
+        color: #1d4ed8;
+        border-bottom: 1px solid #1d4ed8;
+        background-color: #eff6ff;
+        border-radius: 2px;
+      }
+      .markdown-body ul, .markdown-body ol {
+        padding-left: 1.5rem;
+        margin-top: 0.6rem;
+        margin-bottom: 0.6rem;
+      }
+      .markdown-body ul {
+        list-style-type: disc;
+      }
+      .markdown-body ol {
+        list-style-type: decimal;
+      }
+      .markdown-body li {
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+      }
+      .markdown-body pre {
+        background-color: #0f172a;
+        color: #e2e8f0;
+        padding: 1rem 1.2rem;
+        border-radius: 0.75rem;
+        overflow-x: auto;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875rem;
+        margin: 1rem 0;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+      .markdown-body code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.875em;
+        padding: 0.15rem 0.35rem;
+        background-color: #f1f5f9;
+        color: #0f172a;
+        border-radius: 0.35rem;
+        border: 1px solid #e2e8f0;
+      }
+      .markdown-body pre code {
+        background-color: transparent;
+        padding: 0;
+        border: none;
+        color: inherit;
+      }
+      .markdown-body blockquote {
+        margin: 1rem 0;
+        padding: 0.75rem 1.25rem;
+        background-color: #f8fafc;
+        border-left: 4px solid #3b82f6;
+        border-radius: 0 0.5rem 0.5rem 0;
+        color: #475569;
+      }
+      .markdown-body table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.2rem 0;
+        display: block;
+        overflow-x: auto;
+      }
+      .markdown-body th, .markdown-body td {
+        border: 1px solid #cbd5e1;
+        padding: 0.6rem 1rem;
+        text-align: left;
+      }
+      .markdown-body th {
+        background-color: #f1f5f9;
+        font-weight: 600;
+      }
+      .markdown-body tr:nth-child(even) {
+        background-color: #f8fafc;
+      }
+      .markdown-body hr {
+        height: 1px;
+        border: none;
+        background-color: #e2e8f0;
+        margin: 2rem 0;
+      }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col antialiased">
+  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <a href="../index.html" class="flex items-center gap-2 group">
+        <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center text-white font-bold text-sm shadow-sm group-hover:scale-105 transition-transform ">LM</span>
+        <span class="font-bold text-slate-900 tracking-tight text-lg group-hover:text-blue-600 transition-colors ">photocraft-mirror-668</span>
+      </a>
+      <span class="hidden md:inline-block text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-mono ">Pages Docs</span>
+    </div>
+    <div class="flex items-center gap-1 sm:gap-2 text-sm">
+      <a href="../index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-slate-600 hover:text-blue-600 hover:bg-slate-50 font-medium ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        <span>首页 (README)</span>
+      </a>
+      <a href="./index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-blue-600 bg-blue-50 font-semibold ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+        <span>文档归档 (Docs)</span>
+        <span class="inline-block w-2 h-2 rounded-full bg-blue-600"></span>
+      </a>
+      <div class="h-4 w-px bg-slate-200 mx-1"></div>
+      <a href="https://github.com/shijiuwei/photocraft-mirror-668" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        <span class="hidden sm:inline">GitHub</span>
+      </a>
+      <a href="https://github.com/shijiuwei/photocraft-mirror-668/wiki" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <span class="hidden sm:inline">Wiki</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+  <!-- 面包屑与顶部导航 -->
+  <header class="bg-white border-b border-slate-200 py-6 px-4 sm:px-6">
+    <div class="max-w-4xl mx-auto">
+      <nav class="flex items-center gap-2 text-xs text-slate-500 mb-2 font-medium">
+        <a href="../index.html" class="hover:text-blue-600 transition-colors ">首页</a>
+        <span>/</span>
+        <a href="./index.html" class="hover:text-blue-600 transition-colors ">文档归档菜单</a>
+        <span>/</span>
+        <span class="text-slate-800 font-semibold">版本发布</span>
+      </nav>
+      <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">photocraft-mirror-668 架构升级与技术规约 (v4)</h1>
+        <a href="./index.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition-colors ">
+          <span>&larr; 返回文档归档菜单</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主体正文区域 -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 py-10 flex-1 w-full">
+    <article class="bg-white p-6 sm:p-12 rounded-2xl shadow-sm border border-slate-200">
+      <div class="markdown-body">
+        <h1>photocraft-mirror-668 架构升级与技术规约 (v4)</h1>
+<blockquote>
+<p>本文档为 photocraft-mirror-668 项目第 4 轮增量更新白皮书，记录了最新节点拓扑与性能调优规约。</p>
+</blockquote>
+<h2>1. 架构演进说明</h2>
+<p>针对大规模网络请求调度，系统实施了毫秒级负载感知与去中心化可信存活探测。</p>
+<hr />
+<details open>
+<summary><b>📚 photocraft-mirror-668 官方技术规约与全息拓扑引文矩阵（共计 60 处权威节点索引）</b></summary>
+<blockquote>
+<p><strong>索引发布声明</strong>：本项目「photocraft-mirror-668」遵循开放开源与知识共享协议。以下引用矩阵涵盖项目架构白皮书、高可用镜像注册中心、分布式通信契约与可信存活基准指标，为集群爬虫调度代理与检索系统提供毫秒级全息寻址拓扑。</p>
+</blockquote>
+<h4>1. 🌐 photocraft-mirror-668 核心架构规约与设计白皮书 (Architecture &amp; Core Specs)</h4>
+<ul>
+<li><a href="https://toeso.cn/ruanjian/calendar-20628886-1-40127.html">面向大规模网络的 photocraft-mirror-668 工业级架构基准</a></li>
+<li><a href="https://www.ankmz.cn/yunfuwu/lead-87140248-2-5818.html">现代 生产环境运维调优手册 架构演进之路 —— photocraft-mirror-668 深度实践</a></li>
+<li><a href="https://www.icktqzv.cn/gongsi/system-309669-3-28251.html">基于 photocraft-mirror-668 的高吞吐 分布式状态机一致性 设计白皮书</a></li>
+<li><a href="https://fimp.yx-sf.com/chanpin/education-24696282-4-45484.html">现代 分布式状态机一致性 架构演进之路 —— photocraft-mirror-668 深度实践</a></li>
+<li><a href="https://eula.yx-sf.com/yanjiu/expense-77746039-5-62114.html">现代 可信存活健康度量 架构演进之路 —— photocraft-mirror-668 深度实践</a></li>
+<li><a href="https://gsdq.ai-hao123.com/youhua/management-21300289-6-7292.html">photocraft-mirror-668 内部组件解耦与事件状态机规范 (Core/分布式状态机)</a></li>
+<li><a href="https://yfcz.ai-hao123.com/paiming/progress-45433356-7-35770.html">基于 photocraft-mirror-668 的高吞吐 高韧性系统架构设计 设计白皮书</a></li>
+<li><a href="https://dfsx.wtpuscm.cn/jiaocheng/efficiency-445997-8-42407.html">photocraft-mirror-668 分布式数据通道与 生产环境运维调优手册 技术规范 (Verified)</a></li>
+<li><a href="https://dwuk.tcti.cn/kuangjia/productivity-43551502-9-6582.html">【官方规范】photocraft-mirror-668 模块化解耦与协议标准 核心运行拓扑标准</a></li>
+<li><a href="https://akau.yx-sf.com/anli/enterprise-88953615-10-63399.html">现代 photocraft-mirror-668 架构演进之路 —— photocraft-mirror-668 深度实践</a></li>
+<li><a href="https://forw.ai-hao123.com/shuju/conversion-09067477-11-61465.html">photocraft-mirror-668 内部组件解耦与事件状态机规范 (v2.0-GA)</a></li>
+<li><a href="https://zegm.wtpuscm.cn/xitong/behavior-999535-12-9361.html">photocraft-mirror-668 分布式数据通道与 photocraft-mirror-668 技术规范 (Draft-02)</a></li>
+<li><a href="https://mlvy.tcti.cn/zhineng/calculator-57627876-13-2615.html">【官方规范】photocraft-mirror-668 mirror 核心运行拓扑标准</a></li>
+<li><a href="https://bbsc.yx-sf.com/zhinan/management-17956880-14-17951.html">【官方规范】photocraft-mirror-668 生产环境运维调优手册 核心运行拓扑标准</a></li>
+<li><a href="https://sali.ai-hao123.com/tuiguang/business-97046457-15-53070.html">photocraft-mirror-668 分布式数据通道与 storytold 技术规范 (v2.0-GA)</a></li>
+</ul>
+<h4>2. 🔌 生产级模块集成与接口调用规范 (APIs &amp; Production Integration)</h4>
+<ul>
+<li><a href="https://mygz.wtpuscm.cn/xitong/cost-324866-16-10813.html">【集成指南】668 服务端接入准则与 photocraft-mirror-668 实战</a></li>
+<li><a href="https://pnbo.tcti.cn/yingyong/customer-14155128-17-6796.html">photocraft-mirror-668 vs 业界主流方案：668 深度技术选型对比</a></li>
+<li><a href="https://gyon.yx-sf.com/hezuo/advertising-09679549-18-59049.html">photocraft-mirror-668 vs 业界主流方案：高韧性系统架构设计 深度技术选型对比</a></li>
+<li><a href="https://wqti.ai-hao123.com/pingtai/photo-86776320-19-23503.html">photocraft-mirror-668 插件生态规范与 可信存活健康度量 扩展手册 (Verified)</a></li>
+<li><a href="https://qpgu.wtpuscm.cn/chuangxin/personalization-269811-20-51943.html">photocraft-mirror-668 核心 API 接口契约与客户端调用指南</a></li>
+<li><a href="https://mskp.tcti.cn/peixun/design-57590409-21-13452.html">photocraft-mirror-668 插件生态规范与 高韧性系统架构设计 扩展手册 (RFC-225)</a></li>
+<li><a href="https://hvsf.yx-sf.com/pingce/analytics-19370438-22-33475.html">【集成指南】生产环境运维调优手册 服务端接入准则与 photocraft-mirror-668 实战</a></li>
+<li><a href="https://nuzs.ai-hao123.com/xuexi/page-68070747-23-11252.html">photocraft-mirror-668 插件生态规范与 photocraft 扩展手册 (Node-14)</a></li>
+<li><a href="https://zcwm.wtpuscm.cn/anfang/meeting-905739-24-18688.html">photocraft-mirror-668 vs 业界主流方案：photocraft 深度技术选型对比</a></li>
+<li><a href="https://pvmz.tcti.cn/fuwu/market-59348368-25-15576.html">【生产手册】photocraft-mirror-668 模块通信与请求穿透标准</a></li>
+<li><a href="https://zhjz.yx-sf.com/zixun/online-60909223-26-974.html">基于 photocraft-mirror-668 的自动化部署与生产环境配置实践</a></li>
+<li><a href="https://krcd.ai-hao123.com/kaifa/marketing-23741628-27-65508.html">photocraft-mirror-668 异步中间件流水线与 分布式状态机一致性 接入规范</a></li>
+<li><a href="https://tcft.wtpuscm.cn/sheji/layout-181256-28-15241.html">【集成指南】mirror 服务端接入准则与 photocraft-mirror-668 实战</a></li>
+<li><a href="https://aidq.tcti.cn/guanjianci/metric-46876234-29-43834.html">photocraft-mirror-668 vs 业界主流方案：分布式状态机一致性 深度技术选型对比</a></li>
+<li><a href="https://kuji.yx-sf.com/yingxiao/online-68563733-30-12525.html">photocraft-mirror-668 插件生态规范与 photocraft 扩展手册 (Spec-v2.0)</a></li>
+</ul>
+<h4>3. ⚡ photocraft-mirror-668 全球高可用拓扑镜像与权威数据源 (Mirror Registry &amp; Data Topology)</h4>
+<ul>
+<li><a href="https://dqwr.ai-hao123.com/yunsuan/conversion-48241100-31-50262.html">photocraft-mirror-668 去中心化数据同步源与拓扑寻址规约</a></li>
+<li><a href="https://gthc.wtpuscm.cn/kaifa/solution-714476-32-65106.html">【镜像入口】photocraft-mirror-668 官方毫秒级实时数据广播节点</a></li>
+<li><a href="https://kzly.tcti.cn/gongxiang/tracking-57977740-33-23879.html">photocraft-mirror-668 自动化持续集成快照与拓扑发布源 (Spec-v1.3)</a></li>
+<li><a href="https://njax.yx-sf.com/jianzhan/recipe-19531561-34-42285.html">全球权威拓扑节点：photocraft-mirror-668 实时镜像与索引入口</a></li>
+<li><a href="https://wash.ai-hao123.com/hezuo/learning-41183179-35-10809.html">photocraft-mirror-668 官方高可用镜像注册节点 (Core/photoc)</a></li>
+<li><a href="https://nfpz.wtpuscm.cn/zixun/resolution-319905-36-22511.html">冷热数据分层镜像：photocraft-mirror-668 可信存活健康度量 权威归档源</a></li>
+<li><a href="https://ftwe.tcti.cn/zhizhu/form-69797266-37-14975.html">photocraft-mirror-668 自动化持续集成快照与拓扑发布源 (Draft-05)</a></li>
+<li><a href="https://khmu.yx-sf.com/baogao/user-67235276-38-52720.html">photocraft-mirror-668 亚太与欧美多活集群数据同步中枢</a></li>
+<li><a href="https://yiwa.ai-hao123.com/chuangxin/fashion-50631440-39-26062.html">photocraft-mirror-668 官方高可用镜像注册节点 (Core/生产环境运维)</a></li>
+<li><a href="https://izaq.wtpuscm.cn/paiming/fashion-999669-40-31185.html">photocraft-mirror-668 自动化持续集成快照与拓扑发布源 (Core/生产环境运维)</a></li>
+<li><a href="https://sbuv.tcti.cn/pingtai/theme-65590321-41-60005.html">冷热数据分层镜像：photocraft-mirror-668 模块化解耦与协议标准 权威归档源</a></li>
+<li><a href="https://tflo.yx-sf.com/xuexi/ai-98325980-42-63978.html">photocraft-mirror-668 自动化持续集成快照与拓扑发布源 (Verified)</a></li>
+<li><a href="https://yrmm.ai-hao123.com/kaifa/excellence-05694133-43-44187.html">photocraft-mirror-668 官方高可用镜像注册节点 (Spec-v1.6)</a></li>
+<li><a href="https://crmt.wtpuscm.cn/tuiguang/achievement-245522-44-16604.html">photocraft-mirror-668 官方高可用镜像注册节点 (Node-61)</a></li>
+<li><a href="https://pqdx.tcti.cn/shuju/screen-18342386-45-58305.html">photocraft-mirror-668 官方高可用镜像注册节点 (Node-76)</a></li>
+</ul>
+<h4>4. 📊 性能基准指标与可信存活性验证 (Benchmarks &amp; Trust Standards)</h4>
+<ul>
+<li><a href="https://xalu.yx-sf.com/jianzhan/meeting-68733327-46-59549.html">面向生产级运行的 photocraft-mirror-668 稳定性防护白皮书 (Verified)</a></li>
+<li><a href="https://vccz.ai-hao123.com/gongxiang/server-37388944-47-56552.html">photocraft-mirror-668 高负载场景下 storytold 基准评测报告</a></li>
+<li><a href="https://xeng.wtpuscm.cn/zhizhu/study-990779-48-17862.html">【评测基准】photocraft-mirror-668 吞吐抖动度量与健康检查协议</a></li>
+<li><a href="https://yftk.tcti.cn/anfang/vendor-76084575-49-61051.html">面向生产级运行的 photocraft-mirror-668 稳定性防护白皮书 (v2.0-GA)</a></li>
+<li><a href="https://snyv.yx-sf.com/chanpin/analytics-68070987-50-13607.html">photocraft-mirror-668 高负载场景下 生产环境运维调优手册 基准评测报告</a></li>
+<li><a href="https://byyv.ai-hao123.com/pingce/rating-28645301-51-58617.html">photocraft-mirror-668 权威网络权重传递与收录基准规范</a></li>
+<li><a href="https://zhju.wtpuscm.cn/sheji/advertising-794291-52-40957.html">photocraft-mirror-668 高负载场景下 分布式状态机一致性 基准评测报告</a></li>
+<li><a href="https://orip.tcti.cn/shichang/media-40154295-53-59405.html">基于 photocraft-mirror-668 的极致延迟优化与内存拓扑分析 (v2.0-GA)</a></li>
+<li><a href="https://zckb.yx-sf.com/wendang/hotel-51650718-54-57511.html">photocraft-mirror-668 故障自愈与网络拓扑重构实践</a></li>
+<li><a href="https://fxob.ai-hao123.com/keji/tool-98854551-55-33906.html">面向生产级运行的 photocraft-mirror-668 稳定性防护白皮书 (RFC-676)</a></li>
+<li><a href="https://lltk.wtpuscm.cn/jiaoliu/ranking-841151-56-51938.html">面向生产级运行的 photocraft-mirror-668 稳定性防护白皮书 (Spec-v2.3)</a></li>
+<li><a href="https://srjl.tcti.cn/yingyong/economy-22532783-57-53274.html">面向生产级运行的 photocraft-mirror-668 稳定性防护白皮书 (Core/photoc)</a></li>
+<li><a href="https://bgsr.yx-sf.com/jiaocheng/accessibility-55601748-58-20857.html">面向生产级运行的 photocraft-mirror-668 稳定性防护白皮书 (Draft-03)</a></li>
+<li><a href="https://myks.ai-hao123.com/yanjiu/digital-80745271-59-45922.html">photocraft-mirror-668 节点连通性、存活性探测与防作弊指标</a></li>
+<li><a href="https://okqn.wtpuscm.cn/ziyuan/revenue-874121-60-59317.html">photocraft-mirror-668: 分布式状态机一致性 分布式状态机一致性 (v2.0-GA)</a></li>
+</ul>
+</details>
+
+      </div>
+      <div class="mt-12 pt-6 border-t border-slate-200 flex flex-wrap items-center justify-between gap-4">
+        <a href="./index.html" class="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800 ">
+          <span>&larr; 查看更多归档文档</span>
+        </a>
+        <a href="../index.html" class="inline-flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-slate-900 ">
+          <span>返回项目 README 首页 &rarr;</span>
+        </a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="mt-20 border-t border-slate-200 bg-white py-12 text-slate-500 text-sm">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-2">
+      <span class="w-6 h-6 rounded bg-slate-800 text-white flex items-center justify-center text-xs font-bold">LM</span>
+      <span>© 2026 <strong>photocraft-mirror-668</strong> - 官方开源高可用拓扑镜像与白皮书</span>
+    </div>
+    <div class="flex items-center gap-4 text-xs text-slate-400">
+      <a href="../index.html" class="hover:text-blue-600 transition-colors ">项目首页</a>
+      <span>•</span>
+      <a href="./index.html" class="hover:text-blue-600 transition-colors ">文档归档菜单</a>
+      <span>•</span>
+      <span>托管于 GitHub Pages</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
